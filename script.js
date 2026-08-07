@@ -273,6 +273,8 @@ async function initAgendaPage() {
     return;
   }
 
+  initDayNav(dateStr);
+
   let dayData;
   try {
     const res = await fetch(`data/${dateStr}.json`);
@@ -353,6 +355,96 @@ function initFullscreenToggle() {
   });
 }
 
+/* ============================================================
+   Click-to-focus — clicking a box dims everything else; clicking
+   the focused box again, or clicking outside all boxes, undims.
+   ============================================================ */
+
+function initFocusMode() {
+  const boardGrid = document.getElementById('board-grid');
+  if (!boardGrid) return;
+
+  function focusBox(box) {
+    boardGrid.classList.add('has-focus');
+    boardGrid.querySelectorAll('.agenda-box').forEach(b => b.classList.remove('is-focused'));
+    box.classList.add('is-focused');
+  }
+
+  function clearFocus() {
+    boardGrid.classList.remove('has-focus');
+    boardGrid.querySelectorAll('.agenda-box').forEach(b => b.classList.remove('is-focused'));
+  }
+
+  boardGrid.querySelectorAll('.agenda-box').forEach(box => {
+    box.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (box.classList.contains('is-focused')) {
+        clearFocus();
+      } else {
+        focusBox(box);
+      }
+    });
+  });
+
+  // clicking anywhere else (background, gaps between boxes) clears focus
+  document.addEventListener('click', () => {
+    if (boardGrid.classList.contains('has-focus')) clearFocus();
+  });
+
+  // Escape also clears focus
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && boardGrid.classList.contains('has-focus')) clearFocus();
+  });
+}
+
+/* ============================================================
+   Prev / Next day navigation — steps to the next-highest or
+   next-lowest date present in dates.txt (not necessarily the
+   adjacent calendar day).
+   ============================================================ */
+
+async function initDayNav(currentDate) {
+  const prevBtn = document.getElementById('prev-day-btn');
+  const nextBtn = document.getElementById('next-day-btn');
+  if (!prevBtn || !nextBtn) return;
+
+  const res = await fetch('dates.txt');
+  const text = await res.text();
+  const dates = [...new Set(text.split('\n').map(d => d.trim()).filter(Boolean))]
+    .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)); // ascending
+
+  const idx = dates.indexOf(currentDate);
+
+  // if the viewed date isn't itself in dates.txt, fall back to the
+  // nearest neighbors by comparison rather than array index
+  let prevDate, nextDate;
+  if (idx !== -1) {
+    prevDate = idx > 0 ? dates[idx - 1] : null;
+    nextDate = idx < dates.length - 1 ? dates[idx + 1] : null;
+  } else {
+    prevDate = [...dates].reverse().find(d => d < currentDate) || null;
+    nextDate = dates.find(d => d > currentDate) || null;
+  }
+
+  if (prevDate) {
+    prevBtn.disabled = false;
+    prevBtn.addEventListener('click', () => {
+      window.location.href = `agenda.html?date=${prevDate}`;
+    });
+  } else {
+    prevBtn.disabled = true;
+  }
+
+  if (nextDate) {
+    nextBtn.disabled = false;
+    nextBtn.addEventListener('click', () => {
+      window.location.href = `agenda.html?date=${nextDate}`;
+    });
+  } else {
+    nextBtn.disabled = true;
+  }
+}
+
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -360,4 +452,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initIndexPage();
   initAgendaPage();
   initFullscreenToggle();
+  initFocusMode();
 });
