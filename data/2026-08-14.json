@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Enabling GitHub Pages and confirming your portfolio link is live.",
+      "weeklyDeliverable": "GitHub portfolio repo forked from the template with index.html live on GitHub Pages.",
+      "smartGoal": "I can enable GitHub Pages so that my portfolio site is live on the web.",
+      "contentStandard": "CA CS Standards 6-8.NI.5 — Deploy a project so it can be accessed by others over a network.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Final timed transition of the week — post your time (3 min)",
+        "I do: model enabling GitHub Pages in settings",
+        "You do: enable Pages & confirm your live link",
+        "Partner check: share your link, explain one page",
+        "Bank payout: remaining minutes → free time",
+        "Exit Ticket: paste your live site URL"
+      ],
+      "connections": "This week we set up accounts, copied our template, and built our home page. Today it goes live for the world to see. Next week we start adding real portfolio content, beginning with our first coding unit."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Publishing your Google Site so it's live and viewable by others.",
+      "weeklyDeliverable": "Google Site published with a Welcome page and an About Me page.",
+      "smartGoal": "I can publish my Google Site so that my portfolio is live and viewable by others.",
+      "contentStandard": "CA CS Standards 6-8.NI.5 — Deploy a project so it can be accessed by others over a network.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Final timed transition of the week — post your time (3 min)",
+        "I do: model publishing a Google Site",
+        "You do: publish your site & confirm live link",
+        "Partner check: share your link, explain one page",
+        "Bank payout: remaining minutes → free time",
+        "Exit Ticket: paste your live site URL"
+      ],
+      "connections": "This week we set norms, built a Welcome page, and added an About Me page. Today it all goes live. Next week we start our first real coding unit, beginning with patterns."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Publishing your Google Site so it's live and viewable by others.",
+      "weeklyDeliverable": "Google Site published with a Welcome page and an About Me page.",
+      "smartGoal": "I can publish my Google Site so that my portfolio is live and viewable by others.",
+      "contentStandard": "CA CS Standards 6-8.NI.5 — Deploy a project so it can be accessed by others over a network.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Final timed transition of the week — post your time (3 min)",
+        "I do: model publishing a Google Site",
+        "You do: publish your site & confirm live link",
+        "Partner check: share your link, explain one page",
+        "Bank payout: remaining minutes → free time",
+        "Exit Ticket: paste your live site URL"
+      ],
+      "connections": "This week we set norms, built a Welcome page, and added an About Me page. Today it all goes live. Next week we start our first real coding unit, beginning with patterns."
+    }
+  }
+}

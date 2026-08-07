@@ -3,51 +3,51 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "smartGoal": "I can set up my GitHub account and repository so that I can start building my digital portfolio this year.",
-      "contentStandard": "CA CS Standards 6-8.CD.1 \u2014 Recommend improvements to existing code using peer review processes.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Learning our classroom non-negotiables and finding your assigned Chromebook number.",
+      "weeklyDeliverable": "GitHub portfolio repo forked from the template with index.html live on GitHub Pages.",
+      "smartGoal": "I can state our 5 classroom non-negotiables and locate my assigned Chromebook number.",
+      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials private and use computing devices safely and responsibly.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
-        "Warm-Up: Time Bank check-in (5 min)",
-        "Mini-Lesson: What is version control? (10 min)",
-        "Guided Practice: Create GitHub account (15 min)",
-        "Independent Practice: Fork the starter repo",
-        "Exit Ticket: Screenshot your repo"
+        "Entry routine taught & practiced, untimed",
+        "Icebreaker: quick intro share",
+        "I do: Wayground Non-Negotiables presentation",
+        "We do: practice getting/putting away Chromebooks",
+        "Exit Ticket: name one non-negotiable"
       ],
-      "connections": "Yesterday we set up our Chromebooks and class norms. Today we start the tool we'll use all year to save and share our work. Next week we'll make our first commit.",
-      "workingNow": "Forking the starter repo and confirming your GitHub account works.",
-      "weeklyDeliverable": "A live GitHub Pages portfolio site with your bio published."
+      "connections": "This is our very first day together, so today is about learning how our room runs before we dive into content. Tomorrow we'll build our shared Treatment Agreement and set up our GitHub accounts."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "smartGoal": "I can explain what a pattern is so that I can find patterns in everyday life and in code.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 \u2014 Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely and explaining orally how an author uses language to support ideas.",
+      "workingNow": "Learning our classroom non-negotiables and finding your assigned Chromebook number.",
+      "weeklyDeliverable": "Google Site published with a Welcome page and an About Me page.",
+      "smartGoal": "I can state our 5 classroom non-negotiables and locate my assigned Chromebook number.",
+      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials private and use computing devices safely and responsibly.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
-        "Warm-Up: Wayground quiz (5 min)",
-        "Turn & Talk: Where do you see patterns? (5 min)",
-        "Direct Instruction: Patterns in code (10 min)",
-        "Group Task: Pattern scavenger hunt",
-        "Exit Ticket: Name 3 patterns you found"
+        "Entry routine taught & practiced, untimed",
+        "Icebreaker: quick intro share",
+        "I do: Wayground Non-Negotiables presentation",
+        "We do: practice getting/putting away Chromebooks",
+        "Exit Ticket: name one non-negotiable"
       ],
-      "connections": "Today kicks off our coding unit \u2014 everything we build this semester is made of patterns like this one. Tomorrow we'll connect this to Code.org.",
-      "workingNow": "Finding and naming patterns you see around the room.",
-      "weeklyDeliverable": "Code.org Unit 1, Lessons 1\u20133 complete, with your pattern journal turned in."
+      "connections": "This is our very first day together, so today is about learning how our room runs before we dive into content. Tomorrow we'll build our shared Treatment Agreement and start talking about being safe and responsible online."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "smartGoal": "I can follow our classroom Treatment Agreement so that our robotics lab is safe and productive for everyone.",
-      "contentStandard": "CA CS Standards 6-8.IC.1 \u2014 Compare tradeoffs associated with computing technologies.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Learning our classroom non-negotiables and finding your assigned Chromebook number.",
+      "weeklyDeliverable": "Google Site published with a Welcome page and an About Me page.",
+      "smartGoal": "I can state our 5 classroom non-negotiables and locate my assigned Chromebook number.",
+      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials private and use computing devices safely and responsibly.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
-        "Entry Routine Practice (5 min)",
-        "Read & Discuss: Treatment Agreement (10 min)",
-        "Table Talk: Why do agreements matter? (10 min)",
-        "Sign & Post Agreement",
-        "Exit Ticket: One rule you'll help hold us to"
+        "Entry routine taught & practiced, untimed",
+        "Icebreaker: quick intro share",
+        "I do: Wayground Non-Negotiables presentation",
+        "We do: practice getting/putting away Chromebooks",
+        "Exit Ticket: name one non-negotiable"
       ],
-      "connections": "This connects to every group project we'll do this semester \u2014 a safe, respectful room is what makes real building and coding possible.",
-      "workingNow": "Reading through the Treatment Agreement with your table.",
-      "weeklyDeliverable": "Signed Treatment Agreement and tech use agreement on file."
+      "connections": "This is our very first day together, so today is about learning how our room runs before we dive into content. Tomorrow we'll build our shared Treatment Agreement and start talking about being safe and responsible online."
     }
   }
 }

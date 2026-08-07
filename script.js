@@ -329,10 +329,35 @@ async function initAgendaPage() {
   if (defaultPeriod) selectPeriod(defaultPeriod);
 }
 
+/* ============================================================
+   Double-click anywhere to toggle fullscreen
+   ============================================================ */
+
+function initFullscreenToggle() {
+  document.addEventListener('dblclick', () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {
+        /* some browsers block this without a prior user gesture context —
+           the double-click itself counts as one, so this is mostly a
+           safety net for unsupported browsers */
+      });
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  });
+
+  // the viewport size changes the instant fullscreen toggles, so re-fit
+  // box text right away rather than waiting on the debounced resize handler
+  document.addEventListener('fullscreenchange', () => {
+    setTimeout(fitAllBoxes, 50);
+  });
+}
+
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
   initClock();
   initIndexPage();
   initAgendaPage();
+  initFullscreenToggle();
 });
