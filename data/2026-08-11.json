@@ -3,54 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Building a basic example repo and sharing it privately with Ms. Herrick — not publishing it to the whole web.",
-      "weeklyDeliverable": "GitHub repository shared privately with Ms. Herrick, personalized with an index.html and fun details about you.",
-      "smartGoal": "I can create a basic GitHub repository and share it privately with my teacher, and explain one way to keep my personal information safe online.",
-      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials and personal information private when using networked devices and online tools.",
+      "workingNow": "Building your home page — one image and a menu linking to your other pages — and learning what PII is so you know what NOT to put on it.",
+      "weeklyDeliverable": "GitHub repository live on GitHub Pages with a home page (single image + page menu) and at least one content page — first name only, no other personal info.",
+      "smartGoal": "I can build a home page with one image and a page menu, and explain what personal information (PII) I should never put on a public site.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Timed transition begins today — note your time (3 min)",
         "Treatment Agreement co-creation, 4 quadrants (15 min)",
-        "I do: model a basic example repo (8 min)",
-        "We do: share your repo privately with Ms. Herrick only (5 min)",
-        "Discuss: why we're not publishing publicly + staying safe online (10 min)",
-        "Exit Ticket — Whip-Around: one way to stay safe online (9 min)"
+        "I do: model a home page — one image + menu linking to pages (8 min)",
+        "We do: discuss what PII is and why our repo is public (10 min)",
+        "You do: build your home page — first name only, no age/location (9 min)",
+        "Exit Ticket — Whip-Around: one example of PII to avoid (5 min)"
       ],
-      "connections": "Yesterday we learned how our classroom and tools work. Today we set our classroom norms and build our very first repo — kept private for now. Tomorrow we'll start making it feel like yours."
+      "connections": "Yesterday we learned our tools. Today we set our classroom norms and start our home page — since it's public, we're also learning what to keep off of it. Tomorrow we start building out our other pages."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Building a basic example Google Site and sharing it privately with Ms. Herrick — not publishing it to the whole web.",
-      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
-      "smartGoal": "I can create a basic Google Site and share it privately with my teacher, and explain one way to keep my personal information safe online.",
-      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials and personal information private when using networked devices and online tools.",
+      "workingNow": "Building your home page — one image and a menu linking to your other pages.",
+      "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
+      "smartGoal": "I can build a home page with one image and a page menu, and explain why I'm keeping my site shared privately for now.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content, organized into separate linked pages, to fulfill a design requirement.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Timed transition begins today — note your time (3 min)",
         "Treatment Agreement co-creation, 4 quadrants (15 min)",
-        "I do: model a basic example Google Site (8 min)",
-        "We do: share your site privately with Ms. Herrick only (5 min)",
-        "Discuss: why we're not publishing publicly + staying safe online (10 min)",
-        "Exit Ticket — Whip-Around: one way to stay safe online (9 min)"
+        "I do: model a home page — one image + menu linking to pages (8 min)",
+        "We do: share your site privately with Ms. Herrick + discuss why it's private (10 min)",
+        "You do: build your home page (9 min)",
+        "Exit Ticket — Whip-Around: one way to stay safe online (5 min)"
       ],
-      "connections": "Yesterday we learned how our classroom and tools work. Today we set our classroom norms and build our very first site — kept private for now. Tomorrow we'll start making it feel like yours."
+      "connections": "Yesterday we learned our tools. Today we set our classroom norms and start our home page — kept private for now. Tomorrow we start building out our other pages."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Building a basic example Google Site and sharing it privately with Ms. Herrick — not publishing it to the whole web.",
-      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
-      "smartGoal": "I can create a basic Google Site and share it privately with my teacher, and explain one way to keep my personal information safe online.",
-      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials and personal information private when using networked devices and online tools.",
+      "workingNow": "Building your home page — one image and a menu linking to your other pages.",
+      "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
+      "smartGoal": "I can build a home page with one image and a page menu, and explain why I'm keeping my site shared privately for now.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content, organized into separate linked pages, to fulfill a design requirement.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Timed transition begins today — note your time (3 min)",
         "Treatment Agreement co-creation, 4 quadrants (15 min)",
-        "I do: model a basic example Google Site (8 min)",
-        "We do: share your site privately with Ms. Herrick only (5 min)",
-        "Discuss: why we're not publishing publicly + staying safe online (10 min)",
-        "Exit Ticket — Whip-Around: one way to stay safe online (9 min)"
+        "I do: model a home page — one image + menu linking to pages (8 min)",
+        "We do: share your site privately with Ms. Herrick + discuss why it's private (10 min)",
+        "You do: build your home page (9 min)",
+        "Exit Ticket — Whip-Around: one way to stay safe online (5 min)"
       ],
-      "connections": "Yesterday we learned how our classroom and tools work. Today we set our classroom norms and build our very first site — kept private for now. Tomorrow we'll start making it feel like yours."
+      "connections": "Yesterday we learned our tools. Today we set our classroom norms and start our home page — kept private for now. Tomorrow we start building out our other pages."
     }
   }
 }

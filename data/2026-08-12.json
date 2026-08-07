@@ -1,56 +1,53 @@
 {
-  "schedule": "regular",
+  "schedule": "shortened",
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Adding fun, personal touches to your repo/site so it starts to feel like yours.",
-      "weeklyDeliverable": "GitHub repository shared privately with Ms. Herrick, personalized with an index.html and fun details about you.",
-      "smartGoal": "I can personalize my repo with fun details about myself so that it reflects who I am.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.3 — Offering opinions and negotiating with others in conversations.",
+      "workingNow": "Building one new content page and linking it into your home page menu.",
+      "weeklyDeliverable": "GitHub repository live on GitHub Pages with a home page (single image + page menu) and at least one content page — first name only, no other personal info.",
+      "smartGoal": "I can create a new page and link it in my home page menu so that my content is organized, not crowded onto my home page.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
-        "Timed transition — post yesterday's time (3 min)",
-        "I do: model adding a fun personal touch (favorite game, color, hobby) (8 min)",
-        "You do: personalize your page with fun facts/images (22 min)",
-        "Peer share: show a partner one fun thing you added (8 min)",
-        "Getting to Know You survey assigned (5 min)",
-        "Exit Ticket: name one fun thing you added (4 min)"
+        "Timed transition — post yesterday's time (2 min)",
+        "I do: model creating a new page + linking it in the menu (5 min)",
+        "You do: build one new content page — interests list, no age/location (15 min)",
+        "Link your new page in the menu; Getting to Know You survey assigned (5 min)",
+        "Exit Ticket: paste your new page's link (3 min)"
       ],
-      "connections": "Yesterday we built a basic private repo. Today we make it feel like yours by adding fun, personal details. Tomorrow we'll add one more piece before we wrap up the week."
+      "connections": "Yesterday we built our home page. Today we build our first real content page and link it in, so your home page stays clean. Tomorrow we look at each other's pages and find things we have in common."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Adding fun, personal touches to your site so it starts to feel like yours.",
-      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
-      "smartGoal": "I can personalize my Google Site with fun details about myself so that it reflects who I am.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.3 — Offering opinions and negotiating with others in conversations.",
+      "workingNow": "Building one new content page and linking it into your home page menu.",
+      "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
+      "smartGoal": "I can create a new page and link it in my home page menu so that my content is organized, not crowded onto my home page.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
-        "Timed transition — post yesterday's time (3 min)",
-        "I do: model adding a fun personal touch (favorite game, color, hobby) (8 min)",
-        "You do: personalize your page with fun facts/images (22 min)",
-        "Peer share: show a partner one fun thing you added (8 min)",
-        "Getting to Know You survey assigned (5 min)",
-        "Exit Ticket: name one fun thing you added (4 min)"
+        "Timed transition — post yesterday's time (2 min)",
+        "I do: model creating a new page + linking it in the menu (5 min)",
+        "You do: build one new content page — fun facts, favorites, interests (15 min)",
+        "Link your new page in the menu; Getting to Know You survey assigned (5 min)",
+        "Exit Ticket: name one thing on your new page (3 min)"
       ],
-      "connections": "Yesterday we built a basic private site. Today we make it feel like yours by adding fun, personal details. Tomorrow we'll add one more piece before we wrap up the week."
+      "connections": "Yesterday we built our home page. Today we build our first real content page and link it in, so your home page stays clean. Tomorrow we look at each other's pages and find things we have in common."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Adding fun, personal touches to your site so it starts to feel like yours.",
-      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
-      "smartGoal": "I can personalize my Google Site with fun details about myself so that it reflects who I am.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.3 — Offering opinions and negotiating with others in conversations.",
+      "workingNow": "Building one new content page and linking it into your home page menu.",
+      "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
+      "smartGoal": "I can create a new page and link it in my home page menu so that my content is organized, not crowded onto my home page.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
-        "Timed transition — post yesterday's time (3 min)",
-        "I do: model adding a fun personal touch (favorite game, color, hobby) (8 min)",
-        "You do: personalize your page with fun facts/images (22 min)",
-        "Peer share: show a partner one fun thing you added (8 min)",
-        "Getting to Know You survey assigned (5 min)",
-        "Exit Ticket: name one fun thing you added (4 min)"
+        "Timed transition — post yesterday's time (2 min)",
+        "I do: model creating a new page + linking it in the menu (5 min)",
+        "You do: build one new content page — fun facts, favorites, interests (15 min)",
+        "Link your new page in the menu; Getting to Know You survey assigned (5 min)",
+        "Exit Ticket: name one thing on your new page (3 min)"
       ],
-      "connections": "Yesterday we built a basic private site. Today we make it feel like yours by adding fun, personal details. Tomorrow we'll add one more piece before we wrap up the week."
+      "connections": "Yesterday we built our home page. Today we build our first real content page and link it in, so your home page stays clean. Tomorrow we look at each other's pages and find things we have in common."
     }
   }
 }
