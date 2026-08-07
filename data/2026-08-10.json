@@ -3,7 +3,7 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Getting your Chromebook, logging in, and completing the Wayground quiz together on your device.",
+      "workingNow": "Getting your Chromebook out of the cart, logging in, and completing the Wayground quiz together on your device.",
       "weeklyDeliverable": "GitHub repository live on GitHub Pages with a home page (single image + page menu) and at least one content page — first name only, no other personal info.",
       "smartGoal": "I can walk in and find my seat, log into my Chromebook, Google Classroom, and GitHub so that I'm ready to learn every day this year.",
       "contentStandard": "CA CS Standards 6-8.NI.4 — Model account creation and login practices that protect personal information when accessing networked systems.",
@@ -11,16 +11,16 @@
       "agenda": [
         "Entry routine: practice walking in & finding seats (5 min)",
         "I do: Classroom rules overview (8 min)",
-        "Get Chromebook, log in, practice put-away (10 min)",
+        "Get Chromebooks out of the cart, log in (10 min)",
         "We do: Wayground Non-Negotiables quiz together, on Chromebooks (12 min)",
         "Join Google Classroom & sign into GitHub (10 min)",
-        "Exit Ticket: Google Classroom discussion post — open-ended reflection (5 min)"
+        "Exit Ticket: Getting to Know You quiz, turn in on Google Classroom (5 min)"
       ],
-      "connections": "This is our very first day together, so today is just about learning our room and our tools. Tomorrow we'll set our classroom norms and start building the home page of our own site."
+      "connections": "This is our very first day together, so today is just about learning our room and our tools. Tomorrow we'll set our classroom norms and start building the home page of our own site — and on Thursday we'll use today's Getting to Know You answers to find things we have in common with classmates."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Getting your Chromebook, logging in, and completing the Wayground quiz together on your device.",
+      "workingNow": "Finding your Chromebook on the table, logging in, and completing the Wayground quiz together on your device.",
       "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
       "smartGoal": "I can walk in and find my seat, log into my Chromebook, Google Classroom, and Code.org so that I'm ready to learn every day this year.",
       "contentStandard": "CA CS Standards 6-8.NI.4 — Model account creation and login practices that protect personal information when accessing networked systems.",
@@ -28,29 +28,29 @@
       "agenda": [
         "Entry routine: practice walking in & finding seats (5 min)",
         "I do: Classroom rules overview (8 min)",
-        "Get Chromebook, log in, practice put-away (10 min)",
+        "Find your Chromebook already out on the table, log in (10 min)",
         "We do: Wayground Non-Negotiables quiz together, on Chromebooks (12 min)",
         "Join Google Classroom & sign into Code.org (10 min)",
-        "Exit Ticket: Google Classroom discussion post — open-ended reflection (5 min)"
+        "Exit Ticket: Getting to Know You quiz, turn in on Google Classroom (5 min)"
       ],
-      "connections": "This is our very first day together, so today is just about learning our room and our tools. Tomorrow we'll set our classroom norms and start building the home page of our own site."
+      "connections": "This is our very first day together, so today is just about learning our room and our tools. Tomorrow we'll set our classroom norms and start building the home page of our own site — and on Thursday we'll use today's Getting to Know You answers to find things we have in common with classmates."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Getting your Chromebook, logging in, and completing the Wayground quiz together on your device.",
+      "workingNow": "Finding your Chromebook on the table, logging in, and completing the Wayground quiz together on your device.",
       "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
       "smartGoal": "I can walk in and find my seat, log into my Chromebook, Google Classroom, and Code.org so that I'm ready to learn every day this year.",
       "contentStandard": "CA CS Standards 6-8.NI.4 — Model account creation and login practices that protect personal information when accessing networked systems.",
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Entry routine: practice walking in & finding seats (5 min)",
-        "I do: Classroom rules overview (8 min)",
-        "Get Chromebook, log in, practice put-away (10 min)",
-        "We do: Wayground Non-Negotiables quiz together, on Chromebooks (12 min)",
-        "Join Google Classroom & sign into Code.org (10 min)",
-        "Exit Ticket: Google Classroom discussion post — open-ended reflection (5 min)"
+        "I do: Classroom rules overview (7 min)",
+        "Find your Chromebook already out on the table, log in (8 min)",
+        "We do: Wayground Non-Negotiables quiz together, on Chromebooks (10 min)",
+        "Join Google Classroom, sign into Code.org & complete Getting to Know You quiz — Exit Ticket, turn in on Google Classroom (12 min)",
+        "Practice putting Chromebooks away in the cart (8 min)"
       ],
-      "connections": "This is our very first day together, so today is just about learning our room and our tools. Tomorrow we'll set our classroom norms and start building the home page of our own site."
+      "connections": "This is our very first day together, so today is just about learning our room and our tools — including how we put them away at the end of the day. Tomorrow we'll set our classroom norms and start building the home page of our own site, and on Thursday we'll use today's Getting to Know You answers to find things we have in common with classmates."
     }
   }
 }

@@ -3,51 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Browsing classmates' pages to find something you have in common with someone.",
+      "workingNow": "Reviewing our Getting to Know You results, then browsing classmates' pages to find something you have in common with someone.",
       "weeklyDeliverable": "GitHub repository live on GitHub Pages with a home page (single image + page menu) and at least one content page — first name only, no other personal info.",
       "smartGoal": "I can explore classmates' pages and identify something we have in common, then share it in a Google Classroom discussion post.",
       "contentStandard": "CA CS Standards 6-8.IC.28 — Collaborate respectfully with others when reviewing and giving feedback on digital work.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Timed transition — post yesterday's time (3 min)",
+        "We do: review our Getting to Know You quiz results together (7 min)",
         "I do: model browsing a classmate's page respectfully (5 min)",
-        "You do: browse 2\u20133 classmates' repos, find something in common (20 min)",
+        "You do: browse 2\u20133 classmates' repos, find something in common (15 min)",
         "Discussion post (Google Classroom): name a classmate + one thing in common (15 min)",
-        "Continue adding to your own pages if time remains (7 min)"
+        "Continue adding to your own pages if time remains (5 min)"
       ],
-      "connections": "Yesterday we built our home pages. Today we look at each other's work and find things we have in common — building our sense of community as a class. Tomorrow we'll polish what we've made and reflect on our first week."
+      "connections": "Monday we filled out our Getting to Know You quiz, and today we use those answers to look at each other's work and find things we have in common — building our sense of community as a class. Tomorrow we'll polish what we've made and reflect on our first week."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Browsing classmates' pages to find something you have in common with someone.",
+      "workingNow": "Reviewing our Getting to Know You results, then browsing classmates' pages to find something you have in common with someone.",
       "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
       "smartGoal": "I can explore classmates' pages and identify something we have in common, then share it in a Google Classroom discussion post.",
       "contentStandard": "CA CS Standards 6-8.IC.28 — Collaborate respectfully with others when reviewing and giving feedback on digital work.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Timed transition — post yesterday's time (3 min)",
+        "We do: review our Getting to Know You quiz results together (7 min)",
         "I do: model browsing a classmate's page respectfully (5 min)",
-        "You do: browse 2\u20133 classmates' sites, find something in common (20 min)",
+        "You do: browse 2\u20133 classmates' sites, find something in common (15 min)",
         "Discussion post (Google Classroom): name a classmate + one thing in common (15 min)",
-        "Continue adding to your own pages if time remains (7 min)"
+        "Continue adding to your own pages if time remains (5 min)"
       ],
-      "connections": "Yesterday we built our home pages. Today we look at each other's work and find things we have in common — building our sense of community as a class. Tomorrow we'll polish what we've made and reflect on our first week."
+      "connections": "Monday we filled out our Getting to Know You quiz, and today we use those answers to look at each other's work and find things we have in common — building our sense of community as a class. Tomorrow we'll polish what we've made and reflect on our first week."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Browsing classmates' pages to find something you have in common with someone.",
+      "workingNow": "Reviewing our Getting to Know You results, then browsing classmates' pages to find something you have in common with someone.",
       "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
       "smartGoal": "I can explore classmates' pages and identify something we have in common, then share it in a Google Classroom discussion post.",
       "contentStandard": "CA CS Standards 6-8.IC.28 — Collaborate respectfully with others when reviewing and giving feedback on digital work.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Timed transition — post yesterday's time (3 min)",
+        "We do: review our Getting to Know You quiz results together (7 min)",
         "I do: model browsing a classmate's page respectfully (5 min)",
-        "You do: browse 2\u20133 classmates' sites, find something in common (20 min)",
+        "You do: browse 2\u20133 classmates' sites, find something in common (15 min)",
         "Discussion post (Google Classroom): name a classmate + one thing in common (15 min)",
-        "Continue adding to your own pages if time remains (7 min)"
+        "Continue adding to your own pages if time remains (5 min)"
       ],
-      "connections": "Yesterday we built our home pages. Today we look at each other's work and find things we have in common — building our sense of community as a class. Tomorrow we'll polish what we've made and reflect on our first week."
+      "connections": "Monday we filled out our Getting to Know You quiz, and today we use those answers to look at each other's work and find things we have in common — building our sense of community as a class. Tomorrow we'll polish what we've made and reflect on our first week."
     }
   }
 }
