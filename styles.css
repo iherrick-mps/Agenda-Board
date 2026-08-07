@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 /* ============ DESIGN TOKENS ============ */
 :root {
@@ -10,6 +10,8 @@
   --grid-line-soft: #dde2e7;
 
   /* box accent colors — edit these to re-theme any box */
+  --c-working: #c7361f;    /* What should I be working on right now? */
+  --c-deliverable: #0891b2;/* This week's deliverable */
   --c-goal: #2f5ac9;       /* SMART Goal / Learning Target */
   --c-standard: #7b3fe4;   /* Content Standard */
   --c-eld: #0d9367;        /* ELD Standard */
@@ -17,7 +19,7 @@
   --c-connect: #c22a72;    /* Connections */
 
   --box-width: 340px;
-  --radius: 10px;
+  --radius: 8px;
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -32,6 +34,15 @@ html, body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
+}
+
+a { color: inherit; }
+
+/* ============================================================
+   INDEX PAGE (date list) — normal scrolling page, floating clock
+   ============================================================ */
+
+body.index-page {
   background-image:
     linear-gradient(var(--grid-line-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line-soft) 1px, transparent 1px);
@@ -39,9 +50,6 @@ html, body {
   min-height: 100vh;
 }
 
-a { color: inherit; }
-
-/* ============ TOP BAR ============ */
 .topbar {
   display: flex;
   align-items: flex-start;
@@ -69,22 +77,6 @@ a { color: inherit; }
   margin-top: 4px;
 }
 
-.back-link {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  text-decoration: none;
-  color: var(--ink-soft);
-  border: 1px solid var(--grid-line);
-  background: var(--surface);
-  padding: 6px 12px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-bottom: 12px;
-  transition: border-color 0.15s, color 0.15s;
-}
-.back-link:hover { border-color: var(--ink); color: var(--ink); }
-
-/* ============ CLOCK (signature element) ============ */
 .clock {
   font-family: var(--font-mono);
   background: var(--ink);
@@ -96,7 +88,7 @@ a { color: inherit; }
   border: 1px solid #0c141d;
 }
 
-.clock-time {
+.clock .clock-time {
   font-size: 1.7rem;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -105,16 +97,14 @@ a { color: inherit; }
   gap: 6px;
 }
 
-.clock-time .colon {
-  animation: blink 2s steps(1) infinite;
-}
+.clock-time .colon { animation: blink 2s steps(1) infinite; }
 
 @keyframes blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0.25; }
 }
 
-.clock-tz {
+.clock .clock-tz {
   font-size: 0.62rem;
   font-weight: 500;
   color: #93a3b8;
@@ -123,7 +113,7 @@ a { color: inherit; }
   margin-bottom: 3px;
 }
 
-.clock-status {
+.clock .clock-status {
   margin-top: 8px;
   padding-top: 8px;
   border-top: 1px dashed #35424f;
@@ -134,21 +124,11 @@ a { color: inherit; }
   gap: 10px;
 }
 
-.clock-status .status-label {
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #7c8ea2;
-}
-
-.clock-status .status-value {
-  color: #eaf1ff;
-  font-weight: 700;
-}
-
+.clock-status .status-label { text-transform: uppercase; letter-spacing: 0.06em; color: #7c8ea2; }
+.clock-status .status-value { color: #eaf1ff; font-weight: 700; }
 .clock-status.in-session .status-value { color: #6ee7b7; }
 .clock-status.not-in-session .status-value { color: #f5b169; }
 
-/* ============ INDEX PAGE — DATE LIST ============ */
 .page-body { padding: 8px 40px 60px; max-width: 900px; }
 
 .page-heading {
@@ -157,7 +137,6 @@ a { color: inherit; }
   font-weight: 600;
   color: var(--ink-soft);
   margin: 24px 0 14px;
-  letter-spacing: 0.01em;
 }
 
 .date-list {
@@ -172,6 +151,7 @@ a { color: inherit; }
 
 .date-list li { border-bottom: 1px solid var(--grid-line-soft); }
 .date-list li:last-child { border-bottom: none; }
+.date-list li.is-today { background: #f2f6ff; }
 
 .date-list a {
   display: flex;
@@ -183,12 +163,15 @@ a { color: inherit; }
 }
 .date-list a:hover { background: var(--bg); }
 
-.date-list .date-main {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.05rem;
+.date-list .date-main { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+.date-list .today-tag {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--c-goal);
+  letter-spacing: 0.08em;
+  margin-left: 8px;
 }
-
 .date-list .date-weekday {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -196,11 +179,7 @@ a { color: inherit; }
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
-
-.date-list .date-arrow {
-  font-family: var(--font-mono);
-  color: var(--ink-soft);
-}
+.date-list .date-arrow { font-family: var(--font-mono); color: var(--ink-soft); }
 
 .empty-note {
   font-family: var(--font-mono);
@@ -212,47 +191,76 @@ a { color: inherit; }
   background: var(--surface);
 }
 
-/* ============ AGENDA PAGE ============ */
-.agenda-header {
-  padding: 0 40px 4px;
+/* ============================================================
+   AGENDA PAGE — fixed, no-scroll, full-viewport bento board
+   ============================================================ */
+
+body.board-page {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--bg);
 }
 
-.agenda-date {
-  font-family: var(--font-display);
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin: 4px 0 2px;
+/* invisible hover zone pinned to the top edge; moving the mouse near
+   the top of the screen reveals the period switcher + date/back-link */
+.hover-zone {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
 }
 
-.agenda-schedule {
+.hover-trigger { height: 14px; }
+
+.hover-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 18px;
+  background: var(--ink);
+  color: #eaf1ff;
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--ink-soft);
+  transform: translateY(-100%);
+  transition: transform 0.18s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.hover-zone:hover .hover-bar,
+.hover-bar:focus-within { transform: translateY(0); }
+
+.back-link-inline {
+  font-size: 0.75rem;
+  text-decoration: none;
+  color: #cdd8e6;
+  border: 1px solid #3a4753;
+  padding: 4px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.back-link-inline:hover { color: #fff; border-color: #fff; }
+
+.hb-date { font-size: 0.82rem; font-weight: 700; white-space: nowrap; }
+.hb-schedule {
+  font-size: 0.68rem;
+  color: #93a3b8;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  white-space: nowrap;
 }
 
-/* period tabs, styled like pin headers */
-.period-tabs {
-  display: flex;
-  gap: 10px;
-  padding: 20px 40px 0;
-  flex-wrap: wrap;
-}
+.period-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
 
 .period-tab {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  padding: 9px 16px 9px 14px;
-  border-radius: 6px 6px 0 0;
-  border: 1px solid var(--grid-line);
-  border-bottom: none;
-  background: var(--surface);
-  color: var(--ink-soft);
+  padding: 6px 12px;
+  border-radius: 5px;
+  border: 1px solid #3a4753;
+  background: transparent;
+  color: #cdd8e6;
   cursor: pointer;
-  position: relative;
-  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
 }
 
 .period-tab::before {
@@ -261,104 +269,189 @@ a { color: inherit; }
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  margin-right: 8px;
-  background: var(--pin-color, var(--ink-soft));
+  margin-right: 7px;
+  background: var(--pin-color, #cdd8e6);
   vertical-align: middle;
 }
 
-.period-tab:hover { color: var(--ink); }
+.period-tab.active { color: #fff; border-color: #fff; font-weight: 700; }
+.period-tab.is-now::after { content: '\25CF LIVE'; font-size: 0.6rem; margin-left: 7px; color: #6ee7b7; }
 
-.period-tab.active {
-  color: var(--ink);
-  background: var(--surface);
-  border-color: var(--grid-line);
-  box-shadow: 0 -2px 0 var(--pin-color, var(--ink)) inset;
-  font-weight: 700;
+/* the board itself: 12x6 grid filling the whole viewport */
+.board-grid {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "clock clock clock working working working working working working deliver deliver deliver"
+    "clock clock clock working working working working working working deliver deliver deliver"
+    "goal goal goal goal agenda agenda agenda agenda connect connect connect connect"
+    "goal goal goal goal agenda agenda agenda agenda connect connect connect connect"
+    "standard standard standard standard agenda agenda agenda agenda eld eld eld eld"
+    "standard standard standard standard agenda agenda agenda agenda eld eld eld eld";
+  gap: 8px;
+  padding: 8px;
 }
-
-.period-tab.is-now::after {
-  content: '\25CF LIVE';
-  font-size: 0.6rem;
-  margin-left: 8px;
-  color: #0d9367;
-  letter-spacing: 0.06em;
-}
-
-/* box grid */
-.box-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: flex-start;
-  padding: 20px 40px 60px;
-  background: var(--surface);
-  border: 1px solid var(--grid-line);
-  border-top: none;
-  margin: 0 40px 40px;
-  border-radius: 0 0 var(--radius) var(--radius);
-}
-
-.box-grid.hidden { display: none; }
 
 .agenda-box {
-  width: var(--box-width);
-  flex: 0 0 var(--box-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--grid-line);
-  border-left: 5px solid var(--box-color, var(--ink));
+  border-left: 6px solid var(--box-color, var(--ink));
   border-radius: var(--radius);
-  padding: 16px 18px 18px;
+  padding: 1.1vh 1.3vw;
   box-shadow: 0 2px 6px rgba(22, 32, 43, 0.05);
 }
 
+.box-clock      { grid-area: clock; }
+.box-working    { grid-area: working; }
+.box-deliver    { grid-area: deliver; }
+.box-goal       { grid-area: goal; }
+.box-agenda     { grid-area: agenda; }
+.box-connect    { grid-area: connect; }
+.box-standard   { grid-area: standard; }
+.box-eld        { grid-area: eld; }
+
+.box-working    { --box-color: var(--c-working); }
+.box-deliver    { --box-color: var(--c-deliverable); }
+.box-goal       { --box-color: var(--c-goal); }
+.box-agenda     { --box-color: var(--c-agenda); }
+.box-connect    { --box-color: var(--c-connect); }
+.box-standard   { --box-color: var(--c-standard); }
+.box-eld        { --box-color: var(--c-eld); }
+
 .agenda-box .box-label {
+  flex: 0 0 auto;
   font-family: var(--font-mono);
-  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--box-color, var(--ink));
-  margin-bottom: 8px;
-  display: block;
+  font-size: clamp(0.62rem, 1.5vh, 1rem);
+  margin-bottom: 0.3vh;
 }
 
-.agenda-box .box-content {
-  font-size: 0.94rem;
-  line-height: 1.55;
+.box-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 500;
+  line-height: 1.18;
   color: var(--ink);
+  /* JS sets an explicit px font-size on this element to fill the box */
 }
 
-.agenda-box ul.box-content {
+.box-content ul {
+  list-style: none;
   margin: 0;
-  padding-left: 20px;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-.agenda-box ul.box-content li { margin-bottom: 6px; }
-.agenda-box ul.box-content li:last-child { margin-bottom: 0; }
 
-/* box color assignments */
-.box-goal      { --box-color: var(--c-goal); }
-.box-standard  { --box-color: var(--c-standard); }
-.box-eld       { --box-color: var(--c-eld); }
-.box-agenda    { --box-color: var(--c-agenda); }
-.box-connect   { --box-color: var(--c-connect); }
+.box-content ul li {
+  position: relative;
+  padding-left: 1.15em;
+}
 
-/* ============ RESPONSIVE ============ */
-@media (max-width: 700px) {
-  .topbar, .page-body, .agenda-header, .period-tabs, .box-grid {
-    padding-left: 20px;
-    padding-right: 20px;
+.box-content ul li::before {
+  content: '\2192';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--box-color, var(--ink));
+}
+
+/* clock box — kept dark for contrast, uses container query units so it
+   scales with its own cell size without needing the JS fit pass */
+.box-clock {
+  background: var(--ink);
+  border-left-color: #0c141d;
+  color: #eaf1ff;
+  justify-content: center;
+  align-items: flex-start;
+  container-type: size;
+}
+
+.box-clock .clock-time {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 20cqh, 5.5rem);
+  display: flex;
+  align-items: baseline;
+  gap: 0.15em;
+  line-height: 1;
+}
+
+.box-clock .clock-time .ampm { font-size: 0.4em; opacity: 0.8; }
+.box-clock .clock-tz {
+  font-family: var(--font-mono);
+  font-size: clamp(0.6rem, 4cqh, 1rem);
+  color: #93a3b8;
+  letter-spacing: 0.12em;
+  margin-top: 0.3em;
+}
+
+.box-clock .clock-status {
+  margin-top: auto;
+  padding-top: 0.6em;
+  border-top: 1px dashed #35424f;
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 5cqh, 1.15rem);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: #b9c6d6;
+}
+
+.box-clock .status-label { text-transform: uppercase; letter-spacing: 0.04em; color: #93a3b8; }
+.box-clock .status-value { color: #eaf1ff; font-weight: 700; }
+.box-clock .clock-status.in-session .status-value { color: #6ee7b7; }
+.box-clock .clock-status.not-in-session .status-value { color: #f5b169; }
+
+/* ============ RESPONSIVE FALLBACK (small screens) ============ */
+@media (max-width: 900px) {
+  body.board-page { height: auto; overflow: auto; }
+  .hover-zone { position: sticky; }
+  .hover-trigger { display: none; }
+  .hover-bar { transform: translateY(0); flex-wrap: wrap; position: static; }
+  .board-grid {
+    height: auto;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "working"
+      "clock"
+      "deliver"
+      "goal"
+      "agenda"
+      "connect"
+      "standard"
+      "eld";
   }
-  .box-grid { margin-left: 20px; margin-right: 20px; }
-  .agenda-box { width: 100%; }
+  .agenda-box { min-height: 140px; padding: 14px 16px; }
+  .box-content { font-size: 1rem !important; }
 }
 
-/* ============ REDUCED MOTION ============ */
 @media (prefers-reduced-motion: reduce) {
   .clock-time .colon { animation: none; }
+  .hover-bar { transition: none; }
 }
 
-/* ============ FOCUS VISIBILITY ============ */
-a:focus-visible, .period-tab:focus-visible {
+a:focus-visible, .period-tab:focus-visible, .back-link:focus-visible {
   outline: 2px solid var(--c-goal);
   outline-offset: 2px;
 }

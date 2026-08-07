@@ -1,0 +1,50 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Finishing final touches on your classroom syllabus review.",
+      "weeklyDeliverable": "Signed syllabus and tech agreement returned by Monday.",
+      "smartGoal": "I can locate my class syllabus and Google Classroom so that I'm ready for Monday.",
+      "contentStandard": "CA CS Standards 6-8.IC.1 — Compare tradeoffs associated with computing technologies.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Welcome & seating (5 min)",
+        "Syllabus walkthrough (10 min)",
+        "Join Google Classroom",
+        "Q&A"
+      ],
+      "connections": "This sets up everything we do starting Monday — the tools, norms, and expectations for the whole year."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Getting your Chromebook and Google account set up.",
+      "weeklyDeliverable": "Google Classroom joined and tech agreement signed.",
+      "smartGoal": "I can log in to my Chromebook so that I'm ready to learn on Monday.",
+      "contentStandard": "CA CS Standards 6-8.IC.1 — Compare tradeoffs associated with computing technologies.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Welcome & seating (5 min)",
+        "Chromebook check-out (10 min)",
+        "Join Google Classroom",
+        "Q&A"
+      ],
+      "connections": "Today is just getting set up — Monday we start real content."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Meeting your table group for the first time.",
+      "weeklyDeliverable": "Tech use agreement signed and returned.",
+      "smartGoal": "I can find my seat and my table group so that I know where I belong in this class.",
+      "contentStandard": "CA CS Standards 6-8.IC.1 — Compare tradeoffs associated with computing technologies.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Welcome & seating (5 min)",
+        "Meet your table group (10 min)",
+        "Classroom tour",
+        "Q&A"
+      ],
+      "connections": "This is day one — everything this year builds on the norms and relationships we start today."
+    }
+  }
+}

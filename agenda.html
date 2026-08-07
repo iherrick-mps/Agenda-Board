@@ -6,14 +6,21 @@
 <title>Agenda — Robotics &amp; Coding</title>
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="board-page">
 
-<div class="topbar">
-  <div class="brand">
-    Agenda Board
-    <span class="brand-sub">Robotics &amp; Coding &middot; Ms. Herrick</span>
+<div class="hover-zone">
+  <div class="hover-trigger"></div>
+  <div class="hover-bar">
+    <a class="back-link-inline" href="index.html">&larr; All dates</a>
+    <span class="hb-date" id="agenda-date">Loading&hellip;</span>
+    <span class="hb-schedule" id="agenda-schedule"></span>
+    <div class="period-tabs" id="period-tabs"></div>
   </div>
-  <div class="clock">
+</div>
+
+<div class="board-grid" id="board-grid">
+
+  <div class="agenda-box box-clock">
     <div class="clock-time" id="clock-time">--:--:--</div>
     <div class="clock-tz">Pacific Time</div>
     <div class="clock-status" id="clock-status">
@@ -21,17 +28,43 @@
       <span class="status-value" id="clock-status-value">&mdash;</span>
     </div>
   </div>
+
+  <div class="agenda-box box-working">
+    <span class="box-label">What should I be working on right now?</span>
+    <div class="box-content" id="content-working"></div>
+  </div>
+
+  <div class="agenda-box box-deliver">
+    <span class="box-label">This week's deliverable</span>
+    <div class="box-content" id="content-deliver"></div>
+  </div>
+
+  <div class="agenda-box box-goal">
+    <span class="box-label">SMART Goal</span>
+    <div class="box-content" id="content-goal"></div>
+  </div>
+
+  <div class="agenda-box box-agenda">
+    <span class="box-label">Agenda / Steps</span>
+    <div class="box-content" id="content-agenda"></div>
+  </div>
+
+  <div class="agenda-box box-connect">
+    <span class="box-label">Connections</span>
+    <div class="box-content" id="content-connect"></div>
+  </div>
+
+  <div class="agenda-box box-standard">
+    <span class="box-label">Content Standard</span>
+    <div class="box-content" id="content-standard"></div>
+  </div>
+
+  <div class="agenda-box box-eld">
+    <span class="box-label">ELD Standard</span>
+    <div class="box-content" id="content-eld"></div>
+  </div>
+
 </div>
-
-<div class="agenda-header">
-  <a class="back-link" href="index.html">&larr; All dates</a>
-  <div class="agenda-date" id="agenda-date">Loading&hellip;</div>
-  <div class="agenda-schedule" id="agenda-schedule"></div>
-</div>
-
-<div class="period-tabs" id="period-tabs"></div>
-
-<div id="grids-container"></div>
 
 <script src="script.js"></script>
 </body>

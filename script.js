@@ -109,7 +109,7 @@ async function initClock() {
     if (timeEl) {
       timeEl.innerHTML =
         `${h12}<span class="colon">:</span>${mm}<span class="colon">:</span>${ss} ` +
-        `<span style="font-size:0.9rem;">${ampm}</span>`;
+        `<span class="ampm">${ampm}</span>`;
     }
 
     const scheduleKey = await resolveTodaysSchedule(pt);
@@ -145,7 +145,37 @@ async function initClock() {
 }
 
 /* ============================================================
-   Index page — date list
+   Auto-fit text — shrinks/grows a box's font-size so its content
+   fills the box with no overflow (and therefore no scrolling).
+   ============================================================ */
+
+function fitBoxText(contentEl, { min = 9, max = 160 } = {}) {
+  if (!contentEl || contentEl.clientHeight === 0) return;
+  let lo = min, hi = max;
+  for (let i = 0; i < 16; i++) {
+    const mid = (lo + hi) / 2;
+    contentEl.style.fontSize = mid + 'px';
+    const overflowing =
+      contentEl.scrollHeight > contentEl.clientHeight + 0.5 ||
+      contentEl.scrollWidth > contentEl.clientWidth + 0.5;
+    if (overflowing) hi = mid; else lo = mid;
+  }
+  contentEl.style.fontSize = lo + 'px';
+}
+
+function fitAllBoxes() {
+  document.querySelectorAll('.box-content').forEach(el => fitBoxText(el));
+}
+
+let resizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(fitAllBoxes, 150);
+});
+
+/* ============================================================
+   Index page — date list (today pinned to top, then furthest
+   future down to oldest)
    ============================================================ */
 
 async function initIndexPage() {
@@ -153,28 +183,33 @@ async function initIndexPage() {
   if (!listEl) return;
 
   const res = await fetch('dates.txt');
+  const pt = getPacificNow();
   const text = await res.text();
   const dates = text.split('\n').map(d => d.trim()).filter(Boolean);
-
-  // Most recent first
-  dates.sort((a, b) => (a < b ? 1 : a > b ? -1 : 0));
 
   if (dates.length === 0) {
     listEl.outerHTML = '<div class="empty-note">No dates found in dates.txt yet.</div>';
     return;
   }
 
-  listEl.innerHTML = dates.map(d => {
+  const today = pt.isoDate;
+  const hasToday = dates.includes(today);
+  const rest = dates.filter(d => d !== today)
+    .sort((a, b) => (a < b ? 1 : a > b ? -1 : 0)); // furthest future -> oldest
+  const ordered = hasToday ? [today, ...rest] : rest;
+
+  listEl.innerHTML = ordered.map(d => {
     const dt = new Date(`${d}T00:00:00Z`);
     const weekday = WEEKDAYS[dt.getUTCDay()];
     const month = MONTHS[dt.getUTCMonth()];
     const day = dt.getUTCDate();
     const year = dt.getUTCFullYear();
+    const isToday = d === today;
     return `
-      <li>
+      <li class="${isToday ? 'is-today' : ''}">
         <a href="agenda.html?date=${d}">
           <span>
-            <span class="date-main">${month} ${day}, ${year}</span><br>
+            <span class="date-main">${month} ${day}, ${year}</span>${isToday ? '<span class="today-tag">TODAY</span>' : ''}<br>
             <span class="date-weekday">${weekday}</span>
           </span>
           <span class="date-arrow">View agenda &rarr;</span>
@@ -184,42 +219,48 @@ async function initIndexPage() {
 }
 
 /* ============================================================
-   Agenda page — boxes + period tabs
+   Agenda page — persistent bento board + period tabs
    ============================================================ */
 
 const PERIOD_ORDER = ['4th Period', '6th Period', '7th Period'];
-const BOX_DEFS = [
-  { key: 'smartGoal',       label: 'SMART Goal',        cls: 'box-goal' },
-  { key: 'contentStandard', label: 'Content Standard',  cls: 'box-standard' },
-  { key: 'eldStandard',     label: 'ELD Standard',      cls: 'box-eld' },
-  { key: 'agenda',          label: 'Agenda / Steps',    cls: 'box-agenda' },
-  { key: 'connections',     label: 'Connections',       cls: 'box-connect' }
-];
 const PIN_COLOR = {
   '4th Period': 'var(--c-goal)',
   '6th Period': 'var(--c-standard)',
   '7th Period': 'var(--c-eld)'
 };
 
+// maps a JSON field name -> the box's content element id
+const FIELD_TO_EL = {
+  workingNow:        'content-working',
+  weeklyDeliverable: 'content-deliver',
+  smartGoal:         'content-goal',
+  contentStandard:   'content-standard',
+  eldStandard:       'content-eld',
+  agenda:            'content-agenda',
+  connections:       'content-connect'
+};
+
 function renderBoxValue(value) {
   if (Array.isArray(value)) {
-    return `<ul class="box-content">${value.map(item => `<li>${item}</li>`).join('')}</ul>`;
+    return `<ul>${value.map(item => `<li>${item}</li>`).join('')}</ul>`;
   }
-  return `<div class="box-content">${value ?? ''}</div>`;
+  return value ?? '';
 }
 
-function renderPeriodBoxes(periodData) {
-  return BOX_DEFS.map(def => `
-    <div class="agenda-box ${def.cls}">
-      <span class="box-label">${def.label}</span>
-      ${renderBoxValue(periodData[def.key])}
-    </div>
-  `).join('');
+function renderPeriodContent(periodData) {
+  Object.entries(FIELD_TO_EL).forEach(([field, elId]) => {
+    const el = document.getElementById(elId);
+    if (!el) return;
+    el.style.fontSize = '';
+    el.innerHTML = renderBoxValue(periodData[field]);
+  });
+  // wait a frame so layout settles before measuring
+  requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
 }
 
 async function initAgendaPage() {
-  const gridsContainer = document.getElementById('grids-container');
-  if (!gridsContainer) return;
+  const boardGrid = document.getElementById('board-grid');
+  if (!boardGrid) return;
 
   const params = new URLSearchParams(window.location.search);
   const dateStr = params.get('date');
@@ -239,7 +280,8 @@ async function initAgendaPage() {
     dayData = await res.json();
   } catch (e) {
     headerDateEl.textContent = dateStr;
-    gridsContainer.innerHTML = `<div class="empty-note" style="margin:20px 40px;">No agenda file found for ${dateStr}.</div>`;
+    const workingEl = document.getElementById('content-working');
+    if (workingEl) workingEl.textContent = `No agenda file found for ${dateStr}.`;
     return;
   }
 
@@ -249,13 +291,11 @@ async function initAgendaPage() {
   headerDateEl.textContent = `${weekday}, ${month} ${dt.getUTCDate()}, ${dt.getUTCFullYear()}`;
 
   const bells = await loadBells();
-  const scheduleLabel = bells[dayData.schedule]?.label || dayData.schedule;
-  scheduleEl.textContent = scheduleLabel;
+  scheduleEl.textContent = bells[dayData.schedule]?.label || dayData.schedule;
 
   const periodsPresent = PERIOD_ORDER.filter(p => dayData.periods && dayData.periods[p]);
 
-  // Determine if the *viewed* date is actually today (in PT) and, if so,
-  // which of the viewed periods is live right now — used to auto-select a tab.
+  // Is the *viewed* date today (in PT)? If so, which period is live right now?
   const pt = getPacificNow();
   let livePeriodName = null;
   if (pt.isoDate === dateStr) {
@@ -269,29 +309,21 @@ async function initAgendaPage() {
 
   tabsEl.innerHTML = periodsPresent.map(p => {
     const isLive = p === livePeriodName;
-    return `<button class="period-tab${isLive ? ' is-now' : ''}" data-period="${p}" style="--pin-color:${PIN_COLOR[p] || 'var(--ink)'}">${p} &middot; ${dayData.periods[p].grade || ''}</button>`;
+    return `<button class="period-tab${isLive ? ' is-now' : ''}" data-period="${p}" style="--pin-color:${PIN_COLOR[p] || '#cdd8e6'}">${p} &middot; ${dayData.periods[p].grade || ''}</button>`;
   }).join('');
 
-  gridsContainer.innerHTML = periodsPresent.map(p => `
-    <div class="box-grid" data-period-grid="${p}">
-      ${renderPeriodBoxes(dayData.periods[p])}
-    </div>
-  `).join('');
-
   function selectPeriod(period) {
-    document.querySelectorAll('.period-tab').forEach(btn => {
+    tabsEl.querySelectorAll('.period-tab').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.period === period);
     });
-    document.querySelectorAll('[data-period-grid]').forEach(grid => {
-      grid.classList.toggle('hidden', grid.dataset.periodGrid !== period);
-    });
+    renderPeriodContent(dayData.periods[period]);
   }
 
   tabsEl.querySelectorAll('.period-tab').forEach(btn => {
     btn.addEventListener('click', () => selectPeriod(btn.dataset.period));
   });
 
-  const defaultPeriod = livePeriodName && periodsPresent.includes(livePeriodName)
+  const defaultPeriod = (livePeriodName && periodsPresent.includes(livePeriodName))
     ? livePeriodName
     : periodsPresent[0];
   if (defaultPeriod) selectPeriod(defaultPeriod);
