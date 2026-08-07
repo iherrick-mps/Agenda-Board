@@ -1,0 +1,47 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "smartGoal": "I can set up my GitHub account and repository so that I can start building my digital portfolio this year.",
+      "contentStandard": "CA CS Standards 6-8.CD.1 — Recommend improvements to existing code using peer review processes.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "Mini-Lesson: What is version control? (10 min)",
+        "Guided Practice: Create GitHub account (15 min)",
+        "Independent Practice: Fork the starter repo",
+        "Exit Ticket: Screenshot your repo"
+      ],
+      "connections": "Yesterday we set up our Chromebooks and class norms. Today we start the tool we'll use all year to save and share our work. Next week we'll make our first commit."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "smartGoal": "I can explain what a pattern is so that I can find patterns in everyday life and in code.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Warm-Up: Wayground quiz (5 min)",
+        "Turn & Talk: Where do you see patterns? (5 min)",
+        "Direct Instruction: Patterns in code (10 min)",
+        "Group Task: Pattern scavenger hunt",
+        "Exit Ticket: Name 3 patterns you found"
+      ],
+      "connections": "Today kicks off our coding unit — everything we build this semester is made of patterns like this one. Tomorrow we'll connect this to Code.org."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "smartGoal": "I can follow our classroom Treatment Agreement so that our robotics lab is safe and productive for everyone.",
+      "contentStandard": "CA CS Standards 6-8.IC.1 — Compare tradeoffs associated with computing technologies.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Entry Routine Practice (5 min)",
+        "Read & Discuss: Treatment Agreement (10 min)",
+        "Table Talk: Why do agreements matter? (10 min)",
+        "Sign & Post Agreement",
+        "Exit Ticket: One rule you'll help hold us to"
+      ],
+      "connections": "This connects to every group project we'll do this semester — a safe, respectful room is what makes real building and coding possible."
+    }
+  }
+}

@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/* ============ DESIGN TOKENS ============ */
+:root {
+  --ink: #16202b;
+  --ink-soft: #4a5a68;
+  --bg: #eef1f4;
+  --surface: #ffffff;
+  --grid-line: #ccd3da;
+  --grid-line-soft: #dde2e7;
+
+  /* box accent colors — edit these to re-theme any box */
+  --c-goal: #2f5ac9;       /* SMART Goal / Learning Target */
+  --c-standard: #7b3fe4;   /* Content Standard */
+  --c-eld: #0d9367;        /* ELD Standard */
+  --c-agenda: #d98c0f;     /* Agenda / Steps */
+  --c-connect: #c22a72;    /* Connections */
+
+  --box-width: 340px;
+  --radius: 10px;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  background-image:
+    linear-gradient(var(--grid-line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-soft) 1px, transparent 1px);
+  background-size: 32px 32px;
+  min-height: 100vh;
+}
+
+a { color: inherit; }
+
+/* ============ TOP BAR ============ */
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 28px 40px 16px;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.brand .brand-sub {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.back-link {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--ink-soft);
+  border: 1px solid var(--grid-line);
+  background: var(--surface);
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 12px;
+  transition: border-color 0.15s, color 0.15s;
+}
+.back-link:hover { border-color: var(--ink); color: var(--ink); }
+
+/* ============ CLOCK (signature element) ============ */
+.clock {
+  font-family: var(--font-mono);
+  background: var(--ink);
+  color: #eaf1ff;
+  border-radius: 10px;
+  padding: 12px 18px;
+  min-width: 220px;
+  box-shadow: 0 4px 14px rgba(22, 32, 43, 0.18);
+  border: 1px solid #0c141d;
+}
+
+.clock-time {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.clock-time .colon {
+  animation: blink 2s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.25; }
+}
+
+.clock-tz {
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: #93a3b8;
+  letter-spacing: 0.1em;
+  align-self: flex-end;
+  margin-bottom: 3px;
+}
+
+.clock-status {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #35424f;
+  font-size: 0.75rem;
+  color: #b9c6d6;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.clock-status .status-label {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #7c8ea2;
+}
+
+.clock-status .status-value {
+  color: #eaf1ff;
+  font-weight: 700;
+}
+
+.clock-status.in-session .status-value { color: #6ee7b7; }
+.clock-status.not-in-session .status-value { color: #f5b169; }
+
+/* ============ INDEX PAGE — DATE LIST ============ */
+.page-body { padding: 8px 40px 60px; max-width: 900px; }
+
+.page-heading {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin: 24px 0 14px;
+  letter-spacing: 0.01em;
+}
+
+.date-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--grid-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.date-list li { border-bottom: 1px solid var(--grid-line-soft); }
+.date-list li:last-child { border-bottom: none; }
+
+.date-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  text-decoration: none;
+  transition: background 0.12s;
+}
+.date-list a:hover { background: var(--bg); }
+
+.date-list .date-main {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.date-list .date-weekday {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.date-list .date-arrow {
+  font-family: var(--font-mono);
+  color: var(--ink-soft);
+}
+
+.empty-note {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  padding: 20px;
+  border: 1px dashed var(--grid-line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+/* ============ AGENDA PAGE ============ */
+.agenda-header {
+  padding: 0 40px 4px;
+}
+
+.agenda-date {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 4px 0 2px;
+}
+
+.agenda-schedule {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* period tabs, styled like pin headers */
+.period-tabs {
+  display: flex;
+  gap: 10px;
+  padding: 20px 40px 0;
+  flex-wrap: wrap;
+}
+
+.period-tab {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 9px 16px 9px 14px;
+  border-radius: 6px 6px 0 0;
+  border: 1px solid var(--grid-line);
+  border-bottom: none;
+  background: var(--surface);
+  color: var(--ink-soft);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s, background 0.15s;
+}
+
+.period-tab::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background: var(--pin-color, var(--ink-soft));
+  vertical-align: middle;
+}
+
+.period-tab:hover { color: var(--ink); }
+
+.period-tab.active {
+  color: var(--ink);
+  background: var(--surface);
+  border-color: var(--grid-line);
+  box-shadow: 0 -2px 0 var(--pin-color, var(--ink)) inset;
+  font-weight: 700;
+}
+
+.period-tab.is-now::after {
+  content: '\25CF LIVE';
+  font-size: 0.6rem;
+  margin-left: 8px;
+  color: #0d9367;
+  letter-spacing: 0.06em;
+}
+
+/* box grid */
+.box-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 40px 60px;
+  background: var(--surface);
+  border: 1px solid var(--grid-line);
+  border-top: none;
+  margin: 0 40px 40px;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.box-grid.hidden { display: none; }
+
+.agenda-box {
+  width: var(--box-width);
+  flex: 0 0 var(--box-width);
+  background: var(--surface);
+  border: 1px solid var(--grid-line);
+  border-left: 5px solid var(--box-color, var(--ink));
+  border-radius: var(--radius);
+  padding: 16px 18px 18px;
+  box-shadow: 0 2px 6px rgba(22, 32, 43, 0.05);
+}
+
+.agenda-box .box-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--box-color, var(--ink));
+  margin-bottom: 8px;
+  display: block;
+}
+
+.agenda-box .box-content {
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.agenda-box ul.box-content {
+  margin: 0;
+  padding-left: 20px;
+}
+.agenda-box ul.box-content li { margin-bottom: 6px; }
+.agenda-box ul.box-content li:last-child { margin-bottom: 0; }
+
+/* box color assignments */
+.box-goal      { --box-color: var(--c-goal); }
+.box-standard  { --box-color: var(--c-standard); }
+.box-eld       { --box-color: var(--c-eld); }
+.box-agenda    { --box-color: var(--c-agenda); }
+.box-connect   { --box-color: var(--c-connect); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 700px) {
+  .topbar, .page-body, .agenda-header, .period-tabs, .box-grid {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .box-grid { margin-left: 20px; margin-right: 20px; }
+  .agenda-box { width: 100%; }
+}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce) {
+  .clock-time .colon { animation: none; }
+}
+
+/* ============ FOCUS VISIBILITY ============ */
+a:focus-visible, .period-tab:focus-visible {
+  outline: 2px solid var(--c-goal);
+  outline-offset: 2px;
+}

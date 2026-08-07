@@ -1,0 +1,56 @@
+{
+  "regular": {
+    "label": "Regular Day",
+    "days": ["Monday", "Tuesday", "Thursday", "Friday"],
+    "periods": [
+      { "name": "Grab & Go Breakfast", "start": "07:50", "end": "08:10" },
+      { "name": "Advisory", "start": "08:15", "end": "08:27" },
+      { "name": "1st Period", "start": "08:27", "end": "09:18" },
+      { "name": "2nd Period", "start": "09:21", "end": "10:12" },
+      { "name": "Nutrition Break", "start": "10:12", "end": "10:22" },
+      { "name": "3rd Period", "start": "10:25", "end": "11:16" },
+      { "name": "4th Period", "start": "11:19", "end": "12:10" },
+      { "name": "Lunch 1 / SSR", "start": "12:10", "end": "12:40" },
+      { "name": "Lunch 2 / SSR", "start": "12:42", "end": "13:12" },
+      { "name": "6th Period", "start": "13:15", "end": "14:06" },
+      { "name": "7th Period", "start": "14:09", "end": "15:00" },
+      { "name": "After School Program", "start": "15:15", "end": "16:00" },
+      { "name": "ASES Program", "start": "15:00", "end": "18:00" }
+    ]
+  },
+  "shortened": {
+    "label": "Shortened Day (Wednesday)",
+    "days": ["Wednesday"],
+    "periods": [
+      { "name": "Grab & Go Breakfast", "start": "07:50", "end": "08:10" },
+      { "name": "Advisory", "start": "08:15", "end": "08:27" },
+      { "name": "1st Period", "start": "08:27", "end": "09:08" },
+      { "name": "2nd Period", "start": "09:11", "end": "09:52" },
+      { "name": "Nutrition Break", "start": "09:52", "end": "10:02" },
+      { "name": "3rd Period", "start": "10:05", "end": "10:46" },
+      { "name": "4th Period", "start": "10:49", "end": "11:30" },
+      { "name": "Lunch 1 / SSR", "start": "11:30", "end": "12:00" },
+      { "name": "Lunch 2 / SSR", "start": "12:02", "end": "12:32" },
+      { "name": "6th Period", "start": "12:35", "end": "13:16" },
+      { "name": "7th Period", "start": "13:19", "end": "14:00" },
+      { "name": "ASES Program", "start": "14:00", "end": "18:00" }
+    ]
+  },
+  "minimum": {
+    "label": "Minimum Day",
+    "days": [],
+    "periods": [
+      { "name": "Grab & Go Breakfast", "start": "07:50", "end": "08:10" },
+      { "name": "1st Period", "start": "08:15", "end": "08:56" },
+      { "name": "2nd Period", "start": "08:59", "end": "09:40" },
+      { "name": "3rd Period", "start": "09:43", "end": "10:24" },
+      { "name": "Nutrition Break", "start": "10:24", "end": "10:34" },
+      { "name": "4th Period", "start": "10:37", "end": "11:18" },
+      { "name": "5th Period", "start": "11:21", "end": "12:02" },
+      { "name": "1st Lunch / SSR", "start": "12:02", "end": "12:22" },
+      { "name": "2nd Lunch / SSR", "start": "12:25", "end": "12:45" },
+      { "name": "ASES Program", "start": "12:45", "end": "18:00" }
+    ]
+  },
+  "_note": "On Minimum Days, 6th and 7th period do not meet — see school calendar. 'period' keys in the daily JSON files should reference '4th Period', '6th Period', or '7th Period' to match the entries above."
+}

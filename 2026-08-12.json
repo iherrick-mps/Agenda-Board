@@ -1,0 +1,46 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "smartGoal": "I can write a professional bio for my portfolio site so that visitors know who I am.",
+      "contentStandard": "CA CS Standards 6-8.CD.1 — Recommend improvements to existing code using peer review processes.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "Model: Annotated exemplar bio (5 min)",
+        "Independent Practice: Draft your bio",
+        "Peer Review: Trade & give feedback",
+        "Exit Ticket: Publish your bio to your site"
+      ],
+      "connections": "Yesterday we made our first commit. Today that skill becomes real content on your live portfolio page."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "smartGoal": "I can use correct CS vocabulary so that I can explain a pattern to a partner.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Warm-Up: Wayground quiz (5 min)",
+        "Vocabulary Check: Pattern, sequence, loop (5 min)",
+        "Independent Practice: Code.org Lesson 3",
+        "Exit Ticket: Use 2 vocab words in a sentence"
+      ],
+      "connections": "This vocabulary check is the gate for SchoolAI access, which we introduce in the next couple weeks."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "smartGoal": "I can explain the MAP test so that I know what to expect this month.",
+      "contentStandard": "CA CS Standards 6-8.IC.1 — Compare tradeoffs associated with computing technologies.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Entry Routine Practice (5 min)",
+        "Direct Instruction: What is MAP testing? (5 min)",
+        "Q&A: Address student questions",
+        "Independent Practice: TypingClub (early finisher option)",
+        "Exit Ticket: One question you still have"
+      ],
+      "connections": "This preps everyone for MAP testing on 8/18 and 8/20 so testing day itself runs smoothly."
+    }
+  }
+}

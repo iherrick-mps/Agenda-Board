@@ -1,0 +1,47 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "smartGoal": "I can make my first commit so that my changes are saved to my GitHub repository.",
+      "contentStandard": "CA CS Standards 6-8.CD.1 — Recommend improvements to existing code using peer review processes.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "Demo: Commit & push on the DocCam (10 min)",
+        "Guided Practice: Make your first commit",
+        "Independent Practice: Edit README.md",
+        "Exit Ticket: Link to your commit"
+      ],
+      "connections": "Yesterday we created our repositories. Today we save real changes to them. Tomorrow we start building our portfolio pages."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "smartGoal": "I can identify patterns in code so that I can predict what a program will do.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Warm-Up: Wayground quiz (5 min)",
+        "Direct Instruction: Reading code patterns (10 min)",
+        "Partner Task: Predict the output",
+        "Independent Practice: Code.org Lesson 2",
+        "Exit Ticket: Explain one pattern you used"
+      ],
+      "connections": "Yesterday we found patterns in everyday life. Today we find them inside real code. This sets up next week's intro to Code.org."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "smartGoal": "I can log in to my Chromebook and Google Classroom so that I'm ready to learn every day.",
+      "contentStandard": "CA CS Standards 6-8.IC.1 — Compare tradeoffs associated with computing technologies.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Entry Routine Practice (5 min)",
+        "Demo: Logging in & finding the Stream (10 min)",
+        "Guided Practice: Submit the tech use agreement",
+        "Independent Practice: Explore Google Classroom",
+        "Exit Ticket: Where do you find today's agenda?"
+      ],
+      "connections": "This builds directly on yesterday's Treatment Agreement — today we make sure everyone can actually access our classroom tools."
+    }
+  }
+}

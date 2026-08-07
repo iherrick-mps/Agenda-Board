@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda — Robotics &amp; Coding</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    Agenda Board
+    <span class="brand-sub">Robotics &amp; Coding &middot; Ms. Herrick</span>
+  </div>
+  <div class="clock">
+    <div class="clock-time" id="clock-time">--:--:--</div>
+    <div class="clock-tz">Pacific Time</div>
+    <div class="clock-status" id="clock-status">
+      <span class="status-label" id="clock-status-label">Loading&hellip;</span>
+      <span class="status-value" id="clock-status-value">&mdash;</span>
+    </div>
+  </div>
+</div>
+
+<div class="agenda-header">
+  <a class="back-link" href="index.html">&larr; All dates</a>
+  <div class="agenda-date" id="agenda-date">Loading&hellip;</div>
+  <div class="agenda-schedule" id="agenda-schedule"></div>
+</div>
+
+<div class="period-tabs" id="period-tabs"></div>
+
+<div id="grids-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
