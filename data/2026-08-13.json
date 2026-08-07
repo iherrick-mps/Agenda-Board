@@ -3,54 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Creating your index.html file to build the home page of your portfolio.",
-      "weeklyDeliverable": "GitHub portfolio repo forked from the template with index.html live on GitHub Pages.",
-      "smartGoal": "I can create an index.html file so that my portfolio site has a home page.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code (e.g. HTML) to fulfill a design requirement.",
+      "workingNow": "Adding one more page or feature to your repo so it starts to feel complete.",
+      "weeklyDeliverable": "GitHub repository shared privately with Ms. Herrick, personalized with an index.html and fun details about you.",
+      "smartGoal": "I can add a new page or feature to my repo so that my portfolio feels more complete.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code to fulfill a design requirement.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Timed transition — post yesterday's time (3 min)",
-        "I do: model creating index.html in your repo",
-        "We do: add a heading and short bio together",
-        "You do: build out your own index.html",
-        "Finish Getting to Know You survey if needed",
-        "Exit Ticket: one sentence about your home page"
+        "I do: model adding a new page/section idea (8 min)",
+        "We do: brainstorm page ideas as a class (5 min)",
+        "You do: build your new page/section (25 min)",
+        "Re-share your updated repo with Ms. Herrick (4 min)",
+        "Exit Ticket: one word to describe your new page (5 min)"
       ],
-      "connections": "Yesterday we copied our repo template. Today we build the actual home page inside it. Tomorrow we publish it so it's live for anyone to see."
+      "connections": "Yesterday we added fun personal details. Today we build out one more piece so it feels complete. Tomorrow we'll review the whole thing before wrapping up the week."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Building your About Me page for your Google Site.",
-      "weeklyDeliverable": "Google Site published with a Welcome page and an About Me page.",
-      "smartGoal": "I can build an About Me page for my Google Site so that others can learn more about me as a creator.",
+      "workingNow": "Adding one more page or feature to your site so it starts to feel complete.",
+      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
+      "smartGoal": "I can add a new page or feature to my site so that my portfolio feels more complete.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content to fulfill a design requirement.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Timed transition — post yesterday's time (3 min)",
-        "I do: model an About Me page example",
-        "We do: brainstorm 3 things to include",
-        "You do: build your own About Me page",
-        "Finish Getting to Know You survey if needed",
-        "Exit Ticket: one sentence from your About Me page"
+        "I do: model adding a new page/section idea (8 min)",
+        "We do: brainstorm page ideas as a class (5 min)",
+        "You do: build your new page/section (25 min)",
+        "Re-share your updated site with Ms. Herrick (4 min)",
+        "Exit Ticket: one word to describe your new page (5 min)"
       ],
-      "connections": "Yesterday we started our Welcome page. Today we add a page that's all about you. Tomorrow we publish the whole site so it's live for others to see."
+      "connections": "Yesterday we added fun personal details. Today we build out one more piece so it feels complete. Tomorrow we'll review the whole thing before wrapping up the week."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Building your About Me page for your Google Site.",
-      "weeklyDeliverable": "Google Site published with a Welcome page and an About Me page.",
-      "smartGoal": "I can build an About Me page for my Google Site so that others can learn more about me as a creator.",
+      "workingNow": "Adding one more page or feature to your site so it starts to feel complete.",
+      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
+      "smartGoal": "I can add a new page or feature to my site so that my portfolio feels more complete.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content to fulfill a design requirement.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Timed transition — post yesterday's time (3 min)",
-        "I do: model an About Me page example",
-        "We do: brainstorm 3 things to include",
-        "You do: build your own About Me page",
-        "Finish Getting to Know You survey if needed",
-        "Exit Ticket: one sentence from your About Me page"
+        "I do: model adding a new page/section idea (8 min)",
+        "We do: brainstorm page ideas as a class (5 min)",
+        "You do: build your new page/section (25 min)",
+        "Re-share your updated site with Ms. Herrick (4 min)",
+        "Exit Ticket: one word to describe your new page (5 min)"
       ],
-      "connections": "Yesterday we started our Welcome page. Today we add a page that's all about you. Tomorrow we publish the whole site so it's live for others to see."
+      "connections": "Yesterday we added fun personal details. Today we build out one more piece so it feels complete. Tomorrow we'll review the whole thing before wrapping up the week."
     }
   }
 }

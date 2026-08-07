@@ -1,56 +1,56 @@
 {
-  "schedule": "shortened",
+  "schedule": "regular",
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Using \"Use this template\" to copy the starter portfolio repo into your own GitHub account.",
-      "weeklyDeliverable": "GitHub portfolio repo forked from the template with index.html live on GitHub Pages.",
-      "smartGoal": "I can use the GitHub template to create my own portfolio repository.",
+      "workingNow": "Adding fun, personal touches to your repo/site so it starts to feel like yours.",
+      "weeklyDeliverable": "GitHub repository shared privately with Ms. Herrick, personalized with an index.html and fun details about you.",
+      "smartGoal": "I can personalize my repo with fun details about myself so that it reflects who I am.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how a set of written directions guides a task.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering opinions and negotiating with others in conversations.",
       "agenda": [
         "Timed transition — post yesterday's time (3 min)",
-        "Finish/post Treatment Agreement poster if needed",
-        "I do: model \"Use this template\" button + naming your repo",
-        "You do: copy the starter repo into your own account",
-        "Getting to Know You survey assigned",
-        "Exit Ticket: paste your new repo link"
+        "I do: model adding a fun personal touch (favorite game, color, hobby) (8 min)",
+        "You do: personalize your page with fun facts/images (22 min)",
+        "Peer share: show a partner one fun thing you added (8 min)",
+        "Getting to Know You survey assigned (5 min)",
+        "Exit Ticket: name one fun thing you added (4 min)"
       ],
-      "connections": "Yesterday we made our GitHub accounts. Today we copy our own portfolio template so it belongs to us. Tomorrow we start building the actual home page."
+      "connections": "Yesterday we built a basic private repo. Today we make it feel like yours by adding fun, personal details. Tomorrow we'll add one more piece before we wrap up the week."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Setting up your Google Site and creating your Welcome page.",
-      "weeklyDeliverable": "Google Site published with a Welcome page and an About Me page.",
-      "smartGoal": "I can set up my Google Site and create a Welcome page so that I can begin building my digital portfolio.",
+      "workingNow": "Adding fun, personal touches to your site so it starts to feel like yours.",
+      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
+      "smartGoal": "I can personalize my Google Site with fun details about myself so that it reflects who I am.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how a set of written directions guides a task.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering opinions and negotiating with others in conversations.",
       "agenda": [
         "Timed transition — post yesterday's time (3 min)",
-        "Finish/post Treatment Agreement poster if needed",
-        "I do: model creating a Google Site + Welcome page",
-        "You do: build your own Welcome page",
-        "Getting to Know You survey assigned",
-        "Exit Ticket: one thing on your Welcome page"
+        "I do: model adding a fun personal touch (favorite game, color, hobby) (8 min)",
+        "You do: personalize your page with fun facts/images (22 min)",
+        "Peer share: show a partner one fun thing you added (8 min)",
+        "Getting to Know You survey assigned (5 min)",
+        "Exit Ticket: name one fun thing you added (4 min)"
       ],
-      "connections": "Yesterday we set our digital citizenship rules. Today we start putting those into practice by building our own Google Site. Tomorrow we add a page that's all about you."
+      "connections": "Yesterday we built a basic private site. Today we make it feel like yours by adding fun, personal details. Tomorrow we'll add one more piece before we wrap up the week."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Setting up your Google Site and creating your Welcome page.",
-      "weeklyDeliverable": "Google Site published with a Welcome page and an About Me page.",
-      "smartGoal": "I can set up my Google Site and create a Welcome page so that I can begin building my digital portfolio.",
+      "workingNow": "Adding fun, personal touches to your site so it starts to feel like yours.",
+      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
+      "smartGoal": "I can personalize my Google Site with fun details about myself so that it reflects who I am.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how a set of written directions guides a task.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering opinions and negotiating with others in conversations.",
       "agenda": [
         "Timed transition — post yesterday's time (3 min)",
-        "Finish/post Treatment Agreement poster if needed",
-        "I do: model creating a Google Site + Welcome page",
-        "You do: build your own Welcome page",
-        "Getting to Know You survey assigned",
-        "Exit Ticket: one thing on your Welcome page"
+        "I do: model adding a fun personal touch (favorite game, color, hobby) (8 min)",
+        "You do: personalize your page with fun facts/images (22 min)",
+        "Peer share: show a partner one fun thing you added (8 min)",
+        "Getting to Know You survey assigned (5 min)",
+        "Exit Ticket: name one fun thing you added (4 min)"
       ],
-      "connections": "Yesterday we set our digital citizenship rules. Today we start putting those into practice by building our own Google Site. Tomorrow we add a page that's all about you."
+      "connections": "Yesterday we built a basic private site. Today we make it feel like yours by adding fun, personal details. Tomorrow we'll add one more piece before we wrap up the week."
     }
   }
 }

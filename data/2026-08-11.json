@@ -3,54 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Creating and verifying your GitHub account using your school email.",
-      "weeklyDeliverable": "GitHub portfolio repo forked from the template with index.html live on GitHub Pages.",
-      "smartGoal": "I can create and verify a GitHub account using my school email.",
-      "contentStandard": "CA CS Standards 6-8.NI.4 — Model account creation and login practices that protect personal information on networked systems.",
-      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "workingNow": "Building a basic example repo and sharing it privately with Ms. Herrick — not publishing it to the whole web.",
+      "weeklyDeliverable": "GitHub repository shared privately with Ms. Herrick, personalized with an index.html and fun details about you.",
+      "smartGoal": "I can create a basic GitHub repository and share it privately with my teacher, and explain one way to keep my personal information safe online.",
+      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials and personal information private when using networked devices and online tools.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Timed transition begins today — note your time (3 min)",
-        "Treatment Agreement co-creation, 4 quadrants (18 min)",
-        "I do: model GitHub sign-up steps on screen",
-        "We do: verify email together, checkpoint",
-        "You do: complete account creation & verification",
-        "Exit Ticket: screenshot of your verified account"
+        "Treatment Agreement co-creation, 4 quadrants (15 min)",
+        "I do: model a basic example repo (8 min)",
+        "We do: share your repo privately with Ms. Herrick only (5 min)",
+        "Discuss: why we're not publishing publicly + staying safe online (10 min)",
+        "Exit Ticket — Whip-Around: one way to stay safe online (9 min)"
       ],
-      "connections": "Yesterday we learned how our classroom runs. Today we set both our classroom norms and our very first coding tool account. Tomorrow you'll use that account to copy your own portfolio template."
+      "connections": "Yesterday we learned how our classroom and tools work. Today we set our classroom norms and build our very first repo — kept private for now. Tomorrow we'll start making it feel like yours."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Discussing what it means to share and act responsibly online.",
-      "weeklyDeliverable": "Google Site published with a Welcome page and an About Me page.",
-      "smartGoal": "I can list 3 rules for sharing responsibly online.",
-      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials private and use computing devices safely and responsibly.",
+      "workingNow": "Building a basic example Google Site and sharing it privately with Ms. Herrick — not publishing it to the whole web.",
+      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
+      "smartGoal": "I can create a basic Google Site and share it privately with my teacher, and explain one way to keep my personal information safe online.",
+      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials and personal information private when using networked devices and online tools.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Timed transition begins today — note your time (3 min)",
-        "Treatment Agreement co-creation, 4 quadrants (18 min)",
-        "I do: share examples of responsible vs. risky online sharing",
-        "We do: sort examples together as a class",
-        "You do (pairs): write your own 3 rules",
-        "Exit Ticket: your 3 rules for sharing online"
+        "Treatment Agreement co-creation, 4 quadrants (15 min)",
+        "I do: model a basic example Google Site (8 min)",
+        "We do: share your site privately with Ms. Herrick only (5 min)",
+        "Discuss: why we're not publishing publicly + staying safe online (10 min)",
+        "Exit Ticket — Whip-Around: one way to stay safe online (9 min)"
       ],
-      "connections": "Yesterday we learned how our classroom runs. Today we set both our classroom norms and our first digital citizenship rules. Tomorrow you'll start building your own Google Site."
+      "connections": "Yesterday we learned how our classroom and tools work. Today we set our classroom norms and build our very first site — kept private for now. Tomorrow we'll start making it feel like yours."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Discussing what it means to share and act responsibly online.",
-      "weeklyDeliverable": "Google Site published with a Welcome page and an About Me page.",
-      "smartGoal": "I can list 3 rules for sharing responsibly online.",
-      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials private and use computing devices safely and responsibly.",
+      "workingNow": "Building a basic example Google Site and sharing it privately with Ms. Herrick — not publishing it to the whole web.",
+      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
+      "smartGoal": "I can create a basic Google Site and share it privately with my teacher, and explain one way to keep my personal information safe online.",
+      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials and personal information private when using networked devices and online tools.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Timed transition begins today — note your time (3 min)",
-        "Treatment Agreement co-creation, 4 quadrants (18 min)",
-        "I do: share examples of responsible vs. risky online sharing",
-        "We do: sort examples together as a class",
-        "You do (pairs): write your own 3 rules",
-        "Exit Ticket: your 3 rules for sharing online"
+        "Treatment Agreement co-creation, 4 quadrants (15 min)",
+        "I do: model a basic example Google Site (8 min)",
+        "We do: share your site privately with Ms. Herrick only (5 min)",
+        "Discuss: why we're not publishing publicly + staying safe online (10 min)",
+        "Exit Ticket — Whip-Around: one way to stay safe online (9 min)"
       ],
-      "connections": "Yesterday we learned how our classroom runs. Today we set both our classroom norms and our first digital citizenship rules. Tomorrow you'll start building your own Google Site."
+      "connections": "Yesterday we learned how our classroom and tools work. Today we set our classroom norms and build our very first site — kept private for now. Tomorrow we'll start making it feel like yours."
     }
   }
 }
