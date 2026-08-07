@@ -203,30 +203,37 @@ body.board-page {
 }
 
 /* invisible hover zone pinned to the top edge; moving the mouse near
-   the top of the screen reveals the period switcher + date/back-link */
+   the top of the screen reveals the period switcher + date/back-link.
+   The bar is fully collapsed (zero height, not just hidden) when idle. */
 .hover-zone {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 50;
 }
 
-.hover-trigger { height: 14px; }
+.hover-trigger { height: 10px; }
 
 .hover-bar {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 8px 18px;
+  max-height: 0;
+  padding: 0 18px;
+  overflow: hidden;
   background: var(--ink);
   color: #eaf1ff;
   font-family: var(--font-mono);
-  transform: translateY(-100%);
-  transition: transform 0.18s ease;
+  opacity: 0;
+  transition: max-height 0.2s ease, padding 0.2s ease, opacity 0.15s ease;
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
 .hover-zone:hover .hover-bar,
-.hover-bar:focus-within { transform: translateY(0); }
+.hover-bar:focus-within {
+  max-height: 60px;
+  padding: 8px 18px;
+  opacity: 1;
+}
 
 .back-link-inline {
   font-size: 0.75rem;
@@ -301,7 +308,7 @@ body.board-page {
   min-height: 0;
   min-width: 0;
   overflow: hidden;
-  background: var(--surface);
+  background: color-mix(in srgb, var(--box-color, var(--ink)) 13%, white);
   border: 1px solid var(--grid-line);
   border-left: 6px solid var(--box-color, var(--ink));
   border-radius: var(--radius);
@@ -427,7 +434,13 @@ body.board-page {
   body.board-page { height: auto; overflow: auto; }
   .hover-zone { position: sticky; }
   .hover-trigger { display: none; }
-  .hover-bar { transform: translateY(0); flex-wrap: wrap; position: static; }
+  .hover-bar {
+    max-height: none;
+    padding: 10px 16px;
+    opacity: 1;
+    flex-wrap: wrap;
+    position: static;
+  }
   .board-grid {
     height: auto;
     width: 100%;
