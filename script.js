@@ -268,8 +268,15 @@ function renderPeriodContent(periodData) {
     el.style.fontSize = '';
     el.innerHTML = renderBoxValue(periodData[field]);
   });
-  // wait a frame so layout settles before measuring
-  requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  // wait for web fonts to finish loading (not just a layout frame) before
+  // measuring — fitting against a fallback font's metrics, then having the
+  // real font swap in wider/taller afterward, is what causes clipped text
+  const fontsReady = (document.fonts && document.fonts.ready)
+    ? document.fonts.ready
+    : Promise.resolve();
+  fontsReady.then(() => {
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  });
 }
 
 async function initAgendaPage() {
@@ -591,4 +598,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initFullscreenToggle();
   initFocusMode();
   initNowPlaying();
+
+  // belt-and-suspenders: re-fit everything once web fonts are confirmed
+  // loaded, in case something rendered/measured before that point
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => fitAllBoxes());
+  }
 });
