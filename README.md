@@ -13,13 +13,13 @@ A daily agenda board for Robotics & Coding, deployable to GitHub Pages.
 
 ## The agenda board layout
 Ten boxes tile the full screen with no scrolling, no matter what screen it's displayed on:
-**Clock**, **Ms. Herrick** (name), **Now Playing**, **What should I be working on right now?**, **This week's deliverable**, **SMART Goal**, **Agenda/Steps**, **Connections**, **Content Standard**, **ELD Standard**. Agenda/Steps gets the most space since it usually has the most content; Content Standard and ELD Standard are intentionally small since students don't read those directly.
+**Clock**, **Ms. Herrick** (name), **Now Playing**, **What should I be working on right now?**, **Due on Sunday** (this week's deliverable), **ELD Standard**, **Content Standard**, **Agenda/Steps**, **Connections**, **SMART Goal**. Agenda/Steps gets the most space since it usually has the most content; ELD Standard and Content Standard sit stacked together on the left and are intentionally small since students don't read those directly. Time durations in agenda steps (e.g. "(5 min)") are automatically styled in a muted monospace so they're easy to skim without competing with the step text.
 
 Each text box's font automatically grows or shrinks to fill exactly the space it has — no wasted space, and it never overflows or scrolls, regardless of how much or little text is in that box that day.
 
 **Clock box:** shows today's real date (`YYYY/MM/DD · WEEKDAY`), the live Pacific time, and the countdown — always reflects the real day/time, not whatever date's board you're viewing. "Ms. Herrick" sits in its own small box directly underneath, sized so the two together match the height of the Working/Deliverable boxes beside them.
 
-**Now Playing:** a black box with a text field — paste any YouTube video or playlist link and press Enter (or click away) and it embeds inline. YouTube Music playlist links generally work too as long as they carry a `list=` ID, though some auto-generated "mix" playlists may not embed. The link is saved in the browser's local storage on that device, so it survives a page refresh, but it isn't synced anywhere — pasting it again on a different computer/browser starts fresh.
+**Now Playing:** a black box with a text field — paste any YouTube video or playlist link and press Enter (or click away) and it embeds inline, starting at a low volume (just above mute) rather than whatever volume YouTube defaults to. YouTube Music playlist links generally work too as long as they carry a `list=` ID, though some auto-generated "mix" playlists may not embed. The link is saved in the browser's local storage on that device, so it survives a page refresh, but it isn't synced anywhere — pasting it again on a different computer/browser starts fresh. Once something is playing, the paste-in field tucks itself away so it doesn't compete with the video — hover over the box to bring it back and change the link.
 
 **Period switcher:** the three period tabs (plus the date, schedule type, prev/next day buttons, and a link back to the date list) are tucked away at the very top edge of the screen — fully collapsed to zero height when idle. Hover your mouse near the top to reveal them; move away and they tuck back out of sight.
 
@@ -31,12 +31,12 @@ Each text box's font automatically grows or shrinks to fill exactly the space it
 
 On small/narrow screens (phones, small tablets) the board automatically falls back to a normal scrolling single-column layout instead, since a bento grid that tight isn't legible at that size.
 
-## Adding clickable links inside a box
-Any string field (agenda steps, connections, etc.) can contain raw HTML, since it's inserted directly — so a clickable link like a Google Classroom join code can be added as an agenda step:
+## Adding links or codes inside a box
+Any string field (agenda steps, connections, etc.) can contain raw HTML, since it's inserted directly — so a clickable link could be added as an agenda step:
 ```json
 "<a href=\"https://classroom.google.com/c/XXXX?cjc=YYYY\" target=\"_blank\" rel=\"noopener\">Join Google Classroom</a>"
 ```
-This is already done for 2026-08-10 as an example, using each grade's actual join link.
+That said, since this board is meant to be projected (not clicked by students), 2026-08-10 instead shows each grade's join code as **plain text** — e.g. `"Google Classroom Code: IFUO4BFC"` — pulled from the `cjc=` part of the join URL, which is the actual code students would type in manually.
 
 ## Adding a new day
 1. Duplicate a file in `data/` and rename it to the new date, e.g. `data/2026-08-13.json`.

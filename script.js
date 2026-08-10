@@ -245,9 +245,18 @@ const FIELD_TO_EL = {
   connections:       'content-connect'
 };
 
+// wraps trailing "(N min)"-style durations in a span so they can be
+// styled distinctly from the rest of the step text
+function highlightDurations(text) {
+  return String(text).replace(
+    /\((\d+(?:-\d+)?\s*min(?:ute)?s?)\)/gi,
+    '<span class="duration">($1)</span>'
+  );
+}
+
 function renderBoxValue(value) {
   if (Array.isArray(value)) {
-    return `<ul>${value.map(item => `<li>${item}</li>`).join('')}</ul>`;
+    return `<ul>${value.map(item => `<li>${highlightDurations(item)}</li>`).join('')}</ul>`;
   }
   return value ?? '';
 }
@@ -453,8 +462,13 @@ async function initDayNav(currentDate) {
 /* ============================================================
    Now Playing — paste a YouTube video, playlist, or (usually)
    YouTube Music playlist link and it embeds inline. Persisted in
-   localStorage on this device so it survives refreshes.
+   localStorage on this device so it survives refreshes. Uses the
+   YouTube IFrame API (not a plain <iframe src>) so we can set the
+   starting volume low rather than relying on a URL parameter,
+   which YouTube doesn't reliably support.
    ============================================================ */
+
+const NOWPLAYING_START_VOLUME = 10; // 0-100, "one notch above mute"
 
 function parseYouTubeUrl(rawUrl) {
   try {
@@ -479,25 +493,65 @@ function parseYouTubeUrl(rawUrl) {
   }
 }
 
-function buildYouTubeEmbedUrl({ videoId, listId }) {
-  if (videoId && listId) return `https://www.youtube.com/embed/${videoId}?list=${listId}`;
-  if (videoId) return `https://www.youtube.com/embed/${videoId}`;
-  if (listId) return `https://www.youtube.com/embed/videoseries?list=${listId}`;
-  return null;
+// lazily loads the YouTube IFrame API script exactly once, no matter
+// how many times a new link gets pasted in
+let ytApiPromise = null;
+function loadYouTubeIframeApi() {
+  if (window.YT && window.YT.Player) return Promise.resolve(window.YT);
+  if (ytApiPromise) return ytApiPromise;
+  ytApiPromise = new Promise((resolve) => {
+    const prevReady = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      if (typeof prevReady === 'function') prevReady();
+      resolve(window.YT);
+    };
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+  });
+  return ytApiPromise;
 }
 
 function initNowPlaying() {
   const input = document.getElementById('nowplaying-input');
   const embedContainer = document.getElementById('nowplaying-embed');
-  if (!input || !embedContainer) return;
+  const box = document.querySelector('.box-nowplaying');
+  if (!input || !embedContainer || !box) return;
 
   const STORAGE_KEY = 'agendaBoard.nowPlayingUrl';
+  let player = null;
 
-  function renderFromUrl(url) {
-    const embedUrl = buildYouTubeEmbedUrl(parseYouTubeUrl(url));
-    embedContainer.innerHTML = embedUrl
-      ? `<iframe src="${embedUrl}" title="Now Playing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
-      : '';
+  async function renderFromUrl(url) {
+    const { videoId, listId } = parseYouTubeUrl(url);
+    if (!videoId && !listId) {
+      embedContainer.innerHTML = '';
+      box.classList.remove('has-video');
+      return;
+    }
+
+    embedContainer.innerHTML = '<div id="nowplaying-player"></div>';
+    box.classList.add('has-video');
+
+    const YT = await loadYouTubeIframeApi();
+    if (player && player.destroy) {
+      try { player.destroy(); } catch (e) { /* ignore */ }
+    }
+
+    const playerVars = { autoplay: 0, rel: 0 };
+    if (listId) {
+      playerVars.listType = 'playlist';
+      playerVars.list = listId;
+    }
+
+    player = new YT.Player('nowplaying-player', {
+      width: '100%',
+      height: '100%',
+      videoId: videoId || undefined,
+      playerVars,
+      events: {
+        onReady: (e) => e.target.setVolume(NOWPLAYING_START_VOLUME)
+      }
+    });
   }
 
   function commit() {
@@ -505,6 +559,7 @@ function initNowPlaying() {
     if (!url) {
       localStorage.removeItem(STORAGE_KEY);
       embedContainer.innerHTML = '';
+      box.classList.remove('has-video');
       return;
     }
     localStorage.setItem(STORAGE_KEY, url);
