@@ -449,7 +449,7 @@ body.board-page {
 .box-clock .clock-time {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: clamp(1.4rem, 15cqh, 4.2rem);
+  font-size: clamp(1.8rem, min(34cqh, 16cqw), 7.5rem);
   display: flex;
   align-items: baseline;
   gap: 0.15em;
@@ -459,7 +459,7 @@ body.board-page {
 .box-clock .clock-date {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: clamp(0.65rem, 6cqh, 1.1rem);
+  font-size: clamp(0.7rem, min(8cqh, 4.5cqw), 1.6rem);
   color: #93a3b8;
   letter-spacing: 0.06em;
   margin-bottom: 0.2em;
@@ -469,7 +469,7 @@ body.board-page {
 
 .box-clock .clock-tz {
   font-family: var(--font-mono);
-  font-size: clamp(0.6rem, 4cqh, 1rem);
+  font-size: clamp(0.65rem, min(6cqh, 3.5cqw), 1.3rem);
   color: #93a3b8;
   letter-spacing: 0.12em;
   margin-top: 0.3em;
@@ -481,7 +481,7 @@ body.board-page {
   border-top: 1px dashed #35424f;
   width: 100%;
   font-family: var(--font-mono);
-  font-size: clamp(0.7rem, 5cqh, 1.15rem);
+  font-size: clamp(0.75rem, min(7cqh, 4cqw), 1.6rem);
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -506,7 +506,7 @@ body.board-page {
 .box-name .name-text {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(0.75rem, 42cqh, 1.6rem);
+  font-size: clamp(1rem, min(62cqh, 20cqw), 4.5rem);
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
