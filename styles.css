@@ -298,20 +298,26 @@ body.board-page {
 .period-tab.active { color: #fff; border-color: #fff; font-weight: 700; }
 .period-tab.is-now::after { content: '\25CF LIVE'; font-size: 0.6rem; margin-left: 7px; color: #6ee7b7; }
 
-/* the board itself: 12x6 grid filling the whole viewport */
+/* the board itself: 12x12 grid filling the whole viewport */
 .board-grid {
   height: 100vh;
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(12, 1fr);
   grid-template-areas:
     "clock clock clock working working working working working working deliver deliver deliver"
     "clock clock clock working working working working working working deliver deliver deliver"
+    "clock clock clock working working working working working working deliver deliver deliver"
+    "name name name working working working working working working deliver deliver deliver"
     "goal goal goal goal agenda agenda agenda agenda connect connect connect connect"
     "goal goal goal goal agenda agenda agenda agenda connect connect connect connect"
-    "standard standard standard standard agenda agenda agenda agenda eld eld eld eld"
-    "standard standard standard standard agenda agenda agenda agenda eld eld eld eld";
+    "goal goal goal goal agenda agenda agenda agenda connect connect connect connect"
+    "standard standard standard standard agenda agenda agenda agenda connect connect connect connect"
+    "standard standard standard standard agenda agenda agenda agenda connect connect connect connect"
+    "nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda eld eld eld eld"
+    "nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda eld eld eld eld"
+    "nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda eld eld eld eld";
   gap: 8px;
   padding: 8px;
 }
@@ -347,6 +353,8 @@ body.board-page {
 }
 
 .box-clock      { grid-area: clock; }
+.box-name       { grid-area: name; }
+.box-nowplaying { grid-area: nowplaying; }
 .box-working    { grid-area: working; }
 .box-deliver    { grid-area: deliver; }
 .box-goal       { grid-area: goal; }
@@ -411,6 +419,12 @@ body.board-page {
   color: var(--box-color, var(--ink));
 }
 
+.box-content a {
+  color: var(--box-color, var(--ink));
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 /* clock box — kept dark for contrast, uses container query units so it
    scales with its own cell size without needing the JS fit pass */
 .box-clock {
@@ -432,16 +446,16 @@ body.board-page {
   line-height: 1;
 }
 
-.box-clock .clock-time .ampm { font-size: 0.4em; opacity: 0.8; }
-
-.box-clock .clock-name {
-  font-family: var(--font-display);
+.box-clock .clock-date {
+  font-family: var(--font-mono);
   font-weight: 600;
-  font-size: clamp(0.8rem, 9cqh, 1.8rem);
-  color: #cdd8e6;
-  letter-spacing: 0.01em;
-  margin-top: 0.1em;
+  font-size: clamp(0.65rem, 6cqh, 1.1rem);
+  color: #93a3b8;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.2em;
 }
+
+.box-clock .clock-time .ampm { font-size: 0.4em; opacity: 0.8; }
 
 .box-clock .clock-tz {
   font-family: var(--font-mono);
@@ -469,6 +483,84 @@ body.board-page {
 .box-clock .clock-status.in-session .status-value { color: #6ee7b7; }
 .box-clock .clock-status.not-in-session .status-value { color: #f5b169; }
 
+/* name box — small dark card stacked directly under the clock */
+.box-name {
+  background: var(--ink);
+  border-left-color: #0c141d;
+  color: #eaf1ff;
+  align-items: center;
+  justify-content: center;
+  container-type: size;
+}
+
+.box-name .name-text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(0.75rem, 42cqh, 1.6rem);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* now playing — black card with a YouTube link input + embedded player */
+.box-nowplaying {
+  background: #000;
+  border-left-color: #ff0000;
+  color: #fff;
+}
+
+.box-nowplaying .box-label { color: #fff; }
+
+.nowplaying-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.nowplaying-input {
+  flex: 0 0 auto;
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #3a3a3a;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.5em 0.7em;
+  border-radius: 5px;
+}
+
+.nowplaying-input::placeholder { color: #7a7a7a; }
+.nowplaying-input:focus { outline: 2px solid #ff0000; outline-offset: 1px; }
+
+.nowplaying-embed {
+  flex: 1 1 auto;
+  min-height: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.nowplaying-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.nowplaying-embed:empty::before {
+  content: 'Paste a link above to play a video, playlist, or YouTube Music playlist here.';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1em;
+  text-align: center;
+  color: #6a6a6a;
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+}
+
 /* ============ RESPONSIVE FALLBACK (small screens) ============ */
 @media (max-width: 900px) {
   body.board-page { height: auto; overflow: auto; }
@@ -488,14 +580,17 @@ body.board-page {
     grid-template-areas:
       "working"
       "clock"
+      "name"
       "deliver"
       "goal"
       "agenda"
       "connect"
       "standard"
-      "eld";
+      "eld"
+      "nowplaying";
   }
   .agenda-box { min-height: 140px; padding: 14px 16px; }
+  .box-nowplaying { min-height: 220px; }
   .box-content { font-size: 1rem !important; }
 }
 

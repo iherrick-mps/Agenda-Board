@@ -12,14 +12,31 @@ A daily agenda board for Robotics & Coding, deployable to GitHub Pages.
 - `data/YYYY-MM-DD.json` — one file per school day. Sample files for 2026-08-07, 08-10, 08-11, 08-12 are included as examples.
 
 ## The agenda board layout
-Eight boxes tile the full screen with no scrolling, no matter what screen it's displayed on:
-**Clock**, **What should I be working on right now?**, **This week's deliverable**, **SMART Goal**, **Agenda/Steps**, **Connections**, **Content Standard**, **ELD Standard**. Agenda/Steps gets the most space since it usually has the most content; the two new "right now" boxes get a wide banner across the top.
+Ten boxes tile the full screen with no scrolling, no matter what screen it's displayed on:
+**Clock**, **Ms. Herrick** (name), **Now Playing**, **What should I be working on right now?**, **This week's deliverable**, **SMART Goal**, **Agenda/Steps**, **Connections**, **Content Standard**, **ELD Standard**. Agenda/Steps gets the most space since it usually has the most content; Content Standard and ELD Standard are intentionally small since students don't read those directly.
 
-Each box's text automatically grows or shrinks to fill exactly the space it has — no wasted space, and it never overflows or scrolls, regardless of how much or little text is in that box that day.
+Each text box's font automatically grows or shrinks to fill exactly the space it has — no wasted space, and it never overflows or scrolls, regardless of how much or little text is in that box that day.
 
-**Period switcher:** the three period tabs (plus the date, schedule type, and a link back to the date list) are tucked away at the very top edge of the screen. Hover your mouse near the top to reveal them; move away and they tuck back out of sight. This keeps the full screen available for the board itself.
+**Clock box:** shows today's real date (`YYYY/MM/DD · WEEKDAY`), the live Pacific time, and the countdown — always reflects the real day/time, not whatever date's board you're viewing. "Ms. Herrick" sits in its own small box directly underneath, sized so the two together match the height of the Working/Deliverable boxes beside them.
+
+**Now Playing:** a black box with a text field — paste any YouTube video or playlist link and press Enter (or click away) and it embeds inline. YouTube Music playlist links generally work too as long as they carry a `list=` ID, though some auto-generated "mix" playlists may not embed. The link is saved in the browser's local storage on that device, so it survives a page refresh, but it isn't synced anywhere — pasting it again on a different computer/browser starts fresh.
+
+**Period switcher:** the three period tabs (plus the date, schedule type, prev/next day buttons, and a link back to the date list) are tucked away at the very top edge of the screen — fully collapsed to zero height when idle. Hover your mouse near the top to reveal them; move away and they tuck back out of sight.
+
+**Prev/Next day buttons:** step to the next-highest or next-lowest date *in `dates.txt`* — not the literal next calendar day. If there's a gap in your dates (e.g. a weekend, or a day you haven't built yet), it skips straight to whatever's actually listed.
+
+**Click-to-focus:** click any box to fade everything else down to a faint wash and bring that box forward; click it again, click anywhere outside all boxes, or press Escape to return to normal.
+
+**Double-click anywhere** to toggle fullscreen.
 
 On small/narrow screens (phones, small tablets) the board automatically falls back to a normal scrolling single-column layout instead, since a bento grid that tight isn't legible at that size.
+
+## Adding clickable links inside a box
+Any string field (agenda steps, connections, etc.) can contain raw HTML, since it's inserted directly — so a clickable link like a Google Classroom join code can be added as an agenda step:
+```json
+"<a href=\"https://classroom.google.com/c/XXXX?cjc=YYYY\" target=\"_blank\" rel=\"noopener\">Join Google Classroom</a>"
+```
+This is already done for 2026-08-10 as an example, using each grade's actual join link.
 
 ## Adding a new day
 1. Duplicate a file in `data/` and rename it to the new date, e.g. `data/2026-08-13.json`.

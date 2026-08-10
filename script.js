@@ -105,6 +105,11 @@ async function initClock() {
     const pt = getPacificNow();
     const { h12, mm, ss, ampm } = fmtClock(pt);
 
+    const dateEl = document.getElementById('clock-date');
+    if (dateEl) {
+      dateEl.textContent = `${pt.isoDate.replaceAll('-', '/')} \u00b7 ${pt.weekdayName.toUpperCase()}`;
+    }
+
     const timeEl = document.getElementById('clock-time');
     if (timeEl) {
       timeEl.innerHTML =
@@ -445,6 +450,83 @@ async function initDayNav(currentDate) {
   }
 }
 
+/* ============================================================
+   Now Playing — paste a YouTube video, playlist, or (usually)
+   YouTube Music playlist link and it embeds inline. Persisted in
+   localStorage on this device so it survives refreshes.
+   ============================================================ */
+
+function parseYouTubeUrl(rawUrl) {
+  try {
+    const u = new URL(rawUrl.trim());
+    let videoId = null;
+    let listId = u.searchParams.get('list');
+
+    if (u.hostname.includes('youtu.be')) {
+      videoId = u.pathname.slice(1).split('/')[0] || null;
+    } else if (u.hostname.includes('youtube.com') || u.hostname.includes('music.youtube.com')) {
+      videoId = u.searchParams.get('v');
+      if (!videoId && u.pathname.startsWith('/embed/')) {
+        videoId = u.pathname.split('/embed/')[1]?.split('/')[0] || null;
+      }
+      if (!videoId && u.pathname.startsWith('/shorts/')) {
+        videoId = u.pathname.split('/shorts/')[1]?.split('/')[0] || null;
+      }
+    }
+    return { videoId: videoId || null, listId: listId || null };
+  } catch (e) {
+    return { videoId: null, listId: null };
+  }
+}
+
+function buildYouTubeEmbedUrl({ videoId, listId }) {
+  if (videoId && listId) return `https://www.youtube.com/embed/${videoId}?list=${listId}`;
+  if (videoId) return `https://www.youtube.com/embed/${videoId}`;
+  if (listId) return `https://www.youtube.com/embed/videoseries?list=${listId}`;
+  return null;
+}
+
+function initNowPlaying() {
+  const input = document.getElementById('nowplaying-input');
+  const embedContainer = document.getElementById('nowplaying-embed');
+  if (!input || !embedContainer) return;
+
+  const STORAGE_KEY = 'agendaBoard.nowPlayingUrl';
+
+  function renderFromUrl(url) {
+    const embedUrl = buildYouTubeEmbedUrl(parseYouTubeUrl(url));
+    embedContainer.innerHTML = embedUrl
+      ? `<iframe src="${embedUrl}" title="Now Playing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
+      : '';
+  }
+
+  function commit() {
+    const url = input.value.trim();
+    if (!url) {
+      localStorage.removeItem(STORAGE_KEY);
+      embedContainer.innerHTML = '';
+      return;
+    }
+    localStorage.setItem(STORAGE_KEY, url);
+    renderFromUrl(url);
+  }
+
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    input.value = saved;
+    renderFromUrl(saved);
+  }
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { commit(); input.blur(); }
+  });
+  input.addEventListener('blur', commit);
+  // keep typing/selecting text from triggering the focus-mode or
+  // double-click-fullscreen handlers on the box behind it
+  input.addEventListener('click', (e) => e.stopPropagation());
+  input.addEventListener('dblclick', (e) => e.stopPropagation());
+}
+
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -453,4 +535,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initAgendaPage();
   initFullscreenToggle();
   initFocusMode();
+  initNowPlaying();
 });
