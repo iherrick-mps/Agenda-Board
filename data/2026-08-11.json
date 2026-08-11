@@ -1,56 +1,53 @@
 {
-  "schedule": "regular",
+  "schedule": "shortened",
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Building your home page — one image and a menu linking to your other pages — and learning what PII is so you know what NOT to put on it.",
-      "weeklyDeliverable": "GitHub repository live on GitHub Pages with a home page (single image + page menu) and at least one content page — first name only, no other personal info.",
-      "smartGoal": "I can build a home page with one image and a page menu, and explain what personal information (PII) I should never put on a public site.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions on a range of social and academic topics.",
+      "workingNow": "Confirming your fork worked and turning on GitHub Pages so your site goes live.",
+      "weeklyDeliverable": "GitHub account created, starter repo forked, and GitHub Pages live with your first name and one image on the home page \u2014 no other personal info.",
+      "smartGoal": "I can enable GitHub Pages on my forked repo so that my site is published on the internet.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Timed transition begins today — note your time (3 min)",
-        "Treatment Agreement co-creation, 4 quadrants (14 min)",
-        "I do: model a home page — one image + menu linking to pages (8 min)",
-        "We do: discuss what PII is and why our repo is public (8 min)",
-        "You do: build your home page — first name only, no age/location — then turn in your link on Google Classroom (12 min)",
-        "Exit Ticket — Whip-Around: one example of PII to avoid (5 min)"
+        "Warm-Up: Chromebooks out, repo open (3 min)",
+        "I do: teacher demos enabling Pages in Settings (5 min)",
+        "You do: enable Pages & find your live URL (12 min)",
+        "Troubleshoot in pairs if your site doesn't load (7 min)",
+        "Exit Ticket: Submit your live site link in Google Classroom (3 min)"
       ],
-      "connections": "Yesterday we learned our tools. Today we set our classroom norms and start our home page — since it's public, we're also learning what to keep off of it. Tomorrow we start building out our other pages."
+      "connections": "Yesterday you forked your own copy of the repo. Today that copy goes live on the internet for the first time. Tomorrow we start actually editing what's on the page."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Building your home page — one image and a menu linking to your other pages — and turning in your link on Google Classroom.",
-      "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
-      "smartGoal": "I can build a home page with one image and a page menu, and explain why I'm keeping my site shared privately for now.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content, organized into separate linked pages, to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions on a range of social and academic topics.",
+      "workingNow": "Adding a navigation menu to your Google Site and confirming your links work.",
+      "weeklyDeliverable": "Google Site home page live with a nav menu and one image, and the Getting to Know You survey submitted.",
+      "smartGoal": "I can add a navigation menu to my site so that visitors can find new pages I create.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Timed transition begins today — note your time (3 min)",
-        "Treatment Agreement co-creation, 4 quadrants (14 min)",
-        "I do: model a home page — one image + menu linking to pages (8 min)",
-        "We do: share your site privately with Ms. Herrick + discuss why it's private (8 min)",
-        "You do: build your home page, then turn in your link on Google Classroom (12 min)",
-        "Exit Ticket — Whip-Around: one way to stay safe online (5 min)"
+        "Warm-Up: One thing you like about your site so far (3 min)",
+        "I do: teacher shows adding a menu link (4 min)",
+        "We do: add a nav menu together (5 min)",
+        "You do: finish your nav menu & confirm links work (13 min)",
+        "Exit Ticket: Submit updated site link in Google Classroom (5 min)"
       ],
-      "connections": "Yesterday we learned our tools. Today we set our classroom norms and start our home page — kept private for now. Tomorrow we start building out our other pages."
+      "connections": "Yesterday you built your home page and told us about yourselves in the survey. Today we make your site navigable. Tomorrow we'll use what we learned about each other to browse everyone's sites."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Building your home page — one image and a menu linking to your other pages — and turning in your link on Google Classroom.",
-      "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
-      "smartGoal": "I can build a home page with one image and a page menu, and explain why I'm keeping my site shared privately for now.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured content, organized into separate linked pages, to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions on a range of social and academic topics.",
+      "workingNow": "Adding a navigation menu to your Google Site and confirming your links work.",
+      "weeklyDeliverable": "Google Site home page live with a nav menu and one image, and the Getting to Know You survey submitted.",
+      "smartGoal": "I can add a navigation menu to my site so that visitors can find new pages I create.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Timed transition begins today — note your time (3 min)",
-        "Treatment Agreement co-creation, 4 quadrants (14 min)",
-        "I do: model a home page — one image + menu linking to pages (8 min)",
-        "We do: share your site privately with Ms. Herrick + discuss why it's private (8 min)",
-        "You do: build your home page, then turn in your link on Google Classroom (12 min)",
-        "Exit Ticket — Whip-Around: one way to stay safe online (5 min)"
+        "Warm-Up: One thing you like about your site so far (3 min)",
+        "I do: teacher shows adding a menu link (4 min)",
+        "We do: add a nav menu together (5 min)",
+        "You do: finish your nav menu & confirm links work (13 min)",
+        "Exit Ticket: Submit updated site link in Google Classroom (5 min)"
       ],
-      "connections": "Yesterday we learned our tools. Today we set our classroom norms and start our home page — kept private for now. Tomorrow we start building out our other pages."
+      "connections": "Yesterday you built your home page and told us about yourselves in the survey. Today we make your site navigable. Tomorrow we'll use what we learned about each other to browse everyone's sites."
     }
   }
 }

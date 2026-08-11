@@ -3,54 +3,52 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Reviewing our Getting to Know You results, then browsing classmates' pages to find something you have in common with someone.",
-      "weeklyDeliverable": "GitHub repository live on GitHub Pages with a home page (single image + page menu) and at least one content page — first name only, no other personal info.",
-      "smartGoal": "I can explore classmates' pages and identify something we have in common, then share it in a Google Classroom discussion post.",
-      "contentStandard": "CA CS Standards 6-8.IC.28 — Collaborate respectfully with others when reviewing and giving feedback on digital work.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "workingNow": "Editing your home page's index.html to add your first name and one image.",
+      "weeklyDeliverable": "GitHub account created, starter repo forked, and GitHub Pages live with your first name and one image on the home page \u2014 no other personal info.",
+      "smartGoal": "I can edit HTML on my home page so that it displays my name and one image, following our PII rules.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
-        "Timed transition — post yesterday's time (3 min)",
-        "We do: review our Getting to Know You quiz results together (7 min)",
-        "I do: model browsing a classmate's page respectfully (5 min)",
-        "You do: browse 2\u20133 classmates' repos, find something in common (15 min)",
-        "Discussion post (Google Classroom): name a classmate + one thing in common (15 min)",
-        "Continue adding to your own pages if time remains (5 min)"
+        "Warm-Up: Review PII rules \u2014 what's safe to share? (5 min)",
+        "I do: teacher edits index.html live, adds name (8 min)",
+        "We do: locate the image tag together, discuss alt text (7 min)",
+        "You do: add your first name and one image to your page (22 min)",
+        "Peer check: partner confirms no PII is visible (5 min)",
+        "Exit Ticket: Commit & push your changes (3 min)"
       ],
-      "connections": "Monday we filled out our Getting to Know You quiz, and today we use those answers to look at each other's work and find things we have in common — building our sense of community as a class. Tomorrow we'll polish what we've made and reflect on our first week."
+      "connections": "Yesterday your site went live but was still empty. Today you start actually putting yourself on it \u2014 safely. Tomorrow we'll polish this page and get it ready to share."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Reviewing our Getting to Know You results, then browsing classmates' pages to find something you have in common with someone.",
-      "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
-      "smartGoal": "I can explore classmates' pages and identify something we have in common, then share it in a Google Classroom discussion post.",
-      "contentStandard": "CA CS Standards 6-8.IC.28 — Collaborate respectfully with others when reviewing and giving feedback on digital work.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "workingNow": "Reviewing our Getting to Know You results and browsing classmates' sites to find something in common.",
+      "weeklyDeliverable": "Google Site home page live with a nav menu and one image, and the Getting to Know You survey submitted.",
+      "smartGoal": "I can find something I have in common with a classmate so that I can build community in our class.",
+      "contentStandard": "CA CS Standards 6-8.IC.1 \u2014 Compare tradeoffs associated with computing technologies that affect people's everyday activities and career options.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Timed transition — post yesterday's time (3 min)",
-        "We do: review our Getting to Know You quiz results together (7 min)",
-        "I do: model browsing a classmate's page respectfully (5 min)",
-        "You do: browse 2\u20133 classmates' sites, find something in common (15 min)",
-        "Discussion post (Google Classroom): name a classmate + one thing in common (15 min)",
-        "Continue adding to your own pages if time remains (5 min)"
+        "Warm-Up: Getting to Know You results reveal (8 min)",
+        "I do: teacher models browsing a site & noting one commonality (5 min)",
+        "You do: browse 3 classmates' sites in pairs (20 min)",
+        "Discussion post: name a classmate + one thing in common on Google Classroom (12 min)",
+        "Exit Ticket: Share one commonality aloud (5 min)"
       ],
-      "connections": "Monday we filled out our Getting to Know You quiz, and today we use those answers to look at each other's work and find things we have in common — building our sense of community as a class. Tomorrow we'll polish what we've made and reflect on our first week."
+      "connections": "Yesterday you told us about yourselves through the survey. Today we use those answers to find things we have in common as a class. Tomorrow we'll wrap up the week and polish our sites."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Reviewing our Getting to Know You results, then browsing classmates' pages to find something you have in common with someone.",
-      "weeklyDeliverable": "Google Site with a home page (single image + page menu) and at least one content page, shared privately with Ms. Herrick and viewable by classmates.",
-      "smartGoal": "I can explore classmates' pages and identify something we have in common, then share it in a Google Classroom discussion post.",
-      "contentStandard": "CA CS Standards 6-8.IC.28 — Collaborate respectfully with others when reviewing and giving feedback on digital work.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "workingNow": "Reviewing our Getting to Know You results and browsing classmates' sites to find something in common.",
+      "weeklyDeliverable": "Google Site home page live with a nav menu and one image, and the Getting to Know You survey submitted.",
+      "smartGoal": "I can find something I have in common with a classmate so that I can build community in our class.",
+      "contentStandard": "CA CS Standards 6-8.IC.1 \u2014 Compare tradeoffs associated with computing technologies that affect people's everyday activities and career options.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Timed transition — post yesterday's time (3 min)",
-        "We do: review our Getting to Know You quiz results together (7 min)",
-        "I do: model browsing a classmate's page respectfully (5 min)",
-        "You do: browse 2\u20133 classmates' sites, find something in common (15 min)",
-        "Discussion post (Google Classroom): name a classmate + one thing in common (15 min)",
-        "Continue adding to your own pages if time remains (5 min)"
+        "Warm-Up: Getting to Know You results reveal (8 min)",
+        "I do: teacher models browsing a site & noting one commonality (5 min)",
+        "You do: browse 3 classmates' sites in pairs (20 min)",
+        "Discussion post: name a classmate + one thing in common on Google Classroom (12 min)",
+        "Exit Ticket: Share one commonality aloud (5 min)"
       ],
-      "connections": "Monday we filled out our Getting to Know You quiz, and today we use those answers to look at each other's work and find things we have in common — building our sense of community as a class. Tomorrow we'll polish what we've made and reflect on our first week."
+      "connections": "Yesterday you told us about yourselves through the survey. Today we use those answers to find things we have in common as a class. Tomorrow we'll wrap up the week and polish our sites."
     }
   }
 }

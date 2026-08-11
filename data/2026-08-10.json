@@ -3,55 +3,53 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "smartGoal": "I can set up my GitHub account and repository so that I can start building my digital portfolio this year.",
-      "contentStandard": "CA CS Standards 6-8.CD.1 — Recommend improvements to existing code using peer review processes.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Logging into your Chromebook, joining Google Classroom, and completing the Classroom Expectations quiz on Wayground.",
+      "weeklyDeliverable": "GitHub account created, starter repo forked, and GitHub Pages live with your first name and one image on the home page \u2014 no other personal info.",
+      "smartGoal": "I can log into my Chromebook and Google Classroom, and follow our classroom expectations, so that I'm ready to learn every day this year.",
+      "contentStandard": "CA CS Standards 6-8.NI.4 \u2014 Explain how physical and digital security measures protect electronic information.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Warm-Up: Time Bank check-in (5 min)",
-        "Google Classroom Code: IFUO4BFC",
-        "Waygrounds Quiz",
-        "Guided Practice: Create GitHub account (15 min)",
-        "Independent Practice: Fork the starter repo",
-        "Exit Ticket: Screenshot your repo"
+        "Entry routine & assigned seats (5 min)",
+        "Retrieve Chromebook from the cart & log in (10 min)",
+        "Join Google Classroom & confirm access (10 min)",
+        "Wayground: Classroom Expectations quiz (20 min)",
+        "Exit: routine wrap-up (5 min)"
       ],
-      "connections": "Yesterday we set up our Chromebooks and class norms. Today we start the tool we'll use all year to save and share our work. Next week we'll make our first commit.",
-      "workingNow": "Forking the starter repo and confirming your GitHub account works.",
-      "weeklyDeliverable": "A live GitHub Pages portfolio site with your bio published."
+      "connections": "This is our very first day together. Today is all about learning our routines and tools \u2014 Chromebooks, Google Classroom, and our classroom expectations \u2014 so every day after this one can start smoothly."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "smartGoal": "I can follow our classroom rules and log in to my Chromebook so that I'm ready to learn all year.",
-      "contentStandard": "CA CS Standards 6-8.IC.1 — Compare tradeoffs associated with computing technologies.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Logging into your Chromebook, joining Google Classroom, completing the Classroom Expectations quiz, and taking the Getting to Know You survey.",
+      "weeklyDeliverable": "Google Site home page live with a nav menu and one image, and the Getting to Know You survey submitted.",
+      "smartGoal": "I can log into my Chromebook and Google Classroom, and follow our classroom expectations, so that I know how our class works.",
+      "contentStandard": "CA CS Standards 6-8.NI.4 \u2014 Explain how physical and digital security measures protect electronic information.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Welcome & Seating (5 min)",
-        "Chromebook Distribution (5 min)",
-        "Classroom Rules & Expectations (10 min)",
-        "Google Classroom Code: X2RQOR7G",
-        "Wayground Non-Negotiables Quiz (10 min)",
-        "Getting to Know You Exit Ticket (Google Classroom)"
+        "Entry routine & assigned seats (5 min)",
+        "Find your Chromebook already out & log in (5 min)",
+        "Join Google Classroom & confirm access (8 min)",
+        "Wayground: Classroom Expectations quiz (17 min)",
+        "Getting to Know You survey (10 min)",
+        "Exit: leave Chromebooks out for 7th Period (5 min)"
       ],
-      "connections": "Today we learn the rules and tools that will keep our robotics lab safe and running smoothly all year. Tomorrow we start building something together.",
-      "workingNow": "Finding your seat, meeting your table, and getting your Chromebook set up.",
-      "weeklyDeliverable": "Code.org Unit 1, Lessons 1–3 complete, with your pattern journal turned in."
+      "connections": "This is our very first day together. Today is all about learning our routines and tools \u2014 Chromebooks, Google Classroom, and our classroom expectations \u2014 and starting to get to know each other as a class."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "smartGoal": "I can follow our classroom rules and log in to my Chromebook so that I'm ready to learn all year.",
-      "contentStandard": "CA CS Standards 6-8.IC.1 — Compare tradeoffs associated with computing technologies.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Logging into your Chromebook, joining Google Classroom, completing the Classroom Expectations quiz, and taking the Getting to Know You survey.",
+      "weeklyDeliverable": "Google Site home page live with a nav menu and one image, and the Getting to Know You survey submitted.",
+      "smartGoal": "I can log into my Chromebook, join Google Classroom, and follow our classroom rules so that our class runs smoothly.",
+      "contentStandard": "CA CS Standards 6-8.NI.4 \u2014 Explain how physical and digital security measures protect electronic information.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Welcome & Seating (5 min)",
-        "Classroom Rules & Expectations (10 min)",
-        "Chromebook Distribution (5 min)",
-        "Google Classroom Code: DMG6PHU7",
-        "Wayground Non-Negotiables Quiz (10 min)",
-        "Getting to Know You Exit Ticket (Google Classroom)",
-        "Practice: Putting Chromebooks Away (5 min)"
+        "Entry routine & assigned seats (5 min)",
+        "Find your Chromebook already out & log in (5 min)",
+        "Join Google Classroom & confirm access (8 min)",
+        "Wayground: Classroom Expectations quiz (17 min)",
+        "Getting to Know You survey (10 min)",
+        "Practice putting Chromebooks away in the cart (5 min)"
       ],
-      "connections": "Today we learn the rules and tools that will keep our robotics lab safe and running smoothly all year. Tomorrow we start building something together.",
-      "workingNow": "Finding your seat, meeting your table, and getting your Chromebook set up.",
-      "weeklyDeliverable": "Signed Treatment Agreement and tech use agreement on file."
+      "connections": "This is our very first day together. Today is all about learning our routines and tools \u2014 Chromebooks, Google Classroom, and our classroom expectations \u2014 and starting to get to know each other as a class."
     }
   }
 }

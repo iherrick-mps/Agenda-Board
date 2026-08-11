@@ -3,54 +3,52 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Polishing your repo and reflecting on what you've built this week — still shared privately, not public.",
-      "weeklyDeliverable": "GitHub repository shared privately with Ms. Herrick, personalized with an index.html and fun details about you.",
-      "smartGoal": "I can review my repo with a partner and explain why I keep it private for now.",
-      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials and personal information private when using networked devices and online tools.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Getting a peer PII check on your page and polishing before the week wraps up.",
+      "weeklyDeliverable": "GitHub account created, starter repo forked, and GitHub Pages live with your first name and one image on the home page \u2014 no other personal info.",
+      "smartGoal": "I can review my page against our PII rules so that my site is safe and ready to share.",
+      "contentStandard": "CA CS Standards 6-8.CD.1 \u2014 Recommend improvements to existing code using free and open source licensing, resources, or online communities.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Final timed transition of the week — post your time (3 min)",
-        "Quick review: revisit our online safety agreement (5 min)",
-        "You do: polish/proofread your repo (15 min)",
-        "Think-Pair-Share: what are you proud of this week? (12 min)",
-        "Confirm your repo is still shared with Ms. Herrick only (5 min)",
-        "Bank payout: remaining minutes → free time (10 min)"
+        "Warm-Up: Time Bank check \u2014 how much is left? (3 min)",
+        "Peer PII check: partner reviews your page for anything to remove (10 min)",
+        "Fix any PII issues found (10 min)",
+        "Think-Pair-Share: What's one thing you're proud of on your site? (10 min)",
+        "Exit Ticket: Final commit & confirm live link works (7 min)",
+        "Time Bank payout: free time (10 min)"
       ],
-      "connections": "This week we set up our tools, our norms, and our first repo, and yesterday we found things we have in common as a class. Next week we'll pick this back up as we start our first real coding unit."
+      "connections": "This week you set up your GitHub account, forked your repo, and published your first name and image safely to a public site. Next week we start our first real coding unit on top of this foundation."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Polishing your site and reflecting on what you've built this week — still shared privately, not public.",
-      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
-      "smartGoal": "I can review my site with a partner and explain why I keep it private for now.",
-      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials and personal information private when using networked devices and online tools.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Polishing your site's final touches before the week wraps up.",
+      "weeklyDeliverable": "Google Site home page live with a nav menu and one image, and the Getting to Know You survey submitted.",
+      "smartGoal": "I can review and improve my site so that it's ready to share with the class.",
+      "contentStandard": "CA CS Standards 6-8.CD.1 \u2014 Recommend improvements to existing code using free and open source licensing, resources, or online communities.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Justifying own arguments and evaluating others' arguments in writing.",
       "agenda": [
-        "Final timed transition of the week — post your time (3 min)",
-        "Quick review: revisit our online safety agreement (5 min)",
-        "You do: polish/proofread your site (15 min)",
-        "Think-Pair-Share: what are you proud of this week? (12 min)",
-        "Confirm your site is still shared with Ms. Herrick only (5 min)",
-        "Bank payout: remaining minutes → free time (10 min)"
+        "Warm-Up: Time Bank check \u2014 how much is left? (3 min)",
+        "Final polish: fix menu links / add finishing touches (12 min)",
+        "Think-Pair-Share: What's one thing you're proud of on your site? (10 min)",
+        "Exit Ticket: Confirm your site link is submitted (5 min)",
+        "Time Bank payout: free time (20 min)"
       ],
-      "connections": "This week we set up our tools, our norms, and our first site, and yesterday we found things we have in common as a class. Next week we'll pick this back up as we start our first real coding unit."
+      "connections": "This week we set up our tools, built our first site, and found things we have in common as a class. Next week we pick this back up as we start our first real coding unit."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Polishing your site and reflecting on what you've built this week — still shared privately, not public.",
-      "weeklyDeliverable": "Google Site shared privately with Ms. Herrick, personalized with a Welcome page and fun details about you.",
-      "smartGoal": "I can review my site with a partner and explain why I keep it private for now.",
-      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials and personal information private when using networked devices and online tools.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Polishing your site's final touches before the week wraps up.",
+      "weeklyDeliverable": "Google Site home page live with a nav menu and one image, and the Getting to Know You survey submitted.",
+      "smartGoal": "I can review and improve my site so that it's ready to share with the class.",
+      "contentStandard": "CA CS Standards 6-8.CD.1 \u2014 Recommend improvements to existing code using free and open source licensing, resources, or online communities.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Justifying own arguments and evaluating others' arguments in writing.",
       "agenda": [
-        "Final timed transition of the week — post your time (3 min)",
-        "Quick review: revisit our online safety agreement (5 min)",
-        "You do: polish/proofread your site (15 min)",
-        "Think-Pair-Share: what are you proud of this week? (12 min)",
-        "Confirm your site is still shared with Ms. Herrick only (5 min)",
-        "Bank payout: remaining minutes → free time (10 min)"
+        "Warm-Up: Time Bank check \u2014 how much is left? (3 min)",
+        "Final polish: fix menu links / add finishing touches (12 min)",
+        "Think-Pair-Share: What's one thing you're proud of on your site? (10 min)",
+        "Exit Ticket: Confirm your site link is submitted (5 min)",
+        "Time Bank payout: free time (20 min)"
       ],
-      "connections": "This week we set up our tools, our norms, and our first site, and yesterday we found things we have in common as a class. Next week we'll pick this back up as we start our first real coding unit."
+      "connections": "This week we set up our tools, built our first site, and found things we have in common as a class. Next week we pick this back up as we start our first real coding unit."
     }
   }
 }
