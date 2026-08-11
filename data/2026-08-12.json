@@ -3,19 +3,19 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Confirming your fork worked and turning on GitHub Pages so your site goes live.",
+      "workingNow": "Forking the starter repository into your own GitHub account.",
       "weeklyDeliverable": "GitHub account created, starter repo forked, and GitHub Pages live with your first name and one image on the home page \u2014 no other personal info.",
-      "smartGoal": "I can enable GitHub Pages on my forked repo so that my site is published on the internet.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "smartGoal": "I can fork our starter repository so that I have my own copy of the project to build on.",
+      "contentStandard": "CA CS Standards 6-8.CD.1 \u2014 Recommend improvements to existing code using free and open source licensing, resources, or online communities.",
       "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Warm-Up: Chromebooks out, repo open (3 min)",
-        "I do: teacher demos enabling Pages in Settings (5 min)",
-        "You do: enable Pages & find your live URL (12 min)",
-        "Troubleshoot in pairs if your site doesn't load (7 min)",
-        "Exit Ticket: Submit your live site link in Google Classroom (3 min)"
+        "Warm-Up: Chromebooks out, accounts logged in (3 min)",
+        "I do: teacher models forking the repo (5 min)",
+        "We do: fork together step-by-step (10 min)",
+        "You do: confirm your fork appears in your account (9 min)",
+        "Exit Ticket: Paste your fork link in Google Classroom (3 min)"
       ],
-      "connections": "Yesterday you forked your own copy of the repo. Today that copy goes live on the internet for the first time. Tomorrow we start actually editing what's on the page."
+      "connections": "Yesterday every one of you got a GitHub account set up. Today you use that account to make your own copy of our starter project. Tomorrow we'll publish it live on the internet."
     },
     "6th Period": {
       "grade": "7th Grade",

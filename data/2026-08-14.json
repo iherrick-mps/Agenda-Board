@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Getting a peer PII check on your page and polishing before the week wraps up.",
+      "workingNow": "Adding your first name and one image to your home page, then getting a peer PII check.",
       "weeklyDeliverable": "GitHub account created, starter repo forked, and GitHub Pages live with your first name and one image on the home page \u2014 no other personal info.",
-      "smartGoal": "I can review my page against our PII rules so that my site is safe and ready to share.",
-      "contentStandard": "CA CS Standards 6-8.CD.1 \u2014 Recommend improvements to existing code using free and open source licensing, resources, or online communities.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "smartGoal": "I can edit HTML on my home page to add my name and one image, and check it against our PII rules, so that my site is safe to share.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
-        "Warm-Up: Time Bank check \u2014 how much is left? (3 min)",
-        "Peer PII check: partner reviews your page for anything to remove (10 min)",
-        "Fix any PII issues found (10 min)",
-        "Think-Pair-Share: What's one thing you're proud of on your site? (10 min)",
-        "Exit Ticket: Final commit & confirm live link works (7 min)",
-        "Time Bank payout: free time (10 min)"
+        "Warm-Up: Time Bank check & review PII rules (5 min)",
+        "I do: teacher edits index.html live, adds name (5 min)",
+        "You do: add your first name and one image to your page (20 min)",
+        "Peer check: partner confirms no PII is visible (7 min)",
+        "Exit Ticket: Final commit & confirm live link works (5 min)",
+        "Time Bank payout: free time (8 min)"
       ],
-      "connections": "This week you set up your GitHub account, forked your repo, and published your first name and image safely to a public site. Next week we start our first real coding unit on top of this foundation."
+      "connections": "This week you created your GitHub account, forked your repo, and published it live. Today you finally put yourself on the page \u2014 safely. Next week we start our first real coding unit on top of this foundation."
     },
     "6th Period": {
       "grade": "7th Grade",

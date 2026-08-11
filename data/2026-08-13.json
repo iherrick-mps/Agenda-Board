@@ -3,20 +3,19 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Editing your home page's index.html to add your first name and one image.",
+      "workingNow": "Turning on GitHub Pages so your forked site goes live on the internet.",
       "weeklyDeliverable": "GitHub account created, starter repo forked, and GitHub Pages live with your first name and one image on the home page \u2014 no other personal info.",
-      "smartGoal": "I can edit HTML on my home page so that it displays my name and one image, following our PII rules.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas.",
+      "smartGoal": "I can enable GitHub Pages on my forked repo so that my site is published on the internet.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Warm-Up: Review PII rules \u2014 what's safe to share? (5 min)",
-        "I do: teacher edits index.html live, adds name (8 min)",
-        "We do: locate the image tag together, discuss alt text (7 min)",
-        "You do: add your first name and one image to your page (22 min)",
-        "Peer check: partner confirms no PII is visible (5 min)",
-        "Exit Ticket: Commit & push your changes (3 min)"
+        "Warm-Up: Review yesterday's fork \u2014 is it still there? (5 min)",
+        "I do: teacher demos enabling Pages in Settings (8 min)",
+        "You do: enable Pages & find your live URL (20 min)",
+        "Troubleshoot in pairs if your site doesn't load (12 min)",
+        "Exit Ticket: Submit your live site link in Google Classroom (5 min)"
       ],
-      "connections": "Yesterday your site went live but was still empty. Today you start actually putting yourself on it \u2014 safely. Tomorrow we'll polish this page and get it ready to share."
+      "connections": "Yesterday you forked your own copy of the repo. Today that copy goes live on the internet for the first time. Tomorrow we start actually editing what's on the page."
     },
     "6th Period": {
       "grade": "7th Grade",
