@@ -17,6 +17,8 @@
   --c-eld: #0d9367;        /* ELD Standard */
   --c-agenda: #d98c0f;     /* Agenda / Steps */
   --c-connect: #c22a72;    /* Connections */
+  --c-studyrules: #c7361f; /* Study Hall — Rules */
+  --c-closing: #0d9367;    /* Study Hall — Before You Leave */
 
   --box-width: 340px;
   --radius: 8px;
@@ -591,6 +593,44 @@ body.board-page {
   font-family: var(--font-body);
 }
 
+/* ============================================================
+   STUDY HALL PAGE — separate bento layout from the daily agenda:
+   clock top-left, YouTube filling the rest of the left half,
+   rules taking the entire right half (split rules / closing).
+   ============================================================ */
+
+.board-grid.studyhall-grid {
+  grid-template-areas:
+    "clock clock clock clock clock clock studyrules studyrules studyrules studyrules studyrules studyrules"
+    "clock clock clock clock clock clock studyrules studyrules studyrules studyrules studyrules studyrules"
+    "clock clock clock clock clock clock studyrules studyrules studyrules studyrules studyrules studyrules"
+    "clock clock clock clock clock clock studyrules studyrules studyrules studyrules studyrules studyrules"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying studyrules studyrules studyrules studyrules studyrules studyrules"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying studyrules studyrules studyrules studyrules studyrules studyrules"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying studyrules studyrules studyrules studyrules studyrules studyrules"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying studyrules studyrules studyrules studyrules studyrules studyrules"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying studyrules studyrules studyrules studyrules studyrules studyrules"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying closing closing closing closing closing closing"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying closing closing closing closing closing closing"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying closing closing closing closing closing closing";
+}
+
+.box-studyrules { grid-area: studyrules; }
+.box-closing    { grid-area: closing; }
+
+.box-studyrules { --box-color: var(--c-studyrules); }
+.box-closing    { --box-color: var(--c-closing); }
+
+/* rules list — tighter line height since it's a longer list than the
+   usual 0-5 item agenda boxes; still uses the shared auto-fit sizing */
+.box-studyrules .box-content ul,
+.box-closing .box-content ul {
+  justify-content: space-evenly;
+}
+
+.box-studyrules .box-content li::before { content: '\2715'; } /* × for "don't" rules */
+.box-closing .box-content li::before { content: '\2713'; }    /* checkmark for closing tasks */
+
 /* ============ RESPONSIVE FALLBACK (small screens) ============ */
 @media (max-width: 900px) {
   body.board-page { height: auto; overflow: auto; }
@@ -622,6 +662,14 @@ body.board-page {
   .agenda-box { min-height: 140px; padding: 14px 16px; }
   .box-nowplaying { min-height: 220px; }
   .box-content { font-size: 1rem !important; }
+
+  .board-grid.studyhall-grid {
+    grid-template-areas:
+      "clock"
+      "studyrules"
+      "closing"
+      "nowplaying";
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

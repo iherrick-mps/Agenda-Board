@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Hall — Robotics &amp; Coding</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="board-page">
+
+<div class="hover-zone">
+  <div class="hover-trigger"></div>
+  <div class="hover-bar">
+    <a class="back-link-inline" href="index.html">&larr; Home</a>
+    <span class="hb-date">Study Hall</span>
+  </div>
+</div>
+
+<div class="board-grid studyhall-grid" id="board-grid">
+
+  <div class="agenda-box box-clock">
+    <div class="clock-date" id="clock-date">Loading&hellip;</div>
+    <div class="clock-time" id="clock-time">--:--:--</div>
+    <div class="clock-tz">Pacific Time</div>
+    <div class="clock-status" id="clock-status">
+      <span class="status-label" id="clock-status-label">Loading&hellip;</span>
+      <span class="status-value" id="clock-status-value">&mdash;</span>
+    </div>
+  </div>
+
+  <div class="agenda-box box-nowplaying" id="studyhall-nowplaying-box">
+    <span class="box-label">Now Playing</span>
+    <div class="nowplaying-body">
+      <input type="text" id="studyhall-nowplaying-input" class="nowplaying-input"
+             placeholder="Paste a YouTube video or playlist link&hellip;">
+      <div class="nowplaying-embed" id="studyhall-nowplaying-embed"></div>
+    </div>
+  </div>
+
+  <div class="agenda-box box-studyrules">
+    <span class="box-label">Study Hall Rules</span>
+    <div class="box-content" id="content-studyrules">
+      <ul>
+        <li>Do not use the robotics Chromebooks &mdash; only the library Chromebooks</li>
+        <li>Do not move chairs</li>
+        <li>Do not move tables</li>
+        <li>Do not use ANY materials from the back of the classroom</li>
+        <li>Do not use my coloring pages or coloring books</li>
+        <li>Don't write on the board</li>
+        <li>Don't write on the smart screen</li>
+        <li>Don't touch anything on any of my desks</li>
+        <li>Don't touch anything, in general, except your own stuff and the library Chromebooks</li>
+        <li>Do not touch the VEX parts (plastic Lego-looking things)</li>
+        <li>Do not eat anything in my classroom</li>
+        <li>Do not drink anything except water</li>
+        <li>Do not attach anything to my walls, ceiling, or windows</li>
+        <li>Do not chew gum</li>
+        <li>Do not use my headphones</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="agenda-box box-closing">
+    <span class="box-label">Before You Leave</span>
+    <div class="box-content" id="content-closing">
+      <ul>
+        <li>Stack the chairs</li>
+        <li>Turn off the thermostat</li>
+        <li>Turn off the lights</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="study-hall.js"></script>
+</body>
+</html>

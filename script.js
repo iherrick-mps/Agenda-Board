@@ -290,7 +290,7 @@ async function initAgendaPage() {
   const tabsEl = document.getElementById('period-tabs');
 
   if (!dateStr) {
-    headerDateEl.textContent = 'No date specified';
+    if (headerDateEl) headerDateEl.textContent = 'No date specified';
     return;
   }
 
