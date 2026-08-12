@@ -3,19 +3,19 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Forking the starter repository into your own GitHub account.",
+      "workingNow": "Checking your GitHub account: if it works, forking the starter repo (steps in Google Classroom); if you never made one, creating a Codeberg account instead.",
       "weeklyDeliverable": "GitHub account created, starter repo forked, and GitHub Pages live with your first name and one image on the home page — no other personal info.",
-      "smartGoal": "I can fork our starter repository so that I have my own copy of the project to build on.",
+      "smartGoal": "I can get either a GitHub fork or a new Codeberg account working so that I have a coding account ready to build on.",
       "contentStandard": "CA CS Standards 6-8.AP.16 — Incorporate existing code, media, and libraries into original programs, and give attribution.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Warm-Up: Chromebooks out, accounts logged in (3 min)",
-        "I do: teacher models forking the repo (5 min)",
-        "We do: fork together step-by-step (10 min)",
-        "You do: confirm your fork appears in your account (9 min)",
-        "Exit Ticket: Paste your fork link in Google Classroom (3 min)"
+        "Warm-Up: Chromebooks out, try logging into GitHub (3 min)",
+        "I do: teacher explains the two paths — fork on GitHub vs. sign up on Codeberg (4 min)",
+        "We do: split by path — GitHub group forks the starter repo per Google Classroom steps; Codeberg group creates their account (14 min)",
+        "You do: confirm your fork (GitHub) or new account (Codeberg) is live (6 min)",
+        "Exit Ticket: Paste your fork link OR Codeberg profile link in Google Classroom (3 min)"
       ],
-      "connections": "Yesterday every one of you got a GitHub account set up. Today you use that account to make your own copy of our starter project. Tomorrow we'll publish it live on the internet."
+      "connections": "Yesterday you tried to set up a GitHub account — for some of you that worked, for others it didn't. Today we get everyone onto a working platform, either GitHub or Codeberg. Tomorrow we'll build on whichever account you have live."
     },
     "6th Period": {
       "grade": "7th Grade",
