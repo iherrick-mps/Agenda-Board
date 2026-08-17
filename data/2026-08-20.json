@@ -3,19 +3,19 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Learning what a JavaScript function is and watching one get pasted into an HTML file.",
-      "weeklyDeliverable": "A basic JavaScript function embedded in your index.html, with the change committed and pushed to GitHub.",
-      "smartGoal": "I can identify the parts of a basic JavaScript function so that I know what I'm about to paste into my HTML.",
-      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "workingNow": "Learning table tags and adding a table to your About Me page.",
+      "weeklyDeliverable": "A complete About Me page (copied from the Example file) with header/body structure, formatted favorites text, at least one resized image with a caption, and a table.",
+      "smartGoal": "I can build a simple table so that I can organize information on my page in rows and columns.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
       "agenda": [
         "Warm-Up: Time Bank check-in (5 min)",
-        "I do: model pasting a simple JS function into <script> tags (10 min)",
-        "We do: predict what the function will do before running it (7 min)",
-        "You do: self-paced — paste the practice function into your own file (15 min)",
-        "Journal: describe what your function does, in your own words (3 min)"
+        "I do: model a basic <table> with rows and cells (7 min)",
+        "We do: build one row together (5 min)",
+        "You do: self-paced — add a table to your page (20 min)",
+        "Exit Ticket: what's inside a <tr> vs. a <td>? (3 min)"
       ],
-      "connections": "You now know where code lives in an HTML file and how to save changes with commit and push. Today we put those together and add your first JavaScript function. (Self-paced today so MAP Testing pull-outs can rejoin smoothly.)"
+      "connections": "You've built structure, text, and images — tables are the last new tag this week. Tomorrow we put everything together and finish the page. (Self-paced today so MAP Testing pull-outs can rejoin smoothly.)"
     },
     "6th Period": {
       "grade": "7th Grade",

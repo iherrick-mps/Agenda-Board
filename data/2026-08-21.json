@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Getting your JavaScript function working, then committing and pushing the final version.",
-      "weeklyDeliverable": "A basic JavaScript function embedded in your index.html, with the change committed and pushed to GitHub.",
-      "smartGoal": "I can commit and push a working JavaScript function in my HTML file so that my portfolio site does something interactive.",
-      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
+      "workingNow": "Finishing and polishing your About Me page — checking it has everything it needs.",
+      "weeklyDeliverable": "A complete About Me page (copied from the Example file) with header/body structure, formatted favorites text, at least one resized image with a caption, and a table.",
+      "smartGoal": "I can check my About Me page against the requirements so that it's complete before we move on to JavaScript.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Warm-Up: Time Bank check-in (5 min)",
-        "You do: finish/debug your JS function (15 min)",
-        "Partner check: does your partner's function run? (8 min)",
-        "Commit + push your final version (7 min)",
-        "Exit Ticket: paste your pushed commit link (5 min)",
-        "Bank payout: remaining minutes → free time (10 min)"
+        "You do: checklist review — header, favorites, image w/ caption, table (10 min)",
+        "Fix any missing pieces (12 min)",
+        "Commit + push your final page (7 min)",
+        "Partner check: does your partner's page have everything? (8 min)",
+        "Exit Ticket: paste your pushed link (5 min)"
       ],
-      "connections": "This week you built the three foundations you'll need — commit/push, HTML navigation, and a working JS function. Next week we put all three to work forking and editing the Mario repo."
+      "connections": "This week you built your first full HTML page from scratch — structure, formatted text, an image, and a table. Next week we move on to JavaScript and start making your page do something."
     },
     "6th Period": {
       "grade": "7th Grade",

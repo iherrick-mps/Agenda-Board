@@ -3,19 +3,19 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Practicing the commit-and-push cycle and finding your way around your HTML file's structure.",
-      "weeklyDeliverable": "A basic JavaScript function embedded in your index.html, with the change committed and pushed to GitHub.",
-      "smartGoal": "I can locate the head and body sections of my HTML file so that I know where different kinds of code belong.",
+      "workingNow": "Formatting your About Me text — headings, paragraphs, bold, and a favorites list.",
+      "weeklyDeliverable": "A complete About Me page (copied from the Example file) with header/body structure, formatted favorites text, at least one resized image with a caption, and a table.",
+      "smartGoal": "I can use heading, paragraph, and list tags so that my favorites are formatted clearly on my page.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Warm-Up: Time Bank check-in (5 min)",
-        "I do: tour an HTML file — head vs. body, tags (7 min)",
-        "We do: find 3 tags together as a class (5 min)",
-        "You do: self-paced — commit/push practice + tag scavenger hunt (20 min)",
-        "Exit Ticket: name one thing that lives in <head> (3 min)"
+        "I do: model a favorites list with <h2> and <ul>/<li> (7 min)",
+        "We do: format one example paragraph together (5 min)",
+        "You do: self-paced — add your favorites list + format your text (25 min)",
+        "Exit Ticket: name one formatting tag you used (3 min)"
       ],
-      "connections": "Yesterday we practiced commit and push. Today we zoom into the file itself so you know exactly where new code should go before you add a JavaScript function later this week. (Self-paced today so MAP Testing pull-outs can rejoin smoothly.)"
+      "connections": "Yesterday we set up the structure. Today we fill it in — your favorites get formatted with real HTML tags, not just plain text. (Self-paced today so MAP Testing pull-outs can rejoin smoothly.)"
     },
     "6th Period": {
       "grade": "7th Grade",

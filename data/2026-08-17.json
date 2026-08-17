@@ -3,19 +3,19 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Learning what \"commit\" and \"push\" actually do to your code on GitHub.",
-      "weeklyDeliverable": "A basic JavaScript function embedded in your index.html, with the change committed and pushed to GitHub.",
-      "smartGoal": "I can describe what commit and push do so that I understand how my code changes get saved to GitHub.",
-      "contentStandard": "CA CS Standards 6-8.AP.16 — Incorporate existing code, images, and other artifacts into original programs, with appropriate credit.",
+      "workingNow": "Copying the Example file to create your own about-me.html and exploring header and body tags.",
+      "weeklyDeliverable": "A complete About Me page (copied from the Example file) with header/body structure, formatted favorites text, at least one resized image with a caption, and a table.",
+      "smartGoal": "I can copy the Example file and identify the header and body tags so that I have a starting point for my About Me page.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Warm-Up: Time Bank check-in (5 min)",
-        "I do: model a commit + push in the GitHub editor (10 min)",
-        "We do: commit a tiny practice edit together as a class (10 min)",
-        "You do: make one small edit to your own repo, commit, push (15 min)",
-        "Exit Ticket: what do commit and push each do? (5 min)"
+        "Warm-Up: Self-paced Wayground — classroom expectations review (5 min)",
+        "I do: copy the Example file, rename to about-me.html (5 min)",
+        "We do: locate <header> and <body> together (7 min)",
+        "You do: copy your own file + add a header with your name (18 min)",
+        "Exit Ticket: paste your header tag (5 min)"
       ],
-      "connections": "Last week you got GitHub Pages live with an image pasted into your HTML. Before you touch the Mario repo, commit and push need to feel automatic — that's today's whole focus. Next week we'll use this same workflow inside someone else's repo."
+      "connections": "Last week you got GitHub Pages live with a single pasted image. Today we start your real About Me page by copying our Example file and learning where header and body content lives. By Friday this page will be complete with your favorites, an image, and a table."
     },
     "6th Period": {
       "grade": "7th Grade",
@@ -25,7 +25,7 @@
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Warm-Up: Time Bank check-in (5 min)",
+        "Warm-Up: Self-paced Wayground — classroom expectations review (5 min)",
         "I do: traffic light state machine example on the board (7 min)",
         "We do: sketch a state diagram together as a class (8 min)",
         "You do: in pairs, sketch a state diagram for a game idea (15 min)",
@@ -41,7 +41,7 @@
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Warm-Up: Time Bank check-in (5 min)",
+        "Warm-Up: Self-paced Wayground — classroom expectations review (5 min)",
         "I do: traffic light state machine example on the board (7 min)",
         "We do: sketch a state diagram together as a class (8 min)",
         "You do: in pairs, sketch a state diagram for a game idea (15 min)",

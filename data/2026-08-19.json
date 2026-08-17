@@ -3,18 +3,18 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Committing and pushing one more practice change and reviewing where HTML code goes.",
-      "weeklyDeliverable": "A basic JavaScript function embedded in your index.html, with the change committed and pushed to GitHub.",
-      "smartGoal": "I can commit and push a change to my repo without help so that I'm ready to add real code independently.",
+      "workingNow": "Adding and resizing an image on your About Me page, with a caption.",
+      "weeklyDeliverable": "A complete About Me page (copied from the Example file) with header/body structure, formatted favorites text, at least one resized image with a caption, and a table.",
+      "smartGoal": "I can add an image, resize it with inline code, and write a caption so that my page includes a picture that represents me.",
       "contentStandard": "CA CS Standards 6-8.AP.16 — Incorporate existing code, images, and other artifacts into original programs, with appropriate credit.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Warm-Up: Time Bank check-in (3 min)",
-        "Quick Wayground check: commit/push + HTML structure (7 min)",
-        "You do: commit + push one practice change solo (15 min)",
-        "Exit Ticket: screenshot your pushed change (5 min)"
+        "I do: model uploading + resizing an image inline (7 min)",
+        "You do: upload your image, resize it, write a caption (15 min)",
+        "Exit Ticket: paste your image tag with width/height (5 min)"
       ],
-      "connections": "This is a short day, so it's a checkpoint: can you commit and push and find your way around your HTML file on your own? Tomorrow we add real code — a JavaScript function — into that file."
+      "connections": "Your page has structure and formatted text. Today it gets a picture — resized so it fits and captioned so it makes sense. Tomorrow we add one more tag: tables."
     },
     "6th Period": {
       "grade": "7th Grade",
