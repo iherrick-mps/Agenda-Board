@@ -1,0 +1,53 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Learning what \"commit\" and \"push\" actually do to your code on GitHub.",
+      "weeklyDeliverable": "A basic JavaScript function embedded in your index.html, with the change committed and pushed to GitHub.",
+      "smartGoal": "I can describe what commit and push do so that I understand how my code changes get saved to GitHub.",
+      "contentStandard": "CA CS Standards 6-8.AP.16 — Incorporate existing code, images, and other artifacts into original programs, with appropriate credit.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "I do: model a commit + push in the GitHub editor (10 min)",
+        "We do: commit a tiny practice edit together as a class (10 min)",
+        "You do: make one small edit to your own repo, commit, push (15 min)",
+        "Exit Ticket: what do commit and push each do? (5 min)"
+      ],
+      "connections": "Last week you got GitHub Pages live with an image pasted into your HTML. Before you touch the Mario repo, commit and push need to feel automatic — that's today's whole focus. Next week we'll use this same workflow inside someone else's repo."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Talking through how a traffic light \"knows\" when to change states.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
+      "smartGoal": "I can describe how an event triggers a state change so that I understand how games track different modes.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "I do: traffic light state machine example on the board (7 min)",
+        "We do: sketch a state diagram together as a class (8 min)",
+        "You do: in pairs, sketch a state diagram for a game idea (15 min)",
+        "Share out: one pair presents their diagram (5 min)"
+      ],
+      "connections": "Your About Me pages are live and done — great work. Starting today we move into a brand-new unit, Game Design, where you'll build games instead of static pages. Tomorrow we build our first state machine in Sprite Lab."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Talking through how a traffic light \"knows\" when to change states.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
+      "smartGoal": "I can describe how an event triggers a state change so that I understand how games track different modes.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "I do: traffic light state machine example on the board (7 min)",
+        "We do: sketch a state diagram together as a class (8 min)",
+        "You do: in pairs, sketch a state diagram for a game idea (15 min)",
+        "Share out: one pair presents their diagram (5 min)"
+      ],
+      "connections": "Your About Me pages are live and done — great work. Starting today we move into a brand-new unit, Game Design, where you'll build games instead of static pages. Tomorrow we build our first state machine in Sprite Lab."
+    }
+  }
+}

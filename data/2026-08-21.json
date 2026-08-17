@@ -1,0 +1,54 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Getting your JavaScript function working, then committing and pushing the final version.",
+      "weeklyDeliverable": "A basic JavaScript function embedded in your index.html, with the change committed and pushed to GitHub.",
+      "smartGoal": "I can commit and push a working JavaScript function in my HTML file so that my portfolio site does something interactive.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "You do: finish/debug your JS function (15 min)",
+        "Partner check: does your partner's function run? (8 min)",
+        "Commit + push your final version (7 min)",
+        "Exit Ticket: paste your pushed commit link (5 min)",
+        "Bank payout: remaining minutes → free time (10 min)"
+      ],
+      "connections": "This week you built the three foundations you'll need — commit/push, HTML navigation, and a working JS function. Next week we put all three to work forking and editing the Mario repo."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Finishing up your Game Lab project so it has at least two states triggered by an event.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
+      "smartGoal": "I can test my game so that it shows at least two states, each triggered by an event.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "You do: finish + test your 2-state game (20 min)",
+        "Partner test: does your partner's game switch states? (8 min)",
+        "Exit Ticket: describe your two states and their triggers (5 min)",
+        "Bank payout: remaining minutes → free time (7 min)"
+      ],
+      "connections": "This week you went from a paper state diagram to a real, working game with triggered states. Next week we keep building on this in Game Lab."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Finishing up your Game Lab project so it has at least two states triggered by an event.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
+      "smartGoal": "I can test my game so that it shows at least two states, each triggered by an event.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "You do: finish + test your 2-state game (20 min)",
+        "Partner test: does your partner's game switch states? (8 min)",
+        "Exit Ticket: describe your two states and their triggers (5 min)",
+        "Bank payout: remaining minutes → free time (7 min)"
+      ],
+      "connections": "This week you went from a paper state diagram to a real, working game with triggered states. Next week we keep building on this in Game Lab."
+    }
+  }
+}

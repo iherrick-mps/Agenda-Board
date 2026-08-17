@@ -1,0 +1,51 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Learning what a JavaScript function is and watching one get pasted into an HTML file.",
+      "weeklyDeliverable": "A basic JavaScript function embedded in your index.html, with the change committed and pushed to GitHub.",
+      "smartGoal": "I can identify the parts of a basic JavaScript function so that I know what I'm about to paste into my HTML.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "I do: model pasting a simple JS function into <script> tags (10 min)",
+        "We do: predict what the function will do before running it (7 min)",
+        "You do: self-paced — paste the practice function into your own file (15 min)",
+        "Journal: describe what your function does, in your own words (3 min)"
+      ],
+      "connections": "You now know where code lives in an HTML file and how to save changes with commit and push. Today we put those together and add your first JavaScript function. (Self-paced today so MAP Testing pull-outs can rejoin smoothly.)"
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Continuing self-paced work in Code.org Game Lab, Lesson 1.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
+      "smartGoal": "I can add an event-triggered state to my Game Lab project so that my game responds when something happens.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "You do: continue Game Lab Lesson 1, self-paced (25 min)",
+        "Journal: describe one state your game has so far (5 min)",
+        "Ask 2 classmates for one tip before you log off (5 min)"
+      ],
+      "connections": "This is your second self-paced day in Game Lab, building toward a scene or sprite with two triggered states. (Self-paced so MAP Testing pull-outs can rejoin without missing steps.)"
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Continuing self-paced work in Code.org Game Lab, Lesson 1.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
+      "smartGoal": "I can add an event-triggered state to my Game Lab project so that my game responds when something happens.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "You do: continue Game Lab Lesson 1, self-paced (25 min)",
+        "Journal: describe one state your game has so far (5 min)",
+        "Ask 2 classmates for one tip before you log off (5 min)"
+      ],
+      "connections": "This is your second self-paced day in Game Lab, building toward a scene or sprite with two triggered states. (Self-paced so MAP Testing pull-outs can rejoin without missing steps.)"
+    }
+  }
+}

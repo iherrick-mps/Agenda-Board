@@ -1,0 +1,50 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Committing and pushing one more practice change and reviewing where HTML code goes.",
+      "weeklyDeliverable": "A basic JavaScript function embedded in your index.html, with the change committed and pushed to GitHub.",
+      "smartGoal": "I can commit and push a change to my repo without help so that I'm ready to add real code independently.",
+      "contentStandard": "CA CS Standards 6-8.AP.16 — Incorporate existing code, images, and other artifacts into original programs, with appropriate credit.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (3 min)",
+        "Quick Wayground check: commit/push + HTML structure (7 min)",
+        "You do: commit + push one practice change solo (15 min)",
+        "Exit Ticket: screenshot your pushed change (5 min)"
+      ],
+      "connections": "This is a short day, so it's a checkpoint: can you commit and push and find your way around your HTML file on your own? Tomorrow we add real code — a JavaScript function — into that file."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Getting oriented in Code.org Game Lab for the first time.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
+      "smartGoal": "I can navigate the Game Lab environment so that I'm ready to start building my own game this week.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (3 min)",
+        "I do: quick tour of Game Lab's layout (7 min)",
+        "You do: start Game Lab Lesson 1, self-paced (17 min)",
+        "Exit Ticket: one thing you noticed in Game Lab (3 min)"
+      ],
+      "connections": "You just built a state machine by hand in Sprite Lab. Today we move into Game Lab, where you'll build a full state-based game across the rest of the week."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Getting oriented in Code.org Game Lab for the first time.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
+      "smartGoal": "I can navigate the Game Lab environment so that I'm ready to start building my own game this week.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (3 min)",
+        "I do: quick tour of Game Lab's layout (7 min)",
+        "You do: start Game Lab Lesson 1, self-paced (17 min)",
+        "Exit Ticket: one thing you noticed in Game Lab (3 min)"
+      ],
+      "connections": "You just built a state machine by hand in Sprite Lab. Today we move into Game Lab, where you'll build a full state-based game across the rest of the week."
+    }
+  }
+}

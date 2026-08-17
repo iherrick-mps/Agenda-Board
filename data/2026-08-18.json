@@ -1,0 +1,53 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Practicing the commit-and-push cycle and finding your way around your HTML file's structure.",
+      "weeklyDeliverable": "A basic JavaScript function embedded in your index.html, with the change committed and pushed to GitHub.",
+      "smartGoal": "I can locate the head and body sections of my HTML file so that I know where different kinds of code belong.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Warm-Up: Time Bank check-in (5 min)",
+        "I do: tour an HTML file — head vs. body, tags (7 min)",
+        "We do: find 3 tags together as a class (5 min)",
+        "You do: self-paced — commit/push practice + tag scavenger hunt (20 min)",
+        "Exit Ticket: name one thing that lives in <head> (3 min)"
+      ],
+      "connections": "Yesterday we practiced commit and push. Today we zoom into the file itself so you know exactly where new code should go before you add a JavaScript function later this week. (Self-paced today so MAP Testing pull-outs can rejoin smoothly.)"
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Building a basic state machine in Sprite Lab, in your Complex Instruction group.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
+      "smartGoal": "I can build a sprite with at least two states so that it changes when triggered by an event.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Entry routine & get into groups (3 min)",
+        "I do: build a 2-state sprite in Sprite Lab (7 min)",
+        "We do: trigger the state change together (5 min)",
+        "You do: build your own 2-state sprite, self-paced (20 min)",
+        "Exit Ticket: what event triggers your sprite's change? (3 min)"
+      ],
+      "connections": "Yesterday we sketched state diagrams on paper. Today we build one for real in Sprite Lab. (Self-paced today so MAP Testing pull-outs can rejoin without missing steps.)"
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Building a basic state machine in Sprite Lab, in your Complex Instruction group.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
+      "smartGoal": "I can build a sprite with at least two states so that it changes when triggered by an event.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Entry routine & get into groups (3 min)",
+        "I do: build a 2-state sprite in Sprite Lab (7 min)",
+        "We do: trigger the state change together (5 min)",
+        "You do: build your own 2-state sprite, self-paced (20 min)",
+        "Exit Ticket: what event triggers your sprite's change? (3 min)"
+      ],
+      "connections": "Yesterday we sketched state diagrams on paper. Today we build one for real in Sprite Lab. (Self-paced today so MAP Testing pull-outs can rejoin without missing steps.)"
+    }
+  }
+}
