@@ -3,51 +3,50 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Formatting your About Me text — headings, paragraphs, bold, and a favorites list.",
+      "workingNow": "Writing out your favorites list as paragraphs and pushing your changes.",
       "weeklyDeliverable": "A complete About Me page (copied from the Example file) with header/body structure, formatted favorites text, at least one resized image with a caption, and a table.",
-      "smartGoal": "I can use heading, paragraph, and list tags so that my favorites are formatted clearly on my page.",
+      "smartGoal": "I can write out a favorites list using paragraph tags so that my page has real content, ready to format tomorrow.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
-        "Warm-Up: Time Bank check-in (5 min)",
-        "I do: model a favorites list with <h2> and <ul>/<li> (7 min)",
-        "We do: format one example paragraph together (5 min)",
-        "You do: self-paced — add your favorites list + format your text (25 min)",
-        "Exit Ticket: name one formatting tag you used (3 min)"
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: model a favorites list written in <p> tags (7 min)",
+        "We do: draft one favorites item together (5 min)",
+        "You do: self-paced — write out your full favorites list, commit + push (25 min)",
+        "Exit Ticket: how many favorites did you list? (3 min)"
       ],
-      "connections": "Yesterday we set up the structure. Today we fill it in — your favorites get formatted with real HTML tags, not just plain text. (Self-paced today so MAP Testing pull-outs can rejoin smoothly.)"
+      "connections": "Yesterday we set up the structure. Today you got your favorites list written out and pushed. Tomorrow we go back in and format that same list with bold, italics, and headings."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Building a basic state machine in Sprite Lab, in your Complex Instruction group.",
+      "workingNow": "Following along with a video to build the example state machine in Sprite Lab, independently.",
       "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
-      "smartGoal": "I can build a sprite with at least two states so that it changes when triggered by an event.",
+      "smartGoal": "I can follow a tutorial to build a sprite with at least two states so that I see how an event triggers a state change.",
       "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
-        "Entry routine & get into groups (3 min)",
-        "I do: build a 2-state sprite in Sprite Lab (7 min)",
-        "We do: trigger the state change together (5 min)",
-        "You do: build your own 2-state sprite, self-paced (20 min)",
+        "Entry routine — get set up independently at your own seat (3 min)",
+        "Watch: Sprite Lab state machine tutorial video, in full (10 min)",
+        "You do: follow the video step-by-step, building the exact example sprite (22 min)",
         "Exit Ticket: what event triggers your sprite's change? (3 min)"
       ],
-      "connections": "Yesterday we sketched state diagrams on paper. Today we build one for real in Sprite Lab. (Self-paced today so MAP Testing pull-outs can rejoin without missing steps.)"
+      "connections": "Yesterday we sketched state diagrams on paper. Today you followed the tutorial video step-by-step and built the example sprite — a solid first rep with the tool. Tomorrow you'll take what you learned and apply it to your own design, working with a partner."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Building a basic state machine in Sprite Lab, in your Complex Instruction group.",
+      "workingNow": "Following along with a video to build the example state machine in Sprite Lab, independently.",
       "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
-      "smartGoal": "I can build a sprite with at least two states so that it changes when triggered by an event.",
+      "smartGoal": "I can follow a tutorial to build a sprite with at least two states so that I see how an event triggers a state change.",
       "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
-        "Entry routine & get into groups (3 min)",
-        "I do: build a 2-state sprite in Sprite Lab (7 min)",
-        "We do: trigger the state change together (5 min)",
-        "You do: build your own 2-state sprite, self-paced (20 min)",
+        "Entry routine — get set up independently at your own seat (3 min)",
+        "Watch: Sprite Lab state machine tutorial video, in full (10 min)",
+        "You do: follow the video step-by-step, building the exact example sprite (22 min)",
         "Exit Ticket: what event triggers your sprite's change? (3 min)"
       ],
-      "connections": "Yesterday we sketched state diagrams on paper. Today we build one for real in Sprite Lab. (Self-paced today so MAP Testing pull-outs can rejoin without missing steps.)"
+      "connections": "Yesterday we sketched state diagrams on paper. Today you followed the tutorial video step-by-step and built the example sprite — a solid first rep with the tool. Tomorrow you'll take what you learned and apply it to your own design, working with a partner."
     }
   }
 }

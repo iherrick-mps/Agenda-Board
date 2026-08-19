@@ -3,48 +3,52 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Adding and resizing an image on your About Me page, with a caption.",
+      "workingNow": "Formatting the favorites list you already wrote, using your new HTML Quick Reference.",
       "weeklyDeliverable": "A complete About Me page (copied from the Example file) with header/body structure, formatted favorites text, at least one resized image with a caption, and a table.",
-      "smartGoal": "I can add an image, resize it with inline code, and write a caption so that my page includes a picture that represents me.",
-      "contentStandard": "CA CS Standards 6-8.AP.16 — Incorporate existing code, images, and other artifacts into original programs, with appropriate credit.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "smartGoal": "I can apply bold, italic, underline, and heading tags to my existing favorites list so that it's easy to read, not just plain text.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
       "agenda": [
-        "Warm-Up: Time Bank check-in (3 min)",
-        "I do: model uploading + resizing an image inline (7 min)",
-        "You do: upload your image, resize it, write a caption (15 min)",
-        "Exit Ticket: paste your image tag with width/height (5 min)"
+        "Hand out HTML Quick Reference sheet (3 min)",
+        "I do: model formatting one favorites item with <b> and <i> (8 min)",
+        "You do: format your own favorites list using at least 3 tags (15 min)",
+        "Exit Ticket: paste one formatted favorites line from your page (4 min)"
       ],
-      "connections": "Your page has structure and formatted text. Today it gets a picture — resized so it fits and captioned so it makes sense. Tomorrow we add one more tag: tables."
+      "connections": "Yesterday you got your favorites list written out and pushed. Today, since it's a short day, we keep it simple: format that same list using the tags on your new reference sheet — bold labels, maybe italics or underline for emphasis. Tomorrow we start on images."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Getting oriented in Code.org Game Lab for the first time.",
+      "workingNow": "Learning what pair coding is, then implementing your own state machine design with a partner in Sprite Lab.",
       "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
-      "smartGoal": "I can navigate the Game Lab environment so that I'm ready to start building my own game this week.",
+      "smartGoal": "I can pilot and navigate with a partner so that we implement our own state machine design in Sprite Lab.",
       "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Warm-Up: Time Bank check-in (3 min)",
-        "I do: quick tour of Game Lab's layout (7 min)",
-        "You do: start Game Lab Lesson 1, self-paced (17 min)",
-        "Exit Ticket: one thing you noticed in Game Lab (3 min)"
+        "Hand back Monday's state machine design documents (2 min)",
+        "Mini-lesson: what is pair coding — pilot vs. navigator, and why we do it (6 min)",
+        "Get into pairs — whoever has the longer name pilots first today (2 min)",
+        "Pair coding Round 1: implement your design (9 min)",
+        "Swap roles — Pair coding Round 2 (9 min)",
+        "Exit Ticket: what's one thing your navigator caught or suggested? (2 min)"
       ],
-      "connections": "You just built a state machine by hand in Sprite Lab. Today we move into Game Lab, where you'll build a full state-based game across the rest of the week."
+      "connections": "On Monday you sketched your own state machine design on paper — that's what's getting handed back today. On Tuesday you followed my example video step by step to build the tutorial's sprite. Today's different — you get your own design back and try to build it yourselves, with a partner. We're using pair coding: one of you pilots (drives the keyboard) while the other navigates (watches, catches mistakes, and calls out next steps), then you swap halfway through. Programmers pair up like this all the time — it catches bugs faster and forces you to explain your thinking out loud."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Getting oriented in Code.org Game Lab for the first time.",
+      "workingNow": "Learning what pair coding is, then implementing your own state machine design with a partner in Sprite Lab.",
       "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
-      "smartGoal": "I can navigate the Game Lab environment so that I'm ready to start building my own game this week.",
+      "smartGoal": "I can pilot and navigate with a partner so that we implement our own state machine design in Sprite Lab.",
       "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
-        "Warm-Up: Time Bank check-in (3 min)",
-        "I do: quick tour of Game Lab's layout (7 min)",
-        "You do: start Game Lab Lesson 1, self-paced (17 min)",
-        "Exit Ticket: one thing you noticed in Game Lab (3 min)"
+        "Hand back Monday's state machine design documents (2 min)",
+        "Mini-lesson: what is pair coding — pilot vs. navigator, and why we do it (6 min)",
+        "Get into pairs — whoever has the longer name pilots first today (2 min)",
+        "Pair coding Round 1: implement your design (9 min)",
+        "Swap roles — Pair coding Round 2 (9 min)",
+        "Exit Ticket: what's one thing your navigator caught or suggested? (2 min)"
       ],
-      "connections": "You just built a state machine by hand in Sprite Lab. Today we move into Game Lab, where you'll build a full state-based game across the rest of the week."
+      "connections": "On Monday you sketched your own state machine design on paper — that's what's getting handed back today. On Tuesday you followed my example video step by step to build the tutorial's sprite. Today's different — you get your own design back and try to build it yourselves, with a partner. We're using pair coding: one of you pilots (drives the keyboard) while the other navigates (watches, catches mistakes, and calls out next steps), then you swap halfway through. Programmers pair up like this all the time — it catches bugs faster and forces you to explain your thinking out loud."
     }
   }
 }
