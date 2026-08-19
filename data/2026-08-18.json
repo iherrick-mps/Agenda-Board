@@ -11,7 +11,7 @@
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "I do: model a favorites list written in <p> tags (7 min)",
+        "I do: model a favorites list written in &lt;p&gt; tags (7 min)",
         "We do: draft one favorites item together (5 min)",
         "You do: self-paced — write out your full favorites list, commit + push (25 min)",
         "Exit Ticket: how many favorites did you list? (3 min)"

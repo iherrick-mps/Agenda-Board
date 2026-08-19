@@ -10,7 +10,7 @@
       "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
       "agenda": [
         "Hand out HTML Quick Reference sheet (3 min)",
-        "I do: model formatting one favorites item with <b> and <i> (8 min)",
+        "I do: model formatting one favorites item with &lt;b&gt; and &lt;i&gt; (8 min)",
         "You do: format your own favorites list using at least 3 tags (15 min)",
         "Exit Ticket: paste one formatted favorites line from your page (4 min)"
       ],

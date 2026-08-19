@@ -3,19 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Copying the Example file to create your own about-me.html and exploring header and body tags.",
+      "workingNow": "Watching our PII and HTML intro videos and completing the notes document before starting your About Me page.",
       "weeklyDeliverable": "A complete About Me page (copied from the Example file) with header/body structure, formatted favorites text, at least one resized image with a caption, and a table.",
-      "smartGoal": "I can copy the Example file and identify the header and body tags so that I have a starting point for my About Me page.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "smartGoal": "I can explain why personal information should stay private online and begin building my About Me page using header and body tags.",
+      "contentStandard": "CA CS Standards 6-8.IC.20 — Keep login credentials and personal information private when using networked devices and online tools; CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Warm-Up: Self-paced Wayground — classroom expectations review (5 min)",
-        "I do: copy the Example file, rename to about-me.html (5 min)",
-        "We do: locate <header> and <body> together (7 min)",
-        "You do: copy your own file + add a header with your name (18 min)",
-        "Exit Ticket: paste your header tag (5 min)"
+        "Watch: PII/online safety video (8 min)",
+        "Watch: intro to HTML video (8 min)",
+        "Complete guided notes document on both videos (10 min)",
+        "You do: copy the Example file, rename to about-me.html, add a header (15 min)",
+        "Exit Ticket: paste your header tag (4 min)"
       ],
-      "connections": "Last week you got GitHub Pages live with a single pasted image. Today we start your real About Me page by copying our Example file and learning where header and body content lives. By Friday this page will be complete with your favorites, an image, and a table."
+      "connections": "Last week you got GitHub Pages live with a single pasted image. Today, before writing more code, we cover the ground rules — what to keep private online and what HTML actually is — then start your real About Me page by copying our Example file. By Friday this page will be complete with your favorites, an image, and a table."
     },
     "6th Period": {
       "grade": "7th Grade",

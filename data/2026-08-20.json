@@ -11,10 +11,10 @@
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "I do: model a basic <table> with rows and cells (7 min)",
+        "I do: model a basic &lt;table&gt; with rows and cells (7 min)",
         "We do: build one row together (5 min)",
         "You do: self-paced — add a table to your page (20 min)",
-        "Exit Ticket: what's inside a <tr> vs. a <td>? (3 min)"
+        "Exit Ticket: what's inside a &lt;tr&gt; vs. a &lt;td&gt;? (3 min)"
       ],
       "connections": "You've built structure, text, and images — tables are the last new tag this week. Tomorrow we put everything together and finish the page. (Self-paced today so MAP Testing pull-outs can rejoin smoothly.)"
     },
