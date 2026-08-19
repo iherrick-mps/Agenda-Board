@@ -179,60 +179,219 @@ window.addEventListener('resize', () => {
 });
 
 /* ============================================================
-   Index page — date list (today pinned to top, then furthest
-   future down to oldest)
+   Periods — shared by the index page and the agenda page.
+   The chosen period travels in the URL (?period=4) so a link to
+   "6th Period on Aug 20" is a real, shareable address.
    ============================================================ */
 
-async function initIndexPage() {
-  const listEl = document.getElementById('date-list');
-  if (!listEl) return;
+const PERIOD_ORDER = ['4th Period', '6th Period', '7th Period'];
 
+const PERIOD_SLUG = {
+  '4th Period': '4',
+  '6th Period': '6',
+  '7th Period': '7'
+};
+
+const PERIOD_COLOR = {
+  '4th Period': 'var(--c-goal)',
+  '6th Period': 'var(--c-standard)',
+  '7th Period': 'var(--c-eld)'
+};
+
+const PERIOD_STORAGE_KEY = 'agendaBoard.period';
+
+// accepts "4", "4th", "4th Period", "4th%20Period" — anything whose digits
+// match a known period — and returns the canonical name, or null
+function normalizePeriod(raw) {
+  if (!raw) return null;
+  const digits = String(raw).replace(/\D/g, '');
+  return PERIOD_ORDER.find(p => PERIOD_SLUG[p] === digits) || null;
+}
+
+function agendaUrl(dateStr, period) {
+  const p = normalizePeriod(period);
+  return `agenda.html?date=${dateStr}` + (p ? `&period=${PERIOD_SLUG[p]}` : '');
+}
+
+async function loadDates() {
   const res = await fetch('dates.txt');
-  const pt = getPacificNow();
   const text = await res.text();
-  const dates = text.split('\n').map(d => d.trim()).filter(Boolean);
+  return [...new Set(text.split('\n').map(d => d.trim()).filter(Boolean))]
+    .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)); // ascending
+}
+
+/* ============================================================
+   Index page — pick a period first, then a day from the month
+   calendar (with the full date list still available below).
+   ============================================================ */
+
+// the calendar never scrolls back past the start of the school year
+const CAL_FIRST_YEAR = 2026;
+const CAL_FIRST_MONTH = 7; // 0-indexed: 7 = August
+
+const MONTHS_FULL = ['January','February','March','April','May','June',
+  'July','August','September','October','November','December'];
+
+const monthIndex = (year, month) => year * 12 + month;
+
+async function initIndexPage() {
+  const pickerEl = document.getElementById('period-picker');
+  const gridEl = document.getElementById('cal-grid');
+  const listEl = document.getElementById('date-list');
+  if (!pickerEl || !gridEl) return;
+
+  const dates = await loadDates();
+  const dateSet = new Set(dates);
+  const today = getPacificNow().isoDate;
 
   if (dates.length === 0) {
-    listEl.outerHTML = '<div class="empty-note">No dates found in dates.txt yet.</div>';
+    gridEl.outerHTML = '<div class="empty-note">No dates found in dates.txt yet.</div>';
     return;
   }
 
-  const today = pt.isoDate;
-  const hasToday = dates.includes(today);
-  const rest = dates.filter(d => d !== today)
-    .sort((a, b) => (a < b ? 1 : a > b ? -1 : 0)); // furthest future -> oldest
-  const ordered = hasToday ? [today, ...rest] : rest;
+  /* ---- month range: August 2026 through the last month in dates.txt ---- */
+  const minIdx = monthIndex(CAL_FIRST_YEAR, CAL_FIRST_MONTH);
+  const lastDate = dates[dates.length - 1];
+  const lastDt = new Date(`${lastDate}T00:00:00Z`);
+  const maxIdx = Math.max(minIdx, monthIndex(lastDt.getUTCFullYear(), lastDt.getUTCMonth()));
 
-  listEl.innerHTML = ordered.map(d => {
-    const dt = new Date(`${d}T00:00:00Z`);
-    const weekday = WEEKDAYS[dt.getUTCDay()];
-    const month = MONTHS[dt.getUTCMonth()];
-    const day = dt.getUTCDate();
-    const year = dt.getUTCFullYear();
-    const isToday = d === today;
-    return `
-      <li class="${isToday ? 'is-today' : ''}">
-        <a href="agenda.html?date=${d}">
-          <span>
-            <span class="date-main">${month} ${day}, ${year}</span>${isToday ? '<span class="today-tag">TODAY</span>' : ''}<br>
-            <span class="date-weekday">${weekday}</span>
-          </span>
-          <span class="date-arrow">View agenda &rarr;</span>
-        </a>
-      </li>`;
-  }).join('');
+  // open on the current month when it's inside the range, otherwise the first
+  const todayDt = new Date(`${today}T00:00:00Z`);
+  const todayIdx = monthIndex(todayDt.getUTCFullYear(), todayDt.getUTCMonth());
+  let viewIdx = Math.min(Math.max(todayIdx, minIdx), maxIdx);
+
+  /* ---- selected period (restored from last visit on this device) ---- */
+  let selectedPeriod = normalizePeriod(
+    new URLSearchParams(window.location.search).get('period')
+  );
+  if (!selectedPeriod) {
+    try {
+      selectedPeriod = normalizePeriod(localStorage.getItem(PERIOD_STORAGE_KEY));
+    } catch (e) { /* private browsing / storage disabled */ }
+  }
+
+  const titleEl = document.getElementById('cal-title');
+  const prevBtn = document.getElementById('cal-prev');
+  const nextBtn = document.getElementById('cal-next');
+  const hintEl = document.getElementById('cal-hint');
+
+  function renderPicker() {
+    pickerEl.querySelectorAll('.period-choice').forEach(btn => {
+      btn.classList.toggle('selected', btn.dataset.period === selectedPeriod);
+    });
+  }
+
+  function renderHint() {
+    if (!hintEl) return;
+    hintEl.classList.remove('is-warning');
+    hintEl.textContent = selectedPeriod
+      ? `Showing ${selectedPeriod}. Click any highlighted day to open its agenda.`
+      : 'Pick a period above, then click a highlighted day.';
+  }
+
+  function renderCalendar() {
+    const year = Math.floor(viewIdx / 12);
+    const month = viewIdx % 12;
+    titleEl.textContent = `${MONTHS_FULL[month]} ${year}`;
+    prevBtn.disabled = viewIdx <= minIdx;
+    nextBtn.disabled = viewIdx >= maxIdx;
+
+    const firstWeekday = new Date(Date.UTC(year, month, 1)).getUTCDay();
+    const daysInMonth = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+
+    const cells = [];
+    for (let i = 0; i < firstWeekday; i++) {
+      cells.push('<span class="cal-day is-blank"></span>');
+    }
+    for (let day = 1; day <= daysInMonth; day++) {
+      const iso = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      const classes = ['cal-day'];
+      if (dateSet.has(iso)) classes.push('has-agenda');
+      if (iso === today) classes.push('is-today');
+
+      if (dateSet.has(iso)) {
+        const color = selectedPeriod ? PERIOD_COLOR[selectedPeriod] : 'var(--ink)';
+        cells.push(
+          `<a class="${classes.join(' ')}" href="${agendaUrl(iso, selectedPeriod)}"` +
+          ` data-date="${iso}" style="--sel-color:${color}"` +
+          ` title="${iso}${iso === today ? ' (today)' : ''}">${day}</a>`
+        );
+      } else {
+        cells.push(`<span class="${classes.join(' ')}">${day}</span>`);
+      }
+    }
+    gridEl.innerHTML = cells.join('');
+  }
+
+  function renderList() {
+    if (!listEl) return;
+    const hasToday = dateSet.has(today);
+    const rest = dates.filter(d => d !== today)
+      .sort((a, b) => (a < b ? 1 : a > b ? -1 : 0)); // furthest future -> oldest
+    const ordered = hasToday ? [today, ...rest] : rest;
+
+    listEl.innerHTML = ordered.map(d => {
+      const dt = new Date(`${d}T00:00:00Z`);
+      const weekday = WEEKDAYS[dt.getUTCDay()];
+      const month = MONTHS[dt.getUTCMonth()];
+      const isToday = d === today;
+      return `
+        <li class="${isToday ? 'is-today' : ''}">
+          <a href="${agendaUrl(d, selectedPeriod)}">
+            <span>
+              <span class="date-main">${month} ${dt.getUTCDate()}, ${dt.getUTCFullYear()}</span>${isToday ? '<span class="today-tag">TODAY</span>' : ''}<br>
+              <span class="date-weekday">${weekday}</span>
+            </span>
+            <span class="date-arrow">View agenda &rarr;</span>
+          </a>
+        </li>`;
+    }).join('');
+  }
+
+  function renderAll() {
+    renderPicker();
+    renderCalendar();
+    renderList();
+    renderHint();
+  }
+
+  pickerEl.querySelectorAll('.period-choice').forEach(btn => {
+    btn.addEventListener('click', () => {
+      selectedPeriod = normalizePeriod(btn.dataset.period);
+      try { localStorage.setItem(PERIOD_STORAGE_KEY, PERIOD_SLUG[selectedPeriod]); }
+      catch (e) { /* storage disabled — the choice still works this session */ }
+      renderAll();
+    });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (viewIdx > minIdx) { viewIdx--; renderCalendar(); }
+  });
+  nextBtn.addEventListener('click', () => {
+    if (viewIdx < maxIdx) { viewIdx++; renderCalendar(); }
+  });
+
+  // clicking a day before choosing a period sends you back to step 1 rather
+  // than opening whichever period happens to be listed first that day
+  gridEl.addEventListener('click', (e) => {
+    const cell = e.target.closest('a.cal-day');
+    if (!cell || selectedPeriod) return;
+    e.preventDefault();
+    pickerEl.classList.remove('nudge');
+    void pickerEl.offsetWidth; // restart the animation
+    pickerEl.classList.add('nudge');
+    if (hintEl) {
+      hintEl.textContent = 'Pick your period first (step 1), then choose that day.';
+      hintEl.classList.add('is-warning');
+    }
+  });
+
+  renderAll();
 }
 
 /* ============================================================
    Agenda page — persistent bento board + period tabs
    ============================================================ */
-
-const PERIOD_ORDER = ['4th Period', '6th Period', '7th Period'];
-const PIN_COLOR = {
-  '4th Period': 'var(--c-goal)',
-  '6th Period': 'var(--c-standard)',
-  '7th Period': 'var(--c-eld)'
-};
 
 // maps a JSON field name -> the box's content element id
 const FIELD_TO_EL = {
@@ -285,6 +444,7 @@ async function initAgendaPage() {
 
   const params = new URLSearchParams(window.location.search);
   const dateStr = params.get('date');
+  const urlPeriod = normalizePeriod(params.get('period'));
   const headerDateEl = document.getElementById('agenda-date');
   const scheduleEl = document.getElementById('agenda-schedule');
   const tabsEl = document.getElementById('period-tabs');
@@ -294,7 +454,13 @@ async function initAgendaPage() {
     return;
   }
 
-  initDayNav(dateStr);
+  // the back link and prev/next buttons keep whichever period you're viewing
+  const backLink = document.querySelector('.back-link-inline');
+  if (backLink && urlPeriod) {
+    backLink.href = `index.html?period=${PERIOD_SLUG[urlPeriod]}`;
+  }
+
+  initDayNav(dateStr, urlPeriod);
 
   let dayData;
   try {
@@ -332,7 +498,7 @@ async function initAgendaPage() {
 
   tabsEl.innerHTML = periodsPresent.map(p => {
     const isLive = p === livePeriodName;
-    return `<button class="period-tab${isLive ? ' is-now' : ''}" data-period="${p}" style="--pin-color:${PIN_COLOR[p] || '#cdd8e6'}">${p} &middot; ${dayData.periods[p].grade || ''}</button>`;
+    return `<button class="period-tab${isLive ? ' is-now' : ''}" data-period="${p}" style="--pin-color:${PERIOD_COLOR[p] || '#cdd8e6'}">${p} &middot; ${dayData.periods[p].grade || ''}</button>`;
   }).join('');
 
   function selectPeriod(period) {
@@ -340,14 +506,31 @@ async function initAgendaPage() {
       btn.classList.toggle('active', btn.dataset.period === period);
     });
     renderPeriodContent(dayData.periods[period]);
+
+    // keep the address bar honest, so the page can be bookmarked, projected,
+    // or handed to a student as a link to exactly this period's board
+    const next = new URLSearchParams(window.location.search);
+    next.set('date', dateStr);
+    next.set('period', PERIOD_SLUG[period]);
+    history.replaceState(null, '', `${window.location.pathname}?${next}`);
+
+    try { localStorage.setItem(PERIOD_STORAGE_KEY, PERIOD_SLUG[period]); }
+    catch (e) { /* storage disabled */ }
+
+    initDayNav(dateStr, period);
+    const back = document.querySelector('.back-link-inline');
+    if (back) back.href = `index.html?period=${PERIOD_SLUG[period]}`;
   }
 
   tabsEl.querySelectorAll('.period-tab').forEach(btn => {
     btn.addEventListener('click', () => selectPeriod(btn.dataset.period));
   });
 
-  const defaultPeriod = (livePeriodName && periodsPresent.includes(livePeriodName))
-    ? livePeriodName
+  // ?period wins; then whichever period is live right now (only meaningful
+  // when you're looking at today); then the first period that meets that day
+  const defaultPeriod =
+    (urlPeriod && periodsPresent.includes(urlPeriod)) ? urlPeriod
+    : (livePeriodName && periodsPresent.includes(livePeriodName)) ? livePeriodName
     : periodsPresent[0];
   if (defaultPeriod) selectPeriod(defaultPeriod);
 }
@@ -424,15 +607,12 @@ function initFocusMode() {
    adjacent calendar day).
    ============================================================ */
 
-async function initDayNav(currentDate) {
+async function initDayNav(currentDate, period) {
   const prevBtn = document.getElementById('prev-day-btn');
   const nextBtn = document.getElementById('next-day-btn');
   if (!prevBtn || !nextBtn) return;
 
-  const res = await fetch('dates.txt');
-  const text = await res.text();
-  const dates = [...new Set(text.split('\n').map(d => d.trim()).filter(Boolean))]
-    .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)); // ascending
+  const dates = await loadDates();
 
   const idx = dates.indexOf(currentDate);
 
@@ -447,23 +627,17 @@ async function initDayNav(currentDate) {
     nextDate = dates.find(d => d > currentDate) || null;
   }
 
-  if (prevDate) {
-    prevBtn.disabled = false;
-    prevBtn.addEventListener('click', () => {
-      window.location.href = `agenda.html?date=${prevDate}`;
-    });
-  } else {
-    prevBtn.disabled = true;
-  }
+  // assigned (not addEventListener'd) because this runs again every time the
+  // period changes — a stacked listener would fire two navigations at once
+  prevBtn.disabled = !prevDate;
+  prevBtn.onclick = prevDate
+    ? () => { window.location.href = agendaUrl(prevDate, period); }
+    : null;
 
-  if (nextDate) {
-    nextBtn.disabled = false;
-    nextBtn.addEventListener('click', () => {
-      window.location.href = `agenda.html?date=${nextDate}`;
-    });
-  } else {
-    nextBtn.disabled = true;
-  }
+  nextBtn.disabled = !nextDate;
+  nextBtn.onclick = nextDate
+    ? () => { window.location.href = agendaUrl(nextDate, period); }
+    : null;
 }
 
 /* ============================================================
@@ -589,6 +763,83 @@ function initNowPlaying() {
   input.addEventListener('dblclick', (e) => e.stopPropagation());
 }
 
+/* ============================================================
+   Count-up timer — a stopwatch for timing work blocks, logins,
+   and transitions. Start / Stop / Clear, counting minutes and
+   seconds (it rolls over to H:MM:SS past an hour).
+   ============================================================ */
+
+function initCountUpTimer() {
+  const box = document.querySelector('.box-timer');
+  const displayEl = document.getElementById('timer-display');
+  const startBtn = document.getElementById('timer-start');
+  const stopBtn = document.getElementById('timer-stop');
+  const clearBtn = document.getElementById('timer-clear');
+  if (!box || !displayEl || !startBtn || !stopBtn || !clearBtn) return;
+
+  let elapsedMs = 0;     // time banked from previous run segments
+  let startedAt = null;  // wall-clock ms when the current segment began
+  let ticker = null;
+
+  // measured against Date.now() rather than counting interval fires, so a
+  // throttled background tab can't make the timer drift slow
+  const totalMs = () => elapsedMs + (startedAt === null ? 0 : Date.now() - startedAt);
+
+  function format(ms) {
+    const total = Math.floor(ms / 1000);
+    const h = Math.floor(total / 3600);
+    const m = Math.floor((total % 3600) / 60);
+    const s = total % 60;
+    const mm = String(m).padStart(2, '0');
+    const ss = String(s).padStart(2, '0');
+    return h > 0 ? `${h}:${mm}:${ss}` : `${mm}:${ss}`;
+  }
+
+  function paint() {
+    displayEl.textContent = format(totalMs());
+    const running = startedAt !== null;
+    box.classList.toggle('is-running', running);
+    startBtn.disabled = running;
+    stopBtn.disabled = !running;
+    clearBtn.disabled = !running && totalMs() === 0;
+  }
+
+  function start() {
+    if (startedAt !== null) return;
+    startedAt = Date.now();
+    ticker = setInterval(paint, 250);
+    paint();
+  }
+
+  function stop() {
+    if (startedAt === null) return;
+    elapsedMs += Date.now() - startedAt;
+    startedAt = null;
+    clearInterval(ticker);
+    ticker = null;
+    paint();
+  }
+
+  function clear() {
+    stop();
+    elapsedMs = 0;
+    paint();
+  }
+
+  startBtn.addEventListener('click', start);
+  stopBtn.addEventListener('click', stop);
+  clearBtn.addEventListener('click', clear);
+
+  // the buttons sit inside a bento box that also handles click-to-focus and
+  // double-click-to-fullscreen — keep those from firing on timer clicks
+  [startBtn, stopBtn, clearBtn].forEach(btn => {
+    btn.addEventListener('click', (e) => e.stopPropagation());
+    btn.addEventListener('dblclick', (e) => e.stopPropagation());
+  });
+
+  paint();
+}
+
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -598,6 +849,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFullscreenToggle();
   initFocusMode();
   initNowPlaying();
+  initCountUpTimer();
 
   // belt-and-suspenders: re-fit everything once web fonts are confirmed
   // loaded, in case something rendered/measured before that point

@@ -3,8 +3,8 @@
 A daily agenda board for Robotics & Coding, deployable to GitHub Pages.
 
 ## What's here
-- `index.html` — list of dates (pulled from `dates.txt`). **Today is always pinned to the top**; everything else is sorted furthest-future down to oldest below it.
-- `agenda.html` — the board itself: a full-screen, no-scroll grid of boxes. Reads `?date=YYYY-MM-DD` from the URL and loads the matching file from `data/`.
+- `index.html` — **pick a period, then pick a day.** A month calendar (starting August 2026, running through the last month present in `dates.txt`) with today outlined; days that have an agenda file are clickable, the rest are greyed out. The old full date list is still there, collapsed under "Or see every date as a list."
+- `agenda.html` — the board itself: a full-screen, no-scroll grid of boxes. Reads `?date=YYYY-MM-DD&period=4` from the URL and loads the matching file from `data/`.
 - `styles.css` — all colors and sizing. The 7 box colors are CSS variables at the top (`--c-working`, `--c-deliverable`, `--c-goal`, `--c-standard`, `--c-eld`, `--c-agenda`, `--c-connect`) — change a hex value there to re-theme a box everywhere. The board layout itself (which box goes where, and how big) is the `grid-template-areas` block in the `.board-grid` rule.
 - `script.js` — clock/countdown logic, date list rendering, box rendering, and the auto-fit-text routine.
 - `bells.json` — the three bell schedules (Regular, Shortened/Wednesday, Minimum Day), built from the 2025-26 bell schedule PDF.
@@ -16,6 +16,8 @@ Ten boxes tile the full screen with no scrolling, no matter what screen it's dis
 **Clock**, **Ms. Herrick** (name), **Now Playing**, **What should I be working on right now?**, **Due on Sunday** (this week's deliverable), **ELD Standard**, **Content Standard**, **Agenda/Steps**, **Connections**, **SMART Goal**. Agenda/Steps gets the most space since it usually has the most content; ELD Standard and Content Standard sit stacked together on the left and are intentionally small since students don't read those directly. Time durations in agenda steps (e.g. "(5 min)") are automatically styled in a muted monospace so they're easy to skim without competing with the step text.
 
 Each text box's font automatically grows or shrinks to fill exactly the space it has — no wasted space, and it never overflows or scrolls, regardless of how much or little text is in that box that day.
+
+**Count-up timer:** a stopwatch strip sitting between the clock and the name card — Start, Stop, Clear, counting `MM:SS` (it rolls over to `H:MM:SS` past an hour). The digits turn green while it's running. It measures against the real wall clock rather than counting ticks, so it stays accurate even if the browser throttles the tab. It resets on page reload; it's meant for timing a work block, a login, or a transition, not for carrying time across days.
 
 **Clock box:** shows today's real date (`YYYY/MM/DD · WEEKDAY`), the live Pacific time, and the countdown — always reflects the real day/time, not whatever date's board you're viewing. "Ms. Herrick" sits in its own small box directly underneath, sized so the two together match the height of the Working/Deliverable boxes beside them.
 
@@ -37,6 +39,14 @@ Any string field (agenda steps, connections, etc.) can contain raw HTML, since i
 "<a href=\"https://classroom.google.com/c/XXXX?cjc=YYYY\" target=\"_blank\" rel=\"noopener\">Join Google Classroom</a>"
 ```
 That said, since this board is meant to be projected (not clicked by students), 2026-08-10 instead shows each grade's join code as **plain text** — e.g. `"Google Classroom Code: IFUO4BFC"` — pulled from the `cjc=` part of the join URL, which is the actual code students would type in manually.
+
+## Periods in the URL
+Every board address carries its period: `agenda.html?date=2026-08-19&period=6`. `period` accepts `4`, `6`, or `7` (it will also accept `4th` or the full `4th Period`).
+
+- Switching period tabs on the board rewrites the address bar, so the URL always matches what's on screen — you can bookmark or share a link to one specific period's day.
+- Prev/Next day and the "All dates" back link carry the current period with them.
+- If the URL asks for a period that doesn't meet that day (e.g. `period=6` on a Minimum Day), the board falls back to the live period, then to the first period that does meet.
+- `index.html?period=6` opens the home page with 6th Period already selected. The last period picked is also remembered on that device.
 
 ## Adding a new day
 1. Duplicate a file in `data/` and rename it to the new date, e.g. `data/2026-08-13.json`.
@@ -64,6 +74,9 @@ Each period needs:
 1. Push this folder to a GitHub repo (e.g. `iherrick-mps/agenda-board`).
 2. In the repo: **Settings → Pages → Source → Deploy from branch**, pick `main` (or your default branch) and `/ (root)`.
 3. Your board will be live at `https://iherrick-mps.github.io/agenda-board/`.
+
+## One gotcha for the HTML unit
+Box content is rendered as HTML so that links work. That means a literal tag name typed into a JSON field — `locate <header> and <body> together` — is parsed as markup by the browser and **disappears from the board**. Write tag names escaped instead: `locate &lt;header&gt; and &lt;body&gt; together`.
 
 No build step, no dependencies — it's plain HTML/CSS/JS, so it works as-is on GitHub Pages.
 

@@ -17,6 +17,7 @@
   --c-eld: #0d9367;        /* ELD Standard */
   --c-agenda: #d98c0f;     /* Agenda / Steps */
   --c-connect: #c22a72;    /* Connections */
+  --c-timer: #38bdf8;      /* Count-up timer */
   --c-studyrules: #c7361f; /* Study Hall — Rules */
   --c-closing: #0d9367;    /* Study Hall — Before You Leave */
 
@@ -193,6 +194,194 @@ body.index-page {
   background: var(--surface);
 }
 
+.page-heading .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  font-weight: 700;
+}
+
+/* ---------- Step 1: period picker ---------- */
+
+.period-picker { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.period-choice {
+  flex: 1 1 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 18px;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--grid-line);
+  border-left: 6px solid var(--pc-color, var(--grid-line));
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s, background 0.12s;
+}
+.period-choice:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(22,32,43,0.12); }
+
+.period-choice[data-period="4th Period"] { --pc-color: var(--c-goal); }
+.period-choice[data-period="6th Period"] { --pc-color: var(--c-standard); }
+.period-choice[data-period="7th Period"] { --pc-color: var(--c-eld); }
+
+.period-choice .pc-period {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+.period-choice .pc-grade {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.period-choice.selected {
+  background: var(--pc-color);
+  border-color: var(--pc-color);
+}
+.period-choice.selected .pc-period,
+.period-choice.selected .pc-grade { color: #fff; }
+.period-choice.selected .pc-grade { opacity: 0.85; }
+
+.period-picker.nudge { animation: nudge 0.4s ease; }
+@keyframes nudge {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* ---------- Step 2: month calendar ---------- */
+
+.calendar {
+  background: var(--surface);
+  border: 1px solid var(--grid-line);
+  border-radius: var(--radius);
+  padding: 14px 16px 12px;
+  max-width: 520px;
+}
+
+.cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.cal-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.cal-nav {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--grid-line);
+  border-radius: 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+.cal-nav:hover:not(:disabled) { color: var(--ink); border-color: var(--ink); }
+.cal-nav:disabled { opacity: 0.28; cursor: default; }
+
+.cal-weekdays,
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.cal-weekdays {
+  margin-bottom: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+.cal-day {
+  aspect-ratio: 1.35 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #b3bcc6;
+  padding: 0;
+}
+
+.cal-day.is-blank { visibility: hidden; }
+
+/* days that actually have an agenda file */
+.cal-day.has-agenda {
+  background: var(--bg);
+  border-color: var(--grid-line);
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.12s, transform 0.12s;
+}
+.cal-day.has-agenda:hover {
+  background: var(--sel-color, var(--ink));
+  border-color: var(--sel-color, var(--ink));
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.cal-day.is-today {
+  border-color: var(--c-working);
+  border-width: 2px;
+  color: var(--c-working);
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--c-working) 18%, white);
+}
+.cal-day.is-today.has-agenda { background: color-mix(in srgb, var(--c-working) 12%, white); }
+
+.cal-hint {
+  margin-top: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+}
+.cal-hint.is-warning { color: var(--c-working); font-weight: 700; }
+
+/* ---------- collapsible full date list ---------- */
+
+.date-list-wrap { margin-top: 22px; max-width: 520px; }
+
+.date-list-wrap > summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  padding: 6px 0 12px;
+}
+.date-list-wrap > summary:hover { color: var(--ink); }
+
 /* ============================================================
    AGENDA PAGE — fixed, no-scroll, full-viewport bento board
    ============================================================ */
@@ -310,7 +499,7 @@ body.board-page {
   grid-template-areas:
     "clock clock clock working working working working working working deliver deliver deliver"
     "clock clock clock working working working working working working deliver deliver deliver"
-    "clock clock clock working working working working working working deliver deliver deliver"
+    "timer timer timer working working working working working working deliver deliver deliver"
     "name name name working working working working working working deliver deliver deliver"
     "eld eld eld eld agenda agenda agenda agenda connect connect connect connect"
     "eld eld eld eld agenda agenda agenda agenda connect connect connect connect"
@@ -355,6 +544,7 @@ body.board-page {
 }
 
 .box-clock      { grid-area: clock; }
+.box-timer      { grid-area: timer; }
 .box-name       { grid-area: name; }
 .box-nowplaying { grid-area: nowplaying; }
 .box-working    { grid-area: working; }
@@ -494,6 +684,58 @@ body.board-page {
 .box-clock .status-value { color: #eaf1ff; font-weight: 700; }
 .box-clock .clock-status.in-session .status-value { color: #6ee7b7; }
 .box-clock .clock-status.not-in-session .status-value { color: #f5b169; }
+
+/* count-up timer — a single-row dark strip between the clock and the name
+   card, laid out horizontally (big MM:SS on the left, controls on the right)
+   so it stays legible even in a short grid row on a 720p projector */
+.box-timer {
+  background: var(--ink);
+  border-left-color: var(--c-timer);
+  color: #eaf1ff;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6em;
+  padding: 0.5vh 1.1vw;
+  container-type: size;
+}
+
+.timer-display {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-size: clamp(0.95rem, min(56cqh, 9cqw), 3.2rem);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.box-timer.is-running .timer-display { color: #6ee7b7; }
+
+.timer-controls {
+  display: flex;
+  gap: 0.35em;
+  flex: 0 0 auto;
+}
+
+.timer-btn {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: clamp(0.5rem, min(28cqh, 3cqw), 0.85rem);
+  line-height: 1;
+  padding: 0.5em 0.7em;
+  color: #cdd8e6;
+  background: transparent;
+  border: 1px solid #3a4753;
+  border-radius: 5px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.timer-btn:hover { color: #fff; border-color: #fff; }
+.timer-btn:disabled { opacity: 0.3; cursor: default; }
+.timer-btn:disabled:hover { color: #cdd8e6; border-color: #3a4753; }
+#timer-start { color: #6ee7b7; border-color: #2d6b56; }
+#timer-start:hover:not(:disabled) { color: #a7f3d0; border-color: #6ee7b7; }
 
 /* name box — small dark card stacked directly under the clock */
 .box-name {
@@ -650,6 +892,7 @@ body.board-page {
     grid-template-areas:
       "working"
       "clock"
+      "timer"
       "name"
       "deliver"
       "eld"

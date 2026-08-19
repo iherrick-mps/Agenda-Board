@@ -24,10 +24,45 @@
 </div>
 
 <div class="page-body">
-  <div class="page-heading">Select a date</div>
-  <ul class="date-list" id="date-list">
-    <li><div class="empty-note">Loading dates&hellip;</div></li>
-  </ul>
+
+  <div class="page-heading"><span class="step-num">1</span> Pick your period</div>
+  <div class="period-picker" id="period-picker">
+    <button type="button" class="period-choice" data-period="4th Period">
+      <span class="pc-period">4th Period</span>
+      <span class="pc-grade">8th grade</span>
+    </button>
+    <button type="button" class="period-choice" data-period="6th Period">
+      <span class="pc-period">6th Period</span>
+      <span class="pc-grade">7th grade</span>
+    </button>
+    <button type="button" class="period-choice" data-period="7th Period">
+      <span class="pc-period">7th Period</span>
+      <span class="pc-grade">6th grade</span>
+    </button>
+  </div>
+
+  <div class="page-heading"><span class="step-num">2</span> Pick your day</div>
+
+  <div class="calendar" id="calendar">
+    <div class="cal-head">
+      <button type="button" class="cal-nav" id="cal-prev" title="Previous month">&larr;</button>
+      <div class="cal-title" id="cal-title">Loading&hellip;</div>
+      <button type="button" class="cal-nav" id="cal-next" title="Next month">&rarr;</button>
+    </div>
+    <div class="cal-weekdays">
+      <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span>
+      <span>Thu</span><span>Fri</span><span>Sat</span>
+    </div>
+    <div class="cal-grid" id="cal-grid"></div>
+    <div class="cal-hint" id="cal-hint">Pick a period above, then click a highlighted day.</div>
+  </div>
+
+  <details class="date-list-wrap">
+    <summary>Or see every date as a list</summary>
+    <ul class="date-list" id="date-list">
+      <li><div class="empty-note">Loading dates&hellip;</div></li>
+    </ul>
+  </details>
 
   <div class="page-heading">Other Pages</div>
   <ul class="date-list">
