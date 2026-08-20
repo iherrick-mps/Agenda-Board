@@ -20,35 +20,37 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Continuing self-paced work in Code.org Game Lab, Lesson 1.",
-      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
-      "smartGoal": "I can add an event-triggered state to my Game Lab project so that my game responds when something happens.",
+      "workingNow": "Continuing yesterday's pair-coded state machine in Sprite Lab — today you're adding a third state.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least three states, each triggered by an event.",
+      "smartGoal": "I can add a third state to my state machine so that my project has three distinct, event-triggered states.",
       "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "You do: continue Game Lab Lesson 1, self-paced (25 min)",
-        "Journal: describe one state your game has so far (5 min)",
-        "Ask 2 classmates for one tip before you log off (5 min)"
+        "Mini-lesson: what's your third state, and what triggers it? (5 min)",
+        "Pair coding: build and test your third state together (27 min)",
+        "Partner test: swap and confirm all three states trigger correctly (8 min)",
+        "Exit Ticket: describe your third state and its trigger (5 min)"
       ],
-      "connections": "This is your second self-paced day in Game Lab, building toward a scene or sprite with two triggered states. (Self-paced so MAP Testing pull-outs can rejoin without missing steps.)"
+      "connections": "On Wednesday you and your partner got your own two-state design working. Today you're pushing it further — designing and building a third state, so your project has three states total, each with its own trigger."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Continuing self-paced work in Code.org Game Lab, Lesson 1.",
-      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
-      "smartGoal": "I can add an event-triggered state to my Game Lab project so that my game responds when something happens.",
+      "workingNow": "Continuing yesterday's pair-coded state machine in Sprite Lab — today you're adding a third state.",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least three states, each triggered by an event.",
+      "smartGoal": "I can add a third state to my state machine so that my project has three distinct, event-triggered states.",
       "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "You do: continue Game Lab Lesson 1, self-paced (25 min)",
-        "Journal: describe one state your game has so far (5 min)",
-        "Ask 2 classmates for one tip before you log off (5 min)"
+        "Mini-lesson: what's your third state, and what triggers it? (5 min)",
+        "Pair coding: build and test your third state together (27 min)",
+        "Partner test: swap and confirm all three states trigger correctly (8 min)",
+        "Exit Ticket: describe your third state and its trigger (5 min)"
       ],
-      "connections": "This is your second self-paced day in Game Lab, building toward a scene or sprite with two triggered states. (Self-paced so MAP Testing pull-outs can rejoin without missing steps.)"
+      "connections": "On Wednesday you and your partner got your own two-state design working. Today you're pushing it further — designing and building a third state, so your project has three states total, each with its own trigger."
     }
   }
 }
