@@ -855,12 +855,17 @@ const CONFETTI_MIN_SIZE = 6;   // px, smallest confetti piece (falls fastest)
 const CONFETTI_MAX_SIZE = 22;  // px, largest confetti piece (falls slowest)
 const CONFETTI_MIN_FALL = 2.6; // s, fall duration for the smallest pieces
 const CONFETTI_MAX_FALL = 8;   // s, fall duration for the largest pieces
+const CONFETTI_MIN_DRIFT = 18; // px, narrowest side-to-side sway
+const CONFETTI_MAX_DRIFT = 55; // px, widest side-to-side sway
 
 function spawnConfetti(layer) {
   layer.innerHTML = '';
   for (let i = 0; i < CONFETTI_COUNT; i++) {
     const piece = document.createElement('span');
     piece.className = 'confetti-piece';
+    const inner = document.createElement('span');
+    inner.className = 'confetti-piece-inner';
+    piece.appendChild(inner);
 
     const left = Math.random() * 100;
     // size drives everything else: bigger piece -> slower fall (inverse
@@ -870,15 +875,21 @@ function spawnConfetti(layer) {
     const fallDuration = CONFETTI_MIN_FALL + sizeT * (CONFETTI_MAX_FALL - CONFETTI_MIN_FALL);
     const spinDuration = 0.8 + Math.random() * 1.4;
     const delay = Math.random() * 6;
+    const drift = CONFETTI_MIN_DRIFT + Math.random() * (CONFETTI_MAX_DRIFT - CONFETTI_MIN_DRIFT);
     const color = CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)];
 
     piece.style.left = `${left}vw`;
     piece.style.width = `${size}px`;
     piece.style.height = `${size * 1.6}px`;
-    piece.style.background = color;
-    piece.style.borderRadius = Math.random() < 0.5 ? '50%' : '2px';
-    piece.style.animationDuration = `${fallDuration}s, ${spinDuration}s`;
-    piece.style.animationDelay = `${delay}s, ${delay}s`;
+    piece.style.setProperty('--drift', `${drift}px`);
+    piece.style.animationDuration = `${fallDuration}s`;
+    piece.style.animationDelay = `${delay}s`;
+
+    inner.style.background = color;
+    inner.style.borderRadius = Math.random() < 0.5 ? '50%' : '2px';
+    inner.style.animationDuration = `${spinDuration}s`;
+    inner.style.animationDelay = `${delay}s`;
+
     layer.appendChild(piece);
   }
 }

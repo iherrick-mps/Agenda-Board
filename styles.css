@@ -827,7 +827,14 @@ body.board-page {
 }
 
 /* confetti — fixed to the viewport so it falls over the whole screen,
-   not just inside the game-mode boxes */
+   not just inside the game-mode boxes. Each piece is a positioning
+   wrapper (falls + sways in an S-curve) around a colored inner span
+   (spins in place). Keeping fall and spin on separate elements
+   matters: the CSS spec composes the standalone `rotate` property
+   BEFORE the `transform` property, so a single element animating
+   both `rotate` and `transform: translateY(...)` ends up translating
+   inside its own rotated coordinate frame — that's what produced the
+   circular drift instead of a straight/wavy fall. */
 .confetti-layer {
   position: fixed;
   inset: 0;
@@ -840,19 +847,35 @@ body.board-page {
   position: absolute;
   top: -5vh;
   opacity: 0.9;
-  animation-name: confetti-fall, confetti-spin;
-  animation-timing-function: linear, linear;
-  animation-iteration-count: infinite, infinite;
+  animation-name: confetti-fall;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
+.confetti-piece-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation-name: confetti-spin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* gentle S-curve: drifts one way, then the other, on the way down —
+   like real confetti fluttering rather than dropping in a straight
+   line. --drift (px) sets how wide the sway is for this piece. */
 @keyframes confetti-fall {
-  0%   { transform: translateY(-10vh); }
-  100% { transform: translateY(110vh); }
+  0%   { transform: translate(0, -10vh); }
+  20%  { transform: translate(var(--drift), 18vh); }
+  40%  { transform: translate(calc(var(--drift) * -1), 38vh); }
+  60%  { transform: translate(var(--drift), 58vh); }
+  80%  { transform: translate(calc(var(--drift) * -1), 78vh); }
+  100% { transform: translate(0, 110vh); }
 }
 
 @keyframes confetti-spin {
-  0%   { rotate: 0deg; }
-  100% { rotate: 360deg; }
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .box-clock .clock-tz {
