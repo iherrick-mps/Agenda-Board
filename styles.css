@@ -660,26 +660,56 @@ body.board-page {
 .box-clock .clock-time .ampm { font-size: 0.4em; opacity: 0.8; }
 
 /* ============================================================
-   Game Mode — an overlay pair of boxes that replaces Agenda,
-   Content Standard, Connections, and SMART Goal with a single
-   celebratory countdown when toggled on. Built as two panels
-   (a large one filling the Agenda/Connections/Goal footprint,
-   plus a slim one filling the Content Standard slot) so ELD
-   Standard and Now Playing — which share the same grid column
-   but were not part of the ask — stay put and keep showing.
-   Both panels share identical styling so together they read as
-   one continuous celebratory area rather than two boxes.
+   Game Mode — reflows the whole board into a single left-hand
+   info column plus one big celebratory panel filling the rest
+   of the screen when toggled on.
+
+   Left column (all boxes widened to match, col 1-4):
+     SMART Goal (replaces Clock + Timer)
+     Ms. Herrick name (unchanged, just widened)
+     "What should I be working on?" (replaces ELD Standard)
+     Due on Sunday (replaces Content Standard)
+     Now Playing (unchanged)
+
+   Everything else — Agenda, Connections, the original SMART Goal
+   slot, the original Working/Deliver slots, and Content Standard's
+   old spot — is absorbed into one full-height Game Mode panel on
+   the right (col 5-12). Content Standard and ELD Standard's own
+   content is not shown anywhere while Game Mode is on, since
+   students don't need it during the payout.
    ============================================================ */
 
 .board-grid:not(.game-mode-active) .box-gamemode { display: none; }
 
+.board-grid.game-mode-active .box-clock,
+.board-grid.game-mode-active .box-timer,
+.board-grid.game-mode-active .box-eld,
+.board-grid.game-mode-active .box-standard,
 .board-grid.game-mode-active .box-agenda,
-.board-grid.game-mode-active .box-connect,
-.board-grid.game-mode-active .box-goal,
-.board-grid.game-mode-active .box-standard { display: none; }
+.board-grid.game-mode-active .box-connect { display: none; }
 
-.box-gamemode-main   { grid-column: 5 / 13; grid-row: 5 / 13; }
-.box-gamemode-fill   { grid-column: 1 / 5; grid-row: 8 / 10; }
+/* the survivors move/widen into the left column */
+.board-grid.game-mode-active .box-goal {
+  grid-column: 1 / 5;
+  grid-row: 1 / 4;
+}
+.board-grid.game-mode-active .box-name {
+  grid-column: 1 / 5;
+}
+.board-grid.game-mode-active .box-working {
+  grid-column: 1 / 5;
+  grid-row: 5 / 8;
+}
+.board-grid.game-mode-active .box-deliver {
+  grid-column: 1 / 5;
+  grid-row: 8 / 10;
+}
+.board-grid.game-mode-active .box-nowplaying {
+  grid-column: 1 / 5;
+  grid-row: 10 / 13;
+}
+
+.box-gamemode-main { grid-column: 5 / 13; grid-row: 1 / 13; }
 
 .box-gamemode {
   cursor: default;
@@ -711,26 +741,33 @@ body.board-page {
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 0.6em;
+  gap: 0.7em;
   container-type: size;
 }
 
 .gamemode-countdown {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: clamp(2rem, min(28cqh, 14cqw), 8rem);
+  font-size: clamp(2rem, min(24cqh, 12cqw), 8rem);
   line-height: 1;
   text-shadow: 0 2px 10px rgba(0,0,0,0.28);
   letter-spacing: 0.02em;
 }
 
+/* the "you may play games" line — white with a very dark drop
+   shadow so it reads clearly against the shifting rainbow from
+   anywhere in the room, and sized well above the countdown */
 .gamemode-message {
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: clamp(0.85rem, min(6.5cqh, 3.4cqw), 1.9rem);
-  line-height: 1.25;
-  max-width: 88%;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.22);
+  font-weight: 800;
+  color: #fff;
+  font-size: clamp(1.6rem, min(12cqh, 6.5cqw), 4.2rem);
+  line-height: 1.2;
+  max-width: 92%;
+  text-shadow:
+    0 3px 0 rgba(0,0,0,0.55),
+    0 6px 18px rgba(0,0,0,0.65),
+    0 0 34px rgba(0,0,0,0.4);
 }
 
 .gamemode-toggle-btn.is-active {
@@ -1026,17 +1063,28 @@ body.board-page {
       "nowplaying";
   }
 
-  /* Game Mode panels fall back to the normal single-column stacking
-     order (right where Agenda/Content Standard would be) instead of
-     the desktop line-number placement, which only makes sense on the
-     12-column grid. */
-  .box-gamemode-main,
-  .box-gamemode-fill {
+  /* Game Mode: on narrow screens, ignore the desktop line-number
+     repositioning (it only makes sense on the 12-column grid) and
+     just let everything stack in normal document order instead. */
+  .board-grid.game-mode-active .box-goal,
+  .board-grid.game-mode-active .box-name,
+  .board-grid.game-mode-active .box-working,
+  .board-grid.game-mode-active .box-deliver,
+  .board-grid.game-mode-active .box-nowplaying {
     grid-column: 1 / 2;
     grid-row: auto;
   }
+  .box-gamemode-main {
+    grid-column: 1 / 2;
+    grid-row: auto;
+    min-height: 320px;
+  }
+  /* container-type:size needs a definite height from the grid track,
+     which mobile's auto-height stacking doesn't provide — drop it here
+     so the box grows with its content instead of collapsing/clipping */
+  .gamemode-body { container-type: normal; }
   .gamemode-countdown { font-size: 3.2rem; }
-  .gamemode-message { font-size: 1.1rem; max-width: 100%; }
+  .gamemode-message { font-size: 1.6rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

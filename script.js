@@ -906,6 +906,9 @@ function initGameMode() {
     spawnConfetti(confettiLayer);
     tick();
     tickHandle = setInterval(tick, 1000);
+    // Working/Deliver/SMART Goal just changed size (moved into the
+    // left column) — re-fit their text to the new box dimensions.
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
   }
 
   function turnOff() {
@@ -914,6 +917,7 @@ function initGameMode() {
     toggleBtn.classList.remove('is-active');
     confettiLayer.innerHTML = '';
     if (tickHandle) { clearInterval(tickHandle); tickHandle = null; }
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
   }
 
   toggleBtn.addEventListener('click', (e) => {
