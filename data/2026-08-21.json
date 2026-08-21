@@ -21,37 +21,35 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Finishing up your Game Lab project so it has at least two states triggered by an event.",
-      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
-      "smartGoal": "I can test my game so that it shows at least two states, each triggered by an event.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "workingNow": "Embedding your finished game onto your website (Share → Copy Link → Embed), then game time!",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project with at least three states, each triggered by an event, embedded on your website.",
+      "smartGoal": "I can embed my Game Lab project on my website so that others can see and play my finished game.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "You do: finish + test your 2-state game (20 min)",
-        "Partner test: does your partner's game switch states? (8 min)",
-        "Exit Ticket: describe your two states and their triggers (5 min)",
-        "Bank payout: remaining minutes → free time (7 min)"
+        "Mini-lesson: how to embed — Share → Copy Link → paste into your website's embed block (5 min)",
+        "You do: embed your game on your website, confirm it displays and works (15 min)",
+        "Bank payout: game time — remaining minutes → free time (25 min)"
       ],
-      "connections": "This week you went from a paper state diagram to a real, working game with triggered states. Next week we keep building on this in Game Lab."
+      "connections": "Yesterday you and your partner got a third state working. Today you're publishing it — embedding your finished game right onto your website so anyone who visits can see and play it. Then it's game time!"
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Finishing up your Game Lab project so it has at least two states triggered by an event.",
-      "weeklyDeliverable": "A Sprite Lab or Game Lab project where a scene or sprite has at least two states triggered by an event.",
-      "smartGoal": "I can test my game so that it shows at least two states, each triggered by an event.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "workingNow": "Embedding your finished game onto your website (Share → Copy Link → Embed), then game time!",
+      "weeklyDeliverable": "A Sprite Lab or Game Lab project with at least three states, each triggered by an event, embedded on your website.",
+      "smartGoal": "I can embed my Game Lab project on my website so that others can see and play my finished game.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "You do: finish + test your 2-state game (20 min)",
-        "Partner test: does your partner's game switch states? (8 min)",
-        "Exit Ticket: describe your two states and their triggers (5 min)",
-        "Bank payout: remaining minutes → free time (7 min)"
+        "Mini-lesson: how to embed — Share → Copy Link → paste into your website's embed block (5 min)",
+        "You do: embed your game on your website, confirm it displays and works (15 min)",
+        "Bank payout: game time — remaining minutes → free time (25 min)"
       ],
-      "connections": "This week you went from a paper state diagram to a real, working game with triggered states. Next week we keep building on this in Game Lab."
+      "connections": "Yesterday you and your partner got a third state working. Today you're publishing it — embedding your finished game right onto your website so anyone who visits can see and play it. Then it's game time!"
     }
   }
 }
