@@ -851,18 +851,30 @@ function initCountUpTimer() {
 
 const CONFETTI_COLORS = ['#ff5e5e', '#ffb347', '#ffe066', '#6ee7b7', '#38bdf8', '#a78bfa', '#f472b6'];
 const CONFETTI_COUNT = 90;
+const CONFETTI_MIN_SIZE = 6;   // px, smallest confetti piece (falls fastest)
+const CONFETTI_MAX_SIZE = 22;  // px, largest confetti piece (falls slowest)
+const CONFETTI_MIN_FALL = 2.6; // s, fall duration for the smallest pieces
+const CONFETTI_MAX_FALL = 8;   // s, fall duration for the largest pieces
 
 function spawnConfetti(layer) {
   layer.innerHTML = '';
   for (let i = 0; i < CONFETTI_COUNT; i++) {
     const piece = document.createElement('span');
     piece.className = 'confetti-piece';
+
     const left = Math.random() * 100;
-    const fallDuration = 3.5 + Math.random() * 3.5;
+    // size drives everything else: bigger piece -> slower fall (inverse
+    // relationship), so pick the size first and derive fall duration from it
+    const sizeT = Math.random(); // 0 = smallest, 1 = largest
+    const size = CONFETTI_MIN_SIZE + sizeT * (CONFETTI_MAX_SIZE - CONFETTI_MIN_SIZE);
+    const fallDuration = CONFETTI_MIN_FALL + sizeT * (CONFETTI_MAX_FALL - CONFETTI_MIN_FALL);
     const spinDuration = 0.8 + Math.random() * 1.4;
     const delay = Math.random() * 6;
-    const color = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
+    const color = CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)];
+
     piece.style.left = `${left}vw`;
+    piece.style.width = `${size}px`;
+    piece.style.height = `${size * 1.6}px`;
     piece.style.background = color;
     piece.style.borderRadius = Math.random() < 0.5 ? '50%' : '2px';
     piece.style.animationDuration = `${fallDuration}s, ${spinDuration}s`;
@@ -876,6 +888,7 @@ function initGameMode() {
   const toggleBtn = document.getElementById('gamemode-toggle-btn');
   const countdownEl = document.getElementById('gamemode-countdown');
   const confettiLayer = document.getElementById('confetti-layer');
+  const autoInput = document.getElementById('gamemode-auto-input');
   if (!boardGrid || !toggleBtn || !countdownEl || !confettiLayer) return;
 
   let active = false;
@@ -924,6 +937,68 @@ function initGameMode() {
     e.stopPropagation();
     if (active) turnOff(); else turnOn();
   });
+
+  /* ---- Auto Game Mode — type a number of minutes-left, and Game
+     Mode switches itself on the moment the live period's countdown
+     reaches that number. Persisted per device; fires once per period
+     (identified by date + period name) so turning Game Mode back off
+     manually doesn't immediately re-trigger it. ---- */
+
+  const GAMEMODE_AUTO_KEY = 'agendaBoard.gamemodeAutoMinutes';
+
+  if (autoInput) {
+    let autoMinutes = null;
+    let firedForPeriodKey = null;
+
+    try {
+      const stored = localStorage.getItem(GAMEMODE_AUTO_KEY);
+      if (stored !== null && stored !== '') {
+        autoMinutes = Number(stored);
+        autoInput.value = stored;
+        autoInput.classList.add('is-armed');
+      }
+    } catch (e) { /* storage disabled */ }
+
+    autoInput.addEventListener('click', (e) => e.stopPropagation());
+    autoInput.addEventListener('change', () => {
+      const raw = autoInput.value.trim();
+      if (raw === '') {
+        autoMinutes = null;
+        autoInput.classList.remove('is-armed');
+        try { localStorage.removeItem(GAMEMODE_AUTO_KEY); } catch (e) { /* storage disabled */ }
+        return;
+      }
+      const num = Number(raw);
+      if (!Number.isFinite(num) || num < 0) return;
+      autoMinutes = num;
+      firedForPeriodKey = null; // a new threshold gets a fresh chance to fire
+      autoInput.classList.add('is-armed');
+      try { localStorage.setItem(GAMEMODE_AUTO_KEY, String(num)); } catch (e) { /* storage disabled */ }
+    });
+
+    async function autoCheck() {
+      if (autoMinutes === null || active) return;
+      const pt = getPacificNow();
+      const scheduleKey = await resolveTodaysSchedule(pt);
+      const bells = await loadBells();
+      const scheduleData = bells[scheduleKey];
+      if (!scheduleData) return;
+
+      const nowMin = minutesSinceMidnight(pt);
+      const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
+      if (!current) return;
+
+      const remaining = hhmmToMinutes(current.end) - nowMin;
+      const periodKey = `${pt.isoDate}|${current.name}`;
+      if (remaining <= autoMinutes && firedForPeriodKey !== periodKey) {
+        firedForPeriodKey = periodKey;
+        turnOn();
+      }
+    }
+
+    autoCheck();
+    setInterval(autoCheck, 1000);
+  }
 }
 
 /* ---------- boot ---------- */
