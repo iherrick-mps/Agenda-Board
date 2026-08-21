@@ -17,6 +17,7 @@
     <button class="nav-day-btn" id="next-day-btn" title="Next day">Next &rarr;</button>
     <span class="hb-schedule" id="agenda-schedule"></span>
     <div class="period-tabs" id="period-tabs"></div>
+    <button class="nav-day-btn gamemode-toggle-btn" id="gamemode-toggle-btn" title="Toggle Game Mode">&#127918; Game Mode</button>
   </div>
 </div>
 
@@ -89,7 +90,19 @@
     <div class="box-content" id="content-eld"></div>
   </div>
 
+  <div class="agenda-box box-gamemode box-gamemode-main" id="box-gamemode-main">
+    <span class="box-label">Game Mode</span>
+    <div class="gamemode-body">
+      <div class="gamemode-countdown" id="gamemode-countdown">00:00</div>
+      <div class="gamemode-message">You may play school-appropriate educational games until the end of class! You earned it by getting started so quickly!</div>
+    </div>
+  </div>
+
+  <div class="agenda-box box-gamemode box-gamemode-fill" id="box-gamemode-fill" aria-hidden="true"></div>
+
 </div>
+
+<div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
 
 <script src="script.js"></script>
 </body>

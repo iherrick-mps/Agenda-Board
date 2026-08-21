@@ -579,7 +579,7 @@ function initFocusMode() {
     boardGrid.querySelectorAll('.agenda-box').forEach(b => b.classList.remove('is-focused'));
   }
 
-  boardGrid.querySelectorAll('.agenda-box').forEach(box => {
+  boardGrid.querySelectorAll('.agenda-box:not(.box-gamemode)').forEach(box => {
     box.addEventListener('click', (e) => {
       e.stopPropagation();
       if (box.classList.contains('is-focused')) {
@@ -840,6 +840,88 @@ function initCountUpTimer() {
   paint();
 }
 
+/* ============================================================
+   Game Mode — a toggle button in the top hover-bar that swaps
+   Agenda/Content Standard/Connections/SMART Goal for one big
+   celebratory countdown to the end of the *current live* class
+   period, plus screen-wide falling confetti. Toggled off again
+   the same way (or it never turns on if there's no live period
+   to count down to, since a countdown needs an end time).
+   ============================================================ */
+
+const CONFETTI_COLORS = ['#ff5e5e', '#ffb347', '#ffe066', '#6ee7b7', '#38bdf8', '#a78bfa', '#f472b6'];
+const CONFETTI_COUNT = 90;
+
+function spawnConfetti(layer) {
+  layer.innerHTML = '';
+  for (let i = 0; i < CONFETTI_COUNT; i++) {
+    const piece = document.createElement('span');
+    piece.className = 'confetti-piece';
+    const left = Math.random() * 100;
+    const fallDuration = 3.5 + Math.random() * 3.5;
+    const spinDuration = 0.8 + Math.random() * 1.4;
+    const delay = Math.random() * 6;
+    const color = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
+    piece.style.left = `${left}vw`;
+    piece.style.background = color;
+    piece.style.borderRadius = Math.random() < 0.5 ? '50%' : '2px';
+    piece.style.animationDuration = `${fallDuration}s, ${spinDuration}s`;
+    piece.style.animationDelay = `${delay}s, ${delay}s`;
+    layer.appendChild(piece);
+  }
+}
+
+function initGameMode() {
+  const boardGrid = document.getElementById('board-grid');
+  const toggleBtn = document.getElementById('gamemode-toggle-btn');
+  const countdownEl = document.getElementById('gamemode-countdown');
+  const confettiLayer = document.getElementById('confetti-layer');
+  if (!boardGrid || !toggleBtn || !countdownEl || !confettiLayer) return;
+
+  let active = false;
+  let tickHandle = null;
+
+  async function tick() {
+    const pt = getPacificNow();
+    const scheduleKey = await resolveTodaysSchedule(pt);
+    const bells = await loadBells();
+    const scheduleData = bells[scheduleKey];
+    if (!scheduleData) { countdownEl.textContent = '00:00'; return; }
+
+    const nowMin = minutesSinceMidnight(pt);
+    const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
+
+    if (current) {
+      const remaining = hhmmToMinutes(current.end) - nowMin;
+      countdownEl.textContent = fmtCountdown(remaining);
+    } else {
+      countdownEl.textContent = '00:00';
+    }
+  }
+
+  function turnOn() {
+    active = true;
+    boardGrid.classList.add('game-mode-active');
+    toggleBtn.classList.add('is-active');
+    spawnConfetti(confettiLayer);
+    tick();
+    tickHandle = setInterval(tick, 1000);
+  }
+
+  function turnOff() {
+    active = false;
+    boardGrid.classList.remove('game-mode-active');
+    toggleBtn.classList.remove('is-active');
+    confettiLayer.innerHTML = '';
+    if (tickHandle) { clearInterval(tickHandle); tickHandle = null; }
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (active) turnOff(); else turnOn();
+  });
+}
+
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -850,6 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFocusMode();
   initNowPlaying();
   initCountUpTimer();
+  initGameMode();
 
   // belt-and-suspenders: re-fit everything once web fonts are confirmed
   // loaded, in case something rendered/measured before that point
