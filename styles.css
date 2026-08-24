@@ -1161,6 +1161,243 @@ body.board-page {
 .box-studyrules .box-content li::before { content: '\2715'; } /* × for "don't" rules */
 .box-closing .box-content li::before { content: '\2713'; }    /* checkmark for closing tasks */
 
+/* ============================================================
+   VEX ROBOTICS CLUB PAGE — after-school (3:00–4:00 PM) board.
+   Own bento layout: clock, competition countdown, team roster,
+   Now Playing (title-only by default), a big "get to work"
+   banner, and — Saturdays only — the day's bell schedule.
+   Reuses .board-grid / .agenda-box / Game Mode / clock plumbing
+   from the main board (same id="board-grid"), so double-click
+   fullscreen, click-to-focus, and Game Mode's confetti overlay
+   all work here for free.
+   ============================================================ */
+
+.board-grid.vex-grid {
+  grid-template-areas:
+    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
+    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
+    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
+    "work work work work work work work work work work work work"
+    "work work work work work work work work work work work work"
+    "work work work work work work work work work work work work";
+}
+
+/* Saturdays: Now Playing narrows to make room for the day's bell
+   schedule; everything else holds its position. */
+.board-grid.vex-grid.is-saturday {
+  grid-template-areas:
+    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
+    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
+    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
+    "work work work work work work work work work work work work"
+    "work work work work work work work work work work work work"
+    "work work work work work work work work work work work work";
+}
+
+.box-countdown { grid-area: countdown; --box-color: var(--c-connect); }
+.box-teams     { grid-area: teams;     --box-color: var(--c-standard); }
+.box-work      { grid-area: work;      --box-color: var(--c-goal); }
+.box-schedule  { grid-area: schedule;  --box-color: var(--c-eld); display: none; }
+
+.board-grid.vex-grid.is-saturday .box-schedule { display: flex; }
+
+/* ---- Countdown box — dark hero card, same family as the clock ---- */
+.box-countdown {
+  background: var(--ink);
+  border-left-color: #0c141d;
+  color: #eaf1ff;
+  align-items: flex-start;
+  justify-content: center;
+  container-type: size;
+}
+.box-countdown .box-label { color: #93a3b8; }
+.vex-countdown-number {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  line-height: 1;
+  font-size: clamp(2rem, min(38cqh, 18cqw), 8rem);
+  color: #6ee7b7;
+}
+.vex-countdown-sub {
+  margin-top: 0.5em;
+  font-family: var(--font-mono);
+  font-size: clamp(0.6rem, min(4.5cqh, 2.4cqw), 1.05rem);
+  color: #93a3b8;
+  letter-spacing: 0.03em;
+}
+
+/* ---- "Get to work" banner — solid accent card, no rainbow, just a
+   loud reminder that fills the bottom of the board ---- */
+.box-work {
+  background: var(--c-goal);
+  border: none;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  container-type: size;
+  box-shadow: 0 10px 28px rgba(22, 32, 43, 0.18);
+}
+.vex-work-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, min(30cqh, 6.5cqw), 4.5rem);
+  line-height: 1.15;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.18);
+}
+
+/* ---- Teams + Saturday schedule — standard tinted-white list boxes ---- */
+.vex-teams-list:empty::before {
+  content: 'No teams added yet.';
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-style: italic;
+}
+
+.vex-sched-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.vex-sched-list li.is-now { font-weight: 700; color: var(--c-eld); }
+.vex-sched-list .vex-sched-time {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+.vex-team-note {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75em;
+  opacity: 0.7;
+}
+
+/* ---- Game Mode on this page: hide the VEX-specific boxes and let
+   Now Playing take the left column, same pattern as the main board.
+   (box-clock is already hidden by the generic rule above.) ---- */
+.board-grid.vex-grid.game-mode-active .box-clock,
+.board-grid.vex-grid.game-mode-active .box-countdown,
+.board-grid.vex-grid.game-mode-active .box-teams,
+.board-grid.vex-grid.game-mode-active .box-schedule,
+.board-grid.vex-grid.game-mode-active .box-work {
+  display: none;
+}
+.vex-grid.game-mode-active .box-vex-nowplaying {
+  grid-column: 1 / 5;
+  grid-row: 1 / 13;
+}
+
+/* ============================================================
+   VEX Now Playing — same black card as the main Now Playing box,
+   plus a visuals-hide toggle and a title-only control panel.
+   Hidden (title-only, audio keeps playing) is the default state.
+   ============================================================ */
+
+.box-vex-nowplaying { position: relative; --box-color: #ff0000; }
+
+.box-vex-nowplaying .nowplaying-embed {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.2s ease;
+}
+
+/* the iframe stays in the DOM (so audio keeps playing) but is shrunk
+   to nothing and made invisible/unclickable rather than display:none,
+   which some browsers use to pause embedded media */
+.box-vex-nowplaying.visuals-hidden .nowplaying-embed {
+  position: absolute;
+  inset: auto auto 0 0;
+  width: 2px;
+  height: 2px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.vex-title-panel {
+  display: none;
+  flex: 1 1 auto;
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7em;
+  text-align: center;
+  container-type: size;
+}
+
+.box-vex-nowplaying.visuals-hidden .vex-title-panel { display: flex; }
+
+.vex-title-label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: clamp(0.6rem, min(4cqh, 2cqw), 0.9rem);
+  color: #ff8a8a;
+}
+
+.vex-title-text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1rem, min(12cqh, 6cqw), 2.4rem);
+  line-height: 1.25;
+  max-width: 90%;
+  color: #fff;
+}
+
+.vex-title-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.vex-ctrl-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6em;
+  height: 2.6em;
+  border-radius: 50%;
+  border: 1px solid #3a3a3a;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: clamp(0.9rem, min(5cqh, 2.6cqw), 1.3rem);
+  cursor: pointer;
+}
+.vex-ctrl-btn:hover { border-color: #ff5e5e; color: #ff5e5e; }
+.vex-ctrl-btn--play { width: 3.2em; height: 3.2em; }
+
+.vex-visuals-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #cdd8e6;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid #3a4753;
+  border-radius: 5px;
+  padding: 4px 9px;
+  cursor: pointer;
+}
+.vex-visuals-toggle:hover { color: #fff; border-color: #fff; }
+
 /* ============ RESPONSIVE FALLBACK (small screens) ============ */
 @media (max-width: 900px) {
   body.board-page { height: auto; overflow: auto; }
@@ -1201,6 +1438,24 @@ body.board-page {
       "closing"
       "nowplaying";
   }
+
+  .board-grid.vex-grid,
+  .board-grid.vex-grid.is-saturday {
+    grid-template-rows: none;
+    grid-template-areas:
+      "clock"
+      "countdown"
+      "schedule"
+      "teams"
+      "nowplaying"
+      "work";
+  }
+  /* container queries need a definite host height, which auto-height
+     mobile stacking doesn't give them — same fix as gamemode-body below */
+  .box-countdown, .box-work, .vex-title-panel { container-type: normal; }
+  .vex-countdown-number { font-size: 3rem; }
+  .vex-work-text { font-size: 1.8rem; }
+  .vex-title-text { font-size: 1.3rem; }
 
   /* Game Mode: on narrow screens, ignore the desktop line-number
      repositioning (it only makes sense on the 12-column grid) and

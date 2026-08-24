@@ -79,7 +79,9 @@ async function resolveTodaysSchedule(pacificNow) {
     }
   } catch (e) { /* fall through to weekday default */ }
 
-  return pacificNow.weekdayName === 'Wednesday' ? 'shortened' : 'regular';
+  if (pacificNow.weekdayName === 'Wednesday') return 'shortened';
+  if (pacificNow.weekdayName === 'Saturday') return 'saturday';
+  return 'regular';
 }
 
 // Given a schedule's period list and the current time, find the live
@@ -1135,6 +1137,10 @@ function initGameMode() {
     autoCheck();
     setInterval(autoCheck, 1000);
   }
+
+  // lets other scripts on the page (e.g. vex.js's "auto Game Mode during
+  // Break" logic) trigger Game Mode without re-implementing turnOn/turnOff
+  window.__gameMode = { turnOn, turnOff, isActive: () => active };
 }
 
 /* ---------- boot ---------- */

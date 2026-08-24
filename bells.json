@@ -53,5 +53,17 @@
       { "name": "ASES Program", "start": "12:45", "end": "18:00" }
     ]
   },
-  "_note": "On Minimum Days, 6th and 7th period do not meet — see school calendar. 'period' keys in the daily JSON files should reference '4th Period', '6th Period', or '7th Period' to match the entries above."
+  "saturday": {
+    "label": "Saturday School",
+    "days": ["Saturday"],
+    "periods": [
+      { "name": "Drop-off", "start": "08:15", "end": "08:30" },
+      { "name": "1st Period", "start": "08:30", "end": "09:30" },
+      { "name": "Break", "start": "09:30", "end": "10:00" },
+      { "name": "2nd Period", "start": "10:00", "end": "10:45" },
+      { "name": "Pizza / Snack", "start": "10:45", "end": "11:00" },
+      { "name": "Dismissal", "start": "11:00", "end": "11:15" }
+    ]
+  },
+  "_note": "On Minimum Days, 6th and 7th period do not meet — see school calendar. 'period' keys in the daily JSON files should reference '4th Period', '6th Period', or '7th Period' to match the entries above. 'saturday' is used by vex.html (VEX Club / Saturday School) and is not tied to a weekday data/ file — resolveTodaysSchedule() falls back to it automatically on Saturdays."
 }
