@@ -438,6 +438,50 @@ function renderPeriodContent(periodData) {
   });
 }
 
+// Computes, from a bell schedule + which of Ms. Herrick's periods actually
+// meet that day, the "effective" period for the current moment: the first
+// one that hasn't ended yet (or the last one, once the whole day is over).
+// This steps forward at each period's END time rather than its START time,
+// so the board flips to the next class the instant the previous one ends —
+// it doesn't sit on the just-finished period through the passing
+// period/lunch in between.
+function computeEffectivePeriod(scheduleData, periodsPresent, nowMin) {
+  if (!scheduleData) return null;
+  const relevantBells = periodsPresent
+    .map(p => scheduleData.periods.find(bp => bp.name === p))
+    .filter(Boolean);
+  if (relevantBells.length === 0) return null;
+  const upcoming = relevantBells.find(bp => nowMin < hhmmToMinutes(bp.end));
+  return (upcoming || relevantBells[relevantBells.length - 1]).name;
+}
+
+// Figures out "right now, in Pacific time, which date + period should the
+// board be showing?" Used by current-day.html to decide what to embed —
+// pulls the same data file and bell logic the agenda page itself uses, so
+// the two never disagree.
+async function resolveLiveDateAndPeriod() {
+  const pt = getPacificNow();
+  const dateStr = pt.isoDate;
+
+  let dayData;
+  try {
+    const res = await fetch(`data/${dateStr}.json`);
+    if (!res.ok) throw new Error('not found');
+    dayData = await res.json();
+  } catch (e) {
+    return { dateStr, period: null };
+  }
+
+  const periodsPresent = PERIOD_ORDER.filter(p => dayData.periods && dayData.periods[p]);
+  const bells = await loadBells();
+  const nowMin = minutesSinceMidnight(pt);
+  const period =
+    computeEffectivePeriod(bells[dayData.schedule], periodsPresent, nowMin) ||
+    periodsPresent[0] || null;
+
+  return { dateStr, period };
+}
+
 async function initAgendaPage() {
   const boardGrid = document.getElementById('board-grid');
   if (!boardGrid) return;
@@ -485,24 +529,12 @@ async function initAgendaPage() {
   const periodsPresent = PERIOD_ORDER.filter(p => dayData.periods && dayData.periods[p]);
 
   // Is the *viewed* date today (in PT)? If so, which of Ms. Herrick's
-  // periods is "live" right now? This steps forward at each period's END
-  // time rather than waiting for the next one's START time, so the board
-  // flips to the next class the moment the previous one ends — it doesn't
-  // sit on the just-finished period through the passing period/lunch in
-  // between.
+  // periods is "live" right now? (See computeEffectivePeriod above.)
   const pt = getPacificNow();
   let livePeriodName = null;
   if (pt.isoDate === dateStr) {
-    const scheduleData = bells[dayData.schedule];
-    if (scheduleData) {
-      const nowMin = minutesSinceMidnight(pt);
-      const relevantBells = periodsPresent
-        .map(p => scheduleData.periods.find(bp => bp.name === p))
-        .filter(Boolean);
-      const upcoming = relevantBells.find(bp => nowMin < hhmmToMinutes(bp.end));
-      const chosen = upcoming || relevantBells[relevantBells.length - 1];
-      if (chosen) livePeriodName = chosen.name;
-    }
+    const nowMin = minutesSinceMidnight(pt);
+    livePeriodName = computeEffectivePeriod(bells[dayData.schedule], periodsPresent, nowMin);
   }
 
   tabsEl.innerHTML = periodsPresent.map(p => {
