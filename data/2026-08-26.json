@@ -1,0 +1,50 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Reading your CSS Quick Reference to add padding and margin around your images or headings.",
+      "weeklyDeliverable": "Your About Me page with an external CSS stylesheet linked — custom fonts/colors, class/ID selectors, padding/margin, and an organized layout — pushed and ready to submit Sunday night.",
+      "smartGoal": "I can apply padding and margin so that my page's elements have breathing room instead of feeling cramped.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Hand out CSS Quick Reference sheet (3 min)",
+        "I do: model adding padding to one box (6 min)",
+        "You do: add padding or margin to at least two elements (17 min)",
+        "Exit Ticket: paste one padding or margin rule (4 min)"
+      ],
+      "connections": "Since it's a short day, we keep it simple: use your new reference sheet to add breathing room around a couple of elements with padding and margin. Tomorrow we look at arranging elements on the page."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Adding obstacle and enemy states to your platformer plan.",
+      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
+      "smartGoal": "I can plan obstacle or enemy states so that my group's game has more than just a moving character.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "agenda": [
+        "Quick overview: today's plan (3 min)",
+        "I do: model one obstacle state (e.g. spike: hidden/triggered) (5 min)",
+        "You do: as a group, plan 1-2 obstacle or enemy states, write them down (18 min)",
+        "Exit Ticket: describe one obstacle state and its trigger (4 min)"
+      ],
+      "connections": "Since it's a short day, we stay focused: add one or two obstacle or enemy states to the character states your group planned yesterday. Tomorrow you'll fit all of this into an actual level layout."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Adding obstacle and enemy states to your platformer plan.",
+      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
+      "smartGoal": "I can plan obstacle or enemy states so that my group's game has more than just a moving character.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "agenda": [
+        "Quick overview: today's plan (3 min)",
+        "I do: model one obstacle state (e.g. spike: hidden/triggered) (5 min)",
+        "You do: as a group, plan 1-2 obstacle or enemy states, write them down (18 min)",
+        "Exit Ticket: describe one obstacle state and its trigger (4 min)"
+      ],
+      "connections": "Since it's a short day, we stay focused: add one or two obstacle or enemy states to the character states your group planned yesterday. Tomorrow you'll fit all of this into an actual level layout."
+    }
+  }
+}

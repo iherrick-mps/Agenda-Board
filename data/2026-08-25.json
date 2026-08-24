@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Using class and ID selectors to target specific parts of your page with different styles.",
+      "weeklyDeliverable": "Your About Me page with an external CSS stylesheet linked — custom fonts/colors, class/ID selectors, padding/margin, and an organized layout — pushed and ready to submit Sunday night.",
+      "smartGoal": "I can write class and ID selectors so that I can style specific elements differently from the rest of my page.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: model a class selector and an ID selector (8 min)",
+        "We do: style one shared element together (6 min)",
+        "You do: add a class or ID to two elements and style them (25 min)",
+        "Exit Ticket: what's one difference between a class and an ID? (6 min)"
+      ],
+      "connections": "Yesterday you linked a stylesheet and changed simple defaults. Today you get more precise — targeting specific parts of your page instead of styling everything the same way. Tomorrow we look at spacing."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Assigning group roles, then designing your main character and its states.",
+      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
+      "smartGoal": "I can design my character's states so that my group's platformer has a clear state machine at its center.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "Assign group roles: Character Lead, State Machine Lead, Level Lead, Notes Lead (5 min)",
+        "I do: model a platformer character's states (idle/walk/jump) (7 min)",
+        "You do: as a group, design your character and its states (28 min)",
+        "Exit Ticket: list your character's states so far (5 min)"
+      ],
+      "connections": "Yesterday your group picked a game idea. Today you get specific — designing the main character and mapping out its states, the same state machine thinking you used in Sprite Lab, just bigger and more creative."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Assigning group roles, then designing your main character and its states.",
+      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
+      "smartGoal": "I can design my character's states so that my group's platformer has a clear state machine at its center.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "Assign group roles: Character Lead, State Machine Lead, Level Lead, Notes Lead (5 min)",
+        "I do: model a platformer character's states (idle/walk/jump) (7 min)",
+        "You do: as a group, design your character and its states (28 min)",
+        "Exit Ticket: list your character's states so far (5 min)"
+      ],
+      "connections": "Yesterday your group picked a game idea. Today you get specific — designing the main character and mapping out its states, the same state machine thinking you used in Sprite Lab, just bigger and more creative."
+    }
+  }
+}

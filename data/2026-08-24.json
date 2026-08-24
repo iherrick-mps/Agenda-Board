@@ -1,0 +1,58 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Linking your first CSS stylesheet and changing your page's font and colors.",
+      "weeklyDeliverable": "Your About Me page with an external CSS stylesheet linked — custom fonts/colors, class/ID selectors, padding/margin, and an organized layout — pushed and ready to submit Sunday night.",
+      "smartGoal": "I can link a CSS stylesheet to my HTML page so that I can start customizing how it looks.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: what is CSS? Model linking a stylesheet + changing one color (10 min)",
+        "We do: change the page's font together as a class (8 min)",
+        "You do: link your own stylesheet, change your body font and one color (22 min)",
+        "Exit Ticket: paste your &lt;link&gt; tag (5 min)"
+      ],
+      "connections": "Last week you finished your About Me page's HTML content — structure, text, an image, and a table. Starting today we go super slow through CSS, one new idea a day, so by Sunday your page won't just have content, it'll have style."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Finding a partner, then joining another pair to form your group of four for this week's game plan.",
+      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
+      "smartGoal": "I can join a group of four and brainstorm platformer game ideas so that my group has a shared direction to plan around.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "Find a partner, then get randomly paired with another pair — groups of 4 (5 min)",
+        "I do: what makes a platformer game fun? quick examples (5 min)",
+        "We do: brainstorm one platformer idea together as a class (5 min)",
+        "You do: as a group, brainstorm 2-3 platformer game ideas and pick one (25 min)",
+        "Share out: one group shares their idea (5 min)"
+      ],
+      "connections": "Last week you finished your three-state game and embedded it on your website. This week is different — you won't be coding at all. Instead, in groups of four, you'll spend the whole week planning a more ambitious platformer game, using the state machine ideas you already know as your foundation."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Finding a partner, then joining another pair to form your group of four for this week's game plan.",
+      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
+      "smartGoal": "I can join a group of four and brainstorm platformer game ideas so that my group has a shared direction to plan around.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "Find a partner, then get randomly paired with another pair — groups of 4 (5 min)",
+        "I do: what makes a platformer game fun? quick examples (5 min)",
+        "We do: brainstorm one platformer idea together as a class (5 min)",
+        "You do: as a group, brainstorm 2-3 platformer game ideas and pick one (25 min)",
+        "Share out: one group shares their idea (5 min)"
+      ],
+      "connections": "Last week you finished your three-state game and embedded it on your website. This week is different — you won't be coding at all. Instead, in groups of four, you'll spend the whole week planning a more ambitious platformer game, using the state machine ideas you already know as your foundation."
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Polishing your CSS-styled page and checking it against the style checklist before Sunday.",
+      "weeklyDeliverable": "Your About Me page with an external CSS stylesheet linked — custom fonts/colors, class/ID selectors, padding/margin, and an organized layout — pushed and ready to submit Sunday night.",
+      "smartGoal": "I can check my styled page against the requirements so that it's ready to turn in Sunday night.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "You do: checklist review — stylesheet linked, selectors, spacing, layout (10 min)",
+        "Fix any missing pieces (15 min)",
+        "Commit + push your styled page (10 min)",
+        "Exit Ticket: describe your favorite style change and why (10 min)"
+      ],
+      "connections": "You've gone super slow through CSS this week — one topic a day. Today everything comes together: check your page against the full list, fix what's missing, and push your final styled page, ready to turn in Sunday night."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Finalizing your platformer plan and presenting it to another group for feedback.",
+      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
+      "smartGoal": "I can present my group's platformer plan so that another group can give us feedback before we start building.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "You do: as a group, finalize your character, obstacle states, and level sketch (20 min)",
+        "Group swap: present your plan to another group for feedback (15 min)",
+        "Apply one piece of feedback to your plan (7 min)",
+        "Exit Ticket: what's one change you made from feedback? (3 min)"
+      ],
+      "connections": "You've spent all week planning — character states, obstacles, and a level layout. Today you finalize it and get feedback from another group, so next week when we start building in Game Lab, your group already has a solid plan to follow."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Finalizing your platformer plan and presenting it to another group for feedback.",
+      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
+      "smartGoal": "I can present my group's platformer plan so that another group can give us feedback before we start building.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "You do: as a group, finalize your character, obstacle states, and level sketch (20 min)",
+        "Group swap: present your plan to another group for feedback (15 min)",
+        "Apply one piece of feedback to your plan (7 min)",
+        "Exit Ticket: what's one change you made from feedback? (3 min)"
+      ],
+      "connections": "You've spent all week planning — character states, obstacles, and a level layout. Today you finalize it and get feedback from another group, so next week when we start building in Game Lab, your group already has a solid plan to follow."
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Arranging your page's elements — using simple layout properties to control spacing between sections.",
+      "weeklyDeliverable": "Your About Me page with an external CSS stylesheet linked — custom fonts/colors, class/ID selectors, padding/margin, and an organized layout — pushed and ready to submit Sunday night.",
+      "smartGoal": "I can adjust the layout of my page's sections so that everything feels organized instead of stacked randomly.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: model adjusting width and centering a section (8 min)",
+        "We do: try one layout change together (7 min)",
+        "You do: adjust the layout/spacing of your page's sections (25 min)",
+        "Partner check: does your partner's layout look organized? (5 min)"
+      ],
+      "connections": "This week you've gone from linking a stylesheet, to targeting elements, to spacing them out. Today you pull it together by arranging your whole page. Tomorrow you polish everything before Sunday's deadline."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Sketching your level layout and marking where each state gets triggered.",
+      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
+      "smartGoal": "I can sketch a level layout so that my group can see where each state and obstacle happens in the game.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: model a simple level sketch with labeled trigger points (7 min)",
+        "We do: mark one trigger point together as a class (5 min)",
+        "You do: as a group, sketch your level and label every state trigger (28 min)",
+        "Exit Ticket: how many trigger points does your level have? (5 min)"
+      ],
+      "connections": "Your group has a character with states and at least one obstacle. Today you place all of it into a level — sketching the layout and marking exactly where each state gets triggered. Tomorrow you finalize the whole plan."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Sketching your level layout and marking where each state gets triggered.",
+      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
+      "smartGoal": "I can sketch a level layout so that my group can see where each state and obstacle happens in the game.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: model a simple level sketch with labeled trigger points (7 min)",
+        "We do: mark one trigger point together as a class (5 min)",
+        "You do: as a group, sketch your level and label every state trigger (28 min)",
+        "Exit Ticket: how many trigger points does your level have? (5 min)"
+      ],
+      "connections": "Your group has a character with states and at least one obstacle. Today you place all of it into a level — sketching the layout and marking exactly where each state gets triggered. Tomorrow you finalize the whole plan."
+    }
+  }
+}
