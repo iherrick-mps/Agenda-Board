@@ -113,7 +113,7 @@ async function initClock() {
     const timeEl = document.getElementById('clock-time');
     if (timeEl) {
       timeEl.innerHTML =
-        `${h12}<span class="colon">:</span>${mm}<span class="colon">:</span>${ss} ` +
+        `${h12}<span class="colon">:</span>${mm} ` +
         `<span class="ampm">${ampm}</span>`;
     }
 
@@ -568,7 +568,32 @@ function initFocusMode() {
   const boardGrid = document.getElementById('board-grid');
   if (!boardGrid) return;
 
+  // how much of the viewport the enlarged box is allowed to fill
+  const FOCUS_MAX_WIDTH_FRAC = 0.86;
+  const FOCUS_MAX_HEIGHT_FRAC = 0.86;
+  const FOCUS_MAX_SCALE = 3.2;
+
   function focusBox(box) {
+    // measure before any class changes — a box being newly focused is
+    // always at its normal (untransformed) grid position at this point
+    const rect = box.getBoundingClientRect();
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const boxCenterX = rect.left + rect.width / 2;
+    const boxCenterY = rect.top + rect.height / 2;
+
+    const scale = Math.min(
+      Math.max(
+        Math.min((vw * FOCUS_MAX_WIDTH_FRAC) / rect.width, (vh * FOCUS_MAX_HEIGHT_FRAC) / rect.height),
+        1
+      ),
+      FOCUS_MAX_SCALE
+    );
+
+    box.style.setProperty('--focus-x', `${vw / 2 - boxCenterX}px`);
+    box.style.setProperty('--focus-y', `${vh / 2 - boxCenterY}px`);
+    box.style.setProperty('--focus-scale', scale);
+
     boardGrid.classList.add('has-focus');
     boardGrid.querySelectorAll('.agenda-box').forEach(b => b.classList.remove('is-focused'));
     box.classList.add('is-focused');
@@ -598,6 +623,12 @@ function initFocusMode() {
   // Escape also clears focus
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && boardGrid.classList.contains('has-focus')) clearFocus();
+  });
+
+  // keep the focused box centered if the window is resized/rotated
+  window.addEventListener('resize', () => {
+    const focused = boardGrid.querySelector('.agenda-box.is-focused');
+    if (focused) focusBox(focused);
   });
 }
 
@@ -718,10 +749,14 @@ function initNowPlaying() {
       try { player.destroy(); } catch (e) { /* ignore */ }
     }
 
-    const playerVars = { autoplay: 0, rel: 0 };
+    const playerVars = { autoplay: 0, rel: 0, loop: 1 };
     if (listId) {
       playerVars.listType = 'playlist';
       playerVars.list = listId;
+    } else if (videoId) {
+      // YouTube only loops a single video if `playlist` is also set to
+      // that same video's ID — loop:1 alone is silently ignored here.
+      playerVars.playlist = videoId;
     }
 
     player = new YT.Player('nowplaying-player', {

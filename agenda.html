@@ -29,12 +29,14 @@
 <div class="board-grid" id="board-grid">
 
   <div class="agenda-box box-clock">
-    <div class="clock-date" id="clock-date">Loading&hellip;</div>
-    <div class="clock-time" id="clock-time">--:--:--</div>
-    <div class="clock-tz">Pacific Time</div>
     <div class="clock-status" id="clock-status">
       <span class="status-label" id="clock-status-label">Loading&hellip;</span>
       <span class="status-value" id="clock-status-value">&mdash;</span>
+    </div>
+    <div class="clock-time" id="clock-time">--:--</div>
+    <div class="clock-footer">
+      <span class="clock-date" id="clock-date">Loading&hellip;</span>
+      <span class="clock-tz">Pacific Time</span>
     </div>
   </div>
 
@@ -52,7 +54,6 @@
   </div>
 
   <div class="agenda-box box-nowplaying">
-    <span class="box-label">Now Playing</span>
     <div class="nowplaying-body">
       <input type="text" id="nowplaying-input" class="nowplaying-input"
              placeholder="Paste a YouTube video or playlist link&hellip;">

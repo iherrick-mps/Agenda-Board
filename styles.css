@@ -567,10 +567,15 @@ body.board-page {
   padding: 1.1vh 1.3vw;
   box-shadow: 0 2px 6px rgba(22, 32, 43, 0.05);
   cursor: pointer;
-  transition: opacity 0.35s ease, filter 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
 }
 
-/* click-to-focus: dim every box except the one that was clicked */
+/* click-to-focus: dim every box except the one that was clicked, and
+   zoom that one to the center of the screen — --focus-x/--focus-y/
+   --focus-scale are computed in JS from the box's actual on-screen
+   position so it lands dead-center regardless of where it sits in
+   the grid. transform:scale() enlarges the box's contents (text
+   included) along with it, no separate font-size math needed. */
 .board-grid.has-focus .agenda-box {
   opacity: 0.12;
   filter: saturate(0.4);
@@ -579,9 +584,30 @@ body.board-page {
 .board-grid.has-focus .agenda-box.is-focused {
   opacity: 1;
   filter: none;
-  transform: scale(1.015);
-  box-shadow: 0 10px 28px rgba(22, 32, 43, 0.22);
+  transform: translate(var(--focus-x, 0px), var(--focus-y, 0px)) scale(var(--focus-scale, 1.06));
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
   z-index: 10;
+  animation: bento-pulse-light 4.5s ease-in-out infinite;
+}
+
+/* the handful of boxes with a solid dark card instead of a tinted-white
+   one need the pulse to shift toward black/white around their own base
+   color instead of always lightening toward white */
+.board-grid.has-focus .box-clock.is-focused,
+.board-grid.has-focus .box-timer.is-focused,
+.board-grid.has-focus .box-name.is-focused,
+.board-grid.has-focus .box-nowplaying.is-focused {
+  animation-name: bento-pulse-dark;
+}
+
+@keyframes bento-pulse-light {
+  0%, 100% { background-color: color-mix(in srgb, var(--box-color, var(--ink)) 9%, white); }
+  50%      { background-color: color-mix(in srgb, var(--box-color, var(--ink)) 19%, white); }
+}
+
+@keyframes bento-pulse-dark {
+  0%, 100% { background-color: color-mix(in srgb, var(--box-color, var(--ink)) 88%, black); }
+  50%      { background-color: color-mix(in srgb, var(--box-color, var(--ink)) 88%, white); }
 }
 
 .box-clock      { grid-area: clock; }
@@ -603,6 +629,7 @@ body.board-page {
 .box-connect    { --box-color: var(--c-connect); }
 .box-standard   { --box-color: var(--c-standard); }
 .box-eld        { --box-color: var(--c-eld); }
+.box-nowplaying { --box-color: #ff0000; }
 
 .agenda-box .box-label {
   flex: 0 0 auto;
@@ -679,26 +706,70 @@ body.board-page {
   container-type: size;
 }
 
-.box-clock .clock-time {
+/* the countdown ("ends in") is now the hero of this box — biggest text,
+   read first, so the number that matters most in class is the one that
+   dominates the room */
+.box-clock .clock-status {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.05em;
+}
+
+.box-clock .status-label {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: clamp(0.7rem, min(6cqh, 3.2cqw), 1.5rem);
+  color: #93a3b8;
+}
+
+.box-clock .status-value {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: clamp(1.8rem, min(34cqh, 16cqw), 7.5rem);
+  font-size: clamp(2rem, min(34cqh, 16cqw), 7.5rem);
+  line-height: 1;
+  color: #eaf1ff;
+}
+
+.box-clock .clock-status.in-session .status-value { color: #6ee7b7; }
+.box-clock .clock-status.not-in-session .status-value { color: #f5b169; }
+
+/* the actual current time is now just a small secondary readout — no
+   seconds, since precision doesn't matter once it's not the star */
+.box-clock .clock-time {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: clamp(0.8rem, min(7cqh, 4cqw), 1.7rem);
+  color: #b9c6d6;
   display: flex;
   align-items: baseline;
   gap: 0.15em;
   line-height: 1;
+  margin-top: 0.5em;
+}
+
+.box-clock .clock-time .ampm { font-size: 0.65em; opacity: 0.8; }
+
+.box-clock .clock-footer {
+  margin-top: auto;
+  padding-top: 0.6em;
+  border-top: 1px dashed #35424f;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .box-clock .clock-date {
   font-family: var(--font-mono);
   font-weight: 600;
-  font-size: clamp(0.7rem, min(8cqh, 4.5cqw), 1.6rem);
+  font-size: clamp(0.6rem, min(5cqh, 2.8cqw), 1.05rem);
   color: #93a3b8;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.2em;
+  letter-spacing: 0.05em;
 }
-
-.box-clock .clock-time .ampm { font-size: 0.4em; opacity: 0.8; }
 
 /* ============================================================
    Game Mode — reflows the whole board into a single left-hand
@@ -892,29 +963,10 @@ body.board-page {
 
 .box-clock .clock-tz {
   font-family: var(--font-mono);
-  font-size: clamp(0.65rem, min(6cqh, 3.5cqw), 1.3rem);
-  color: #93a3b8;
-  letter-spacing: 0.12em;
-  margin-top: 0.3em;
+  font-size: clamp(0.55rem, min(4.5cqh, 2.5cqw), 1rem);
+  color: #7c8ea2;
+  letter-spacing: 0.1em;
 }
-
-.box-clock .clock-status {
-  margin-top: auto;
-  padding-top: 0.6em;
-  border-top: 1px dashed #35424f;
-  width: 100%;
-  font-family: var(--font-mono);
-  font-size: clamp(0.75rem, min(7cqh, 4cqw), 1.6rem);
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  color: #b9c6d6;
-}
-
-.box-clock .status-label { text-transform: uppercase; letter-spacing: 0.04em; color: #93a3b8; }
-.box-clock .status-value { color: #eaf1ff; font-weight: 700; }
-.box-clock .clock-status.in-session .status-value { color: #6ee7b7; }
-.box-clock .clock-status.not-in-session .status-value { color: #f5b169; }
 
 /* count-up timer — a single-row dark strip between the clock and the name
    card, laid out horizontally (big MM:SS on the left, controls on the right)
@@ -986,13 +1038,18 @@ body.board-page {
   white-space: nowrap;
 }
 
-/* now playing — black card with a YouTube link input + embedded player */
+/* now playing — black card with a YouTube link input + embedded player.
+   No label anymore, and tighter padding, so the video itself gets as
+   much of the bento as possible. */
 .box-nowplaying {
   background: #000;
   border-left-color: #ff0000;
   color: #fff;
+  padding: 0.6vh 0.6vw;
 }
 
+/* the agenda page no longer has a label in this box, but Study Hall's
+   copy of it still does — keep it legible against the black card */
 .box-nowplaying .box-label { color: #fff; }
 
 .nowplaying-body {
@@ -1175,6 +1232,7 @@ body.board-page {
   .clock-time .colon { animation: none; }
   .hover-bar { transition: none; }
   .agenda-box { transition: none; }
+  .agenda-box.is-focused { animation: none; }
 }
 
 a:focus-visible, .period-tab:focus-visible, .back-link:focus-visible {
