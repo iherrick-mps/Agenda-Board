@@ -11,12 +11,12 @@
 /* ---- Team roster — preliminary teams, grouped in roster order.
    Add/edit teams here as rosters change: { name: '92120A', note: 'First Last, First Last, First Last' } ---- */
 const VEX_TEAMS = [
-  { name: '92120A', note: 'Leo Ceravalo, Holden Huggins, Timothy Larin' },
-  { name: '92120B', note: 'Kyle Nguyen, Ruslan Vlasenko, Cole Daniels' },
-  { name: '92120C', note: 'Rhys Michalowski, Rylan Perry, Samuel Peterson' },
-  { name: '92120D', note: 'Timothy Aron, Noell Hanes, Lillian Spencer' },
-  { name: '92120E', note: 'Antonio Blanco, Sughas Gudivada, Nathaniel Jacobs' },
-  { name: '92120F', note: 'Mia Levy, Elijah Medlin, Roman Tikia' },
+  { name: '92120A', note: 'Leo, Holden, Timo' },
+  { name: '92120B', note: 'Kyle, Ruslan, Cole' },
+  { name: '92120C', note: 'Rhys, Rylan, Samuel' },
+  { name: '92120D', note: 'Timothy, Noell, Lillian' },
+  { name: '92120E', note: 'Antonio, Sughas, Nathaniel' },
+  { name: '92120F', note: 'Mia, Elijah, Roman' },
 ];
 
 /* ---- Next competition — edit these two lines as new dates are set ---- */
@@ -179,6 +179,12 @@ function initVexBreakAutoGameMode() {
   setInterval(check, 1000);
 }
 
+function vexFormatNowPlayingTitle(data) {
+  if (!data || !data.title) return null;
+  const author = (data.author || '').replace(/\s*-\s*Topic$/i, '').trim();
+  return author ? `${data.title} by ${author}` : data.title;
+}
+
 /* ---------- Now Playing: title-only by default + custom controls ---------- */
 
 function initVexNowPlaying() {
@@ -239,8 +245,8 @@ function initVexNowPlaying() {
           isPlaying = e.data === YT.PlayerState.PLAYING;
           updatePlayPauseIcon();
           if (titleText && e.target.getVideoData) {
-            const data = e.target.getVideoData();
-            if (data && data.title) titleText.textContent = data.title;
+            const formatted = vexFormatNowPlayingTitle(e.target.getVideoData());
+            if (formatted) titleText.textContent = formatted;
           }
         }
       }
