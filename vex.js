@@ -8,10 +8,15 @@
    defined in script.js — load this file after script.js.
    ============================================================ */
 
-/* ---- Team roster — empty for now. Add teams as they're formed:
-   { name: '87292A', note: 'Alex, Jordan, Sam' } ---- */
+/* ---- Team roster — preliminary teams, grouped in roster order.
+   Add/edit teams here as rosters change: { name: '92120A', note: 'First Last, First Last, First Last' } ---- */
 const VEX_TEAMS = [
-  // { name: '87292A', note: 'Alex, Jordan, Sam' },
+  { name: '92120A', note: 'Leo Ceravalo, Holden Huggins, Timothy Larin' },
+  { name: '92120B', note: 'Kyle Nguyen, Ruslan Vlasenko, Cole Daniels' },
+  { name: '92120C', note: 'Rhys Michalowski, Rylan Perry, Samuel Peterson' },
+  { name: '92120D', note: 'Timothy Aron, Noell Hanes, Lillian Spencer' },
+  { name: '92120E', note: 'Antonio Blanco, Sughas Gudivada, Nathaniel Jacobs' },
+  { name: '92120F', note: 'Mia Levy, Elijah Medlin, Roman Tikia' },
 ];
 
 /* ---- Next competition — edit these two lines as new dates are set ---- */
