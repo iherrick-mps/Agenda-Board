@@ -484,15 +484,24 @@ async function initAgendaPage() {
 
   const periodsPresent = PERIOD_ORDER.filter(p => dayData.periods && dayData.periods[p]);
 
-  // Is the *viewed* date today (in PT)? If so, which period is live right now?
+  // Is the *viewed* date today (in PT)? If so, which of Ms. Herrick's
+  // periods is "live" right now? This steps forward at each period's END
+  // time rather than waiting for the next one's START time, so the board
+  // flips to the next class the moment the previous one ends — it doesn't
+  // sit on the just-finished period through the passing period/lunch in
+  // between.
   const pt = getPacificNow();
   let livePeriodName = null;
   if (pt.isoDate === dateStr) {
     const scheduleData = bells[dayData.schedule];
     if (scheduleData) {
       const nowMin = minutesSinceMidnight(pt);
-      const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
-      if (current) livePeriodName = current.name;
+      const relevantBells = periodsPresent
+        .map(p => scheduleData.periods.find(bp => bp.name === p))
+        .filter(Boolean);
+      const upcoming = relevantBells.find(bp => nowMin < hhmmToMinutes(bp.end));
+      const chosen = upcoming || relevantBells[relevantBells.length - 1];
+      if (chosen) livePeriodName = chosen.name;
     }
   }
 
