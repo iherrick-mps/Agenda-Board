@@ -20,39 +20,35 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Finding a partner, then joining another pair to form your group of four for this week's game plan.",
-      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
-      "smartGoal": "I can join a group of four and brainstorm platformer game ideas so that my group has a shared direction to plan around.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Starting Code.org Game Lab, working self-paced through the first few portions on your own.",
+      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
+      "smartGoal": "I can work through Code.org Game Lab independently so that I build core Game Lab skills before we design our own games.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Quick overview: today's plan (3 min)",
-        "Find a partner, then get randomly paired with another pair — groups of 4 (5 min)",
-        "I do: what makes a platformer game fun? quick examples (5 min)",
-        "We do: brainstorm one platformer idea together as a class (5 min)",
-        "You do: as a group, brainstorm 2-3 platformer game ideas and pick one (25 min)",
-        "Share out: one group shares their idea (5 min)"
+        "Quick overview: today's plan — self-paced through Wednesday (3 min)",
+        "Mini-lesson: how to track your own progress through the 11 portions (5 min)",
+        "You do: work self-paced through Game Lab portions, at your own pace (35 min)",
+        "Exit Ticket: which portion number did you finish today? (5 min)"
       ],
-      "connections": "Last week you finished your three-state game and embedded it on your website. This week is different — you won't be coding at all. Instead, in groups of four, you'll spend the whole week planning a more ambitious platformer game, using the state machine ideas you already know as your foundation."
+      "connections": "This week is different — instead of planning with a group, you're working solo through Code.org Game Lab's 11 self-paced portions. Get as far as you can today; you'll have through Wednesday to finish all eleven, then Thursday we start designing your own game."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Finding a partner, then joining another pair to form your group of four for this week's game plan.",
-      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
-      "smartGoal": "I can join a group of four and brainstorm platformer game ideas so that my group has a shared direction to plan around.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Starting Code.org Game Lab, working self-paced through the first few portions on your own.",
+      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
+      "smartGoal": "I can work through Code.org Game Lab independently so that I build core Game Lab skills before we design our own games.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Quick overview: today's plan (3 min)",
-        "Find a partner, then get randomly paired with another pair — groups of 4 (5 min)",
-        "I do: what makes a platformer game fun? quick examples (5 min)",
-        "We do: brainstorm one platformer idea together as a class (5 min)",
-        "You do: as a group, brainstorm 2-3 platformer game ideas and pick one (25 min)",
-        "Share out: one group shares their idea (5 min)"
+        "Quick overview: today's plan — self-paced through Wednesday (3 min)",
+        "Mini-lesson: how to track your own progress through the 11 portions (5 min)",
+        "You do: work self-paced through Game Lab portions, at your own pace (35 min)",
+        "Exit Ticket: which portion number did you finish today? (5 min)"
       ],
-      "connections": "Last week you finished your three-state game and embedded it on your website. This week is different — you won't be coding at all. Instead, in groups of four, you'll spend the whole week planning a more ambitious platformer game, using the state machine ideas you already know as your foundation."
+      "connections": "This week is different — instead of planning with a group, you're working solo through Code.org Game Lab's 11 self-paced portions. Get as far as you can today; you'll have through Wednesday to finish all eleven, then Thursday we start designing your own game."
     }
   }
 }

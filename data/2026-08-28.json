@@ -20,37 +20,37 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Finalizing your platformer plan and presenting it to another group for feedback.",
-      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
-      "smartGoal": "I can present my group's platformer plan so that another group can give us feedback before we start building.",
+      "workingNow": "Sketching your level layout and finalizing your solo platformer plan.",
+      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
+      "smartGoal": "I can sketch a level layout so that my platformer plan is ready to start building next week.",
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "You do: as a group, finalize your character, obstacle states, and level sketch (20 min)",
-        "Group swap: present your plan to another group for feedback (15 min)",
-        "Apply one piece of feedback to your plan (7 min)",
-        "Exit Ticket: what's one change you made from feedback? (3 min)"
+        "I do: model a simple level sketch with labeled trigger points (7 min)",
+        "You do: on your own, sketch your level and finalize your plan (28 min)",
+        "Partner share: swap plans with a neighbor for one piece of feedback (7 min)",
+        "Exit Ticket: what's one change you'll make from feedback? (3 min)"
       ],
-      "connections": "You've spent all week planning — character states, obstacles, and a level layout. Today you finalize it and get feedback from another group, so next week when we start building in Game Lab, your group already has a solid plan to follow."
+      "connections": "Yesterday you designed your character and its states. Today you finish the plan — sketching a level and getting one piece of feedback from a neighbor — so next week you're ready to start actually building your game."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Finalizing your platformer plan and presenting it to another group for feedback.",
-      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
-      "smartGoal": "I can present my group's platformer plan so that another group can give us feedback before we start building.",
+      "workingNow": "Sketching your level layout and finalizing your solo platformer plan.",
+      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
+      "smartGoal": "I can sketch a level layout so that my platformer plan is ready to start building next week.",
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "You do: as a group, finalize your character, obstacle states, and level sketch (20 min)",
-        "Group swap: present your plan to another group for feedback (15 min)",
-        "Apply one piece of feedback to your plan (7 min)",
-        "Exit Ticket: what's one change you made from feedback? (3 min)"
+        "I do: model a simple level sketch with labeled trigger points (7 min)",
+        "You do: on your own, sketch your level and finalize your plan (28 min)",
+        "Partner share: swap plans with a neighbor for one piece of feedback (7 min)",
+        "Exit Ticket: what's one change you'll make from feedback? (3 min)"
       ],
-      "connections": "You've spent all week planning — character states, obstacles, and a level layout. Today you finalize it and get feedback from another group, so next week when we start building in Game Lab, your group already has a solid plan to follow."
+      "connections": "Yesterday you designed your character and its states. Today you finish the plan — sketching a level and getting one piece of feedback from a neighbor — so next week you're ready to start actually building your game."
     }
   }
 }

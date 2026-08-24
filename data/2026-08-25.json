@@ -20,37 +20,35 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Assigning group roles, then designing your main character and its states.",
-      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
-      "smartGoal": "I can design my character's states so that my group's platformer has a clear state machine at its center.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Continuing self-paced through the Game Lab portions on your own.",
+      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
+      "smartGoal": "I can keep working through Game Lab independently so that I stay on pace to finish all eleven portions by Wednesday.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "Assign group roles: Character Lead, State Machine Lead, Level Lead, Notes Lead (5 min)",
-        "I do: model a platformer character's states (idle/walk/jump) (7 min)",
-        "You do: as a group, design your character and its states (28 min)",
-        "Exit Ticket: list your character's states so far (5 min)"
+        "Quick check-in: which portion are you on? (5 min)",
+        "You do: continue self-paced through Game Lab portions (35 min)",
+        "Exit Ticket: which portion number did you finish today? (5 min)"
       ],
-      "connections": "Yesterday your group picked a game idea. Today you get specific — designing the main character and mapping out its states, the same state machine thinking you used in Sprite Lab, just bigger and more creative."
+      "connections": "Yesterday you got started on your own through the Game Lab portions. Today you keep building momentum — by tomorrow's short day, you should be closing in on all eleven."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Assigning group roles, then designing your main character and its states.",
-      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
-      "smartGoal": "I can design my character's states so that my group's platformer has a clear state machine at its center.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Continuing self-paced through the Game Lab portions on your own.",
+      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
+      "smartGoal": "I can keep working through Game Lab independently so that I stay on pace to finish all eleven portions by Wednesday.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "Assign group roles: Character Lead, State Machine Lead, Level Lead, Notes Lead (5 min)",
-        "I do: model a platformer character's states (idle/walk/jump) (7 min)",
-        "You do: as a group, design your character and its states (28 min)",
-        "Exit Ticket: list your character's states so far (5 min)"
+        "Quick check-in: which portion are you on? (5 min)",
+        "You do: continue self-paced through Game Lab portions (35 min)",
+        "Exit Ticket: which portion number did you finish today? (5 min)"
       ],
-      "connections": "Yesterday your group picked a game idea. Today you get specific — designing the main character and mapping out its states, the same state machine thinking you used in Sprite Lab, just bigger and more creative."
+      "connections": "Yesterday you got started on your own through the Game Lab portions. Today you keep building momentum — by tomorrow's short day, you should be closing in on all eleven."
     }
   }
 }

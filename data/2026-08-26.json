@@ -18,33 +18,31 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Adding obstacle and enemy states to your platformer plan.",
-      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
-      "smartGoal": "I can plan obstacle or enemy states so that my group's game has more than just a moving character.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "workingNow": "Finishing the last of your 11 self-paced Game Lab portions.",
+      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
+      "smartGoal": "I can complete all eleven Game Lab portions so that I'm ready to start designing my own game tomorrow.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
       "agenda": [
-        "Quick overview: today's plan (3 min)",
-        "I do: model one obstacle state (e.g. spike: hidden/triggered) (5 min)",
-        "You do: as a group, plan 1-2 obstacle or enemy states, write them down (18 min)",
-        "Exit Ticket: describe one obstacle state and its trigger (4 min)"
+        "Quick overview: today's plan — finish all 11 by the end of class (3 min)",
+        "You do: finish any remaining Game Lab portions (22 min)",
+        "Exit Ticket: confirm — did you complete all 11 portions? (5 min)"
       ],
-      "connections": "Since it's a short day, we stay focused: add one or two obstacle or enemy states to the character states your group planned yesterday. Tomorrow you'll fit all of this into an actual level layout."
+      "connections": "Since it's a short day, the goal is simple: finish. Every portion should be done by the end of class today, because tomorrow we shift gears completely — from following tutorials to designing your own game."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Adding obstacle and enemy states to your platformer plan.",
-      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
-      "smartGoal": "I can plan obstacle or enemy states so that my group's game has more than just a moving character.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "workingNow": "Finishing the last of your 11 self-paced Game Lab portions.",
+      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
+      "smartGoal": "I can complete all eleven Game Lab portions so that I'm ready to start designing my own game tomorrow.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
       "agenda": [
-        "Quick overview: today's plan (3 min)",
-        "I do: model one obstacle state (e.g. spike: hidden/triggered) (5 min)",
-        "You do: as a group, plan 1-2 obstacle or enemy states, write them down (18 min)",
-        "Exit Ticket: describe one obstacle state and its trigger (4 min)"
+        "Quick overview: today's plan — finish all 11 by the end of class (3 min)",
+        "You do: finish any remaining Game Lab portions (22 min)",
+        "Exit Ticket: confirm — did you complete all 11 portions? (5 min)"
       ],
-      "connections": "Since it's a short day, we stay focused: add one or two obstacle or enemy states to the character states your group planned yesterday. Tomorrow you'll fit all of this into an actual level layout."
+      "connections": "Since it's a short day, the goal is simple: finish. Every portion should be done by the end of class today, because tomorrow we shift gears completely — from following tutorials to designing your own game."
     }
   }
 }

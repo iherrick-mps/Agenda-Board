@@ -20,37 +20,37 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Sketching your level layout and marking where each state gets triggered.",
-      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
-      "smartGoal": "I can sketch a level layout so that my group can see where each state and obstacle happens in the game.",
+      "workingNow": "Starting to design your own solo platformer game, using a state machine as your foundation.",
+      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
+      "smartGoal": "I can begin designing my own platformer game so that I have a clear plan before I start building it.",
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "I do: model a simple level sketch with labeled trigger points (7 min)",
-        "We do: mark one trigger point together as a class (5 min)",
-        "You do: as a group, sketch your level and label every state trigger (28 min)",
-        "Exit Ticket: how many trigger points does your level have? (5 min)"
+        "I do: model a simple platformer character's states (idle/walk/jump) (8 min)",
+        "We do: sketch one obstacle state together as a class (7 min)",
+        "You do: on your own, design your character's states and one obstacle (25 min)",
+        "Exit Ticket: list your character's states so far (5 min)"
       ],
-      "connections": "Your group has a character with states and at least one obstacle. Today you place all of it into a level — sketching the layout and marking exactly where each state gets triggered. Tomorrow you finalize the whole plan."
+      "connections": "You just finished all eleven self-paced Game Lab portions — you've got the tool skills now. Today we shift from following tutorials to designing your own platformer game, solo, starting with your character's states."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Sketching your level layout and marking where each state gets triggered.",
-      "weeklyDeliverable": "A group platformer game plan (character states, at least one obstacle/enemy state, and a labeled level sketch) created in groups of four.",
-      "smartGoal": "I can sketch a level layout so that my group can see where each state and obstacle happens in the game.",
+      "workingNow": "Starting to design your own solo platformer game, using a state machine as your foundation.",
+      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
+      "smartGoal": "I can begin designing my own platformer game so that I have a clear plan before I start building it.",
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "I do: model a simple level sketch with labeled trigger points (7 min)",
-        "We do: mark one trigger point together as a class (5 min)",
-        "You do: as a group, sketch your level and label every state trigger (28 min)",
-        "Exit Ticket: how many trigger points does your level have? (5 min)"
+        "I do: model a simple platformer character's states (idle/walk/jump) (8 min)",
+        "We do: sketch one obstacle state together as a class (7 min)",
+        "You do: on your own, design your character's states and one obstacle (25 min)",
+        "Exit Ticket: list your character's states so far (5 min)"
       ],
-      "connections": "Your group has a character with states and at least one obstacle. Today you place all of it into a level — sketching the layout and marking exactly where each state gets triggered. Tomorrow you finalize the whole plan."
+      "connections": "You just finished all eleven self-paced Game Lab portions — you've got the tool skills now. Today we shift from following tutorials to designing your own platformer game, solo, starting with your character's states."
     }
   }
 }
