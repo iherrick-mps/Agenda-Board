@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today — Robotics &amp; Coding</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="index-page">
+
+<div class="topbar">
+  <div class="brand">
+    Agenda Board
+    <span class="brand-sub">Robotics &amp; Coding &middot; Ms. Herrick</span>
+  </div>
+  <div class="clock">
+    <div class="clock-time" id="clock-time">--:--:--</div>
+    <div class="clock-tz">Pacific Time</div>
+    <div class="clock-status" id="clock-status">
+      <span class="status-label" id="clock-status-label">Loading&hellip;</span>
+      <span class="status-value" id="clock-status-value">&mdash;</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-body">
+  <div class="page-heading">Opening today&rsquo;s agenda&hellip;</div>
+  <p class="cal-hint">
+    This page always jumps to today&rsquo;s date and whichever period is
+    live right now &mdash; bookmark <strong>current-day.html</strong> and
+    just refresh it instead of picking a date each time.
+  </p>
+  <noscript>
+    <p class="cal-hint is-warning">
+      JavaScript is required for the auto-redirect. Head to the
+      <a href="index.html">agenda board</a> and pick a date manually.
+    </p>
+  </noscript>
+</div>
+
+<script src="script.js"></script>
+<script>
+  // Reuses getPacificNow() from script.js so "today" always matches the
+  // same America/Los_Angeles clock the rest of the board runs on, no
+  // matter what timezone the display device itself is set to.
+  //
+  // No ?period is passed on purpose: agenda.html already auto-selects
+  // whichever period is live right now when the viewed date is today
+  // (falling back to the first period of the day outside class hours).
+  // That's the exact "whatever day and class it currently is" behavior
+  // this page exists to trigger, without duplicating that logic here.
+  document.addEventListener('DOMContentLoaded', () => {
+    const pt = getPacificNow();
+    window.location.replace(`agenda.html?date=${pt.isoDate}`);
+  });
+</script>
+
+</body>
+</html>
