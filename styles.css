@@ -596,7 +596,9 @@ body.board-page {
 .board-grid.has-focus .box-clock.is-focused,
 .board-grid.has-focus .box-timer.is-focused,
 .board-grid.has-focus .box-name.is-focused,
-.board-grid.has-focus .box-nowplaying.is-focused {
+.board-grid.has-focus .box-nowplaying.is-focused,
+.board-grid.has-focus .box-countdown.is-focused,
+.board-grid.has-focus .box-work.is-focused {
   animation-name: bento-pulse-dark;
 }
 
@@ -1206,7 +1208,7 @@ body.board-page {
     "work work work work work work work work work work work work";
 }
 
-.box-countdown { grid-area: countdown; --box-color: var(--c-connect); }
+.box-countdown { grid-area: countdown; }
 .box-teams     { grid-area: teams;     --box-color: var(--c-standard); }
 .box-work      { grid-area: work;      --box-color: var(--c-goal); }
 .box-schedule  { grid-area: schedule;  --box-color: var(--c-eld); display: none; }

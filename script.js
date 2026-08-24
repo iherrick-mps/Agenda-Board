@@ -805,7 +805,10 @@ function initNowPlaying() {
     player = new YT.Player('nowplaying-player', {
       width: '100%',
       height: '100%',
-      videoId: videoId || undefined,
+      // omit videoId entirely for playlist-only links — passing
+      // `videoId: undefined` explicitly makes the IFrame API try to load
+      // a video literally called "undefined" and throw "Invalid video id"
+      ...(videoId ? { videoId } : {}),
       playerVars,
       events: {
         onReady: (e) => e.target.setVolume(NOWPLAYING_START_VOLUME)
