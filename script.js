@@ -780,10 +780,54 @@ function initCountUpTimer() {
   let elapsedMs = 0;     // time banked from previous run segments
   let startedAt = null;  // wall-clock ms when the current segment began
   let ticker = null;
+  let lastTickSecond = -1; // last whole second we've already played a tick for
 
   // measured against Date.now() rather than counting interval fires, so a
   // throttled background tab can't make the timer drift slow
   const totalMs = () => elapsedMs + (startedAt === null ? 0 : Date.now() - startedAt);
+
+  /* ---- ticking sound — synthesized with Web Audio so there's no sound
+     file to fetch. A soft tick plays once per elapsed second while the
+     timer is running; every 30th second gets a louder, lower tick so
+     the room can hear time passing without anyone watching the clock. */
+  let audioCtx = null;
+  function getAudioCtx() {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return null;
+    if (!audioCtx) audioCtx = new AC();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+
+  function playTick(loud) {
+    const ctx = getAudioCtx();
+    if (!ctx) return;
+    try {
+      const now = ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'square';
+      osc.frequency.value = loud ? 1500 : 2700;
+      const peak = loud ? 0.4 : 0.1;
+      const dur = loud ? 0.11 : 0.035;
+      gain.gain.setValueAtTime(0, now);
+      gain.gain.linearRampToValueAtTime(peak, now + 0.003);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + dur);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + dur + 0.02);
+    } catch (e) { /* audio unavailable in this browser/context */ }
+  }
+
+  function checkTick() {
+    if (startedAt === null) return;
+    const totalSeconds = Math.floor(totalMs() / 1000);
+    if (totalSeconds > lastTickSecond) {
+      lastTickSecond = totalSeconds;
+      playTick(totalSeconds > 0 && totalSeconds % 30 === 0);
+    }
+  }
 
   function format(ms) {
     const total = Math.floor(ms / 1000);
@@ -802,11 +846,15 @@ function initCountUpTimer() {
     startBtn.disabled = running;
     stopBtn.disabled = !running;
     clearBtn.disabled = !running && totalMs() === 0;
+    checkTick();
   }
 
   function start() {
     if (startedAt !== null) return;
+    getAudioCtx(); // create/resume from this click — a real user gesture
     startedAt = Date.now();
+    // don't replay a tick for the second we're resuming within
+    lastTickSecond = Math.floor(totalMs() / 1000);
     ticker = setInterval(paint, 250);
     paint();
   }
@@ -823,6 +871,7 @@ function initCountUpTimer() {
   function clear() {
     stop();
     elapsedMs = 0;
+    lastTickSecond = -1;
     paint();
   }
 

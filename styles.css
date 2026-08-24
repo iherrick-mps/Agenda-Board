@@ -819,6 +819,18 @@ body.board-page {
   text-shadow: 0 1px 6px rgba(0,0,0,0.22);
 }
 
+/* the seating-boundary reminder — same family as the other notes, but
+   a touch bigger/bolder and fully opaque so the one rule that still
+   applies during Game Mode doesn't get read as an afterthought */
+.gamemode-note--rule {
+  font-weight: 800;
+  font-size: clamp(0.95rem, min(4.6cqh, 2.6cqw), 1.6rem);
+  opacity: 1;
+}
+.gamemode-note--rule::before {
+  content: '\26A0\FE0F  ';
+}
+
 .gamemode-toggle-btn.is-active {
   border-color: #ffb347;
   background: #ffb347;
@@ -1156,6 +1168,7 @@ body.board-page {
   .gamemode-countdown { font-size: 3.2rem; }
   .gamemode-message { font-size: 1.6rem; }
   .gamemode-note { font-size: 1rem; }
+  .gamemode-note--rule { font-size: 1.15rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
