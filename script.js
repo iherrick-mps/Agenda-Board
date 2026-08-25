@@ -103,6 +103,18 @@ function findCurrentAndNext(periods, nowMin) {
 async function initClock() {
   const bells = await loadBells();
 
+  // Pages that only ever care about one fixed end time (e.g. Tutoring,
+  // which always ends at 4:00 PM) can opt out of the bell-schedule
+  // lookup entirely via data-clock-override-end="16:00" on .box-clock.
+  // This matters because some schoolwide blocks overlap on purpose
+  // (e.g. "After School Activities" 3:15-4:00 sits inside "ASES
+  // Program" 3:00-6:00) — the bell lookup reports whichever of those
+  // overlapping blocks comes later in bells.json, which isn't
+  // necessarily the one a given page's countdown should reflect.
+  const clockBox = document.querySelector('.box-clock');
+  const overrideEnd = clockBox?.dataset.clockOverrideEnd;
+  const overrideLabel = clockBox?.dataset.clockOverrideLabel || 'This period';
+
   async function tick() {
     const pt = getPacificNow();
     const { h12, mm, ss, ampm } = fmtClock(pt);
@@ -119,15 +131,31 @@ async function initClock() {
         `<span class="ampm">${ampm}</span>`;
     }
 
-    const scheduleKey = await resolveTodaysSchedule(pt);
-    const scheduleData = bells[scheduleKey];
     const statusEl = document.getElementById('clock-status');
     const labelEl = document.getElementById('clock-status-label');
     const valueEl = document.getElementById('clock-status-value');
-
-    if (!scheduleData || !statusEl) return;
+    if (!statusEl) return;
 
     const nowMin = minutesSinceMidnight(pt);
+
+    if (overrideEnd) {
+      const remaining = hhmmToMinutes(overrideEnd) - nowMin;
+      if (remaining > 0) {
+        statusEl.className = 'clock-status in-session';
+        labelEl.textContent = `${overrideLabel} ends in`;
+        valueEl.textContent = fmtCountdown(remaining);
+      } else {
+        statusEl.className = 'clock-status not-in-session';
+        labelEl.textContent = `${overrideLabel} is over`;
+        valueEl.textContent = '\u2014';
+      }
+      return;
+    }
+
+    const scheduleKey = await resolveTodaysSchedule(pt);
+    const scheduleData = bells[scheduleKey];
+    if (!scheduleData) return;
+
     const { current, next } = findCurrentAndNext(scheduleData.periods, nowMin);
 
     if (current) {

@@ -1833,8 +1833,8 @@ body.board-page {
 
 .board-grid.tutoring-grid {
   grid-template-areas:
-    "queue queue queue queue queue queue queue queue clock clock clock clock"
-    "queue queue queue queue queue queue queue queue clock clock clock clock"
+    "joinlink joinlink joinlink joinlink joinlink joinlink joinlink joinlink clock clock clock clock"
+    "joinlink joinlink joinlink joinlink joinlink joinlink joinlink joinlink clock clock clock clock"
     "queue queue queue queue queue queue queue queue clock clock clock clock"
     "queue queue queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying"
     "queue queue queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying"
@@ -1847,8 +1847,40 @@ body.board-page {
     "queue queue queue queue queue queue queue queue expect expect expect expect";
 }
 
-.box-queue  { grid-area: queue;  --box-color: var(--c-queue); }
-.box-expect { grid-area: expect; --box-color: var(--c-expect); }
+.box-joinlink { grid-area: joinlink; --box-color: var(--c-queue); }
+.box-queue    { grid-area: queue;    --box-color: var(--c-queue); }
+.box-expect   { grid-area: expect;   --box-color: var(--c-expect); }
+
+/* ---- Join-link banner — solid accent card, same family as the
+   VEX "get to work" banner, but pointing kids at the queue link ---- */
+.box-joinlink {
+  background: var(--c-queue);
+  border: none;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  container-type: size;
+  box-shadow: 0 10px 28px rgba(22, 32, 43, 0.18);
+}
+.joinlink-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.9rem, min(30cqh, 3.2cqw), 2rem);
+  line-height: 1.2;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.18);
+}
+.joinlink-url {
+  font-family: var(--font-mono);
+  text-decoration: underline;
+  word-break: break-all;
+}
+.joinlink-url:empty::before {
+  content: 'the link below';
+  font-style: italic;
+  opacity: 0.85;
+  text-decoration: none;
+}
 
 /* ---- Help Queue embed — same paste-a-link-then-it-tucks-away pattern
    as the Now Playing box, but a plain iframe (no video parsing) ---- */
@@ -1996,11 +2028,14 @@ body.board-page {
   .board-grid.tutoring-grid {
     grid-template-areas:
       "clock"
+      "joinlink"
       "expect"
       "nowplaying"
       "queue";
   }
   .box-queue { min-height: 420px; }
+  .box-joinlink { container-type: normal; min-height: 100px; }
+  .joinlink-text { font-size: 1.3rem; }
 
   /* Game Mode: on narrow screens, ignore the desktop line-number
      repositioning (it only makes sense on the 12-column grid) and

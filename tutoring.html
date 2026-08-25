@@ -18,6 +18,10 @@
 
 <div class="board-grid tutoring-grid" id="board-grid">
 
+  <div class="agenda-box box-joinlink" id="tutoring-joinlink-box">
+    <div class="joinlink-text">Go to <span class="joinlink-url" id="joinlink-url"></span> to join the queue!</div>
+  </div>
+
   <div class="agenda-box box-queue" id="tutoring-queue-box">
     <div class="queue-body">
       <input type="text" id="queue-input" class="queue-input"
@@ -26,7 +30,7 @@
     </div>
   </div>
 
-  <div class="agenda-box box-clock">
+  <div class="agenda-box box-clock" data-clock-override-end="16:00" data-clock-override-label="Tutoring">
     <div class="clock-date" id="clock-date">Loading&hellip;</div>
     <div class="clock-time" id="clock-time">--:--:--</div>
     <div class="clock-tz">Pacific Time</div>

@@ -18,11 +18,14 @@ function initTutoringQueue() {
   const input = document.getElementById('queue-input');
   const embedContainer = document.getElementById('queue-embed');
   const box = document.getElementById('tutoring-queue-box');
+  const joinLinkEl = document.getElementById('joinlink-url');
   if (!input || !embedContainer || !box) return;
 
   const STORAGE_KEY = 'agendaBoard.tutoringQueueUrl';
 
   function renderFromUrl(url) {
+    if (joinLinkEl) joinLinkEl.textContent = url || '';
+
     if (!url) {
       embedContainer.innerHTML = '';
       box.classList.remove('has-queue');
