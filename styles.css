@@ -22,6 +22,7 @@
   --c-closing: #0d9367;    /* Study Hall — Before You Leave */
   --c-queue: #0e93b4;      /* Tutoring — Help Queue */
   --c-expect: #0d9367;     /* Tutoring — Expectations */
+  --c-joinlink: #c9971c;   /* Tutoring — Join the Queue banner */
 
   --box-width: 340px;
   --radius: 8px;
@@ -1847,38 +1848,40 @@ body.board-page {
     "queue queue queue queue queue queue queue queue expect expect expect expect";
 }
 
-.box-joinlink { grid-area: joinlink; --box-color: var(--c-queue); }
+.box-joinlink { grid-area: joinlink; --box-color: var(--c-joinlink); }
 .box-queue    { grid-area: queue;    --box-color: var(--c-queue); }
 .box-expect   { grid-area: expect;   --box-color: var(--c-expect); }
 
-/* ---- Join-link banner — solid accent card, same family as the
-   VEX "get to work" banner, but pointing kids at the queue link ---- */
+/* ---- Join-link banner — themed like every other bento (tinted
+   background, colored left border), just with an explicit light
+   yellow fill so it reads clearly at a glance. Font-size is set by
+   the shared fitBoxText() auto-fit helper (same one used for every
+   .box-content), so the link line always shrinks to fit on one row
+   instead of wrapping. ---- */
 .box-joinlink {
-  background: var(--c-queue);
-  border: none;
-  color: #fff;
-  align-items: center;
-  justify-content: center;
+  background: #fdf3c7;
+}
+.box-joinlink .box-content {
   text-align: center;
-  container-type: size;
-  box-shadow: 0 10px 28px rgba(22, 32, 43, 0.18);
+  align-items: center;
 }
-.joinlink-text {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(0.9rem, min(30cqh, 3.2cqw), 2rem);
-  line-height: 1.2;
-  text-shadow: 0 1px 6px rgba(0,0,0,0.18);
+.joinlink-line1 {
+  font-family: var(--font-body);
+  font-weight: 600;
 }
-.joinlink-url {
+.joinlink-line2 {
   font-family: var(--font-mono);
+  font-weight: 700;
+  white-space: nowrap;
   text-decoration: underline;
-  word-break: break-all;
+  text-underline-offset: 0.15em;
+  margin-top: 0.3em;
+  color: var(--box-color, var(--ink));
 }
-.joinlink-url:empty::before {
-  content: 'the link below';
+.joinlink-line2:empty::before {
+  content: '(paste the queue link below)';
   font-style: italic;
-  opacity: 0.85;
+  opacity: 0.7;
   text-decoration: none;
 }
 
@@ -2034,8 +2037,7 @@ body.board-page {
       "queue";
   }
   .box-queue { min-height: 420px; }
-  .box-joinlink { container-type: normal; min-height: 100px; }
-  .joinlink-text { font-size: 1.3rem; }
+  .box-joinlink { min-height: 100px; }
 
   /* Game Mode: on narrow screens, ignore the desktop line-number
      repositioning (it only makes sense on the 12-column grid) and

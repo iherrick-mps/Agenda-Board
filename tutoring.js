@@ -24,7 +24,15 @@ function initTutoringQueue() {
   const STORAGE_KEY = 'agendaBoard.tutoringQueueUrl';
 
   function renderFromUrl(url) {
-    if (joinLinkEl) joinLinkEl.textContent = url || '';
+    if (joinLinkEl) {
+      joinLinkEl.textContent = url || '';
+      // shared auto-fit helper from script.js — same one every other
+      // box-content uses — re-run so the link line re-shrinks to fit
+      // on one row now that its text has changed
+      if (typeof fitBoxText === 'function') {
+        fitBoxText(document.getElementById('content-joinlink'));
+      }
+    }
 
     if (!url) {
       embedContainer.innerHTML = '';
