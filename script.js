@@ -1054,6 +1054,8 @@ function initGameMode() {
   }
 
   function turnOn() {
+    // Clean-Up Mode is its own full-board takeover — never show both.
+    if (window.__cleanupMode && window.__cleanupMode.isActive()) window.__cleanupMode.turnOff();
     active = true;
     boardGrid.classList.add('game-mode-active');
     toggleBtn.classList.add('is-active');
@@ -1146,6 +1148,264 @@ function initGameMode() {
   window.__gameMode = { turnOn, turnOff, isActive: () => active };
 }
 
+/* ============================================================
+   Clean-Up Mode — 7th Period only. Always auto-starts the moment
+   10 minutes remain in 7th Period (no input to configure — this
+   one's fixed, unlike Game Mode's auto-trigger). Draws numbers
+   1-36 with no repeats over 5 minutes via a little claw-machine
+   animation: whoever's number comes up puts their Chromebook away.
+   Same full-board-takeover shape as Game Mode, but sparkles
+   instead of confetti — and turning one mode on turns the other
+   off, so they never show at the same time.
+   ============================================================ */
+
+const CLEANUP_PERIOD_NAME = '7th Period';
+const CLEANUP_AUTO_MINUTES = 10;       // fixed — always starts w/ 10 min left
+const CLEANUP_NUMBER_COUNT = 36;
+const CLEANUP_TOTAL_MS = 5 * 60 * 1000; // get through all 36 numbers in 5 min
+const CLEANUP_DROP_MS = 900;
+const CLEANUP_GRAB_MS = 280;
+const CLEANUP_LIFT_MS = 900;
+const CLEANUP_PIT_BALL_COUNT = 10;
+
+const SPARKLE_COUNT = 70;
+const SPARKLE_MIN_SIZE = 5;
+const SPARKLE_MAX_SIZE = 16;
+const SPARKLE_MIN_FALL = 3;
+const SPARKLE_MAX_FALL = 9;
+const SPARKLE_MIN_DRIFT = 14;
+const SPARKLE_MAX_DRIFT = 46;
+
+function spawnSparkles(layer) {
+  layer.innerHTML = '';
+  for (let i = 0; i < SPARKLE_COUNT; i++) {
+    const piece = document.createElement('span');
+    piece.className = 'sparkle-piece';
+    const inner = document.createElement('span');
+    inner.className = 'sparkle-piece-inner';
+    piece.appendChild(inner);
+
+    const left = Math.random() * 100;
+    const sizeT = Math.random();
+    const size = SPARKLE_MIN_SIZE + sizeT * (SPARKLE_MAX_SIZE - SPARKLE_MIN_SIZE);
+    const fallDuration = SPARKLE_MIN_FALL + sizeT * (SPARKLE_MAX_FALL - SPARKLE_MIN_FALL);
+    const twinkleDuration = 0.9 + Math.random() * 1.6;
+    const delay = Math.random() * 6;
+    const drift = SPARKLE_MIN_DRIFT + Math.random() * (SPARKLE_MAX_DRIFT - SPARKLE_MIN_DRIFT);
+
+    piece.style.left = `${left}vw`;
+    piece.style.width = `${size}px`;
+    piece.style.height = `${size}px`;
+    piece.style.setProperty('--drift', `${drift}px`);
+    piece.style.animationDuration = `${fallDuration}s`;
+    piece.style.animationDelay = `${delay}s`;
+
+    inner.style.animationDuration = `${twinkleDuration}s`;
+    inner.style.animationDelay = `${delay}s`;
+
+    layer.appendChild(piece);
+  }
+}
+
+// Fisher-Yates — returns [1..count] in random order, no repeats.
+function shuffledNumbers(count) {
+  const arr = Array.from({ length: count }, (_, i) => i + 1);
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// Reads each number aloud via the browser's built-in speech synthesis
+// (no external service, no setup) — silently does nothing if the
+// browser doesn't support it or a voice isn't available yet.
+function speakCleanupNumber(n) {
+  try {
+    if (!('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel(); // don't let calls stack up/overlap
+    const utter = new SpeechSynthesisUtterance(`Number ${n}`);
+    utter.rate = 0.95;
+    window.speechSynthesis.speak(utter);
+  } catch (e) { /* speech synthesis unavailable — silently skip */ }
+}
+
+function initCleanupMode() {
+  const boardGrid = document.getElementById('board-grid');
+  const toggleBtn = document.getElementById('cleanup-toggle-btn');
+  const sparkleLayer = document.getElementById('sparkle-layer');
+  const clawArm = document.getElementById('cleanup-claw-arm');
+  const numberEl = document.getElementById('cleanup-number');
+  const countdownEl = document.getElementById('cleanup-countdown');
+  const messageEl = document.getElementById('cleanup-message');
+  const calledListEl = document.getElementById('cleanup-called-list');
+  const pitEl = document.getElementById('cleanup-ball-pit');
+  if (!boardGrid || !toggleBtn || !sparkleLayer || !clawArm || !numberEl || !countdownEl) return;
+
+  // decorative resting balls in the claw-machine pit — placed once,
+  // never move or mean anything, just set the scene
+  if (pitEl && !pitEl.dataset.seeded) {
+    pitEl.dataset.seeded = 'true';
+    for (let i = 0; i < CLEANUP_PIT_BALL_COUNT; i++) {
+      const ball = document.createElement('span');
+      ball.className = 'pit-ball';
+      ball.style.left = `${8 + Math.random() * 78}%`;
+      ball.style.bottom = `${Math.random() * 55}%`;
+      pitEl.appendChild(ball);
+    }
+  }
+
+  let active = false;
+  let sequenceTimeout = null;
+  let countdownHandle = null;
+  let queue = [];
+  let queueIndex = 0;
+  let sequenceEndsAt = 0;
+
+  function resetClaw() {
+    clawArm.classList.remove('is-dropping', 'is-grabbing', 'is-lifting');
+  }
+
+  function tickCountdown() {
+    const msLeft = Math.max(0, sequenceEndsAt - Date.now());
+    countdownEl.textContent = fmtCountdown(msLeft / 60000);
+    if (msLeft <= 0 && countdownHandle) { clearInterval(countdownHandle); countdownHandle = null; }
+  }
+
+  function finishSequence() {
+    if (messageEl) messageEl.textContent = 'Clean-up crew complete — thank you!';
+  }
+
+  function scheduleNext() {
+    if (!active) return;
+    if (queueIndex >= CLEANUP_NUMBER_COUNT) { finishSequence(); return; }
+    // pace remaining draws evenly across whatever time is actually left,
+    // rather than a fixed gap, so the sequence still lands on time even
+    // if a tab was backgrounded and timers got throttled/delayed
+    const remainingNumbers = CLEANUP_NUMBER_COUNT - queueIndex;
+    const remainingMs = Math.max(0, sequenceEndsAt - Date.now());
+    const gap = remainingMs / remainingNumbers;
+    sequenceTimeout = setTimeout(pullNextBall, gap);
+  }
+
+  function pullNextBall() {
+    if (!active) return;
+    if (queueIndex >= queue.length) { finishSequence(); return; }
+    const number = queue[queueIndex];
+    queueIndex++;
+
+    resetClaw();
+    requestAnimationFrame(() => clawArm.classList.add('is-dropping'));
+
+    sequenceTimeout = setTimeout(() => {
+      clawArm.classList.add('is-grabbing');
+
+      sequenceTimeout = setTimeout(() => {
+        clawArm.classList.remove('is-dropping');
+        clawArm.classList.add('is-lifting');
+
+        numberEl.textContent = String(number);
+        numberEl.classList.remove('is-revealing');
+        void numberEl.offsetWidth; // restart the reveal animation
+        numberEl.classList.add('is-revealing');
+        speakCleanupNumber(number);
+
+        if (calledListEl) {
+          const chip = document.createElement('span');
+          chip.className = 'cleanup-called-chip';
+          chip.textContent = number;
+          calledListEl.appendChild(chip);
+        }
+        if (messageEl) {
+          messageEl.textContent = `Number ${number} — put your Chromebook away!`;
+        }
+
+        sequenceTimeout = setTimeout(() => {
+          resetClaw();
+          scheduleNext();
+        }, CLEANUP_LIFT_MS);
+      }, CLEANUP_GRAB_MS);
+    }, CLEANUP_DROP_MS);
+  }
+
+  function turnOn() {
+    if (active) return;
+    // Game Mode is its own full-board takeover — never show both.
+    if (window.__gameMode && window.__gameMode.isActive()) window.__gameMode.turnOff();
+
+    active = true;
+    boardGrid.classList.add('cleanup-mode-active');
+    toggleBtn.classList.add('is-active');
+    spawnSparkles(sparkleLayer);
+
+    queue = shuffledNumbers(CLEANUP_NUMBER_COUNT);
+    queueIndex = 0;
+    sequenceEndsAt = Date.now() + CLEANUP_TOTAL_MS;
+    numberEl.textContent = '?';
+    numberEl.classList.remove('is-revealing');
+    if (calledListEl) calledListEl.innerHTML = '';
+    if (messageEl) messageEl.textContent = 'Here we go — watch for your number!';
+
+    tickCountdown();
+    countdownHandle = setInterval(tickCountdown, 1000);
+    pullNextBall();
+
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  function turnOff() {
+    if (!active) return;
+    active = false;
+    boardGrid.classList.remove('cleanup-mode-active');
+    toggleBtn.classList.remove('is-active');
+    sparkleLayer.innerHTML = '';
+    resetClaw();
+    if (sequenceTimeout) { clearTimeout(sequenceTimeout); sequenceTimeout = null; }
+    if (countdownHandle) { clearInterval(countdownHandle); countdownHandle = null; }
+    try { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (active) turnOff(); else turnOn();
+  });
+
+  // lets Game Mode's turnOn() switch this back off, same pattern as
+  // window.__gameMode above
+  window.__cleanupMode = { turnOn, turnOff, isActive: () => active };
+
+  /* ---- Auto-trigger — always on, 7th Period only, fires once the
+     live countdown hits CLEANUP_AUTO_MINUTES. Unlike Game Mode's
+     auto-trigger this isn't a text input Ms. Herrick sets per device;
+     it's a fixed default so it just works every day without setup. ---- */
+
+  let firedForPeriodKey = null;
+
+  async function autoCheck() {
+    if (active) return;
+    const pt = getPacificNow();
+    const scheduleKey = await resolveTodaysSchedule(pt);
+    const bells = await loadBells();
+    const scheduleData = bells[scheduleKey];
+    if (!scheduleData) return;
+
+    const nowMin = minutesSinceMidnight(pt);
+    const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
+    if (!current || current.name !== CLEANUP_PERIOD_NAME) return;
+
+    const remaining = hhmmToMinutes(current.end) - nowMin;
+    const periodKey = `${pt.isoDate}|${current.name}`;
+    if (remaining <= CLEANUP_AUTO_MINUTES && firedForPeriodKey !== periodKey) {
+      firedForPeriodKey = periodKey;
+      turnOn();
+    }
+  }
+
+  autoCheck();
+  setInterval(autoCheck, 1000);
+}
+
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1157,6 +1417,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNowPlaying();
   initCountUpTimer();
   initGameMode();
+  initCleanupMode();
 
   // belt-and-suspenders: re-fit everything once web fonts are confirmed
   // loaded, in case something rendered/measured before that point

@@ -23,6 +23,7 @@
       <span>min left</span>
     </div>
     <button class="nav-day-btn gamemode-toggle-btn" id="gamemode-toggle-btn" title="Toggle Game Mode">&#127918; Game Mode</button>
+    <button class="nav-day-btn cleanup-toggle-btn" id="cleanup-toggle-btn" title="Toggle Clean-Up Mode (auto-starts 7th Period, 10 min left)">&#129529; Clean-Up</button>
   </div>
 </div>
 
@@ -106,9 +107,40 @@
     </div>
   </div>
 
+  <div class="agenda-box box-cleanup box-cleanup-main" id="box-cleanup-main">
+    <span class="box-label">Clean-Up Crew</span>
+    <div class="cleanup-body">
+      <div class="cleanup-claw-stage">
+        <div class="claw-glass">
+          <div class="claw-rail">
+            <div class="claw-arm" id="cleanup-claw-arm">
+              <div class="claw-string"></div>
+              <div class="claw-head">
+                <span class="claw-prong claw-prong-l"></span>
+                <span class="claw-prong claw-prong-r"></span>
+                <span class="claw-ball" id="cleanup-claw-ball"></span>
+              </div>
+            </div>
+          </div>
+          <div class="claw-pit" id="cleanup-ball-pit"></div>
+        </div>
+        <div class="cleanup-number-window">
+          <div class="cleanup-number" id="cleanup-number">?</div>
+        </div>
+      </div>
+      <div class="cleanup-message" id="cleanup-message">Watch for your number&hellip;</div>
+      <div class="cleanup-countdown" id="cleanup-countdown">05:00</div>
+      <div class="cleanup-called">
+        <span class="cleanup-called-label">Called:</span>
+        <span class="cleanup-called-list" id="cleanup-called-list"></span>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+<div class="sparkle-layer" id="sparkle-layer" aria-hidden="true"></div>
 
 <script src="script.js"></script>
 </body>
