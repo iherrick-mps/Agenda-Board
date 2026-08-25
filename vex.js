@@ -195,11 +195,28 @@ function initVexNowPlaying() {
   const playPauseBtn = document.getElementById('vex-playpause-btn');
   const prevBtn = document.getElementById('vex-prev-btn');
   const nextBtn = document.getElementById('vex-next-btn');
+  const shuffleBtn = document.getElementById('vex-shuffle-btn');
+  const repeatBtn = document.getElementById('vex-repeat-btn');
   if (!box || !embedContainer) return;
 
   const HIDDEN_KEY = 'agendaBoard.vexVisualsHidden';
+  const SHUFFLE_KEY = 'agendaBoard.vexShuffle';
+  const REPEAT_ONE_KEY = 'agendaBoard.vexRepeatOne';
   let player = null;
   let isPlaying = false;
+
+  // shuffle defaults ON; repeat-one defaults OFF; the whole playlist
+  // always loops (see setLoop(true) in onReady) regardless of either
+  let shuffleOn = true;
+  let repeatOneOn = false;
+  try {
+    const s = localStorage.getItem(SHUFFLE_KEY);
+    if (s !== null) shuffleOn = s === '1';
+  } catch (e) { /* storage disabled */ }
+  try {
+    const r = localStorage.getItem(REPEAT_ONE_KEY);
+    if (r !== null) repeatOneOn = r === '1';
+  } catch (e) { /* storage disabled */ }
 
   function setHidden(hidden) {
     box.classList.toggle('visuals-hidden', hidden);
@@ -210,6 +227,24 @@ function initVexNowPlaying() {
   function updatePlayPauseIcon() {
     if (playPauseBtn) playPauseBtn.textContent = isPlaying ? '\u23F8' : '\u25B6';
   }
+
+  function setShuffle(on) {
+    shuffleOn = on;
+    if (shuffleBtn) shuffleBtn.classList.toggle('is-active', on);
+    if (player && player.setShuffle) player.setShuffle(on);
+    try { localStorage.setItem(SHUFFLE_KEY, on ? '1' : '0'); } catch (e) { /* storage disabled */ }
+  }
+
+  function setRepeatOne(on) {
+    repeatOneOn = on;
+    if (repeatBtn) repeatBtn.classList.toggle('is-active', on);
+    try { localStorage.setItem(REPEAT_ONE_KEY, on ? '1' : '0'); } catch (e) { /* storage disabled */ }
+  }
+
+  // reflect saved/default state on the buttons right away, even before
+  // the player exists — setShuffle()/setRepeatOne() below re-apply once ready
+  if (shuffleBtn) shuffleBtn.classList.toggle('is-active', shuffleOn);
+  if (repeatBtn) repeatBtn.classList.toggle('is-active', repeatOneOn);
 
   async function init() {
     const { videoId, listId } = parseYouTubeUrl(VEX_NOWPLAYING_URL);
@@ -225,6 +260,7 @@ function initVexNowPlaying() {
     if (listId) {
       playerVars.listType = 'playlist';
       playerVars.list = listId;
+      playerVars.loop = 1; // whole playlist loops back to the start by default
     }
 
     player = new YT.Player('vex-nowplaying-player', {
@@ -240,6 +276,10 @@ function initVexNowPlaying() {
         onReady: (e) => {
           e.target.setVolume(VEX_NOWPLAYING_VOLUME);
           e.target.unMute();
+          // setLoop/setShuffle are the reliable way to control a playlist
+          // that's already loaded — playerVars.loop above is a backup
+          if (e.target.setLoop) e.target.setLoop(true);
+          if (e.target.setShuffle) e.target.setShuffle(shuffleOn);
         },
         onStateChange: (e) => {
           isPlaying = e.data === YT.PlayerState.PLAYING;
@@ -247,6 +287,12 @@ function initVexNowPlaying() {
           if (titleText && e.target.getVideoData) {
             const formatted = vexFormatNowPlayingTitle(e.target.getVideoData());
             if (formatted) titleText.textContent = formatted;
+          }
+          // "repeat current song": replay it instead of letting the
+          // playlist advance to the next track
+          if (e.data === YT.PlayerState.ENDED && repeatOneOn) {
+            e.target.seekTo(0);
+            e.target.playVideo();
           }
         }
       }
@@ -284,6 +330,18 @@ function initVexNowPlaying() {
     nextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       if (player && player.nextVideo) player.nextVideo();
+    });
+  }
+  if (shuffleBtn) {
+    shuffleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setShuffle(!shuffleOn);
+    });
+  }
+  if (repeatBtn) {
+    repeatBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setRepeatOne(!repeatOneOn);
     });
   }
 }
