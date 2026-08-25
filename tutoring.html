@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutoring — Robotics &amp; Coding</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="board-page">
+
+<div class="hover-zone">
+  <div class="hover-trigger"></div>
+  <div class="hover-bar">
+    <a class="back-link-inline" href="index.html">&larr; Home</a>
+    <span class="hb-date">Tutoring &middot; Until 4:00 PM</span>
+  </div>
+</div>
+
+<div class="board-grid tutoring-grid" id="board-grid">
+
+  <div class="agenda-box box-queue" id="tutoring-queue-box">
+    <div class="queue-body">
+      <input type="text" id="queue-input" class="queue-input"
+             placeholder="Paste the Help Queue room link (e.g. https://iherrick-mps.github.io/queue/?room=ABCDE)&hellip;">
+      <div class="queue-embed" id="queue-embed"></div>
+    </div>
+  </div>
+
+  <div class="agenda-box box-clock">
+    <div class="clock-date" id="clock-date">Loading&hellip;</div>
+    <div class="clock-time" id="clock-time">--:--:--</div>
+    <div class="clock-tz">Pacific Time</div>
+    <div class="clock-status" id="clock-status">
+      <span class="status-label" id="clock-status-label">Loading&hellip;</span>
+      <span class="status-value" id="clock-status-value">&mdash;</span>
+    </div>
+  </div>
+
+  <div class="agenda-box box-nowplaying">
+    <div class="nowplaying-body">
+      <input type="text" id="nowplaying-input" class="nowplaying-input"
+             placeholder="Paste a YouTube video or playlist link&hellip;">
+      <div class="nowplaying-embed" id="nowplaying-embed"></div>
+    </div>
+  </div>
+
+  <div class="agenda-box box-expect">
+    <span class="box-label">Expectations</span>
+    <div class="box-content" id="content-expect">
+      <ul>
+        <li>Chromebooks are for schoolwork only &mdash; no games</li>
+        <li>Keep it quiet so I can help other students</li>
+        <li>Waiting your turn? Work quietly until I get to you</li>
+        <li>All normal classroom rules still apply</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="tutoring.js"></script>
+</body>
+</html>

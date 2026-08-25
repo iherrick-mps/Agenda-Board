@@ -20,6 +20,8 @@
   --c-timer: #38bdf8;      /* Count-up timer */
   --c-studyrules: #c7361f; /* Study Hall — Rules */
   --c-closing: #0d9367;    /* Study Hall — Before You Leave */
+  --c-queue: #0e93b4;      /* Tutoring — Help Queue */
+  --c-expect: #0d9367;     /* Tutoring — Expectations */
 
   --box-width: 340px;
   --radius: 8px;
@@ -1821,6 +1823,116 @@ body.board-page {
 }
 .vex-visuals-toggle:hover { color: #fff; border-color: #fff; }
 
+/* ============================================================
+   TUTORING PAGE — after-school help-queue board. Left 2/3 of the
+   screen is a live embed of the Help Queue app (separate repo);
+   the right 1/3 stacks the clock, Now Playing, and Expectations.
+   Reuses .board-grid / .agenda-box / clock / nowplaying plumbing
+   from the main board (same id="board-grid").
+   ============================================================ */
+
+.board-grid.tutoring-grid {
+  grid-template-areas:
+    "queue queue queue queue queue queue queue queue clock clock clock clock"
+    "queue queue queue queue queue queue queue queue clock clock clock clock"
+    "queue queue queue queue queue queue queue queue clock clock clock clock"
+    "queue queue queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying"
+    "queue queue queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying"
+    "queue queue queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying"
+    "queue queue queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying"
+    "queue queue queue queue queue queue queue queue expect expect expect expect"
+    "queue queue queue queue queue queue queue queue expect expect expect expect"
+    "queue queue queue queue queue queue queue queue expect expect expect expect"
+    "queue queue queue queue queue queue queue queue expect expect expect expect"
+    "queue queue queue queue queue queue queue queue expect expect expect expect";
+}
+
+.box-queue  { grid-area: queue;  --box-color: var(--c-queue); }
+.box-expect { grid-area: expect; --box-color: var(--c-expect); }
+
+/* ---- Help Queue embed — same paste-a-link-then-it-tucks-away pattern
+   as the Now Playing box, but a plain iframe (no video parsing) ---- */
+.box-queue {
+  background: #000;
+  border-left-color: var(--c-queue);
+  color: #fff;
+  padding: 0.6vh 0.6vw;
+}
+
+.queue-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh;
+}
+
+.queue-input {
+  flex: 0 0 auto;
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #3a3a3a;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 0.5em 0.7em;
+  border-radius: 5px;
+  transition: max-height 0.2s ease, padding 0.2s ease, opacity 0.15s ease, margin 0.2s ease;
+}
+
+/* once a queue link is loaded, tuck the input away — hovering brings it back */
+.box-queue.has-queue .queue-input {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  border-width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.box-queue.has-queue:hover .queue-input {
+  max-height: 3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-width: 1px;
+  opacity: 1;
+}
+
+.queue-input::placeholder { color: #7a7a7a; }
+.queue-input:focus { outline: 2px solid var(--c-queue); outline-offset: 1px; }
+
+.queue-embed {
+  flex: 1 1 auto;
+  min-height: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.queue-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.queue-embed:empty::before {
+  content: 'Paste the Help Queue room link above to show it here.';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1em;
+  text-align: center;
+  color: #6a6a6a;
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+}
+
+/* ---- Expectations — same checklist look as the Study Hall boxes ---- */
+.box-expect .box-content li::before { content: '\2713'; }
+
 /* ============ RESPONSIVE FALLBACK (small screens) ============ */
 @media (max-width: 900px) {
   body.board-page { height: auto; overflow: auto; }
@@ -1880,6 +1992,15 @@ body.board-page {
   .vex-work-text { font-size: 1.8rem; }
   .vex-title-text { font-size: 1.3rem; }
   .box-scrum { min-height: 320px; }
+
+  .board-grid.tutoring-grid {
+    grid-template-areas:
+      "clock"
+      "expect"
+      "nowplaying"
+      "queue";
+  }
+  .box-queue { min-height: 420px; }
 
   /* Game Mode: on narrow screens, ignore the desktop line-number
      repositioning (it only makes sense on the 12-column grid) and
