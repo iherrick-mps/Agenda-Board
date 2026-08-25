@@ -776,6 +776,30 @@ body.board-page {
   letter-spacing: 0.05em;
 }
 
+/* Tutoring's clock bento: date/timezone/time (everything except the
+   big green countdown) share a two-column row instead of stacking
+   three lines, so the countdown below keeps most of the box. Left
+   column stacks the two small labels; right column holds the time,
+   vertically centered against both of them. */
+.clock-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: 0.8em;
+  width: 100%;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.6em;
+  border-bottom: 1px dashed #35424f;
+}
+
+.clock-info-grid .clock-date { grid-column: 1; grid-row: 1; }
+.clock-info-grid .clock-tz   { grid-column: 1; grid-row: 2; }
+.clock-info-grid .clock-time {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin-top: 0;
+}
+
 /* ============================================================
    Game Mode — reflows the whole board into a single left-hand
    info column plus one big celebratory panel filling the rest
@@ -1834,18 +1858,18 @@ body.board-page {
 
 .board-grid.tutoring-grid {
   grid-template-areas:
-    "joinlink joinlink joinlink joinlink joinlink joinlink joinlink joinlink clock clock clock clock"
-    "joinlink joinlink joinlink joinlink joinlink joinlink joinlink joinlink clock clock clock clock"
-    "queue queue queue queue queue queue queue queue clock clock clock clock"
-    "queue queue queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying"
-    "queue queue queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying"
-    "queue queue queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying"
-    "queue queue queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying"
-    "queue queue queue queue queue queue queue queue expect expect expect expect"
-    "queue queue queue queue queue queue queue queue expect expect expect expect"
-    "queue queue queue queue queue queue queue queue expect expect expect expect"
-    "queue queue queue queue queue queue queue queue expect expect expect expect"
-    "queue queue queue queue queue queue queue queue expect expect expect expect";
+    "joinlink joinlink joinlink joinlink joinlink joinlink clock clock clock clock clock clock"
+    "joinlink joinlink joinlink joinlink joinlink joinlink clock clock clock clock clock clock"
+    "queue queue queue queue queue queue clock clock clock clock clock clock"
+    "queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying"
+    "queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying"
+    "queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying"
+    "queue queue queue queue queue queue nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying"
+    "queue queue queue queue queue queue expect expect expect expect expect expect"
+    "queue queue queue queue queue queue expect expect expect expect expect expect"
+    "queue queue queue queue queue queue expect expect expect expect expect expect"
+    "queue queue queue queue queue queue expect expect expect expect expect expect"
+    "queue queue queue queue queue queue expect expect expect expect expect expect";
 }
 
 .box-joinlink { grid-area: joinlink; --box-color: var(--c-joinlink); }
