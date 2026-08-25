@@ -23,6 +23,17 @@ const VEX_TEAMS = [
 const VEX_NEXT_COMPETITION = '2027-01-15'; // YYYY-MM-DD
 const VEX_NEXT_COMPETITION_LABEL = 'January 15';
 
+/* ---- SCRUM board stages (columns) — rows are VEX_TEAMS above ---- */
+const VEX_SCRUM_STAGES = [
+  'Build Chassis',
+  'Build Arm',
+  'Iterating on Arm',
+  'Full Team Practicing',
+  'Developing Autonomous',
+];
+const VEX_SCRUM_KEY = 'agendaBoard.vexScrum';
+const VEX_SCRUM_MAX_SPARKLES = 14; // sparkle count at 100% complete
+
 /* ---- Now Playing defaults ---- */
 const VEX_NOWPLAYING_URL = 'https://music.youtube.com/playlist?list=PLKwpsUctVAO8&si=Aio1rMg-SqWJhbM6';
 const VEX_NOWPLAYING_VOLUME = 10; // 0-100
@@ -80,6 +91,151 @@ function initVexCountdown() {
 
   paint();
   setInterval(paint, 60 * 1000);
+}
+
+/* ---------- SCRUM board — teams x build stages, checkboxes, saved to
+   localStorage, with a per-row progress-bar fill + intensity-scaled
+   sparkles as more of that team's stages get checked off ---------- */
+
+// reads saved checkbox state and reshapes it to exactly match the
+// current VEX_TEAMS/VEX_SCRUM_STAGES lists (new teams start unchecked;
+// removed teams' old data is just ignored, not deleted from storage)
+function vexLoadScrumState() {
+  let saved = {};
+  try {
+    const raw = localStorage.getItem(VEX_SCRUM_KEY);
+    if (raw) saved = JSON.parse(raw) || {};
+  } catch (e) { /* storage disabled or corrupt JSON — start fresh */ }
+
+  const state = {};
+  VEX_TEAMS.forEach(t => {
+    const existing = Array.isArray(saved[t.name]) ? saved[t.name] : [];
+    state[t.name] = VEX_SCRUM_STAGES.map((_, i) => !!existing[i]);
+  });
+  return state;
+}
+
+function vexSaveScrumState(state) {
+  try { localStorage.setItem(VEX_SCRUM_KEY, JSON.stringify(state)); } catch (e) { /* storage disabled */ }
+}
+
+function vexScrumPercent(rowState) {
+  if (!rowState || !rowState.length) return 0;
+  const done = rowState.filter(Boolean).length;
+  return Math.round((done / rowState.length) * 100);
+}
+
+// (re)fills a row's sparkle layer — more sparkles, bigger and brighter,
+// the closer that row is to 100%; empty at 0%
+function vexRenderSparkles(layerEl, percent) {
+  layerEl.innerHTML = '';
+  if (percent <= 0) return;
+
+  const intensity = percent / 100; // 0..1
+  const count = Math.max(1, Math.round(intensity * VEX_SCRUM_MAX_SPARKLES));
+
+  for (let i = 0; i < count; i++) {
+    const s = document.createElement('span');
+    s.className = 'vex-sparkle';
+    s.textContent = '\u2726'; // ✦
+    s.style.left = `${Math.random() * Math.max(4, percent - 4)}%`;
+    s.style.top = `${8 + Math.random() * 82}%`;
+    s.style.setProperty('--sparkle-size', `${7 + intensity * 9}px`);
+    s.style.setProperty('--sparkle-opacity', String(0.5 + intensity * 0.5));
+    s.style.setProperty('--sparkle-dur', `${1.1 + Math.random() * 1.3}s`);
+    s.style.setProperty('--sparkle-delay', `${Math.random() * 1.6}s`);
+    layerEl.appendChild(s);
+  }
+}
+
+function initVexScrumBoard() {
+  const tableEl = document.getElementById('vex-scrum-table');
+  if (!tableEl || VEX_TEAMS.length === 0) return;
+
+  const state = vexLoadScrumState();
+  const rowRefs = {}; // team name -> { fillEl, sparkleEl }
+  tableEl.innerHTML = '';
+
+  const corner = document.createElement('div');
+  corner.className = 'vex-scrum-cell vex-scrum-corner';
+  corner.style.gridRow = '1';
+  corner.style.gridColumn = '1';
+  tableEl.appendChild(corner);
+
+  VEX_SCRUM_STAGES.forEach((stage, colIdx) => {
+    const head = document.createElement('div');
+    head.className = 'vex-scrum-cell vex-scrum-head';
+    head.textContent = stage;
+    head.style.gridRow = '1';
+    head.style.gridColumn = String(colIdx + 2);
+    tableEl.appendChild(head);
+  });
+
+  function paintRow(teamName) {
+    const refs = rowRefs[teamName];
+    if (!refs) return;
+    const percent = vexScrumPercent(state[teamName]);
+    refs.fillEl.style.setProperty('--fill-percent', `${percent}%`);
+    vexRenderSparkles(refs.sparkleEl, percent);
+  }
+
+  VEX_TEAMS.forEach((team, rowIdx) => {
+    const gridRow = rowIdx + 2;
+
+    // fill + sparkle layers first (DOM order = paint order, so they
+    // stay behind the team label and checkboxes appended after them)
+    const fill = document.createElement('div');
+    fill.className = 'vex-scrum-fill';
+    fill.style.gridRow = String(gridRow);
+    fill.style.gridColumn = '1 / -1';
+    tableEl.appendChild(fill);
+
+    const sparkleLayer = document.createElement('div');
+    sparkleLayer.className = 'vex-scrum-sparkles';
+    sparkleLayer.style.gridRow = String(gridRow);
+    sparkleLayer.style.gridColumn = '1 / -1';
+    tableEl.appendChild(sparkleLayer);
+
+    rowRefs[team.name] = { fillEl: fill, sparkleEl: sparkleLayer };
+
+    const label = document.createElement('div');
+    label.className = 'vex-scrum-cell vex-scrum-team';
+    label.textContent = team.name;
+    label.style.gridRow = String(gridRow);
+    label.style.gridColumn = '1';
+    tableEl.appendChild(label);
+
+    VEX_SCRUM_STAGES.forEach((stage, colIdx) => {
+      const cell = document.createElement('div');
+      cell.className = 'vex-scrum-cell vex-scrum-check';
+      cell.style.gridRow = String(gridRow);
+      cell.style.gridColumn = String(colIdx + 2);
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.checked = state[team.name][colIdx];
+      checkbox.setAttribute('aria-label', `${team.name} \u2014 ${stage}`);
+      checkbox.dataset.team = team.name;
+      checkbox.dataset.stage = String(colIdx);
+
+      cell.appendChild(checkbox);
+      tableEl.appendChild(cell);
+    });
+
+    paintRow(team.name);
+  });
+
+  tableEl.addEventListener('change', (e) => {
+    const cb = e.target;
+    if (!(cb instanceof HTMLInputElement) || cb.type !== 'checkbox') return;
+    const team = cb.dataset.team;
+    const stageIdx = Number(cb.dataset.stage);
+    if (!team || Number.isNaN(stageIdx) || !state[team]) return;
+
+    state[team][stageIdx] = cb.checked;
+    vexSaveScrumState(state);
+    paintRow(team);
+  });
 }
 
 /* ---------- Team roster ---------- */
@@ -351,6 +507,7 @@ function initVexNowPlaying() {
 document.addEventListener('DOMContentLoaded', () => {
   initVexCountdown();
   initVexTeams();
+  initVexScrumBoard();
   initVexSaturdaySchedule();
   initVexNowPlaying();
   initVexBreakAutoGameMode();

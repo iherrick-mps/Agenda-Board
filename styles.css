@@ -1176,43 +1176,30 @@ body.board-page {
 
 .board-grid.vex-grid {
   grid-template-areas:
-    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
-    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
-    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying teams teams teams"
-    "work work work work work work work work work work work work"
-    "work work work work work work work work work work work work"
-    "work work work work work work work work work work work work";
-}
-
-/* Saturdays: Now Playing narrows to make room for the day's bell
-   schedule; everything else holds its position. */
-.board-grid.vex-grid.is-saturday {
-  grid-template-areas:
-    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
-    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
-    "clock clock clock countdown countdown countdown countdown countdown countdown teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying schedule schedule schedule teams teams teams"
-    "work work work work work work work work work work work work"
-    "work work work work work work work work work work work work"
-    "work work work work work work work work work work work work";
+    "clock clock clock countdown countdown countdown banner banner banner banner banner banner"
+    "clock clock clock countdown countdown countdown banner banner banner banner banner banner"
+    "clock clock clock countdown countdown countdown banner banner banner banner banner banner"
+    "scrum scrum scrum scrum scrum scrum scrum scrum scrum teams teams teams"
+    "scrum scrum scrum scrum scrum scrum scrum scrum scrum teams teams teams"
+    "scrum scrum scrum scrum scrum scrum scrum scrum scrum teams teams teams"
+    "scrum scrum scrum scrum scrum scrum scrum scrum scrum teams teams teams"
+    "scrum scrum scrum scrum scrum scrum scrum scrum scrum nowplaying nowplaying nowplaying"
+    "scrum scrum scrum scrum scrum scrum scrum scrum scrum nowplaying nowplaying nowplaying"
+    "scrum scrum scrum scrum scrum scrum scrum scrum scrum nowplaying nowplaying nowplaying"
+    "scrum scrum scrum scrum scrum scrum scrum scrum scrum nowplaying nowplaying nowplaying"
+    "scrum scrum scrum scrum scrum scrum scrum scrum scrum nowplaying nowplaying nowplaying";
 }
 
 .box-countdown { grid-area: countdown; }
 .box-teams     { grid-area: teams;     --box-color: var(--c-standard); }
-.box-work      { grid-area: work;      --box-color: var(--c-goal); }
-.box-schedule  { grid-area: schedule;  --box-color: var(--c-eld); display: none; }
+.box-scrum     { grid-area: scrum;     --box-color: var(--c-agenda); }
 
+/* the work banner and Saturday schedule share one grid slot — only one
+   is ever visible at a time, toggled by .is-saturday below */
+.box-work      { grid-area: banner; --box-color: var(--c-goal); }
+.box-schedule  { grid-area: banner; --box-color: var(--c-eld); display: none; }
+
+.board-grid.vex-grid.is-saturday .box-work     { display: none; }
 .board-grid.vex-grid.is-saturday .box-schedule { display: flex; }
 
 /* ---- Countdown box — dark hero card, same family as the clock ---- */
@@ -1229,19 +1216,19 @@ body.board-page {
   font-family: var(--font-mono);
   font-weight: 700;
   line-height: 1;
-  font-size: clamp(2rem, min(38cqh, 18cqw), 8rem);
+  font-size: clamp(1.6rem, min(38cqh, 15cqw), 6rem);
   color: #6ee7b7;
 }
 .vex-countdown-sub {
   margin-top: 0.5em;
   font-family: var(--font-mono);
-  font-size: clamp(0.6rem, min(4.5cqh, 2.4cqw), 1.05rem);
+  font-size: clamp(0.55rem, min(4.5cqh, 2cqw), 0.9rem);
   color: #93a3b8;
   letter-spacing: 0.03em;
 }
 
 /* ---- "Get to work" banner — solid accent card, no rainbow, just a
-   loud reminder that fills the bottom of the board ---- */
+   loud reminder along the top of the board ---- */
 .box-work {
   background: var(--c-goal);
   border: none;
@@ -1255,7 +1242,7 @@ body.board-page {
 .vex-work-text {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.4rem, min(30cqh, 6.5cqw), 4.5rem);
+  font-size: clamp(1rem, min(30cqh, 4.2cqw), 2.6rem);
   line-height: 1.15;
   text-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
@@ -1288,12 +1275,116 @@ body.board-page {
   opacity: 0.7;
 }
 
+/* ============================================================
+   SCRUM board — rows are teams, columns are build stages. Every
+   cell is a checkbox; each row's background fills like a progress
+   bar as its checkboxes get checked, with sparkles that multiply
+   and brighten the closer that row gets to fully done. State is
+   saved to localStorage (vex.js) so it survives reloads.
+   ============================================================ */
+
+.box-scrum { padding-bottom: 0.6vh; }
+
+.vex-scrum-wrap {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+}
+
+.vex-scrum-table {
+  display: grid;
+  grid-template-columns: minmax(64px, 1.1fr) repeat(5, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 3px 6px;
+  height: 100%;
+  min-width: 480px;
+}
+
+.vex-scrum-cell {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.vex-scrum-corner { background: transparent; }
+
+.vex-scrum-head {
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  font-size: clamp(0.5rem, 1vw, 0.72rem);
+  color: var(--box-color, var(--ink));
+}
+
+.vex-scrum-team {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.72rem, 1.4vw, 1rem);
+  padding-left: 0.4em;
+  color: var(--ink);
+}
+
+.vex-scrum-check { justify-content: center; }
+.vex-scrum-check input[type="checkbox"] {
+  width: 1.3em;
+  height: 1.3em;
+  min-width: 18px;
+  min-height: 18px;
+  accent-color: var(--c-eld);
+  cursor: pointer;
+}
+
+/* the progress-bar fill sits behind the row's cells, in the same grid
+   row/column span — CSS Grid lets multiple items share a cell area */
+.vex-scrum-fill {
+  z-index: 0;
+  border-radius: 5px;
+  background-color: rgba(22, 32, 43, 0.035);
+  background-image: linear-gradient(
+    to right,
+    color-mix(in srgb, #6ee7b7 82%, transparent) 0%,
+    color-mix(in srgb, #6ee7b7 82%, transparent) var(--fill-percent, 0%),
+    transparent var(--fill-percent, 0%),
+    transparent 100%
+  );
+  transition: background-image 0.4s ease;
+}
+
+.vex-scrum-sparkles {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.vex-sparkle {
+  position: absolute;
+  color: #fff;
+  font-size: var(--sparkle-size, 9px);
+  text-shadow: 0 0 6px #fff, 0 0 3px #a7f3d0;
+  animation: vex-sparkle-twinkle var(--sparkle-dur, 1.6s) ease-in-out infinite;
+  animation-delay: var(--sparkle-delay, 0s);
+}
+
+@keyframes vex-sparkle-twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  50% { opacity: var(--sparkle-opacity, 0.85); transform: scale(1) rotate(45deg); }
+}
+
 /* ---- Game Mode on this page: hide the VEX-specific boxes and let
    Now Playing take the left column, same pattern as the main board.
    (box-clock is already hidden by the generic rule above.) ---- */
 .board-grid.vex-grid.game-mode-active .box-clock,
 .board-grid.vex-grid.game-mode-active .box-countdown,
 .board-grid.vex-grid.game-mode-active .box-teams,
+.board-grid.vex-grid.game-mode-active .box-scrum,
 .board-grid.vex-grid.game-mode-active .box-schedule,
 .board-grid.vex-grid.game-mode-active .box-work {
   display: none;
@@ -1459,10 +1550,10 @@ body.board-page {
     grid-template-areas:
       "clock"
       "countdown"
-      "schedule"
+      "banner"
+      "scrum"
       "teams"
-      "nowplaying"
-      "work";
+      "nowplaying";
   }
   /* container queries need a definite host height, which auto-height
      mobile stacking doesn't give them — same fix as gamemode-body below */
@@ -1470,6 +1561,7 @@ body.board-page {
   .vex-countdown-number { font-size: 3rem; }
   .vex-work-text { font-size: 1.8rem; }
   .vex-title-text { font-size: 1.3rem; }
+  .box-scrum { min-height: 320px; }
 
   /* Game Mode: on narrow screens, ignore the desktop line-number
      repositioning (it only makes sense on the 12-column grid) and
