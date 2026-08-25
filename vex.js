@@ -33,6 +33,16 @@ const VEX_SCRUM_STAGES = [
 ];
 const VEX_SCRUM_KEY = 'agendaBoard.vexScrum';
 const VEX_SCRUM_MAX_SPARKLES = 14; // sparkle count at 100% complete
+// each team gets its own progress-bar/checkbox color, cycling through
+// this palette in roster order (reuses the site's existing accent colors)
+const VEX_SCRUM_TEAM_COLORS = [
+  'var(--c-goal)',
+  'var(--c-connect)',
+  'var(--c-eld)',
+  'var(--c-standard)',
+  'var(--c-agenda)',
+  'var(--c-working)',
+];
 
 /* ---- Now Playing defaults ---- */
 const VEX_NOWPLAYING_URL = 'https://music.youtube.com/playlist?list=PLKwpsUctVAO8&si=Aio1rMg-SqWJhbM6';
@@ -126,8 +136,9 @@ function vexScrumPercent(rowState) {
 }
 
 // (re)fills a row's sparkle layer — more sparkles, bigger and brighter,
-// the closer that row is to 100%; empty at 0%
-function vexRenderSparkles(layerEl, percent) {
+// the closer that row is to 100%; empty at 0%. Sparkles glow white at
+// low completion and pick up more of the team's own color as it climbs.
+function vexRenderSparkles(layerEl, percent, color) {
   layerEl.innerHTML = '';
   if (percent <= 0) return;
 
@@ -144,6 +155,7 @@ function vexRenderSparkles(layerEl, percent) {
     s.style.setProperty('--sparkle-opacity', String(0.5 + intensity * 0.5));
     s.style.setProperty('--sparkle-dur', `${1.1 + Math.random() * 1.3}s`);
     s.style.setProperty('--sparkle-delay', `${Math.random() * 1.6}s`);
+    if (color) s.style.setProperty('--sparkle-color', color);
     layerEl.appendChild(s);
   }
 }
@@ -176,18 +188,21 @@ function initVexScrumBoard() {
     if (!refs) return;
     const percent = vexScrumPercent(state[teamName]);
     refs.fillEl.style.setProperty('--fill-percent', `${percent}%`);
-    vexRenderSparkles(refs.sparkleEl, percent);
+    vexRenderSparkles(refs.sparkleEl, percent, refs.color);
   }
 
   VEX_TEAMS.forEach((team, rowIdx) => {
     const gridRow = rowIdx + 2;
+    const color = VEX_SCRUM_TEAM_COLORS[rowIdx % VEX_SCRUM_TEAM_COLORS.length];
 
     // fill + sparkle layers first (DOM order = paint order, so they
     // stay behind the team label and checkboxes appended after them)
     const fill = document.createElement('div');
     fill.className = 'vex-scrum-fill';
+    fill.classList.add(rowIdx % 2 === 0 ? 'vex-scrum-row-even' : 'vex-scrum-row-odd');
     fill.style.gridRow = String(gridRow);
     fill.style.gridColumn = '1 / -1';
+    fill.style.setProperty('--team-color', color);
     tableEl.appendChild(fill);
 
     const sparkleLayer = document.createElement('div');
@@ -196,13 +211,14 @@ function initVexScrumBoard() {
     sparkleLayer.style.gridColumn = '1 / -1';
     tableEl.appendChild(sparkleLayer);
 
-    rowRefs[team.name] = { fillEl: fill, sparkleEl: sparkleLayer };
+    rowRefs[team.name] = { fillEl: fill, sparkleEl: sparkleLayer, color };
 
     const label = document.createElement('div');
     label.className = 'vex-scrum-cell vex-scrum-team';
     label.textContent = team.name;
     label.style.gridRow = String(gridRow);
     label.style.gridColumn = '1';
+    label.style.setProperty('--team-color', color);
     tableEl.appendChild(label);
 
     VEX_SCRUM_STAGES.forEach((stage, colIdx) => {
@@ -217,6 +233,7 @@ function initVexScrumBoard() {
       checkbox.setAttribute('aria-label', `${team.name} \u2014 ${stage}`);
       checkbox.dataset.team = team.name;
       checkbox.dataset.stage = String(colIdx);
+      checkbox.style.accentColor = color;
 
       cell.appendChild(checkbox);
       tableEl.appendChild(cell);

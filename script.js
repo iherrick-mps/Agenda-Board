@@ -647,7 +647,7 @@ function initFocusMode() {
     boardGrid.querySelectorAll('.agenda-box').forEach(b => b.classList.remove('is-focused'));
   }
 
-  boardGrid.querySelectorAll('.agenda-box:not(.box-gamemode)').forEach(box => {
+  boardGrid.querySelectorAll('.agenda-box:not(.box-gamemode):not(.box-scrum)').forEach(box => {
     box.addEventListener('click', (e) => {
       e.stopPropagation();
       if (box.classList.contains('is-focused')) {
