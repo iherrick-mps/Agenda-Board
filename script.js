@@ -795,16 +795,84 @@ function loadYouTubeIframeApi() {
   return ytApiPromise;
 }
 
+/* ============================================================
+   Shared random-track machinery for every Now Playing box that has
+   an editable link field (agenda, tutoring, study hall). Backs two
+   behaviors: auto-filling a track when nothing is saved yet, and the
+   die-shaped button that swaps in a new random pick on demand.
+
+   music.txt lives at the repo root, one YouTube link per line.
+   Fetched once and cached for the life of the page.
+   ============================================================ */
+
+let musicListPromise = null;
+function loadMusicList() {
+  if (!musicListPromise) {
+    musicListPromise = fetch('music.txt')
+      .then(r => r.ok ? r.text() : '')
+      .then(text => text.split('\n').map(l => l.trim()).filter(Boolean))
+      .catch(() => []);
+  }
+  return musicListPromise;
+}
+
+async function pickRandomMusicUrl() {
+  const list = await loadMusicList();
+  if (!list.length) return null;
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+// Returns a YT onStateChange handler: once the video actually starts
+// playing, it checks the real duration exactly once. Anything longer
+// than an hour gets a fresh random start point somewhere between 0:00
+// and one hour before the very end (so it never always opens on the
+// same stretch, but always leaves a full hour to play). Anything an
+// hour or shorter just plays normally from 0:00. Calls onJump(seconds)
+// only when a jump actually happens, so the caller can update its
+// input field to match.
+function makeRandomStartHandler(YT, onJump) {
+  let checked = false;
+  return (e) => {
+    if (checked || e.data !== YT.PlayerState.PLAYING) return;
+    checked = true;
+    const duration = e.target.getDuration ? e.target.getDuration() : 0;
+    if (duration > 3600) {
+      const start = Math.floor(Math.random() * (duration - 3600));
+      e.target.seekTo(start, true);
+      onJump(start);
+    }
+  };
+}
+
+// Wires a die-shaped randomize button that sits on the same row as a
+// Now Playing link input: clicking it hands a fresh music.txt pick to
+// the box's own load function, same as if it had been typed in.
+function wireRandomButton(btn, loadFn) {
+  if (!btn) return;
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    loadFn();
+  });
+  btn.addEventListener('dblclick', (e) => e.stopPropagation());
+}
+
 function initNowPlaying() {
   const input = document.getElementById('nowplaying-input');
   const embedContainer = document.getElementById('nowplaying-embed');
   const box = document.querySelector('.box-nowplaying');
+  const randomBtn = document.getElementById('nowplaying-random-btn');
   if (!input || !embedContainer || !box) return;
 
   const STORAGE_KEY = 'agendaBoard.nowPlayingUrl';
   let player = null;
 
-  async function renderFromUrl(url) {
+  // opts.isRandom marks a link that came from music.txt (auto-fill or the
+  // die button) rather than something pasted in by hand: those get muted
+  // autoplay (so they start without a click) and the >1hr random-start
+  // check from makeRandomStartHandler(). A manually pasted link never
+  // autoplays and is never randomly seeked.
+  async function renderFromUrl(url, opts = {}) {
+    const isRandom = !!opts.isRandom;
     const { videoId, listId } = parseYouTubeUrl(url);
     if (!videoId && !listId) {
       embedContainer.innerHTML = '';
@@ -820,7 +888,8 @@ function initNowPlaying() {
       try { player.destroy(); } catch (e) { /* ignore */ }
     }
 
-    const playerVars = { autoplay: 0, rel: 0, loop: 1 };
+    const playerVars = { autoplay: isRandom ? 1 : 0, rel: 0, loop: 1 };
+    if (isRandom) playerVars.mute = 1; // muted autoplay is allowed without a click; unmuted below
     if (listId) {
       playerVars.listType = 'playlist';
       playerVars.list = listId;
@@ -829,6 +898,10 @@ function initNowPlaying() {
       // that same video's ID — loop:1 alone is silently ignored here.
       playerVars.playlist = videoId;
     }
+
+    const onRandomStart = isRandom ? makeRandomStartHandler(YT, (start) => {
+      input.value = `${url}&t=${start}s`;
+    }) : null;
 
     player = new YT.Player('nowplaying-player', {
       width: '100%',
@@ -839,7 +912,11 @@ function initNowPlaying() {
       ...(videoId ? { videoId } : {}),
       playerVars,
       events: {
-        onReady: (e) => e.target.setVolume(NOWPLAYING_START_VOLUME)
+        onReady: (e) => {
+          e.target.setVolume(NOWPLAYING_START_VOLUME);
+          if (isRandom) e.target.unMute();
+        },
+        ...(onRandomStart ? { onStateChange: onRandomStart } : {})
       }
     });
   }
@@ -853,13 +930,25 @@ function initNowPlaying() {
       return;
     }
     localStorage.setItem(STORAGE_KEY, url);
-    renderFromUrl(url);
+    renderFromUrl(url, { isRandom: false });
+  }
+
+  async function playRandomTrack() {
+    const url = await pickRandomMusicUrl();
+    if (!url) return;
+    input.value = url;
+    localStorage.setItem(STORAGE_KEY, url);
+    renderFromUrl(url, { isRandom: true });
   }
 
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved) {
     input.value = saved;
-    renderFromUrl(saved);
+    renderFromUrl(saved, { isRandom: false });
+  } else {
+    // nothing saved yet on this device — start with a random track from
+    // music.txt instead of sitting empty
+    playRandomTrack();
   }
 
   input.addEventListener('keydown', (e) => {
@@ -870,6 +959,8 @@ function initNowPlaying() {
   // double-click-fullscreen handlers on the box behind it
   input.addEventListener('click', (e) => e.stopPropagation());
   input.addEventListener('dblclick', (e) => e.stopPropagation());
+
+  wireRandomButton(randomBtn, playRandomTrack);
 }
 
 /* ============================================================

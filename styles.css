@@ -1384,8 +1384,21 @@ body.board-page {
   gap: 0.5vh;
 }
 
-.nowplaying-input {
+/* input + die-shaped randomize button share one row so they can tuck
+   away and reappear together */
+.nowplaying-inputrow {
   flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 0.4em;
+  overflow: hidden;
+  transition: max-height 0.2s ease, opacity 0.15s ease, margin 0.2s ease;
+}
+
+.nowplaying-input {
+  flex: 1 1 auto;
+  min-width: 0;
   width: 100%;
   background: #1a1a1a;
   border: 1px solid #3a3a3a;
@@ -1394,26 +1407,45 @@ body.board-page {
   font-size: 0.78rem;
   padding: 0.5em 0.7em;
   border-radius: 5px;
-  transition: max-height 0.2s ease, padding 0.2s ease, opacity 0.15s ease, margin 0.2s ease;
+  transition: padding 0.2s ease, border-width 0.2s ease;
 }
 
-/* once a video is loaded, tuck the input away — hovering the box brings it back */
-.box-nowplaying.has-video .nowplaying-input {
+.nowplaying-random-btn {
+  flex: 0 0 auto;
+  width: 2.4em;
+  background: #1a1a1a;
+  border: 1px solid #3a3a3a;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-width 0.2s ease;
+}
+.nowplaying-random-btn:hover { border-color: #ff5e5e; color: #ff5e5e; }
+
+/* once a video is loaded, tuck the whole row away — hovering the box brings it back */
+.box-nowplaying.has-video .nowplaying-inputrow {
   max-height: 0;
+  margin: 0;
+  opacity: 0;
+}
+.box-nowplaying.has-video .nowplaying-input,
+.box-nowplaying.has-video .nowplaying-random-btn {
   padding-top: 0;
   padding-bottom: 0;
-  margin: 0;
   border-width: 0;
-  opacity: 0;
-  overflow: hidden;
 }
 
-.box-nowplaying.has-video:hover .nowplaying-input {
+.box-nowplaying.has-video:hover .nowplaying-inputrow {
   max-height: 3em;
+  opacity: 1;
+}
+.box-nowplaying.has-video:hover .nowplaying-input,
+.box-nowplaying.has-video:hover .nowplaying-random-btn {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   border-width: 1px;
-  opacity: 1;
 }
 
 .nowplaying-input::placeholder { color: #7a7a7a; }

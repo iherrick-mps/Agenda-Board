@@ -20,9 +20,16 @@
    so it never shares state with, or gets double-initialized by, the
    generic initNowPlaying() in script.js that runs on the daily pages.
 
-   Depends on parseYouTubeUrl(), loadYouTubeIframeApi(), and
-   NOWPLAYING_START_VOLUME, all defined in script.js — load this file
-   after script.js.
+   Also gets the same die-shaped randomize button as the other Now
+   Playing boxes (see script.js): clicking it pulls a random link from
+   music.txt, same >1hr-random-start treatment as everywhere else via
+   makeRandomStartHandler() — separate from, and does not disturb, the
+   fixed-default-video random-jump logic above.
+
+   Depends on parseYouTubeUrl(), loadYouTubeIframeApi(),
+   NOWPLAYING_START_VOLUME, pickRandomMusicUrl(),
+   makeRandomStartHandler(), and wireRandomButton(), all defined in
+   script.js — load this file after script.js.
    ============================================================ */
 
 const STUDYHALL_DEFAULT_VIDEO_ID = 'v9EdW9ADEZQ';
@@ -37,12 +44,19 @@ function initStudyHallNowPlaying() {
   const input = document.getElementById('studyhall-nowplaying-input');
   const embedContainer = document.getElementById('studyhall-nowplaying-embed');
   const box = document.getElementById('studyhall-nowplaying-box');
+  const randomBtn = document.getElementById('studyhall-nowplaying-random-btn');
   if (!input || !embedContainer || !box) return;
 
   const STORAGE_KEY = 'agendaBoard.studyHallNowPlayingUrl';
   let player = null;
 
-  async function renderFromUrl(url) {
+  // opts.isRandomPick marks a link the die button pulled from music.txt
+  // (never the fixed default stream): those get the same >1hr
+  // random-start check every other Now Playing box uses, via
+  // makeRandomStartHandler(). It's independent of, and never overrides,
+  // the fixed default video's own random-jump logic below.
+  async function renderFromUrl(url, opts = {}) {
+    const isRandomPick = !!opts.isRandomPick;
     const { videoId, listId } = parseYouTubeUrl(url);
     if (!videoId && !listId) {
       input.value = url;
@@ -82,6 +96,9 @@ function initStudyHallNowPlaying() {
     }
 
     let hasJumped = false;
+    const onRandomStart = (isRandomPick && !isDefaultVideo)
+      ? makeRandomStartHandler(YT, (start) => { input.value = `${url}&t=${start}s`; })
+      : null;
 
     player = new YT.Player('studyhall-nowplaying-player', {
       width: '100%',
@@ -105,6 +122,8 @@ function initStudyHallNowPlaying() {
           ) {
             hasJumped = true;
             e.target.seekTo(randomStartSeconds, true);
+          } else if (onRandomStart) {
+            onRandomStart(e);
           }
         }
       }
@@ -123,6 +142,13 @@ function initStudyHallNowPlaying() {
     renderFromUrl(url);
   }
 
+  async function playRandomTrack() {
+    const url = await pickRandomMusicUrl();
+    if (!url) return;
+    localStorage.setItem(STORAGE_KEY, url);
+    renderFromUrl(url, { isRandomPick: true });
+  }
+
   const saved = localStorage.getItem(STORAGE_KEY) || STUDYHALL_DEFAULT_URL;
   renderFromUrl(saved);
 
@@ -132,6 +158,8 @@ function initStudyHallNowPlaying() {
   input.addEventListener('blur', commit);
   input.addEventListener('click', (e) => e.stopPropagation());
   input.addEventListener('dblclick', (e) => e.stopPropagation());
+
+  wireRandomButton(randomBtn, playRandomTrack);
 }
 
 document.addEventListener('DOMContentLoaded', initStudyHallNowPlaying);
