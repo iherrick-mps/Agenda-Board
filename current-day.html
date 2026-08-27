@@ -28,25 +28,38 @@
 <script>
   // This page never navigates itself — the address bar always stays on
   // current-day.html, so it's safe to bookmark and safe to refresh at any
-  // time. Instead, it holds an iframe pointed at whichever date + period
-  // is "live" right now (via resolveLiveDateAndPeriod() from script.js)
-  // and swaps the iframe's src whenever that changes. That means it
-  // self-updates on its own — no refresh needed — the instant a period
-  // ends or midnight rolls over into a new school day.
+  // time. Instead, it holds an iframe pointed at whichever page is "live"
+  // right now (via resolveLivePage() from script.js) and swaps the
+  // iframe's src whenever that changes. That means it self-updates on its
+  // own — no refresh needed — the instant a period ends, an after-school
+  // special kicks in, or midnight rolls over into a new school day.
+  //
+  // resolveLivePage() returns one of four pages: the live class agenda,
+  // Study Hall (the default whenever nothing else is scheduled — before
+  // school, or after school with no special active), VEX Club (Mon 3pm+,
+  // Sat 8am+), or Tutoring (Tue 3pm+). It always swaps back to the live
+  // class agenda at the end of 3rd period.
   const frame = document.getElementById('board-frame');
   const loadingEl = document.getElementById('board-loading');
-  let shown = { dateStr: null, period: null };
+  let shown = { type: null, dateStr: null, period: null };
 
-  function frameUrl(dateStr, period) {
-    const slug = period ? PERIOD_SLUG[period] : null;
-    return `agenda.html?date=${dateStr}` + (slug ? `&period=${slug}` : '');
+  function frameUrl(page) {
+    if (page.type === 'agenda') {
+      const slug = page.period ? PERIOD_SLUG[page.period] : null;
+      return `agenda.html?date=${page.dateStr}` + (slug ? `&period=${slug}` : '');
+    }
+    if (page.type === 'vex') return 'vex.html';
+    if (page.type === 'tutoring') return 'tutoring.html';
+    return 'study-hall.html'; // default / fallback
   }
 
   async function sync() {
-    const { dateStr, period } = await resolveLiveDateAndPeriod();
-    if (dateStr === shown.dateStr && period === shown.period) return; // nothing changed — leave the iframe alone
-    shown = { dateStr, period };
-    frame.src = frameUrl(dateStr, period);
+    const page = await resolveLivePage();
+    if (page.type === shown.type && page.dateStr === shown.dateStr && page.period === shown.period) {
+      return; // nothing changed — leave the iframe alone
+    }
+    shown = { type: page.type, dateStr: page.dateStr || null, period: page.period || null };
+    frame.src = frameUrl(page);
   }
 
   frame.addEventListener('load', () => {

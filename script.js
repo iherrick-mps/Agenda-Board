@@ -485,31 +485,68 @@ function computeEffectivePeriod(scheduleData, periodsPresent, nowMin) {
   return (upcoming || relevantBells[relevantBells.length - 1]).name;
 }
 
-// Figures out "right now, in Pacific time, which date + period should the
-// board be showing?" Used by current-day.html to decide what to embed —
-// pulls the same data file and bell logic the agenda page itself uses, so
-// the two never disagree.
-async function resolveLiveDateAndPeriod() {
+// Figures out "right now, in Pacific time, what should the board be
+// showing?" Used by current-day.html to decide what to embed — pulls the
+// same data file and bell logic the agenda page itself uses, so the two
+// never disagree.
+//
+// Returns one of:
+//   { type: 'agenda', dateStr, period }  — a live class period
+//   { type: 'study-hall' }               — default / nothing else scheduled
+//   { type: 'vex' }                      — VEX Club (Mon 3pm+, Sat 8am+)
+//   { type: 'tutoring' }                 — Tutoring (Tue 3pm+)
+//
+// Precedence:
+//   1. The fixed after-school/before-school specials below always win,
+//      regardless of whether a class is technically still "the last one
+//      computed" — they're keyed to the wall clock, not to her periods.
+//   2. Otherwise, if "now" falls between the end of 3rd period and the end
+//      of her last taught period today, show the live class agenda.
+//   3. Otherwise (before school, or after her day ends with no special
+//      active — e.g. Thursday/Friday afternoons) — Study Hall.
+async function resolveLivePage() {
   const pt = getPacificNow();
   const dateStr = pt.isoDate;
+  const nowMin = minutesSinceMidnight(pt);
+  const weekday = pt.weekdayName;
 
+  // 1. Fixed after-school / before-school specials.
+  if (weekday === 'Wednesday' && nowMin >= hhmmToMinutes('15:00')) return { type: 'study-hall' };
+  if (weekday === 'Monday' && nowMin >= hhmmToMinutes('15:00')) return { type: 'vex' };
+  if (weekday === 'Saturday' && nowMin >= hhmmToMinutes('08:00')) return { type: 'vex' };
+  if (weekday === 'Tuesday' && nowMin >= hhmmToMinutes('15:00')) return { type: 'tutoring' };
+
+  // 2. Is "now" inside her teaching block today (end of 3rd period through
+  //    the end of her last period)? If so, show the live class agenda.
   let dayData;
   try {
     const res = await fetch(`data/${dateStr}.json`);
     if (!res.ok) throw new Error('not found');
     dayData = await res.json();
   } catch (e) {
-    return { dateStr, period: null };
+    return { type: 'study-hall' };
   }
 
   const periodsPresent = PERIOD_ORDER.filter(p => dayData.periods && dayData.periods[p]);
-  const bells = await loadBells();
-  const nowMin = minutesSinceMidnight(pt);
-  const period =
-    computeEffectivePeriod(bells[dayData.schedule], periodsPresent, nowMin) ||
-    periodsPresent[0] || null;
+  if (periodsPresent.length === 0) return { type: 'study-hall' };
 
-  return { dateStr, period };
+  const bells = await loadBells();
+  const scheduleData = bells[dayData.schedule];
+  if (!scheduleData) return { type: 'study-hall' };
+
+  const thirdPeriodBell = scheduleData.periods.find(bp => bp.name === '3rd Period');
+  const lastPeriodBell = scheduleData.periods.find(
+    bp => bp.name === periodsPresent[periodsPresent.length - 1]
+  );
+  const blockStart = thirdPeriodBell ? hhmmToMinutes(thirdPeriodBell.end) : -Infinity;
+  const blockEnd = lastPeriodBell ? hhmmToMinutes(lastPeriodBell.end) : Infinity;
+
+  // 3. Before 3rd period ends, or after her day's last period ends (with no
+  //    special active) — Study Hall.
+  if (nowMin < blockStart || nowMin >= blockEnd) return { type: 'study-hall' };
+
+  const period = computeEffectivePeriod(scheduleData, periodsPresent, nowMin) || periodsPresent[0];
+  return { type: 'agenda', dateStr, period };
 }
 
 async function initAgendaPage() {
