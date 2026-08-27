@@ -1287,6 +1287,11 @@ const CLEANUP_GRAB_MS = 280;
 const CLEANUP_LIFT_MS = 900;
 const CLEANUP_PIT_BALL_COUNT = 10;
 
+// flat colors cycled for the "already pulled" jar chips — deliberately flat
+// (no gradient) per the ball-pit/claw balls, which are rendered as glassy
+// gradients so the jar chips read as a visually distinct, simpler token
+const CLEANUP_JAR_COLORS = ['#fbbf24', '#38bdf8', '#a78bfa', '#4ade80', '#fb7185', '#f97316'];
+
 const SPARKLE_COUNT = 70;
 const SPARKLE_MIN_SIZE = 5;
 const SPARKLE_MAX_SIZE = 16;
@@ -1359,6 +1364,7 @@ function initCleanupMode() {
   const messageEl = document.getElementById('cleanup-message');
   const calledListEl = document.getElementById('cleanup-called-list');
   const pitEl = document.getElementById('cleanup-ball-pit');
+  const jarEl = document.getElementById('cleanup-jar');
   if (!boardGrid || !toggleBtn || !sparkleLayer || !clawArm || !numberEl || !countdownEl) return;
 
   // decorative resting balls in the claw-machine pit — placed once,
@@ -1435,6 +1441,19 @@ function initCleanupMode() {
           chip.textContent = number;
           calledListEl.appendChild(chip);
         }
+        if (jarEl) {
+          // drop a flat, numbered circle into the jar behind the big
+          // number — the accumulating pile of everyone who's already
+          // been called
+          const jarBall = document.createElement('span');
+          jarBall.className = 'cleanup-jar-ball';
+          jarBall.textContent = number;
+          jarBall.style.setProperty(
+            '--jar-ball-color',
+            CLEANUP_JAR_COLORS[(number - 1) % CLEANUP_JAR_COLORS.length]
+          );
+          jarEl.appendChild(jarBall);
+        }
         if (messageEl) {
           messageEl.textContent = `Number ${number} — put your Chromebook away!`;
         }
@@ -1463,6 +1482,7 @@ function initCleanupMode() {
     numberEl.textContent = '?';
     numberEl.classList.remove('is-revealing');
     if (calledListEl) calledListEl.innerHTML = '';
+    if (jarEl) jarEl.innerHTML = '';
     if (messageEl) messageEl.textContent = 'Here we go — watch for your number!';
 
     tickCountdown();
