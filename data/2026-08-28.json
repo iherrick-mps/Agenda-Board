@@ -3,54 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Polishing your CSS-styled page and checking it against the style checklist before Sunday.",
+      "workingNow": "Polishing your About Me page — readable colors, resized images, better order, less clutter.",
       "weeklyDeliverable": "Your About Me page with an external CSS stylesheet linked — custom fonts/colors, class/ID selectors, padding/margin, and an organized layout — pushed and ready to submit Sunday night.",
-      "smartGoal": "I can check my styled page against the requirements so that it's ready to turn in Sunday night.",
+      "smartGoal": "I can polish my page for readability so that anyone can look at it once and immediately know what it says.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "You do: checklist review — stylesheet linked, selectors, spacing, layout (10 min)",
-        "Fix any missing pieces (15 min)",
-        "Commit + push your styled page (10 min)",
-        "Exit Ticket: describe your favorite style change and why (10 min)"
+        "I do: model a color and contrast check (8 min)",
+        "You do: resize images, reorder, cut clutter (20 min)",
+        "Partner check: is it readable at a glance? (10 min)",
+        "Commit, push, then Ctrl+Shift+R to check (7 min)"
       ],
-      "connections": "You've gone super slow through CSS this week — one topic a day. Today everything comes together: check your page against the full list, fix what's missing, and push your final styled page, ready to turn in Sunday night."
+      "connections": "You've built this page up all week — content, then a stylesheet, then selectors, then spacing and layout. Today you take everything you've learned and use it to make the page actually easy to read: fix any color that's hard on the eyes, size your images sensibly, reorder what's out of order, and cut what nobody needs. Push it, and it's ready Sunday night."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Sketching your level layout and finalizing your solo platformer plan.",
-      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
-      "smartGoal": "I can sketch a level layout so that my platformer plan is ready to start building next week.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Finishing your Robot Face, then embedding it on a new page of your portfolio site.",
+      "weeklyDeliverable": "Your finished Robot Face embedded on a NEW page of your portfolio site, with a sentence explaining your antenna color choice — page shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can publish my project on my own site and explain a design choice in writing so that someone visiting my page understands what I made and why.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.11 — Supporting opinions with reasons and evidence in speaking and writing.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "I do: model a simple level sketch with labeled trigger points (7 min)",
-        "You do: on your own, sketch your level and finalize your plan (28 min)",
-        "Partner share: swap plans with a neighbor for one piece of feedback (7 min)",
-        "Exit Ticket: what's one change you'll make from feedback? (3 min)"
+        "I do: Share, Advanced, Embed code, new page (10 min)",
+        "You do: finish your robot, all 8 steps (15 min)",
+        "You do: new page, embed, antenna sentence (15 min)",
+        "Share your page with Ms. Herrick (5 min)"
       ],
-      "connections": "Yesterday you designed your character and its states. Today you finish the plan — sketching a level and getting one piece of feedback from a neighbor — so next week you're ready to start actually building your game."
+      "connections": "Yesterday you built the robot block by block and designed your own antenna topper. Today it stops being a Game Lab tab and becomes part of your site: finish the robot, make a new page, embed it so visitors can actually run it, and write one sentence about why you chose that antenna color. That page shared with me is what gets graded Sunday."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Sketching your level layout and finalizing your solo platformer plan.",
-      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
-      "smartGoal": "I can sketch a level layout so that my platformer plan is ready to start building next week.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "workingNow": "Finishing your Robot Face, then embedding it on a new page of your portfolio site.",
+      "weeklyDeliverable": "Your finished Robot Face embedded on a NEW page of your portfolio site, with a sentence explaining your antenna color choice — page shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can publish my project on my own site and explain a design choice in writing so that someone visiting my page understands what I made and why.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.11 — Supporting opinions with reasons and evidence in speaking and writing.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "I do: model a simple level sketch with labeled trigger points (7 min)",
-        "You do: on your own, sketch your level and finalize your plan (28 min)",
-        "Partner share: swap plans with a neighbor for one piece of feedback (7 min)",
-        "Exit Ticket: what's one change you'll make from feedback? (3 min)"
+        "I do: Share, Advanced, Embed code, new page (10 min)",
+        "You do: finish your robot, all 8 steps (15 min)",
+        "You do: new page, embed, antenna sentence (15 min)",
+        "Share your page with Ms. Herrick (5 min)"
       ],
-      "connections": "Yesterday you designed your character and its states. Today you finish the plan — sketching a level and getting one piece of feedback from a neighbor — so next week you're ready to start actually building your game."
+      "connections": "Yesterday you built the robot block by block and designed your own antenna topper. Today it stops being a Game Lab tab and becomes part of your site: finish the robot, make a new page, embed it so visitors can actually run it, and write one sentence about why you chose that antenna color. That page shared with me is what gets graded Sunday."
     }
   }
 }

@@ -3,46 +3,51 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Reading your CSS Quick Reference to add padding and margin around your images or headings.",
+      "workingNow": "No class today — Back to School Night. Everything planned for today moves to Thursday.",
       "weeklyDeliverable": "Your About Me page with an external CSS stylesheet linked — custom fonts/colors, class/ID selectors, padding/margin, and an organized layout — pushed and ready to submit Sunday night.",
-      "smartGoal": "I can apply padding and margin so that my page's elements have breathing room instead of feeling cramped.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "smartGoal": "No class meeting today — Back to School Night.",
+      "contentStandard": "No class meeting today.",
+      "eldStandard": "No class meeting today.",
       "agenda": [
-        "Hand out CSS Quick Reference sheet (3 min)",
-        "I do: model adding padding to one box (6 min)",
-        "You do: add padding or margin to at least two elements (17 min)",
-        "Exit Ticket: paste one padding or margin rule (4 min)"
+        "No class — Back to School Night",
+        "Padding, margin, and layout move to Thursday",
+        "Friday is polish and readability",
+        "Your page is still due Sunday night",
+        "Families: see you tonight!"
       ],
-      "connections": "Since it's a short day, we keep it simple: use your new reference sheet to add breathing room around a couple of elements with padding and margin. Tomorrow we look at arranging elements on the page."
+      "connections": "Class did not meet today because of Back to School Night. Tuesday's class and ID selectors are still the last thing we did together — Thursday we double up on padding, margin, and layout, then Friday we polish the whole page for readability before Sunday's deadline."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Finishing the last of your 11 self-paced Game Lab portions.",
-      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
-      "smartGoal": "I can complete all eleven Game Lab portions so that I'm ready to start designing my own game tomorrow.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "workingNow": "No class today — Back to School Night. Everything planned for today moves to Thursday.",
+      "weeklyDeliverable": "Your finished Robot Face embedded on a NEW page of your portfolio site, with a sentence explaining your antenna color choice — page shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "No class meeting today — Back to School Night.",
+      "contentStandard": "No class meeting today.",
+      "eldStandard": "No class meeting today.",
       "agenda": [
-        "Quick overview: today's plan — finish all 11 by the end of class (3 min)",
-        "You do: finish any remaining Game Lab portions (22 min)",
-        "Exit Ticket: confirm — did you complete all 11 portions? (5 min)"
+        "No class — Back to School Night",
+        "Robot Face project starts Thursday",
+        "Friday: embed it on a new site page",
+        "That page is due Sunday night",
+        "Families: see you tonight!"
       ],
-      "connections": "Since it's a short day, the goal is simple: finish. Every portion should be done by the end of class today, because tomorrow we shift gears completely — from following tutorials to designing your own game."
+      "connections": "Class did not meet today because of Back to School Night. Tuesday you were working through the self-paced Game Lab portions — Thursday we start the Robot Face project, with time built in to finish any portions you still owe. Friday you put the finished robot on a new page of your website."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Finishing the last of your 11 self-paced Game Lab portions.",
-      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
-      "smartGoal": "I can complete all eleven Game Lab portions so that I'm ready to start designing my own game tomorrow.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "workingNow": "No class today — Back to School Night. Everything planned for today moves to Thursday.",
+      "weeklyDeliverable": "Your finished Robot Face embedded on a NEW page of your portfolio site, with a sentence explaining your antenna color choice — page shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "No class meeting today — Back to School Night.",
+      "contentStandard": "No class meeting today.",
+      "eldStandard": "No class meeting today.",
       "agenda": [
-        "Quick overview: today's plan — finish all 11 by the end of class (3 min)",
-        "You do: finish any remaining Game Lab portions (22 min)",
-        "Exit Ticket: confirm — did you complete all 11 portions? (5 min)"
+        "No class — Back to School Night",
+        "Robot Face project starts Thursday",
+        "Friday: embed it on a new site page",
+        "That page is due Sunday night",
+        "Families: see you tonight!"
       ],
-      "connections": "Since it's a short day, the goal is simple: finish. Every portion should be done by the end of class today, because tomorrow we shift gears completely — from following tutorials to designing your own game."
+      "connections": "Class did not meet today because of Back to School Night. Tuesday you were working through the self-paced Game Lab portions — Thursday we start the Robot Face project, with time built in to finish any portions you still owe. Friday you put the finished robot on a new page of your website."
     }
   }
 }

@@ -3,54 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Arranging your page's elements — using simple layout properties to control spacing between sections.",
+      "workingNow": "Adding padding and margin with your CSS Quick Reference, then arranging your page's sections.",
       "weeklyDeliverable": "Your About Me page with an external CSS stylesheet linked — custom fonts/colors, class/ID selectors, padding/margin, and an organized layout — pushed and ready to submit Sunday night.",
-      "smartGoal": "I can adjust the layout of my page's sections so that everything feels organized instead of stacked randomly.",
+      "smartGoal": "I can apply spacing and layout rules so that the sections of my page have breathing room and sit where I want them.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
       "agenda": [
-        "Log in (timed) (2 min)",
+        "Log in (timed) + CSS Quick Reference sheet (4 min)",
         "Quick overview: today's plan (3 min)",
-        "I do: model adjusting width and centering a section (8 min)",
-        "We do: try one layout change together (7 min)",
-        "You do: adjust the layout/spacing of your page's sections (25 min)",
-        "Partner check: does your partner's layout look organized? (5 min)"
+        "I do: padding, margin, then centering a section (10 min)",
+        "We do: space and center one shared element (8 min)",
+        "You do: add spacing, then arrange your sections (20 min)",
+        "Exit Ticket: paste one spacing or layout rule (5 min)"
       ],
-      "connections": "This week you've gone from linking a stylesheet, to targeting elements, to spacing them out. Today you pull it together by arranging your whole page. Tomorrow you polish everything before Sunday's deadline."
+      "connections": "We lost Wednesday to Back to School Night, so today is a double: Wednesday's padding and margin plus the layout work that was planned for today. Tuesday you learned to target specific elements — now you space them and arrange them. Tomorrow is pure polish, then it's due Sunday night."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Starting to design your own solo platformer game, using a state machine as your foundation.",
-      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
-      "smartGoal": "I can begin designing my own platformer game so that I have a clear plan before I start building it.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "workingNow": "Building your Robot Face in Game Lab, one block at a time, following the handout.",
+      "weeklyDeliverable": "Your finished Robot Face embedded on a NEW page of your portfolio site, with a sentence explaining your antenna color choice — page shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can build a scene one shape at a time so that I can place every part of my robot exactly where I planned it.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Quick overview: today's plan (3 min)",
-        "I do: model a simple platformer character's states (idle/walk/jump) (8 min)",
-        "We do: sketch one obstacle state together as a class (7 min)",
-        "You do: on your own, design your character's states and one obstacle (25 min)",
-        "Exit Ticket: list your character's states so far (5 min)"
+        "Quick overview: today's plan + handout (3 min)",
+        "I do: the 400x400 grid — (0,0) is top-left (8 min)",
+        "We do: Step 1 sky and Step 2 stem together (10 min)",
+        "You do: Steps 3-8 with your handout (22 min)",
+        "Exit Ticket: which STEP number did you finish? (5 min)"
       ],
-      "connections": "You just finished all eleven self-paced Game Lab portions — you've got the tool skills now. Today we shift from following tutorials to designing your own platformer game, solo, starting with your character's states."
+      "connections": "We lost Wednesday to Back to School Night, so if you still owe Game Lab portions, use today's work time for those first. Everyone else starts the Robot Face — you take the shape and color blocks you practiced and use them to build a whole scene. Tomorrow you finish it and put it on your website."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Starting to design your own solo platformer game, using a state machine as your foundation.",
-      "weeklyDeliverable": "All 11 self-paced Game Lab portions complete by Wednesday, then your own solo platformer game plan (character states, an obstacle, and a level sketch) started Thursday and Friday.",
-      "smartGoal": "I can begin designing my own platformer game so that I have a clear plan before I start building it.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas.",
+      "workingNow": "Building your Robot Face in Game Lab, one block at a time, following the handout.",
+      "weeklyDeliverable": "Your finished Robot Face embedded on a NEW page of your portfolio site, with a sentence explaining your antenna color choice — page shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can build a scene one shape at a time so that I can place every part of my robot exactly where I planned it.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Quick overview: today's plan (3 min)",
-        "I do: model a simple platformer character's states (idle/walk/jump) (8 min)",
-        "We do: sketch one obstacle state together as a class (7 min)",
-        "You do: on your own, design your character's states and one obstacle (25 min)",
-        "Exit Ticket: list your character's states so far (5 min)"
+        "Quick overview: today's plan + handout (3 min)",
+        "I do: the 400x400 grid — (0,0) is top-left (8 min)",
+        "We do: Step 1 sky and Step 2 stem together (10 min)",
+        "You do: Steps 3-8 with your handout (22 min)",
+        "Exit Ticket: which STEP number did you finish? (5 min)"
       ],
-      "connections": "You just finished all eleven self-paced Game Lab portions — you've got the tool skills now. Today we shift from following tutorials to designing your own platformer game, solo, starting with your character's states."
+      "connections": "We lost Wednesday to Back to School Night, so if you still owe Game Lab portions, use today's work time for those first. Everyone else starts the Robot Face — you take the shape and color blocks you practiced and use them to build a whole scene. Tomorrow you finish it and put it on your website."
     }
   }
 }
