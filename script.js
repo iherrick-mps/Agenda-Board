@@ -859,6 +859,28 @@ async function pickRandomMusicUrl() {
   return list[Math.floor(Math.random() * list.length)];
 }
 
+// Same idea as loadMusicList/pickRandomMusicUrl above, but for Theater
+// Mode's separate pool — theater.txt lives at the repo root, one
+// YouTube link per line, fetched once and cached for the life of the
+// page. Kept deliberately separate from music.txt so background music
+// picks and theater-mode video picks never draw from the same list.
+let theaterListPromise = null;
+function loadTheaterList() {
+  if (!theaterListPromise) {
+    theaterListPromise = fetch('theater.txt')
+      .then(r => r.ok ? r.text() : '')
+      .then(text => text.split('\n').map(l => l.trim()).filter(Boolean))
+      .catch(() => []);
+  }
+  return theaterListPromise;
+}
+
+async function pickRandomTheaterUrl() {
+  const list = await loadTheaterList();
+  if (!list.length) return null;
+  return list[Math.floor(Math.random() * list.length)];
+}
+
 // Returns a YT onStateChange handler: once the video actually starts
 // playing, it checks the real duration exactly once. Anything longer
 // than an hour gets a fresh random start point somewhere between 0:00
@@ -1210,8 +1232,10 @@ function initGameMode() {
   }
 
   function turnOn() {
-    // Clean-Up Mode is its own full-board takeover — never show both.
+    // Clean-Up Mode and Theater Mode are their own full-board takeovers —
+    // never show more than one at once.
     if (window.__cleanupMode && window.__cleanupMode.isActive()) window.__cleanupMode.turnOff();
+    if (window.__theaterMode && window.__theaterMode.isActive()) window.__theaterMode.turnOff();
     active = true;
     boardGrid.classList.add('game-mode-active');
     toggleBtn.classList.add('is-active');
@@ -1314,6 +1338,8 @@ function initGameMode() {
    instead of confetti — and turning one mode on turns the other
    off, so they never show at the same time.
    ============================================================ */
+
+const THEATER_AUTO_MINUTES = 5;        // fixed — any period, always starts w/ 5 min left
 
 const CLEANUP_PERIOD_NAME = '7th Period';
 const CLEANUP_AUTO_MINUTES = 10;       // fixed — always starts w/ 10 min left
@@ -1505,8 +1531,10 @@ function initCleanupMode() {
 
   function turnOn() {
     if (active) return;
-    // Game Mode is its own full-board takeover — never show both.
+    // Game Mode and Theater Mode are their own full-board takeovers —
+    // never show more than one at once.
     if (window.__gameMode && window.__gameMode.isActive()) window.__gameMode.turnOff();
+    if (window.__theaterMode && window.__theaterMode.isActive()) window.__theaterMode.turnOff();
 
     active = true;
     boardGrid.classList.add('cleanup-mode-active');
@@ -1582,6 +1610,150 @@ function initCleanupMode() {
   setInterval(autoCheck, 1000);
 }
 
+/* ============================================================
+   Theater Mode — any period. Always auto-starts the moment 5
+   minutes remain in the live period (right after Clean-Up Mode's
+   own 5-minute sequence would finish, for 7th Period — but unlike
+   Clean-Up Mode this one isn't limited to a single period; it fires
+   for whichever period is live). Same full-board-takeover shape as
+   Game Mode and Clean-Up Mode, but instead of a countdown/animation
+   panel, the entire right-hand panel is one huge YouTube player
+   showing a random pick from theater.txt (a separate list from
+   music.txt's background-music links). Turning this mode on turns
+   the other two off, and vice versa, so only one ever shows at once.
+   ============================================================ */
+
+function initTheaterMode() {
+  const boardGrid = document.getElementById('board-grid');
+  const toggleBtn = document.getElementById('theater-toggle-btn');
+  const embedContainer = document.getElementById('theater-embed');
+  const messageEl = document.getElementById('theater-message');
+  if (!boardGrid || !toggleBtn || !embedContainer) return;
+
+  let active = false;
+  let player = null;
+
+  async function renderRandomVideo() {
+    if (messageEl) messageEl.textContent = '';
+    embedContainer.innerHTML = '';
+
+    const url = await pickRandomTheaterUrl();
+    if (!url) {
+      if (messageEl) messageEl.textContent = 'Add video links to theater.txt to use Theater Mode.';
+      return;
+    }
+
+    const { videoId, listId } = parseYouTubeUrl(url);
+    if (!videoId && !listId) {
+      if (messageEl) messageEl.textContent = 'Add video links to theater.txt to use Theater Mode.';
+      return;
+    }
+
+    embedContainer.innerHTML = '<div id="theater-player"></div>';
+
+    const YT = await loadYouTubeIframeApi();
+    if (player && player.destroy) {
+      try { player.destroy(); } catch (e) { /* ignore */ }
+    }
+
+    // Same muted-autoplay-then-unmute dance as Now Playing's random
+    // picks (see initNowPlaying) — muted autoplay is allowed without a
+    // click, then we unmute once the player reports ready.
+    const playerVars = { autoplay: 1, rel: 0, mute: 1 };
+    if (listId) {
+      playerVars.listType = 'playlist';
+      playerVars.list = listId;
+    }
+
+    // reuses the same >1hr random-start logic Now Playing uses for its
+    // random music.txt picks, so a long video doesn't always open on
+    // the same opening stretch
+    const onRandomStart = makeRandomStartHandler(YT, () => { /* no input field to sync here */ });
+
+    player = new YT.Player('theater-player', {
+      width: '100%',
+      height: '100%',
+      ...(videoId ? { videoId } : {}),
+      playerVars,
+      events: {
+        onReady: (e) => {
+          e.target.setVolume(NOWPLAYING_START_VOLUME);
+          e.target.unMute();
+        },
+        onStateChange: onRandomStart
+      }
+    });
+  }
+
+  function turnOn() {
+    if (active) return;
+    // Game Mode and Clean-Up Mode are their own full-board takeovers —
+    // never show more than one at once.
+    if (window.__gameMode && window.__gameMode.isActive()) window.__gameMode.turnOff();
+    if (window.__cleanupMode && window.__cleanupMode.isActive()) window.__cleanupMode.turnOff();
+
+    active = true;
+    boardGrid.classList.add('theater-mode-active');
+    toggleBtn.classList.add('is-active');
+    renderRandomVideo();
+
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  function turnOff() {
+    if (!active) return;
+    active = false;
+    boardGrid.classList.remove('theater-mode-active');
+    toggleBtn.classList.remove('is-active');
+    if (player && player.destroy) {
+      try { player.destroy(); } catch (e) { /* ignore */ }
+    }
+    player = null;
+    embedContainer.innerHTML = '';
+    if (messageEl) messageEl.textContent = '';
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (active) turnOff(); else turnOn();
+  });
+
+  // lets Game Mode's and Clean-Up Mode's turnOn() switch this back off,
+  // same pattern as window.__gameMode / window.__cleanupMode above
+  window.__theaterMode = { turnOn, turnOff, isActive: () => active };
+
+  /* ---- Auto-trigger — always on, ANY period, fires once the live
+     countdown hits THEATER_AUTO_MINUTES. Unlike Clean-Up Mode this
+     isn't restricted to a single period name — it swaps in during
+     the last 5 minutes of whichever period is currently live. ---- */
+
+  let firedForPeriodKey = null;
+
+  async function autoCheck() {
+    if (active) return;
+    const pt = getPacificNow();
+    const scheduleKey = await resolveTodaysSchedule(pt);
+    const bells = await loadBells();
+    const scheduleData = bells[scheduleKey];
+    if (!scheduleData) return;
+
+    const nowMin = minutesSinceMidnight(pt);
+    const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
+    if (!current) return;
+
+    const remaining = hhmmToMinutes(current.end) - nowMin;
+    const periodKey = `${pt.isoDate}|${current.name}`;
+    if (remaining <= THEATER_AUTO_MINUTES && firedForPeriodKey !== periodKey) {
+      firedForPeriodKey = periodKey;
+      turnOn();
+    }
+  }
+
+  autoCheck();
+  setInterval(autoCheck, 1000);
+}
+
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1594,6 +1766,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCountUpTimer();
   initGameMode();
   initCleanupMode();
+  initTheaterMode();
 
   // belt-and-suspenders: re-fit everything once web fonts are confirmed
   // loaded, in case something rendered/measured before that point
