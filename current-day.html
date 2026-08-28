@@ -41,7 +41,7 @@
   // class agenda at the end of 3rd period.
   const frame = document.getElementById('board-frame');
   const loadingEl = document.getElementById('board-loading');
-  let shown = { type: null, dateStr: null, period: null };
+  let shownUrl = null;
 
   function frameUrl(page) {
     if (page.type === 'agenda') {
@@ -54,12 +54,17 @@
   }
 
   async function sync() {
-    const page = await resolveLivePage();
-    if (page.type === shown.type && page.dateStr === shown.dateStr && page.period === shown.period) {
-      return; // nothing changed — leave the iframe alone
-    }
-    shown = { type: page.type, dateStr: page.dateStr || null, period: page.period || null };
-    frame.src = frameUrl(page);
+    const url = frameUrl(await resolveLivePage());
+    // Compare the finished URL, not the individual fields. The non-agenda
+    // pages (study-hall / vex / tutoring) come back with no dateStr and no
+    // period, so field-by-field checks ended up comparing undefined against
+    // null, never matched, and re-set frame.src every 15 seconds — which
+    // restarted whatever video or playlist was playing. Comparing the URL
+    // string means the iframe is only ever touched when the page truly
+    // changes.
+    if (url === shownUrl) return; // nothing changed — leave the iframe (and the music) alone
+    shownUrl = url;
+    frame.src = url;
   }
 
   frame.addEventListener('load', () => {
