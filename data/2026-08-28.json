@@ -3,54 +3,53 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Polishing your About Me page — readable colors, resized images, better order, less clutter.",
+      "workingNow": "Filling out the checklist for your About Me page — that's the whole job today.",
       "weeklyDeliverable": "Your About Me page with an external CSS stylesheet linked — custom fonts/colors, class/ID selectors, padding/margin, and an organized layout — pushed and ready to submit Sunday night.",
-      "smartGoal": "I can polish my page for readability so that anyone can look at it once and immediately know what it says.",
+      "smartGoal": "I can fill out my checklist honestly so that I know exactly what is finished on my page and what I still have to fix before Sunday.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "I do: model a color and contrast check (8 min)",
-        "You do: resize images, reorder, cut clutter (20 min)",
-        "Partner check: is it readable at a glance? (10 min)",
-        "Commit, push, then Ctrl+Shift+R to check (7 min)"
+        "I do: how to read and answer a checklist item (5 min)",
+        "You do: fill out the checklist (35 min)",
+        "Check yourself: nothing left blank (5 min)"
       ],
-      "connections": "You've built this page up all week — content, then a stylesheet, then selectors, then spacing and layout. Today you take everything you've learned and use it to make the page actually easy to read: fix any color that's hard on the eyes, size your images sensibly, reorder what's out of order, and cut what nobody needs. Push it, and it's ready Sunday night."
+      "connections": "You've spent all week building this page — content, stylesheet, selectors, spacing, layout. Today you stop building and take stock. The checklist walks you through every piece one at a time so you can see what's actually done and what's still missing. Answer it honestly: a checklist you fudge is a checklist that lies to you Sunday night."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Finishing your Robot Face, then embedding it on a new page of your portfolio site.",
-      "weeklyDeliverable": "Your finished Robot Face embedded on a NEW page of your portfolio site, with a sentence explaining your antenna color choice — page shared with Ms. Herrick by Sunday night.",
-      "smartGoal": "I can publish my project on my own site and explain a design choice in writing so that someone visiting my page understands what I made and why.",
+      "workingNow": "Adding your robot drawing to a new page on your website — that's the whole job today.",
+      "weeklyDeliverable": "Your robot drawing added to a NEW page on your portfolio site — page shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can add my robot drawing to a new page on my website so that anyone who visits my site can see what I made.",
       "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
-      "eldStandard": "ELD.PI.6-8.11 — Supporting opinions with reasons and evidence in speaking and writing.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "I do: Share, Advanced, Embed code, new page (10 min)",
-        "You do: finish your robot, all 8 steps (15 min)",
-        "You do: new page, embed, antenna sentence (15 min)",
+        "I do: make a new page and drop the robot on it (8 min)",
+        "You do: finish your robot drawing (17 min)",
+        "You do: new page, add your robot to it (15 min)",
         "Share your page with Ms. Herrick (5 min)"
       ],
-      "connections": "Yesterday you built the robot block by block and designed your own antenna topper. Today it stops being a Game Lab tab and becomes part of your site: finish the robot, make a new page, embed it so visitors can actually run it, and write one sentence about why you chose that antenna color. That page shared with me is what gets graded Sunday."
+      "connections": "You drew your robot block by block in Game Lab this week. Today it moves out of that tab and onto your own site: make a new page, put the robot on it, share the page with me. That's it — one page, one robot, shared before you leave."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Finishing your Robot Face, then embedding it on a new page of your portfolio site.",
-      "weeklyDeliverable": "Your finished Robot Face embedded on a NEW page of your portfolio site, with a sentence explaining your antenna color choice — page shared with Ms. Herrick by Sunday night.",
-      "smartGoal": "I can publish my project on my own site and explain a design choice in writing so that someone visiting my page understands what I made and why.",
+      "workingNow": "Adding your robot drawing to a new page on your website — that's the whole job today.",
+      "weeklyDeliverable": "Your robot drawing added to a NEW page on your portfolio site — page shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can add my robot drawing to a new page on my website so that anyone who visits my site can see what I made.",
       "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
-      "eldStandard": "ELD.PI.6-8.11 — Supporting opinions with reasons and evidence in speaking and writing.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Quick overview: today's plan (3 min)",
-        "I do: Share, Advanced, Embed code, new page (10 min)",
-        "You do: finish your robot, all 8 steps (15 min)",
-        "You do: new page, embed, antenna sentence (15 min)",
+        "I do: make a new page and drop the robot on it (8 min)",
+        "You do: finish your robot drawing (17 min)",
+        "You do: new page, add your robot to it (15 min)",
         "Share your page with Ms. Herrick (5 min)"
       ],
-      "connections": "Yesterday you built the robot block by block and designed your own antenna topper. Today it stops being a Game Lab tab and becomes part of your site: finish the robot, make a new page, embed it so visitors can actually run it, and write one sentence about why you chose that antenna color. That page shared with me is what gets graded Sunday."
+      "connections": "You drew your robot block by block in Game Lab this week. Today it moves out of that tab and onto your own site: make a new page, put the robot on it, share the page with me. That's it — one page, one robot, shared before you leave."
     }
   }
 }

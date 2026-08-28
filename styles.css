@@ -2444,6 +2444,10 @@ body.board-page {
 .box-classqueue {
   padding: 0.55vh 0.55vw;
   gap: 0.55vh;
+  /* no colored spine on this one — the thick blue left edge every other
+     bento gets is dropped back to the same hairline as the rest of the
+     border so the box reads as a plain black panel */
+  border-left: 1px solid var(--grid-line);
 }
 
 /* same yellow "here's where you go" banner as the Tutoring page, just
