@@ -533,28 +533,49 @@ body.board-page {
 }
 .gamemode-auto-input[type="number"] { -moz-appearance: textfield; }
 
-/* the board itself: 12x12 grid filling the whole viewport */
+/* the board itself: a 12-row grid filling the whole viewport. The column
+   count is 12 by default (Study Hall / VEX / Tutoring all lay out on
+   twelfths); the main class agenda board below re-declares it at 24 so
+   the clock can sit at exactly half its old width with the month
+   calendar in the other half. */
 .board-grid {
   height: 100vh;
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
-  grid-template-areas:
-    "clock clock clock working working working working working working deliver deliver deliver"
-    "clock clock clock working working working working working working deliver deliver deliver"
-    "timer timer timer working working working working working working deliver deliver deliver"
-    "name name name working working working working working working deliver deliver deliver"
-    "eld eld eld eld agenda agenda agenda agenda connect connect connect connect"
-    "eld eld eld eld agenda agenda agenda agenda connect connect connect connect"
-    "eld eld eld eld agenda agenda agenda agenda connect connect connect connect"
-    "standard standard standard standard agenda agenda agenda agenda connect connect connect connect"
-    "standard standard standard standard agenda agenda agenda agenda connect connect connect connect"
-    "nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda goal goal goal goal"
-    "nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda goal goal goal goal"
-    "nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda goal goal goal goal";
   gap: 8px;
   padding: 8px;
+}
+
+/* ---- main class agenda board (agenda.html) ----
+   24 columns x 12 rows. Three of the old boxes were merged into
+   rotating bentos, which is where the extra room for bigger text comes
+   from — each slide now gets a whole box to itself instead of sharing:
+
+     focus     = "What should I be working on right now?" + SMART Goal
+     agenda    = Agenda / Steps + Connections
+     standards = Content Standard + ELD Standard
+
+   Timer, Ms. Herrick, and Now Playing keep their exact old footprints
+   (6/24 = the old 3/12, and 8/24 = the old 4/12). Clock is halved to
+   3/24 with the month calendar taking the other half. The Help Queue
+   takes over the block the old Connections + SMART Goal boxes had. */
+.board-grid.agenda-grid {
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-areas:
+    "clock clock clock cal cal cal focus focus focus focus focus focus focus focus focus focus focus focus deliver deliver deliver deliver deliver deliver"
+    "clock clock clock cal cal cal focus focus focus focus focus focus focus focus focus focus focus focus deliver deliver deliver deliver deliver deliver"
+    "timer timer timer timer timer timer focus focus focus focus focus focus focus focus focus focus focus focus deliver deliver deliver deliver deliver deliver"
+    "name name name name name name focus focus focus focus focus focus focus focus focus focus focus focus deliver deliver deliver deliver deliver deliver"
+    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
+    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
+    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
+    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
+    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue";
 }
 
 .agenda-box {
@@ -570,7 +591,9 @@ body.board-page {
   padding: 1.1vh 1.3vw;
   box-shadow: 0 2px 6px rgba(22, 32, 43, 0.05);
   cursor: pointer;
-  transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+  position: relative;
+  transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease,
+              background-color 0.55s ease, border-left-color 0.55s ease;
 }
 
 /* click-to-focus: dim every box except the one that was clicked, and
@@ -597,9 +620,11 @@ body.board-page {
    one need the pulse to shift toward black/white around their own base
    color instead of always lightening toward white */
 .board-grid.has-focus .box-clock.is-focused,
+.board-grid.has-focus .box-calendar.is-focused,
 .board-grid.has-focus .box-timer.is-focused,
 .board-grid.has-focus .box-name.is-focused,
 .board-grid.has-focus .box-nowplaying.is-focused,
+.board-grid.has-focus .box-queue.is-focused,
 .board-grid.has-focus .box-countdown.is-focused,
 .board-grid.has-focus .box-work.is-focused {
   animation-name: bento-pulse-dark;
@@ -616,25 +641,24 @@ body.board-page {
 }
 
 .box-clock      { grid-area: clock; }
+.box-calendar   { grid-area: cal; }
 .box-timer      { grid-area: timer; }
 .box-name       { grid-area: name; }
 .box-nowplaying { grid-area: nowplaying; }
-.box-working    { grid-area: working; }
 .box-deliver    { grid-area: deliver; }
-.box-goal       { grid-area: goal; }
+.box-focus      { grid-area: focus; }
 .box-agenda     { grid-area: agenda; }
-.box-connect    { grid-area: connect; }
-.box-standard   { grid-area: standard; }
-.box-eld        { grid-area: eld; }
+.box-standards  { grid-area: standards; }
 
-.box-working    { --box-color: var(--c-working); }
 .box-deliver    { --box-color: var(--c-deliverable); }
-.box-goal       { --box-color: var(--c-goal); }
-.box-agenda     { --box-color: var(--c-agenda); }
-.box-connect    { --box-color: var(--c-connect); }
-.box-standard   { --box-color: var(--c-standard); }
-.box-eld        { --box-color: var(--c-eld); }
 .box-nowplaying { --box-color: #ff0000; }
+
+/* the three rotating bentos start on their first slide's color; the
+   rotator in script.js swaps --box-color on every transition, and the
+   transition on .agenda-box below makes that a smooth cross-fade */
+.box-focus      { --box-color: var(--c-working); }
+.box-agenda     { --box-color: var(--c-agenda); }
+.box-standards  { --box-color: var(--c-standard); }
 
 .agenda-box .box-label {
   flex: 0 0 auto;
@@ -645,6 +669,7 @@ body.board-page {
   color: var(--box-color, var(--ink));
   font-size: clamp(0.62rem, 1.5vh, 1rem);
   margin-bottom: 0.3vh;
+  transition: color 0.55s ease;
 }
 
 .box-content {
@@ -698,6 +723,117 @@ body.board-page {
   letter-spacing: 0.01em;
   white-space: nowrap;
   margin-left: 0.35em;
+}
+
+/* ============================================================
+   Rotating bentos — one box, two (or more) slides, swapping every
+   30 seconds. The label, the content, and the box's own accent
+   color all change together, so at a glance the color tells you
+   which of the two things you're currently looking at.
+
+   The bottom padding here is deliberate: it reserves a clear strip
+   for the corner countdown so a long last line of text can never
+   slide underneath it.
+   ============================================================ */
+
+.box-rot { padding-bottom: 2.7vh; }
+
+/* the fade-out half of a swap — JS adds .is-swapping, waits for this
+   transition, replaces the content, then removes it to fade back in */
+.box-rot .box-label,
+.box-rot .box-content {
+  transition: opacity 0.24s ease, transform 0.24s ease, color 0.55s ease;
+}
+
+.box-rot.is-swapping .box-label,
+.box-rot.is-swapping .box-content {
+  opacity: 0;
+  transform: translateY(-0.35em);
+}
+
+/* seconds remaining until this box flips to its other slide */
+.rot-timer {
+  position: absolute;
+  right: 0.6vw;
+  bottom: 0.7vh;
+  z-index: 2;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(0.55rem, 1.4vh, 0.95rem);
+  line-height: 1;
+  min-width: 2.2em;
+  text-align: center;
+  padding: 0.35em 0.5em;
+  border-radius: 999px;
+  color: var(--box-color, var(--ink));
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid color-mix(in srgb, var(--box-color, var(--ink)) 40%, transparent);
+  transition: color 0.55s ease, border-color 0.55s ease;
+}
+
+.rot-timer[hidden] { display: none; }
+
+/* ============================================================
+   Month calendar bento — shares the clock's dark card so the two
+   read as one unit sitting side by side in the old clock slot.
+   ============================================================ */
+
+.box-calendar {
+  background: var(--ink);
+  border-left-color: #0c141d;
+  color: #eaf1ff;
+  container-type: size;
+  padding: 0.9vh 0.55vw;
+  justify-content: flex-start;
+}
+
+.cal-mini-head {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: clamp(0.5rem, min(8cqh, 6.5cqw), 1rem);
+  color: #93a3b8;
+  text-align: center;
+  margin-bottom: 0.4em;
+  white-space: nowrap;
+}
+
+.cal-mini-grid {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 1px;
+  font-family: var(--font-mono);
+  font-size: clamp(0.42rem, min(9cqh, 5.6cqw), 0.95rem);
+}
+
+.cal-mini-grid span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border-radius: 3px;
+  color: #cbd6e4;
+}
+
+.cal-mini-dow {
+  font-weight: 700;
+  color: #6d7d90;
+}
+
+.cal-mini-blank { visibility: hidden; }
+.cal-mini-day.is-weekend { color: #6d7d90; }
+
+/* today — the whole point of the box */
+.cal-mini-day.is-today {
+  background: #6ee7b7;
+  color: #0c141d;
+  font-weight: 700;
 }
 
 /* clock box — kept dark for contrast, uses container query units so it
@@ -776,6 +912,33 @@ body.board-page {
   letter-spacing: 0.05em;
 }
 
+/* The main agenda board's clock is half its old width now, so its
+   container-query type scale leans much harder on the box's height
+   (cqh) than its width (cqw) — otherwise halving the cell would have
+   halved the one number the whole room reads from across the room. */
+.agenda-grid .box-clock { padding: 1vh 0.65vw; }
+
+.agenda-grid .box-clock .status-label {
+  font-size: clamp(0.58rem, min(9cqh, 7.5cqw), 1.05rem);
+  line-height: 1.15;
+}
+
+.agenda-grid .box-clock .status-value {
+  font-size: clamp(1.4rem, min(30cqh, 30cqw), 5rem);
+}
+
+.agenda-grid .box-clock .clock-time {
+  font-size: clamp(0.65rem, min(8cqh, 9cqw), 1.25rem);
+  margin-top: 0.35em;
+}
+
+.agenda-grid .box-clock .clock-date {
+  font-size: clamp(0.5rem, min(7cqh, 6.2cqw), 1rem);
+  letter-spacing: 0.02em;
+}
+
+.agenda-grid .box-clock .clock-footer { padding-top: 0.45em; }
+
 /* Tutoring's clock bento: date/timezone/time (everything except the
    big green countdown) share a two-column row instead of stacking
    three lines, so the countdown below keeps most of the box. Left
@@ -823,27 +986,15 @@ body.board-page {
 .board-grid:not(.game-mode-active) .box-gamemode { display: none; }
 
 .board-grid.game-mode-active .box-clock,
+.board-grid.game-mode-active .box-calendar,
 .board-grid.game-mode-active .box-timer,
-.board-grid.game-mode-active .box-eld,
-.board-grid.game-mode-active .box-standard,
+.board-grid.game-mode-active .box-standards,
 .board-grid.game-mode-active .box-agenda,
-.board-grid.game-mode-active .box-connect { display: none; }
+.board-grid.game-mode-active .box-queue { display: none; }
 
 /* the survivors move/widen into the left column */
-.board-grid.game-mode-active .box-goal {
-  grid-column: 1 / 5;
-  grid-row: 1 / 4;
-}
 .board-grid.game-mode-active .box-name {
   grid-column: 1 / 5;
-}
-.board-grid.game-mode-active .box-working {
-  grid-column: 1 / 5;
-  grid-row: 5 / 8;
-}
-.board-grid.game-mode-active .box-deliver {
-  grid-column: 1 / 5;
-  grid-row: 8 / 10;
 }
 .board-grid.game-mode-active .box-nowplaying {
   grid-column: 1 / 5;
@@ -851,6 +1002,31 @@ body.board-page {
 }
 
 .box-gamemode-main { grid-column: 5 / 13; grid-row: 1 / 13; }
+
+/* the agenda board is on 24 columns, so its left column is 1/9 rather
+   than 1/5. The rotating "focus" box carries both the SMART Goal and
+   "what should I be working on" slides, so one box now covers what
+   used to be two separate slots up top. */
+.agenda-grid.game-mode-active .box-focus {
+  grid-column: 1 / 9;
+  grid-row: 1 / 5;
+}
+.agenda-grid.game-mode-active .box-name {
+  grid-column: 1 / 9;
+  grid-row: 5 / 6;
+}
+.agenda-grid.game-mode-active .box-deliver {
+  grid-column: 1 / 9;
+  grid-row: 6 / 10;
+}
+.agenda-grid.game-mode-active .box-nowplaying {
+  grid-column: 1 / 9;
+  grid-row: 10 / 13;
+}
+.agenda-grid.game-mode-active .box-gamemode-main {
+  grid-column: 9 / 25;
+  grid-row: 1 / 13;
+}
 
 .box-gamemode {
   cursor: default;
@@ -1009,26 +1185,14 @@ body.board-page {
 .board-grid:not(.cleanup-mode-active) .box-cleanup { display: none; }
 
 .board-grid.cleanup-mode-active .box-clock,
+.board-grid.cleanup-mode-active .box-calendar,
 .board-grid.cleanup-mode-active .box-timer,
-.board-grid.cleanup-mode-active .box-eld,
-.board-grid.cleanup-mode-active .box-standard,
+.board-grid.cleanup-mode-active .box-standards,
 .board-grid.cleanup-mode-active .box-agenda,
-.board-grid.cleanup-mode-active .box-connect { display: none; }
+.board-grid.cleanup-mode-active .box-queue { display: none; }
 
-.board-grid.cleanup-mode-active .box-goal {
-  grid-column: 1 / 5;
-  grid-row: 1 / 4;
-}
 .board-grid.cleanup-mode-active .box-name {
   grid-column: 1 / 5;
-}
-.board-grid.cleanup-mode-active .box-working {
-  grid-column: 1 / 5;
-  grid-row: 5 / 8;
-}
-.board-grid.cleanup-mode-active .box-deliver {
-  grid-column: 1 / 5;
-  grid-row: 8 / 10;
 }
 .board-grid.cleanup-mode-active .box-nowplaying {
   grid-column: 1 / 5;
@@ -1036,6 +1200,28 @@ body.board-page {
 }
 
 .box-cleanup-main { grid-column: 5 / 13; grid-row: 1 / 13; }
+
+/* 24-column equivalents for the main agenda board */
+.agenda-grid.cleanup-mode-active .box-focus {
+  grid-column: 1 / 9;
+  grid-row: 1 / 5;
+}
+.agenda-grid.cleanup-mode-active .box-name {
+  grid-column: 1 / 9;
+  grid-row: 5 / 6;
+}
+.agenda-grid.cleanup-mode-active .box-deliver {
+  grid-column: 1 / 9;
+  grid-row: 6 / 10;
+}
+.agenda-grid.cleanup-mode-active .box-nowplaying {
+  grid-column: 1 / 9;
+  grid-row: 10 / 13;
+}
+.agenda-grid.cleanup-mode-active .box-cleanup-main {
+  grid-column: 9 / 25;
+  grid-row: 1 / 13;
+}
 
 .box-cleanup {
   cursor: default;
@@ -1401,28 +1587,16 @@ body.board-page {
 .board-grid:not(.theater-mode-active) .box-theater { display: none; }
 
 .board-grid.theater-mode-active .box-clock,
+.board-grid.theater-mode-active .box-calendar,
 .board-grid.theater-mode-active .box-timer,
-.board-grid.theater-mode-active .box-eld,
-.board-grid.theater-mode-active .box-standard,
+.board-grid.theater-mode-active .box-standards,
 .board-grid.theater-mode-active .box-agenda,
-.board-grid.theater-mode-active .box-connect { display: none; }
+.board-grid.theater-mode-active .box-queue { display: none; }
 
 /* the survivors move/widen into the left column — same slots as
    Game Mode and Clean-Up Mode above */
-.board-grid.theater-mode-active .box-goal {
-  grid-column: 1 / 5;
-  grid-row: 1 / 4;
-}
 .board-grid.theater-mode-active .box-name {
   grid-column: 1 / 5;
-}
-.board-grid.theater-mode-active .box-working {
-  grid-column: 1 / 5;
-  grid-row: 5 / 8;
-}
-.board-grid.theater-mode-active .box-deliver {
-  grid-column: 1 / 5;
-  grid-row: 8 / 10;
 }
 .board-grid.theater-mode-active .box-nowplaying {
   grid-column: 1 / 5;
@@ -1430,6 +1604,28 @@ body.board-page {
 }
 
 .box-theater-main { grid-column: 5 / 13; grid-row: 1 / 13; }
+
+/* 24-column equivalents for the main agenda board */
+.agenda-grid.theater-mode-active .box-focus {
+  grid-column: 1 / 9;
+  grid-row: 1 / 5;
+}
+.agenda-grid.theater-mode-active .box-name {
+  grid-column: 1 / 9;
+  grid-row: 5 / 6;
+}
+.agenda-grid.theater-mode-active .box-deliver {
+  grid-column: 1 / 9;
+  grid-row: 6 / 10;
+}
+.agenda-grid.theater-mode-active .box-nowplaying {
+  grid-column: 1 / 9;
+  grid-row: 10 / 13;
+}
+.agenda-grid.theater-mode-active .box-theater-main {
+  grid-column: 9 / 25;
+  grid-row: 1 / 13;
+}
 
 .box-theater {
   cursor: default;
@@ -2229,6 +2425,61 @@ body.board-page {
 /* ---- Expectations — same checklist look as the Study Hall boxes ---- */
 .box-expect .box-content li::before { content: '\2713'; }
 
+/* ============================================================
+   In-class Help Queue bento (main agenda board) — the Tutoring
+   page's two boxes (join-link banner + live embed) squeezed into
+   one much smaller bento, sitting where Connections and the SMART
+   Goal used to be.
+   ============================================================ */
+
+.box-classqueue {
+  padding: 0.55vh 0.55vw;
+  gap: 0.55vh;
+}
+
+/* same yellow "here's where you go" banner as the Tutoring page, just
+   sized as a strip across the top of the box instead of its own bento */
+.classqueue-join {
+  flex: 0 0 auto;
+  background: #fdf3c7;
+  color: #4a3a08;
+  border-radius: 5px;
+  padding: 0.55vh 0.5vw;
+  text-align: center;
+  line-height: 1.2;
+  overflow: hidden;
+}
+
+.classqueue-join-label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(0.6rem, 1.6vh, 1.1rem);
+}
+
+.classqueue-join-url {
+  display: block;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(0.52rem, 1.35vh, 0.95rem);
+  color: #8a6a06;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 0.15em;
+}
+
+.classqueue-join-url:empty::before {
+  content: '(paste the room link below)';
+  font-style: italic;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+.box-classqueue .queue-input { font-size: 0.7rem; }
+
 /* ============ RESPONSIVE FALLBACK (small screens) ============ */
 @media (max-width: 900px) {
   body.board-page { height: auto; overflow: auto; }
@@ -2245,20 +2496,30 @@ body.board-page {
     height: auto;
     width: 100%;
     grid-template-columns: 1fr;
+  }
+  /* the desktop rule above sets 24 columns with a higher specificity than
+     the base .board-grid here, so the single-column override has to be
+     restated on .agenda-grid itself */
+  .board-grid.agenda-grid {
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "working"
+      "focus"
       "clock"
+      "cal"
       "timer"
       "name"
       "deliver"
-      "eld"
+      "standards"
       "agenda"
-      "connect"
-      "standard"
-      "goal"
+      "queue"
       "nowplaying";
   }
   .agenda-box { min-height: 140px; padding: 14px 16px; }
+  .box-calendar { min-height: 240px; container-type: normal; }
+  .cal-mini-head { font-size: 0.9rem; }
+  .cal-mini-grid { font-size: 0.85rem; }
+  .box-classqueue { min-height: 420px; }
+  .box-rot { padding-bottom: 34px; }
   .box-nowplaying { min-height: 220px; }
   .box-content { font-size: 1rem !important; }
 
@@ -2303,15 +2564,19 @@ body.board-page {
   /* Game Mode: on narrow screens, ignore the desktop line-number
      repositioning (it only makes sense on the 12-column grid) and
      just let everything stack in normal document order instead. */
-  .board-grid.game-mode-active .box-goal,
+  .board-grid.game-mode-active .box-focus,
   .board-grid.game-mode-active .box-name,
-  .board-grid.game-mode-active .box-working,
   .board-grid.game-mode-active .box-deliver,
-  .board-grid.game-mode-active .box-nowplaying {
+  .board-grid.game-mode-active .box-nowplaying,
+  .agenda-grid.game-mode-active .box-focus,
+  .agenda-grid.game-mode-active .box-name,
+  .agenda-grid.game-mode-active .box-deliver,
+  .agenda-grid.game-mode-active .box-nowplaying {
     grid-column: 1 / 2;
     grid-row: auto;
   }
-  .box-gamemode-main {
+  .box-gamemode-main,
+  .agenda-grid.game-mode-active .box-gamemode-main {
     grid-column: 1 / 2;
     grid-row: auto;
     min-height: 320px;
@@ -2327,15 +2592,19 @@ body.board-page {
 
   /* Clean-Up Mode: same reasoning as Game Mode above — drop the
      12-column repositioning and let things stack normally. */
-  .board-grid.cleanup-mode-active .box-goal,
+  .board-grid.cleanup-mode-active .box-focus,
   .board-grid.cleanup-mode-active .box-name,
-  .board-grid.cleanup-mode-active .box-working,
   .board-grid.cleanup-mode-active .box-deliver,
-  .board-grid.cleanup-mode-active .box-nowplaying {
+  .board-grid.cleanup-mode-active .box-nowplaying,
+  .agenda-grid.cleanup-mode-active .box-focus,
+  .agenda-grid.cleanup-mode-active .box-name,
+  .agenda-grid.cleanup-mode-active .box-deliver,
+  .agenda-grid.cleanup-mode-active .box-nowplaying {
     grid-column: 1 / 2;
     grid-row: auto;
   }
-  .box-cleanup-main {
+  .box-cleanup-main,
+  .agenda-grid.cleanup-mode-active .box-cleanup-main {
     grid-column: 1 / 2;
     grid-row: auto;
     min-height: 360px;
@@ -2353,15 +2622,19 @@ body.board-page {
 
   /* Theater Mode: same reasoning as Game Mode/Clean-Up Mode above —
      drop the 12-column repositioning and let things stack normally. */
-  .board-grid.theater-mode-active .box-goal,
+  .board-grid.theater-mode-active .box-focus,
   .board-grid.theater-mode-active .box-name,
-  .board-grid.theater-mode-active .box-working,
   .board-grid.theater-mode-active .box-deliver,
-  .board-grid.theater-mode-active .box-nowplaying {
+  .board-grid.theater-mode-active .box-nowplaying,
+  .agenda-grid.theater-mode-active .box-focus,
+  .agenda-grid.theater-mode-active .box-name,
+  .agenda-grid.theater-mode-active .box-deliver,
+  .agenda-grid.theater-mode-active .box-nowplaying {
     grid-column: 1 / 2;
     grid-row: auto;
   }
-  .box-theater-main {
+  .box-theater-main,
+  .agenda-grid.theater-mode-active .box-theater-main {
     grid-column: 1 / 2;
     grid-row: auto;
     min-height: 320px;

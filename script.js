@@ -184,7 +184,11 @@ async function initClock() {
    fills the box with no overflow (and therefore no scrolling).
    ============================================================ */
 
-function fitBoxText(contentEl, { min = 9, max = 160 } = {}) {
+// max is deliberately generous: since the rotating bentos show one slide
+// at a time in a box that used to hold two boxes' worth of content, short
+// text should be allowed to grow a long way before it stops. The binary
+// search checks width as well as height, so nothing can overflow.
+function fitBoxText(contentEl, { min = 9, max = 240 } = {}) {
   if (!contentEl || contentEl.clientHeight === 0) return;
   let lo = min, hi = max;
   for (let i = 0; i < 16; i++) {
@@ -423,16 +427,159 @@ async function initIndexPage() {
    Agenda page — persistent bento board + period tabs
    ============================================================ */
 
-// maps a JSON field name -> the box's content element id
+// maps a JSON field name -> the box's content element id, for the boxes
+// that show exactly one field and never change
 const FIELD_TO_EL = {
-  workingNow:        'content-working',
-  weeklyDeliverable: 'content-deliver',
-  smartGoal:         'content-goal',
-  contentStandard:   'content-standard',
-  eldStandard:       'content-eld',
-  agenda:            'content-agenda',
-  connections:       'content-connect'
+  weeklyDeliverable: 'content-deliver'
 };
+
+/* ============================================================
+   Rotating bentos.
+
+   Three boxes each carry two of the old board's boxes and swap
+   between them every 30 seconds. A slide owns three things: the
+   label above the text, the text itself, and the box's accent
+   color — so the color is always a reliable signal for which of
+   the two you're reading, on the board and from across the room.
+
+   A box with only one slide's worth of content in the day's JSON
+   (e.g. a day with no Connections written) just sits still on the
+   slide it does have, and hides its countdown.
+   ============================================================ */
+
+const ROTATE_SECONDS = 30;
+
+// how long the fade-out lasts — must match the .box-rot transition in
+// styles.css, so the text is swapped while it's invisible
+const ROTATE_SWAP_MS = 240;
+
+const ROTATOR_SPECS = [
+  {
+    boxId: 'box-focus',
+    labelId: 'label-focus',
+    contentId: 'content-focus',
+    timerId: 'rot-timer-focus',
+    slides: [
+      { field: 'workingNow', label: 'What should I be working on right now?', color: 'var(--c-working)' },
+      { field: 'smartGoal',  label: 'SMART Goal',                             color: 'var(--c-goal)' }
+    ]
+  },
+  {
+    boxId: 'box-agenda',
+    labelId: 'label-agenda',
+    contentId: 'content-agenda',
+    timerId: 'rot-timer-agenda',
+    slides: [
+      { field: 'agenda',      label: 'Agenda / Steps', color: 'var(--c-agenda)' },
+      { field: 'connections', label: 'Connections',    color: 'var(--c-connect)' }
+    ]
+  },
+  {
+    boxId: 'box-standards',
+    labelId: 'label-standards',
+    contentId: 'content-standards',
+    timerId: 'rot-timer-standards',
+    slides: [
+      { field: 'contentStandard', label: 'Content Standard', color: 'var(--c-standard)' },
+      { field: 'eldStandard',     label: 'ELD Standard',     color: 'var(--c-eld)' }
+    ]
+  }
+];
+
+function hasSlideContent(value) {
+  if (Array.isArray(value)) return value.length > 0;
+  return value !== null && value !== undefined && String(value).trim() !== '';
+}
+
+function createRotator(spec) {
+  const box = document.getElementById(spec.boxId);
+  const labelEl = document.getElementById(spec.labelId);
+  const contentEl = document.getElementById(spec.contentId);
+  const timerEl = document.getElementById(spec.timerId);
+  if (!box || !labelEl || !contentEl) return null;
+
+  let data = {};
+  let slides = spec.slides;
+  let index = 0;
+  let secondsLeft = ROTATE_SECONDS;
+  let tickHandle = null;
+  let swapHandle = null;
+
+  function apply(i) {
+    const slide = slides[i];
+    if (!slide) return;
+    box.style.setProperty('--box-color', slide.color);
+    labelEl.textContent = slide.label;
+    contentEl.style.fontSize = '';
+    contentEl.innerHTML = renderBoxValue(data[slide.field]);
+    // measure on the frame after the new text is in the DOM, then fade
+    // back in — fitting happens while the box is still transparent, so
+    // students never see a flash of mis-sized text
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      fitBoxText(contentEl);
+      box.classList.remove('is-swapping');
+    }));
+  }
+
+  function show(i, animate) {
+    clearTimeout(swapHandle);
+    if (!animate) {
+      box.classList.remove('is-swapping');
+      apply(i);
+      return;
+    }
+    box.classList.add('is-swapping');
+    swapHandle = setTimeout(() => apply(i), ROTATE_SWAP_MS);
+  }
+
+  function paintTimer() {
+    if (timerEl) timerEl.textContent = secondsLeft;
+  }
+
+  function tick() {
+    secondsLeft -= 1;
+    if (secondsLeft <= 0) {
+      index = (index + 1) % slides.length;
+      show(index, true);
+      secondsLeft = ROTATE_SECONDS;
+    }
+    paintTimer();
+  }
+
+  function stop() {
+    if (tickHandle) { clearInterval(tickHandle); tickHandle = null; }
+    clearTimeout(swapHandle);
+  }
+
+  function setData(periodData) {
+    stop();
+    data = periodData || {};
+    const filled = spec.slides.filter(s => hasSlideContent(data[s.field]));
+    slides = filled.length > 0 ? filled : [spec.slides[0]];
+    index = 0;
+    secondsLeft = ROTATE_SECONDS;
+    show(0, false);
+
+    if (slides.length > 1) {
+      if (timerEl) timerEl.hidden = false;
+      paintTimer();
+      tickHandle = setInterval(tick, 1000);
+    } else if (timerEl) {
+      timerEl.hidden = true;
+    }
+  }
+
+  return { setData, stop };
+}
+
+let boardRotators = null;
+
+function getBoardRotators() {
+  if (!boardRotators) {
+    boardRotators = ROTATOR_SPECS.map(createRotator).filter(Boolean);
+  }
+  return boardRotators;
+}
 
 // wraps trailing "(N min)"-style durations in a span so they can be
 // styled distinctly from the rest of the step text
@@ -457,6 +604,12 @@ function renderPeriodContent(periodData) {
     el.style.fontSize = '';
     el.innerHTML = renderBoxValue(periodData[field]);
   });
+
+  // hand the same period data to every rotating box — each one resets to
+  // its first slide and restarts its 30-second clock, so switching period
+  // tabs doesn't leave one box mid-cycle showing the old class's text
+  getBoardRotators().forEach(r => r.setData(periodData));
+
   // wait for web fonts to finish loading (not just a layout frame) before
   // measuring — fitting against a fallback font's metrics, then having the
   // real font swap in wider/taller afterward, is what causes clipped text
@@ -580,8 +733,8 @@ async function initAgendaPage() {
     dayData = await res.json();
   } catch (e) {
     headerDateEl.textContent = dateStr;
-    const workingEl = document.getElementById('content-working');
-    if (workingEl) workingEl.textContent = `No agenda file found for ${dateStr}.`;
+    const focusEl = document.getElementById('content-focus');
+    if (focusEl) focusEl.textContent = `No agenda file found for ${dateStr}.`;
     return;
   }
 
@@ -1754,6 +1907,126 @@ function initTheaterMode() {
   setInterval(autoCheck, 1000);
 }
 
+/* ============================================================
+   Month calendar bento — sits in the half of the old clock slot
+   the clock gave up. Shows the current (Pacific) month with today
+   highlighted. Re-renders once a minute so a board left running
+   overnight rolls over to the new day on its own.
+   ============================================================ */
+
+const CAL_DOW_LETTERS = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+
+function initMiniCalendar() {
+  const gridEl = document.getElementById('cal-mini-grid');
+  const titleEl = document.getElementById('cal-mini-title');
+  if (!gridEl || !titleEl) return;
+
+  let lastRendered = null;
+
+  function render() {
+    const pt = getPacificNow();
+    if (pt.isoDate === lastRendered) return;
+    lastRendered = pt.isoDate;
+
+    const [year, month, day] = pt.isoDate.split('-').map(Number);
+    const monthIdx = month - 1;
+
+    titleEl.textContent = `${MONTHS_FULL[monthIdx]} ${year}`;
+
+    const firstWeekday = new Date(Date.UTC(year, monthIdx, 1)).getUTCDay();
+    const daysInMonth = new Date(Date.UTC(year, monthIdx + 1, 0)).getUTCDate();
+
+    const cells = CAL_DOW_LETTERS.map(
+      letter => `<span class="cal-mini-dow">${letter}</span>`
+    );
+    for (let i = 0; i < firstWeekday; i++) {
+      cells.push('<span class="cal-mini-blank"></span>');
+    }
+    for (let d = 1; d <= daysInMonth; d++) {
+      const weekday = (firstWeekday + d - 1) % 7;
+      const classes = ['cal-mini-day'];
+      if (weekday === 0 || weekday === 6) classes.push('is-weekend');
+      if (d === day) classes.push('is-today');
+      cells.push(`<span class="${classes.join(' ')}">${d}</span>`);
+    }
+
+    gridEl.innerHTML = cells.join('');
+  }
+
+  render();
+  setInterval(render, 60000);
+}
+
+/* ============================================================
+   In-class Help Queue bento.
+
+   Same behaviour as the Tutoring page's queue box — paste a room
+   link, it's remembered on this device, and the input tucks itself
+   away until you hover — but packed into one small bento that also
+   carries its own "Join the queue at" banner.
+
+   Uses its own storage key so pasting a room code for a class
+   period never quietly rewrites what the Tutoring board is showing
+   after school.
+   ============================================================ */
+
+function initClassQueue() {
+  const input = document.getElementById('class-queue-input');
+  const embedContainer = document.getElementById('class-queue-embed');
+  const box = document.getElementById('class-queue-box');
+  const urlEl = document.getElementById('class-queue-url');
+  if (!input || !embedContainer || !box) return;
+
+  const STORAGE_KEY = 'agendaBoard.classQueueUrl';
+
+  function renderFromUrl(url) {
+    if (urlEl) urlEl.textContent = url || '';
+
+    if (!url) {
+      embedContainer.innerHTML = '';
+      box.classList.remove('has-queue');
+      return;
+    }
+
+    const iframe = document.createElement('iframe');
+    iframe.src = url;
+    iframe.title = 'Help Queue';
+    iframe.allow = 'clipboard-write';
+
+    embedContainer.innerHTML = '';
+    embedContainer.appendChild(iframe);
+    box.classList.add('has-queue');
+  }
+
+  function commit() {
+    const url = input.value.trim();
+    if (!url) {
+      localStorage.removeItem(STORAGE_KEY);
+      renderFromUrl('');
+      return;
+    }
+    localStorage.setItem(STORAGE_KEY, url);
+    renderFromUrl(url);
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem(STORAGE_KEY); }
+  catch (e) { /* storage disabled */ }
+  if (saved) {
+    input.value = saved;
+    renderFromUrl(saved);
+  }
+
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { commit(); input.blur(); }
+  });
+  input.addEventListener('blur', commit);
+  // keep typing/selecting from triggering click-to-focus or the
+  // double-click-fullscreen handler on the box behind it
+  input.addEventListener('click', (e) => e.stopPropagation());
+  input.addEventListener('dblclick', (e) => e.stopPropagation());
+}
+
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1767,6 +2040,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initGameMode();
   initCleanupMode();
   initTheaterMode();
+  initMiniCalendar();
+  initClassQueue();
 
   // belt-and-suspenders: re-fit everything once web fonts are confirmed
   // loaded, in case something rendered/measured before that point

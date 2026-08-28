@@ -28,7 +28,7 @@
   </div>
 </div>
 
-<div class="board-grid" id="board-grid">
+<div class="board-grid agenda-grid" id="board-grid">
 
   <div class="agenda-box box-clock">
     <div class="clock-status" id="clock-status">
@@ -38,8 +38,12 @@
     <div class="clock-time" id="clock-time">--:--</div>
     <div class="clock-footer">
       <span class="clock-date" id="clock-date">Loading&hellip;</span>
-      <span class="clock-tz">Pacific Time</span>
     </div>
+  </div>
+
+  <div class="agenda-box box-calendar">
+    <div class="cal-mini-head" id="cal-mini-title">&mdash;</div>
+    <div class="cal-mini-grid" id="cal-mini-grid"></div>
   </div>
 
   <div class="agenda-box box-timer">
@@ -66,9 +70,11 @@
     </div>
   </div>
 
-  <div class="agenda-box box-working">
-    <span class="box-label">What should I be working on right now?</span>
-    <div class="box-content" id="content-working"></div>
+  <!-- rotating bento: "What should I be working on right now?" <-> SMART Goal -->
+  <div class="agenda-box box-rot box-focus" id="box-focus">
+    <span class="box-label" id="label-focus">What should I be working on right now?</span>
+    <div class="box-content" id="content-focus"></div>
+    <span class="rot-timer" id="rot-timer-focus" aria-hidden="true">30</span>
   </div>
 
   <div class="agenda-box box-deliver">
@@ -76,29 +82,30 @@
     <div class="box-content" id="content-deliver"></div>
   </div>
 
-  <div class="agenda-box box-goal">
-    <span class="box-label">SMART Goal</span>
-    <div class="box-content" id="content-goal"></div>
-  </div>
-
-  <div class="agenda-box box-agenda">
-    <span class="box-label">Agenda / Steps</span>
+  <!-- rotating bento: Agenda / Steps <-> Connections -->
+  <div class="agenda-box box-rot box-agenda" id="box-agenda">
+    <span class="box-label" id="label-agenda">Agenda / Steps</span>
     <div class="box-content" id="content-agenda"></div>
+    <span class="rot-timer" id="rot-timer-agenda" aria-hidden="true">30</span>
   </div>
 
-  <div class="agenda-box box-connect">
-    <span class="box-label">Connections</span>
-    <div class="box-content" id="content-connect"></div>
+  <!-- rotating bento: Content Standard <-> ELD Standard -->
+  <div class="agenda-box box-rot box-standards" id="box-standards">
+    <span class="box-label" id="label-standards">Content Standard</span>
+    <div class="box-content" id="content-standards"></div>
+    <span class="rot-timer" id="rot-timer-standards" aria-hidden="true">30</span>
   </div>
 
-  <div class="agenda-box box-standard">
-    <span class="box-label">Content Standard</span>
-    <div class="box-content" id="content-standard"></div>
-  </div>
-
-  <div class="agenda-box box-eld">
-    <span class="box-label">ELD Standard</span>
-    <div class="box-content" id="content-eld"></div>
+  <div class="agenda-box box-queue box-classqueue" id="class-queue-box">
+    <div class="classqueue-join">
+      <span class="classqueue-join-label">Join the queue at</span>
+      <span class="classqueue-join-url" id="class-queue-url"></span>
+    </div>
+    <div class="queue-body">
+      <input type="text" id="class-queue-input" class="queue-input"
+             placeholder="Paste the Help Queue room link (e.g. https://iherrick-mps.github.io/queue/?room=ABCDE)&hellip;">
+      <div class="queue-embed" id="class-queue-embed"></div>
+    </div>
   </div>
 
   <div class="agenda-box box-gamemode box-gamemode-main" id="box-gamemode-main">
