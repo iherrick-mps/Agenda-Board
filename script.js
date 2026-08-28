@@ -437,7 +437,9 @@ const FIELD_TO_EL = {
    Rotating bentos.
 
    Three boxes each carry two of the old board's boxes and swap
-   between them every 30 seconds. A slide owns three things: the
+   between them on their own timer (see `seconds` in ROTATOR_SPECS
+   below — a box without one falls back to ROTATE_SECONDS). A slide
+   owns three things: the
    label above the text, the text itself, and the box's accent
    color — so the color is always a reliable signal for which of
    the two you're reading, on the board and from across the room.
@@ -447,6 +449,8 @@ const FIELD_TO_EL = {
    slide it does have, and hides its countdown.
    ============================================================ */
 
+// fallback rotation interval, in seconds, for any box that doesn't set
+// its own `seconds` in ROTATOR_SPECS
 const ROTATE_SECONDS = 30;
 
 // how long the fade-out lasts — must match the .box-rot transition in
@@ -456,6 +460,7 @@ const ROTATE_SWAP_MS = 240;
 const ROTATOR_SPECS = [
   {
     boxId: 'box-focus',
+    seconds: 30,
     labelId: 'label-focus',
     contentId: 'content-focus',
     timerId: 'rot-timer-focus',
@@ -466,6 +471,7 @@ const ROTATOR_SPECS = [
   },
   {
     boxId: 'box-agenda',
+    seconds: 45,
     labelId: 'label-agenda',
     contentId: 'content-agenda',
     timerId: 'rot-timer-agenda',
@@ -476,6 +482,7 @@ const ROTATOR_SPECS = [
   },
   {
     boxId: 'box-standards',
+    seconds: 15,
     labelId: 'label-standards',
     contentId: 'content-standards',
     timerId: 'rot-timer-standards',
@@ -498,10 +505,12 @@ function createRotator(spec) {
   const timerEl = document.getElementById(spec.timerId);
   if (!box || !labelEl || !contentEl) return null;
 
+  const rotateSeconds = Number(spec.seconds) > 0 ? Number(spec.seconds) : ROTATE_SECONDS;
+
   let data = {};
   let slides = spec.slides;
   let index = 0;
-  let secondsLeft = ROTATE_SECONDS;
+  let secondsLeft = rotateSeconds;
   let tickHandle = null;
   let swapHandle = null;
 
@@ -541,7 +550,7 @@ function createRotator(spec) {
     if (secondsLeft <= 0) {
       index = (index + 1) % slides.length;
       show(index, true);
-      secondsLeft = ROTATE_SECONDS;
+      secondsLeft = rotateSeconds;
     }
     paintTimer();
   }
@@ -557,7 +566,7 @@ function createRotator(spec) {
     const filled = spec.slides.filter(s => hasSlideContent(data[s.field]));
     slides = filled.length > 0 ? filled : [spec.slides[0]];
     index = 0;
-    secondsLeft = ROTATE_SECONDS;
+    secondsLeft = rotateSeconds;
     show(0, false);
 
     if (slides.length > 1) {
@@ -1492,8 +1501,7 @@ function initGameMode() {
    off, so they never show at the same time.
    ============================================================ */
 
-const THEATER_PERIOD_NAME = '7th Period';
-const THEATER_AUTO_MINUTES = 5;        // fixed — 7th Period only, starts w/ 5 min left
+const THEATER_AUTO_MINUTES = 5;        // fixed — any period, always starts w/ 5 min left
 
 const CLEANUP_PERIOD_NAME = '7th Period';
 const CLEANUP_AUTO_MINUTES = 10;       // fixed — always starts w/ 10 min left
@@ -1765,11 +1773,11 @@ function initCleanupMode() {
 }
 
 /* ============================================================
-   Theater Mode — 7th Period only, like Clean-Up Mode. Auto-starts
-   the moment 5 minutes remain in 7th Period, right after Clean-Up
-   Mode's own 5-minute sequence finishes. It never auto-starts in
-   any other period; the toolbar button still turns it on by hand
-   whenever you want it. Same full-board-takeover shape as
+   Theater Mode — any period. Always auto-starts the moment 5
+   minutes remain in the live period (right after Clean-Up Mode's
+   own 5-minute sequence would finish, for 7th Period — but unlike
+   Clean-Up Mode this one isn't limited to a single period; it fires
+   for whichever period is live). Same full-board-takeover shape as
    Game Mode and Clean-Up Mode, but instead of a countdown/animation
    panel, the entire right-hand panel is one huge YouTube player
    showing a random pick from theater.txt (a separate list from
@@ -1877,12 +1885,10 @@ function initTheaterMode() {
   // same pattern as window.__gameMode / window.__cleanupMode above
   window.__theaterMode = { turnOn, turnOff, isActive: () => active };
 
-  /* ---- Auto-trigger — always on, but 7th Period ONLY (same single-
-     period restriction as Clean-Up Mode). Fires once the live
-     countdown hits THEATER_AUTO_MINUTES, i.e. the last 5 minutes of
-     7th Period, right as Clean-Up Mode's own sequence finishes. No
-     other period auto-starts Theater Mode — the toolbar button still
-     turns it on by hand any time. ---- */
+  /* ---- Auto-trigger — always on, ANY period, fires once the live
+     countdown hits THEATER_AUTO_MINUTES. Unlike Clean-Up Mode this
+     isn't restricted to a single period name — it swaps in during
+     the last 5 minutes of whichever period is currently live. ---- */
 
   let firedForPeriodKey = null;
 
@@ -1897,7 +1903,6 @@ function initTheaterMode() {
     const nowMin = minutesSinceMidnight(pt);
     const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
     if (!current) return;
-    if (current.name !== THEATER_PERIOD_NAME) return;
 
     const remaining = hhmmToMinutes(current.end) - nowMin;
     const periodKey = `${pt.isoDate}|${current.name}`;
