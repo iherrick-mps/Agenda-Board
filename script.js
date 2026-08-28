@@ -1970,17 +1970,49 @@ function initMiniCalendar() {
    after school.
    ============================================================ */
 
+/* Shared Help Queue parsing — used by the in-class bento below and by the
+   Tutoring page's queue box in tutoring.js.
+
+   The board only ever shows students the five-character room code; the full
+   link lives on Google Classroom. Accepts either a pasted room link or the
+   bare code, and hands back both the code to display and the URL to embed. */
+
+const QUEUE_BASE_URL = 'https://iherrick-mps.github.io/queue/';
+
+function parseQueueRoom(raw) {
+  const text = String(raw || '').trim();
+  if (!text) return { code: '', url: '' };
+
+  // just the code typed in on its own — build the room link around it
+  if (/^[A-Za-z0-9]{4,8}$/.test(text)) {
+    const code = text.toUpperCase();
+    return { code: code, url: QUEUE_BASE_URL + '?room=' + code };
+  }
+
+  // otherwise it's a link — pull ?room=XXXXX out of it
+  let code = '';
+  try {
+    code = new URL(text).searchParams.get('room') || '';
+  } catch (e) {
+    const m = text.match(/[?&]room=([^&#\s]+)/i);
+    if (m) code = m[1];
+  }
+  return { code: code.toUpperCase(), url: text };
+}
+
 function initClassQueue() {
   const input = document.getElementById('class-queue-input');
   const embedContainer = document.getElementById('class-queue-embed');
   const box = document.getElementById('class-queue-box');
-  const urlEl = document.getElementById('class-queue-url');
+  const codeEl = document.getElementById('class-queue-code');
   if (!input || !embedContainer || !box) return;
 
   const STORAGE_KEY = 'agendaBoard.classQueueUrl';
 
-  function renderFromUrl(url) {
-    if (urlEl) urlEl.textContent = url || '';
+  function renderFromUrl(raw) {
+    const room = parseQueueRoom(raw);
+    const url = room.url;
+    if (codeEl) codeEl.textContent = room.code;
 
     if (!url) {
       embedContainer.innerHTML = '';

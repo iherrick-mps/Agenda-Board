@@ -18,17 +18,25 @@ function initTutoringQueue() {
   const input = document.getElementById('queue-input');
   const embedContainer = document.getElementById('queue-embed');
   const box = document.getElementById('tutoring-queue-box');
-  const joinLinkEl = document.getElementById('joinlink-url');
+  const joinCodeEl = document.getElementById('joinlink-code');
   if (!input || !embedContainer || !box) return;
 
   const STORAGE_KEY = 'agendaBoard.tutoringQueueUrl';
 
-  function renderFromUrl(url) {
-    if (joinLinkEl) {
-      joinLinkEl.textContent = url || '';
+  function renderFromUrl(raw) {
+    // parseQueueRoom() lives in script.js — takes either a pasted room
+    // link or the bare code and gives back both. Students only ever see
+    // the code; the link is posted on Google Classroom.
+    const room = (typeof parseQueueRoom === 'function')
+      ? parseQueueRoom(raw)
+      : { code: '', url: String(raw || '').trim() };
+    const url = room.url;
+
+    if (joinCodeEl) {
+      joinCodeEl.textContent = room.code;
       // shared auto-fit helper from script.js — same one every other
-      // box-content uses — re-run so the link line re-shrinks to fit
-      // on one row now that its text has changed
+      // box-content uses — re-run so the code line re-fits the banner
+      // now that its text has changed
       if (typeof fitBoxText === 'function') {
         fitBoxText(document.getElementById('content-joinlink'));
       }

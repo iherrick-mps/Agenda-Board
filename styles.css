@@ -2322,24 +2322,33 @@ body.board-page {
   text-align: center;
   align-items: center;
 }
+/* Both lines carry their own explicit sizes rather than riding the shared
+   fitBoxText() auto-fit. A five-character code is short enough that the
+   auto-fit has nothing to push against and would blow it up past the top of
+   the banner (it measures overflow below the content box, and this box
+   centers its lines, so overflow off the top goes unnoticed). */
 .joinlink-line1 {
   font-family: var(--font-body);
   font-weight: 600;
+  font-size: clamp(0.85rem, 2.6vh, 2rem);
 }
 .joinlink-line2 {
   font-family: var(--font-mono);
   font-weight: 700;
+  font-size: clamp(1.4rem, 5.4vh, 4.2rem);
+  line-height: 1.1;
   white-space: nowrap;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
-  margin-top: 0.3em;
+  letter-spacing: 0.14em;
+  text-indent: 0.14em; /* balances the trailing letter-space so it reads centered */
+  margin-top: 0.12em;
   color: var(--box-color, var(--ink));
 }
 .joinlink-line2:empty::before {
-  content: '(paste the queue link below)';
+  content: '(paste the queue link or code below)';
   font-style: italic;
+  font-size: 0.32em;
+  letter-spacing: normal;
   opacity: 0.7;
-  text-decoration: none;
 }
 
 /* ---- Help Queue embed — same paste-a-link-then-it-tucks-away pattern
@@ -2457,25 +2466,28 @@ body.board-page {
   font-size: clamp(0.6rem, 1.6vh, 1.1rem);
 }
 
-.classqueue-join-url {
+/* the room code itself — the only thing students need off this board, so
+   it gets the biggest type the strip can hold */
+.classqueue-join-code {
   display: block;
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: clamp(0.52rem, 1.35vh, 0.95rem);
+  font-size: clamp(0.95rem, 3vh, 2.1rem);
+  line-height: 1.05;
+  letter-spacing: 0.16em;
   color: #8a6a06;
-  text-decoration: underline;
-  text-underline-offset: 0.15em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-top: 0.15em;
+  margin-top: 0.1em;
 }
 
-.classqueue-join-url:empty::before {
-  content: '(paste the room link below)';
+.classqueue-join-code:empty::before {
+  content: '(paste the room link or code below)';
+  font-size: 0.42em;
   font-style: italic;
+  letter-spacing: normal;
   opacity: 0.7;
-  text-decoration: none;
 }
 
 .box-classqueue .queue-input { font-size: 0.7rem; }
