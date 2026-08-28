@@ -1501,7 +1501,8 @@ function initGameMode() {
    off, so they never show at the same time.
    ============================================================ */
 
-const THEATER_AUTO_MINUTES = 5;        // fixed — any period, always starts w/ 5 min left
+const THEATER_PERIOD_NAME = '7th Period'; // auto-start is 7th Period only
+const THEATER_AUTO_MINUTES = 5;        // fixed — always starts w/ 5 min left
 
 const CLEANUP_PERIOD_NAME = '7th Period';
 const CLEANUP_AUTO_MINUTES = 10;       // fixed — always starts w/ 10 min left
@@ -1773,17 +1774,65 @@ function initCleanupMode() {
 }
 
 /* ============================================================
-   Theater Mode — any period. Always auto-starts the moment 5
-   minutes remain in the live period (right after Clean-Up Mode's
-   own 5-minute sequence would finish, for 7th Period — but unlike
-   Clean-Up Mode this one isn't limited to a single period; it fires
-   for whichever period is live). Same full-board-takeover shape as
+   Theater Mode — 7th Period only, same as Clean-Up Mode. Always
+   auto-starts the moment 5 minutes remain in 7th Period, which is
+   right as Clean-Up Mode's own 5-minute number-draw sequence
+   finishes. No other period auto-starts it; the toggle button still
+   works by hand in any period. Same full-board-takeover shape as
    Game Mode and Clean-Up Mode, but instead of a countdown/animation
    panel, the entire right-hand panel is one huge YouTube player
    showing a random pick from theater.txt (a separate list from
    music.txt's background-music links). Turning this mode on turns
    the other two off, and vice versa, so only one ever shows at once.
+   The player is pinned to the best quality YouTube reports as
+   available, and re-pinned if adaptive streaming drops it back down.
    ============================================================ */
+
+// Best-to-worst, matching YouTube's own quality level strings. Anything
+// the API reports that isn't in this list sorts last.
+const THEATER_QUALITY_ORDER = [
+  'highres', 'hd2880', 'hd2160', 'hd1440', 'hd1080',
+  'hd720', 'large', 'medium', 'small', 'tiny'
+];
+
+// YouTube picks quality adaptively and will quietly step a video down
+// mid-playback (and setPlaybackQuality is only ever treated as a
+// suggestion). So instead of setting it once, we ask what's actually
+// available and re-assert the top of that list a handful of times —
+// on ready, on first play, and whenever YouTube reports it changed.
+// The attempt cap keeps a stubborn video from ping-ponging forever.
+function makeBestQualityPinner(maxAttempts = 8) {
+  let attempts = 0;
+  return function pinBestQuality(target) {
+    if (!target || attempts >= maxAttempts) return;
+    let levels = [];
+    try {
+      levels = target.getAvailableQualityLevels
+        ? target.getAvailableQualityLevels()
+        : [];
+    } catch (e) { return; }
+    // Empty until playback actually starts — don't burn an attempt on it.
+    if (!levels.length) return;
+
+    const best = levels
+      .slice()
+      .sort((a, b) => {
+        const ai = THEATER_QUALITY_ORDER.indexOf(a);
+        const bi = THEATER_QUALITY_ORDER.indexOf(b);
+        return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+      })[0];
+    if (!best) return;
+
+    let currentQ = null;
+    try {
+      currentQ = target.getPlaybackQuality ? target.getPlaybackQuality() : null;
+    } catch (e) { /* ignore */ }
+    if (currentQ === best) return; // already there, nothing to do
+
+    attempts += 1;
+    try { target.setPlaybackQuality(best); } catch (e) { /* ignore */ }
+  };
+}
 
 function initTheaterMode() {
   const boardGrid = document.getElementById('board-grid');
@@ -1821,7 +1870,10 @@ function initTheaterMode() {
     // Same muted-autoplay-then-unmute dance as Now Playing's random
     // picks (see initNowPlaying) — muted autoplay is allowed without a
     // click, then we unmute once the player reports ready.
-    const playerVars = { autoplay: 1, rel: 0, mute: 1 };
+    // vq is only a hint (YouTube may ignore it outright), so the real
+    // work happens in pinBestQuality below — this just nudges the
+    // initial stream request upward before playback begins.
+    const playerVars = { autoplay: 1, rel: 0, mute: 1, vq: 'hd1080' };
     if (listId) {
       playerVars.listType = 'playlist';
       playerVars.list = listId;
@@ -1831,6 +1883,7 @@ function initTheaterMode() {
     // random music.txt picks, so a long video doesn't always open on
     // the same opening stretch
     const onRandomStart = makeRandomStartHandler(YT, () => { /* no input field to sync here */ });
+    const pinBestQuality = makeBestQualityPinner();
 
     player = new YT.Player('theater-player', {
       width: '100%',
@@ -1841,8 +1894,17 @@ function initTheaterMode() {
         onReady: (e) => {
           e.target.setVolume(NOWPLAYING_START_VOLUME);
           e.target.unMute();
+          pinBestQuality(e.target);
         },
-        onStateChange: onRandomStart
+        onStateChange: (e) => {
+          onRandomStart(e);
+          // Quality levels aren't reported until playback is underway,
+          // so this is the first call that usually has anything to act on.
+          if (e.data === YT.PlayerState.PLAYING) pinBestQuality(e.target);
+        },
+        // Fires when YouTube's adaptive streaming moves the video — our
+        // cue to put it back up top.
+        onPlaybackQualityChange: (e) => pinBestQuality(e.target)
       }
     });
   }
@@ -1885,10 +1947,11 @@ function initTheaterMode() {
   // same pattern as window.__gameMode / window.__cleanupMode above
   window.__theaterMode = { turnOn, turnOff, isActive: () => active };
 
-  /* ---- Auto-trigger — always on, ANY period, fires once the live
-     countdown hits THEATER_AUTO_MINUTES. Unlike Clean-Up Mode this
-     isn't restricted to a single period name — it swaps in during
-     the last 5 minutes of whichever period is currently live. ---- */
+  /* ---- Auto-trigger — always on, 7th Period only, fires once the
+     live countdown hits THEATER_AUTO_MINUTES. Same period restriction
+     as Clean-Up Mode: it swaps in for the last 5 minutes of 7th
+     Period and never auto-fires in 4th or 6th. The toggle button is
+     unaffected and still works by hand in any period. ---- */
 
   let firedForPeriodKey = null;
 
@@ -1902,7 +1965,7 @@ function initTheaterMode() {
 
     const nowMin = minutesSinceMidnight(pt);
     const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
-    if (!current) return;
+    if (!current || current.name !== THEATER_PERIOD_NAME) return;
 
     const remaining = hhmmToMinutes(current.end) - nowMin;
     const periodKey = `${pt.isoDate}|${current.name}`;
