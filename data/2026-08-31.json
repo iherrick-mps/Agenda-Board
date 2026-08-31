@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Adding a button to your index page and writing your first JavaScript function to change its color.",
+      "weeklyDeliverable": "week04-snake.html — a working Snake game in JavaScript, linked from your index page and pushed to GitHub Pages by Sunday night.",
+      "smartGoal": "I can write a JavaScript function that runs when a button is clicked so that my page does something instead of just sitting there.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Chromebooks out + Wayground quiz (5 min)",
+        "Quick overview: today's plan + handout (3 min)",
+        "I do: button, function, onclick (12 min)",
+        "We do: change the color together (8 min)",
+        "You do: your own button on index.html (17 min)",
+        "Check yourself: hard refresh, click, push (5 min)"
+      ],
+      "connections": "For two weeks your page has been HTML for structure and CSS for looks — both frozen the second the page loads. Today you add the third language, JavaScript, and your page starts reacting to you. That same click-and-respond idea is what runs the Snake game you'll have working by Sunday."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Finishing every level of Game Lab Lesson 2, then starting Lesson 3 on variables.",
+      "weeklyDeliverable": "Game Lab Lessons 2 and 3 complete, plus your Grow Box program — a shape that changes size when you move the mouse — shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can name a value once and reuse it so that I can change my whole drawing by editing one number.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Chromebooks out + Wayground quiz (5 min)",
+        "Quick overview: today's plan + handout (3 min)",
+        "I do: what a parameter is, what a variable is (10 min)",
+        "We do: name one variable, use it twice (7 min)",
+        "You do: finish Lesson 2, then start Lesson 3 (20 min)",
+        "Exit Ticket: which lesson and level are you on? (5 min)"
+      ],
+      "connections": "Last week you drew a whole robot face by typing four numbers into every single shape. Today those four numbers get a name — parameters — and then you learn to store one in a variable so a single edit changes everything. Thursday that same variable is what makes your shape grow and shrink."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Finishing every level of Game Lab Lesson 2, then starting Lesson 3 on variables.",
+      "weeklyDeliverable": "Game Lab Lessons 2 and 3 complete, plus your Grow Box program — a shape that changes size when you move the mouse — shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can name a value once and reuse it so that I can change my whole drawing by editing one number.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Chromebooks out + Wayground quiz (5 min)",
+        "Quick overview: today's plan + handout (3 min)",
+        "I do: what a parameter is, what a variable is (10 min)",
+        "We do: name one variable, use it twice (7 min)",
+        "You do: finish Lesson 2, then start Lesson 3 (20 min)",
+        "Exit Ticket: which lesson and level are you on? (5 min)"
+      ],
+      "connections": "Last week you drew a whole robot face by typing four numbers into every single shape. Today those four numbers get a name — parameters — and then you learn to store one in a variable so a single edit changes everything. Thursday that same variable is what makes your shape grow and shrink."
+    }
+  }
+}

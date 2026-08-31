@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Listening for arrow key presses and changing the direction your snake travels.",
+      "weeklyDeliverable": "week04-snake.html — a working Snake game in JavaScript, linked from your index page and pushed to GitHub Pages by Sunday night.",
+      "smartGoal": "I can listen for a key press and change a direction variable so that I can steer my snake with the arrow keys.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: key listener + direction variables (12 min)",
+        "We do: wire up left and right together (8 min)",
+        "You do: add up and down, test all four (20 min)",
+        "Check yourself: hard refresh, steer it, push (5 min)"
+      ],
+      "connections": "Yesterday your square moved, but only one direction, forever. Today you add a listener that watches the keyboard and changes direction. Tomorrow it gets a body, an apple, and a way to lose."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Building the Grow Box: a draw loop plus one variable that follows your mouse.",
+      "weeklyDeliverable": "Game Lab Lessons 2 and 3 complete, plus your Grow Box program — a shape that changes size when you move the mouse — shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can put my shape inside a draw loop so that it redraws over and over and can change while the program is running.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan + handout (3 min)",
+        "I do: the draw loop — code that runs forever (10 min)",
+        "We do: build the base Grow Box together (10 min)",
+        "You do: your own Grow Box, Level 1 (20 min)",
+        "Exit Ticket: does your square react to the mouse? (5 min)"
+      ],
+      "connections": "Every program you have written so far ran once, top to bottom, and stopped. Today you meet the draw loop — the pattern underneath every game ever made — and your square finally changes while the program is running. Tomorrow you add your own level and share it."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Building the Grow Box: a draw loop plus one variable that follows your mouse.",
+      "weeklyDeliverable": "Game Lab Lessons 2 and 3 complete, plus your Grow Box program — a shape that changes size when you move the mouse — shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can put my shape inside a draw loop so that it redraws over and over and can change while the program is running.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan + handout (3 min)",
+        "I do: the draw loop — code that runs forever (10 min)",
+        "We do: build the base Grow Box together (10 min)",
+        "You do: your own Grow Box, Level 1 (20 min)",
+        "Exit Ticket: does your square react to the mouse? (5 min)"
+      ],
+      "connections": "Every program you have written so far ran once, top to bottom, and stopped. Today you meet the draw loop — the pattern underneath every game ever made — and your square finally changes while the program is running. Tomorrow you add your own level and share it."
+    }
+  }
+}

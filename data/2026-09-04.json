@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Turning your one square into a snake body, adding the apple, and testing until the game actually plays.",
+      "weeklyDeliverable": "week04-snake.html — a working Snake game in JavaScript, linked from your index page and pushed to GitHub Pages by Sunday night.",
+      "smartGoal": "I can store my snake's body in an array of objects so that it grows when it eats and the game ends when it crashes.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: the body array, the apple, game over (12 min)",
+        "We do: test one crash case together (6 min)",
+        "You do: finish, test, and debug your game (22 min)",
+        "Check yourself: hard refresh, play it, push (5 min)"
+      ],
+      "connections": "You built the pieces one a day: a function, a square, a loop, a steering wheel. Today they become a game — the body is just an array of the squares you already know how to draw. Get it playable by Sunday night, because Monday we open the Mario fork."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Finishing your Grow Box, adding your own Level 2 change, and sharing it with Ms. Herrick.",
+      "weeklyDeliverable": "Game Lab Lessons 2 and 3 complete, plus your Grow Box program — a shape that changes size when you move the mouse — shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can add my own change to the Grow Box and test it so that my program does something nobody else's does.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: Level 2 — a second shape that reacts (8 min)",
+        "You do: build your Level 2 (20 min)",
+        "You do: one sentence about what you changed (7 min)",
+        "Share your project with Ms. Herrick (10 min)"
+      ],
+      "connections": "Monday you were still finishing shapes; today you have a program that reacts to the person using it. That is the whole difference between a drawing and a game. Next week we add sprites and your shapes start moving on their own."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Finishing your Grow Box, adding your own Level 2 change, and sharing it with Ms. Herrick.",
+      "weeklyDeliverable": "Game Lab Lessons 2 and 3 complete, plus your Grow Box program — a shape that changes size when you move the mouse — shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can add my own change to the Grow Box and test it so that my program does something nobody else's does.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: Level 2 — a second shape that reacts (8 min)",
+        "You do: build your Level 2 (20 min)",
+        "You do: one sentence about what you changed (7 min)",
+        "Share your project with Ms. Herrick (10 min)"
+      ],
+      "connections": "Monday you were still finishing shapes; today you have a program that reacts to the person using it. That is the whole difference between a drawing and a game. Next week we add sprites and your shapes start moving on their own."
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Creating week04-snake.html with a drawing canvas, then drawing one square where your position object says to.",
+      "weeklyDeliverable": "week04-snake.html — a working Snake game in JavaScript, linked from your index page and pushed to GitHub Pages by Sunday night.",
+      "smartGoal": "I can store a position in an object so that one place in my code decides where my snake gets drawn.",
+      "contentStandard": "CA CS Standards 6-8.AP.11 — Create clearly named variables that represent different data types and perform operations on their values.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: new file, a canvas, one drawn square (12 min)",
+        "We do: move the square by editing the object (8 min)",
+        "You do: your own canvas + snake head (20 min)",
+        "Check yourself: hard refresh, square visible, push (5 min)"
+      ],
+      "connections": "Yesterday your button proved JavaScript can change the page. Today you start the real file: a canvas to draw on, and an object holding your snake's x and y. Tomorrow that object starts moving on its own."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Working through Lesson 3, using one variable to control more than one shape at a time.",
+      "weeklyDeliverable": "Game Lab Lessons 2 and 3 complete, plus your Grow Box program — a shape that changes size when you move the mouse — shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can use the same variable in more than one shape so that changing one number changes my whole picture at once.",
+      "contentStandard": "CA CS Standards 6-8.AP.11 — Create clearly named variables that represent different data types and perform operations on their values.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: one variable, three shapes (8 min)",
+        "Turn and talk: what breaks without it? (5 min)",
+        "You do: continue Lesson 3 (27 min)",
+        "Exit Ticket: which level did you finish? (5 min)"
+      ],
+      "connections": "Yesterday you met variables. Today you put one variable inside several shapes at once and watch what a single edit does. Tomorrow is a short day, so Lesson 3 has to be done — Thursday we make that variable change by itself."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Working through Lesson 3, using one variable to control more than one shape at a time.",
+      "weeklyDeliverable": "Game Lab Lessons 2 and 3 complete, plus your Grow Box program — a shape that changes size when you move the mouse — shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can use the same variable in more than one shape so that changing one number changes my whole picture at once.",
+      "contentStandard": "CA CS Standards 6-8.AP.11 — Create clearly named variables that represent different data types and perform operations on their values.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: one variable, three shapes (8 min)",
+        "Turn and talk: what breaks without it? (5 min)",
+        "You do: continue Lesson 3 (27 min)",
+        "Exit Ticket: which level did you finish? (5 min)"
+      ],
+      "connections": "Yesterday you met variables. Today you put one variable inside several shapes at once and watch what a single edit does. Tomorrow is a short day, so Lesson 3 has to be done — Thursday we make that variable change by itself."
+    }
+  }
+}

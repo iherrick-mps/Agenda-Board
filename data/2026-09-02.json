@@ -1,0 +1,53 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Wrapping your drawing code in a game loop so your square moves on its own, one step at a time.",
+      "weeklyDeliverable": "week04-snake.html — a working Snake game in JavaScript, linked from your index page and pushed to GitHub Pages by Sunday night.",
+      "smartGoal": "I can use setInterval to run my code over and over so that my square moves without me touching anything.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: short day plan (2 min)",
+        "I do: setInterval and the game loop (8 min)",
+        "You do: make your square move right (13 min)",
+        "Check yourself: hard refresh, then push (5 min)"
+      ],
+      "connections": "Yesterday your square sat still because your code ran once and quit. Today you wrap it in a loop that runs ten times a second and it starts crawling across the canvas. Tomorrow you take the wheel and steer it."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Finishing every level of Lesson 3 before the bell — that is the whole job today.",
+      "weeklyDeliverable": "Game Lab Lessons 2 and 3 complete, plus your Grow Box program — a shape that changes size when you move the mouse — shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can finish Lesson 3 so that I am ready to build my own program from scratch tomorrow.",
+      "contentStandard": "CA CS Standards 6-8.AP.11 — Create clearly named variables that represent different data types and perform operations on their values.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: short day plan (2 min)",
+        "Quick check: which level are you on? (3 min)",
+        "You do: finish Lesson 3 (18 min)",
+        "Exit Ticket: is Lesson 3 done — yes or no? (5 min)"
+      ],
+      "connections": "Short day, one job: get Lesson 3 to the end. Shapes, parameters, and variables are the three tools your Grow Box needs, and we start building it tomorrow — you do not want to be catching up while everyone else is designing."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Finishing every level of Lesson 3 before the bell — that is the whole job today.",
+      "weeklyDeliverable": "Game Lab Lessons 2 and 3 complete, plus your Grow Box program — a shape that changes size when you move the mouse — shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can finish Lesson 3 so that I am ready to build my own program from scratch tomorrow.",
+      "contentStandard": "CA CS Standards 6-8.AP.11 — Create clearly named variables that represent different data types and perform operations on their values.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: short day plan (2 min)",
+        "Quick check: which level are you on? (3 min)",
+        "You do: finish Lesson 3 (18 min)",
+        "Exit Ticket: is Lesson 3 done — yes or no? (5 min)"
+      ],
+      "connections": "Short day, one job: get Lesson 3 to the end. Shapes, parameters, and variables are the three tools your Grow Box needs, and we start building it tomorrow — you do not want to be catching up while everyone else is designing."
+    }
+  }
+}
