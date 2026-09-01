@@ -2598,10 +2598,12 @@ body.board-page {
       "joinlink"
       "expect"
       "nowplaying"
-      "queue";
+      "queue"
+      "goguardian";
   }
   .box-queue { min-height: 420px; }
   .box-joinlink { min-height: 100px; }
+  .box-goguardian { min-height: 100px; }
 
   /* Game Mode: on narrow screens, ignore the desktop line-number
      repositioning (it only makes sense on the 12-column grid) and
