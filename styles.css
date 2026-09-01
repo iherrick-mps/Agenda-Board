@@ -23,6 +23,7 @@
   --c-queue: #0e93b4;      /* Tutoring — Help Queue */
   --c-expect: #0d9367;     /* Tutoring — Expectations */
   --c-joinlink: #c9971c;   /* Tutoring — Join the Queue banner */
+  --c-goguardian: #6b4fbb; /* Tutoring — GoGuardian enrollment banner */
 
   --box-width: 340px;
   --radius: 8px;
@@ -2301,13 +2302,14 @@ body.board-page {
     "queue queue queue queue queue queue expect expect expect expect expect expect"
     "queue queue queue queue queue queue expect expect expect expect expect expect"
     "queue queue queue queue queue queue expect expect expect expect expect expect"
-    "queue queue queue queue queue queue expect expect expect expect expect expect"
-    "queue queue queue queue queue queue expect expect expect expect expect expect";
+    "goguardian goguardian goguardian goguardian goguardian goguardian expect expect expect expect expect expect"
+    "goguardian goguardian goguardian goguardian goguardian goguardian expect expect expect expect expect expect";
 }
 
-.box-joinlink { grid-area: joinlink; --box-color: var(--c-joinlink); }
-.box-queue    { grid-area: queue;    --box-color: var(--c-queue); }
-.box-expect   { grid-area: expect;   --box-color: var(--c-expect); }
+.box-joinlink   { grid-area: joinlink;   --box-color: var(--c-joinlink); }
+.box-queue      { grid-area: queue;      --box-color: var(--c-queue); }
+.box-expect     { grid-area: expect;     --box-color: var(--c-expect); }
+.box-goguardian { grid-area: goguardian; --box-color: var(--c-goguardian); }
 
 /* ---- Join-link banner — themed like every other bento (tinted
    background, colored left border), just with an explicit light
@@ -2433,6 +2435,30 @@ body.board-page {
 
 /* ---- Expectations — same checklist look as the Study Hall boxes ---- */
 .box-expect .box-content li::before { content: '\2713'; }
+
+/* ---- GoGuardian enrollment banner — same short-banner treatment as
+   box-joinlink: centered, no bullet list, just a link line and a code
+   line so it reads clearly at a glance in the smaller 2-row footprint. ---- */
+.box-goguardian .box-content {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+}
+.box-goguardian .box-content p {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: clamp(0.75rem, 2vh, 1.4rem);
+}
+.box-goguardian .box-content a {
+  color: inherit;
+}
+.box-goguardian .code-display {
+  font-family: var(--font-mono);
+  font-size: clamp(0.85rem, 2.4vh, 1.8rem);
+  letter-spacing: 0.05em;
+}
 
 /* ============================================================
    In-class Help Queue bento (main agenda board) — the Tutoring
