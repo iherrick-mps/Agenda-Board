@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Writing down 2 real risks of using AI and how you'd guard against each one.",
+      "weeklyDeliverable": "A new 'My Thoughts on AI' page live on your portfolio site — your written opinion (with reasoning) plus at least one image, pushed to GitHub Pages by Sunday night.",
+      "smartGoal": "I can identify a risk of using AI so that I can use tools like SchoolAI more responsibly.",
+      "contentStandard": "CA CS Standards 6-8.IC.1 \u2014 Compare tradeoffs associated with computing technologies that affect people's everyday activities and career options.",
+      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: model one real risk \u2014 bias, misinformation, over-reliance (10 min)",
+        "We do: read and discuss a risk scenario as a class (10 min)",
+        "You do: notes \u2014 2 risks + how you'd guard against them (20 min)",
+        "Exit Ticket: the risk that worries you most, and why (5 min)"
+      ],
+      "connections": "You've used SchoolAI and seen how it predicts an answer. Today we're honest about where that goes wrong \u2014 bias, wrong answers said confidently, over-relying on it. Tomorrow you turn all three days into your own opinion, in writing, on your site."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Predicting 2 dynamics \u2014 things that will happen during play \u2014 that your mechanics will create.",
+      "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can predict a dynamic that will emerge from my mechanics so that I can design toward the feeling I actually want.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 \u2014 Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Log in (timed) (3 min)",
+        "Quick overview: today's plan (2 min)",
+        "I do: how mechanics create dynamics, modeled (12 min)",
+        "We do: trace one dynamic from a shared game (10 min)",
+        "You do: predict 2 dynamics your mechanics will create (18 min)",
+        "Exit Ticket: one dynamic + why it happens (5 min)"
+      ],
+      "connections": "You've named your mechanics and your aesthetic \u2014 the rules and the feeling. Dynamics is the bridge between them: what actually happens when someone plays. This is the hardest piece, and tomorrow you put all three together into your design plan."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Predicting 2 dynamics \u2014 things that will happen during play \u2014 that your mechanics will create.",
+      "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can predict a dynamic that will emerge from my mechanics so that I can design toward the feeling I actually want.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 \u2014 Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely and explaining orally how an author uses language to support ideas.",
+      "agenda": [
+        "Log in (timed) (3 min)",
+        "Quick overview: today's plan (2 min)",
+        "I do: how mechanics create dynamics, modeled (12 min)",
+        "We do: trace one dynamic from a shared game (10 min)",
+        "You do: predict 2 dynamics your mechanics will create (18 min)",
+        "Exit Ticket: one dynamic + why it happens (5 min)"
+      ],
+      "connections": "You've named your mechanics and your aesthetic \u2014 the rules and the feeling. Dynamics is the bridge between them: what actually happens when someone plays. This is the hardest piece, and tomorrow you put all three together into your design plan."
+    }
+  }
+}

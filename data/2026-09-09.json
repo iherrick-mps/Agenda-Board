@@ -1,0 +1,56 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Joining SchoolAI with the class code and asking it one question.",
+      "weeklyDeliverable": "A new 'My Thoughts on AI' page live on your portfolio site — your written opinion (with reasoning) plus at least one image, pushed to GitHub Pages by Sunday night.",
+      "smartGoal": "I can explain how AI predicts an answer from training data so that I understand what's actually happening when I use a tool like SchoolAI.",
+      "contentStandard": "CA CS Standards 6-8.DA.5 \u2014 Analyze data using computational tools in order to make claims and predictions.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (2 min)",
+        "I do: how AI predicts a 'next best answer' from data (8 min)",
+        "We do: join SchoolAI, test the class code together (8 min)",
+        "You do: ask SchoolAI one question, screenshot the reply (8 min)",
+        "Exit Ticket: one thing that surprised you (2 min)"
+      ],
+      "connections": "Yesterday you defined what AI is. Today you get your hands on one \u2014 SchoolAI \u2014 and see how it actually decides what to say back to you. Tomorrow we look at what can go wrong when people trust that answer too much."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Picking two aesthetics \u2014 feelings \u2014 you want your game to give players, and explaining why.",
+      "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can name the aesthetic \u2014 the feeling \u2014 I want my game to give players so that my design choices have a clear purpose.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 \u2014 Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (2 min)",
+        "I do: what feeling should players have? (6 min)",
+        "We do: name a shared game's aesthetic as a class (6 min)",
+        "You do: pick 2 aesthetics for your game & explain why (12 min)",
+        "Exit Ticket: your game's one-word feeling (2 min)"
+      ],
+      "connections": "Yesterday you listed mechanics \u2014 the rules and pieces. Today's the easy one: what should your game actually feel like to play? Tomorrow's the hard part \u2014 figuring out how those rules create that feeling."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Picking two aesthetics \u2014 feelings \u2014 you want your game to give players, and explaining why.",
+      "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
+      "smartGoal": "I can name the aesthetic \u2014 the feeling \u2014 I want my game to give players so that my design choices have a clear purpose.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 \u2014 Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (2 min)",
+        "I do: what feeling should players have? (6 min)",
+        "We do: name a shared game's aesthetic as a class (6 min)",
+        "You do: pick 2 aesthetics for your game & explain why (12 min)",
+        "Exit Ticket: your game's one-word feeling (2 min)"
+      ],
+      "connections": "Yesterday you listed mechanics \u2014 the rules and pieces. Today's the easy one: what should your game actually feel like to play? Tomorrow's the hard part \u2014 figuring out how those rules create that feeling."
+    }
+  }
+}
