@@ -1307,6 +1307,42 @@ function initCountUpTimer() {
     btn.addEventListener('dblclick', (e) => e.stopPropagation());
   });
 
+  /* ---- Auto-start at the bell — watches the same bell schedule the
+     clock widget uses (loadBells / resolveTodaysSchedule /
+     findCurrentAndNext). The instant a period becomes "current" (the
+     bell for it rings), the timer clears and starts on its own, so
+     it's already running class time without anyone touching Start.
+     Only a period *change* triggers this — manual Stop/Clear during
+     a period are respected until the next bell, so it's still usable
+     as a general stopwatch mid-period. Note: since this isn't a real
+     click, the browser may block the tick sound's audio context
+     until a user interacts with the page once; the visible count is
+     unaffected either way, since it's timed off Date.now(). */
+  let autoStartedPeriodKey = null;
+
+  async function checkAutoStart() {
+    try {
+      const bells = await loadBells();
+      const pt = getPacificNow();
+      const nowMin = minutesSinceMidnight(pt);
+      const scheduleKey = await resolveTodaysSchedule(pt);
+      const scheduleData = bells[scheduleKey];
+      if (!scheduleData) return;
+
+      const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
+      const key = current ? `${pt.isoDate}|${current.start}` : null;
+
+      if (key && key !== autoStartedPeriodKey) {
+        autoStartedPeriodKey = key;
+        clear();
+        start();
+      }
+    } catch (e) { /* bell data unavailable — leave timer manual-only */ }
+  }
+
+  checkAutoStart();
+  setInterval(checkAutoStart, 1000);
+
   paint();
 }
 
