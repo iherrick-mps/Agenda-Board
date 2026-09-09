@@ -24,6 +24,8 @@
   --c-expect: #0d9367;     /* Tutoring — Expectations */
   --c-joinlink: #c9971c;   /* Tutoring — Join the Queue banner */
   --c-goguardian: #6b4fbb; /* Tutoring — GoGuardian enrollment banner */
+  --c-lunchrules: #0d9367; /* Indoor Lunch — Rules */
+  --c-trivia: #e8590c;     /* Indoor Lunch — Scooby-Doo Trivia */
 
   --box-width: 340px;
   --radius: 8px;
@@ -2523,6 +2525,172 @@ body.board-page {
 .box-classqueue .queue-input { font-size: 0.7rem; }
 
 /* ============ RESPONSIVE FALLBACK (small screens) ============ */
+/* ============================================================
+   INDOOR LUNCH PAGE — a timer-and-something-to-watch board for
+   indoor-lunch days. Narrow left column (clock, trivia, rules)
+   stacked next to one big black video card on the right — same
+   proportions as Theater Mode's video takeover elsewhere in the
+   app, just as its own permanent page instead of a toggled mode.
+   Reuses .board-grid / .agenda-box / clock plumbing from the main
+   board (same id="board-grid").
+   ============================================================ */
+
+.board-grid.lunch-grid {
+  grid-template-areas:
+    "clock  clock  clock  clock  video video video video video video video video"
+    "clock  clock  clock  clock  video video video video video video video video"
+    "clock  clock  clock  clock  video video video video video video video video"
+    "trivia trivia trivia trivia video video video video video video video video"
+    "trivia trivia trivia trivia video video video video video video video video"
+    "trivia trivia trivia trivia video video video video video video video video"
+    "trivia trivia trivia trivia video video video video video video video video"
+    "trivia trivia trivia trivia video video video video video video video video"
+    "trivia trivia trivia trivia video video video video video video video video"
+    "rules  rules  rules  rules  video video video video video video video video"
+    "rules  rules  rules  rules  video video video video video video video video"
+    "rules  rules  rules  rules  video video video video video video video video";
+}
+
+.box-lunchvideo { grid-area: video;  }
+.box-trivia     { grid-area: trivia; --box-color: var(--c-trivia); }
+.box-lunchrules { grid-area: rules;  --box-color: var(--c-lunchrules); }
+
+/* ---- Rules — same abbreviated-checklist look as Tutoring's
+   Expectations box, just green-accented like Study Hall's closing
+   card. ---- */
+.box-lunchrules .box-content li::before { content: '\2713'; }
+
+/* ---- Big video card — same black-card/theater treatment as
+   Theater Mode's box-theater, reused here as its own permanent box
+   instead of a toggled full-board takeover. No input field: the
+   playlist and the random pick are fixed by indoor-lunch.js, not
+   editable by students. ---- */
+.box-lunchvideo {
+  cursor: default;
+  border: none;
+  background: #000;
+  padding: 0.6vh 0.6vw;
+  box-shadow: 0 10px 28px rgba(22, 32, 43, 0.22);
+}
+
+.lunchvideo-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
+  display: flex;
+}
+
+.lunchvideo-embed {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.lunchvideo-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* shown instead of the player if the playlist is unreachable */
+.lunchvideo-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+  color: #9a9a9a;
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 2cqw, 1.1rem);
+  pointer-events: none;
+}
+
+/* ---- Scooby-Doo trivia bento — question phase, then a ten-second
+   answer-reveal phase, on the same fade-swap/corner-countdown look
+   as the rotating bentos on the main agenda board (see .box-rot /
+   .rot-timer). container-type:size lets the question and options
+   scale together as one block via cqh/cqw clamp()s, so the whole
+   thing grows or shrinks to fill whatever room the bento has,
+   without needing the binary-search fitBoxText() pass (which
+   expects one plain text block, not a question plus four separate
+   answer chips). ---- */
+.box-trivia {
+  container-type: size;
+}
+
+.box-trivia .box-content {
+  justify-content: flex-start;
+  gap: 0.6cqh;
+}
+
+.trivia-question {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: clamp(0.8rem, min(9cqh, 4.6cqw), 2rem);
+}
+
+.trivia-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8cqh;
+  flex: 1 1 auto;
+  min-height: 0;
+  justify-content: space-evenly;
+}
+
+.trivia-option {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  padding: 0.4em 0.6em;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--box-color, var(--ink)) 30%, transparent);
+  background: rgba(255, 255, 255, 0.55);
+  font-size: clamp(0.7rem, min(6.5cqh, 3.4cqw), 1.5rem);
+  transition: background 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.trivia-option .opt-letter {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--box-color, var(--ink));
+  flex: 0 0 auto;
+}
+
+/* answer-reveal phase: the correct option lights up green, the rest
+   fade back so the highlight reads at a glance */
+.trivia-option.is-correct {
+  background: #bbf7d0;
+  border-color: #16a34a;
+  font-weight: 700;
+}
+.trivia-option.is-correct .opt-letter { color: #15803d; }
+
+.trivia-option.is-dimmed { opacity: 0.45; }
+
+.trivia-phase-label {
+  position: absolute;
+  left: 0.9vw;
+  bottom: 0.7vh;
+  z-index: 2;
+  pointer-events: none;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(0.5rem, 1.3vh, 0.85rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--box-color, var(--ink));
+  opacity: 0.75;
+}
+
 @media (max-width: 900px) {
   body.board-page { height: auto; overflow: auto; }
   .hover-zone { position: sticky; }
@@ -2604,6 +2772,18 @@ body.board-page {
   .box-queue { min-height: 420px; }
   .box-joinlink { min-height: 100px; }
   .box-goguardian { min-height: 100px; }
+
+  .board-grid.lunch-grid {
+    grid-template-areas:
+      "clock"
+      "video"
+      "trivia"
+      "rules";
+  }
+  .box-lunchvideo { min-height: 260px; }
+  .box-trivia { min-height: 260px; container-type: normal; }
+  .trivia-question { font-size: 1.3rem; }
+  .trivia-option { font-size: 1.05rem; }
 
   /* Game Mode: on narrow screens, ignore the desktop line-number
      repositioning (it only makes sense on the 12-column grid) and

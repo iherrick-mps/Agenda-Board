@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indoor Lunch — Robotics &amp; Coding</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="board-page">
+
+<div class="hover-zone">
+  <div class="hover-trigger"></div>
+  <div class="hover-bar">
+    <a class="back-link-inline" href="index.html">&larr; Home</a>
+    <span class="hb-date">Indoor Lunch</span>
+  </div>
+</div>
+
+<div class="board-grid lunch-grid" id="board-grid">
+
+  <div class="agenda-box box-clock">
+    <div class="clock-date" id="clock-date">Loading&hellip;</div>
+    <div class="clock-time" id="clock-time">--:--:--</div>
+    <div class="clock-tz">Pacific Time</div>
+    <div class="clock-status" id="clock-status">
+      <span class="status-label" id="clock-status-label">Loading&hellip;</span>
+      <span class="status-value" id="clock-status-value">&mdash;</span>
+    </div>
+  </div>
+
+  <div class="agenda-box box-lunchvideo">
+    <span class="box-label">Now Playing</span>
+    <div class="lunchvideo-body">
+      <div class="lunchvideo-embed" id="lunchvideo-embed"></div>
+      <div class="lunchvideo-message" id="lunchvideo-message"></div>
+    </div>
+  </div>
+
+  <div class="agenda-box box-trivia box-rot" id="trivia-box">
+    <span class="box-label">Scooby-Doo Trivia</span>
+    <div class="box-content" id="trivia-content">
+      <div class="trivia-question" id="trivia-question">Loading&hellip;</div>
+      <div class="trivia-options" id="trivia-options"></div>
+    </div>
+    <span class="trivia-phase-label" id="trivia-phase-label"></span>
+    <span class="rot-timer" id="trivia-timer" hidden></span>
+  </div>
+
+  <div class="agenda-box box-lunchrules">
+    <span class="box-label">Indoor Lunch Rules</span>
+    <div class="box-content" id="content-lunchrules">
+      <ul>
+        <li>No Chromebooks until EVERYONE at your table has thrown away their trash</li>
+        <li>Only the library Chromebooks &mdash; never the ones from the robotics shelf</li>
+        <li>Stay in your seat &mdash; no wandering around the room</li>
+        <li>Keep voices at an indoor-lunch level</li>
+        <li>All normal classroom rules still apply</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="indoor-lunch.js"></script>
+</body>
+</html>
