@@ -3,28 +3,28 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Drafting your opinion on AI and starting the new page on your GitHub Pages site.",
-      "weeklyDeliverable": "A new 'My Thoughts on AI' page live on your portfolio site — your written opinion (with reasoning) plus at least one image, pushed to GitHub Pages by Sunday night.",
-      "smartGoal": "I can write and publish my opinion on AI so that my portfolio shows what I actually think, not just what I built.",
-      "contentStandard": "CA CS Standards 6-8.CS.1 \u2014 Recommend improvements to the design of computing devices, based on an analysis of how users interact with the devices.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information.",
+      "workingNow": "Drafting your persuasive article on the best way to use AI, using this week's research as evidence.",
+      "weeklyDeliverable": "A persuasive 'How I Think We Should Use AI' article live on your portfolio site — your argued position on the best way to use AI, backed by this week's research, plus at least one image — pushed to GitHub Pages by Sunday night.",
+      "smartGoal": "I can write a persuasive article stating and defending my opinion on the best way to use AI, using evidence from this week's research, so that readers understand and consider my point of view.",
+      "contentStandard": "CA CS Standards 6-8.IC.20 — Discuss the ethical and societal impacts of computing technologies (approximate — verify against your standards doc).",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information clearly.",
       "agenda": [
-        "Log in (timed) (2 min)",
-        "Quick overview: building your opinions page (3 min)",
-        "I do: model an opinion paragraph, drafted with SchoolAI's help (10 min)",
-        "We do: critique a sample opinion page as a class (8 min)",
-        "You do: draft your opinion & start your page in GitHub (22 min)",
-        "Check yourself: hard refresh, does your page show up? (5 min)"
+        "Warm-Up: pick your strongest research fact (3 min)",
+        "Quick overview: persuasive article structure (3 min)",
+        "I do: model claim + reasoning + evidence (8 min)",
+        "We do: build one shared example paragraph (7 min)",
+        "You do: draft your article — claim + 3 reasons (24 min)",
+        "Exit Ticket: paste your opening claim sentence (5 min)"
       ],
-      "connections": "This week you defined AI, tried it, and named its risks. Today you turn that into your own opinion, published on your own site \u2014 images, formatting, whatever makes your point best. Monday, you'll use AI itself to go improve your Snake game."
+      "connections": "This week you learned what not to share with AI, then researched its bigger risks and benefits as a class. Today you turn all of that into your own argument — due, with an image, on your site by Sunday night."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Writing your Game Design Plan \u2014 Mechanics, Dynamics, and Aesthetics \u2014 for your SchoolAI game.",
+      "workingNow": "Writing your Game Design Plan — Mechanics, Dynamics, and Aesthetics — for your SchoolAI game.",
       "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
       "smartGoal": "I can write a complete game design plan so that I'm ready to actually build my game with SchoolAI.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
       "agenda": [
         "Log in (timed) (3 min)",
         "Quick overview: building your design plan (2 min)",
@@ -33,15 +33,15 @@
         "You do: write your Game Design Plan (M + D + A) (25 min)",
         "Share your plan with Ms. Herrick (5 min)"
       ],
-      "connections": "All week you've named mechanics, aesthetics, and dynamics separately. Today they become one plan \u2014 the actual blueprint you'll hand yourself when you start building your game with SchoolAI next week."
+      "connections": "All week you've named mechanics, aesthetics, and dynamics separately. Today they become one plan — the actual blueprint you'll hand yourself when you start building your game with SchoolAI next week."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Writing your Game Design Plan \u2014 Mechanics, Dynamics, and Aesthetics \u2014 for your SchoolAI game.",
+      "workingNow": "Writing your Game Design Plan — Mechanics, Dynamics, and Aesthetics — for your SchoolAI game.",
       "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
       "smartGoal": "I can write a complete game design plan so that I'm ready to actually build my game with SchoolAI.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
       "agenda": [
         "Log in (timed) (3 min)",
         "Quick overview: building your design plan (2 min)",
@@ -50,7 +50,7 @@
         "You do: write your Game Design Plan (M + D + A) (25 min)",
         "Share your plan with Ms. Herrick (5 min)"
       ],
-      "connections": "All week you've named mechanics, aesthetics, and dynamics separately. Today they become one plan \u2014 the actual blueprint you'll hand yourself when you start building your game with SchoolAI next week."
+      "connections": "All week you've named mechanics, aesthetics, and dynamics separately. Today they become one plan — the actual blueprint you'll hand yourself when you start building your game with SchoolAI next week."
     }
   }
 }

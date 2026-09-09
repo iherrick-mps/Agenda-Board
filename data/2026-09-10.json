@@ -3,28 +3,29 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Writing down 2 real risks of using AI and how you'd guard against each one.",
-      "weeklyDeliverable": "A new 'My Thoughts on AI' page live on your portfolio site — your written opinion (with reasoning) plus at least one image, pushed to GitHub Pages by Sunday night.",
-      "smartGoal": "I can identify a risk of using AI so that I can use tools like SchoolAI more responsibly.",
-      "contentStandard": "CA CS Standards 6-8.IC.1 \u2014 Compare tradeoffs associated with computing technologies that affect people's everyday activities and career options.",
-      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely and explaining orally how an author uses language to support ideas.",
+      "workingNow": "Researching one assigned AI topic — bias, misinformation, privacy, overreliance, environmental cost, or accessibility — from teacher-provided sources only, no AI chat.",
+      "weeklyDeliverable": "A persuasive 'How I Think We Should Use AI' article live on your portfolio site — your argued position on the best way to use AI, backed by this week's research, plus at least one image — pushed to GitHub Pages by Sunday night.",
+      "smartGoal": "I can research at least two pieces of evidence about my assigned AI topic from real sources so that I have material to support my own opinion tomorrow.",
+      "contentStandard": "CA CS Standards 6-8.IC.21 — Discuss issues of bias and accessibility in the design of existing technologies.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
       "agenda": [
-        "Log in (timed) (2 min)",
-        "Quick overview: today's plan (3 min)",
-        "I do: model one real risk \u2014 bias, misinformation, over-reliance (10 min)",
-        "We do: read and discuss a risk scenario as a class (10 min)",
-        "You do: notes \u2014 2 risks + how you'd guard against them (20 min)",
-        "Exit Ticket: the risk that worries you most, and why (5 min)"
+        "Warm-Up: recall yesterday's never-share rules (3 min)",
+        "Quick overview + research packet handout (3 min)",
+        "I do: model reading a source, claim + evidence (8 min)",
+        "We do: annotate one shared source together (8 min)",
+        "You do: research team digs into your topic (20 min)",
+        "Team share-out: 30 seconds per topic (6 min)",
+        "Exit Ticket: one fact for tomorrow's article (2 min)"
       ],
-      "connections": "You've used SchoolAI and seen how it predicts an answer. Today we're honest about where that goes wrong \u2014 bias, wrong answers said confidently, over-relying on it. Tomorrow you turn all three days into your own opinion, in writing, on your site."
+      "connections": "Yesterday you learned to protect your own data. Today, in research teams, you dig into the bigger risks and benefits of AI as a technology. Tomorrow you take everything the class found and turn it into your own persuasive argument."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Predicting 2 dynamics \u2014 things that will happen during play \u2014 that your mechanics will create.",
+      "workingNow": "Predicting 2 dynamics — things that will happen during play — that your mechanics will create.",
       "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
       "smartGoal": "I can predict a dynamic that will emerge from my mechanics so that I can design toward the feeling I actually want.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 \u2014 Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely and explaining orally how an author uses language to support ideas.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
       "agenda": [
         "Log in (timed) (3 min)",
         "Quick overview: today's plan (2 min)",
@@ -33,15 +34,15 @@
         "You do: predict 2 dynamics your mechanics will create (18 min)",
         "Exit Ticket: one dynamic + why it happens (5 min)"
       ],
-      "connections": "You've named your mechanics and your aesthetic \u2014 the rules and the feeling. Dynamics is the bridge between them: what actually happens when someone plays. This is the hardest piece, and tomorrow you put all three together into your design plan."
+      "connections": "You've named your mechanics and your aesthetic — the rules and the feeling. Dynamics is the bridge between them: what actually happens when someone plays. This is the hardest piece, and tomorrow you put all three together into your design plan."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Predicting 2 dynamics \u2014 things that will happen during play \u2014 that your mechanics will create.",
+      "workingNow": "Predicting 2 dynamics — things that will happen during play — that your mechanics will create.",
       "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
       "smartGoal": "I can predict a dynamic that will emerge from my mechanics so that I can design toward the feeling I actually want.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 \u2014 Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely and explaining orally how an author uses language to support ideas.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
       "agenda": [
         "Log in (timed) (3 min)",
         "Quick overview: today's plan (2 min)",
@@ -50,7 +51,7 @@
         "You do: predict 2 dynamics your mechanics will create (18 min)",
         "Exit Ticket: one dynamic + why it happens (5 min)"
       ],
-      "connections": "You've named your mechanics and your aesthetic \u2014 the rules and the feeling. Dynamics is the bridge between them: what actually happens when someone plays. This is the hardest piece, and tomorrow you put all three together into your design plan."
+      "connections": "You've named your mechanics and your aesthetic — the rules and the feeling. Dynamics is the bridge between them: what actually happens when someone plays. This is the hardest piece, and tomorrow you put all three together into your design plan."
     }
   }
 }
