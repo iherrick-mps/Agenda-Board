@@ -1,1262 +1,1012 @@
 [
   {
-    "q": "In \"The San Franpsycho,\" who (or what) turned out to really be behind the monster?",
+    "q": "What usually helps calm Shaggy and Scooby down after being scared?",
     "options": [
-      "Prince Qasel Al-Famir and Mademoiselle Chantal",
-      "Officer Claphammer",
-      "Rutie Banez",
-      "Vincent Wong"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Farmed and Dangerous,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a Renaissance fair in Scotland",
-      "a farm",
-      "San Francisco",
-      "a future fair in Omaha"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"It's All Greek to Scooby,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Rama Yam (Spencer Johnson)",
-      "Curt and Connie Crunch",
-      "Prince Qasel Al-Famir and Mademoiselle Chantal",
-      "Susie Smythe"
+      "A song",
+      "A nap",
+      "A bath",
+      "A snack"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"A Scooby-Doo Halloween,\" where did Mystery Inc. travel to for this case?",
+    "q": "In almost every Scooby-Doo mystery, what does the \u201cmonster\u201d turn out to be?",
     "options": [
-      "a video game convention in Los Angeles",
-      "a ghost town in Quebec, Canada",
-      "Banning Junction",
-      "the island of Faja Manu"
+      "A real ghost",
+      "A person in a disguise",
+      "A real alien",
+      "A robot with no one controlling it"
     ],
-    "correctIndex": 2
+    "correctIndex": 1
   },
   {
-    "q": "In \"The Unnatural,\" where did Mystery Inc. travel to for this case?",
+    "q": "What's the most common way the villain finally gets caught?",
     "options": [
-      "New Orleans",
-      "a mini-golf course",
-      "a snowy mountain ski resort",
-      "a baseball stadium"
+      "They win a bet",
+      "They turn themselves in",
+      "They get struck by lightning",
+      "They fall for one of the gang's plans or traps"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Gentlemen, Start Your Monsters!,\" what creature was terrorizing everyone?",
+    "q": "Not counting Scooby, how many human friends make up the main gang?",
     "options": [
-      "The Skeleton Racer",
-      "Jeeves the House Robot",
-      "The Creepy Keeper",
-      "The Ghost of Rufus Raucous"
+      "Four",
+      "Five",
+      "Three",
+      "Two"
     ],
     "correctIndex": 0
   },
   {
-    "q": "In \"It's All Greek to Scooby,\" where did Mystery Inc. travel to for this case?",
+    "q": "Who is more likely to accidentally stumble onto a clue just by being hungry and looking for food?",
     "options": [
-      "Greece",
-      "Hong Kong",
-      "a video game convention in Los Angeles",
-      "Pompeii, Italy"
+      "Daphne and Velma",
+      "Fred and Daphne",
+      "Shaggy and Scooby",
+      "Velma and Fred"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What is the only reliable way to prove a \u201cmonster\u201d is really just a costume?",
+    "options": [
+      "Ask it nicely to stop",
+      "Call the news",
+      "Pull off its mask",
+      "Wait for it to get tired"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What can't Velma do without her glasses?",
+    "options": [
+      "Talk",
+      "Walk",
+      "See clearly",
+      "Hear"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What do you usually call a story where a group of friends solves spooky mysteries together?",
+    "options": [
+      "A romance",
+      "A documentary",
+      "A mystery story",
+      "A tragedy"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What's one thing that never actually turns out to be true in a Scooby-Doo mystery?",
+    "options": [
+      "That the monster has real magical powers",
+      "That there's a disguise involved",
+      "That someone had a hidden motive",
+      "That the gang finds clues"
     ],
     "correctIndex": 0
   },
   {
-    "q": "In \"Block-Long Hong Kong Terror,\" where did Mystery Inc. travel to for this case?",
+    "q": "Which member of the gang is a talking dog?",
     "options": [
-      "the Gainsville 500 car race",
-      "Hong Kong",
-      "the western town of Cyber Gulch",
-      "Greece"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Mummy Scares Best,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Curt and Connie Crunch",
-      "Jimmy and Cindy",
-      "Prince Qasel Al-Famir and Mademoiselle Chantal",
-      "Crawdad Mike"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Large Dragon at Large,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "on tour with the Mystery Kids",
-      "a Renaissance fair in Scotland",
-      "a beach in Australia",
-      "San Francisco"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"A Scooby-Doo Valentine,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Phylidia Flanders",
-      "Crunchy (Charles Granville)",
-      "J.C. Chasez",
-      "Mayor Snipper"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"A Scooby-Doo Halloween,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Phylidia Flanders",
-      "Verona Dempsey",
-      "Marcy",
-      "a video game come to life (not a person in a costume)"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"She Sees Sea Monsters by the Sea Shore,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Demon Farmer",
-      "The Motoshondu Sea Serpent",
-      "The Osomons",
-      "The Roller Ghoster"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Wrestle Maniacs,\" what creature was terrorizing everyone?",
-    "options": [
-      "Cold Steel and the Robot Bandits",
-      "The Menacing Metallic Clown",
-      "The Wakumi Bird",
-      "The Titanic Twist"
+      "Shaggy",
+      "Fred",
+      "Velma",
+      "Scooby-Doo"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Camp Comeoniwannascareya,\" what creature was terrorizing everyone?",
+    "q": "What is the name of the gang's van?",
     "options": [
-      "The Skeleton Racer",
-      "The Osomons",
-      "The Toxic Terror",
-      "The Possessed Mystery Machine"
+      "The Mystery Machine",
+      "The Ghost Wagon",
+      "The Spook Cruiser",
+      "The Monster Mobile"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "What kind of dog is Scooby-Doo?",
+    "options": [
+      "Great Dane",
+      "Beagle",
+      "Dalmatian",
+      "Bulldog"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "Which of these is NOT a member of the Mystery Inc. gang?",
+    "options": [
+      "Scrappy-Doo",
+      "Daphne",
+      "Fred",
+      "Velma"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "What is Fred's role within the gang most often described as?",
+    "options": [
+      "The one who drives away when scared",
+      "The one who never talks",
+      "The leader who plans the traps",
+      "The one who's always scared"
     ],
     "correctIndex": 2
   },
   {
-    "q": "In \"Fright House of a Lighthouse,\" what creature was terrorizing everyone?",
+    "q": "What is the name the gang uses for their detective group?",
     "options": [
-      "The Headless Snowman",
-      "The Snow Creature",
-      "The Mummy of Scamses XV",
-      "The Creepy Keeper"
+      "The Clue Club",
+      "Monster Hunters Inc.",
+      "Mystery, Inc.",
+      "The Ghost Squad"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What is Fred's last name?",
+    "options": [
+      "Blake",
+      "Dinkley",
+      "Jones",
+      "Rogers"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What is the usual REAL reason someone dresses up as a monster in a Scooby-Doo mystery?",
+    "options": [
+      "To scare people away from money or treasure",
+      "To make new friends",
+      "To audition for a movie",
+      "To win a costume contest"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "In classic Scooby-Doo humor, what do Fred's traps usually end up doing?",
+    "options": [
+      "Never getting built",
+      "Working perfectly every time",
+      "Scaring Fred himself",
+      "Catching the wrong person"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Ready to Scare,\" where did Mystery Inc. travel to for this case?",
+    "q": "What is a common way a Scooby-Doo chase scene ends?",
     "options": [
-      "a beach in Australia",
-      "Paris, at Notre Dame",
-      "a mini-golf course",
-      "Costa Rica"
+      "The monster runs into something and gets caught or unmasked by accident",
+      "The monster wins and the gang gives up",
+      "The gang calls the police to finish it",
+      "The chase is never resolved"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "What's a common reaction from the gang right after they're scared by the monster?",
+    "options": [
+      "They call it a day and go home",
+      "They scream and run",
+      "They fall asleep",
+      "They laugh it off calmly"
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"Go West, Young Scoob,\" who (or what) turned out to really be behind the monster?",
+    "q": "Which member of the gang usually insists on getting proof before believing something is supernatural?",
     "options": [
-      "Verona Dempsey",
-      "Officer Claphammer",
-      "Sheriff Lawman",
-      "Curt and Connie Crunch"
+      "Velma",
+      "Shaggy",
+      "Scooby-Doo",
+      "Fred"
     ],
-    "correctIndex": 2
+    "correctIndex": 0
   },
   {
-    "q": "In \"Safari, So Goodi!,\" who (or what) turned out to really be behind the monster?",
+    "q": "What snack is Scooby-Doo most famous for loving?",
     "options": [
-      "Zeke Zillion",
-      "Steve and Stu Fortescu",
-      "Mayor Snipper",
-      "Honey and Henry Hunsecker"
+      "Scooby Snacks",
+      "Ice cream",
+      "Pizza",
+      "Popcorn"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "What is Velma's last name?",
+    "options": [
+      "Rogers",
+      "Blake",
+      "Jones",
+      "Dinkley"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Safari, So Goodi!,\" what creature was terrorizing everyone?",
+    "q": "What colors make up Velma's outfit?",
     "options": [
-      "The Frozen Fiend",
-      "The Toxic Terror",
-      "Jeeves the House Robot",
-      "The Jungle Demons"
+      "Blue and white",
+      "Pink and yellow",
+      "Black and gray",
+      "Orange and red"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"3-D Struction,\" what creature was terrorizing everyone?",
+    "q": "What color is Daphne's hair?",
     "options": [
-      "The Baseball Specter",
-      "The Toxic Terror",
-      "The Dinosaur Spirit",
-      "The Menacing Metallic Clown"
+      "Black",
+      "Red",
+      "Brown",
+      "Blonde"
     ],
-    "correctIndex": 2
+    "correctIndex": 1
   },
   {
-    "q": "In \"Farmed and Dangerous,\" who (or what) turned out to really be behind the monster?",
+    "q": "What do Shaggy and Scooby usually do instead of confronting a monster head-on?",
     "options": [
-      "Neville Poppenbacher (Farmer P)",
-      "Jamison Steven Ripley",
-      "Meadow",
-      "Gibby Norton"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Uncle Scooby and Antarctica,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Finned Fiend",
-      "The Centaur",
-      "The Ghost of Hank Banning",
-      "The Demon Farmer"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Mummy Scares Best,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a Hollywood movie studio",
-      "Fort Knox",
-      "on tour with the Mystery Kids",
-      "Egypt"
+      "Negotiate",
+      "Take a photo",
+      "Fight",
+      "Hide"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Diamonds Are a Ghoul's Best Friend,\" who (or what) turned out to really be behind the monster?",
+    "q": "What does Fred always wear around his neck?",
     "options": [
-      "Luis Cepeda and Heather Lane",
-      "Janet Lawrence",
-      "Galina Korzhakov",
-      "Susan Dinwiddie"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Gold Paw,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Demon Farmer",
-      "The Snow Creature",
-      "The Gold Monster",
-      "The Menacing Metallic Clown"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Fright House of a Lighthouse,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Vincent Wong",
-      "J.C. Chasez",
-      "Galina Korzhakov",
-      "Verona Dempsey"
+      "A bowtie",
+      "A scarf",
+      "A necklace",
+      "An ascot"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"She Sees Sea Monsters by the Sea Shore,\" who (or what) turned out to really be behind the monster?",
+    "q": "How do Shaggy and Scooby usually react when they first see the \u201cmonster\u201d?",
     "options": [
-      "Vincent Wong",
-      "Officer Claphammer",
-      "Jamison Steven Ripley",
-      "Crunchy (Charles Granville)"
+      "They ignore it",
+      "They invite it to lunch",
+      "They attack it",
+      "They get scared and run away"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Reef Grief!,\" who (or what) turned out to really be behind the monster?",
+    "q": "Which member of the gang is known for loving fashion?",
     "options": [
-      "Rama Yam (Spencer Johnson)",
-      "Susie Smythe",
-      "Rutie Banez",
-      "Mayor Snipper"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Camp Comeoniwannascareya,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "Paris, at Notre Dame",
-      "the Scooby Snack Factory",
-      "Camp Kichikaha",
-      "on tour with the Mystery Kids"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Ready to Scare,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Rutie Banez",
-      "Guy L'Avorton and Danika LeBlake",
-      "Monroe Hopper",
-      "Jamison Steven Ripley"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Gentlemen, Start Your Monsters!,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Curt and Connie Crunch",
-      "Rutie Banez",
-      "Jimmy and Cindy",
-      "Luis Cepeda and Heather Lane"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Riva Ras Regas,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "Las Vegas",
-      "Camp Kichikaha",
-      "a mini-golf course",
-      "a future fair in Omaha"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Wrestle Maniacs,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a ghost town in Quebec, Canada",
-      "a wrestling arena",
-      "Banning Junction",
-      "a Renaissance fair in Scotland"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Big Appetite in Little Tokyo,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Gargoyle",
-      "The 30-Foot Shaggy",
-      "The Titanic Twist",
-      "The Centaur"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Lights! Camera! Mayhem!,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Vincent Wong",
-      "Susan Dinwiddie",
-      "Gibby Norton",
-      "Neville Poppenbacher (Farmer P)"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Gold Paw,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a lighthouse in Wisconsin",
-      "Costa Rica",
-      "a wrestling arena",
-      "Fort Knox"
+      "Fred",
+      "Velma",
+      "Shaggy",
+      "Daphne"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Simple Plan and the Invisible Madman,\" who (or what) turned out to really be behind the monster?",
+    "q": "What's one reason the gang is good at solving mysteries?",
     "options": [
-      "Professor Pomfrit",
-      "Marcy",
-      "Zeke Zillion",
-      "Penelope Bailey"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Recipe for Disaster,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Demon Farmer",
-      "The Menacing Metallic Clown",
-      "The Scooby Snack Monster",
-      "The Wakumi Bird"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Gold Paw,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Drill Sergeant Payne",
-      "Mayor Snipper",
-      "Curt and Connie Crunch",
-      "Colonel Henry Thornwald"
+      "They work together and each contribute a different skill",
+      "They hire outside detectives to do it for them",
+      "They already know the answer before they arrive",
+      "They have super powers"
     ],
     "correctIndex": 0
   },
   {
-    "q": "In \"The Unnatural,\" who (or what) turned out to really be behind the monster?",
+    "q": "Which member of the gang wears glasses?",
     "options": [
-      "J.C. Chasez",
-      "Gibby Norton",
-      "Steve and Stu Fortescu",
-      "Bob Taylor"
+      "Velma",
+      "Fred",
+      "Shaggy",
+      "Daphne"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "Which character says \u201cJeepers!\u201d when surprised?",
+    "options": [
+      "Fred",
+      "Velma",
+      "Daphne",
+      "Shaggy"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What is Scooby-Doo's fur pattern usually described as?",
+    "options": [
+      "Brown with black spots",
+      "All black",
+      "All white",
+      "Orange with stripes"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "What's a common way the \u201cmonster\u201d tries to scare people off in these mysteries?",
+    "options": [
+      "Offering people money to leave",
+      "Strange noises, ghostly sightings, or wrecking property at night",
+      "Sending polite letters",
+      "Throwing parties"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "What usually happens right at the start of an episode, before the mystery kicks off?",
+    "options": [
+      "The gang is already fighting the monster",
+      "The gang is watching a trial on TV",
+      "The gang arrives somewhere new or hears local rumors of something spooky",
+      "The gang is already in court testifying"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What do the gang usually do if the Mystery Machine breaks down during a mystery?",
+    "options": [
+      "Build a new van from scratch",
+      "Investigate on foot until it's fixed",
+      "Abandon the mystery completely",
+      "Call a helicopter"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "Which member of the gang has red hair?",
+    "options": [
+      "Fred",
+      "Velma",
+      "Shaggy",
+      "Daphne"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Gentlemen, Start Your Monsters!,\" where did Mystery Inc. travel to for this case?",
+    "q": "What do you call it when the gang realizes a \u201cghost\u201d was actually caused by wires, projectors, or hidden tricks?",
     "options": [
-      "the Gainsville 500 car race",
-      "a cross-country race in Mexico",
-      "a baseball stadium",
-      "a ghost town in Quebec, Canada"
+      "Signing a contract",
+      "Exposing the hoax",
+      "Winning the lottery",
+      "Casting a spell"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "What might Daphne say when she's surprised or annoyed?",
+    "options": [
+      "\"Zoinks!\"",
+      "\"Jeepers!\"",
+      "\"Rooby-rooby-roo!\"",
+      "\"Jinkies!\""
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "What do the gang usually say right before searching a spooky place separately?",
+    "options": [
+      "\"Let's split up, gang!\"",
+      "\"Let's call for help!\"",
+      "\"Let's call the police!\"",
+      "\"Let's go home!\""
     ],
     "correctIndex": 0
   },
   {
-    "q": "In \"The Fast and the Wormious,\" where did Mystery Inc. travel to for this case?",
+    "q": "Which member of the gang is considered \u201cthe brains\u201d of the group?",
     "options": [
-      "Egypt",
-      "San Francisco",
-      "a cross-country race in Mexico",
-      "a future fair in Omaha"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Diamonds Are a Ghoul's Best Friend,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a small town that had banned Christmas",
-      "a hockey stadium in Russia",
-      "Egypt",
-      "a beach in Australia"
+      "Daphne",
+      "Velma",
+      "Shaggy",
+      "Fred"
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"A Terrifying Round with a Menacing Metallic Clown,\" where did Mystery Inc. travel to for this case?",
+    "q": "What is the gang's main goal in every episode?",
     "options": [
-      "Banning Junction",
-      "a mini-golf course",
-      "Hong Kong",
-      "a Renaissance fair in Scotland"
+      "Win a prize",
+      "Solve the mystery and reveal the truth",
+      "Find treasure to keep for themselves",
+      "Make a new friend"
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"A Scooby-Doo Christmas,\" where did Mystery Inc. travel to for this case?",
+    "q": "What genre best describes \u201cWhat's New, Scooby-Doo?\u201d",
     "options": [
-      "Camp Kichikaha",
-      "a Hollywood movie studio",
-      "a small town that had banned Christmas",
-      "a future fair in Omaha"
+      "Historical documentary",
+      "Musical romance",
+      "Mystery-comedy",
+      "Science fiction drama"
     ],
     "correctIndex": 2
   },
   {
-    "q": "In \"The Vampire Strikes Back,\" who (or what) turned out to really be behind the monster?",
+    "q": "What do Fred, Daphne, Velma, and Shaggy have in common, job-wise?",
     "options": [
-      "Terry",
-      "Crunchy (Charles Granville)",
-      "Gibby Norton",
-      "Steve and Stu Fortescu"
+      "They're circus performers",
+      "They're TV news anchors",
+      "They're amateur teenage detectives",
+      "They're professional police officers"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What do the gang usually search a spooky location for?",
+    "options": [
+      "Snacks",
+      "Clues",
+      "Autographs",
+      "Souvenirs"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "Who usually drives the Mystery Machine?",
+    "options": [
+      "Shaggy",
+      "Velma",
+      "Daphne",
+      "Fred"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"The Fast and the Wormious,\" who (or what) turned out to really be behind the monster?",
+    "q": "Which of these is NOT a real member of the gang?",
     "options": [
-      "Susie Smythe",
-      "Gibby Norton",
-      "Rama Yam (Spencer Johnson)",
-      "Phylidia Flanders"
+      "Velma",
+      "Fred",
+      "Wanda",
+      "Daphne"
     ],
-    "correctIndex": 1
+    "correctIndex": 2
   },
   {
-    "q": "In \"Mummy Scares Best,\" what creature was terrorizing everyone?",
+    "q": "What is Scooby-Doo's famous catchphrase?",
     "options": [
-      "The Ghosts of the Leland Brothers",
-      "The Ghost of Hank Banning",
-      "The Baseball Specter",
-      "The Mummy of Scamses XV"
+      "\"Scooby-Dooby-Doo!\"",
+      "\"Yabba dabba doo!\"",
+      "\"To infinity and beyond!\"",
+      "\"Cowabunga!\""
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "What do you call the big moment when the gang reveals who was really behind the mask?",
+    "options": [
+      "The finale dance",
+      "The intermission",
+      "The unmasking",
+      "The credits"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What do the \u201cmonsters\u201d in the show usually NOT actually have?",
+    "options": [
+      "A motive",
+      "A disguise",
+      "A hideout",
+      "Real supernatural powers"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"High-Tech House of Horrors,\" who (or what) turned out to really be behind the monster?",
+    "q": "What is a common setting for a Scooby-Doo mystery?",
     "options": [
-      "Bob Taylor",
-      "Susan Dinwiddie",
-      "Professor Ostwald's house, Shari",
-      "Mayor Snipper"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Farmed and Dangerous,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Ghost of Rufus Raucous",
-      "The Centaur",
-      "The Demon Farmer",
-      "The Motoshondu Sea Serpent"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"There's No Creature Like Snow Creature,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "Thrill Ride Park",
-      "Cape Canaveral, Florida (NASA)",
-      "a snowy mountain ski resort",
-      "New Orleans"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Roller Ghoster Ride,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Glasburgh Dragon",
-      "The Mummy of Scamses XV",
-      "The Roller Ghoster",
-      "The Headless Snowman"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"The San Franpsycho,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Mummy of Scamses XV",
-      "The San Franpsycho",
-      "The Roller Ghoster",
-      "The Scooby Snack Monster"
+      "A hospital",
+      "A haunted house or spooky old building",
+      "A courtroom",
+      "A modern office building"
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"Wrestle Maniacs,\" who (or what) turned out to really be behind the monster?",
+    "q": "Which of these is NOT one of Scooby-Doo's own catchphrases?",
     "options": [
-      "Jimmy and Cindy",
-      "Curt and Connie Crunch",
-      "Jamison Steven Ripley",
-      "Luis Cepeda and Heather Lane"
+      "\"Scooby-Dooby-Doo!\"",
+      "\"To infinity and beyond!\"",
+      "\"Ruh-roh!\"",
+      "\"Rooby-rooby-roo!\""
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"Big Appetite in Little Tokyo,\" where did Mystery Inc. travel to for this case?",
+    "q": "What does Scooby-Doo famously say instead of \u201cuh-oh\u201d?",
     "options": [
-      "Banning Junction",
-      "a lighthouse in Wisconsin",
-      "Tokyo, Japan",
-      "Camp Kichikaha"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"New Mexico, Old Monster,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Wakumi Bird",
-      "The Ghost of Hank Banning",
-      "The Fortescu Vampire",
-      "The Baseball Specter"
+      "\"Ruh-roh!\"",
+      "\"Uh-oh!\"",
+      "\"Zoinks!\"",
+      "\"Yikes!\""
     ],
     "correctIndex": 0
   },
   {
-    "q": "In \"E-Scream,\" who (or what) turned out to really be behind the monster?",
+    "q": "What is the main color of the Mystery Machine?",
     "options": [
-      "J.C. Chasez",
-      "Wu and the Acrobats",
-      "a video game come to life (not a person in a costume)",
-      "Professor Ostwald's house, Shari"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"There's No Creature Like Snow Creature,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Osomons",
-      "The Alien",
-      "The Snow Creature",
-      "The Motoshondu Sea Serpent"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"The San Franpsycho,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a ghost town in Quebec, Canada",
-      "Egypt",
-      "San Francisco",
-      "Greece"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"3-D Struction,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Luis Cepeda and Heather Lane",
-      "Avalanche Anderson",
-      "Steve and Stu Fortescu",
-      "Jimmy and Cindy"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Reef Grief!,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a cross-country race in Mexico",
-      "Banning Junction",
-      "a beach in Australia",
-      "a future fair in Omaha"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Big Scare in the Big Easy,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "New Orleans",
-      "the Scooby Snack Factory",
-      "a Renaissance fair in Scotland",
-      "a Hollywood movie studio"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Toy Scary Boo,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Living Toys",
-      "The Cat Creature",
-      "The Wakumi Bird",
-      "The Glasburgh Dragon"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Roller Ghoster Ride,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "Thrill Ride Park",
-      "Fort Knox",
-      "on tour with the Mystery Kids",
-      "Antarctica"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Fright House of a Lighthouse,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a lighthouse in Wisconsin",
-      "a safari in Africa",
-      "Lovers Lane",
-      "the island of Faja Manu"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Lights! Camera! Mayhem!,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Ghosts of the Leland Brothers",
-      "The Osomons",
-      "The Mummy of Scamses XV",
-      "The Faceless Phantom"
+      "Red",
+      "Yellow",
+      "Blue",
+      "Green"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"A Scooby-Doo Christmas,\" what creature was terrorizing everyone?",
+    "q": "What's a lesson the show often teaches through its stories?",
     "options": [
-      "Gusano Grande",
-      "The Ghosts of the Leland Brothers",
-      "The Hong Kong Dragon",
-      "The Headless Snowman"
+      "Ghosts are always real",
+      "Don't judge things by how scary they look \u2014 look for the truth",
+      "Running away solves every problem",
+      "Money matters more than friendship"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "The gang's hometown is sometimes nicknamed what, across the Scooby-Doo franchise?",
+    "options": [
+      "Spooky Falls",
+      "Crystal Cove",
+      "Coolsville",
+      "Mystery Bay"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What kind of \u201cjob\u201d does Mystery Inc. do?",
+    "options": [
+      "Run a moving company",
+      "Run a pizza restaurant",
+      "Amateur mystery-solving",
+      "Run a pet store"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "Which member of the gang wears a green shirt?",
+    "options": [
+      "Velma",
+      "Shaggy",
+      "Fred",
+      "Scooby-Doo"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "Which character says \u201cZoinks!\u201d when startled?",
+    "options": [
+      "Daphne",
+      "Velma",
+      "Shaggy",
+      "Fred"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What do you usually need to explore a dark, spooky place in a Scooby-Doo mystery?",
+    "options": [
+      "A megaphone",
+      "A telescope",
+      "A fishing rod",
+      "A flashlight"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"She Sees Sea Monsters by the Sea Shore,\" where did Mystery Inc. travel to for this case?",
+    "q": "Which member of the gang is usually shown closely examining clues?",
     "options": [
-      "a safari in Africa",
-      "the island of Faja Manu",
-      "Paris, at Notre Dame",
-      "Costa Rica"
+      "Velma",
+      "Shaggy",
+      "Daphne",
+      "Fred"
     ],
-    "correctIndex": 1
+    "correctIndex": 0
   },
   {
-    "q": "In \"It's Mean, It's Green, It's the Mystery Machine,\" what creature was terrorizing everyone?",
+    "q": "What is Shaggy's last name?",
     "options": [
-      "The Osomons",
-      "The Possessed Mystery Machine",
-      "The Gold Monster",
-      "The Ghost of Rufus Raucous"
+      "Jones",
+      "Dinkley",
+      "Rogers",
+      "Blake"
     ],
-    "correctIndex": 1
+    "correctIndex": 2
   },
   {
-    "q": "In \"Space Ape at the Cape,\" who (or what) turned out to really be behind the monster?",
+    "q": "What network originally aired \u201cWhat's New, Scooby-Doo?\u201d",
     "options": [
-      "J.C. Chasez",
-      "Mayor Snipper",
-      "Crawdad Mike",
-      "Janet Lawrence"
+      "Nickelodeon",
+      "Disney Channel",
+      "PBS Kids",
+      "Kids' WB"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"The Unnatural,\" what creature was terrorizing everyone?",
+    "q": "What color pants does Fred usually wear?",
     "options": [
-      "The Menacing Metallic Clown",
-      "The Baseball Specter",
-      "Cold Steel and the Robot Bandits",
-      "The Zombie Gladiator"
+      "Brown",
+      "White",
+      "Green",
+      "Black"
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"The Vampire Strikes Back,\" what creature was terrorizing everyone?",
+    "q": "What does the gang do first when strange things start happening somewhere new?",
     "options": [
-      "a monster made of coral",
-      "The Menacing Metallic Clown",
-      "The Cat Creature",
-      "The Fortescu Vampire"
+      "Ignore it and go to sleep",
+      "Immediately call the villain's name",
+      "Start investigating and looking for clues",
+      "Call the mystery off and go home"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What does Velma wear that she's famous for?",
+    "options": [
+      "A scarf",
+      "Glasses",
+      "A mask",
+      "A hat"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "In the classic theme song, what do people need Scooby's help doing?",
+    "options": [
+      "Solving a mystery",
+      "Learning to dance",
+      "Baking a cake",
+      "Winning a race"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "How many members make up the core Mystery Inc. gang, including Scooby?",
+    "options": [
+      "Four",
+      "Six",
+      "Five",
+      "Three"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "Which member of the gang comes from a wealthy family?",
+    "options": [
+      "Daphne",
+      "Shaggy",
+      "Scooby-Doo",
+      "Fred"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "In the classic theme song, what question follows \u201cScooby-Dooby-Doo\u201d?",
+    "options": [
+      "\"Who are you?\"",
+      "\"Where are you?\"",
+      "\"What's new?\"",
+      "\"How are you?\""
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "Which member of the gang is most likely to say a mystery has a logical explanation, not a supernatural one?",
+    "options": [
+      "Scooby-Doo",
+      "Daphne",
+      "Shaggy",
+      "Velma"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"A Scooby-Doo Valentine,\" where did Mystery Inc. travel to for this case?",
+    "q": "What do you usually see the villain wearing right before they're unmasked?",
     "options": [
-      "Lovers Lane",
-      "a baseball stadium",
-      "a small town that had banned Christmas",
-      "on tour with the Mystery Kids"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"A Terrifying Round with a Menacing Metallic Clown,\" what creature was terrorizing everyone?",
-    "options": [
-      "Cold Steel and the Robot Bandits",
-      "The Menacing Metallic Clown",
-      "The Hong Kong Dragon",
-      "The Baseball Specter"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"A Scooby-Doo Halloween,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Osomons",
-      "The Ghost of Hank Banning",
-      "The Baseball Specter",
-      "Gusano Grande"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"The Fast and the Wormious,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Hong Kong Dragon",
-      "Gusano Grande",
-      "The Jungle Demons",
-      "The Wakumi Bird"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Simple Plan and the Invisible Madman,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Alien",
-      "The Titanic Twist",
-      "The Invisible Madman",
-      "The Finned Fiend"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"A Scooby-Doo Christmas,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Professor Higginson",
-      "Crunchy (Charles Granville)",
-      "Mayor Snipper",
-      "Susan Dinwiddie"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"New Mexico, Old Monster,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "J.C. Chasez",
-      "Colonel Henry Thornwald",
-      "Sheriff Lawman",
-      "Bob Taylor"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Uncle Scooby and Antarctica,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Monroe Hopper",
-      "Gray",
-      "Crunchy (Charles Granville)",
-      "Ugo DiRinaldi and Captain Guzman"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Uncle Scooby and Antarctica,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "Hong Kong",
-      "Antarctica",
-      "a Hollywood movie studio",
-      "a beach in Australia"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"High-Tech House of Horrors,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a Renaissance fair in Scotland",
-      "on tour with the Mystery Kids",
-      "a future fair in Omaha",
-      "Egypt"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Recipe for Disaster,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a ghost town in Quebec, Canada",
-      "the Scooby Snack Factory",
-      "Fort Knox",
-      "a lighthouse in Wisconsin"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Riva Ras Regas,\" what creature was terrorizing everyone?",
-    "options": [
-      "The 30-Foot Shaggy",
-      "The Fortescu Vampire",
-      "The Ghost of Rufus Raucous",
-      "The Possessed Mystery Machine"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Toy Scary Boo,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Gibby Norton",
-      "Prince Qasel Al-Famir and Mademoiselle Chantal",
-      "Honey and Henry Hunsecker",
-      "Officer Claphammer"
+      "A police uniform",
+      "A wedding dress",
+      "A space suit",
+      "A costume or mask"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Big Scare in the Big Easy,\" who (or what) turned out to really be behind the monster?",
+    "q": "What do you usually call the four human members of Mystery Inc., as a group?",
     "options": [
-      "Crawdad Mike",
-      "Honey and Henry Hunsecker",
-      "Monroe Hopper",
-      "Steve and Stu Fortescu"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Pompeii and Circumstance,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "Thrill Ride Park",
-      "a reservation in New Mexico",
-      "Pompeii, Italy",
-      "New Orleans"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Large Dragon at Large,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Zombie Gladiator",
-      "The Finned Fiend",
-      "The Glasburgh Dragon",
-      "The Hong Kong Dragon"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"E-Scream,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "Tokyo, Japan",
-      "a video game convention in Los Angeles",
-      "the Scooby Snack Factory",
-      "a castle in Transylvania"
+      "The committee",
+      "The gang",
+      "The board",
+      "The council"
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"Roller Ghoster Ride,\" who (or what) turned out to really be behind the monster?",
+    "q": "What's typically true about the \u201cghosts\u201d and \u201cmonsters\u201d the gang meets?",
     "options": [
-      "Terry",
-      "a video game come to life (not a person in a costume)",
-      "Officer Claphammer",
-      "Crunchy (Charles Granville)"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Diamonds Are a Ghoul's Best Friend,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Dinosaur Spirit",
-      "The Menacing Metallic Clown",
-      "The Evil Mystery Inc. Clones",
-      "The Frozen Fiend"
+      "They're always animals",
+      "They're always robots",
+      "They're always real",
+      "They're almost never real"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Go West, Young Scoob,\" what creature was terrorizing everyone?",
+    "q": "What best describes how the gang usually feels right before unmasking the villain?",
     "options": [
-      "Cold Steel and the Robot Bandits",
-      "The Creepy Keeper",
-      "a monster made of coral",
-      "The Demon Farmer"
+      "Confused and unsure of anything",
+      "Angry at each other",
+      "Bored and ready to leave",
+      "Confident \u2014 they've figured it out"
     ],
-    "correctIndex": 0
+    "correctIndex": 3
   },
   {
-    "q": "In \"New Mexico, Old Monster,\" where did Mystery Inc. travel to for this case?",
+    "q": "What do frustrated villains often call the gang after getting caught?",
     "options": [
-      "Las Vegas",
-      "a farm",
-      "a reservation in New Mexico",
-      "a castle in Transylvania"
+      "\"Brave heroes\"",
+      "\"Lucky guessers\"",
+      "\"Meddling kids\"",
+      "\"Silly children\""
     ],
     "correctIndex": 2
   },
   {
-    "q": "In \"Camp Comeoniwannascareya,\" who (or what) turned out to really be behind the monster?",
+    "q": "Which member of the gang is nicknamed \u201cDanger-Prone\u201d because she often gets captured?",
     "options": [
-      "Wu and the Acrobats",
-      "Honey and Henry Hunsecker",
-      "Drill Sergeant Payne",
-      "Gray"
+      "Fred",
+      "Velma",
+      "Scooby-Doo",
+      "Daphne"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Big Scare in the Big Easy,\" what creature was terrorizing everyone?",
+    "q": "Which character says \u201cJinkies!\u201d when she finds a clue?",
     "options": [
-      "The Ghost of Rufus Raucous",
-      "The Mummy of Scamses XV",
-      "The Ghosts of the Leland Brothers",
-      "The Alien"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Block-Long Hong Kong Terror,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Wu and the Acrobats",
-      "Professor Higginson",
-      "Vincent Wong",
-      "Susie Smythe"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"High-Tech House of Horrors,\" what creature was terrorizing everyone?",
-    "options": [
-      "The San Franpsycho",
-      "The Possessed Mystery Machine",
-      "The Evil Mystery Inc. Clones",
-      "Jeeves the House Robot"
+      "Fred",
+      "Daphne",
+      "Shaggy",
+      "Velma"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"Space Ape at the Cape,\" where did Mystery Inc. travel to for this case?",
+    "q": "Which member of the gang is most often shown carrying useful gadgets or tools for investigating?",
     "options": [
-      "Camp Kichikaha",
-      "Cape Canaveral, Florida (NASA)",
-      "a video game convention in Los Angeles",
-      "Banning Junction"
+      "Shaggy",
+      "Velma",
+      "Daphne",
+      "Scooby-Doo"
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"It's Mean, It's Green, It's the Mystery Machine,\" where did Mystery Inc. travel to for this case?",
+    "q": "What do the gang usually find hidden behind a painting or bookshelf in haunted mansions?",
     "options": [
-      "Egypt",
-      "New Orleans",
-      "San Francisco",
-      "on tour with the Mystery Kids"
-    ],
-    "correctIndex": 3
-  },
-  {
-    "q": "In \"A Terrifying Round with a Menacing Metallic Clown,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Drill Sergeant Payne",
-      "Officer Claphammer",
-      "Mayor Snipper",
-      "Honey and Henry Hunsecker"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Toy Scary Boo,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "Egypt",
-      "Camp Kichikaha",
-      "a toy store",
-      "the Gainsville 500 car race"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Reef Grief!,\" what creature was terrorizing everyone?",
-    "options": [
-      "a monster made of coral",
-      "The Ghost of Hank Banning",
-      "The Finned Fiend",
-      "The Mummy of Scamses XV"
+      "A secret passage",
+      "A swimming pool",
+      "A trapdoor to nowhere",
+      "A giant cake"
     ],
     "correctIndex": 0
   },
   {
-    "q": "In \"Safari, So Goodi!,\" where did Mystery Inc. travel to for this case?",
+    "q": "Which character says \u201cRuh-roh!\u201d instead of \u201cuh-oh\u201d?",
     "options": [
-      "a Hollywood movie studio",
-      "a safari in Africa",
-      "a snowy mountain ski resort",
-      "Lovers Lane"
+      "Scooby-Doo",
+      "Velma",
+      "Fred",
+      "Shaggy"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "How would you best describe the overall tone of the show?",
+    "options": [
+      "Serious and tragic",
+      "Silly and family-friendly",
+      "Purely educational",
+      "Dark and violent"
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"Big Appetite in Little Tokyo,\" who (or what) turned out to really be behind the monster?",
+    "q": "What kind of exciting scene happens near the end of almost every episode, often set to music?",
     "options": [
-      "Professor Pomfrit",
-      "Monroe Hopper",
-      "Officer Claphammer",
-      "Avalanche Anderson"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"The Vampire Strikes Back,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a castle in Transylvania",
-      "Fort Knox",
-      "Banning Junction",
-      "a future fair in Omaha"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Homeward Hound,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Janet Lawrence",
-      "Meadow",
-      "Jamison Steven Ripley",
-      "Mayor Snipper"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Homeward Hound,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Toxic Terror",
-      "The Creepy Keeper",
-      "The Snow Creature",
-      "The Cat Creature"
-    ],
-    "correctIndex": 3
-  },
-  {
-    "q": "In \"Pompeii and Circumstance,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Roller Ghoster",
-      "The Centaur",
-      "The Baseball Specter",
-      "The Zombie Gladiator"
-    ],
-    "correctIndex": 3
-  },
-  {
-    "q": "In \"Large Dragon at Large,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Jamison Steven Ripley",
-      "Galina Korzhakov",
-      "Mayor Snipper",
-      "Avalanche Anderson"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"There's No Creature Like Snow Creature,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Mayor Snipper",
-      "Professor Higginson",
-      "Honey and Henry Hunsecker",
-      "Avalanche Anderson"
-    ],
-    "correctIndex": 3
-  },
-  {
-    "q": "In \"It's Mean, It's Green, It's the Mystery Machine,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Vincent Wong",
-      "Susan Dinwiddie",
-      "Monroe Hopper",
-      "J.C. Chasez"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Homeward Hound,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "Banning Junction",
-      "a Renaissance fair in Scotland",
-      "Cape Canaveral, Florida (NASA)",
-      "a dog show"
-    ],
-    "correctIndex": 3
-  },
-  {
-    "q": "In \"Ready to Scare,\" what creature was terrorizing everyone?",
-    "options": [
-      "The 30-Foot Shaggy",
-      "The Gargoyle",
-      "The Titanic Twist",
-      "Jeeves the House Robot"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "q": "In \"Block-Long Hong Kong Terror,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Hong Kong Dragon",
-      "The Titanic Twist",
-      "The Centaur",
-      "The Roller Ghoster"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"It's All Greek to Scooby,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Zombie Gladiator",
-      "The 30-Foot Shaggy",
-      "The Centaur",
-      "The Ghost of Hank Banning"
+      "A cooking contest",
+      "A dance number",
+      "A chase scene",
+      "A courtroom trial"
     ],
     "correctIndex": 2
   },
   {
-    "q": "In \"E-Scream,\" what creature was terrorizing everyone?",
+    "q": "What color shirt does Shaggy usually wear?",
     "options": [
-      "The Frozen Fiend",
-      "The Jungle Demons",
-      "The Osomons",
-      "The Cat Creature"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Go West, Young Scoob,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "the western town of Cyber Gulch",
-      "Paris, at Notre Dame",
-      "a video game convention in Los Angeles",
-      "a hockey stadium in Russia"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"Pompeii and Circumstance,\" who (or what) turned out to really be behind the monster?",
-    "options": [
-      "Penelope Bailey",
-      "Ugo DiRinaldi and Captain Guzman",
-      "Verona Dempsey",
-      "Susie Smythe"
+      "Red",
+      "Green",
+      "Blue",
+      "Purple"
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"Recipe for Disaster,\" who (or what) turned out to really be behind the monster?",
+    "q": "Which two members of the gang are often paired up together while investigating?",
     "options": [
-      "Gibby Norton",
-      "Jimmy and Cindy",
-      "Penelope Bailey",
-      "Vincent Wong"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Space Ape at the Cape,\" what creature was terrorizing everyone?",
-    "options": [
-      "The Alien",
-      "The Jungle Demons",
-      "The Roller Ghoster",
-      "The Finned Fiend"
-    ],
-    "correctIndex": 0
-  },
-  {
-    "q": "In \"3-D Struction,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a castle in Transylvania",
-      "Costa Rica",
-      "a toy store",
-      "a ghost town in Quebec, Canada"
+      "Scooby and Daphne",
+      "Fred and Daphne",
+      "Fred and Velma",
+      "Shaggy and Velma"
     ],
     "correctIndex": 1
   },
   {
-    "q": "In \"Lights! Camera! Mayhem!,\" where did Mystery Inc. travel to for this case?",
+    "q": "In mystery stories like Scooby-Doo, what's the term for a suspicious clue or character that turns out to be innocent?",
     "options": [
-      "a mini-golf course",
-      "Tokyo, Japan",
-      "a Hollywood movie studio",
-      "the island of Faja Manu"
+      "A red herring",
+      "A monologue",
+      "A cliffhanger",
+      "A plot hole"
     ],
-    "correctIndex": 2
+    "correctIndex": 0
   },
   {
-    "q": "In \"Riva Ras Regas,\" who (or what) turned out to really be behind the monster?",
+    "q": "Which member of the gang is usually seen as the leader?",
     "options": [
-      "Colonel Henry Thornwald",
-      "Officer Claphammer",
-      "Phylidia Flanders",
-      "J.C. Chasez"
-    ],
-    "correctIndex": 2
-  },
-  {
-    "q": "In \"Simple Plan and the Invisible Madman,\" where did Mystery Inc. travel to for this case?",
-    "options": [
-      "a future fair in Omaha",
-      "San Francisco",
-      "a reservation in New Mexico",
-      "a ghost town in Quebec, Canada"
+      "Velma",
+      "Shaggy",
+      "Scooby-Doo",
+      "Fred"
     ],
     "correctIndex": 3
   },
   {
-    "q": "In \"A Scooby-Doo Valentine,\" what creature was terrorizing everyone?",
+    "q": "Who is Scooby-Doo's best human friend?",
     "options": [
-      "The Evil Mystery Inc. Clones",
-      "The Mummy of Scamses XV",
-      "The Possessed Mystery Machine",
-      "The Fortescu Vampire"
+      "Daphne",
+      "Shaggy",
+      "Velma",
+      "Fred"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "What do the gang usually do at the very end of a mystery?",
+    "options": [
+      "Call the villain's parents",
+      "Throw a party",
+      "Unmask the villain",
+      "Write a book about it"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "Which character always wears an ascot?",
+    "options": [
+      "Scooby-Doo",
+      "Fred",
+      "Shaggy",
+      "Velma"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "Besides solving mysteries, what are Shaggy and Scooby almost always doing?",
+    "options": [
+      "Reading",
+      "Exercising",
+      "Eating",
+      "Sleeping"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What do the gang typically do once they've unmasked the villain?",
+    "options": [
+      "Explain how they figured out the mystery",
+      "Start a musical number",
+      "Call for a pizza delivery",
+      "Go straight home without talking"
     ],
     "correctIndex": 0
+  },
+  {
+    "q": "What is the general personality of Scooby-Doo?",
+    "options": [
+      "Loyal but easily scared",
+      "Silent and serious",
+      "Extremely brave",
+      "Fierce and aggressive"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "What does Fred usually build to try to catch the culprit?",
+    "options": [
+      "A sandwich",
+      "A campfire",
+      "A treehouse",
+      "A trap"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "q": "The treat \u201cScooby Snacks\u201d is named after and especially loved by which character?",
+    "options": [
+      "Velma",
+      "Shaggy",
+      "Fred",
+      "Scooby-Doo"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "q": "Which two characters are almost always hungry and easily scared?",
+    "options": [
+      "Fred and Daphne",
+      "Shaggy and Scooby",
+      "Velma and Fred",
+      "Daphne and Scooby"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "q": "What does Shaggy yell whenever he gets scared?",
+    "options": [
+      "\"Zoinks!\"",
+      "\"Jinkies!\"",
+      "\"Yikes!\"",
+      "\"Egad!\""
+    ],
+    "correctIndex": 0
+  },
+  {
+    "q": "What do the gang do with all the clues they collect during an investigation?",
+    "options": [
+      "Sell them",
+      "Throw them away",
+      "Mail them to the villain",
+      "Piece them together to solve the mystery"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "q": "What is Daphne's last name?",
+    "options": [
+      "Rogers",
+      "Jones",
+      "Dinkley",
+      "Blake"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "q": "What does Velma yell when she's excited about finding a clue?",
+    "options": [
+      "\"Zoinks!\"",
+      "\"Yowza!\"",
+      "\"Jinkies!\"",
+      "\"Groovy!\""
+    ],
+    "correctIndex": 2
+  },
+  {
+    "q": "What does Scooby wear around his neck?",
+    "options": [
+      "A scarf",
+      "A bowtie",
+      "A collar",
+      "A necklace"
+    ],
+    "correctIndex": 2
   }
 ]
