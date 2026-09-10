@@ -3,55 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Researching one assigned AI topic — bias, misinformation, privacy, overreliance, environmental cost, or accessibility — from teacher-provided sources only, no AI chat.",
+      "workingNow": "Making a copy of a page on your site, linking it from your index page, and starting your two paragraphs.",
       "weeklyDeliverable": "A persuasive 'How I Think We Should Use AI' article live on your portfolio site — your argued position on the best way to use AI, backed by this week's research, plus at least one image — pushed to GitHub Pages by Sunday night.",
-      "smartGoal": "I can research at least two pieces of evidence about my assigned AI topic from real sources so that I have material to support my own opinion tomorrow.",
-      "contentStandard": "CA CS Standards 6-8.IC.21 — Discuss issues of bias and accessibility in the design of existing technologies.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "smartGoal": "I can build and link a new page on my site and write two paragraphs about one AI issue so that a visitor can read the background and then my opinion.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Create prototypes using structured code, organized into separate linked pages, to fulfill a design requirement.",
+      "eldStandard": "ELD.PI.6-8.11 — Supporting own opinions and evaluating others' opinions in speaking and writing.",
       "agenda": [
-        "Warm-Up: recall yesterday's never-share rules (3 min)",
-        "Quick overview + research packet handout (3 min)",
-        "I do: model reading a source, claim + evidence (8 min)",
-        "We do: annotate one shared source together (8 min)",
-        "You do: research team digs into your topic (20 min)",
-        "Team share-out: 30 seconds per topic (6 min)",
-        "Exit Ticket: one fact for tomorrow's article (2 min)"
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan + the topic list (3 min)",
+        "I do: copy a page, link it on index, add &lt;h1&gt; and &lt;p&gt; (10 min)",
+        "You do: pick your topic, find one source to link (10 min)",
+        "You do: write both paragraphs — background, then opinion (23 min)",
+        "Exit Ticket: paste your live page URL (2 min)"
       ],
-      "connections": "Yesterday you learned to protect your own data. Today, in research teams, you dig into the bigger risks and benefits of AI as a technology. Tomorrow you take everything the class found and turn it into your own persuasive argument."
+      "connections": "Tuesday you defined what AI is; yesterday you learned what it does with whatever you type into it. Today you pick the one AI issue you actually have an opinion about and start the page where you'll argue it — background and a real source first, then how you feel about it. That page is due live on your site Sunday night."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Predicting 2 dynamics — things that will happen during play — that your mechanics will create.",
+      "workingNow": "Getting your mechanic and aesthetic papers back, and working out how one of your rules could create the feeling you picked.",
       "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
-      "smartGoal": "I can predict a dynamic that will emerge from my mechanics so that I can design toward the feeling I actually want.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "smartGoal": "I can explain how one of my mechanics creates the feeling I chose so that my rules and my aesthetic work together instead of against each other.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (3 min)",
-        "Quick overview: today's plan (2 min)",
-        "I do: how mechanics create dynamics, modeled (12 min)",
-        "We do: trace one dynamic from a shared game (10 min)",
-        "You do: predict 2 dynamics your mechanics will create (18 min)",
-        "Exit Ticket: one dynamic + why it happens (5 min)"
+        "Quick overview + get your two papers back (4 min)",
+        "I do: how one rule creates one feeling (10 min)",
+        "We do: trace a shared game's rule to its feeling (8 min)",
+        "You do: match your mechanics to your aesthetic, in pairs (20 min)",
+        "Exit Ticket: one mechanic + the feeling it makes (5 min)"
       ],
-      "connections": "You've named your mechanics and your aesthetic — the rules and the feeling. Dynamics is the bridge between them: what actually happens when someone plays. This is the hardest piece, and tomorrow you put all three together into your design plan."
+      "connections": "Tuesday you picked your mechanics and yesterday you picked your aesthetic — today you have both papers in front of you and connect them: which rule actually produces that feeling? Tomorrow you turn that thinking into a written design proposal, and that proposal is what we build your game's state machine from next week."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Predicting 2 dynamics — things that will happen during play — that your mechanics will create.",
+      "workingNow": "Getting your mechanic and aesthetic papers back, and working out how one of your rules could create the feeling you picked.",
       "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
-      "smartGoal": "I can predict a dynamic that will emerge from my mechanics so that I can design toward the feeling I actually want.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining orally how an author uses language to support ideas.",
+      "smartGoal": "I can explain how one of my mechanics creates the feeling I chose so that my rules and my aesthetic work together instead of against each other.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (3 min)",
-        "Quick overview: today's plan (2 min)",
-        "I do: how mechanics create dynamics, modeled (12 min)",
-        "We do: trace one dynamic from a shared game (10 min)",
-        "You do: predict 2 dynamics your mechanics will create (18 min)",
-        "Exit Ticket: one dynamic + why it happens (5 min)"
+        "Quick overview + get your two papers back (4 min)",
+        "I do: how one rule creates one feeling (10 min)",
+        "We do: trace a shared game's rule to its feeling (8 min)",
+        "You do: match your mechanics to your aesthetic, in pairs (20 min)",
+        "Exit Ticket: one mechanic + the feeling it makes (5 min)"
       ],
-      "connections": "You've named your mechanics and your aesthetic — the rules and the feeling. Dynamics is the bridge between them: what actually happens when someone plays. This is the hardest piece, and tomorrow you put all three together into your design plan."
+      "connections": "Tuesday you picked your mechanics and yesterday you picked your aesthetic — today you have both papers in front of you and connect them: which rule actually produces that feeling? Tomorrow you turn that thinking into a written design proposal, and that proposal is what we build your game's state machine from next week."
     }
   }
 }

@@ -4,7 +4,7 @@
     "4th Period": {
       "grade": "8th Grade",
       "workingNow": "Sorting real tools into 'AI or not AI?' and writing down 3 examples of AI you already use.",
-      "weeklyDeliverable": "A new 'My Thoughts on AI' page live on your portfolio site — your written opinion (with reasoning) plus at least one image, pushed to GitHub Pages by Sunday night.",
+      "weeklyDeliverable": "A persuasive 'How I Think We Should Use AI' article live on your portfolio site — your argued position on the best way to use AI, backed by this week's research, plus at least one image — pushed to GitHub Pages by Sunday night.",
       "smartGoal": "I can define artificial intelligence and identify examples of it so that I can tell the difference between AI and regular software.",
       "contentStandard": "CA CS Standards 6-8.IC.1 — Compare tradeoffs associated with computing technologies that affect people's everyday activities and career options.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
@@ -13,18 +13,18 @@
         "Quick overview: today's plan (3 min)",
         "I do: define AI, rule-based vs. learned (10 min)",
         "We do: sort tools into AI or not AI as a class (10 min)",
-        "You do: notes \u2014 3 examples of AI you already use (20 min)",
+        "You do: notes — 3 examples of AI you already use (20 min)",
         "Exit Ticket: In your own words, what is AI? (5 min)"
       ],
-      "connections": "Your Snake game is finished \u2014 nice work. Before we hand AI any part of your code next week, we need a shared, accurate idea of what AI actually is. Today starts that: by Friday you'll have an opinion of your own, backed by what you actually learned this week."
+      "connections": "Your Snake game is finished — nice work. Before you can argue anything about AI, you need an accurate idea of what it actually is, so today we define it and sort real tools into AI and not-AI. Tomorrow we look at what happens to the words you type into one, and by the end of the week your own argued opinion is published on your site."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Listing the mechanics \u2014 the rules, objects, and actions \u2014 of a game you already know well.",
+      "workingNow": "Listing the mechanics — the rules, objects, and actions — of a game you already know well.",
       "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
       "smartGoal": "I can name the mechanics of a game so that I can start designing the rules and pieces of my own game.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (3 min)",
         "Quick overview: today's plan (2 min)",
@@ -33,15 +33,15 @@
         "You do: brainstorm mechanics for your own game idea (20 min)",
         "Exit Ticket: List 3 mechanics for your game (5 min)"
       ],
-      "connections": "You just finished building your Grow Box \u2014 a program that reacts to you. Today we zoom out: every game, including the one you'll build with SchoolAI, starts from a set of mechanics like that. Tomorrow we ask a different question: how do you want your game to feel?"
+      "connections": "You just finished your Grow Box — a program that reacts to the player. Today we zoom out to the pieces every game is built from: its mechanics, the rules and objects a player actually uses. Hang onto this paper — tomorrow you pick the feeling you want those rules to create."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Listing the mechanics \u2014 the rules, objects, and actions \u2014 of a game you already know well.",
+      "workingNow": "Listing the mechanics — the rules, objects, and actions — of a game you already know well.",
       "weeklyDeliverable": "MDA framework notes (Mechanics, Dynamics, Aesthetics) + a one-page Game Design Plan for your SchoolAI game, shared with Ms. Herrick by Sunday night.",
       "smartGoal": "I can name the mechanics of a game so that I can start designing the rules and pieces of my own game.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (3 min)",
         "Quick overview: today's plan (2 min)",
@@ -50,7 +50,7 @@
         "You do: brainstorm mechanics for your own game idea (20 min)",
         "Exit Ticket: List 3 mechanics for your game (5 min)"
       ],
-      "connections": "You just finished building your Grow Box \u2014 a program that reacts to you. Today we zoom out: every game, including the one you'll build with SchoolAI, starts from a set of mechanics like that. Tomorrow we ask a different question: how do you want your game to feel?"
+      "connections": "You just finished your Grow Box — a program that reacts to the player. Today we zoom out to the pieces every game is built from: its mechanics, the rules and objects a player actually uses. Hang onto this paper — tomorrow you pick the feeling you want those rules to create."
     }
   }
 }
