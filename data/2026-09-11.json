@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Drafting your persuasive article on the best way to use AI, using this week's research as evidence.",
+      "workingNow": "Adding a third paragraph to your AI page — where you think the line is between using AI the right way and the wrong way.",
       "weeklyDeliverable": "A persuasive 'How I Think We Should Use AI' article live on your portfolio site — your argued position on the best way to use AI, backed by this week's research, plus at least one image — pushed to GitHub Pages by Sunday night.",
-      "smartGoal": "I can write a persuasive article stating and defending my opinion on the best way to use AI, using evidence from this week's research, so that readers understand and consider my point of view.",
-      "contentStandard": "CA CS Standards 6-8.IC.20 — Discuss the ethical and societal impacts of computing technologies (approximate — verify against your standards doc).",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information clearly.",
+      "smartGoal": "I can add one more paragraph saying what I think the right and wrong ways to use AI are, so that my page tells a reader what people should actually do, not just what the problem is.",
+      "contentStandard": "CA CS Standards 6-8.IC.20 — Compare tradeoffs associated with computing technologies that affect people's everyday activities and career options.",
+      "eldStandard": "ELD.PI.6-8.11 — Justifying own arguments and evaluating others' arguments in writing.",
       "agenda": [
-        "Warm-Up: pick your strongest research fact (3 min)",
-        "Quick overview: persuasive article structure (3 min)",
-        "I do: model claim + reasoning + evidence (8 min)",
-        "We do: build one shared example paragraph (7 min)",
-        "You do: draft your article — claim + 3 reasons (24 min)",
-        "Exit Ticket: paste your opening claim sentence (5 min)"
+        "Log in (timed) (2 min)",
+        "Overview: today you add Paragraph 3 (3 min)",
+        "I do: model an “okay / not okay” paragraph (8 min)",
+        "We do: sort four AI uses together (7 min)",
+        "You do: write Paragraph 3, then commit (27 min)",
+        "Exit Ticket: your one-sentence AI rule (3 min)"
       ],
-      "connections": "This week you learned what not to share with AI, then researched its bigger risks and benefits as a class. Today you turn all of that into your own argument — due, with an image, on your site by Sunday night."
+      "connections": "Yesterday you wrote what is happening and what you think about it. Today you add the paragraph that turns that into a real argument — which uses of AI you think are okay, which are not, and why. The finished three-paragraph page goes live on your site Sunday night."
     },
     "6th Period": {
       "grade": "7th Grade",
