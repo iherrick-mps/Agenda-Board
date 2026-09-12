@@ -49,22 +49,24 @@ const VEX_SCRUM_TEAM_COLORS = [
    version 2.0. Re-check them after each manual update; VEX ships
    scheduled revisions through the season. ---- */
 const VEX_FAQ_ROTATE_MS = 15000; // 15 seconds per question
+// Keep answers short — the text scales to fill the bento, so every extra
+// clause shrinks the font for the whole rotation.
 const VEX_FAQS = [
   {
     q: 'How big can our robot be?',
-    a: '11" x 20" x 15" at inspection and at the start of every match. Once the match starts you may expand out to 11" x 24", and upward as far as you want.'
+    a: '11" x 20" x 15" at the start of a match. After that you can expand to 11" x 24" wide, and as tall as you like.'
   },
   {
     q: 'How many people are on a team?',
-    a: 'Three at the field: two drivers and one loader. The drivers must hand off the controller between 0:35 and 0:25 on the match clock.'
+    a: 'Three at the field: two drivers and one loader. Drivers swap the controller between 0:35 and 0:25.'
   },
   {
-    q: "What is this year's VEX IQ game called?",
-    a: 'Level Up. Score bean bags into goals — floor 1, L1 3, L2 6, L3 12, L4 16 points. You may only carry one bean bag at a time.'
+    q: "What is this year's game called?",
+    a: 'Level Up. Score bean bags into goals for 1, 3, 6, 12, or 16 points. Carry one bag at a time.'
   },
   {
     q: 'How many motors can we have?',
-    a: 'Six VEX IQ Smart Motors, maximum. Extra motors are illegal even if they are not plugged in.'
+    a: 'Six VEX IQ Smart Motors. Spares count against the limit even when they are unplugged.'
   },
 ];
 const VEX_FAQ_COLORS = [

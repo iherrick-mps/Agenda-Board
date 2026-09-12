@@ -1934,10 +1934,10 @@ body.board-page {
 
 .board-grid.vex-grid {
   grid-template-areas:
-    "clock clock clock countdown countdown banner banner banner banner banner banner banner"
-    "clock clock clock countdown countdown banner banner banner banner banner banner banner"
-    "faq faq faq faq faq faq faq faq faq faq faq faq"
-    "faq faq faq faq faq faq faq faq faq faq faq faq"
+    "clock clock clock countdown countdown banner banner banner faq faq faq faq"
+    "clock clock clock countdown countdown banner banner banner faq faq faq faq"
+    "clock clock clock countdown countdown banner banner banner faq faq faq faq"
+    "clock clock clock countdown countdown banner banner banner faq faq faq faq"
     "scrum scrum scrum scrum scrum scrum scrum scrum scrum teams teams teams"
     "scrum scrum scrum scrum scrum scrum scrum scrum scrum teams teams teams"
     "scrum scrum scrum scrum scrum scrum scrum scrum scrum teams teams teams"
@@ -2329,14 +2329,15 @@ body.board-page {
    across the room, not for reading up close.
    ============================================================ */
 
-.box-faq { container-type: size; }
-
+/* No container queries here on purpose: fitBoxText() in script.js sets a
+   px font-size on .box-content that fills the box, so everything inside
+   is sized in em and scales with it. That's what makes the answer grow
+   to fill the whole bento instead of being pinned to a viewport clamp. */
 .vex-faq {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 0.35em;
-  height: 100%;
+  gap: 0.45em;
   min-height: 0;
   transition: opacity 0.3s ease;
 }
@@ -2346,16 +2347,17 @@ body.board-page {
   font-family: var(--font-mono);
   font-weight: 700;
   letter-spacing: 0.02em;
-  font-size: clamp(0.7rem, min(16cqh, 1.8cqw), 1.15rem);
+  font-size: 0.62em;
   line-height: 1.2;
+  text-transform: uppercase;
   color: var(--box-color, var(--c-connect));
 }
 
 .vex-faq-a {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(0.9rem, min(26cqh, 2.6cqw), 2rem);
-  line-height: 1.25;
+  font-size: 1em;
+  line-height: 1.22;
   color: var(--ink, #16202b);
 }
 
@@ -2363,12 +2365,14 @@ body.board-page {
    one is up — the same read-at-a-glance cue the other rotators use */
 .vex-faq-dots {
   display: flex;
-  gap: 6px;
-  margin-top: 0.5em;
+  gap: 0.28em;
+  margin-top: 0.55em;
 }
 .vex-faq-dot {
-  width: 7px;
-  height: 7px;
+  width: 0.2em;
+  height: 0.2em;
+  min-width: 5px;
+  min-height: 5px;
   border-radius: 50%;
   background: #c8cfd6;
   transition: background 0.3s ease;
