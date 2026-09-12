@@ -377,6 +377,8 @@ function initVexNowPlaying() {
   const REPEAT_ONE_KEY = 'agendaBoard.vexRepeatOne';
   let player = null;
   let isPlaying = false;
+  let playlistLength = 0;   // 0 until the playlist actually reports itself
+  let advancing = false;    // guards against double-advancing on ENDED
 
   // shuffle defaults ON; repeat-one defaults OFF; the whole playlist
   // always loops (see setLoop(true) in onReady) regardless of either
@@ -401,11 +403,45 @@ function initVexNowPlaying() {
     if (playPauseBtn) playPauseBtn.textContent = isPlaying ? '\u23F8' : '\u25B6';
   }
 
+  // NOTE: YouTube's own player.setShuffle() is unreliable here — it only
+  // reorders the *upcoming* queue, silently no-ops if the playlist hasn't
+  // finished loading, and has no working "un-shuffle". So shuffle is done
+  // by hand: we read the playlist once and pick our own next index.
   function setShuffle(on) {
     shuffleOn = on;
     if (shuffleBtn) shuffleBtn.classList.toggle('is-active', on);
-    if (player && player.setShuffle) player.setShuffle(on);
     try { localStorage.setItem(SHUFFLE_KEY, on ? '1' : '0'); } catch (e) { /* storage disabled */ }
+  }
+
+  // a random track that isn't the one already playing
+  function randomOtherIndex() {
+    if (playlistLength <= 1) return 0;
+    const current = player.getPlaylistIndex ? player.getPlaylistIndex() : -1;
+    let i = current;
+    while (i === current) i = Math.floor(Math.random() * playlistLength);
+    return i;
+  }
+
+  function advanceTrack() {
+    if (!player) return;
+    if (shuffleOn && playlistLength > 1 && player.playVideoAt) {
+      player.playVideoAt(randomOtherIndex());
+    } else if (player.nextVideo) {
+      player.nextVideo();
+    }
+  }
+
+  // playerVars/list are applied asynchronously, so the playlist is often
+  // still empty at onReady. Poll briefly until it reports its length.
+  function waitForPlaylist(tries = 0) {
+    if (!player || !player.getPlaylist) return;
+    const list = player.getPlaylist();
+    if (Array.isArray(list) && list.length) {
+      playlistLength = list.length;
+      if (player.setLoop) player.setLoop(true);
+      return;
+    }
+    if (tries < 40) setTimeout(() => waitForPlaylist(tries + 1), 250);
   }
 
   function setRepeatOne(on) {
@@ -452,7 +488,7 @@ function initVexNowPlaying() {
           // setLoop/setShuffle are the reliable way to control a playlist
           // that's already loaded — playerVars.loop above is a backup
           if (e.target.setLoop) e.target.setLoop(true);
-          if (e.target.setShuffle) e.target.setShuffle(shuffleOn);
+          waitForPlaylist();
         },
         onStateChange: (e) => {
           isPlaying = e.data === YT.PlayerState.PLAYING;
@@ -463,9 +499,16 @@ function initVexNowPlaying() {
           }
           // "repeat current song": replay it instead of letting the
           // playlist advance to the next track
-          if (e.data === YT.PlayerState.ENDED && repeatOneOn) {
-            e.target.seekTo(0);
-            e.target.playVideo();
+          if (e.data === YT.PlayerState.ENDED) {
+            if (repeatOneOn) {
+              e.target.seekTo(0);
+              e.target.playVideo();
+            } else if (shuffleOn && playlistLength > 1 && !advancing) {
+              // beat the player's own sequential auto-advance to the punch
+              advancing = true;
+              advanceTrack();
+              setTimeout(() => { advancing = false; }, 1000);
+            }
           }
         }
       }
@@ -502,7 +545,7 @@ function initVexNowPlaying() {
   if (nextBtn) {
     nextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (player && player.nextVideo) player.nextVideo();
+      advanceTrack();
     });
   }
   if (shuffleBtn) {

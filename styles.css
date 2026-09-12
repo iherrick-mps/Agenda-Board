@@ -2189,17 +2189,13 @@ body.board-page {
   transition: opacity 0.2s ease;
 }
 
-/* the iframe stays in the DOM (so audio keeps playing) but is shrunk
-   to nothing and made invisible/unclickable rather than display:none,
-   which some browsers use to pause embedded media */
+/* The iframe must stay at a real, painted size. Shrinking it to 2x2 or
+   setting opacity:0 makes browsers treat it as non-visible and throttle
+   it hard — every play/pause/next command then sits in a queue and
+   answers seconds late. So "hidden" keeps the player full-size and
+   simply lays an opaque panel over the top of it. */
 .box-vex-nowplaying.visuals-hidden .nowplaying-embed {
-  position: absolute;
-  inset: auto auto 0 0;
-  width: 2px;
-  height: 2px;
-  opacity: 0;
   pointer-events: none;
-  overflow: hidden;
 }
 
 .vex-title-panel {
@@ -2214,7 +2210,14 @@ body.board-page {
   container-type: size;
 }
 
-.box-vex-nowplaying.visuals-hidden .vex-title-panel { display: flex; }
+.box-vex-nowplaying.visuals-hidden .vex-title-panel {
+  display: flex;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #000;
+  pointer-events: auto;
+}
 
 .vex-title-label {
   font-family: var(--font-mono);
@@ -2272,7 +2275,7 @@ body.board-page {
   position: absolute;
   top: 8px;
   right: 8px;
-  z-index: 2;
+  z-index: 3;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   color: #cdd8e6;
