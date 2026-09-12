@@ -68,12 +68,22 @@ const VEX_FAQS = [
     q: 'How many motors can we have?',
     a: 'Six VEX IQ Smart Motors. Spares count against the limit even when they are unplugged.'
   },
+  {
+    q: 'What is autonomous mode?',
+    a: 'The robot runs code you wrote with nobody driving. You start it from a button on the brain — controllers stay on the floor.'
+  },
+  {
+    q: 'What is a drivetrain?',
+    a: 'The part of the robot that moves it: the motors, the wheels, and the frame holding them together. Build it first — everything else mounts to it.'
+  },
 ];
 const VEX_FAQ_COLORS = [
   'var(--c-connect)',
   'var(--c-goal)',
   'var(--c-eld)',
   'var(--c-standard)',
+  'var(--c-agenda)',
+  'var(--c-working)',
 ];
 
 /* ---- Now Playing defaults ---- */
