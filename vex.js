@@ -432,7 +432,8 @@ function initVexNowPlaying() {
   const REPEAT_ONE_KEY = 'agendaBoard.vexRepeatOne';
   let player = null;
   let isPlaying = false;
-  let playlistLength = 0;   // 0 until the playlist actually reports itself
+  let shuffleBag = [];      // indices left to play in this shuffle cycle
+  let bagSize = 0;          // playlist length the current bag was built for
   let advancing = false;    // guards against double-advancing on ENDED
 
   // shuffle defaults ON; repeat-one defaults OFF; the whole playlist
@@ -468,35 +469,66 @@ function initVexNowPlaying() {
     try { localStorage.setItem(SHUFFLE_KEY, on ? '1' : '0'); } catch (e) { /* storage disabled */ }
   }
 
-  // a random track that isn't the one already playing
-  function randomOtherIndex() {
-    if (playlistLength <= 1) return 0;
+  // Read the length fresh every single time. YouTube fills getPlaylist()
+  // in incrementally — it reports only the first chunk of a long list at
+  // first and grows over the next several seconds — so caching whatever
+  // number it happened to report first permanently strands us inside
+  // that opening chunk.
+  function playlistLength() {
+    if (!player || !player.getPlaylist) return 0;
+    const list = player.getPlaylist();
+    return Array.isArray(list) ? list.length : 0;
+  }
+
+  // Shuffle bag: hold every index, hand them out in random order, and only
+  // reshuffle once the bag is empty. That guarantees the whole playlist
+  // plays through before any track comes round again — picking a fresh
+  // random number each time is what lets one song repeat four times.
+  function refillBag(length, exclude) {
+    const bag = [];
+    for (let i = 0; i < length; i++) if (i !== exclude) bag.push(i);
+    for (let i = bag.length - 1; i > 0; i--) {   // Fisher-Yates
+      const j = Math.floor(Math.random() * (i + 1));
+      [bag[i], bag[j]] = [bag[j], bag[i]];
+    }
+    shuffleBag = bag;
+    bagSize = length;
+  }
+
+  function nextShuffledIndex() {
+    const length = playlistLength();
+    if (length <= 1) return 0;
     const current = player.getPlaylistIndex ? player.getPlaylistIndex() : -1;
-    let i = current;
-    while (i === current) i = Math.floor(Math.random() * playlistLength);
-    return i;
+    // rebuild when YouTube finishes loading more of the list, or when the
+    // bag runs dry and a new cycle starts
+    if (length !== bagSize || !shuffleBag.length) refillBag(length, current);
+    const next = shuffleBag.pop();
+    return typeof next === 'number' ? next : 0;
   }
 
   function advanceTrack() {
     if (!player) return;
-    if (shuffleOn && playlistLength > 1 && player.playVideoAt) {
-      player.playVideoAt(randomOtherIndex());
+    if (shuffleOn && playlistLength() > 1 && player.playVideoAt) {
+      player.playVideoAt(nextShuffledIndex());
     } else if (player.nextVideo) {
       player.nextVideo();
     }
   }
 
-  // playerVars/list are applied asynchronously, so the playlist is often
-  // still empty at onReady. Poll briefly until it reports its length.
+  // playerVars/list are applied asynchronously, so the playlist is usually
+  // empty at onReady and then arrives in pieces over the next few seconds.
+  // Keep looking for a full 20s rather than stopping at the first non-empty
+  // answer. The bag itself is built lazily on the first track change and
+  // rebuilt whenever the reported length grows, so a late-arriving tail of
+  // the playlist gets picked up either way.
+  let loopSet = false;
   function waitForPlaylist(tries = 0) {
     if (!player || !player.getPlaylist) return;
-    const list = player.getPlaylist();
-    if (Array.isArray(list) && list.length) {
-      playlistLength = list.length;
-      if (player.setLoop) player.setLoop(true);
-      return;
+    if (!loopSet && playlistLength() && player.setLoop) {
+      player.setLoop(true);
+      loopSet = true;
     }
-    if (tries < 40) setTimeout(() => waitForPlaylist(tries + 1), 250);
+    if (tries < 80) setTimeout(() => waitForPlaylist(tries + 1), 250);
   }
 
   function setRepeatOne(on) {
@@ -558,7 +590,7 @@ function initVexNowPlaying() {
             if (repeatOneOn) {
               e.target.seekTo(0);
               e.target.playVideo();
-            } else if (shuffleOn && playlistLength > 1 && !advancing) {
+            } else if (shuffleOn && playlistLength() > 1 && !advancing) {
               // beat the player's own sequential auto-advance to the punch
               advancing = true;
               advanceTrack();
