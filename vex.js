@@ -11,12 +11,12 @@
 /* ---- Team roster — preliminary teams, grouped in roster order.
    Add/edit teams here as rosters change: { name: '92120A', note: 'First Last, First Last, First Last' } ---- */
 const VEX_TEAMS = [
-  { name: '92120A', note: 'Leo, Holden, Timo' },
-  { name: '92120B', note: 'Kyle, Ruslan, Cole' },
-  { name: '92120C', note: 'Rhys, Rylan, Samuel' },
-  { name: '92120D', note: 'Timothy, Noell, Lillian' },
-  { name: '92120E', note: 'Antonio, Sughas, Nathaniel' },
-  { name: '92120F', note: 'Mia, Elijah, Roman' },
+  { name: '92120A', note: 'Kyle, Ruslan, Leo' },
+  { name: '92120B', note: 'Holden, Sughas, Nathaniel' },
+  { name: '92120C', note: 'Cole, Timo, Timothy' },
+  { name: '92120D', note: 'Rhys, Ryland, Samuel' },
+  { name: '92120E', note: 'Lily, Noelle, Mia' },
+  { name: '92120F', note: 'Antonio, Elijah, Roman' },
 ];
 
 /* ---- Next competition — edit these two lines as new dates are set ---- */
