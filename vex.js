@@ -44,6 +44,36 @@ const VEX_SCRUM_TEAM_COLORS = [
   'var(--c-working)',// 92120F
 ];
 
+/* ---- FAQ bento — rotates one question at a time.
+   Answers below are from the VIQRC Level Up Game Manual (2026-27),
+   version 2.0. Re-check them after each manual update; VEX ships
+   scheduled revisions through the season. ---- */
+const VEX_FAQ_ROTATE_MS = 15000; // 15 seconds per question
+const VEX_FAQS = [
+  {
+    q: 'How big can our robot be?',
+    a: '11" x 20" x 15" at inspection and at the start of every match. Once the match starts you may expand out to 11" x 24", and upward as far as you want.'
+  },
+  {
+    q: 'How many people are on a team?',
+    a: 'Three at the field: two drivers and one loader. The drivers must hand off the controller between 0:35 and 0:25 on the match clock.'
+  },
+  {
+    q: "What is this year's VEX IQ game called?",
+    a: 'Level Up. Score bean bags into goals — floor 1, L1 3, L2 6, L3 12, L4 16 points. You may only carry one bean bag at a time.'
+  },
+  {
+    q: 'How many motors can we have?',
+    a: 'Six VEX IQ Smart Motors, maximum. Extra motors are illegal even if they are not plugged in.'
+  },
+];
+const VEX_FAQ_COLORS = [
+  'var(--c-connect)',
+  'var(--c-goal)',
+  'var(--c-eld)',
+  'var(--c-standard)',
+];
+
 /* ---- Now Playing defaults ---- */
 const VEX_NOWPLAYING_URL = 'https://music.youtube.com/playlist?list=PLKwpsUctVAO8&si=Aio1rMg-SqWJhbM6';
 const VEX_NOWPLAYING_VOLUME = 10; // 0-100
@@ -649,6 +679,53 @@ function initVexNowPlaying() {
   }
 }
 
+/* ---------- FAQ rotator ---------- */
+
+function initVexFaq() {
+  const box = document.getElementById('box-faq');
+  const wrapEl = document.getElementById('vex-faq');
+  const qEl = document.getElementById('vex-faq-q');
+  const aEl = document.getElementById('vex-faq-a');
+  const dotsEl = document.getElementById('vex-faq-dots');
+  if (!box || !wrapEl || !qEl || !aEl || VEX_FAQS.length === 0) return;
+
+  if (dotsEl) {
+    dotsEl.innerHTML = VEX_FAQS
+      .map(() => '<span class="vex-faq-dot"></span>')
+      .join('');
+  }
+
+  let idx = 0;
+
+  function paint(i) {
+    const faq = VEX_FAQS[i];
+    qEl.textContent = faq.q;
+    aEl.textContent = faq.a;
+    box.style.setProperty('--box-color', VEX_FAQ_COLORS[i % VEX_FAQ_COLORS.length]);
+    if (dotsEl) {
+      Array.from(dotsEl.children).forEach((dot, n) => {
+        dot.classList.toggle('is-active', n === i);
+      });
+    }
+    // answers vary a lot in length, so re-fit the text after each swap
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  paint(0);
+  if (VEX_FAQS.length === 1) return;
+
+  setInterval(() => {
+    wrapEl.classList.add('is-fading');
+    // wait out the CSS fade (0.3s) before swapping the text, so the
+    // question never visibly changes mid-transition
+    setTimeout(() => {
+      idx = (idx + 1) % VEX_FAQS.length;
+      paint(idx);
+      wrapEl.classList.remove('is-fading');
+    }, 300);
+  }, VEX_FAQ_ROTATE_MS);
+}
+
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -656,6 +733,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVexTeams();
   initVexScrumBoard();
   initVexSaturdaySchedule();
+  initVexFaq();
   initVexNowPlaying();
   initVexBreakAutoGameMode();
 });
