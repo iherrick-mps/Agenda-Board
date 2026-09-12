@@ -68,27 +68,21 @@ const VEX_FAQS = [
     q: 'How many motors can we have?',
     a: 'Six VEX IQ Smart Motors. Spares count against the limit even when they are unplugged.'
   },
-  {
-    q: 'What is autonomous mode?',
-    a: 'The robot runs code you wrote with nobody driving. You start it from a button on the brain — controllers stay on the floor.'
-  },
-  {
-    q: 'What is a drivetrain?',
-    a: 'The part of the robot that moves it: the motors, the wheels, and the frame holding them together. Build it first — everything else mounts to it.'
-  },
 ];
 const VEX_FAQ_COLORS = [
   'var(--c-connect)',
   'var(--c-goal)',
   'var(--c-eld)',
   'var(--c-standard)',
-  'var(--c-agenda)',
-  'var(--c-working)',
 ];
 
 /* ---- Now Playing defaults ---- */
 const VEX_NOWPLAYING_URL = 'https://music.youtube.com/playlist?list=PLKwpsUctVAO8&si=Aio1rMg-SqWJhbM6';
 const VEX_NOWPLAYING_VOLUME = 10; // 0-100
+
+/* ---- Clean-Up overlay ---- */
+const VEX_PACKUP_SONG_URL = 'https://www.youtube.com/watch?v=Ds6IwEKRLUU';
+const VEX_PACKUP_VOLUME = 30; // louder than the work playlist — it's a cue
 
 /* ---------- helpers ---------- */
 
@@ -564,12 +558,28 @@ function initVexNowPlaying() {
   // rebuilt whenever the reported length grows, so a late-arriving tail of
   // the playlist gets picked up either way.
   let loopSet = false;
+  let jumpedToRandomStart = false;
+  let lastSeenLength = 0;
   function waitForPlaylist(tries = 0) {
     if (!player || !player.getPlaylist) return;
-    if (!loopSet && playlistLength() && player.setLoop) {
+    const length = playlistLength();
+
+    if (!loopSet && length && player.setLoop) {
       player.setLoop(true);
       loopSet = true;
     }
+
+    // Jump to a random track on page load, so the board doesn't open on
+    // the same song every afternoon. Wait for two consecutive polls that
+    // report the same length — YouTube delivers a long playlist in
+    // chunks, and jumping on the first chunk would only ever land in the
+    // opening handful of tracks.
+    if (!jumpedToRandomStart && shuffleOn && length > 1 && length === lastSeenLength) {
+      jumpedToRandomStart = true;
+      if (player.playVideoAt) player.playVideoAt(nextShuffledIndex());
+    }
+    lastSeenLength = length;
+
     if (tries < 80) setTimeout(() => waitForPlaylist(tries + 1), 250);
   }
 
@@ -689,6 +699,13 @@ function initVexNowPlaying() {
       setRepeatOne(!repeatOneOn);
     });
   }
+
+  // lets the Clean-Up overlay silence the work playlist without
+  // reaching into this function's private player handle
+  window.__vexNowPlaying = {
+    pause: () => { if (player && player.pauseVideo) player.pauseVideo(); },
+    resume: () => { if (player && player.playVideo) player.playVideo(); },
+  };
 }
 
 /* ---------- FAQ rotator ---------- */
@@ -738,6 +755,104 @@ function initVexFaq() {
   }, VEX_FAQ_ROTATE_MS);
 }
 
+/* ---------- Clean-Up overlay ----------
+   Full-board takeover in the same shape as Game Mode: hide every VEX
+   bento, put the checklist on the right and a plain single-video Now
+   Playing bento on the left. The work playlist pauses while it's up
+   and resumes when it's dismissed.
+
+   Called "packup" in the code because script.js already uses
+   `cleanup-mode-active` for the 7th Period Chromebook claw machine.
+   ------------------------------------------------------------------ */
+
+function initVexPackUp() {
+  const boardGrid = document.getElementById('board-grid');
+  const toggleBtn = document.getElementById('packup-toggle-btn');
+  const embedEl = document.getElementById('vex-packup-embed');
+  if (!boardGrid || !toggleBtn || !embedEl) return;
+
+  let active = false;
+  let packupPlayer = null;
+  let building = false;
+
+  async function ensurePlayer() {
+    if (packupPlayer || building) return;
+    building = true;
+
+    const { videoId } = parseYouTubeUrl(VEX_PACKUP_SONG_URL);
+    if (!videoId) { building = false; return; }
+
+    embedEl.innerHTML = '<div id="vex-packup-player"></div>';
+    const YT = await loadYouTubeIframeApi();
+
+    packupPlayer = new YT.Player('vex-packup-player', {
+      width: '100%',
+      height: '100%',
+      videoId,
+      // loop on a single video only works if that video is also named as
+      // a one-item playlist — otherwise YouTube ignores loop entirely
+      playerVars: { autoplay: 1, rel: 0, mute: 1, loop: 1, playlist: videoId },
+      events: {
+        onReady: (e) => {
+          e.target.setVolume(VEX_PACKUP_VOLUME);
+          e.target.unMute();
+          if (active) e.target.playVideo();
+        }
+      }
+    });
+    building = false;
+  }
+
+  function turnOn() {
+    if (active) return;
+    // never stack two full-board takeovers
+    if (window.__gameMode && window.__gameMode.isActive()) window.__gameMode.turnOff();
+
+    active = true;
+    boardGrid.classList.add('packup-mode-active');
+    toggleBtn.classList.add('is-active');
+
+    if (window.__vexNowPlaying) window.__vexNowPlaying.pause();
+
+    if (!packupPlayer) {
+      ensurePlayer();
+    } else {
+      packupPlayer.seekTo(0);
+      packupPlayer.playVideo();
+    }
+
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  function turnOff() {
+    if (!active) return;
+    active = false;
+    boardGrid.classList.remove('packup-mode-active');
+    toggleBtn.classList.remove('is-active');
+
+    if (packupPlayer && packupPlayer.pauseVideo) packupPlayer.pauseVideo();
+    if (window.__vexNowPlaying) window.__vexNowPlaying.resume();
+
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  toggleBtn.addEventListener('click', () => (active ? turnOff() : turnOn()));
+
+  // Game Mode has no hook for "something else is taking over", so wrap its
+  // turnOn once. This covers both the toolbar button and vex.js's automatic
+  // Game Mode during the Saturday Break.
+  if (window.__gameMode && !window.__gameMode.__packupWrapped) {
+    const originalTurnOn = window.__gameMode.turnOn;
+    window.__gameMode.turnOn = function (...args) {
+      turnOff();
+      return originalTurnOn.apply(this, args);
+    };
+    window.__gameMode.__packupWrapped = true;
+  }
+
+  window.__vexPackUp = { turnOn, turnOff, isActive: () => active };
+}
+
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -747,5 +862,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initVexSaturdaySchedule();
   initVexFaq();
   initVexNowPlaying();
+  initVexPackUp();
   initVexBreakAutoGameMode();
 });
