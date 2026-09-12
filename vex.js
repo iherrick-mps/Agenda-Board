@@ -25,9 +25,9 @@ const VEX_NEXT_COMPETITION_LABEL = 'January 15';
 
 /* ---- SCRUM board stages (columns) — rows are VEX_TEAMS above ---- */
 const VEX_SCRUM_STAGES = [
-  'Build Chassis',
-  'Build Arm',
-  'Iterating on Arm',
+  'Build Drivetrain',
+  'Build Scoring Mechanism',
+  'Iterating on Scoring Mechanism',
   'Full Team Practicing',
   'Developing Autonomous',
 ];
@@ -107,9 +107,11 @@ function initVexCountdown() {
    localStorage, with a per-row progress-bar fill + intensity-scaled
    sparkles as more of that team's stages get checked off ---------- */
 
-// reads saved checkbox state and reshapes it to exactly match the
-// current VEX_TEAMS/VEX_SCRUM_STAGES lists (new teams start unchecked;
-// removed teams' old data is just ignored, not deleted from storage)
+// Each stage now holds one of three values rather than a boolean:
+//   0 = not started, 1 = in progress, 2 = finished
+// reads saved state and reshapes it to exactly match the current
+// VEX_TEAMS/VEX_SCRUM_STAGES lists (new teams start empty; removed
+// teams' old data is just ignored, not deleted from storage)
 function vexLoadScrumState() {
   let saved = {};
   try {
@@ -120,7 +122,12 @@ function vexLoadScrumState() {
   const state = {};
   VEX_TEAMS.forEach(t => {
     const existing = Array.isArray(saved[t.name]) ? saved[t.name] : [];
-    state[t.name] = VEX_SCRUM_STAGES.map((_, i) => !!existing[i]);
+    state[t.name] = VEX_SCRUM_STAGES.map((_, i) => {
+      const v = existing[i];
+      if (v === true) return 2;          // migrate old boolean "checked" to finished
+      if (v === 1 || v === 2) return v;
+      return 0;
+    });
   });
   return state;
 }
@@ -129,10 +136,12 @@ function vexSaveScrumState(state) {
   try { localStorage.setItem(VEX_SCRUM_KEY, JSON.stringify(state)); } catch (e) { /* storage disabled */ }
 }
 
+// in-progress stages earn half credit, so a row's fill creeps forward
+// as work starts rather than only jumping when a stage is finished
 function vexScrumPercent(rowState) {
   if (!rowState || !rowState.length) return 0;
-  const done = rowState.filter(Boolean).length;
-  return Math.round((done / rowState.length) * 100);
+  const earned = rowState.reduce((sum, v) => sum + (v === 2 ? 1 : v === 1 ? 0.5 : 0), 0);
+  return Math.round((earned / rowState.length) * 100);
 }
 
 // (re)fills a row's sparkle layer — more sparkles, bigger and brighter,
@@ -177,9 +186,20 @@ function initVexScrumBoard() {
   VEX_SCRUM_STAGES.forEach((stage, colIdx) => {
     const head = document.createElement('div');
     head.className = 'vex-scrum-cell vex-scrum-head';
-    head.textContent = stage;
     head.style.gridRow = '1';
     head.style.gridColumn = String(colIdx + 2);
+
+    const headName = document.createElement('span');
+    headName.className = 'vex-scrum-head-name';
+    headName.textContent = stage;
+    head.appendChild(headName);
+
+    // tells the room which of the two boxes below is which
+    const headSub = document.createElement('span');
+    headSub.className = 'vex-scrum-head-sub';
+    headSub.textContent = 'started \u00B7 done';
+    head.appendChild(headSub);
+
     tableEl.appendChild(head);
   });
 
@@ -222,20 +242,35 @@ function initVexScrumBoard() {
     tableEl.appendChild(label);
 
     VEX_SCRUM_STAGES.forEach((stage, colIdx) => {
+      const value = state[team.name][colIdx];
+
       const cell = document.createElement('div');
       cell.className = 'vex-scrum-cell vex-scrum-check';
       cell.style.gridRow = String(gridRow);
       cell.style.gridColumn = String(colIdx + 2);
+      cell.classList.toggle('is-wip', value === 1);
+      cell.classList.toggle('is-done', value === 2);
 
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.checked = state[team.name][colIdx];
-      checkbox.setAttribute('aria-label', `${team.name} \u2014 ${stage}`);
-      checkbox.dataset.team = team.name;
-      checkbox.dataset.stage = String(colIdx);
-      checkbox.style.accentColor = color;
+      // two boxes per stage: "started" (in progress) and "done".
+      // They're kept coherent by the change handler below — you can
+      // never end up with done ticked and started empty.
+      [['wip', 'in progress'], ['done', 'finished']].forEach(([kind, what]) => {
+        const mark = document.createElement('label');
+        mark.className = `vex-scrum-mark vex-scrum-mark--${kind}`;
 
-      cell.appendChild(checkbox);
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = kind === 'wip' ? value >= 1 : value === 2;
+        checkbox.setAttribute('aria-label', `${team.name} \u2014 ${stage} \u2014 ${what}`);
+        checkbox.dataset.team = team.name;
+        checkbox.dataset.stage = String(colIdx);
+        checkbox.dataset.kind = kind;
+        checkbox.style.accentColor = color;
+
+        mark.appendChild(checkbox);
+        cell.appendChild(mark);
+      });
+
       tableEl.appendChild(cell);
     });
 
@@ -247,10 +282,30 @@ function initVexScrumBoard() {
     if (!(cb instanceof HTMLInputElement) || cb.type !== 'checkbox') return;
     const team = cb.dataset.team;
     const stageIdx = Number(cb.dataset.stage);
+    const kind = cb.dataset.kind;
     if (!team || Number.isNaN(stageIdx) || !state[team]) return;
 
-    state[team][stageIdx] = cb.checked;
+    let value = state[team][stageIdx];
+    if (kind === 'wip') {
+      // unticking "started" abandons the stage entirely, done included
+      value = cb.checked ? Math.max(value, 1) : 0;
+    } else {
+      // unticking "done" drops back to in progress, not to nothing
+      value = cb.checked ? 2 : 1;
+    }
+    state[team][stageIdx] = value;
     vexSaveScrumState(state);
+
+    // re-sync both boxes in this cell from the single source of truth,
+    // so the pair can never display a contradictory combination
+    const cell = cb.closest('.vex-scrum-check');
+    if (cell) {
+      cell.querySelectorAll('input[type="checkbox"]').forEach(box => {
+        box.checked = box.dataset.kind === 'wip' ? value >= 1 : value === 2;
+      });
+      cell.classList.toggle('is-wip', value === 1);
+      cell.classList.toggle('is-done', value === 2);
+    }
     paintRow(team);
   });
 }
