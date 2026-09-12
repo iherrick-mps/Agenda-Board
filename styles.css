@@ -2108,6 +2108,17 @@ body.board-page {
   font-weight: 700;
   font-size: clamp(0.85rem, 1.5vw, 1.1rem);
   color: #1c242b;
+  /* the row's progress fill slides in behind this label, and the darker
+     team colors swallow dark text. The four 1px offsets draw a hard
+     white outline; the two blurred layers add a soft halo so the label
+     stays readable from the back of the room on any fill color. */
+  text-shadow:
+     1px  1px 0 #fff,
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px  1px 0 #fff,
+     0 0 3px #fff,
+     0 0 6px rgba(255, 255, 255, 0.85);
 }
 
 .vex-scrum-check { justify-content: center; }

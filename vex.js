@@ -36,12 +36,12 @@ const VEX_SCRUM_MAX_SPARKLES = 14; // sparkle count at 100% complete
 // each team gets its own progress-bar/checkbox color, cycling through
 // this palette in roster order (reuses the site's existing accent colors)
 const VEX_SCRUM_TEAM_COLORS = [
-  'var(--c-goal)',
-  'var(--c-connect)',
-  'var(--c-eld)',
-  'var(--c-standard)',
-  'var(--c-agenda)',
-  'var(--c-working)',
+  'var(--c-goal)',   // 92120A
+  '#5AE8E8',         // 92120B
+  '#92120C',         // 92120C
+  '#9912BA',         // 92120D
+  'var(--c-agenda)', // 92120E
+  'var(--c-working)',// 92120F
 ];
 
 /* ---- Now Playing defaults ---- */
