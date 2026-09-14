@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Testing your partner's Mario for state bugs while they test yours.",
+      "weeklyDeliverable": "week06-state-pattern.md in your Mario fork — a working small/big toggle plus a short write-up naming your states, your triggers, and what changes in each — committed by Sunday night.",
+      "smartGoal": "I can test my state machine with edge cases so that I can find and fix bugs before my write-up is due.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: partner roles (3 min)",
+        "I do: how to break a state machine on purpose (10 min)",
+        "We do: run one test case as a class (8 min)",
+        "You do: partner test — driver & tester roles (22 min)",
+        "Exit Ticket: one bug you found and fixed (5 min)"
+      ],
+      "connections": "Your state machine works when everything goes right. Today you and a partner try to break each other's — spam the key, press it mid-animation — because the bugs you find now are the ones you will not be explaining away later. Tomorrow you document the pattern."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Playing a classmate's game and writing them one specific, useful note — then fixing your own.",
+      "weeklyDeliverable": "Your finished game, published from Code.org Game Lab and embedded on your Google Site with a one-paragraph description — link shared by Sunday night.",
+      "smartGoal": "I can give and use specific playtest feedback so that my game feels the way I planned it to feel.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Log in (timed) (3 min)",
+        "Quick overview: playtest roles (4 min)",
+        "I do: what a useful playtest note sounds like (8 min)",
+        "We do: practice one note as a class (5 min)",
+        "You do: swap games — play, note, then revise (25 min)",
+        "Exit Ticket: one change you are making (5 min)"
+      ],
+      "connections": "Yesterday you found your own bugs. Today someone else plays your game and tells you whether the feeling you chose on your MDA sheet actually comes through. Tomorrow you publish it to your Google Site."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Playing a classmate's game and writing them one specific, useful note — then fixing your own.",
+      "weeklyDeliverable": "Your finished game, published from Code.org Game Lab and embedded on your Google Site with a one-paragraph description — link shared by Sunday night.",
+      "smartGoal": "I can give and use specific playtest feedback so that my game feels the way I planned it to feel.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Log in (timed) (3 min)",
+        "Quick overview: playtest roles (4 min)",
+        "I do: what a useful playtest note sounds like (8 min)",
+        "We do: practice one note as a class (5 min)",
+        "You do: swap games — play, note, then revise (25 min)",
+        "Exit Ticket: one change you are making (5 min)"
+      ],
+      "connections": "Yesterday you found your own bugs. Today someone else plays your game and tells you whether the feeling you chose on your MDA sheet actually comes through. Tomorrow you publish it to your Google Site."
+    }
+  }
+}

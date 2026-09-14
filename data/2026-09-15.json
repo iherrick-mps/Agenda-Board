@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Making Mario swap between small and big when you press a key.",
+      "weeklyDeliverable": "week06-state-pattern.md in your Mario fork — a working small/big toggle plus a short write-up naming your states, your triggers, and what changes in each — committed by Sunday night.",
+      "smartGoal": "I can write a state variable and a toggle so that pressing a key switches Mario between small and big.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Quick overview: today's plan (3 min)",
+        "I do: one variable, two states, one toggle (12 min)",
+        "We do: wire the key press to the toggle (10 min)",
+        "You do: make Mario swap size on key press (20 min)",
+        "Exit Ticket: paste the line that flips your state (3 min)"
+      ],
+      "connections": "Yesterday you named Mario's states on paper. Today you write the code that actually switches him between them — one variable, one condition, one key press. Tomorrow the rest of your code starts reading that variable instead of assuming a fixed size."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Building the main mechanic from your design plan in Code.org Game Lab.",
+      "weeklyDeliverable": "Your finished game, published from Code.org Game Lab and embedded on your Google Site with a one-paragraph description — link shared by Sunday night.",
+      "smartGoal": "I can build the main mechanic from my design plan so that my game has something a player can actually do.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (3 min)",
+        "Quick overview: today's build target (2 min)",
+        "I do: building one mechanic from a plan (10 min)",
+        "We do: read the build checklist together (5 min)",
+        "You do: build your game's main mechanic (25 min)",
+        "Exit Ticket: what works, what's stuck (5 min)"
+      ],
+      "connections": "Yesterday your plan became a list of states. Today you build the one that matters most — the thing a player actually does. Ask SchoolAI for help using the CS words we've learned, not by asking it to write your game. Tomorrow you test whether your mechanic produces the feeling you picked."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Building the main mechanic from your design plan in Code.org Game Lab.",
+      "weeklyDeliverable": "Your finished game, published from Code.org Game Lab and embedded on your Google Site with a one-paragraph description — link shared by Sunday night.",
+      "smartGoal": "I can build the main mechanic from my design plan so that my game has something a player can actually do.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Log in (timed) (3 min)",
+        "Quick overview: today's build target (2 min)",
+        "I do: building one mechanic from a plan (10 min)",
+        "We do: read the build checklist together (5 min)",
+        "You do: build your game's main mechanic (25 min)",
+        "Exit Ticket: what works, what's stuck (5 min)"
+      ],
+      "connections": "Yesterday your plan became a list of states. Today you build the one that matters most — the thing a player actually does. Ask SchoolAI for help using the CS words we've learned, not by asking it to write your game. Tomorrow you test whether your mechanic produces the feeling you picked."
+    }
+  }
+}
