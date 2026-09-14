@@ -112,10 +112,12 @@ async function initClock() {
   // overlapping blocks comes later in bells.json, which isn't
   // necessarily the one a given page's countdown should reflect.
   const clockBox = document.querySelector('.box-clock');
-  const overrideEnd = clockBox?.dataset.clockOverrideEnd;
-  const overrideLabel = clockBox?.dataset.clockOverrideLabel || 'This period';
 
   async function tick() {
+    // read per tick, not once at init: vex.html swaps this override on and
+    // off by weekday (4:00 PM club end on Mondays, real bells on Saturdays)
+    const overrideEnd = clockBox?.dataset.clockOverrideEnd;
+    const overrideLabel = clockBox?.dataset.clockOverrideLabel || 'This period';
     const pt = getPacificNow();
     const { h12, mm, ss, ampm } = fmtClock(pt);
 
