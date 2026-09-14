@@ -2475,6 +2475,8 @@ body.board-page {
    one is up — the same read-at-a-glance cue the other rotators use */
 .vex-faq-dots {
   display: flex;
+  flex-wrap: wrap;          /* the rotation is long now — let dots wrap, not overflow */
+  justify-content: center;
   gap: 0.28em;
   margin-top: 0.55em;
 }

@@ -19,9 +19,16 @@ const VEX_TEAMS = [
   { name: '92120F', note: 'Antonio, Elijah, Roman' },
 ];
 
-/* ---- Next competition — edit these two lines as new dates are set ---- */
+/* ---- Next competition — edit these three lines as new dates are set ---- */
 const VEX_NEXT_COMPETITION = '2027-01-15'; // YYYY-MM-DD
 const VEX_NEXT_COMPETITION_LABEL = 'January 15';
+const VEX_NEXT_COMPETITION_SHORT = 'Jan 15'; // fits the countdown box label
+
+/* ---- Monday club session. On Mondays the countdown box stops counting
+   competition days and counts down live to the end of club instead. ---- */
+const VEX_SESSION_END = '16:00';        // 4:00 PM
+const VEX_SESSION_END_LABEL = '4:00 PM';
+const VEX_SESSION_PACKUP_WARN_MIN = 10; // sub-line switches to a pack-up nudge here
 
 /* ---- SCRUM board stages (columns) — rows are VEX_TEAMS above ---- */
 const VEX_SCRUM_STAGES = [
@@ -66,7 +73,43 @@ const VEX_FAQS = [
   },
   {
     q: 'How many motors can we have?',
-    a: 'Six VEX IQ Smart Motors. Spares count against the limit even when they are unplugged.'
+    a: 'Six VEX IQ Smart Motors, one brain, and one battery. Spare motors count against the limit even when they are unplugged.'
+  },
+  {
+    q: 'Where does our robot start a match?',
+    a: 'Touching the field wall, inside the starting size, and carrying one yellow bag.'
+  },
+  {
+    q: 'What can we build our robot out of?',
+    a: 'VEX IQ parts only. Non-VEX rubber bands are fine. Decorations are allowed, but nothing 3D printed.'
+  },
+  {
+    q: 'How many teams are at a tournament?',
+    a: 'Usually 20 to 40. A big one can have up to 60.'
+  },
+  {
+    q: 'Who do we play with at a tournament?',
+    a: 'You are randomly paired into alliances with other teams. You get your match schedule that morning \u2014 expect 6 to 8 matches.'
+  },
+  {
+    q: 'How do we make it to the finals?',
+    a: 'Your scores from every match add up into a ranking. The top teams go to finals, and the highest score there wins the tournament.'
+  },
+  {
+    q: 'What kinds of matches can we enter?',
+    a: 'Teamwork is required and runs in alliances of two. Robot Skills and Programming Skills are optional and you run them alone. All three are 60 seconds.'
+  },
+  {
+    q: 'What is Robot Skills?',
+    a: 'You score as many points as you can by yourself. Same rules as teamwork, but the field is set up differently and all the pins load through the red side.'
+  },
+  {
+    q: 'What is Programming Skills?',
+    a: 'No driving \u2014 only your code scores. Sensors can start the code or sense things. Same field setup as Robot Skills.'
+  },
+  {
+    q: 'Can we restart in Programming Skills?',
+    a: 'Yes, as often as you want: pick the robot up, take out what it is holding, and set it back in a starting position. Use it on purpose.'
   },
 ];
 const VEX_FAQ_COLORS = [
@@ -110,15 +153,50 @@ function vexFmt12(hhmm) {
   return `${h}:${String(m).padStart(2, '0')} ${ampm}`;
 }
 
-/* ---------- Countdown to next competition ---------- */
+/* ---------- Countdown box ----------
+   Two modes, picked automatically:
+     'session'     — Mondays before 4:00 PM: live clock to the end of club
+     'competition' — every other day: Mondays/Saturdays left until the
+                     next competition
+   After 4:00 PM on a Monday it falls back to the competition count so
+   the box never sits on a dead "0:00". ---------- */
+
+// seconds from now until an "HH:MM" time today (negative once it has passed)
+function vexSecondsUntilToday(pt, hhmm) {
+  const [h, m] = hhmm.split(':').map(Number);
+  return (h * 3600 + m * 60) - (pt.hours * 3600 + pt.minutes * 60 + pt.seconds);
+}
+
+// H:MM:SS while an hour or more is left, M:SS after that
+function vexFmtDuration(totalSeconds) {
+  const s = Math.max(0, Math.floor(totalSeconds));
+  const pad = n => String(n).padStart(2, '0');
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  return h > 0 ? `${h}:${pad(m)}:${pad(s % 60)}` : `${m}:${pad(s % 60)}`;
+}
 
 function initVexCountdown() {
   const numEl = document.getElementById('vex-countdown-number');
   const subEl = document.getElementById('vex-countdown-sub');
+  const labelEl = document.getElementById('vex-countdown-label');
   if (!numEl) return;
 
-  function paint() {
-    const pt = getPacificNow();
+  let lastMode = null; // only refit the box when the label actually changes
+
+  function paintSession(pt, secondsLeft) {
+    if (labelEl) labelEl.textContent = 'VEX Ends At 4:00';
+    numEl.textContent = vexFmtDuration(secondsLeft);
+    if (subEl) {
+      subEl.textContent = secondsLeft <= VEX_SESSION_PACKUP_WARN_MIN * 60
+        ? `start packing up \u2014 ${VEX_SESSION_END_LABEL}`
+        : `until ${VEX_SESSION_END_LABEL}`;
+    }
+  }
+
+  function paintCompetition(pt) {
+    if (labelEl) labelEl.textContent = `Next Competition \u2014 ${VEX_NEXT_COMPETITION_SHORT}`;
+
     const today = vexParseIsoDateLocal(pt.isoDate);
     const target = vexParseIsoDateLocal(VEX_NEXT_COMPETITION);
 
@@ -135,8 +213,22 @@ function initVexCountdown() {
     }
   }
 
+  function paint() {
+    const pt = getPacificNow();
+    const secondsLeft = vexSecondsUntilToday(pt, VEX_SESSION_END);
+    const mode = (pt.weekdayName === 'Monday' && secondsLeft > 0) ? 'session' : 'competition';
+
+    if (mode === 'session') paintSession(pt, secondsLeft);
+    else paintCompetition(pt);
+
+    if (mode !== lastMode) {
+      lastMode = mode;
+      if (typeof fitAllBoxes === 'function') fitAllBoxes();
+    }
+  }
+
   paint();
-  setInterval(paint, 60 * 1000);
+  setInterval(paint, 1000); // ticks seconds on Mondays; harmless the rest of the week
 }
 
 /* ---------- SCRUM board — teams x build stages, checkboxes, saved to
