@@ -3,54 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Opening your Mario fork and listing the states Mario can be in and what switches him between them.",
-      "weeklyDeliverable": "week06-state-pattern.md in your Mario fork — a working small/big toggle plus a short write-up naming your states, your triggers, and what changes in each — committed by Sunday night.",
-      "smartGoal": "I can describe a state machine so that I can plan how Mario switches between his small and big states.",
+      "workingNow": "Making your own copy of the Mario base repo, playing it, and listing what it already does.",
+      "weeklyDeliverable": "week06-mod-design.md in your Mario repo — your full MDA design (Mechanics, Dynamics, Aesthetics) for your mod, plus a state map of the one mechanic you build first — committed by Sunday night.",
+      "smartGoal": "I can name the mechanics of a game so that I can describe what my mod will add to the base game.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Wayground: classroom expectations quiz (5 min)",
-        "Overview: new unit — patterns in Mario (3 min)",
-        "I do: what a state machine is (12 min)",
-        "We do: map Mario's states and triggers (10 min)",
-        "You do: open your fork, list your states (15 min)",
-        "Exit Ticket: 2 states and their trigger (5 min)"
+        "Overview + copy the Mario base repo (10 min)",
+        "You do: play it, list what it already does (10 min)",
+        "I do / We do: the M in MDA (15 min)",
+        "You do: 3 mechanics your mod adds (8 min)",
+        "Exit Ticket: your best mechanic (2 min)"
       ],
-      "connections": "Your AI article is published — that closes out our literacy detour. Today we start the unit that runs the rest of the semester: rebuilding Mario one design pattern at a time. First up is the state machine, the pattern behind every character who can be in one mode or another. Tomorrow you write the code that actually flips Mario between them."
+      "connections": "Your AI article is published — that detour is done. Today you get the base game every mod this semester is built on: a circle that rolls, jumps, and dies on spikes. Before you change it you have to be able to say exactly what it already does. Tomorrow you finish the design, and the rest of the semester you build it."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Turning your Game Design Plan into a list of the states your game moves between.",
-      "weeklyDeliverable": "Your finished game, published from Code.org Game Lab and embedded on your Google Site with a one-paragraph description — link shared by Sunday night.",
-      "smartGoal": "I can turn my design plan into a list of game states so that I know what my game has to do before I start building.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
+      "workingNow": "Picking one thing and naming exactly two states it can be in.",
+      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
+      "smartGoal": "I can name two states of one thing so that I can describe it without describing everything at once.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Wayground: classroom expectations quiz (5 min)",
-        "Overview + get your design plan back (4 min)",
-        "I do: turning a plan into game states (10 min)",
-        "We do: map one game's states together (8 min)",
-        "You do: open Lesson 18, list your states (18 min)",
-        "Exit Ticket: 2 states + what switches them (5 min)"
+        "Overview: a new way to describe things (3 min)",
+        "I do: what a state is — the lamp (12 min)",
+        "We do: name the states of 3 everyday things (12 min)",
+        "You do: pick your thing, name 2 states (15 min)",
+        "Exit Ticket: your 2 states (3 min)"
       ],
-      "connections": "Friday you finished your Game Design Plan. Today that plan becomes a build list — the actual states your game moves between and what makes it switch. The rest of this week you build it, and by Sunday night it's playable and embedded on your Google Site."
+      "connections": "Your game design plan is turned in. This week we slow all the way down and learn the one idea that makes a game actually run: a state. Today you only need two of them. By Friday you will have five, and next week you use them to build with SchoolAI."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Turning your Game Design Plan into a list of the states your game moves between.",
-      "weeklyDeliverable": "Your finished game, published from Code.org Game Lab and embedded on your Google Site with a one-paragraph description — link shared by Sunday night.",
-      "smartGoal": "I can turn my design plan into a list of game states so that I know what my game has to do before I start building.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Design and iteratively develop computational artifacts for practical intent, personal expression, or to address a societal issue.",
+      "workingNow": "Picking one thing and naming exactly two states it can be in.",
+      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
+      "smartGoal": "I can name two states of one thing so that I can describe it without describing everything at once.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Wayground: classroom expectations quiz (5 min)",
-        "Overview + get your design plan back (4 min)",
-        "I do: turning a plan into game states (10 min)",
-        "We do: map one game's states together (8 min)",
-        "You do: open Lesson 18, list your states (18 min)",
-        "Exit Ticket: 2 states + what switches them (5 min)"
+        "Overview: a new way to describe things (3 min)",
+        "I do: what a state is — the lamp (12 min)",
+        "We do: name the states of 3 everyday things (12 min)",
+        "You do: pick your thing, name 2 states (15 min)",
+        "Exit Ticket: your 2 states (3 min)"
       ],
-      "connections": "Friday you finished your Game Design Plan. Today that plan becomes a build list — the actual states your game moves between and what makes it switch. The rest of this week you build it, and by Sunday night it's playable and embedded on your Google Site."
+      "connections": "Your game design plan is turned in. This week we slow all the way down and learn the one idea that makes a game actually run: a state. Today you only need two of them. By Friday you will have five, and next week you use them to build with SchoolAI."
     }
   }
 }

@@ -3,54 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Writing week06-state-pattern.md — your states, your triggers, what changes in each — and committing it.",
-      "weeklyDeliverable": "week06-state-pattern.md in your Mario fork — a working small/big toggle plus a short write-up naming your states, your triggers, and what changes in each — committed by Sunday night.",
-      "smartGoal": "I can document my state machine so that another programmer could read my file and understand how Mario switches states.",
+      "workingNow": "Writing week06-mod-design.md — your mechanics, dynamics, aesthetic, and state map — and committing it.",
+      "weeklyDeliverable": "week06-mod-design.md in your Mario repo — your full MDA design (Mechanics, Dynamics, Aesthetics) for your mod, plus a state map of the one mechanic you build first — committed by Sunday night.",
+      "smartGoal": "I can document my mod design so that someone else could read my file and build the same thing I planned.",
       "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Overview: today you document (3 min)",
-        "I do: model a pattern write-up (10 min)",
-        "We do: check one write-up against the checklist (7 min)",
-        "You do: write week06-state-pattern.md & commit (25 min)",
+        "I do: model the design write-up (10 min)",
+        "We do: check one against the checklist (7 min)",
+        "You do: write week06-mod-design.md & commit (25 min)",
         "Exit Ticket: paste your file's GitHub link (3 min)"
       ],
-      "connections": "You planned the pattern Monday, coded it Tuesday and Wednesday, and tested it yesterday. Today you write it down — the first of twelve pattern write-ups that become your portfolio by December. Next week we add the Game Loop pattern, and gravity comes with it."
+      "connections": "You designed it Monday and Tuesday, mapped it Wednesday, and touched the real code yesterday. Today it becomes a document someone else could build from. Next week you start building the mod for real, one piece at a time."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Publishing your game and embedding it on your Google Site with a paragraph describing it.",
-      "weeklyDeliverable": "Your finished game, published from Code.org Game Lab and embedded on your Google Site with a one-paragraph description — link shared by Sunday night.",
-      "smartGoal": "I can publish my game and embed it on my site so that anyone can play it and read what I designed.",
-      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
+      "workingNow": "Handing your diagram to a partner and watching them try to get it stuck.",
+      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
+      "smartGoal": "I can test my state machine with a partner so that I can find the paths I did not think about.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.11 — Justifying own arguments and evaluating others' arguments in speaking and writing.",
       "agenda": [
         "Log in (timed) (3 min)",
-        "Overview: publishing & embedding (3 min)",
-        "I do: share, copy link, embed on your site (10 min)",
-        "We do: check one site against the rubric (7 min)",
-        "You do: publish, embed, write your description (22 min)",
-        "Exit Ticket: paste your live site link (5 min)"
+        "Overview: today you test it (2 min)",
+        "I do: how to walk a partner through a machine (8 min)",
+        "We do: trace one path as a class (7 min)",
+        "You do: partner test, then fix your diagram (25 min)",
+        "Exit Ticket: one thing you fixed (5 min)"
       ],
-      "connections": "Two weeks ago your game was an idea on an MDA sheet. Today it goes live on your Google Site where anyone can play it. That site is your portfolio — the engineering builds we start next unit get posted right next to this one."
+      "connections": "You have five states on paper. Today someone else drives — they pick triggers and you move through your own machine until something breaks. Fix it, and you have a finished state machine. Next week you use it to build a real game with SchoolAI."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Publishing your game and embedding it on your Google Site with a paragraph describing it.",
-      "weeklyDeliverable": "Your finished game, published from Code.org Game Lab and embedded on your Google Site with a one-paragraph description — link shared by Sunday night.",
-      "smartGoal": "I can publish my game and embed it on my site so that anyone can play it and read what I designed.",
-      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
+      "workingNow": "Handing your diagram to a partner and watching them try to get it stuck.",
+      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
+      "smartGoal": "I can test my state machine with a partner so that I can find the paths I did not think about.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.11 — Justifying own arguments and evaluating others' arguments in speaking and writing.",
       "agenda": [
         "Log in (timed) (3 min)",
-        "Overview: publishing & embedding (3 min)",
-        "I do: share, copy link, embed on your site (10 min)",
-        "We do: check one site against the rubric (7 min)",
-        "You do: publish, embed, write your description (22 min)",
-        "Exit Ticket: paste your live site link (5 min)"
+        "Overview: today you test it (2 min)",
+        "I do: how to walk a partner through a machine (8 min)",
+        "We do: trace one path as a class (7 min)",
+        "You do: partner test, then fix your diagram (25 min)",
+        "Exit Ticket: one thing you fixed (5 min)"
       ],
-      "connections": "Two weeks ago your game was an idea on an MDA sheet. Today it goes live on your Google Site where anyone can play it. That site is your portfolio — the engineering builds we start next unit get posted right next to this one."
+      "connections": "You have five states on paper. Today someone else drives — they pick triggers and you move through your own machine until something breaks. Fix it, and you have a finished state machine. Next week you use it to build a real game with SchoolAI."
     }
   }
 }

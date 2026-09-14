@@ -3,54 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Making your drawing code read the state variable instead of using a fixed size.",
-      "weeklyDeliverable": "week06-state-pattern.md in your Mario fork — a working small/big toggle plus a short write-up naming your states, your triggers, and what changes in each — committed by Sunday night.",
-      "smartGoal": "I can make my render code read my state variable so that changing the state changes what the player sees.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "workingNow": "Working out the states your first mod mechanic needs, and what switches between them.",
+      "weeklyDeliverable": "week06-mod-design.md in your Mario repo — your full MDA design (Mechanics, Dynamics, Aesthetics) for your mod, plus a state map of the one mechanic you build first — committed by Sunday night.",
+      "smartGoal": "I can map the states of one mechanic so that I know exactly what I have to build first.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
         "Log in (timed) (2 min)",
         "Overview: today's one job (2 min)",
-        "I do: draw from the state, don't hardcode (8 min)",
-        "We do: find one hardcoded value together (5 min)",
-        "You do: make your render read the state (11 min)",
-        "Exit Ticket: one thing your state now controls (2 min)"
+        "I do: which states does your mechanic need? (8 min)",
+        "We do: map one mod mechanic together (6 min)",
+        "You do: write your state map (10 min)",
+        "Exit Ticket: your 2 states (2 min)"
       ],
-      "connections": "Yesterday your key press flipped a variable. Today the rest of your code starts listening to it — that is what makes this a real state machine instead of two separate copies of Mario. Tomorrow you and a partner try to break each other's."
+      "connections": "Your MDA design says what your mod should feel like. Today you pick the one mechanic you build first and break it into states — the same pattern the 6th and 7th graders are learning this week. Tomorrow you find the file it lives in."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Playing your own game on purpose to find what breaks, and writing down three bugs.",
-      "weeklyDeliverable": "Your finished game, published from Code.org Game Lab and embedded on your Google Site with a one-paragraph description — link shared by Sunday night.",
-      "smartGoal": "I can test my game one part at a time so that I can find exactly what is broken instead of guessing.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "workingNow": "Adding a third state to your diagram and checking which way each arrow points.",
+      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
+      "smartGoal": "I can add a third state to my diagram so that my thing can move through a cycle instead of just flipping back and forth.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
-        "Log in (timed) (3 min)",
-        "Overview: today you test, not build (2 min)",
-        "I do: testing one thing at a time (6 min)",
-        "We do: test a shared game & name the bug (5 min)",
-        "You do: test your game, list 3 bugs (11 min)",
-        "Exit Ticket: your top bug to fix (3 min)"
+        "Log in (timed) (2 min)",
+        "Overview: adding a third state (2 min)",
+        "I do: the traffic light, three states (8 min)",
+        "We do: why these arrows only go one way (6 min)",
+        "You do: add a third state to your diagram (10 min)",
+        "Exit Ticket: your third state (2 min)"
       ],
-      "connections": "You have spent two days building. Today you stop adding and start testing — a game you have not broken on purpose is not finished. Tomorrow a classmate plays it and tells you whether it feels the way you planned back on your MDA sheet."
+      "connections": "Two states can only flip back and forth. Three states can go in a circle — that is how a traffic light works, and it is why arrows have a direction. Tomorrow you push it to five states and hunt for dead ends."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Playing your own game on purpose to find what breaks, and writing down three bugs.",
-      "weeklyDeliverable": "Your finished game, published from Code.org Game Lab and embedded on your Google Site with a one-paragraph description — link shared by Sunday night.",
-      "smartGoal": "I can test my game one part at a time so that I can find exactly what is broken instead of guessing.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "workingNow": "Adding a third state to your diagram and checking which way each arrow points.",
+      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
+      "smartGoal": "I can add a third state to my diagram so that my thing can move through a cycle instead of just flipping back and forth.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
-        "Log in (timed) (3 min)",
-        "Overview: today you test, not build (2 min)",
-        "I do: testing one thing at a time (6 min)",
-        "We do: test a shared game & name the bug (5 min)",
-        "You do: test your game, list 3 bugs (11 min)",
-        "Exit Ticket: your top bug to fix (3 min)"
+        "Log in (timed) (2 min)",
+        "Overview: adding a third state (2 min)",
+        "I do: the traffic light, three states (8 min)",
+        "We do: why these arrows only go one way (6 min)",
+        "You do: add a third state to your diagram (10 min)",
+        "Exit Ticket: your third state (2 min)"
       ],
-      "connections": "You have spent two days building. Today you stop adding and start testing — a game you have not broken on purpose is not finished. Tomorrow a classmate plays it and tells you whether it feels the way you planned back on your MDA sheet."
+      "connections": "Two states can only flip back and forth. Three states can go in a circle — that is how a traffic light works, and it is why arrows have a direction. Tomorrow you push it to five states and hunt for dead ends."
     }
   }
 }
