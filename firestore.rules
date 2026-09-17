@@ -1,0 +1,73 @@
+// ============================================================
+// Firestore rules — Agenda Board (Transition Timer records)
+//
+// This is the COMPLETE rules file for the board's Firebase
+// project. Paste the whole thing into the console, replacing
+// whatever is there.
+//
+// HOW TO INSTALL
+//   1. Firebase console -> Build -> Firestore Database -> Rules tab.
+//   2. Select everything in the editor and paste this file over it.
+//   3. Publish.
+//
+// A brand-new database starts in one of two default states, and
+// both should be replaced by this file:
+//   "test mode"       — wide open, but it stops working after 30
+//                       days, and then records silently stop saving.
+//   "production mode" — locked shut, so nothing ever saves.
+//
+// WHAT THESE ALLOW
+//   Anyone who can reach the page can read and write transition
+//   records. GitHub Pages serves static files with no server of its
+//   own to authenticate against, so there is nobody to check
+//   credentials against. What's stored is a stopwatch reading, a
+//   date, and a period name — no student names, no PII, nothing
+//   that matters if a stranger reads it.
+//
+//   The validation below is about keeping *bad data* out of the
+//   table, not keeping people out: it pins the shape of a record so
+//   a malformed or oversized write can't land in the collection.
+//
+// ADDING ANOTHER APP LATER
+//   If the help queue (or anything else) ever moves into this same
+//   project, add its own `match /<collection>/{id} { ... }` block
+//   next to the transitions block below — inside the same
+//   `match /databases/{database}/documents` braces. Don't nest it
+//   inside the transitions block, and don't replace this file with
+//   that app's rules.
+// ============================================================
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /transitions/{recordId} {
+
+      function validRecord(d) {
+        return d.keys().hasOnly([
+                 'date', 'weekday', 'period', 'periodSlug', 'grade',
+                 'schedule', 'bellStart', 'bellEnd', 'seconds',
+                 'stopped', 'final', 'updatedAt'
+               ])
+               && d.date is string
+               && d.date.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
+               && d.period is string && d.period.size() < 40
+               && d.periodSlug in ['4', '6', '7']
+               && d.seconds is number
+               && d.seconds >= 0
+               // a single period is never longer than two hours — anything
+               // past that is a bug or junk, not a transition
+               && d.seconds <= 7200
+               && d.stopped is bool;
+      }
+
+      allow read: if true;
+      allow create, update: if validRecord(request.resource.data);
+      allow delete: if true;
+    }
+
+    // Anything not matched above is denied. A typo'd collection name
+    // fails loudly instead of quietly filling up with junk.
+  }
+}

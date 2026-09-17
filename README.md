@@ -12,8 +12,8 @@ A daily agenda board for Robotics & Coding, deployable to GitHub Pages.
 - `overview.html` / `overview.js` — the **Day Overview**: today's plans for both tracks side by side (8th grade left, 6th/7th right). `current-day.html` shows this automatically from the 1st period bell through the end of 3rd period.
 - `transitions.html` / `transitions.js` — the **Transition Times** table: every class, every day, how long it took to settle.
 - `transitions-record.js` — writes the Transition Timer's reading to Firestore. Loaded only by `agenda.html`.
-- `firebase-config.js` — Firebase keys. Same project as the help queue (`herrick-help-queue`), different collection.
-- `firestore-transitions.rules` — the rules block to paste into the Firebase console alongside the queue's existing rules. Not uploaded to GitHub Pages by necessity, but harmless if it is.
+- `firebase-config.js` — Firebase keys for the board's own Firebase project. Nothing else in the repo uses these; the help queue is a separate project reached through an iframe and is not affected by them.
+- `firestore.rules` — the complete rules file to paste into the Firebase console. Not uploaded to GitHub Pages by necessity, but harmless if it is.
 - `data/YYYY-MM-DD.json` — one file per school day. Sample files for 2026-08-07, 08-10, 08-11, 08-12 are included as examples.
 
 ## The agenda board layout
@@ -105,8 +105,9 @@ Only 4th, 6th, and 7th period are recorded. The timer still auto-starts at every
 other bell (it's a general-purpose stopwatch the rest of the day), but 1st period's
 reading isn't hers and never reaches the table.
 
-**Where it goes.** A `transitions` collection in the same Firebase project as the
-help queue. One document per class per day, with a deterministic ID
+**Where it goes.** A `transitions` collection in the board's own Firebase project —
+separate from the help queue, which the board only ever embeds in an iframe and
+never talks to directly. One document per class per day, with a deterministic ID
 (`2026-09-17_4` = September 17th, 4th period). That ID is the reason the projector,
 the laptop, and three forgotten tabs all write to the same row instead of filling
 the table with duplicates. A write also refuses to overwrite a stopped reading with
@@ -121,18 +122,36 @@ is live: a period that ends while the page is open appears on its own.
 
 ### Firebase setup (one time)
 
-`firebase-config.js` already points at the existing `herrick-help-queue` project, so
-there's no new project to create. The only step is the rules:
+The board records into its **own** Firebase project, separate from the help queue.
+The queue is only ever embedded in an iframe — the board never talks to it directly,
+so none of this touches it.
 
-1. Firebase console → **Build → Firestore Database → Rules**.
-2. Paste the `match /transitions/{recordId}` block from `firestore-transitions.rules`
-   *inside* the existing `match /databases/{database}/documents { ... }` braces,
-   alongside the block the help queue already uses. **Don't replace the whole file** —
-   that would break the queue.
-3. **Publish.**
+**1. Create the database.** In the new project: **Build → Firestore Database →
+Create database**. Choose **Native mode** (not Datastore mode) and a US location —
+`us-west1` is closest to Pacific time. The location is permanent; everything else here
+can be changed later.
 
-Until that's done, the board still works normally and the timer still runs; the
-records just silently fail to save, and `transitions.html` reports a permission error.
+**2. Register a web app.** Project settings (the gear) → **Your apps** → the **Web**
+icon (`</>`). Give it any nickname; **don't** check "Firebase Hosting" — the board is
+already hosted on GitHub Pages. Firebase then shows a `firebaseConfig = { ... }` block.
+
+**3. Copy those keys into `firebase-config.js`,** replacing the ones already there.
+Keep the `const firebaseConfig = {` line exactly as it is; only the six values inside
+change. These keys are safe to commit — they identify the project, they don't grant
+access to it. What actually guards the data is the rules file in step 4.
+
+**4. Publish the rules.** **Build → Firestore Database → Rules**, select everything in
+the editor, paste `firestore.rules` over it, and **Publish**. A new database starts
+either wide open for 30 days ("test mode") or locked shut ("production mode") — both
+need replacing, the first because records quietly stop saving a month in.
+
+**Check it worked.** Open `transitions.html`. Before the rules are published it says
+*"Couldn't read the records: Missing or insufficient permissions."* After, it should
+say *"No transition records in this range yet."* — and the first class period that
+ends with the board open fills in a row.
+
+Until all four steps are done the board still works normally and the timer still runs;
+the records just silently fail to save.
 
 Records have no TTL — unlike queue rooms, this data is the point, and a year of it is
 a few hundred tiny documents.
