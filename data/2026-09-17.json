@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Finding the file your mechanic lives in, and building the smallest version of it that runs.",
-      "weeklyDeliverable": "week06-mod-design.md in your Mario repo — your full MDA design (Mechanics, Dynamics, Aesthetics) for your mod, plus a state map of the one mechanic you build first — committed by Sunday night.",
-      "smartGoal": "I can find the right file in the base game and change one thing so that I can start building my mod instead of only planning it.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
-      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "workingNow": "Bringing your mechanics, dynamics, aesthetic and state map together into one design document.",
+      "weeklyDeliverable": "One design document in your portfolio repo bringing together your mechanics, dynamics, aesthetic and state map — plus your ROLLER game embedded and playable on your portfolio site — pushed by Sunday night.",
+      "smartGoal": "I can bring my whole design together into one document so that someone else could read it and build my mod without asking me anything.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Quick overview: find your file (3 min)",
-        "I do: tour the base game's files (12 min)",
-        "We do: change one number and watch it (8 min)",
-        "You do: build the smallest version of your mechanic (22 min)",
-        "Exit Ticket: which file did you edit? (3 min)"
+        "Quick overview: today you assemble (3 min)",
+        "I do: what a complete design document looks like (12 min)",
+        "We do: check one section against the checklist (8 min)",
+        "You do: write your design document (22 min)",
+        "Exit Ticket: paste your document's link (3 min)"
       ],
-      "connections": "You have a design and a state map. Today you open the actual code and find where your mechanic belongs — config, player, draw, or level. Smallest version first: one number, one line. Tomorrow you write the whole thing up and push it."
+      "connections": "You have four separate pieces on four separate papers: mechanics, dynamics, aesthetic, state map. Today they become one document in your portfolio repo that reads start to finish. No code this week — the design IS the work. Tomorrow you put the game itself next to it."
     },
     "6th Period": {
       "grade": "7th Grade",

@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Writing week06-mod-design.md — your mechanics, dynamics, aesthetic, and state map — and committing it.",
-      "weeklyDeliverable": "week06-mod-design.md in your Mario repo — your full MDA design (Mechanics, Dynamics, Aesthetics) for your mod, plus a state map of the one mechanic you build first — committed by Sunday night.",
-      "smartGoal": "I can document my mod design so that someone else could read my file and build the same thing I planned.",
-      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
+      "workingNow": "Embedding your ROLLER game on your portfolio site and finishing your design document.",
+      "weeklyDeliverable": "One design document in your portfolio repo bringing together your mechanics, dynamics, aesthetic and state map — plus your ROLLER game embedded and playable on your portfolio site — pushed by Sunday night.",
+      "smartGoal": "I can embed my game on my portfolio site so that anyone can play it right next to the design document that explains it.",
+      "contentStandard": "CA CS Standards 6-8.AP.16 — Incorporate existing code, media, and libraries into original programs, and give attribution.",
+      "eldStandard": "ELD.PI.6-8.2 — Interacting with others in written English in various communicative forms.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Overview: today you document (3 min)",
-        "I do: model the design write-up (10 min)",
-        "We do: check one against the checklist (7 min)",
-        "You do: write week06-mod-design.md & commit (25 min)",
-        "Exit Ticket: paste your file's GitHub link (3 min)"
+        "Overview: embedding and finishing (3 min)",
+        "I do: embed ROLLER on your portfolio site (12 min)",
+        "We do: check one portfolio against the rubric (7 min)",
+        "You do: embed, then finish your document (23 min)",
+        "Exit Ticket: paste your live portfolio link (3 min)"
       ],
-      "connections": "You designed it Monday and Tuesday, mapped it Wednesday, and touched the real code yesterday. Today it becomes a document someone else could build from. Next week you start building the mod for real, one piece at a time."
+      "connections": "Your design document explains a game nobody can play yet. Today you fix that — the base game goes live on your portfolio site, embedded right above the design that says what you are going to do to it. Next week you start building, and every change will show up on that page."
     },
     "6th Period": {
       "grade": "7th Grade",

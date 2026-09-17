@@ -9,6 +9,11 @@ A daily agenda board for Robotics & Coding, deployable to GitHub Pages.
 - `script.js` — clock/countdown logic, date list rendering, box rendering, and the auto-fit-text routine.
 - `bells.json` — the three bell schedules (Regular, Shortened/Wednesday, Minimum Day), built from the 2025-26 bell schedule PDF.
 - `dates.txt` — plain list of dates, one `YYYY-MM-DD` per line. Add a line here every time you add a new day's JSON file.
+- `overview.html` / `overview.js` — the **Day Overview**: today's plans for both tracks side by side (8th grade left, 6th/7th right). `current-day.html` shows this automatically from the 1st period bell through the end of 3rd period.
+- `transitions.html` / `transitions.js` — the **Transition Times** table: every class, every day, how long it took to settle.
+- `transitions-record.js` — writes the Transition Timer's reading to Firestore. Loaded only by `agenda.html`.
+- `firebase-config.js` — Firebase keys. Same project as the help queue (`herrick-help-queue`), different collection.
+- `firestore-transitions.rules` — the rules block to paste into the Firebase console alongside the queue's existing rules. Not uploaded to GitHub Pages by necessity, but harmless if it is.
 - `data/YYYY-MM-DD.json` — one file per school day. Sample files for 2026-08-07, 08-10, 08-11, 08-12 are included as examples.
 
 ## The agenda board layout
@@ -17,7 +22,7 @@ Ten boxes tile the full screen with no scrolling, no matter what screen it's dis
 
 Each text box's font automatically grows or shrinks to fill exactly the space it has — no wasted space, and it never overflows or scrolls, regardless of how much or little text is in that box that day.
 
-**Count-up timer:** a stopwatch strip sitting between the clock and the name card — Start, Stop, Clear, counting `MM:SS` (it rolls over to `H:MM:SS` past an hour). The digits turn green while it's running. It measures against the real wall clock rather than counting ticks, so it stays accurate even if the browser throttles the tab. It resets on page reload; it's meant for timing a work block, a login, or a transition, not for carrying time across days.
+**Transition Timer:** a stopwatch strip sitting between the clock and the name card — Start, Stop, Clear, counting `MM:SS` (it rolls over to `H:MM:SS` past an hour). The digits turn green while it's running. It measures against the real wall clock rather than counting ticks, so it stays accurate even if the browser throttles the tab. It clears and starts itself at every bell, so each period begins timing with nobody touching it. Press **Stop** once the class is settled — that reading is the transition, and a small green `recorded` mark appears under the label to confirm it's on file. See "Transition Times" below.
 
 **Clock box:** shows today's real date (`YYYY/MM/DD · WEEKDAY`), the live Pacific time, and the countdown — always reflects the real day/time, not whatever date's board you're viewing. "Ms. Herrick" sits in its own small box directly underneath, sized so the two together match the height of the Working/Deliverable boxes beside them.
 
@@ -82,3 +87,72 @@ No build step, no dependencies — it's plain HTML/CSS/JS, so it works as-is on 
 
 ## Testing locally
 From this folder: `python3 -m http.server 8000`, then open `http://localhost:8000`. (Opening `index.html` directly by double-clicking won't work — the browser blocks the `fetch()` calls for local files without a server.)
+
+## Transition Times
+
+Every class period's transition length is recorded automatically and collected at
+`transitions.html`.
+
+**How a record gets made.** The Transition Timer clears and starts itself the instant
+a bell rings. When Ms. Herrick presses **Stop**, that reading is saved right then —
+so closing the tab, losing the projector, or reloading can't lose it. When the next
+bell rings, the record for the period that just ended is finalized. A period where
+the timer was never stopped still gets a row, flagged `not stopped` and struck
+through, and it's left out of every average — the reading there is "how long the tab
+sat open," not a transition.
+
+Only 4th, 6th, and 7th period are recorded. The timer still auto-starts at every
+other bell (it's a general-purpose stopwatch the rest of the day), but 1st period's
+reading isn't hers and never reaches the table.
+
+**Where it goes.** A `transitions` collection in the same Firebase project as the
+help queue. One document per class per day, with a deterministic ID
+(`2026-09-17_4` = September 17th, 4th period). That ID is the reason the projector,
+the laptop, and three forgotten tabs all write to the same row instead of filling
+the table with duplicates. A write also refuses to overwrite a stopped reading with
+a never-stopped one, so a stale tab sitting at 48:12 can't clobber the real 1:34.
+
+**The table.** One row per school day, one column per class, plus a day average and
+per-class averages across the range. Readings are color-banded — green under 2
+minutes, amber in between, red over 5 — with a length bar under each so a column can
+be read at a glance. Filter to the last 2 weeks / 30 days / all time, download the
+whole range as CSV, or hover a cell and click **×** to delete a bad record. The table
+is live: a period that ends while the page is open appears on its own.
+
+### Firebase setup (one time)
+
+`firebase-config.js` already points at the existing `herrick-help-queue` project, so
+there's no new project to create. The only step is the rules:
+
+1. Firebase console → **Build → Firestore Database → Rules**.
+2. Paste the `match /transitions/{recordId}` block from `firestore-transitions.rules`
+   *inside* the existing `match /databases/{database}/documents { ... }` braces,
+   alongside the block the help queue already uses. **Don't replace the whole file** —
+   that would break the queue.
+3. **Publish.**
+
+Until that's done, the board still works normally and the timer still runs; the
+records just silently fail to save, and `transitions.html` reports a permission error.
+
+Records have no TTL — unlike queue rooms, this data is the point, and a year of it is
+a few hundred tiny documents.
+
+## Day Overview
+
+`overview.html` shows one day's plans as two columns: **8th grade (4th Period)** on
+the left, **6th & 7th grade** on the right. Since 6th and 7th normally run the same
+plan, they share one column; on a day where their JSON actually differs, that column
+splits into two labeled cards instead of quietly showing one and hiding the other.
+
+Each column carries the SMART goal, what they're working on, the agenda steps, the
+Sunday deliverable, both standards, and the connections — the same fields the bento
+board rotates through, just all visible at once.
+
+`current-day.html` switches to this page on its own **from the 1st period bell
+through the end of 3rd period** — the stretch of the day before she starts teaching —
+then hands off to the live class board at the 3rd period bell, exactly as before.
+Outside that window it's still reachable from the home page, and its Prev/Next
+buttons walk through any date in `dates.txt`, so it works for reading a day ahead.
+
+The page re-fetches its day file every five minutes, so editing a JSON file updates
+the projected overview without anyone reloading anything.

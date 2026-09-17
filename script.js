@@ -656,6 +656,7 @@ function computeEffectivePeriod(scheduleData, periodsPresent, nowMin) {
 //
 // Returns one of:
 //   { type: 'agenda', dateStr, period }  — a live class period
+//   { type: 'overview', dateStr }        — Day Overview (1st through 3rd period)
 //   { type: 'study-hall' }               — default / nothing else scheduled
 //   { type: 'vex' }                      — VEX Club (Mon 3pm+, Sat 8am+)
 //   { type: 'tutoring' }                 — Tutoring (Tue 3pm+)
@@ -699,11 +700,21 @@ async function resolveLivePage() {
   if (!scheduleData) return { type: 'study-hall' };
 
   const thirdPeriodBell = scheduleData.periods.find(bp => bp.name === '3rd Period');
+  const firstPeriodBell = scheduleData.periods.find(bp => bp.name === '1st Period');
   const lastPeriodBell = scheduleData.periods.find(
     bp => bp.name === periodsPresent[periodsPresent.length - 1]
   );
   const blockStart = thirdPeriodBell ? hhmmToMinutes(thirdPeriodBell.end) : -Infinity;
   const blockEnd = lastPeriodBell ? hhmmToMinutes(lastPeriodBell.end) : Infinity;
+
+  // 2a. 1st through 3rd period — she isn't teaching yet, so the board shows
+  //     the Day Overview (both tracks side by side) instead of Study Hall.
+  //     Nutrition Break sits inside this window on purpose: it's one
+  //     continuous stretch from the 1st period bell to the 3rd period bell.
+  if (firstPeriodBell && thirdPeriodBell &&
+      nowMin >= hhmmToMinutes(firstPeriodBell.start) && nowMin < blockStart) {
+    return { type: 'overview', dateStr };
+  }
 
   // 3. Before 3rd period ends, or after her day's last period ends (with no
   //    special active) — Study Hall.
@@ -1204,6 +1215,31 @@ function initCountUpTimer() {
   let startedAt = null;  // wall-clock ms when the current segment began
   let ticker = null;
   let lastTickSecond = -1; // last whole second we've already played a tick for
+  let stoppedMs = null;  // reading on the clock at the most recent deliberate Stop
+  let activeBell = null; // the bell period this run belongs to (set by checkAutoStart)
+
+  /* Hands the current reading to the transition recorder, if one is loaded
+     on this page (transitions-record.js defines window.recordTransition;
+     every page without Firebase simply has no recorder and this is a
+     no-op). Nothing here ever throws into the timer itself — a failed or
+     missing network write must not stop the clock on the wall. */
+  function report(reason) {
+    if (typeof window.recordTransition !== 'function' || !activeBell) return;
+    try {
+      window.recordTransition({
+        reason,                                  // 'stop' | 'period-end'
+        date: activeBell.date,
+        periodName: activeBell.name,
+        schedule: activeBell.schedule,
+        bellStart: activeBell.start,
+        bellEnd: activeBell.end,
+        stopped: stoppedMs !== null,
+        // when she stopped it, that's the transition; when she never did,
+        // send the raw elapsed so the record exists but is flagged
+        seconds: Math.round((stoppedMs === null ? totalMs() : stoppedMs) / 1000)
+      });
+    } catch (e) { /* recorder unavailable — the timer keeps working */ }
+  }
 
   // measured against Date.now() rather than counting interval fires, so a
   // throttled background tab can't make the timer drift slow
@@ -1266,6 +1302,7 @@ function initCountUpTimer() {
     displayEl.textContent = format(totalMs());
     const running = startedAt !== null;
     box.classList.toggle('is-running', running);
+    box.classList.toggle('is-banked', !running && stoppedMs !== null);
     startBtn.disabled = running;
     stopBtn.disabled = !running;
     clearBtn.disabled = !running && totalMs() === 0;
@@ -1282,18 +1319,28 @@ function initCountUpTimer() {
     paint();
   }
 
-  function stop() {
+  function stop(opts = {}) {
     if (startedAt === null) return;
     elapsedMs += Date.now() - startedAt;
     startedAt = null;
     clearInterval(ticker);
     ticker = null;
+    // A deliberate Stop is what marks "the class is settled" — that reading
+    // is the transition time, so bank it and report it right away rather
+    // than waiting for the bell (if the board gets closed mid-period, the
+    // record is already safe in Firestore). clear() stops silently, since
+    // clearing means she's about to re-time something. Banking happens
+    // before paint() so the box picks up its "recorded" state in the same
+    // frame the clock stops.
+    if (!opts.silent) stoppedMs = elapsedMs;
     paint();
+    if (!opts.silent) report('stop');
   }
 
   function clear() {
-    stop();
+    stop({ silent: true });
     elapsedMs = 0;
+    stoppedMs = null;
     lastTickSecond = -1;
     paint();
   }
@@ -1320,8 +1367,6 @@ function initCountUpTimer() {
      click, the browser may block the tick sound's audio context
      until a user interacts with the page once; the visible count is
      unaffected either way, since it's timed off Date.now(). */
-  let autoStartedPeriodKey = null;
-
   async function checkAutoStart() {
     try {
       const bells = await loadBells();
@@ -1333,9 +1378,26 @@ function initCountUpTimer() {
 
       const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
       const key = current ? `${pt.isoDate}|${current.start}` : null;
+      const prevKey = activeBell ? activeBell.key : null;
+      if (key === prevKey) return;
 
-      if (key && key !== autoStartedPeriodKey) {
-        autoStartedPeriodKey = key;
+      // A bell just rang. Whatever is on the clock belongs to the period
+      // that's ending, so file the final record for it *before* the reset
+      // wipes the reading. This is the "record at the end of each class"
+      // write — it fires whether or not she ever pressed Stop, so a period
+      // she forgot about still leaves a (flagged) row in the table.
+      if (activeBell) report('period-end');
+
+      activeBell = current ? {
+        key,
+        name: current.name,
+        date: pt.isoDate,
+        start: current.start,
+        end: current.end,
+        schedule: scheduleKey
+      } : null;
+
+      if (current) {
         clear();
         start();
       }

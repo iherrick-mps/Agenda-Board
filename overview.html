@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Day Overview — Robotics &amp; Coding</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="overview-page">
+
+<div class="hover-zone">
+  <div class="hover-trigger"></div>
+  <div class="hover-bar">
+    <a class="back-link-inline" href="index.html">&larr; All dates</a>
+    <button class="nav-day-btn" id="ov-prev-btn" title="Previous day">&larr; Prev</button>
+    <span class="hb-date" id="ov-nav-date">Loading&hellip;</span>
+    <button class="nav-day-btn" id="ov-next-btn" title="Next day">Next &rarr;</button>
+    <a class="nav-day-btn" id="ov-full-board" href="agenda.html">Open full board &rarr;</a>
+    <a class="nav-day-btn" href="transitions.html">Transition times &rarr;</a>
+  </div>
+</div>
+
+<header class="ov-topbar">
+  <div class="ov-brand">
+    Day Overview
+    <span class="ov-date" id="ov-date">Loading&hellip;</span>
+  </div>
+  <div class="ov-schedule" id="ov-schedule"></div>
+  <div class="clock">
+    <div class="clock-time" id="clock-time">--:--</div>
+    <div class="clock-status" id="clock-status">
+      <span class="status-label" id="clock-status-label">Loading&hellip;</span>
+      <span class="status-value" id="clock-status-value">&mdash;</span>
+    </div>
+  </div>
+</header>
+
+<main class="ov-columns" id="ov-columns">
+  <div class="ov-loading" id="ov-loading">Loading today&rsquo;s plans&hellip;</div>
+</main>
+
+<script src="script.js"></script>
+<script src="overview.js"></script>
+</body>
+</html>

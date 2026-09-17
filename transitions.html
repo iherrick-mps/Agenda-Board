@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transition Times — Robotics &amp; Coding</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="index-page transitions-page">
+
+<div class="topbar">
+  <div class="brand">
+    Transition Times
+    <span class="brand-sub">Robotics &amp; Coding &middot; Ms. Herrick</span>
+  </div>
+  <div class="clock">
+    <div class="clock-time" id="clock-time">--:--</div>
+    <div class="clock-tz">Pacific Time</div>
+    <div class="clock-status" id="clock-status">
+      <span class="status-label" id="clock-status-label">Loading&hellip;</span>
+      <span class="status-value" id="clock-status-value">&mdash;</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-body tx-body">
+
+  <p class="tx-intro">
+    Every class period, the Transition Timer starts itself at the bell and records
+    whatever is on it when you press <strong>Stop</strong> &mdash; that reading is how long
+    the class took to settle. If the timer is never stopped, the period still gets a row,
+    flagged so it doesn&rsquo;t drag the averages around.
+  </p>
+
+  <div class="tx-controls">
+    <div class="tx-range" id="tx-range">
+      <button type="button" class="tx-range-btn" data-days="14">Last 2 weeks</button>
+      <button type="button" class="tx-range-btn" data-days="30">Last 30 days</button>
+      <button type="button" class="tx-range-btn is-active" data-days="0">All time</button>
+    </div>
+    <button type="button" class="tx-csv-btn" id="tx-csv">Download CSV</button>
+  </div>
+
+  <div class="tx-stats" id="tx-stats"></div>
+
+  <div class="page-heading">Day by day</div>
+  <div class="tx-table-wrap">
+    <table class="tx-table" id="tx-table">
+      <thead>
+        <tr>
+          <th class="tx-th-date">Date</th>
+          <th><span class="tx-th-period">4th Period</span><span class="tx-th-grade">8th Grade</span></th>
+          <th><span class="tx-th-period">6th Period</span><span class="tx-th-grade">7th Grade</span></th>
+          <th><span class="tx-th-period">7th Period</span><span class="tx-th-grade">6th Grade</span></th>
+          <th class="tx-th-avg">Day avg</th>
+        </tr>
+      </thead>
+      <tbody id="tx-tbody">
+        <tr><td colspan="5" class="tx-loading">Loading records&hellip;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="tx-foot" id="tx-foot"></p>
+
+  <div class="page-heading">Other Pages</div>
+  <ul class="date-list">
+    <li>
+      <a href="index.html"><span class="date-main">All dates</span><span class="date-arrow">&rarr;</span></a>
+    </li>
+    <li>
+      <a href="current-day.html"><span class="date-main">Today&rsquo;s Agenda</span><span class="date-arrow">&rarr;</span></a>
+    </li>
+    <li>
+      <a href="overview.html"><span class="date-main">Day Overview</span><span class="date-arrow">&rarr;</span></a>
+    </li>
+  </ul>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="script.js"></script>
+<script src="transitions.js"></script>
+</body>
+</html>

@@ -4,7 +4,7 @@
     "4th Period": {
       "grade": "8th Grade",
       "workingNow": "Working out the states your first mod mechanic needs, and what switches between them.",
-      "weeklyDeliverable": "week06-mod-design.md in your Mario repo — your full MDA design (Mechanics, Dynamics, Aesthetics) for your mod, plus a state map of the one mechanic you build first — committed by Sunday night.",
+      "weeklyDeliverable": "One design document in your portfolio repo bringing together your mechanics, dynamics, aesthetic and state map — plus your ROLLER game embedded and playable on your portfolio site — pushed by Sunday night.",
       "smartGoal": "I can map the states of one mechanic so that I know exactly what I have to build first.",
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
@@ -16,7 +16,7 @@
         "You do: write your state map (10 min)",
         "Exit Ticket: your 2 states (2 min)"
       ],
-      "connections": "Your MDA design says what your mod should feel like. Today you pick the one mechanic you build first and break it into states — the same pattern the 6th and 7th graders are learning this week. Tomorrow you find the file it lives in."
+      "connections": "Your MDA design says what your mod should feel like. Today you take the one mechanic you care most about and break it into states — the same pattern the 6th and 7th graders are learning this week. This is the last piece your design document needs. Tomorrow you assemble the whole thing."
     },
     "6th Period": {
       "grade": "7th Grade",

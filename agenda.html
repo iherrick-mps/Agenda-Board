@@ -47,6 +47,10 @@
   </div>
 
   <div class="agenda-box box-timer">
+    <span class="box-label timer-label">
+      Transition<br>Timer
+      <span class="timer-saved" id="timer-saved" aria-hidden="true">recorded</span>
+    </span>
     <div class="timer-display" id="timer-display">00:00</div>
     <div class="timer-controls">
       <button type="button" class="timer-btn" id="timer-start">Start</button>
@@ -165,6 +169,15 @@
 <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
 <div class="sparkle-layer" id="sparkle-layer" aria-hidden="true"></div>
 
+<!-- Transition Timer recording. Same Firebase project as the help queue,
+     a separate `transitions` collection. Load order matters: config and
+     SDK first, then script.js (which calls window.recordTransition), then
+     the recorder that defines it — the timer only ever calls it after the
+     first bell check, well after every script has parsed. -->
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
 <script src="script.js"></script>
+<script src="transitions-record.js"></script>
 </body>
 </html>

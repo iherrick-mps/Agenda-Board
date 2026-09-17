@@ -34,11 +34,13 @@
   // own — no refresh needed — the instant a period ends, an after-school
   // special kicks in, or midnight rolls over into a new school day.
   //
-  // resolveLivePage() returns one of four pages: the live class agenda,
-  // Study Hall (the default whenever nothing else is scheduled — before
-  // school, or after school with no special active), VEX Club (Mon 3pm+,
-  // Sat 8am+), or Tutoring (Tue 3pm+). It always swaps back to the live
-  // class agenda at the end of 3rd period.
+  // resolveLivePage() returns one of five pages: the live class agenda,
+  // the Day Overview (from the 1st period bell through the end of 3rd
+  // period — both tracks' plans side by side while she isn't teaching
+  // yet), Study Hall (the default whenever nothing else is scheduled —
+  // before school, or after school with no special active), VEX Club
+  // (Mon 3pm+, Sat 8am+), or Tutoring (Tue 3pm+). It always swaps from
+  // the Day Overview to the live class agenda at the end of 3rd period.
   const frame = document.getElementById('board-frame');
   const loadingEl = document.getElementById('board-loading');
   let shownUrl = null;
@@ -48,6 +50,7 @@
       const slug = page.period ? PERIOD_SLUG[page.period] : null;
       return `agenda.html?date=${page.dateStr}` + (slug ? `&period=${slug}` : '');
     }
+    if (page.type === 'overview') return `overview.html?date=${page.dateStr}`;
     if (page.type === 'vex') return 'vex.html';
     if (page.type === 'tutoring') return 'tutoring.html';
     return 'study-hall.html'; // default / fallback
