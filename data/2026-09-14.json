@@ -3,14 +3,14 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Making your own copy of the Mario base repo, playing it, and listing what it already does.",
-      "weeklyDeliverable": "week06-mod-design.md in your Mario repo — your full MDA design (Mechanics, Dynamics, Aesthetics) for your mod, plus a state map of the one mechanic you build first — committed by Sunday night.",
+      "workingNow": "Making your own copy of the ROLLER base repo, playing it, and listing what it already does.",
+      "weeklyDeliverable": "One design document in your portfolio repo bringing together your mechanics, dynamics, aesthetic and state map — plus your ROLLER game embedded and playable on your portfolio site — pushed by Sunday night.",
       "smartGoal": "I can name the mechanics of a game so that I can describe what my mod will add to the base game.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Wayground: classroom expectations quiz (5 min)",
-        "Overview + copy the Mario base repo (10 min)",
+        "Overview + copy the ROLLER base repo (10 min)",
         "You do: play it, list what it already does (10 min)",
         "I do / We do: the M in MDA (15 min)",
         "You do: 3 mechanics your mod adds (8 min)",
@@ -21,7 +21,7 @@
     "6th Period": {
       "grade": "7th Grade",
       "workingNow": "Picking one thing and naming exactly two states it can be in.",
-      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
+      "weeklyDeliverable": "Your completed Game Plan document — two mechanics each with a number, five states, how the mechanics connect to the states, and your first level described — typed and turned in by Sunday night.",
       "smartGoal": "I can name two states of one thing so that I can describe it without describing everything at once.",
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
@@ -38,7 +38,7 @@
     "7th Period": {
       "grade": "6th Grade",
       "workingNow": "Picking one thing and naming exactly two states it can be in.",
-      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
+      "weeklyDeliverable": "Your completed Game Plan document — two mechanics each with a number, five states, how the mechanics connect to the states, and your first level described — typed and turned in by Sunday night.",
       "smartGoal": "I can name two states of one thing so that I can describe it without describing everything at once.",
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",

@@ -20,37 +20,37 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Handing your diagram to a partner and watching them try to get it stuck.",
-      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
-      "smartGoal": "I can test my state machine with a partner so that I can find the paths I did not think about.",
-      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
-      "eldStandard": "ELD.PI.6-8.11 — Justifying own arguments and evaluating others' arguments in speaking and writing.",
+      "workingNow": "Typing everything from this week into one game plan the robot can build from.",
+      "weeklyDeliverable": "Your completed Game Plan document — two mechanics each with a number, five states, how the mechanics connect to the states, and your first level described — typed and turned in by Sunday night.",
+      "smartGoal": "I can write a complete game plan so that someone who has never seen my game could build it without asking me anything.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
       "agenda": [
         "Log in (timed) (3 min)",
-        "Overview: today you test it (2 min)",
-        "I do: how to walk a partner through a machine (8 min)",
-        "We do: trace one path as a class (7 min)",
-        "You do: partner test, then fix your diagram (25 min)",
-        "Exit Ticket: one thing you fixed (5 min)"
+        "Overview: today you write the whole plan (3 min)",
+        "I do: what the robot needs to build your game (10 min)",
+        "We do: fill in Part 1 together (7 min)",
+        "You do: type your game plan (24 min)",
+        "Exit Ticket: your game's name and its feeling (3 min)"
       ],
-      "connections": "You have five states on paper. Today someone else drives — they pick triggers and you move through your own machine until something breaks. Fix it, and you have a finished state machine. Next week you use it to build a real game with SchoolAI."
+      "connections": "All week you built one piece at a time: two states, then triggers, then a third state, then five. Today every piece goes into one document — your mechanics, your numbers, your states, and what your first level looks like. Next week you hand it to SchoolAI and it builds your game in Game Lab. It can only build what you wrote down."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Handing your diagram to a partner and watching them try to get it stuck.",
-      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
-      "smartGoal": "I can test my state machine with a partner so that I can find the paths I did not think about.",
-      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
-      "eldStandard": "ELD.PI.6-8.11 — Justifying own arguments and evaluating others' arguments in speaking and writing.",
+      "workingNow": "Typing everything from this week into one game plan the robot can build from.",
+      "weeklyDeliverable": "Your completed Game Plan document — two mechanics each with a number, five states, how the mechanics connect to the states, and your first level described — typed and turned in by Sunday night.",
+      "smartGoal": "I can write a complete game plan so that someone who has never seen my game could build it without asking me anything.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information.",
       "agenda": [
         "Log in (timed) (3 min)",
-        "Overview: today you test it (2 min)",
-        "I do: how to walk a partner through a machine (8 min)",
-        "We do: trace one path as a class (7 min)",
-        "You do: partner test, then fix your diagram (25 min)",
-        "Exit Ticket: one thing you fixed (5 min)"
+        "Overview: today you write the whole plan (3 min)",
+        "I do: what the robot needs to build your game (10 min)",
+        "We do: fill in Part 1 together (7 min)",
+        "You do: type your game plan (24 min)",
+        "Exit Ticket: your game's name and its feeling (3 min)"
       ],
-      "connections": "You have five states on paper. Today someone else drives — they pick triggers and you move through your own machine until something breaks. Fix it, and you have a finished state machine. Next week you use it to build a real game with SchoolAI."
+      "connections": "All week you built one piece at a time: two states, then triggers, then a third state, then five. Today every piece goes into one document — your mechanics, your numbers, your states, and what your first level looks like. Next week you hand it to SchoolAI and it builds your game in Game Lab. It can only build what you wrote down."
     }
   }
 }

@@ -20,9 +20,9 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Adding your fourth and fifth states, then checking that every state has a way in and a way out.",
-      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
-      "smartGoal": "I can check my diagram for dead ends so that my thing can never get stuck in a state it cannot leave.",
+      "workingNow": "Getting to five states, then writing how your mechanics, dynamics and aesthetic fit together.",
+      "weeklyDeliverable": "Your completed Game Plan document — two mechanics each with a number, five states, how the mechanics connect to the states, and your first level described — typed and turned in by Sunday night.",
+      "smartGoal": "I can get to five states and explain how my whole game design fits together.",
       "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
       "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
       "agenda": [
@@ -33,13 +33,13 @@
         "You do: add states 4 and 5, hunt dead ends (22 min)",
         "Exit Ticket: one state you added (3 min)"
       ],
-      "connections": "You have three states that go in a circle. Today you add two more and learn the one mistake that breaks every state machine: a state you can get into and never get out of. Tomorrow a partner tries to get your machine stuck."
+      "connections": "You have three states that go in a circle. Today you add two more and learn the one mistake that breaks every state machine: a state you can get into and never get out of. Then you connect it all back to the feeling you want players to have. Tomorrow every piece of it goes into one document."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Adding your fourth and fifth states, then checking that every state has a way in and a way out.",
-      "weeklyDeliverable": "A finished state machine diagram for one thing you choose — at least 5 states, every state with a labeled way in and a labeled way out — partner-tested and turned in by Sunday night.",
-      "smartGoal": "I can check my diagram for dead ends so that my thing can never get stuck in a state it cannot leave.",
+      "workingNow": "Getting to five states, then writing how your mechanics, dynamics and aesthetic fit together.",
+      "weeklyDeliverable": "Your completed Game Plan document — two mechanics each with a number, five states, how the mechanics connect to the states, and your first level described — typed and turned in by Sunday night.",
+      "smartGoal": "I can get to five states and explain how my whole game design fits together.",
       "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
       "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
       "agenda": [
@@ -50,7 +50,7 @@
         "You do: add states 4 and 5, hunt dead ends (22 min)",
         "Exit Ticket: one state you added (3 min)"
       ],
-      "connections": "You have three states that go in a circle. Today you add two more and learn the one mistake that breaks every state machine: a state you can get into and never get out of. Tomorrow a partner tries to get your machine stuck."
+      "connections": "You have three states that go in a circle. Today you add two more and learn the one mistake that breaks every state machine: a state you can get into and never get out of. Then you connect it all back to the feeling you want players to have. Tomorrow every piece of it goes into one document."
     }
   }
 }
