@@ -1203,6 +1203,12 @@ function initNowPlaying() {
    seconds (it rolls over to H:MM:SS past an hour).
    ============================================================ */
 
+/* The only bells that start the timer by themselves: the three periods
+   Ms. Herrick teaches, which are also the only ones a transition record
+   is kept for (see TRANSITION_PERIODS in transitions-record.js). Names
+   match bells.json exactly. */
+const TIMED_PERIODS = new Set(['4th Period', '6th Period', '7th Period']);
+
 function initCountUpTimer() {
   const box = document.querySelector('.box-timer');
   const displayEl = document.getElementById('timer-display');
@@ -1216,7 +1222,9 @@ function initCountUpTimer() {
   let ticker = null;
   let lastTickSecond = -1; // last whole second we've already played a tick for
   let stoppedMs = null;  // reading on the clock at the most recent deliberate Stop
-  let activeBell = null; // the bell period this run belongs to (set by checkAutoStart)
+  let activeBell = null; // the *timed* period this run belongs to (set by checkAutoStart)
+  let lastBellKey = null;  // last bell we've already reacted to, timed or not
+  let autoStarted = false; // did the bell start this run, or did a person?
 
   /* Hands the current reading to the transition recorder, if one is loaded
      on this page (transitions-record.js defines window.recordTransition;
@@ -1350,23 +1358,37 @@ function initCountUpTimer() {
   clearBtn.addEventListener('click', clear);
 
   // the buttons sit inside a bento box that also handles click-to-focus and
-  // double-click-to-fullscreen — keep those from firing on timer clicks
+  // double-click-to-fullscreen — keep those from firing on timer clicks.
+  // Touching any of them also hands the timer back to whoever clicked:
+  // whatever is on the clock from here on is theirs, so the next bell
+  // won't stop it out from under them.
   [startBtn, stopBtn, clearBtn].forEach(btn => {
-    btn.addEventListener('click', (e) => e.stopPropagation());
+    btn.addEventListener('click', (e) => { autoStarted = false; e.stopPropagation(); });
     btn.addEventListener('dblclick', (e) => e.stopPropagation());
   });
 
   /* ---- Auto-start at the bell — watches the same bell schedule the
      clock widget uses (loadBells / resolveTodaysSchedule /
-     findCurrentAndNext). The instant a period becomes "current" (the
-     bell for it rings), the timer clears and starts on its own, so
-     it's already running class time without anyone touching Start.
-     Only a period *change* triggers this — manual Stop/Clear during
-     a period are respected until the next bell, so it's still usable
-     as a general stopwatch mid-period. Note: since this isn't a real
-     click, the browser may block the tick sound's audio context
-     until a user interacts with the page once; the visible count is
-     unaffected either way, since it's timed off Date.now(). */
+     findCurrentAndNext). The instant one of *her* periods becomes
+     "current" (the bell for it rings), the timer clears and starts on
+     its own, so it's already running class time without anyone
+     touching Start.
+
+     Only the three periods she teaches auto-start (TIMED_PERIODS).
+     Every other bell — Advisory, 1st through 3rd, both lunches, after
+     school, ASES — leaves the timer alone: nothing she'd be timing
+     transitions for, and a stopwatch that starts itself at 3pm and
+     ticks until 6 is just noise. Start is still there for timing
+     anything else by hand, and a hand-started run is never cut short
+     by a bell — only a run the bell itself started gets stopped when
+     that class ends.
+
+     Only a period *change* triggers any of this — manual Stop/Clear
+     during a period are respected until the next bell, so it's still
+     usable as a general stopwatch mid-period. Note: since this isn't
+     a real click, the browser may block the tick sound's audio
+     context until a user interacts with the page once; the visible
+     count is unaffected either way, since it's timed off Date.now(). */
   async function checkAutoStart() {
     try {
       const bells = await loadBells();
@@ -1378,8 +1400,11 @@ function initCountUpTimer() {
 
       const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
       const key = current ? `${pt.isoDate}|${current.start}` : null;
-      const prevKey = activeBell ? activeBell.key : null;
-      if (key === prevKey) return;
+      // tracked separately from activeBell: outside her three periods there
+      // is no active bell, and comparing against a null activeBell would
+      // re-run this whole block every second all afternoon
+      if (key === lastBellKey) return;
+      lastBellKey = key;
 
       // A bell just rang. Whatever is on the clock belongs to the period
       // that's ending, so file the final record for it *before* the reset
@@ -1387,19 +1412,26 @@ function initCountUpTimer() {
       // write — it fires whether or not she ever pressed Stop, so a period
       // she forgot about still leaves a (flagged) row in the table.
       if (activeBell) report('period-end');
+      activeBell = null;
 
-      activeBell = current ? {
-        key,
-        name: current.name,
-        date: pt.isoDate,
-        start: current.start,
-        end: current.end,
-        schedule: scheduleKey
-      } : null;
-
-      if (current) {
+      if (current && TIMED_PERIODS.has(current.name)) {
+        activeBell = {
+          key,
+          name: current.name,
+          date: pt.isoDate,
+          start: current.start,
+          end: current.end,
+          schedule: scheduleKey
+        };
         clear();
         start();
+        autoStarted = true;
+      } else if (autoStarted) {
+        // her class just ended — the reading is already filed above, so
+        // stop counting but leave it on the display. A run someone started
+        // by hand isn't touched.
+        stop({ silent: true });
+        autoStarted = false;
       }
     } catch (e) { /* bell data unavailable — leave timer manual-only */ }
   }

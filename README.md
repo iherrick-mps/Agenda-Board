@@ -22,13 +22,13 @@ Ten boxes tile the full screen with no scrolling, no matter what screen it's dis
 
 Each text box's font automatically grows or shrinks to fill exactly the space it has — no wasted space, and it never overflows or scrolls, regardless of how much or little text is in that box that day.
 
-**Transition Timer:** a stopwatch strip sitting between the clock and the name card — Start, Stop, Clear, counting `MM:SS` (it rolls over to `H:MM:SS` past an hour). The digits turn green while it's running. It measures against the real wall clock rather than counting ticks, so it stays accurate even if the browser throttles the tab. It clears and starts itself at every bell, so each period begins timing with nobody touching it. Press **Stop** once the class is settled — that reading is the transition, and a small green `recorded` mark appears under the label to confirm it's on file. See "Transition Times" below.
+**Transition Timer:** a stopwatch strip sitting between the clock and the name card — Start, Stop, Clear, counting `MM:SS` (it rolls over to `H:MM:SS` past an hour). The digits turn green while it's running. It measures against the real wall clock rather than counting ticks, so it stays accurate even if the browser throttles the tab. It clears and starts itself at the bell for **4th, 6th, and 7th period only** — her three classes, the ones a transition is recorded for — so each of those periods begins timing with nobody touching it, and it stops on its own when that class ends. Every other bell (Advisory, 1st through 3rd, lunch, after school) leaves it alone; **Start** is still there to time anything else by hand, and once a button has been touched no bell will stop that run out from under you. Press **Stop** once the class is settled — that reading is the transition, and a small green `recorded` mark appears under the label to confirm it's on file. See "Transition Times" below.
 
 **Clock box:** shows today's real date (`YYYY/MM/DD · WEEKDAY`), the live Pacific time, and the countdown — always reflects the real day/time, not whatever date's board you're viewing. "Ms. Herrick" sits in its own small box directly underneath, sized so the two together match the height of the Working/Deliverable boxes beside them.
 
 **Now Playing:** a black box with a text field — paste any YouTube video or playlist link and press Enter (or click away) and it embeds inline, starting at a low volume (just above mute) rather than whatever volume YouTube defaults to. YouTube Music playlist links generally work too as long as they carry a `list=` ID, though some auto-generated "mix" playlists may not embed. The link is saved in the browser's local storage on that device, so it survives a page refresh, but it isn't synced anywhere — pasting it again on a different computer/browser starts fresh. Once something is playing, the paste-in field tucks itself away so it doesn't compete with the video — hover over the box to bring it back and change the link.
 
-**Period switcher:** the three period tabs (plus the date, schedule type, prev/next day buttons, and a link back to the date list) are tucked away at the very top edge of the screen — fully collapsed to zero height when idle. Hover your mouse near the top to reveal them; move away and they tuck back out of sight.
+**Period switcher:** the three period tabs (plus the date, schedule type, prev/next day buttons, the mode toggles, and a **← Home** link) are tucked away at the very top edge of the screen — fully collapsed to zero height when idle. Hover your mouse near the top to reveal them; move away and they tuck back out of sight. The controls are grouped — where you are / which period / which mode — and the bar wraps onto as many rows as it needs, so a narrower window or a 1280-wide projector stacks the groups instead of running them off the right edge. **← Home** always leaves the board entirely, even when the board is being shown inside `current-day.html`.
 
 **Prev/Next day buttons:** step to the next-highest or next-lowest date *in `dates.txt`* — not the literal next calendar day. If there's a gap in your dates (e.g. a weekend, or a day you haven't built yet), it skips straight to whatever's actually listed.
 
@@ -49,7 +49,7 @@ That said, since this board is meant to be projected (not clicked by students), 
 Every board address carries its period: `agenda.html?date=2026-08-19&period=6`. `period` accepts `4`, `6`, or `7` (it will also accept `4th` or the full `4th Period`).
 
 - Switching period tabs on the board rewrites the address bar, so the URL always matches what's on screen — you can bookmark or share a link to one specific period's day.
-- Prev/Next day and the "All dates" back link carry the current period with them.
+- Prev/Next day and the "← Home" back link carry the current period with them.
 - If the URL asks for a period that doesn't meet that day (e.g. `period=6` on a Minimum Day), the board falls back to the live period, then to the first period that does meet.
 - `index.html?period=6` opens the home page with 6th Period already selected. The last period picked is also remembered on that device.
 
@@ -94,16 +94,18 @@ Every class period's transition length is recorded automatically and collected a
 `transitions.html`.
 
 **How a record gets made.** The Transition Timer clears and starts itself the instant
-a bell rings. When Ms. Herrick presses **Stop**, that reading is saved right then —
+the bell for one of her three classes rings. When Ms. Herrick presses **Stop**, that reading is saved right then —
 so closing the tab, losing the projector, or reloading can't lose it. When the next
 bell rings, the record for the period that just ended is finalized. A period where
 the timer was never stopped still gets a row, flagged `not stopped` and struck
 through, and it's left out of every average — the reading there is "how long the tab
 sat open," not a transition.
 
-Only 4th, 6th, and 7th period are recorded. The timer still auto-starts at every
-other bell (it's a general-purpose stopwatch the rest of the day), but 1st period's
-reading isn't hers and never reaches the table.
+Only 4th, 6th, and 7th period are recorded — and those are now the only bells that
+start the timer at all. It used to start itself at every bell and simply throw the
+other readings away, which left it ticking through Advisory, lunch, and the whole
+afternoon. The rest of the day it's a plain stopwatch: press Start yourself, and no
+bell will interrupt a run you started.
 
 **Where it goes.** A `transitions` collection in the board's own Firebase project —
 separate from the help queue, which the board only ever embeds in an iframe and
