@@ -15,9 +15,9 @@
                              period that just ended, whether or not
                              Stop was ever pressed.
 
-   Only her three teaching periods are recorded (4th / 6th / 7th);
-   the timer still auto-starts at every bell, but 1st period's reading
-   is nobody's transition and never reaches the table.
+   Only her three teaching periods are recorded (4th / 6th / 7th) —
+   which are also the only bells that start the timer at all (see
+   TIMED_PERIODS in script.js), so nothing else ever gets this far.
 
    ---- Document ID ----
    `YYYY-MM-DD_<periodSlug>`, e.g. `2026-09-17_4`. Deterministic on
