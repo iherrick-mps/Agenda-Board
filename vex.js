@@ -530,7 +530,9 @@ function initVexNowPlaying() {
   let player = null;
   let isPlaying = false;
   let shuffleBag = [];      // indices left to play in this shuffle cycle
+  let playedSet = new Set(); // indices already played in this cycle
   let bagSize = 0;          // playlist length the current bag was built for
+  let playHistory = [];     // indices in the order they were played, for Prev
   let advancing = false;    // guards against double-advancing on ENDED
 
   // shuffle defaults ON; repeat-one defaults OFF; the whole playlist
@@ -562,6 +564,13 @@ function initVexNowPlaying() {
   // by hand: we read the playlist once and pick our own next index.
   function setShuffle(on) {
     shuffleOn = on;
+    // while shuffle was off the playlist ran in order, untracked, so the
+    // half-finished cycle is meaningless — start a fresh one
+    if (on) {
+      shuffleBag = [];
+      playedSet = new Set();
+      bagSize = 0;
+    }
     if (shuffleBtn) shuffleBtn.classList.toggle('is-active', on);
     try { localStorage.setItem(SHUFFLE_KEY, on ? '1' : '0'); } catch (e) { /* storage disabled */ }
   }
@@ -577,30 +586,72 @@ function initVexNowPlaying() {
     return Array.isArray(list) ? list.length : 0;
   }
 
-  // Shuffle bag: hold every index, hand them out in random order, and only
-  // reshuffle once the bag is empty. That guarantees the whole playlist
-  // plays through before any track comes round again — picking a fresh
-  // random number each time is what lets one song repeat four times.
-  function refillBag(length, exclude) {
-    const bag = [];
-    for (let i = 0; i < length; i++) if (i !== exclude) bag.push(i);
-    for (let i = bag.length - 1; i > 0; i--) {   // Fisher-Yates
+  function shuffleInPlace(arr) {              // Fisher-Yates
+    for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [bag[i], bag[j]] = [bag[j], bag[i]];
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  // Shuffle bag: hold every index, hand them out in random order, and only
+  // reshuffle once every track has had its turn. That guarantees the whole
+  // playlist plays through before any song comes round again — picking a
+  // fresh random number each time is what lets one song repeat four times.
+  //
+  // `playedSet` is the half of this that matters: YouTube reports the
+  // playlist length incrementally, so the bag has to be rebuilt as the list
+  // grows, and rebuilding from the full range would quietly put songs that
+  // already played back in the running mid-cycle.
+  function refillBagFromUnplayed(length) {
+    const bag = [];
+    for (let i = 0; i < length; i++) if (!playedSet.has(i)) bag.push(i);
+    shuffleBag = shuffleInPlace(bag);
+    bagSize = length;
+  }
+
+  // every track has had its turn — open a fresh cycle with all of them back
+  // in, just not the one playing right now (no song straight after itself)
+  function startNewCycle(length, current) {
+    playedSet = new Set();
+    const bag = [];
+    for (let i = 0; i < length; i++) bag.push(i);
+    shuffleInPlace(bag);
+    const last = bag.length - 1;   // pop() takes from the end
+    if (bag.length > 1 && bag[last] === current) {
+      const j = Math.floor(Math.random() * last);
+      [bag[last], bag[j]] = [bag[j], bag[last]];
     }
     shuffleBag = bag;
     bagSize = length;
   }
 
-  function nextShuffledIndex() {
+  // countCurrent is false only for the jump off the track YouTube auto-started
+  // on at page load — a second or two of it doesn't count as its turn
+  function nextShuffledIndex(countCurrent = true) {
     const length = playlistLength();
     if (length <= 1) return 0;
     const current = player.getPlaylistIndex ? player.getPlaylistIndex() : -1;
-    // rebuild when YouTube finishes loading more of the list, or when the
-    // bag runs dry and a new cycle starts
-    if (length !== bagSize || !shuffleBag.length) refillBag(length, current);
-    const next = shuffleBag.pop();
-    return typeof next === 'number' ? next : 0;
+    // whatever actually played counts, including anything YouTube advanced
+    // to on its own before our ENDED handler could get there
+    if (countCurrent && current >= 0 && current < length) playedSet.add(current);
+    if (length !== bagSize) refillBagFromUnplayed(length);
+
+    let next;
+    while (shuffleBag.length) {
+      const candidate = shuffleBag.pop();
+      if (!playedSet.has(candidate)) { next = candidate; break; }
+    }
+    if (typeof next !== 'number') {       // cycle complete — everyone's played
+      startNewCycle(length, current);
+      next = shuffleBag.pop();
+    }
+    if (typeof next !== 'number') return 0;
+
+    playedSet.add(next);
+    playHistory.push(next);
+    if (playHistory.length > 500) playHistory.shift();
+    return next;
   }
 
   function advanceTrack() {
@@ -609,6 +660,19 @@ function initVexNowPlaying() {
       player.playVideoAt(nextShuffledIndex());
     } else if (player.nextVideo) {
       player.nextVideo();
+    }
+  }
+
+  // Prev walks back through what shuffle actually played rather than the
+  // playlist's own order. Replaying a track doesn't spend anything from the
+  // bag, so the rest of the cycle is unaffected.
+  function previousTrack() {
+    if (!player) return;
+    if (shuffleOn && playHistory.length > 1 && player.playVideoAt) {
+      playHistory.pop();                       // drop the one playing now
+      player.playVideoAt(playHistory[playHistory.length - 1]);
+    } else if (player.previousVideo) {
+      player.previousVideo();
     }
   }
 
@@ -637,7 +701,7 @@ function initVexNowPlaying() {
     // opening handful of tracks.
     if (!jumpedToRandomStart && shuffleOn && length > 1 && length === lastSeenLength) {
       jumpedToRandomStart = true;
-      if (player.playVideoAt) player.playVideoAt(nextShuffledIndex());
+      if (player.playVideoAt) player.playVideoAt(nextShuffledIndex(false));
     }
     lastSeenLength = length;
 
@@ -739,7 +803,7 @@ function initVexNowPlaying() {
   if (prevBtn) {
     prevBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (player && player.previousVideo) player.previousVideo();
+      previousTrack();
     });
   }
   if (nextBtn) {
