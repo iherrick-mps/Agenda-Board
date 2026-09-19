@@ -337,12 +337,26 @@ function initVexScrumBoard() {
 
     rowRefs[team.name] = { fillEl: fill, sparkleEl: sparkleLayer, color };
 
+    // team number on top, that team's roster underneath it — this is
+    // where the old VEX Teams bento's names live now
     const label = document.createElement('div');
     label.className = 'vex-scrum-cell vex-scrum-team';
-    label.textContent = team.name;
     label.style.gridRow = String(gridRow);
     label.style.gridColumn = '1';
     label.style.setProperty('--team-color', color);
+
+    const labelName = document.createElement('span');
+    labelName.className = 'vex-scrum-team-name';
+    labelName.textContent = team.name;
+    label.appendChild(labelName);
+
+    if (team.note) {
+      const labelRoster = document.createElement('span');
+      labelRoster.className = 'vex-scrum-team-roster';
+      labelRoster.textContent = team.note;
+      label.appendChild(labelRoster);
+    }
+
     tableEl.appendChild(label);
 
     VEX_SCRUM_STAGES.forEach((stage, colIdx) => {
@@ -411,27 +425,6 @@ function initVexScrumBoard() {
       cell.classList.toggle('is-done', value === 2);
     }
     paintRow(team);
-  });
-}
-
-/* ---------- Team roster ---------- */
-
-function initVexTeams() {
-  const listEl = document.getElementById('vex-teams-list');
-  if (!listEl) return;
-
-  if (VEX_TEAMS.length === 0) {
-    listEl.innerHTML = ''; // CSS :empty::before shows the placeholder
-    return;
-  }
-
-  listEl.innerHTML = VEX_TEAMS.map(t => {
-    const note = t.note ? `<span class="vex-team-note">${t.note}</span>` : '';
-    return `<li><span class="vex-team-name">${t.name}</span>${note}</li>`;
-  }).join('');
-
-  document.fonts.ready.then(() => {
-    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
   });
 }
 
@@ -926,7 +919,6 @@ function initVexPackUp() {
 document.addEventListener('DOMContentLoaded', () => {
   initVexClockOverride();
   initVexCountdown();
-  initVexTeams();
   initVexScrumBoard();
   initVexSaturdaySchedule();
   initVexFaq();
