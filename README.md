@@ -75,6 +75,15 @@ Each period needs:
 - If viewing *today's* board, the tab for whichever period is live right now is auto-selected and marked LIVE.
 - The clock is one of the eight boxes in the grid (top-left), not a separate floating widget — it stays in place while the other seven boxes' content changes as you switch period tabs.
 
+## Chimes
+On every page, the moment the green in-session countdown reaches `00:00` — the bell — the board plays a five-note chime and pauses whatever music or video is playing, so the chime isn't competing with a playlist for the room's attention.
+
+- **Bell chime:** a slow, long-ringing five notes (about 3.5 seconds) so it carries over a talking class. It follows whichever countdown the page is actually showing, which means the pages with a fixed end time (Tutoring's 4:00 PM, VEX's Monday club end) chime at their own end too.
+- **Mode chime:** a quicker, brighter five-note flourish, played instead whenever **Game Mode** or **Clean-Up Mode** takes over the board — whether that was the toolbar button or the automatic trigger. It's deliberately different from the bell so nobody starts packing up at the wrong moment. It pauses the music the same way, which matters most in Clean-Up Mode, where the numbers are then called out loud.
+- Pausing covers ordinary `<audio>`/`<video>` as well as every YouTube embed on the page (Now Playing, Theater Mode, Study Hall, Indoor Lunch, VEX). Nothing resumes automatically — press play again when you're ready.
+- Browsers won't let a page make noise until it's been interacted with at least once, so the first click or keypress on the board (anything at all — switching tabs, toggling fullscreen) is what arms the audio for the rest of the day. If the board has been freshly loaded and never touched, the first bell may be silent.
+- The chimes are synthesized in the browser with Web Audio, so there are no sound files to host and nothing extra to fetch.
+
 ## Deploying to GitHub Pages
 1. Push this folder to a GitHub repo (e.g. `iherrick-mps/agenda-board`).
 2. In the repo: **Settings → Pages → Source → Deploy from branch**, pick `main` (or your default branch) and `/ (root)`.

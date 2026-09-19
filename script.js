@@ -98,6 +98,133 @@ function findCurrentAndNext(periods, nowMin) {
   return { current, next };
 }
 
+/* ============================================================
+   Chimes + room quieting — shared by every page.
+
+   Two five-note chimes, synthesized with Web Audio so there's no
+   sound file to fetch (same approach the count-up timer's ticks
+   already use):
+
+     - "bell" rings when the green in-session countdown on the clock
+       reaches 00:00 — the period genuinely ended. Deliberately slow
+       and long-ringing: it has to carry over a talking class.
+     - "mode" is a quicker, brighter flourish announcing that Game
+       Mode or Clean-Up Mode has taken the board over. Clearly not
+       the bell, so nobody starts packing up at the wrong moment.
+
+   Both quiet the room first — whatever music or video is playing is
+   paused before the chime sounds, so it isn't competing with a
+   YouTube Music playlist for the room's attention.
+   ============================================================ */
+
+// One context for the whole page. Browsers cap how many a document may
+// open, and the count-up timer's ticks share this one.
+let boardAudioCtx = null;
+function getBoardAudioCtx() {
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) return null;
+  if (!boardAudioCtx) boardAudioCtx = new AC();
+  // Contexts start out suspended until the page has been interacted
+  // with; resuming one that's already running is a no-op.
+  if (boardAudioCtx.state === 'suspended') boardAudioCtx.resume();
+  return boardAudioCtx;
+}
+
+// The board sits untouched on a classroom display all day, and a bell
+// is nobody's click — so take the first interaction of the session,
+// whatever it was for, as the cue to unlock audio ahead of time.
+function initAudioUnlock() {
+  const unlock = () => getBoardAudioCtx();
+  ['pointerdown', 'keydown'].forEach((evt) => {
+    document.addEventListener(evt, unlock, { once: true, capture: true });
+  });
+}
+
+const CHIMES = {
+  bell: {
+    notes: [523.25, 659.25, 783.99, 987.77, 1046.50], // C5 E5 G5 B5 C6
+    spacing: 0.45,  // s between note onsets — 1.8s of notes, ~3.6s with the ring-out
+    decay: 1.8,     // s for one note to ring out; they overlap and bloom
+    peak: 0.34,
+    type: 'sine',
+    // 2.76x is the classic struck-tubular-bell overtone: it's what makes
+    // a plain sine read as a bell rather than a test tone.
+    partials: [1, 2.76]
+  },
+  mode: {
+    notes: [880.00, 1108.73, 1318.51, 1108.73, 1760.00], // A5 C#6 E6 C#6 A6
+    spacing: 0.17,
+    decay: 0.6,
+    peak: 0.28,
+    type: 'triangle',
+    partials: [1, 2]
+  }
+};
+
+function playChime(name) {
+  const spec = CHIMES[name];
+  const ctx = getBoardAudioCtx();
+  if (!spec || !ctx) return;
+  try {
+    // a beat of headroom so the first note isn't clipped by scheduling
+    const start = ctx.currentTime + 0.05;
+    spec.notes.forEach((freq, i) => {
+      const at = start + i * spec.spacing;
+      spec.partials.forEach((ratio, p) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = spec.type;
+        osc.frequency.value = freq * ratio;
+        // overtones sit well under the fundamental — they colour the
+        // note rather than sounding like a second note on top of it
+        const peak = spec.peak / (p + 1);
+        gain.gain.setValueAtTime(0, at);
+        gain.gain.linearRampToValueAtTime(peak, at + 0.008);
+        gain.gain.exponentialRampToValueAtTime(0.0001, at + spec.decay);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(at);
+        osc.stop(at + spec.decay + 0.05);
+      });
+    });
+  } catch (e) { /* audio unavailable in this browser/context */ }
+}
+
+/* Pauses everything currently making noise on the page. This works by
+   inspecting the DOM rather than by keeping a registry of players: the
+   board builds videos and playlists in five different places (Now
+   Playing, Theater Mode, Study Hall, Indoor Lunch, VEX), and asking
+   "what's embedded right now?" can't fall out of date the way a
+   registry someone forgot to add to would. */
+function pauseAllMedia() {
+  document.querySelectorAll('audio, video').forEach((el) => {
+    try { if (!el.paused) el.pause(); } catch (e) { /* ignore */ }
+  });
+
+  // YouTube embeds are cross-origin, so their contents can't be touched
+  // directly — but every one of them is built through the IFrame API,
+  // which sets enablejsapi=1, and that API is itself only postMessage
+  // underneath. Sending the same command straight to the frame reaches
+  // players this page never kept a handle on, and each player's own
+  // onStateChange bookkeeping (VEX's play/pause button, say) still
+  // updates, because to the player it's an ordinary API pause.
+  document.querySelectorAll('iframe').forEach((frame) => {
+    if (!/(?:youtube(?:-nocookie)?\.com|youtu\.be)/.test(frame.src || '')) return;
+    try {
+      frame.contentWindow?.postMessage(
+        JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*'
+      );
+    } catch (e) { /* ignore */ }
+  });
+}
+
+// the two halves always belong together: hush the room, then chime into
+// the quiet it leaves behind
+function soundBoardChime(name) {
+  pauseAllMedia();
+  playChime(name);
+}
+
 /* ---------- Clock widget (used on every page) ---------- */
 
 async function initClock() {
@@ -112,6 +239,34 @@ async function initClock() {
   // overlapping blocks comes later in bells.json, which isn't
   // necessarily the one a given page's countdown should reflect.
   const clockBox = document.querySelector('.box-clock');
+
+  /* ---- Bell watch. The green in-session countdown reaching 00:00 *is*
+     the bell ringing, so that's what's watched here rather than the
+     schedule directly — it means the override countdowns (Tutoring's
+     4:00 PM, VEX's Monday club end) ring too, and there's exactly one
+     definition of "a bell" per page no matter which countdown it's
+     showing. armedBell holds whichever countdown is running now; when
+     it goes away, having actually reached its end time, that's a bell. */
+  let armedBell = null; // { key, endMin } — the live countdown being watched
+
+  // If the board was asleep or the tab was throttled, the countdown can
+  // vanish minutes after the fact. Ringing then would be worse than not
+  // ringing at all, so only a fresh ending counts.
+  const BELL_LATE_GRACE_MIN = 2;
+
+  function watchBell(nowMin, endMin, key) {
+    // key === null means nothing is counting down green at the moment
+    if (armedBell && key !== armedBell.key) {
+      const reachedItsEnd = nowMin >= armedBell.endMin &&
+                            nowMin < armedBell.endMin + BELL_LATE_GRACE_MIN;
+      // the other way to lose a countdown is the schedule changing under
+      // us (today's data file landing late, or VEX swapping its override
+      // by weekday) — that's a re-arm, not a bell
+      if (reachedItsEnd) soundBoardChime('bell');
+      armedBell = null;
+    }
+    if (key !== null) armedBell = { key, endMin };
+  }
 
   async function tick() {
     // read per tick, not once at init: vex.html swaps this override on and
@@ -146,10 +301,12 @@ async function initClock() {
         statusEl.className = 'clock-status in-session';
         labelEl.textContent = `${overrideLabel} ends in`;
         valueEl.textContent = fmtCountdown(remaining);
+        watchBell(nowMin, hhmmToMinutes(overrideEnd), `${pt.isoDate}|${overrideEnd}`);
       } else {
         statusEl.className = 'clock-status not-in-session';
         labelEl.textContent = `${overrideLabel} is over`;
         valueEl.textContent = '\u2014';
+        watchBell(nowMin, null, null);
       }
       return;
     }
@@ -165,15 +322,18 @@ async function initClock() {
       statusEl.className = 'clock-status in-session';
       labelEl.textContent = `${current.name} ends in`;
       valueEl.textContent = fmtCountdown(remaining);
+      watchBell(nowMin, hhmmToMinutes(current.end), `${pt.isoDate}|${current.end}`);
     } else if (next) {
       const until = hhmmToMinutes(next.start) - nowMin;
       statusEl.className = 'clock-status not-in-session';
       labelEl.textContent = `Not in session — ${next.name} starts in`;
       valueEl.textContent = fmtCountdown(until);
+      watchBell(nowMin, null, null);
     } else {
       statusEl.className = 'clock-status not-in-session';
       labelEl.textContent = 'School day is over';
       valueEl.textContent = '—';
+      watchBell(nowMin, null, null);
     }
   }
 
@@ -1257,14 +1417,7 @@ function initCountUpTimer() {
      file to fetch. A soft tick plays once per elapsed second while the
      timer is running; every 30th second gets a louder, lower tick so
      the room can hear time passing without anyone watching the clock. */
-  let audioCtx = null;
-  function getAudioCtx() {
-    const AC = window.AudioContext || window.webkitAudioContext;
-    if (!AC) return null;
-    if (!audioCtx) audioCtx = new AC();
-    if (audioCtx.state === 'suspended') audioCtx.resume();
-    return audioCtx;
-  }
+  const getAudioCtx = getBoardAudioCtx; // shared with the bell chimes
 
   function playTick(loud) {
     const ctx = getAudioCtx();
@@ -1530,6 +1683,10 @@ function initGameMode() {
     // never show more than one at once.
     if (window.__cleanupMode && window.__cleanupMode.isActive()) window.__cleanupMode.turnOff();
     if (window.__theaterMode && window.__theaterMode.isActive()) window.__theaterMode.turnOff();
+    // announce the takeover and hush whatever was playing — the same
+    // courtesy the bell gets, with its own chime so the two never get
+    // mistaken for each other
+    if (!active) soundBoardChime('mode');
     active = true;
     boardGrid.classList.add('game-mode-active');
     toggleBtn.classList.add('is-active');
@@ -1830,6 +1987,10 @@ function initCleanupMode() {
     // never show more than one at once.
     if (window.__gameMode && window.__gameMode.isActive()) window.__gameMode.turnOff();
     if (window.__theaterMode && window.__theaterMode.isActive()) window.__theaterMode.turnOff();
+
+    // same announcement as Game Mode, and doubly worth the quiet here:
+    // the numbers that follow are called out loud by speechSynthesis
+    soundBoardChime('mode');
 
     active = true;
     boardGrid.classList.add('cleanup-mode-active');
@@ -2266,6 +2427,7 @@ function initClassQueue() {
 /* ---------- boot ---------- */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initAudioUnlock();
   initClock();
   initIndexPage();
   initAgendaPage();
