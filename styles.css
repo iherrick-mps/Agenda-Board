@@ -1957,43 +1957,71 @@ body.board-page {
 
 /* ============================================================
    VEX ROBOTICS CLUB PAGE — after-school (3:00–4:00 PM) board.
-   Own bento layout: clock, competition countdown, team roster,
-   Now Playing (title-only by default), a big "get to work"
-   banner, and — Saturdays only — the day's bell schedule.
+   Own bento layout: clock, competition countdown, team SCRUM
+   progress, Now Playing (title-only by default), a big "get to
+   work" banner, and — Saturdays only — the day's bell schedule.
    Reuses .board-grid / .agenda-box / Game Mode / clock plumbing
    from the main board (same id="board-grid"), so double-click
    fullscreen, click-to-focus, and Game Mode's confetti overlay
    all work here for free.
    ============================================================ */
 
+/* 60 columns rather than the shared 12. Retiring the VEX Teams bento
+   freed 10/60 of the top row, and the Saturday schedule takes 80% of
+   that width with the FAQ taking the remaining 20% — a split that
+   doesn't land on a twelfth. Sixtieths divide both that 80/20 and every
+   old boundary (3/12 = 15/60, 9/12 = 45/60) exactly. Boxes are placed
+   by line number instead of grid-template-areas, because an area map at
+   this resolution would be twelve 60-word strings. */
 .board-grid.vex-grid {
-  grid-template-areas:
-    "clock clock clock countdown countdown banner banner banner faq faq faq faq"
-    "clock clock clock countdown countdown banner banner banner faq faq faq faq"
-    "clock clock clock countdown countdown banner banner banner faq faq faq faq"
-    "clock clock clock countdown countdown banner banner banner faq faq faq faq"
-    "scrum scrum scrum scrum scrum scrum scrum scrum scrum teams teams teams"
-    "scrum scrum scrum scrum scrum scrum scrum scrum scrum teams teams teams"
-    "scrum scrum scrum scrum scrum scrum scrum scrum scrum teams teams teams"
-    "scrum scrum scrum scrum scrum scrum scrum scrum scrum nowplaying nowplaying nowplaying"
-    "scrum scrum scrum scrum scrum scrum scrum scrum scrum nowplaying nowplaying nowplaying"
-    "scrum scrum scrum scrum scrum scrum scrum scrum scrum nowplaying nowplaying nowplaying"
-    "scrum scrum scrum scrum scrum scrum scrum scrum scrum nowplaying nowplaying nowplaying"
-    "scrum scrum scrum scrum scrum scrum scrum scrum scrum nowplaying nowplaying nowplaying";
+  grid-template-columns: repeat(60, 1fr);
 }
 
-.box-countdown { grid-area: countdown; }
-.box-teams     { grid-area: teams;     --box-color: var(--c-standard); }
-.box-scrum     { grid-area: scrum; }
-.box-faq       { grid-area: faq;       --box-color: var(--c-connect); }
+.vex-grid .box-clock          { grid-column:  1 / 16; grid-row: 1 / 5; }
+.vex-grid .box-faq            { grid-column: 39 / 61; grid-row: 1 / 5; }
+.vex-grid .box-scrum          { grid-column:  1 / 46; grid-row: 5 / 13; }
+/* the countdown now sits in the slot the teams roster used to hold */
+.vex-grid .box-countdown      { grid-column: 46 / 61; grid-row: 5 / 8; }
+.vex-grid .box-vex-nowplaying { grid-column: 46 / 61; grid-row: 8 / 13; }
+
+.box-faq       { --box-color: var(--c-connect); }
 
 /* the work banner and Saturday schedule share one grid slot — only one
    is ever visible at a time, toggled by .is-saturday below */
-.box-work      { grid-area: banner; --box-color: var(--c-goal); }
-.box-schedule  { grid-area: banner; --box-color: var(--c-eld); display: none; }
+.vex-grid .box-work,
+.vex-grid .box-schedule { grid-column: 16 / 39; grid-row: 1 / 5; }
+.box-work      { --box-color: var(--c-goal); }
+.box-schedule  { --box-color: var(--c-eld); display: none; }
 
 .board-grid.vex-grid.is-saturday .box-work     { display: none; }
 .board-grid.vex-grid.is-saturday .box-schedule { display: flex; }
+
+/* ---- Clock box on this page only. Same cell width as before, but the
+   VEX board gives it a whole 4-row block with far less to say than the
+   main agenda board's clock, so the numbers scale up to fill it. The
+   width caps below are deliberate, not arbitrary: the box is 25vw with
+   1.3vw of padding each side, leaving ~87cqw of content, and the
+   countdown reads "1:05:00" (7 mono glyphs ≈ 4.2em) before club starts
+   — 20cqw keeps even that longest string off the edges. ---- */
+.vex-grid .box-clock .status-label {
+  font-size: clamp(0.8rem, min(9cqh, 4.6cqw), 2rem);
+  /* Saturdays fall back to the real bells, whose longest label
+     ("Not in session — 2nd Period starts in") wraps at this size */
+  line-height: 1.2;
+}
+.vex-grid .box-clock .status-value {
+  font-size: clamp(2.4rem, min(44cqh, 20cqw), 9rem);
+}
+.vex-grid .box-clock .clock-time {
+  font-size: clamp(1rem, min(14cqh, 9cqw), 3.4rem);
+  margin-top: 0.55em;
+}
+.vex-grid .box-clock .clock-date {
+  font-size: clamp(0.72rem, min(7.5cqh, 4.1cqw), 1.5rem);
+}
+.vex-grid .box-clock .clock-tz {
+  font-size: clamp(0.68rem, min(7cqh, 3.7cqw), 1.4rem);
+}
 
 /* ---- Countdown box — dark hero card, same family as the clock ---- */
 .box-countdown {
@@ -2040,14 +2068,7 @@ body.board-page {
   text-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
 
-/* ---- Teams + Saturday schedule — standard tinted-white list boxes ---- */
-.vex-teams-list:empty::before {
-  content: 'No teams added yet.';
-  color: var(--ink-soft);
-  font-family: var(--font-body);
-  font-style: italic;
-}
-
+/* ---- Saturday schedule — standard tinted-white list box ---- */
 .vex-sched-list li {
   display: flex;
   justify-content: space-between;
@@ -2059,13 +2080,6 @@ body.board-page {
   font-size: 0.85em;
   opacity: 0.75;
   white-space: nowrap;
-}
-
-.vex-team-note {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.75em;
-  opacity: 0.7;
 }
 
 /* ============================================================
@@ -2107,11 +2121,13 @@ body.board-page {
 
 .vex-scrum-table {
   display: grid;
-  grid-template-columns: minmax(64px, 1.1fr) repeat(5, 1fr);
+  /* first column carries the team number plus its roster underneath, so
+     it needs more room than a bare team number did */
+  grid-template-columns: minmax(118px, 1.4fr) repeat(5, 1fr);
   grid-auto-rows: 1fr;
   gap: 0; /* rows sit flush against each other; fills need no seams between them */
   height: 100%;
-  min-width: 620px; /* two checkboxes per stage cell need the extra room */
+  min-width: 700px; /* two checkboxes per stage cell need the extra room */
 }
 
 .vex-scrum-cell {
@@ -2141,9 +2157,11 @@ body.board-page {
 }
 
 .vex-scrum-team {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.1em;
+  line-height: 1.1;
   color: #1c242b;
   /* the row's progress fill slides in behind this label, and the darker
      team colors swallow dark text. The four 1px offsets draw a hard
@@ -2156,6 +2174,23 @@ body.board-page {
     -1px  1px 0 #fff,
      0 0 3px #fff,
      0 0 6px rgba(255, 255, 255, 0.85);
+}
+
+.vex-scrum-team-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+}
+
+/* the roster that used to live in the VEX Teams bento — same names, now
+   sitting under the team number they belong to. Inherits the white
+   outline above so it survives the row's progress fill sliding under it. */
+.vex-scrum-team-roster {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: clamp(0.55rem, 0.85vw, 0.78rem);
+  line-height: 1.2;
+  color: #3a444d;
 }
 
 .vex-scrum-head-sub {
@@ -2233,7 +2268,6 @@ body.board-page {
    (box-clock is already hidden by the generic rule above.) ---- */
 .board-grid.vex-grid.game-mode-active .box-clock,
 .board-grid.vex-grid.game-mode-active .box-countdown,
-.board-grid.vex-grid.game-mode-active .box-teams,
 .board-grid.vex-grid.game-mode-active .box-scrum,
 .board-grid.vex-grid.game-mode-active .box-faq,
 .board-grid.vex-grid.game-mode-active .box-schedule,
@@ -2241,7 +2275,11 @@ body.board-page {
   display: none;
 }
 .vex-grid.game-mode-active .box-vex-nowplaying {
-  grid-column: 1 / 5;
+  grid-column: 1 / 21;
+  grid-row: 1 / 13;
+}
+.vex-grid.game-mode-active .box-gamemode-main {
+  grid-column: 21 / 61;
   grid-row: 1 / 13;
 }
 
@@ -2259,7 +2297,6 @@ body.board-page {
 
 .board-grid.vex-grid.packup-mode-active .box-clock,
 .board-grid.vex-grid.packup-mode-active .box-countdown,
-.board-grid.vex-grid.packup-mode-active .box-teams,
 .board-grid.vex-grid.packup-mode-active .box-scrum,
 .board-grid.vex-grid.packup-mode-active .box-faq,
 .board-grid.vex-grid.packup-mode-active .box-schedule,
@@ -2270,11 +2307,11 @@ body.board-page {
 }
 
 .vex-grid.packup-mode-active .box-packup-music {
-  grid-column: 1 / 5;
+  grid-column: 1 / 21;
   grid-row: 1 / 13;
 }
 .vex-grid.packup-mode-active .box-packup-main {
-  grid-column: 5 / 13;
+  grid-column: 21 / 61;
   grid-row: 1 / 13;
 }
 
@@ -2979,16 +3016,17 @@ body.board-page {
       "nowplaying";
   }
 
+  /* the desktop rules place every VEX box by explicit 60-column line
+     number, so a single-column area map can't override them — undo the
+     placement instead and let the boxes stack in document order. */
   .board-grid.vex-grid,
   .board-grid.vex-grid.is-saturday {
+    grid-template-columns: 1fr;
     grid-template-rows: none;
-    grid-template-areas:
-      "clock"
-      "countdown"
-      "banner"
-      "scrum"
-      "teams"
-      "nowplaying";
+  }
+  .board-grid.vex-grid .agenda-box {
+    grid-column: 1 / -1;
+    grid-row: auto;
   }
   /* container queries need a definite host height, which auto-height
      mobile stacking doesn't give them — same fix as gamemode-body below */
