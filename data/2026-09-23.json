@@ -1,0 +1,56 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Implementing your one mechanic \u2014 the rule that creates a real challenge for the player.",
+      "weeklyDeliverable": "An MVP of your ROLLER mod \u2014 built from your design document pasted into SchoolAI, split across multiple JavaScript files \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
+      "smartGoal": "I can implement my one mechanic so that my player has a real challenge to react to.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Overview: today's one job \u2014 the mechanic (2 min)",
+        "I do: name the mechanic, ask SchoolAI to build it (6 min)",
+        "We do: test one mechanic as a class \u2014 is it fair? (5 min)",
+        "You do: build and test your mechanic (12 min)",
+        "Exit Ticket: does your mechanic work yet? (3 min)"
+      ],
+      "connections": "Yesterday your character started listening to you. Today it meets the one rule your plan calls a mechanic \u2014 the thing the player actually has to deal with. Tomorrow that mechanic gets to change something: a state."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Implementing your one mechanic \u2014 the rule that creates a real challenge for the player.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab \u2014 built from your Game Plan pasted into SchoolAI \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "smartGoal": "I can implement my one mechanic so that my player has a real challenge to react to.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Overview: today's one job \u2014 the mechanic (2 min)",
+        "I do: name the mechanic, ask SchoolAI to build it (6 min)",
+        "We do: test one mechanic as a class \u2014 is it fair? (5 min)",
+        "You do: build and test your mechanic (12 min)",
+        "Exit Ticket: does your mechanic work yet? (3 min)"
+      ],
+      "connections": "Yesterday your character started listening to you. Today it meets the one rule your plan calls a mechanic \u2014 the thing the player actually has to deal with. Tomorrow that mechanic gets to change something: a state."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Implementing your one mechanic \u2014 the rule that creates a real challenge for the player.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab \u2014 built from your Game Plan pasted into SchoolAI \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "smartGoal": "I can implement my one mechanic so that my player has a real challenge to react to.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Overview: today's one job \u2014 the mechanic (2 min)",
+        "I do: name the mechanic, ask SchoolAI to build it (6 min)",
+        "We do: test one mechanic as a class \u2014 is it fair? (5 min)",
+        "You do: build and test your mechanic (12 min)",
+        "Exit Ticket: does your mechanic work yet? (3 min)"
+      ],
+      "connections": "Yesterday your character started listening to you. Today it meets the one rule your plan calls a mechanic \u2014 the thing the player actually has to deal with. Tomorrow that mechanic gets to change something: a state."
+    }
+  }
+}

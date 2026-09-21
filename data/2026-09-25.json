@@ -1,0 +1,56 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Playtesting your MVP against the checklist: character, setting, 2 states, 1 mechanic.",
+      "weeklyDeliverable": "An MVP of your ROLLER mod \u2014 built from your design document pasted into SchoolAI, split across multiple JavaScript files \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
+      "smartGoal": "I can test my MVP against the requirements so that I know it's ready to turn in.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Overview: today's MVP checklist (2 min)",
+        "I do: model playtesting against the checklist (5 min)",
+        "We do: playtest a partner's game, give one note (10 min)",
+        "You do: fix one bug from feedback, finalize (8 min)",
+        "Exit Ticket: paste your MVP link (3 min)"
+      ],
+      "connections": "All week you built your MVP piece by piece: character, controls, mechanic, second state. Today someone else plays it and tells you what's missing before Sunday night. Next week you take that feedback and keep building on top of your MVP."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Playtesting your MVP against the checklist: character, setting, 2 states, 1 mechanic.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab \u2014 built from your Game Plan pasted into SchoolAI \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "smartGoal": "I can test my MVP against the requirements so that I know it's ready to turn in.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Overview: today's MVP checklist (2 min)",
+        "I do: model playtesting against the checklist (5 min)",
+        "We do: playtest a partner's game, give one note (10 min)",
+        "You do: fix one bug from feedback, finalize (8 min)",
+        "Exit Ticket: paste your MVP link (3 min)"
+      ],
+      "connections": "All week you built your MVP piece by piece: character, controls, mechanic, second state. Today someone else plays it and tells you what's missing before Sunday night. Next week you take that feedback and keep building on top of your MVP."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Playtesting your MVP against the checklist: character, setting, 2 states, 1 mechanic.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab \u2014 built from your Game Plan pasted into SchoolAI \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "smartGoal": "I can test my MVP against the requirements so that I know it's ready to turn in.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Overview: today's MVP checklist (2 min)",
+        "I do: model playtesting against the checklist (5 min)",
+        "We do: playtest a partner's game, give one note (10 min)",
+        "You do: fix one bug from feedback, finalize (8 min)",
+        "Exit Ticket: paste your MVP link (3 min)"
+      ],
+      "connections": "All week you built your MVP piece by piece: character, controls, mechanic, second state. Today someone else plays it and tells you what's missing before Sunday night. Next week you take that feedback and keep building on top of your MVP."
+    }
+  }
+}

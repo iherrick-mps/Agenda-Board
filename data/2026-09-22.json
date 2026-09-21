@@ -1,0 +1,56 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Getting your character to respond to player input so it's actually controllable.",
+      "weeklyDeliverable": "An MVP of your ROLLER mod \u2014 built from your design document pasted into SchoolAI, split across multiple JavaScript files \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
+      "smartGoal": "I can get my character to respond to player input so that my game has something the player actually controls.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create prototypes that use algorithms to accomplish a task, as a way to communicate an idea to potential collaborators or users.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Overview: today's one job \u2014 controls (2 min)",
+        "I do: ask SchoolAI to add player controls (6 min)",
+        "We do: test one control scheme as a class (5 min)",
+        "You do: get your character responding to input (12 min)",
+        "Exit Ticket: what input moves your character? (3 min)"
+      ],
+      "connections": "Yesterday you got a character and a setting on screen. Today it actually listens to you \u2014 arrow keys, clicks, whatever your plan calls for. Tomorrow you build the one mechanic that gives the player something to react to."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Getting your character to respond to player input so it's actually controllable.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab \u2014 built from your Game Plan pasted into SchoolAI \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "smartGoal": "I can get my character to respond to player input so that my game has something the player actually controls.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create prototypes that use algorithms to accomplish a task, as a way to communicate an idea to potential collaborators or users.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Overview: today's one job \u2014 controls (2 min)",
+        "I do: ask SchoolAI to add player controls (6 min)",
+        "We do: test one control scheme as a class (5 min)",
+        "You do: get your character responding to input (12 min)",
+        "Exit Ticket: what input moves your character? (3 min)"
+      ],
+      "connections": "Yesterday you got a character and a setting on screen. Today it actually listens to you \u2014 arrow keys, clicks, whatever your plan calls for. Tomorrow you build the one mechanic that gives the player something to react to."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Getting your character to respond to player input so it's actually controllable.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab \u2014 built from your Game Plan pasted into SchoolAI \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "smartGoal": "I can get my character to respond to player input so that my game has something the player actually controls.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create prototypes that use algorithms to accomplish a task, as a way to communicate an idea to potential collaborators or users.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through collaborative discussions.",
+      "agenda": [
+        "Log in (timed) (2 min)",
+        "Overview: today's one job \u2014 controls (2 min)",
+        "I do: ask SchoolAI to add player controls (6 min)",
+        "We do: test one control scheme as a class (5 min)",
+        "You do: get your character responding to input (12 min)",
+        "Exit Ticket: what input moves your character? (3 min)"
+      ],
+      "connections": "Yesterday you got a character and a setting on screen. Today it actually listens to you \u2014 arrow keys, clicks, whatever your plan calls for. Tomorrow you build the one mechanic that gives the player something to react to."
+    }
+  }
+}

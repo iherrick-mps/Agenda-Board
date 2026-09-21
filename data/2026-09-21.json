@@ -1,0 +1,56 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "workingNow": "Pasting your design document into SchoolAI and prompting it to build your character and setting.",
+      "weeklyDeliverable": "An MVP of your ROLLER mod \u2014 built from your design document pasted into SchoolAI, split across multiple JavaScript files \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
+      "smartGoal": "I can turn my design document into working code so that I have something real to build my MVP from.",
+      "contentStandard": "CA CS Standards 6-8.AP.16 \u2014 Incorporate existing code, media, and libraries into original programs, and give attribution.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground: classroom expectations quiz (5 min)",
+        "Overview: paste plan \u2192 SchoolAI \u2192 play (2 min)",
+        "I do: paste doc into SchoolAI, first prompt (5 min)",
+        "We do: troubleshoot one common paste/prompt error (5 min)",
+        "You do: paste your doc, get character + setting running (10 min)",
+        "Exit Ticket: screenshot your character on screen (3 min)"
+      ],
+      "connections": "Friday you finished your design document \u2014 mechanics, dynamics, aesthetic, states, all in one place. Today that plan becomes real code for the first time: you hand it to SchoolAI and get a character and a setting on screen. The rest of the week you build the mechanic and the second state your plan already describes."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "workingNow": "Pasting your Game Plan into SchoolAI and prompting it to build your character and setting in Game Lab.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab \u2014 built from your Game Plan pasted into SchoolAI \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "smartGoal": "I can turn my Game Plan into working code so that I have something real to build my MVP from.",
+      "contentStandard": "CA CS Standards 6-8.AP.16 \u2014 Incorporate existing code, media, and libraries into original programs, and give attribution.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground: classroom expectations quiz (5 min)",
+        "Overview: paste plan \u2192 SchoolAI \u2192 play (2 min)",
+        "I do: paste your plan into SchoolAI, first prompt (5 min)",
+        "We do: troubleshoot one common paste/prompt error (5 min)",
+        "You do: paste your plan, get character + setting running (10 min)",
+        "Exit Ticket: screenshot your character on screen (3 min)"
+      ],
+      "connections": "Friday you finished your Game Plan \u2014 every mechanic, state, and level typed out. Today that plan becomes real code for the first time: you hand it to SchoolAI and get a character and a setting on screen in Game Lab. The rest of the week you build the mechanic and second state your plan already describes."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "workingNow": "Pasting your Game Plan into SchoolAI and prompting it to build your character and setting in Game Lab.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab \u2014 built from your Game Plan pasted into SchoolAI \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "smartGoal": "I can turn my Game Plan into working code so that I have something real to build my MVP from.",
+      "contentStandard": "CA CS Standards 6-8.AP.16 \u2014 Incorporate existing code, media, and libraries into original programs, and give attribution.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground: classroom expectations quiz (5 min)",
+        "Overview: paste plan \u2192 SchoolAI \u2192 play (2 min)",
+        "I do: paste your plan into SchoolAI, first prompt (5 min)",
+        "We do: troubleshoot one common paste/prompt error (5 min)",
+        "You do: paste your plan, get character + setting running (10 min)",
+        "Exit Ticket: screenshot your character on screen (3 min)"
+      ],
+      "connections": "Friday you finished your Game Plan \u2014 every mechanic, state, and level typed out. Today that plan becomes real code for the first time: you hand it to SchoolAI and get a character and a setting on screen in Game Lab. The rest of the week you build the mechanic and second state your plan already describes."
+    }
+  }
+}
