@@ -3,54 +3,51 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "workingNow": "Wiring your mechanic to trigger a second state \u2014 getting your MVP to at least 2 states.",
-      "weeklyDeliverable": "An MVP of your ROLLER mod \u2014 built from your design document pasted into SchoolAI, split across multiple JavaScript files \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
+      "workingNow": "Wiring your mechanic to trigger a second state — getting your MVP to at least 2 states.",
+      "weeklyDeliverable": "An MVP of your ROLLER mod — built from your design document pasted into SchoolAI, split across multiple JavaScript files — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
       "smartGoal": "I can trigger a state change from my mechanic so that my game reacts when the player succeeds or fails.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 \u2014 Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Overview: today's one job \u2014 the 2nd state (2 min)",
-        "I do: trigger a state change from a mechanic (6 min)",
-        "We do: find one bug in a shared example (5 min)",
-        "You do: wire your mechanic to your 2nd state (12 min)",
+        "Mini-Lecture: Singleton pattern (10 min)",
+        "I do: trigger a state change from a mechanic (5 min)",
+        "You do: wire your mechanic to your 2nd state (10 min)",
         "Exit Ticket: what triggers your state change? (3 min)"
       ],
-      "connections": "Yesterday your mechanic worked on its own. Today it actually matters \u2014 it flips your game into a second state, like win, lose, or level up. Tomorrow you playtest the whole thing against this week's MVP checklist."
+      "connections": "Yesterday your mechanic worked on its own. Today it flips your game into a second state — and today's pattern (Singleton) is about keeping that state in exactly one place, so your files never disagree about it. Tomorrow you playtest the whole thing against this week's MVP checklist."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Wiring your mechanic to trigger a second state \u2014 getting your MVP to at least 2 states.",
-      "weeklyDeliverable": "An MVP of your game in Game Lab \u2014 built from your Game Plan pasted into SchoolAI \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "workingNow": "Wiring your mechanic to trigger a second state — getting your MVP to at least 2 states.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan pasted into SchoolAI — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
       "smartGoal": "I can trigger a state change from my mechanic so that my game reacts when the player succeeds or fails.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 \u2014 Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Overview: today's one job \u2014 the 2nd state (2 min)",
-        "I do: trigger a state change from a mechanic (6 min)",
-        "We do: find one bug in a shared example (5 min)",
-        "You do: wire your mechanic to your 2nd state (12 min)",
+        "Mini-Lecture: Singleton pattern (10 min)",
+        "I do: trigger a state change from a mechanic (5 min)",
+        "You do: wire your mechanic to your 2nd state (10 min)",
         "Exit Ticket: what triggers your state change? (3 min)"
       ],
-      "connections": "Yesterday your mechanic worked on its own. Today it actually matters \u2014 it flips your game into a second state, like win, lose, or level up. Tomorrow you playtest the whole thing against this week's MVP checklist."
+      "connections": "Yesterday your mechanic worked on its own. Today it flips your game into a second state — and today's pattern (Singleton) is about keeping that state in exactly one place, like one official scoreboard everyone checks. Tomorrow you playtest the whole thing against this week's MVP checklist."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Wiring your mechanic to trigger a second state \u2014 getting your MVP to at least 2 states.",
-      "weeklyDeliverable": "An MVP of your game in Game Lab \u2014 built from your Game Plan pasted into SchoolAI \u2014 with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "workingNow": "Wiring your mechanic to trigger a second state — getting your MVP to at least 2 states.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan pasted into SchoolAI — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
       "smartGoal": "I can trigger a state change from my mechanic so that my game reacts when the player succeeds or fails.",
-      "contentStandard": "CA CS Standards 6-8.AP.10 \u2014 Use flowcharts and/or pseudocode to design solutions to complex problems.",
-      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
+      "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Overview: today's one job \u2014 the 2nd state (2 min)",
-        "I do: trigger a state change from a mechanic (6 min)",
-        "We do: find one bug in a shared example (5 min)",
-        "You do: wire your mechanic to your 2nd state (12 min)",
+        "Mini-Lecture: Singleton pattern (10 min)",
+        "I do: trigger a state change from a mechanic (5 min)",
+        "You do: wire your mechanic to your 2nd state (10 min)",
         "Exit Ticket: what triggers your state change? (3 min)"
       ],
-      "connections": "Yesterday your mechanic worked on its own. Today it actually matters \u2014 it flips your game into a second state, like win, lose, or level up. Tomorrow you playtest the whole thing against this week's MVP checklist."
+      "connections": "Yesterday your mechanic worked on its own. Today it flips your game into a second state — and today's pattern (Singleton) is about keeping that state in exactly one place, like one official scoreboard everyone checks. Tomorrow you playtest the whole thing against this week's MVP checklist."
     }
   }
 }
