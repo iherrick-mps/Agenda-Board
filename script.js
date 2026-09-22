@@ -2390,10 +2390,10 @@ function parseQueueRoom(raw) {
   const text = String(raw || '').trim();
   if (!text) return { code: '', url: '' };
 
-  // just the code typed in on its own — build the room link around it
+  // just the code typed in on its own — build the names-only room link around it
   if (/^[A-Za-z0-9]{4,8}$/.test(text)) {
     const code = text.toUpperCase();
-    return { code: code, url: QUEUE_BASE_URL + '?room=' + code };
+    return { code: code, url: QUEUE_BASE_URL + '?room=' + code + '&view=names' };
   }
 
   // otherwise it's a link — pull ?room=XXXXX out of it
@@ -2404,7 +2404,11 @@ function parseQueueRoom(raw) {
     const m = text.match(/[?&]room=([^&#\s]+)/i);
     if (m) code = m[1];
   }
-  return { code: code.toUpperCase(), url: text };
+  code = code.toUpperCase();
+  return {
+    code: code,
+    url: code ? QUEUE_BASE_URL + '?room=' + encodeURIComponent(code) + '&view=names' : text
+  };
 }
 
 function initClassQueue() {
