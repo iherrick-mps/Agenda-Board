@@ -409,11 +409,44 @@ function agendaUrl(dateStr, period) {
   return `agenda.html?date=${dateStr}` + (p ? `&period=${PERIOD_SLUG[p]}` : '');
 }
 
+let DATES_CACHE = null;
+
+function currentWeekDates() {
+  const today = getPacificNow().isoDate;
+  const date = new Date(`${today}T00:00:00Z`);
+  const mondayOffset = (date.getUTCDay() + 6) % 7;
+  date.setUTCDate(date.getUTCDate() - mondayOffset);
+
+  return Array.from({ length: 7 }, (_, index) => {
+    const weekDate = new Date(date);
+    weekDate.setUTCDate(date.getUTCDate() + index);
+    return weekDate.toISOString().slice(0, 10);
+  });
+}
+
 async function loadDates() {
-  const res = await fetch('dates.txt');
-  const text = await res.text();
-  return [...new Set(text.split('\n').map(d => d.trim()).filter(Boolean))]
-    .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0)); // ascending
+  if (DATES_CACHE) return DATES_CACHE;
+
+  let dates = [];
+  try {
+    const res = await fetch(`data/index.json?t=${Date.now()}`);
+    if (res.ok) dates = await res.json();
+  } catch (e) { /* current-week probes still provide new entries */ }
+
+  const discovered = await Promise.all(currentWeekDates().map(async date => {
+    try {
+      const res = await fetch(`data/${date}.json?t=${Date.now()}`, { method: 'HEAD' });
+      return res.ok ? date : null;
+    } catch (e) {
+      return null;
+    }
+  }));
+
+  DATES_CACHE = [...new Set([
+    ...dates.filter(date => /^\d{4}-\d{2}-\d{2}$/.test(date)),
+    ...discovered.filter(Boolean)
+  ])].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+  return DATES_CACHE;
 }
 
 /* ============================================================
@@ -441,11 +474,11 @@ async function initIndexPage() {
   const today = getPacificNow().isoDate;
 
   if (dates.length === 0) {
-    gridEl.outerHTML = '<div class="empty-note">No dates found in dates.txt yet.</div>';
+    gridEl.outerHTML = '<div class="empty-note">No agenda files found yet.</div>';
     return;
   }
 
-  /* ---- month range: August 2026 through the last month in dates.txt ---- */
+  /* ---- month range: August 2026 through the last available agenda ---- */
   const minIdx = monthIndex(CAL_FIRST_YEAR, CAL_FIRST_MONTH);
   const lastDate = dates[dates.length - 1];
   const lastDt = new Date(`${lastDate}T00:00:00Z`);
@@ -1077,7 +1110,7 @@ function initFocusMode() {
 
 /* ============================================================
    Prev / Next day navigation — steps to the next-highest or
-   next-lowest date present in dates.txt (not necessarily the
+  next-lowest date present in the agenda data (not necessarily the
    adjacent calendar day).
    ============================================================ */
 
@@ -1090,7 +1123,7 @@ async function initDayNav(currentDate, period) {
 
   const idx = dates.indexOf(currentDate);
 
-  // if the viewed date isn't itself in dates.txt, fall back to the
+  // if the viewed date isn't itself in the data index, fall back to the
   // nearest neighbors by comparison rather than array index
   let prevDate, nextDate;
   if (idx !== -1) {

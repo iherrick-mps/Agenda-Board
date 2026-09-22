@@ -3,12 +3,12 @@
 A daily agenda board for Robotics & Coding, deployable to GitHub Pages.
 
 ## What's here
-- `index.html` — **pick a period, then pick a day.** A month calendar (starting August 2026, running through the last month present in `dates.txt`) with today outlined; days that have an agenda file are clickable, the rest are greyed out. The old full date list is still there, collapsed under "Or see every date as a list."
+- `index.html` — **pick a period, then pick a day.** A month calendar (starting August 2026, running through the last month present in `data/index.json`) with today outlined; days that have an agenda file are clickable, the rest are greyed out. Each load also checks the current Monday-through-Sunday week for newly added agenda files.
 - `agenda.html` — the board itself: a full-screen, no-scroll grid of boxes. Reads `?date=YYYY-MM-DD&period=4` from the URL and loads the matching file from `data/`.
 - `styles.css` — all colors and sizing. The 7 box colors are CSS variables at the top (`--c-working`, `--c-deliverable`, `--c-goal`, `--c-standard`, `--c-eld`, `--c-agenda`, `--c-connect`) — change a hex value there to re-theme a box everywhere. The board layout itself (which box goes where, and how big) is the `grid-template-areas` block in the `.board-grid` rule.
 - `script.js` — clock/countdown logic, date list rendering, box rendering, and the auto-fit-text routine.
 - `bells.json` — the three bell schedules (Regular, Shortened/Wednesday, Minimum Day), built from the 2025-26 bell schedule PDF.
-- `dates.txt` — plain list of dates, one `YYYY-MM-DD` per line. Add a line here every time you add a new day's JSON file.
+- `data/index.json` — archive index of agenda dates. Files added during the current week are discovered automatically, so they do not need to be registered separately.
 - `overview.html` / `overview.js` — the **Day Overview**: today's plans for both tracks side by side (8th grade left, 6th/7th right). `current-day.html` shows this automatically from the 1st period bell through the end of 3rd period.
 - `transitions.html` / `transitions.js` — the **Transition Times** table: every class, every day, how long it took to settle.
 - `transitions-record.js` — writes the Transition Timer's reading to Firestore. Loaded only by `agenda.html`.
@@ -30,7 +30,7 @@ Each text box's font automatically grows or shrinks to fill exactly the space it
 
 **Period switcher:** the three period tabs (plus the date, schedule type, prev/next day buttons, the mode toggles, and a **← Home** link) are tucked away at the very top edge of the screen — fully collapsed to zero height when idle. Hover your mouse near the top to reveal them; move away and they tuck back out of sight. The controls are grouped — where you are / which period / which mode — and the bar wraps onto as many rows as it needs, so a narrower window or a 1280-wide projector stacks the groups instead of running them off the right edge. **← Home** always leaves the board entirely, even when the board is being shown inside `current-day.html`.
 
-**Prev/Next day buttons:** step to the next-highest or next-lowest date *in `dates.txt`* — not the literal next calendar day. If there's a gap in your dates (e.g. a weekend, or a day you haven't built yet), it skips straight to whatever's actually listed.
+**Prev/Next day buttons:** step to the next-highest or next-lowest date in the agenda data — not the literal next calendar day. If there's a gap in your dates (e.g. a weekend, or a day you haven't built yet), it skips straight to whatever's actually listed.
 
 **Click-to-focus:** click any box to fade everything else down to a faint wash and bring that box forward; click it again, click anywhere outside all boxes, or press Escape to return to normal.
 
@@ -57,7 +57,7 @@ Every board address carries its period: `agenda.html?date=2026-08-19&period=6`. 
 1. Duplicate a file in `data/` and rename it to the new date, e.g. `data/2026-08-13.json`.
 2. Set `"schedule"` to `"regular"`, `"shortened"`, or `"minimum"`.
 3. Fill in `"4th Period"`, `"6th Period"`, `"7th Period"` (only include the ones that meet that day — Minimum Days, for example, only have 4th Period).
-4. Add the date to `dates.txt`.
+4. Add the date to `data/index.json` when it is outside the current week. Files added during the current week are picked up automatically on the next page load.
 
 Each period needs:
 - `grade` — display label next to the period tab
@@ -182,7 +182,7 @@ board rotates through, just all visible at once.
 through the end of 3rd period** — the stretch of the day before she starts teaching —
 then hands off to the live class board at the 3rd period bell, exactly as before.
 Outside that window it's still reachable from the home page, and its Prev/Next
-buttons walk through any date in `dates.txt`, so it works for reading a day ahead.
+buttons walk through any date in the agenda data, so it works for reading a day ahead.
 
 The page re-fetches its day file every five minutes, so editing a JSON file updates
 the projected overview without anyone reloading anything.
