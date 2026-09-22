@@ -1780,8 +1780,8 @@ function initGameMode() {
 }
 
 /* ============================================================
-   Clean-Up Mode — 7th Period only. Always auto-starts the moment
-   10 minutes remain in 7th Period (no input to configure — this
+    Clean-Up Mode — 7th Period only. Always auto-starts the moment
+  7 minutes remain in 7th Period (no input to configure — this
    one's fixed, unlike Game Mode's auto-trigger). Draws numbers
    1-36 with no repeats over 5 minutes via a little claw-machine
    animation: whoever's number comes up puts their Chromebook away.
@@ -1794,7 +1794,7 @@ const THEATER_PERIOD_NAME = '7th Period'; // auto-start is 7th Period only
 const THEATER_AUTO_MINUTES = 5;        // fixed — always starts w/ 5 min left
 
 const CLEANUP_PERIOD_NAME = '7th Period';
-const CLEANUP_AUTO_MINUTES = 10;       // fixed — always starts w/ 10 min left
+const CLEANUP_AUTO_MINUTES = 7;        // fixed — always starts w/ 7 min left
 const CLEANUP_NUMBER_COUNT = 36;
 const CLEANUP_TOTAL_MS = 5 * 60 * 1000; // get through all 36 numbers in 5 min
 const CLEANUP_DROP_MS = 900;
@@ -1901,6 +1901,7 @@ function initCleanupMode() {
   let queue = [];
   let queueIndex = 0;
   let sequenceEndsAt = 0;
+  let sequenceComplete = false;
 
   function resetClaw() {
     clawArm.classList.remove('is-dropping', 'is-grabbing', 'is-lifting');
@@ -1913,6 +1914,7 @@ function initCleanupMode() {
   }
 
   function finishSequence() {
+    sequenceComplete = true;
     if (messageEl) messageEl.textContent = 'Clean-up crew complete — thank you!';
   }
 
@@ -1999,6 +2001,7 @@ function initCleanupMode() {
 
     queue = shuffledNumbers(CLEANUP_NUMBER_COUNT);
     queueIndex = 0;
+    sequenceComplete = false;
     sequenceEndsAt = Date.now() + CLEANUP_TOTAL_MS;
     numberEl.textContent = '?';
     numberEl.classList.remove('is-revealing');
@@ -2033,7 +2036,12 @@ function initCleanupMode() {
 
   // lets Game Mode's turnOn() switch this back off, same pattern as
   // window.__gameMode above
-  window.__cleanupMode = { turnOn, turnOff, isActive: () => active };
+  window.__cleanupMode = {
+    turnOn,
+    turnOff,
+    isActive: () => active,
+    isComplete: () => sequenceComplete
+  };
 
   /* ---- Auto-trigger — always on, 7th Period only, fires once the
      live countdown hits CLEANUP_AUTO_MINUTES. Unlike Game Mode's
@@ -2067,10 +2075,10 @@ function initCleanupMode() {
 }
 
 /* ============================================================
-   Theater Mode — 7th Period only, same as Clean-Up Mode. Always
-   auto-starts the moment 5 minutes remain in 7th Period, which is
-   right as Clean-Up Mode's own 5-minute number-draw sequence
-   finishes. No other period auto-starts it; the toggle button still
+    Theater Mode — 7th Period only, same as Clean-Up Mode. It
+  auto-starts the moment 5 minutes remain in 7th Period unless
+  Clean-Up Mode has completed, in which case Clean-Up stays on its
+  end screen. No other period auto-starts it; the toggle button still
    works by hand in any period. Same full-board-takeover shape as
    Game Mode and Clean-Up Mode, but instead of a countdown/animation
    panel, the entire right-hand panel is one huge YouTube player
@@ -2241,15 +2249,16 @@ function initTheaterMode() {
   window.__theaterMode = { turnOn, turnOff, isActive: () => active };
 
   /* ---- Auto-trigger — always on, 7th Period only, fires once the
-     live countdown hits THEATER_AUTO_MINUTES. Same period restriction
-     as Clean-Up Mode: it swaps in for the last 5 minutes of 7th
-     Period and never auto-fires in 4th or 6th. The toggle button is
+      live countdown hits THEATER_AUTO_MINUTES, unless Clean-Up Mode has
+      completed. Same period restriction as Clean-Up Mode: it swaps in
+      for the last 5 minutes of 7th Period and never auto-fires in 4th or 6th. The toggle button is
      unaffected and still works by hand in any period. ---- */
 
   let firedForPeriodKey = null;
 
   async function autoCheck() {
     if (active) return;
+    if (window.__cleanupMode && window.__cleanupMode.isComplete()) return;
     const pt = getPacificNow();
     const scheduleKey = await resolveTodaysSchedule(pt);
     const bells = await loadBells();
