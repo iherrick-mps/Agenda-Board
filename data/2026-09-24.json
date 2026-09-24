@@ -4,50 +4,50 @@
     "4th Period": {
       "grade": "8th Grade",
       "workingNow": "Wiring your mechanic to trigger a second state — getting your MVP to at least 2 states.",
-      "weeklyDeliverable": "An MVP of your ROLLER mod — built from your design document pasted into SchoolAI, split across multiple JavaScript files — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
+      "weeklyDeliverable": "An MVP of your ROLLER mod — built from your design document with AI help (SchoolAI Mon–Tue, Copilot from Wed), split across multiple JavaScript files — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
       "smartGoal": "I can trigger a state change from my mechanic so that my game reacts when the player succeeds or fails.",
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
-        "Log in (timed) (2 min)",
-        "Mini-Lecture: Singleton pattern (10 min)",
-        "I do: trigger a state change from a mechanic (5 min)",
+        "Wayground quiz (5 min)",
+        "Mini-Lecture: Line endings and why they matter (7 min)",
+        "I do: ask Copilot for the state change (5 min)",
         "You do: wire your mechanic to your 2nd state (10 min)",
         "Exit Ticket: what triggers your state change? (3 min)"
       ],
-      "connections": "Yesterday your mechanic worked on its own. Today it flips your game into a second state — and today's pattern (Singleton) is about keeping that state in exactly one place, so your files never disagree about it. Tomorrow you playtest the whole thing against this week's MVP checklist."
+      "connections": "Yesterday you switched to Copilot and got your mechanic working. Today it flips your game into a second state — and today's lecture covers something you have been pasting past all week: the invisible character at the end of every line, and why mixing them up makes your whole file look changed. Tomorrow you playtest the whole thing against this week's MVP checklist."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "workingNow": "Wiring your mechanic to trigger a second state — getting your MVP to at least 2 states.",
-      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan pasted into SchoolAI — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "workingNow": "Moving your game to Perplexity, then wiring your mechanic to trigger a second state.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan with AI help (SchoolAI Mon–Wed, Perplexity from Thu) — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
       "smartGoal": "I can trigger a state change from my mechanic so that my game reacts when the player succeeds or fails.",
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
-        "Log in (timed) (2 min)",
-        "Mini-Lecture: Singleton pattern (10 min)",
-        "I do: trigger a state change from a mechanic (5 min)",
+        "Wayground quiz (5 min)",
+        "Mini-Lecture: Line endings and why they matter (7 min)",
+        "I do: set up Perplexity, ask for the state change (5 min)",
         "You do: wire your mechanic to your 2nd state (10 min)",
         "Exit Ticket: what triggers your state change? (3 min)"
       ],
-      "connections": "Yesterday your mechanic worked on its own. Today it flips your game into a second state — and today's pattern (Singleton) is about keeping that state in exactly one place, like one official scoreboard everyone checks. Tomorrow you playtest the whole thing against this week's MVP checklist."
+      "connections": "Yesterday your mechanic started working. Today you take your game plan to Perplexity, an agent that handles code better, and use it to flip your game into a second state. Today's lecture covers something you have been pasting past all week: the invisible character at the end of every line, and why mixing them up makes your code look broken. Tomorrow you playtest the whole thing against this week's MVP checklist."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "workingNow": "Wiring your mechanic to trigger a second state — getting your MVP to at least 2 states.",
-      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan pasted into SchoolAI — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "workingNow": "Moving your game to Perplexity, then wiring your mechanic to trigger a second state.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan with AI help (SchoolAI Mon–Wed, Perplexity from Thu) — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
       "smartGoal": "I can trigger a state change from my mechanic so that my game reacts when the player succeeds or fails.",
       "contentStandard": "CA CS Standards 6-8.AP.10 — Use flowcharts and/or pseudocode to design solutions to complex problems.",
       "eldStandard": "ELD.PI.6-8.6 — Reading closely and explaining how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
-        "Log in (timed) (2 min)",
-        "Mini-Lecture: Singleton pattern (10 min)",
-        "I do: trigger a state change from a mechanic (5 min)",
+        "Wayground quiz (5 min)",
+        "Mini-Lecture: Line endings and why they matter (7 min)",
+        "I do: set up Perplexity, ask for the state change (5 min)",
         "You do: wire your mechanic to your 2nd state (10 min)",
         "Exit Ticket: what triggers your state change? (3 min)"
       ],
-      "connections": "Yesterday your mechanic worked on its own. Today it flips your game into a second state — and today's pattern (Singleton) is about keeping that state in exactly one place, like one official scoreboard everyone checks. Tomorrow you playtest the whole thing against this week's MVP checklist."
+      "connections": "Yesterday your mechanic started working. Today you take your game plan to Perplexity, an agent that handles code better, and use it to flip your game into a second state. Today's lecture covers something you have been pasting past all week: the invisible character at the end of every line, and why mixing them up makes your code look broken. Tomorrow you playtest the whole thing against this week's MVP checklist."
     }
   }
 }

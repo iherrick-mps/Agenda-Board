@@ -4,50 +4,50 @@
     "4th Period": {
       "grade": "8th Grade",
       "workingNow": "Getting your character to respond to player input so it's actually controllable.",
-      "weeklyDeliverable": "An MVP of your ROLLER mod — built from your design document pasted into SchoolAI, split across multiple JavaScript files — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
+      "weeklyDeliverable": "An MVP of your ROLLER mod — built from your design document with AI help (SchoolAI Mon–Tue, Copilot from Wed), split across multiple JavaScript files — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
       "smartGoal": "I can get my character to respond to player input so that my game has something the player actually controls.",
       "contentStandard": "CA CS Standards 6-8.AP.14 — Create prototypes that use algorithms to accomplish a task, as a way to communicate an idea to potential collaborators or users.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Mini-Lecture: Command pattern (10 min)",
+        "Video: What is Object-Oriented Programming? (10 min)",
         "I do: ask SchoolAI to add player controls (5 min)",
         "You do: get your character responding to input (10 min)",
         "Exit Ticket: what input moves your character? (3 min)"
       ],
-      "connections": "Yesterday you got a character and a setting on screen. Today it listens to you — and today's pattern (Command) is exactly how: each action gets its own clear name instead of messy scattered key-checks. Tomorrow you build the one mechanic that gives the player something to react to."
+      "connections": "Yesterday you got a character and a setting on screen. Today it listens to you — and today's video gives you the big picture behind the code you're pasting: OOP organizes a program around objects that carry their own data and their own behavior, instead of loose variables scattered everywhere. Tomorrow you get the two words that make it concrete: class and object."
     },
     "6th Period": {
       "grade": "7th Grade",
       "workingNow": "Getting your character to respond to player input so it's actually controllable.",
-      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan pasted into SchoolAI — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan with AI help (SchoolAI Mon–Wed, Perplexity from Thu) — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
       "smartGoal": "I can get my character to respond to player input so that my game has something the player actually controls.",
       "contentStandard": "CA CS Standards 6-8.AP.14 — Create prototypes that use algorithms to accomplish a task, as a way to communicate an idea to potential collaborators or users.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Mini-Lecture: Command pattern (10 min)",
+        "Video: What is Object-Oriented Programming? (10 min)",
         "I do: ask SchoolAI to add player controls (5 min)",
         "You do: get your character responding to input (10 min)",
         "Exit Ticket: what input moves your character? (3 min)"
       ],
-      "connections": "Yesterday you got a character and a setting on screen. Today it listens to you — and today's pattern (Command) is exactly how: each action gets its own clear name instead of one messy pile of key-checks. Tomorrow you build the one mechanic that gives the player something to react to."
+      "connections": "Yesterday you got a character and a setting on screen. Today it listens to you — and today's video shows the big idea behind how games are built: OOP keeps everything about one thing together in its own box, instead of scattered all over your code. Tomorrow you get the two words that make it concrete: class and object."
     },
     "7th Period": {
       "grade": "6th Grade",
       "workingNow": "Getting your character to respond to player input so it's actually controllable.",
-      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan pasted into SchoolAI — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan with AI help (SchoolAI Mon–Wed, Perplexity from Thu) — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
       "smartGoal": "I can get my character to respond to player input so that my game has something the player actually controls.",
       "contentStandard": "CA CS Standards 6-8.AP.14 — Create prototypes that use algorithms to accomplish a task, as a way to communicate an idea to potential collaborators or users.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through collaborative discussions.",
       "agenda": [
         "Log in (timed) (2 min)",
-        "Mini-Lecture: Command pattern (10 min)",
+        "Video: What is Object-Oriented Programming? (10 min)",
         "I do: ask SchoolAI to add player controls (5 min)",
         "You do: get your character responding to input (10 min)",
         "Exit Ticket: what input moves your character? (3 min)"
       ],
-      "connections": "Yesterday you got a character and a setting on screen. Today it listens to you — and today's pattern (Command) is exactly how: each action gets its own clear name instead of one messy pile of key-checks. Tomorrow you build the one mechanic that gives the player something to react to."
+      "connections": "Yesterday you got a character and a setting on screen. Today it listens to you — and today's video shows the big idea behind how games are built: OOP keeps everything about one thing together in its own box, instead of scattered all over your code. Tomorrow you get the two words that make it concrete: class and object."
     }
   }
 }

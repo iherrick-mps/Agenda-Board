@@ -4,50 +4,50 @@
     "4th Period": {
       "grade": "8th Grade",
       "workingNow": "Pasting your design document into SchoolAI and prompting it to build your character and setting.",
-      "weeklyDeliverable": "An MVP of your ROLLER mod — built from your design document pasted into SchoolAI, split across multiple JavaScript files — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
+      "weeklyDeliverable": "An MVP of your ROLLER mod — built from your design document with AI help (SchoolAI Mon–Tue, Copilot from Wed), split across multiple JavaScript files — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable and pushed to your repo by Sunday night.",
       "smartGoal": "I can turn my design document into working code so that I have something real to build my MVP from.",
       "contentStandard": "CA CS Standards 6-8.AP.16 — Incorporate existing code, media, and libraries into original programs, and give attribution.",
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Wayground: classroom expectations quiz (5 min)",
-        "Mini-Lecture: Game Loop pattern (10 min)",
+        "Video: What are loops in game design? (10 min)",
         "I do: paste doc into SchoolAI, first prompt (5 min)",
         "You do: paste your doc, get character + setting running (7 min)",
         "Exit Ticket: screenshot your character on screen (3 min)"
       ],
-      "connections": "Friday you finished your design document. Today it becomes real code for the first time — and you get the software pattern (Game Loop) that ROLLER's code is already quietly running underneath everything you build this week. The rest of the week you build the mechanic and second state your plan describes."
+      "connections": "Friday you finished your design document. Today it becomes real code for the first time — and today's video shows you the loop running underneath it: a game checks, changes, and draws, over and over, dozens of times a second. ROLLER already does this. The rest of the week you build the mechanic and second state your plan describes."
     },
     "6th Period": {
       "grade": "7th Grade",
       "workingNow": "Pasting your Game Plan into SchoolAI and prompting it to build your character and setting in Game Lab.",
-      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan pasted into SchoolAI — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan with AI help (SchoolAI Mon–Wed, Perplexity from Thu) — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
       "smartGoal": "I can turn my Game Plan into working code so that I have something real to build my MVP from.",
       "contentStandard": "CA CS Standards 6-8.AP.16 — Incorporate existing code, media, and libraries into original programs, and give attribution.",
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Wayground: classroom expectations quiz (5 min)",
-        "Mini-Lecture: Game Loop pattern (10 min)",
+        "Video: What are loops in game design? (10 min)",
         "I do: paste doc into SchoolAI, first prompt (5 min)",
         "You do: paste your doc, get character + setting running (7 min)",
         "Exit Ticket: screenshot your character on screen (3 min)"
       ],
-      "connections": "Friday you finished your Game Plan. Today it becomes real code for the first time — and you get the software pattern (Game Loop) that's quietly running underneath every game, including yours in Game Lab. The rest of the week you build the mechanic and second state your plan describes."
+      "connections": "Friday you finished your Game Plan. Today it becomes real code for the first time — and today's video shows you the loop running underneath every game: check, change, draw, over and over, super fast. Game Lab already does this for you. The rest of the week you build the mechanic and second state your plan describes."
     },
     "7th Period": {
       "grade": "6th Grade",
       "workingNow": "Pasting your Game Plan into SchoolAI and prompting it to build your character and setting in Game Lab.",
-      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan pasted into SchoolAI — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
+      "weeklyDeliverable": "An MVP of your game in Game Lab — built from your Game Plan with AI help (SchoolAI Mon–Wed, Perplexity from Thu) — with a player-controlled character, a basic setting, at least 2 states, and 1 working mechanic that creates a challenge, playable by Sunday night.",
       "smartGoal": "I can turn my Game Plan into working code so that I have something real to build my MVP from.",
       "contentStandard": "CA CS Standards 6-8.AP.16 — Incorporate existing code, media, and libraries into original programs, and give attribution.",
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Wayground: classroom expectations quiz (5 min)",
-        "Mini-Lecture: Game Loop pattern (10 min)",
+        "Video: What are loops in game design? (10 min)",
         "I do: paste doc into SchoolAI, first prompt (5 min)",
         "You do: paste your doc, get character + setting running (7 min)",
         "Exit Ticket: screenshot your character on screen (3 min)"
       ],
-      "connections": "Friday you finished your Game Plan. Today it becomes real code for the first time — and you get the software pattern (Game Loop) that's quietly running underneath every game, including yours in Game Lab. The rest of the week you build the mechanic and second state your plan describes."
+      "connections": "Friday you finished your Game Plan. Today it becomes real code for the first time — and today's video shows you the loop running underneath every game: check, change, draw, over and over, super fast. Game Lab already does this for you. The rest of the week you build the mechanic and second state your plan describes."
     }
   }
 }
