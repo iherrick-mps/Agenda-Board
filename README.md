@@ -131,6 +131,35 @@ be read at a glance. Filter to the last 2 weeks / 30 days / all time, download t
 whole range as CSV, or hover a cell and click **×** to delete a bad record. The table
 is live: a period that ends while the page is open appears on its own.
 
+### Friday game time
+
+Game Mode's automatic start is **Fridays only**, and how long it runs is earned
+rather than fixed: **30 minutes minus every second that grade spent in transitions
+that week**, Monday through Friday. A class that settles quickly all week keeps most
+of the half hour; one that dawdles spends it. Monday through Thursday nothing starts
+on its own — the Game Mode button still works by hand any day, in any period.
+
+Each grade is exactly one period (4th = 8th grade, 6th = 7th, 7th = 6th), so each
+class earns its own number and they're counted separately. The totals come from the
+same records the Transition Timer writes, so this only works once Firebase is set up
+(below).
+
+Three things deliberately do **not** cost a class its Friday:
+
+- **Periods where the timer was never stopped** are skipped, exactly as they're left
+  out of the averages on `transitions.html` — that reading is how long a tab sat
+  open, not a transition.
+- **A grade that has already spent its 30 minutes** gets no auto-start rather than a
+  negative countdown.
+- **If the records can't be read** (no network, Firebase not set up yet), Game Mode
+  doesn't auto-start at all. An unknown week is never treated as a clean one.
+
+The **Auto Game Mode at ___ min left** box in the hover-bar overrides the
+calculation: type a number and that becomes the minutes-left trigger for as long as
+it's there, still Fridays only. Leave it blank and it shows what the current class
+earned, as a hint, so the number is checkable before it fires. Clearing the box
+returns to the earned time.
+
 ### Firebase setup (one time)
 
 The board records into its **own** Firebase project, separate from the help queue.

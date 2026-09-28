@@ -1745,11 +1745,26 @@ function initGameMode() {
     if (active) turnOff(); else turnOn();
   });
 
-  /* ---- Auto Game Mode — type a number of minutes-left, and Game
-     Mode switches itself on the moment the live period's countdown
-     reaches that number. Persisted per device; fires once per period
-     (identified by date + period name) so turning Game Mode back off
-     manually doesn't immediately re-trigger it. ---- */
+  /* ---- Auto Game Mode — Fridays only.
+
+     On a Friday, Game Mode switches itself on for however long the
+     class earned that week: 30 minutes minus every second that grade
+     spent in transitions Monday through Friday. The sum comes from
+     the same Firestore records the Transition Timer writes (see
+     window.transitionsEarnedGameMinutes in transitions-record.js), so
+     a class that settles fast all week gets most of the half hour and
+     one that dawdles spends it. Monday through Thursday nothing
+     auto-starts at all — the Game Mode button still works by hand any
+     day, in any period.
+
+     Typing a number into the hover-bar box overrides the calculation
+     for as long as it's there: that number becomes the minutes-left
+     threshold instead, still Friday-only. Clear the box to go back to
+     the earned time. Persisted per device.
+
+     Fires once per period (identified by date + period name) so
+     turning Game Mode back off by hand doesn't immediately
+     re-trigger it. ---- */
 
   const GAMEMODE_AUTO_KEY = 'agendaBoard.gamemodeAutoMinutes';
 
@@ -1771,6 +1786,8 @@ function initGameMode() {
       const raw = autoInput.value.trim();
       if (raw === '') {
         autoMinutes = null;
+        firedForPeriodKey = null; // back to earned time — let it fire on that
+        autoInput.placeholder = '\u2014';
         autoInput.classList.remove('is-armed');
         try { localStorage.removeItem(GAMEMODE_AUTO_KEY); } catch (e) { /* storage disabled */ }
         return;
@@ -1784,8 +1801,10 @@ function initGameMode() {
     });
 
     async function autoCheck() {
-      if (autoMinutes === null || active) return;
+      if (active) return;
       const pt = getPacificNow();
+      if (pt.weekdayName !== 'Friday') return;
+
       const scheduleKey = await resolveTodaysSchedule(pt);
       const bells = await loadBells();
       const scheduleData = bells[scheduleKey];
@@ -1795,12 +1814,33 @@ function initGameMode() {
       const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
       if (!current) return;
 
+      /* A typed number wins outright. Otherwise ask what this class
+         earned; null means we can't know (no Firebase, offline, or a
+         period with no transition records of its own, like 1st), and
+         an unknown answer must never be treated as a full 30 minutes.
+         A class that earned nothing gets no auto-start either. */
+      let threshold = autoMinutes;
+      if (threshold === null) {
+        if (typeof window.transitionsEarnedGameMinutes !== 'function') return;
+        threshold = await window.transitionsEarnedGameMinutes(current.name, pt.isoDate);
+        if (threshold === null || threshold <= 0) return;
+        showEarnedHint(threshold);
+      }
+
       const remaining = hhmmToMinutes(current.end) - nowMin;
       const periodKey = `${pt.isoDate}|${current.name}`;
-      if (remaining <= autoMinutes && firedForPeriodKey !== periodKey) {
+      if (remaining <= threshold && firedForPeriodKey !== periodKey) {
         firedForPeriodKey = periodKey;
         turnOn();
       }
+    }
+
+    /* The calculation is invisible otherwise — surface it in the empty
+       box so the number is checkable before it fires, without putting
+       a real value there that would read as an override. */
+    function showEarnedHint(minutes) {
+      if (autoMinutes !== null) return;
+      autoInput.placeholder = `${Math.round(minutes)} earned`;
     }
 
     autoCheck();

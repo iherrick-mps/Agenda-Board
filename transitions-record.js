@@ -124,3 +124,93 @@ window.recordTransition = async function recordTransition(entry) {
     console.warn('Transition record not saved:', e && e.message);
   }
 };
+
+/* ============================================================
+   Friday game time — the read side of the same collection.
+
+   Game Mode's Friday auto-start asks this how long a class earned:
+   30 minutes, minus every second that class spent in transitions
+   Monday through Friday of the current week. Settle quickly all week
+   and you keep most of the half hour; dawdle and you spend it.
+
+   Each grade is exactly one period (4th = 8th grade, 6th = 7th, 7th =
+   6th), so summing by periodSlug and summing by grade are the same
+   thing — and the slug is what the documents are keyed by.
+
+   Readings where the timer was never stopped are skipped, the same
+   way transitions.html leaves them out of its averages. That reading
+   is "how long the tab sat open," not a transition, and a projector
+   nobody closed on Tuesday must not cost a class its Friday.
+
+   Resolves to minutes (possibly fractional), floored at 0, or null if
+   the answer isn't knowable — no Firebase, no network, or a period
+   that isn't one of hers. The two mean different things to the
+   caller: null is "don't auto-start at all," 0 is "they earned
+   nothing." It never rejects.
+   ============================================================ */
+
+const GAME_MODE_BASE_MINUTES = 30;
+const TRANSITIONS_EARNED_RETRY_MS = 60000;
+
+/* Game Mode's autoCheck calls this every second, so the answer is
+   cached per class per day and the network is touched once. Only real
+   answers are cached; a failed read backs off instead, so one dropped
+   request doesn't cost a class its Friday, and a board with no
+   connection doesn't retry sixty times a minute. */
+const transitionsEarnedCache = new Map();    // key -> minutes (settled)
+const transitionsEarnedPending = new Map();  // key -> in-flight promise
+const transitionsEarnedRetryAt = new Map();  // key -> ms before next attempt
+
+window.transitionsEarnedGameMinutes = async function (periodName, todayIso) {
+  const meta = TRANSITION_PERIODS[periodName];
+  if (!meta) return null;                        // not one of her three classes
+
+  // keyed by date too, so a board left running overnight recomputes
+  const key = `${todayIso}|${meta.slug}`;
+  if (transitionsEarnedCache.has(key)) return transitionsEarnedCache.get(key);
+  if (transitionsEarnedPending.has(key)) return transitionsEarnedPending.get(key);
+  if (Date.now() < (transitionsEarnedRetryAt.get(key) || 0)) return null;
+
+  const promise = (async () => {
+    const db = transitionsGetDb();
+    if (!db) return null;
+
+    // currentWeekDates() (script.js) returns Monday-first ISO dates, so
+    // [0] is Monday and [4] is Friday. The range is on one field only,
+    // which the automatic single-field index covers — no composite
+    // index to create in the console before this works.
+    const week = currentWeekDates();
+    const snap = await db.collection(TRANSITIONS_COLLECTION)
+      .where('date', '>=', week[0])
+      .where('date', '<=', week[4])
+      .get();
+
+    let wastedSeconds = 0;
+    snap.forEach((doc) => {
+      const d = doc.data() || {};
+      if (d.periodSlug !== meta.slug) return;
+      if (d.stopped === false) return;           // never stopped — not a transition
+      wastedSeconds += Number(d.seconds) || 0;
+    });
+
+    return Math.max(0, GAME_MODE_BASE_MINUTES - wastedSeconds / 60);
+  })();
+
+  transitionsEarnedPending.set(key, promise);
+  try {
+    const minutes = await promise;
+    if (minutes === null) {
+      transitionsEarnedRetryAt.set(key, Date.now() + TRANSITIONS_EARNED_RETRY_MS);
+    } else {
+      transitionsEarnedCache.set(key, minutes);
+    }
+    return minutes;
+  } catch (e) {
+    // offline, rules, quota — try again shortly, and meanwhile let the
+    // caller treat it as "unknown" rather than "zero minutes earned"
+    transitionsEarnedRetryAt.set(key, Date.now() + TRANSITIONS_EARNED_RETRY_MS);
+    return null;
+  } finally {
+    transitionsEarnedPending.delete(key);
+  }
+};
