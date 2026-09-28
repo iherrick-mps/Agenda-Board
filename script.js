@@ -1823,9 +1823,6 @@ function initGameMode() {
    off, so they never show at the same time.
    ============================================================ */
 
-const THEATER_PERIOD_NAME = '7th Period'; // auto-start is 7th Period only
-const THEATER_AUTO_MINUTES = 5;        // fixed — always starts w/ 5 min left
-
 const CLEANUP_PERIOD_NAME = '7th Period';
 const CLEANUP_AUTO_MINUTES = 7;        // fixed — always starts w/ 7 min left
 const CLEANUP_NUMBER_COUNT = 36;
@@ -2108,11 +2105,10 @@ function initCleanupMode() {
 }
 
 /* ============================================================
-    Theater Mode — 7th Period only, same as Clean-Up Mode. It
-  auto-starts the moment 5 minutes remain in 7th Period unless
-  Clean-Up Mode has completed, in which case Clean-Up stays on its
-  end screen. No other period auto-starts it; the toggle button still
-   works by hand in any period. Same full-board-takeover shape as
+   Theater Mode — manual only. It turns on when the Theater button
+   in the hover-bar is pressed, in any period, and never starts on
+   its own: unlike Game Mode and Clean-Up Mode there is no bell-driven
+   auto-trigger here at all. Same full-board-takeover shape as
    Game Mode and Clean-Up Mode, but instead of a countdown/animation
    panel, the entire right-hand panel is one huge YouTube player
    showing a random pick from theater.txt (a separate list from
@@ -2281,37 +2277,13 @@ function initTheaterMode() {
   // same pattern as window.__gameMode / window.__cleanupMode above
   window.__theaterMode = { turnOn, turnOff, isActive: () => active };
 
-  /* ---- Auto-trigger — always on, 7th Period only, fires once the
-      live countdown hits THEATER_AUTO_MINUTES, unless Clean-Up Mode has
-      completed. Same period restriction as Clean-Up Mode: it swaps in
-      for the last 5 minutes of 7th Period and never auto-fires in 4th or 6th. The toggle button is
-     unaffected and still works by hand in any period. ---- */
-
-  let firedForPeriodKey = null;
-
-  async function autoCheck() {
-    if (active) return;
-    if (window.__cleanupMode && window.__cleanupMode.isComplete()) return;
-    const pt = getPacificNow();
-    const scheduleKey = await resolveTodaysSchedule(pt);
-    const bells = await loadBells();
-    const scheduleData = bells[scheduleKey];
-    if (!scheduleData) return;
-
-    const nowMin = minutesSinceMidnight(pt);
-    const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
-    if (!current || current.name !== THEATER_PERIOD_NAME) return;
-
-    const remaining = hhmmToMinutes(current.end) - nowMin;
-    const periodKey = `${pt.isoDate}|${current.name}`;
-    if (remaining <= THEATER_AUTO_MINUTES && firedForPeriodKey !== periodKey) {
-      firedForPeriodKey = periodKey;
-      turnOn();
-    }
-  }
-
-  autoCheck();
-  setInterval(autoCheck, 1000);
+  /* ---- No auto-trigger. Theater Mode is deliberately hand-only: it
+     starts when the Theater button is pressed and at no other time.
+     Unlike Game Mode and Clean-Up Mode, nothing here watches the bell
+     schedule, so there is no path by which a period ending, a date
+     rolling over, or a board left running overnight can turn it on by
+     itself. If Theater ever needs to auto-start again, model it on
+     Clean-Up Mode's autoCheck rather than reviving this comment. ---- */
 }
 
 /* ============================================================
