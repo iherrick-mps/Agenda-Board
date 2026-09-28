@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "ROLLER mod v2 pushed to your repo by Sunday night: 1 bug report + 1 feature request filed as GitHub Issues on your partner's repo, your own bug fixed and your partner's feature request built (or scoped down with a written reason), both signed off by your partner, and a v1 → v2 changelog on your portfolio site.",
+      "workingNow": "Playtesting your partner's ROLLER mod like a real QA tester, then filing 1 bug report and 1 feature request as Issues on their repo.",
+      "smartGoal": "By the end of class, I can file 2 GitHub Issues on my partner's repo — 1 bug with steps to reproduce and 1 feature request with a success test — so they could act on each one without asking me a single question.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.2 — Interacting with others in written English in various communicative forms.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Mini-lesson: What is QA? Bug vs. feature request (8 min)",
+        "I do: file both Issues on a sample mod (6 min)",
+        "Pair playtest: swap testers halfway (20 min)",
+        "You do: file your 2 Issues on their repo (8 min)",
+        "Exit Ticket: paste both Issue links (3 min)"
+      ],
+      "connections": "Friday you played each other's MVPs and gave one thing to fix. Today that feedback goes professional: you are the QA tester, and you file it where real studios do — as GitHub Issues on the creator's repo, one broken thing and one wished-for thing. Tomorrow you switch sides and fix the bug someone filed on you."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Playing your partner's game like a game tester and writing up 1 bug so clearly they can fix it.",
+      "smartGoal": "By the end of class, I can play my partner's game for 10 minutes and write 1 bug report so clear they can fix it without asking me anything.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.2 — Interacting with others in written English in various communicative forms.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Mini-lesson: What does a game tester do? (7 min)",
+        "I do: find and write up one bug (5 min)",
+        "Pair playtest: swap testers halfway (20 min)",
+        "You do: write your bug report (10 min)",
+        "Exit Ticket: hand your report to the creator (3 min)"
+      ],
+      "connections": "Last week you built your game piece by piece, and Friday you played each other's. Today you become a game tester — the job that makes games better before anyone buys them. You find one bug in your partner's game and write it up. Tomorrow you get the report someone wrote about YOUR game, and you fix it."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Playing your partner's game like a game tester and writing up 1 bug so clearly they can fix it.",
+      "smartGoal": "By the end of class, I can play my partner's game for 10 minutes and write 1 bug report so clear they can fix it without asking me anything.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.2 — Interacting with others in written English in various communicative forms.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Mini-lesson: What does a game tester do? (7 min)",
+        "I do: find and write up one bug (5 min)",
+        "Pair playtest: swap testers halfway (20 min)",
+        "You do: write your bug report (10 min)",
+        "Exit Ticket: hand your report to the creator (3 min)"
+      ],
+      "connections": "Last week you built your game piece by piece, and Friday you played each other's. Today you become a game tester — the job that makes games better before anyone buys them. You find one bug in your partner's game and write it up. Tomorrow you get the report someone wrote about YOUR game, and you fix it."
+    }
+  }
+}

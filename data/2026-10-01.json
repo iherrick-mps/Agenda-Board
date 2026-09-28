@@ -1,0 +1,53 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "ROLLER mod v2 pushed to your repo by Sunday night: 1 bug report + 1 feature request filed as GitHub Issues on your partner's repo, your own bug fixed and your partner's feature request built (or scoped down with a written reason), both signed off by your partner, and a v1 → v2 changelog on your portfolio site.",
+      "workingNow": "Getting your bug fix signed off, then turning your partner's feature request into a spec and building it with Copilot.",
+      "smartGoal": "I can turn a feature request into a design spec and build it (or a scoped-down version) in the right JavaScript file, so it passes my partner's success test by Friday.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Partner sign-off: re-test fix, check nothing else broke (7 min)",
+        "I do: feature request → spec → Copilot prompt (5 min)",
+        "You do: build the feature (28 min)",
+        "Exit Ticket: does it pass the success test yet? (5 min)"
+      ],
+      "connections": "Tuesday you fixed a bug and triaged a feature request. Today your partner checks the fix — and checks that nothing else broke — before you build something new, because that is the order real teams work in. Tomorrow your partner tests the feature, and you ship v2."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Getting your fix checked by your tester, then publishing your game and embedding it on your Google Site.",
+      "smartGoal": "I can get my fix checked by my tester and publish my game on my Google Site, so anyone can play it from my portfolio.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Partner check: is the bug really gone? (8 min)",
+        "I do: share link → embed on Google Site (7 min)",
+        "You do: finish, publish, and embed your game (25 min)",
+        "Exit Ticket: paste your site link (5 min)"
+      ],
+      "connections": "Tuesday you fixed the bug from your report. Today the tester who found it checks your fix — because the person who found a bug is the best person to check it's gone. Then your game goes live on your Google Site. Tomorrow you explain what you changed and play everyone's finished games."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Getting your fix checked by your tester, then publishing your game and embedding it on your Google Site.",
+      "smartGoal": "I can get my fix checked by my tester and publish my game on my Google Site, so anyone can play it from my portfolio.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Partner check: is the bug really gone? (8 min)",
+        "I do: share link → embed on Google Site (7 min)",
+        "You do: finish, publish, and embed your game (25 min)",
+        "Exit Ticket: paste your site link (5 min)"
+      ],
+      "connections": "Tuesday you fixed the bug from your report. Today the tester who found it checks your fix — because the person who found a bug is the best person to check it's gone. Then your game goes live on your Google Site. Tomorrow you explain what you changed and play everyone's finished games."
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "ROLLER mod v2 pushed to your repo by Sunday night: 1 bug report + 1 feature request filed as GitHub Issues on your partner's repo, your own bug fixed and your partner's feature request built (or scoped down with a written reason), both signed off by your partner, and a v1 → v2 changelog on your portfolio site.",
+      "workingNow": "Reproducing the bug your partner filed on you, fixing it in the right JavaScript file with Copilot, then triaging their feature request.",
+      "smartGoal": "I can reproduce the bug in my Issue, write a fix spec (rule → trigger → what changes), and push a fix that passes my own test by the end of class, so my game works the way I designed it.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Mini-lecture: The life of a bug + triage (7 min)",
+        "I do: reproduce → find the file → fix spec (6 min)",
+        "You do: reproduce and fix your bug with Copilot (22 min)",
+        "Triage the feature request: accept, scope, or decline (5 min)",
+        "Exit Ticket: comment on your Issue — fixed? proof? (5 min)"
+      ],
+      "connections": "Yesterday you were the tester. Today you are the developer: you read the Issue filed on your repo, make the bug happen on purpose, find which JavaScript file it lives in, and fix it — then decide what to do with the feature request, the way real teams triage. Thursday you build that feature, after your partner confirms your fix."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Reading the bug report about your game, making the bug happen, and fixing it with Perplexity.",
+      "smartGoal": "I can make the bug from my report happen on purpose and fix it with Perplexity, so that by the end of class my game does what it should.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Mini-lesson: Report → make it happen → fix → check (6 min)",
+        "I do: read a report, make the bug happen (5 min)",
+        "You do: make your bug happen, fix it with Perplexity (29 min)",
+        "Exit Ticket: Did your fix work? How do you know? (5 min)"
+      ],
+      "connections": "Yesterday you found a bug in someone else's game. Today you get the report about YOUR game. First you make the bug happen on purpose — if you can't make it happen, you can't prove you fixed it. Thursday your tester checks your fix, and then you publish."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Reading the bug report about your game, making the bug happen, and fixing it with Perplexity.",
+      "smartGoal": "I can make the bug from my report happen on purpose and fix it with Perplexity, so that by the end of class my game does what it should.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Mini-lesson: Report → make it happen → fix → check (6 min)",
+        "I do: read a report, make the bug happen (5 min)",
+        "You do: make your bug happen, fix it with Perplexity (29 min)",
+        "Exit Ticket: Did your fix work? How do you know? (5 min)"
+      ],
+      "connections": "Yesterday you found a bug in someone else's game. Today you get the report about YOUR game. First you make the bug happen on purpose — if you can't make it happen, you can't prove you fixed it. Thursday your tester checks your fix, and then you publish."
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "ROLLER mod v2 pushed to your repo by Sunday night: 1 bug report + 1 feature request filed as GitHub Issues on your partner's repo, your own bug fixed and your partner's feature request built (or scoped down with a written reason), both signed off by your partner, and a v1 → v2 changelog on your portfolio site.",
+      "workingNow": "Getting your feature signed off, pushing v2, and writing your v1 → v2 changelog on your portfolio site.",
+      "smartGoal": "I can get my partner's sign-off on my feature, push v2, and write a changelog that links each change to the Issue that caused it, so anyone can see how feedback improved my game.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Partner sign-off: test feature, close both Issues (8 min)",
+        "Final polish and push v2 (12 min)",
+        "Changelog on your portfolio site (12 min)",
+        "Gallery play: 2 classmates' v2 games (8 min)",
+        "Exit Ticket: paste your v2 link (5 min)"
+      ],
+      "connections": "All week you ran a full feedback cycle: test, report, fix, verify, build, verify. Today you close the loop — your partner signs off and closes the Issues, you ship v2, and your changelog shows exactly how feedback changed your game. Next week we leave the screen for physical engineering."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Finishing your published game and writing 3 sentences on what you changed and why.",
+      "smartGoal": "I can finish publishing my game and write 3 sentences on what I changed and why, so players can see how testing made my game better.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Finish publishing and embedding (12 min)",
+        "Write: what I changed and why (10 min)",
+        "Gallery play: 2 classmates' games (15 min)",
+        "Preview: engineering starts next week (3 min)",
+        "Exit Ticket: paste your site link (5 min)"
+      ],
+      "connections": "This week your game went through a real testing cycle: a tester found a bug, you fixed it, and they checked it. Today it's finished and live on your site, and you explain how testing made it better. Next week we leave the computer and start building real structures in engineering."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Finishing your published game and writing 3 sentences on what you changed and why.",
+      "smartGoal": "I can finish publishing my game and write 3 sentences on what I changed and why, so players can see how testing made my game better.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Finish publishing and embedding (12 min)",
+        "Write: what I changed and why (10 min)",
+        "Gallery play: 2 classmates' games (15 min)",
+        "Preview: engineering starts next week (3 min)",
+        "Exit Ticket: paste your site link (5 min)"
+      ],
+      "connections": "This week your game went through a real testing cycle: a tester found a bug, you fixed it, and they checked it. Today it's finished and live on your site, and you explain how testing made it better. Next week we leave the computer and start building real structures in engineering."
+    }
+  }
+}
