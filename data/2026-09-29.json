@@ -3,52 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "ROLLER mod v2 pushed to your repo by Sunday night: 1 bug report + 1 feature request filed as GitHub Issues on your partner's repo, your own bug fixed and your partner's feature request built (or scoped down with a written reason), both signed off by your partner, and a v1 → v2 changelog on your portfolio site.",
-      "workingNow": "Reproducing the bug your partner filed on you, fixing it in the right JavaScript file with Copilot, then triaging their feature request.",
-      "smartGoal": "I can reproduce the bug in my Issue, write a fix spec (rule → trigger → what changes), and push a fix that passes my own test by the end of class, so my game works the way I designed it.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
+      "weeklyDeliverable": "One detailed bug report with screenshots filed as a GitHub Issue on your partner's repo, the bug filed on YOUR repo fixed and signed off by the tester who found it, and ROLLER v2 pushed with a changelog on your portfolio site — all by Sunday night.",
+      "workingNow": "Filing the bug you found as a GitHub Issue on your partner's repo — with detailed steps and screenshots.",
+      "smartGoal": "By the end of class, I can file 1 GitHub Issue on my partner's repo with a clear title, numbered steps, expected vs. actual, and at least 2 screenshots, so they can find and fix the bug without asking me anything.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.2 — Interacting with others in written English in various communicative forms.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Mini-lecture: The life of a bug + triage (7 min)",
-        "I do: reproduce → find the file → fix spec (6 min)",
-        "You do: reproduce and fix your bug with Copilot (22 min)",
-        "Triage the feature request: accept, scope, or decline (5 min)",
-        "Exit Ticket: comment on your Issue — fixed? proof? (5 min)"
+        "Overview: why detail beats \"it's broken\" (3 min)",
+        "I do: file a bug Issue with screenshots, live (12 min)",
+        "We do: check one Issue against the checklist (7 min)",
+        "You do: file your bug Issue with 2+ screenshots (18 min)",
+        "Exit Ticket: paste your Issue link (5 min)"
       ],
-      "connections": "Yesterday you were the tester. Today you are the developer: you read the Issue filed on your repo, make the bug happen on purpose, find which JavaScript file it lives in, and fix it — then decide what to do with the feature request, the way real teams triage. Thursday you build that feature, after your partner confirms your fix."
+      "connections": "Yesterday you found a bug in your partner's mod. A bug nobody can find again never gets fixed, so today is all about the report: a [BUG] title, numbered steps, what should happen vs. what did, and screenshots that show it. Thursday you switch sides and fix the bug someone filed on YOU."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
-      "workingNow": "Reading the bug report about your game, making the bug happen, and fixing it with Perplexity.",
-      "smartGoal": "I can make the bug from my report happen on purpose and fix it with Perplexity, so that by the end of class my game does what it should.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with your tester notes and observer notes filled in, 1 bug fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Swapping roles: watching someone else play your game and writing down what you see.",
+      "smartGoal": "By the end of class, I can watch a partner play my game without giving hints and fill in both my tester notes and my observer notes, so I know what to fix.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Mini-lesson: Report → make it happen → fix → check (6 min)",
-        "I do: read a report, make the bug happen (5 min)",
-        "You do: make your bug happen, fix it with Perplexity (29 min)",
-        "Exit Ticket: Did your fix work? How do you know? (5 min)"
+        "Review: tester vs. creator — creator stays quiet (5 min)",
+        "I do: what good observer notes look like (5 min)",
+        "Swap playtest: watch your game get played (20 min)",
+        "Finish your tester and observer notes (10 min)",
+        "Exit Ticket: one surprise from watching (5 min)"
       ],
-      "connections": "Yesterday you found a bug in someone else's game. Today you get the report about YOUR game. First you make the bug happen on purpose — if you can't make it happen, you can't prove you fixed it. Thursday your tester checks your fix, and then you publish."
+      "connections": "Yesterday you were the tester and found a bug in someone else's game. Today you switch: someone plays YOUR game while you watch quietly and write down every place they get stuck. Seeing a real player struggle is how creators learn what to fix. Thursday you fix it."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
-      "workingNow": "Reading the bug report about your game, making the bug happen, and fixing it with Perplexity.",
-      "smartGoal": "I can make the bug from my report happen on purpose and fix it with Perplexity, so that by the end of class my game does what it should.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with your tester notes and observer notes filled in, 1 bug fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Swapping roles: watching someone else play your game and writing down what you see.",
+      "smartGoal": "By the end of class, I can watch a partner play my game without giving hints and fill in both my tester notes and my observer notes, so I know what to fix.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Mini-lesson: Report → make it happen → fix → check (6 min)",
-        "I do: read a report, make the bug happen (5 min)",
-        "You do: make your bug happen, fix it with Perplexity (29 min)",
-        "Exit Ticket: Did your fix work? How do you know? (5 min)"
+        "Review: tester vs. creator — creator stays quiet (5 min)",
+        "I do: what good observer notes look like (5 min)",
+        "Swap playtest: watch your game get played (20 min)",
+        "Finish your tester and observer notes (10 min)",
+        "Exit Ticket: one surprise from watching (5 min)"
       ],
-      "connections": "Yesterday you found a bug in someone else's game. Today you get the report about YOUR game. First you make the bug happen on purpose — if you can't make it happen, you can't prove you fixed it. Thursday your tester checks your fix, and then you publish."
+      "connections": "Yesterday you were the tester and found a bug in someone else's game. Today you switch: someone plays YOUR game while you watch quietly and write down every place they get stuck. Seeing a real player struggle is how creators learn what to fix. Thursday you fix it."
     }
   }
 }

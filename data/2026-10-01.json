@@ -3,51 +3,51 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "ROLLER mod v2 pushed to your repo by Sunday night: 1 bug report + 1 feature request filed as GitHub Issues on your partner's repo, your own bug fixed and your partner's feature request built (or scoped down with a written reason), both signed off by your partner, and a v1 → v2 changelog on your portfolio site.",
-      "workingNow": "Getting your bug fix signed off, then turning your partner's feature request into a spec and building it with Copilot.",
-      "smartGoal": "I can turn a feature request into a design spec and build it (or a scoped-down version) in the right JavaScript file, so it passes my partner's success test by Friday.",
-      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "One detailed bug report with screenshots filed as a GitHub Issue on your partner's repo, the bug filed on YOUR repo fixed and signed off by the tester who found it, and ROLLER v2 pushed with a changelog on your portfolio site — all by Sunday night.",
+      "workingNow": "Reproducing the bug filed on your repo, finding the JavaScript file it lives in, and fixing it with Copilot.",
+      "smartGoal": "I can reproduce the bug in my Issue, find which JavaScript file causes it, and push a fix that passes my own test by the end of class, so my game works the way I designed it.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Partner sign-off: re-test fix, check nothing else broke (7 min)",
-        "I do: feature request → spec → Copilot prompt (5 min)",
-        "You do: build the feature (28 min)",
-        "Exit Ticket: does it pass the success test yet? (5 min)"
+        "Mini-lecture: reproduce → find the file → fix → verify (7 min)",
+        "I do: reproduce a bug and write its fix spec (8 min)",
+        "You do: reproduce, fix with Copilot, and push (25 min)",
+        "Exit Ticket: comment on your Issue — what you changed (5 min)"
       ],
-      "connections": "Tuesday you fixed a bug and triaged a feature request. Today your partner checks the fix — and checks that nothing else broke — before you build something new, because that is the order real teams work in. Tomorrow your partner tests the feature, and you ship v2."
+      "connections": "Tuesday you wrote a bug report detailed enough for someone else to use. Today you're on the other side: you read the Issue filed on YOUR repo, make the bug happen on purpose, track it to the right JavaScript file, and fix it. Tomorrow the tester who found it checks your fix and you ship v2."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
-      "workingNow": "Getting your fix checked by your tester, then publishing your game and embedding it on your Google Site.",
-      "smartGoal": "I can get my fix checked by my tester and publish my game on my Google Site, so anyone can play it from my portfolio.",
-      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with your tester notes and observer notes filled in, 1 bug fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Reading the bug report about your game, making the bug happen, and fixing it with Perplexity.",
+      "smartGoal": "I can make the bug from my report happen on purpose and fix it with Perplexity, so that by the end of class my game does what it should.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Partner check: is the bug really gone? (8 min)",
-        "I do: share link → embed on Google Site (7 min)",
-        "You do: finish, publish, and embed your game (25 min)",
-        "Exit Ticket: paste your site link (5 min)"
+        "Mini-lesson: report → make it happen → fix → check (6 min)",
+        "I do: read a report, make the bug happen (5 min)",
+        "You do: make your bug happen, fix it with Perplexity (29 min)",
+        "Exit Ticket: Did your fix work? How do you know? (5 min)"
       ],
-      "connections": "Tuesday you fixed the bug from your report. Today the tester who found it checks your fix — because the person who found a bug is the best person to check it's gone. Then your game goes live on your Google Site. Tomorrow you explain what you changed and play everyone's finished games."
+      "connections": "This week you tested someone's game and watched someone test yours. Today you use those notes: first make the bug happen on purpose — if you can't make it happen, you can't prove you fixed it — then fix it. Tomorrow your tester checks it and your game goes live."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with 1 bug report you wrote for a partner, 1 bug you fixed in your own game, and 3 sentences on what you changed and why.",
-      "workingNow": "Getting your fix checked by your tester, then publishing your game and embedding it on your Google Site.",
-      "smartGoal": "I can get my fix checked by my tester and publish my game on my Google Site, so anyone can play it from my portfolio.",
-      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with your tester notes and observer notes filled in, 1 bug fixed in your own game, and 3 sentences on what you changed and why.",
+      "workingNow": "Reading the bug report about your game, making the bug happen, and fixing it with Perplexity.",
+      "smartGoal": "I can make the bug from my report happen on purpose and fix it with Perplexity, so that by the end of class my game does what it should.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Partner check: is the bug really gone? (8 min)",
-        "I do: share link → embed on Google Site (7 min)",
-        "You do: finish, publish, and embed your game (25 min)",
-        "Exit Ticket: paste your site link (5 min)"
+        "Mini-lesson: report → make it happen → fix → check (6 min)",
+        "I do: read a report, make the bug happen (5 min)",
+        "You do: make your bug happen, fix it with Perplexity (29 min)",
+        "Exit Ticket: Did your fix work? How do you know? (5 min)"
       ],
-      "connections": "Tuesday you fixed the bug from your report. Today the tester who found it checks your fix — because the person who found a bug is the best person to check it's gone. Then your game goes live on your Google Site. Tomorrow you explain what you changed and play everyone's finished games."
+      "connections": "This week you tested someone's game and watched someone test yours. Today you use those notes: first make the bug happen on purpose — if you can't make it happen, you can't prove you fixed it — then fix it. Tomorrow your tester checks it and your game goes live."
     }
   }
 }
