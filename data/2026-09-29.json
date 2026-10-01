@@ -3,7 +3,7 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "One detailed bug report with screenshots filed as a GitHub Issue on your partner's repo, the bug filed on YOUR repo fixed and signed off by the tester who found it, and ROLLER v2 pushed with a changelog on your portfolio site — all by Sunday night.",
+      "weeklyDeliverable": "Due Sunday night: your published bug report (the GitHub Issue you filed on your partner's ROLLER repo) plus your Bug Fix Report on your portfolio site — 1 bug in your own game (filed by a classmate, or found yourself) documented, fixed with Copilot, tested by you as QA, and signed off, with ROLLER v2 pushed. Monday the class votes on its top 3 games, and the winners get played on DONUTS Tuesday.",
       "workingNow": "Filing the bug you found as a GitHub Issue on your partner's repo — with detailed steps and screenshots.",
       "smartGoal": "By the end of class, I can file 1 GitHub Issue on my partner's repo with a clear title, numbered steps, expected vs. actual, and at least 2 screenshots, so they can find and fix the bug without asking me anything.",
       "contentStandard": "CA CS Standards 6-8.AP.19 — Document programs in order to make them easier to follow, test, and debug.",
@@ -20,7 +20,7 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with your tester notes and observer notes filled in, 1 bug fixed in your own game, and 3 sentences on what you changed and why.",
+      "weeklyDeliverable": "Due Sunday night: your finished game, published and embedded on your Google Site, plus your Fix Your Bug sheet — 1 bug (from your tester, or found yourself) written down, fixed with Perplexity, tested by you, and 3 sentences on what you changed and why. Monday the class votes on its top 3 games, and the winners get played on DONUTS Tuesday.",
       "workingNow": "Swapping roles: watching someone else play your game and writing down what you see.",
       "smartGoal": "By the end of class, I can watch a partner play my game without giving hints and fill in both my tester notes and my observer notes, so I know what to fix.",
       "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
@@ -37,7 +37,7 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with your tester notes and observer notes filled in, 1 bug fixed in your own game, and 3 sentences on what you changed and why.",
+      "weeklyDeliverable": "Due Sunday night: your finished game, published and embedded on your Google Site, plus your Fix Your Bug sheet — 1 bug (from your tester, or found yourself) written down, fixed with Perplexity, tested by you, and 3 sentences on what you changed and why. Monday the class votes on its top 3 games, and the winners get played on DONUTS Tuesday.",
       "workingNow": "Swapping roles: watching someone else play your game and writing down what you see.",
       "smartGoal": "By the end of class, I can watch a partner play my game without giving hints and fill in both my tester notes and my observer notes, so I know what to fix.",
       "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",

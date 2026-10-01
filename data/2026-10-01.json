@@ -3,8 +3,8 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "One detailed bug report with screenshots filed as a GitHub Issue on your partner's repo, the bug filed on YOUR repo fixed and signed off by the tester who found it, and ROLLER v2 pushed with a changelog on your portfolio site — all by Sunday night.",
-      "workingNow": "Reproducing the bug filed on your repo, finding the JavaScript file it lives in, and fixing it with Copilot.",
+      "weeklyDeliverable": "Due Sunday night: your published bug report (the GitHub Issue you filed on your partner's ROLLER repo) plus your Bug Fix Report on your portfolio site — 1 bug in your own game (filed by a classmate, or found yourself) documented, fixed with Copilot, tested by you as QA, and signed off, with ROLLER v2 pushed. Monday the class votes on its top 3 games, and the winners get played on DONUTS Tuesday.",
+      "workingNow": "Fixing a bug in your own ROLLER game: you are QA, Copilot is the developer. Document it, prompt it, test it.",
       "smartGoal": "I can reproduce the bug in my Issue, find which JavaScript file causes it, and push a fix that passes my own test by the end of class, so my game works the way I designed it.",
       "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
       "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
@@ -15,12 +15,12 @@
         "You do: reproduce, fix with Copilot, and push (25 min)",
         "Exit Ticket: comment on your Issue — what you changed (5 min)"
       ],
-      "connections": "Tuesday you wrote a bug report detailed enough for someone else to use. Today you're on the other side: you read the Issue filed on YOUR repo, make the bug happen on purpose, track it to the right JavaScript file, and fix it. Tomorrow the tester who found it checks your fix and you ship v2."
+      "connections": "Tuesday you wrote a bug report detailed enough for someone else to use. Today you're on the other side: you read the Issue filed on YOUR repo, make the bug happen on purpose, track it to the right JavaScript file, and fix it. Tomorrow the tester who found it checks your fix and you ship v2 — a working game is your ticket into Monday's DONUTS vote."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with your tester notes and observer notes filled in, 1 bug fixed in your own game, and 3 sentences on what you changed and why.",
-      "workingNow": "Reading the bug report about your game, making the bug happen, and fixing it with Perplexity.",
+      "weeklyDeliverable": "Due Sunday night: your finished game, published and embedded on your Google Site, plus your Fix Your Bug sheet — 1 bug (from your tester, or found yourself) written down, fixed with Perplexity, tested by you, and 3 sentences on what you changed and why. Monday the class votes on its top 3 games, and the winners get played on DONUTS Tuesday.",
+      "workingNow": "Fixing a bug in your own game: you are the tester, Perplexity is the developer. Write it down, ask, then test.",
       "smartGoal": "I can make the bug from my report happen on purpose and fix it with Perplexity, so that by the end of class my game does what it should.",
       "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
       "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
@@ -31,12 +31,12 @@
         "You do: make your bug happen, fix it with Perplexity (29 min)",
         "Exit Ticket: Did your fix work? How do you know? (5 min)"
       ],
-      "connections": "This week you tested someone's game and watched someone test yours. Today you use those notes: first make the bug happen on purpose — if you can't make it happen, you can't prove you fixed it — then fix it. Tomorrow your tester checks it and your game goes live."
+      "connections": "This week you tested someone's game and watched someone test yours. Today you use those notes: first make the bug happen on purpose — if you can't make it happen, you can't prove you fixed it — then fix it. Tomorrow your tester checks it and your game goes live — just in time for Monday's DONUTS vote."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Your finished game, published and embedded on your Google Site by Sunday night — with your tester notes and observer notes filled in, 1 bug fixed in your own game, and 3 sentences on what you changed and why.",
-      "workingNow": "Reading the bug report about your game, making the bug happen, and fixing it with Perplexity.",
+      "weeklyDeliverable": "Due Sunday night: your finished game, published and embedded on your Google Site, plus your Fix Your Bug sheet — 1 bug (from your tester, or found yourself) written down, fixed with Perplexity, tested by you, and 3 sentences on what you changed and why. Monday the class votes on its top 3 games, and the winners get played on DONUTS Tuesday.",
+      "workingNow": "Fixing a bug in your own game: you are the tester, Perplexity is the developer. Write it down, ask, then test.",
       "smartGoal": "I can make the bug from my report happen on purpose and fix it with Perplexity, so that by the end of class my game does what it should.",
       "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
       "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
@@ -47,7 +47,7 @@
         "You do: make your bug happen, fix it with Perplexity (29 min)",
         "Exit Ticket: Did your fix work? How do you know? (5 min)"
       ],
-      "connections": "This week you tested someone's game and watched someone test yours. Today you use those notes: first make the bug happen on purpose — if you can't make it happen, you can't prove you fixed it — then fix it. Tomorrow your tester checks it and your game goes live."
+      "connections": "This week you tested someone's game and watched someone test yours. Today you use those notes: first make the bug happen on purpose — if you can't make it happen, you can't prove you fixed it — then fix it. Tomorrow your tester checks it and your game goes live — just in time for Monday's DONUTS vote."
     }
   }
 }
