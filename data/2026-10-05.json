@@ -1,0 +1,55 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your Block Breaker game, published, where bricks disappear when the ball hits them, plus your game link and one sentence about your rule on your portfolio site.",
+      "workingNow": "Making your own copy of Block Breaker, playing it, and finding where the ball bounces off a brick.",
+      "smartGoal": "By the end of class, I can open my Breaker game, play it, and point to the code where the ball bounces off a brick, so I know where my feature goes tomorrow.",
+      "contentStandard": "CA CS Standards 6-8.AP.16 \u2014 Incorporate existing code, media, and libraries into original programs, and give attribution.",
+      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS vote: top 3 games (15 min)",
+        "Get your own copy of Block Breaker (10 min)",
+        "Play it and find the bounce code (15 min)",
+        "Exit Ticket: which function bounces off a brick? (5 min)"
+      ],
+      "connections": "Last week you tested a classmate's game and fixed a bug in your own. Today everyone gets the same new, simpler game, where the ball bounces off everything and nothing breaks, and you find the code that does the bouncing. Tomorrow you add your first new feature right there."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
+      "workingNow": "Hunting around our classroom for things that make a job easier and saying what each one helps with.",
+      "smartGoal": "By the end of class, I can find 3 things in our classroom that make a job easier and say what job each one helps with, so I'm ready to learn how machines work.",
+      "contentStandard": "NGSS MS-ETS1-1 \u2014 Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS vote: top 3 games (15 min)",
+        "I do and we do: spot one together (7 min)",
+        "You do: partner hunt, spotter and explainer (15 min)",
+        "Share your best find (3 min)",
+        "Exit Ticket: one thing that makes a job easier (5 min)"
+      ],
+      "connections": "Last week you finished and fixed your games, and this week we leave the computer for hands-on machines. Today you hunt for things in our room that make a job easier. Tomorrow you learn what they are called, and by Thursday you build one."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
+      "workingNow": "Hunting around our classroom for things that make a job easier and saying what each one helps with.",
+      "smartGoal": "By the end of class, I can find 3 things in our classroom that make a job easier and say what job each one helps with, so I'm ready to learn how machines work.",
+      "contentStandard": "NGSS MS-ETS1-1 \u2014 Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS vote: top 3 games (15 min)",
+        "I do and we do: spot one together (7 min)",
+        "You do: partner hunt, spotter and explainer (15 min)",
+        "Share your best find (3 min)",
+        "Exit Ticket: one thing that makes a job easier (5 min)"
+      ],
+      "connections": "Last week you finished and fixed your games, and this week we leave the computer for hands-on machines. Today you hunt for things in our room that make a job easier. Tomorrow you learn what they are called, and by Thursday you build one."
+    }
+  }
+}

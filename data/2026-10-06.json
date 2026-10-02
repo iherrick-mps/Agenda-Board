@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your Block Breaker game, published, where bricks disappear when the ball hits them, plus your game link and one sentence about your rule on your portfolio site.",
+      "workingNow": "Telling Copilot the trigger and the change, so a brick disappears when the ball touches it.",
+      "smartGoal": "By the end of class, I can write a Copilot prompt with a trigger (the ball touches a brick) and a change (that brick disappears) and see a brick vanish, so my game has its first new feature.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS shout-out (2 min)",
+        "Mini-lesson: trigger and change (8 min)",
+        "I do and we do: write the Copilot prompt (13 min)",
+        "You do: make a brick disappear (17 min)",
+        "Exit Ticket: your trigger and change (5 min)"
+      ],
+      "connections": "Yesterday you found the code where the ball bounces off a brick. Today you tell Copilot what should happen when the ball touches one: the trigger is the touch and the change is the brick disappearing. Tomorrow you play your game, find one problem, and fix it."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
+      "workingNow": "Learning the 6 simple machines, then building a lever together as a class.",
+      "smartGoal": "By the end of class, I can point to the fulcrum, load, and effort on a lever and say how it makes lifting easier, so I can build my own tomorrow.",
+      "contentStandard": "NGSS MS-ETS1-1 \u2014 Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS shout-out (2 min)",
+        "Name the 6 simple machines (8 min)",
+        "I do: parts of a lever (8 min)",
+        "We do: build the class lever (22 min)",
+        "Exit Ticket: fulcrum, load, effort (5 min)"
+      ],
+      "connections": "Yesterday you found things in our room that make a job easier. Today you learn those are simple machines, and there are six. We build one lever together and name its parts. Tomorrow you build your own."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
+      "workingNow": "Learning the 6 simple machines, then building a lever together as a class.",
+      "smartGoal": "By the end of class, I can point to the fulcrum, load, and effort on a lever and say how it makes lifting easier, so I can build my own tomorrow.",
+      "contentStandard": "NGSS MS-ETS1-1 \u2014 Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS shout-out (2 min)",
+        "Name the 6 simple machines (8 min)",
+        "I do: parts of a lever (8 min)",
+        "We do: build the class lever (22 min)",
+        "Exit Ticket: fulcrum, load, effort (5 min)"
+      ],
+      "connections": "Yesterday you found things in our room that make a job easier. Today you learn those are simple machines, and there are six. We build one lever together and name its parts. Tomorrow you build your own."
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your Block Breaker game, published, where bricks disappear when the ball hits them, plus your game link and one sentence about your rule on your portfolio site.",
+      "workingNow": "Finishing your game, pushing it, and adding your rule to your portfolio.",
+      "smartGoal": "By the end of class, I can push my Breaker game with bricks that disappear when hit and add one sentence about my rule to my portfolio, so anyone can play it and see how it works.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 \u2014 Document programs in order to make them easier to follow, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Finish your game and push it (15 min)",
+        "Check live link, add rule sentence to portfolio (7 min)",
+        "Future Engineer or catch-up time (18 min)",
+        "Exit Ticket: paste link, say your rule (5 min)"
+      ],
+      "connections": "Yesterday you found a problem and fixed it. Today you finish, push, and write one sentence that explains your rule so anyone who plays can understand it. Next time we build on this same game."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
+      "workingNow": "Testing your lever, fixing one thing, and labeling it in a photo.",
+      "smartGoal": "By the end of class, I can test my lever, take a photo, and label the fulcrum, load, and effort, so I can show how my machine works.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Test your lever and fix one thing (15 min)",
+        "Take a photo and label 3 parts (10 min)",
+        "Future Engineer or catch-up time (15 min)",
+        "Exit Ticket: what you fixed (5 min)"
+      ],
+      "connections": "Yesterday you built your own lever. Today you test it, fix one thing, and take a photo with the fulcrum, load, and effort labeled. That photo is your project for the week. Next time we explore another machine."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
+      "workingNow": "Testing your lever, fixing one thing, and labeling it in a photo.",
+      "smartGoal": "By the end of class, I can test my lever, take a photo, and label the fulcrum, load, and effort, so I can show how my machine works.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Test your lever and fix one thing (15 min)",
+        "Take a photo and label 3 parts (10 min)",
+        "Future Engineer or catch-up time (15 min)",
+        "Exit Ticket: what you fixed (5 min)"
+      ],
+      "connections": "Yesterday you built your own lever. Today you test it, fix one thing, and take a photo with the fulcrum, load, and effort labeled. That photo is your project for the week. Next time we explore another machine."
+    }
+  }
+}

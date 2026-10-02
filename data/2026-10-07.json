@@ -1,0 +1,50 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your Block Breaker game, published, where bricks disappear when the ball hits them, plus your game link and one sentence about your rule on your portfolio site.",
+      "workingNow": "Playing your game, finding 1 problem with your disappearing bricks, and fixing it with Copilot.",
+      "smartGoal": "By the end of class, I can find 1 problem with my disappearing bricks and fix it with Copilot, so my game works the way I planned.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.2 \u2014 Interacting with others in written English in various communicative forms.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Play your game for 3 minutes (3 min)",
+        "Fix 1 problem with Copilot (19 min)",
+        "Exit Ticket: what you fixed (3 min)"
+      ],
+      "connections": "Yesterday you got a brick to disappear. Today you play like a tester, find one thing that is not right, and ask Copilot to help you fix it. Tomorrow you finish, push your game, and add your rule to your portfolio."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
+      "workingNow": "Building your own lever from cardboard and string.",
+      "smartGoal": "By the end of class, I can build my lever so it lifts the load, so I can test it tomorrow.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Get your cardboard and string (3 min)",
+        "Build your lever (19 min)",
+        "Exit Ticket: hardest part to build (3 min)"
+      ],
+      "connections": "Yesterday we built a lever together and named its parts. Today you build your own with cardboard and string. Tomorrow you test it, fix one thing, and take a photo."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
+      "workingNow": "Building your own lever from cardboard and string.",
+      "smartGoal": "By the end of class, I can build my lever so it lifts the load, so I can test it tomorrow.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Get your cardboard and string (3 min)",
+        "Build your lever (19 min)",
+        "Exit Ticket: hardest part to build (3 min)"
+      ],
+      "connections": "Yesterday we built a lever together and named its parts. Today you build your own with cardboard and string. Tomorrow you test it, fix one thing, and take a photo."
+    }
+  }
+}
