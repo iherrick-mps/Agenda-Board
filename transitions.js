@@ -30,6 +30,9 @@ const TX_SLOW_SECONDS = 300;
 // the widest bar in a cell represents this much time
 const TX_BAR_MAX_SECONDS = 600;
 
+// how many school days the rolling totals at the top look back over
+const TX_ROLLING_DAYS = 5;
+
 let txRecords = [];
 let txRangeDays = 0;   // 0 = all time
 
@@ -63,6 +66,71 @@ function txAverage(list) {
   const usable = list.filter(r => r.stopped);
   if (!usable.length) return null;
   return usable.reduce((sum, r) => sum + r.seconds, 0) / usable.length;
+}
+
+/* ---------- rolling totals ---------- */
+
+/* The five most recent school days that actually have readings, newest
+   first. Calendar days would be wrong here — a Monday holiday or a
+   four-day week would quietly shorten the window and make a class look
+   better than it was. Days are taken from the data, so five school days
+   always means five school days.
+
+   One shared window across all three grades, rather than each grade's
+   own last five, so the three numbers are comparable: if 7th period is
+   the worst of the week, that's because they were slower on the same
+   days, not because they're being measured over a different stretch. */
+function txRollingDates(records) {
+  const days = [...new Set(records.filter(r => r.stopped).map(r => r.date))];
+  return days.sort().reverse().slice(0, TX_ROLLING_DAYS);
+}
+
+/* Deliberately ignores the range buttons below it. "Rolling 5 days" is
+   its own window; having it follow the All time / 30 day filter would
+   make it either a duplicate of the averages or a lie about its label. */
+function txRenderRolling(records) {
+  const el = document.getElementById('tx-rolling');
+  if (!el) return;
+
+  const dates = txRollingDates(records);
+  if (!dates.length) {
+    el.innerHTML = '';
+    return;
+  }
+
+  const inWindow = new Set(dates);
+  const scoped = records.filter(r => r.stopped && inWindow.has(r.date));
+
+  const cards = TX_COLUMNS.map(col => {
+    const mine = scoped.filter(r => r.periodSlug === col.slug);
+    const total = mine.reduce((sum, r) => sum + r.seconds, 0);
+    return `
+      <div class="tx-stat" style="--stat-color:${col.color}">
+        <div class="tx-stat-label">${col.grade} &middot; ${col.period}</div>
+        <div class="tx-stat-value">${mine.length ? txEscape(txFmt(total)) : '&mdash;'}</div>
+        <div class="tx-stat-note">${mine.length
+          ? `across ${mine.length} class${mine.length === 1 ? '' : 'es'}`
+          : 'no readings yet'}</div>
+      </div>`;
+  });
+
+  const oldest = dates[dates.length - 1];
+  const newest = dates[0];
+  const span = oldest === newest
+    ? txEscape(txPrettyDate(newest))
+    : `${txEscape(txPrettyDate(oldest))} &ndash; ${txEscape(txPrettyDate(newest))}`;
+
+  el.innerHTML = `
+    <div class="tx-rolling-head">
+      <span class="tx-rolling-title">Last ${dates.length} school day${dates.length === 1 ? '' : 's'}</span>
+      <span class="tx-rolling-span">${span}</span>
+    </div>
+    <div class="tx-stats">${cards.join('')}</div>`;
+}
+
+function txPrettyDate(iso) {
+  const dt = new Date(`${iso}T00:00:00Z`);
+  return `${MONTHS[dt.getUTCMonth()].slice(0, 3)} ${dt.getUTCDate()}`;
 }
 
 /* ---------- summary cards ---------- */
@@ -171,6 +239,7 @@ function txRenderTable(records) {
 
 function txRenderAll() {
   const visible = txRecords.filter(r => txInRange(r.date));
+  txRenderRolling(txRecords);   // own window — not the range buttons'
   txRenderStats(visible);
   txRenderTable(visible);
 }

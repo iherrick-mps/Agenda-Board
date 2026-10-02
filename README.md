@@ -124,6 +124,14 @@ the laptop, and three forgotten tabs all write to the same row instead of fillin
 the table with duplicates. A write also refuses to overwrite a stopped reading with
 a never-stopped one, so a stale tab sitting at 48:12 can't clobber the real 1:34.
 
+**Rolling totals.** Across the top, one card per grade: how much class time that
+grade has spent on transitions over the **last five school days**. The window is
+counted in school days taken from the records themselves, not calendar days, so a
+holiday or a four-day week doesn't quietly shorten it. All three grades share one
+window so the numbers are comparable, and periods where the timer was never stopped
+are left out, same as everywhere else. These totals keep their own window on purpose
+— the range buttons below them don't change them.
+
 **The table.** One row per school day, one column per class, plus a day average and
 per-class averages across the range. Readings are color-banded — green under 2
 minutes, amber in between, red over 5 — with a length bar under each so a column can

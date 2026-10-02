@@ -3460,6 +3460,40 @@ body.overview-page {
 
 .tx-csv-btn { border-style: dashed; }
 
+/* Rolling 5-school-day totals, above the range buttons. It keeps its
+   own window on purpose, so it sits outside .tx-controls rather than
+   looking like something the buttons filter. */
+.tx-rolling {
+  margin-bottom: 18px;
+}
+
+.tx-rolling:empty { display: none; }
+
+.tx-rolling-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.tx-rolling-title {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.tx-rolling-span {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+
 .tx-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
