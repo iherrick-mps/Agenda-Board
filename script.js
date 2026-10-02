@@ -1688,12 +1688,30 @@ function initGameMode() {
   const countdownEl = document.getElementById('gamemode-countdown');
   const confettiLayer = document.getElementById('confetti-layer');
   const autoInput = document.getElementById('gamemode-auto-input');
+  const gameTimeBtn = document.getElementById('gametime-toggle-btn');
+  const gameTimeLabel = document.getElementById('gametime-label');
   if (!boardGrid || !toggleBtn || !countdownEl || !confettiLayer) return;
 
   let active = false;
   let tickHandle = null;
+  // set when a run has a fixed length (the Game Time button); null means
+  // the old behaviour, counting down to the end of the period
+  let endsAtMs = null;
+  // assigned by the Game Time block below, so turnOff() can put the
+  // button's label back however the mode was switched off
+  let refreshGameTimeLabel = () => {};
 
   async function tick() {
+    /* A run started from the Game Time button lasts exactly as long as
+       the class earned, so it counts against its own clock and ends
+       itself rather than running to the bell. */
+    if (endsAtMs !== null) {
+      const msLeft = endsAtMs - Date.now();
+      if (msLeft <= 0) { turnOff(); return; }
+      countdownEl.textContent = fmtCountdown(msLeft / 60000);
+      return;
+    }
+
     const pt = getPacificNow();
     const scheduleKey = await resolveTodaysSchedule(pt);
     const bells = await loadBells();
@@ -1711,7 +1729,10 @@ function initGameMode() {
     }
   }
 
-  function turnOn() {
+  function turnOn(opts = {}) {
+    endsAtMs = typeof opts.durationMinutes === 'number'
+      ? Date.now() + opts.durationMinutes * 60000
+      : null;
     // Clean-Up Mode and Theater Mode are their own full-board takeovers —
     // never show more than one at once.
     if (window.__cleanupMode && window.__cleanupMode.isActive()) window.__cleanupMode.turnOff();
@@ -1733,10 +1754,12 @@ function initGameMode() {
 
   function turnOff() {
     active = false;
+    endsAtMs = null;
     boardGrid.classList.remove('game-mode-active');
     toggleBtn.classList.remove('is-active');
     confettiLayer.innerHTML = '';
     if (tickHandle) { clearInterval(tickHandle); tickHandle = null; }
+    refreshGameTimeLabel();
     requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
   }
 
@@ -1786,8 +1809,7 @@ function initGameMode() {
       const raw = autoInput.value.trim();
       if (raw === '') {
         autoMinutes = null;
-        firedForPeriodKey = null; // back to earned time — let it fire on that
-        autoInput.placeholder = '\u2014';
+        firedForPeriodKey = null;
         autoInput.classList.remove('is-armed');
         try { localStorage.removeItem(GAMEMODE_AUTO_KEY); } catch (e) { /* storage disabled */ }
         return;
@@ -1814,18 +1836,13 @@ function initGameMode() {
       const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
       if (!current) return;
 
-      /* A typed number wins outright. Otherwise ask what this class
-         earned; null means we can't know (no Firebase, offline, or a
-         period with no transition records of its own, like 1st), and
-         an unknown answer must never be treated as a full 30 minutes.
-         A class that earned nothing gets no auto-start either. */
-      let threshold = autoMinutes;
-      if (threshold === null) {
-        if (typeof window.transitionsEarnedGameMinutes !== 'function') return;
-        threshold = await window.transitionsEarnedGameMinutes(current.name, pt.isoDate);
-        if (threshold === null || threshold <= 0) return;
-        showEarnedHint(threshold);
-      }
+      /* Only the number typed in the box fires on a timer. Earned
+         Friday game time is the Game Time button's job now — see
+         below — because a reward that depends on a network read
+         landing at the right second is a reward that quietly doesn't
+         happen. An empty box means nothing auto-starts. */
+      if (autoMinutes === null) return;
+      const threshold = autoMinutes;
 
       const remaining = hhmmToMinutes(current.end) - nowMin;
       const periodKey = `${pt.isoDate}|${current.name}`;
@@ -1835,16 +1852,82 @@ function initGameMode() {
       }
     }
 
-    /* The calculation is invisible otherwise — surface it in the empty
-       box so the number is checkable before it fires, without putting
-       a real value there that would read as an override. */
-    function showEarnedHint(minutes) {
-      if (autoMinutes !== null) return;
-      autoInput.placeholder = `${Math.round(minutes)} earned`;
-    }
 
     autoCheck();
     setInterval(autoCheck, 1000);
+  }
+
+  /* ---- Game Time button — the earned Friday reward, on demand.
+
+     This used to fire itself when the live countdown reached the
+     earned number. It depended on a Firestore read resolving at the
+     right second on a board that had been open all day, and when any
+     of that didn't hold the reward simply never appeared, with nothing
+     on screen to say so. A button is honest: it answers when pressed,
+     and it says why when it can't.
+
+     Pressing it starts Game Mode for exactly the minutes that class
+     earned — 30 minus the time that grade spent in transitions this
+     week — counting down against its own clock and switching itself
+     off at zero, rather than running to the bell. Pressing it again
+     stops it early. The label carries the number so the class can see
+     what they earned before it starts. ---- */
+
+  if (gameTimeBtn && gameTimeLabel) {
+    let flashTimer = null;
+
+    async function earnedForLivePeriod() {
+      if (typeof window.transitionsEarnedGameMinutes !== 'function') return null;
+      const pt = getPacificNow();
+      const scheduleKey = await resolveTodaysSchedule(pt);
+      const bells = await loadBells();
+      const scheduleData = bells[scheduleKey];
+      if (!scheduleData) return null;
+      const { current } = findCurrentAndNext(scheduleData.periods, minutesSinceMidnight(pt));
+      if (!current) return null;
+      return window.transitionsEarnedGameMinutes(current.name, pt.isoDate);
+    }
+
+    /* Answers are cached per class per day by the reader, so this polls
+       the label without hammering the network. */
+    async function updateLabel() {
+      if (active && endsAtMs !== null) { gameTimeLabel.textContent = 'Stop Game Time'; return; }
+      let earned = null;
+      try { earned = await earnedForLivePeriod(); } catch (e) { /* unknown */ }
+      gameTimeLabel.textContent = earned === null || earned <= 0
+        ? 'Game Time'
+        : `Game Time · ${Math.round(earned)}m`;
+      gameTimeBtn.classList.toggle('is-armed', earned !== null && earned > 0);
+    }
+    refreshGameTimeLabel = updateLabel;
+
+    // say why nothing happened, then go back to the normal label
+    function flash(text) {
+      gameTimeLabel.textContent = text;
+      clearTimeout(flashTimer);
+      flashTimer = setTimeout(updateLabel, 4000);
+    }
+
+    gameTimeBtn.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      clearTimeout(flashTimer);
+
+      if (active && endsAtMs !== null) { turnOff(); return; }   // turnOff relabels
+
+      gameTimeLabel.textContent = 'Checking\u2026';
+      let earned = null;
+      try { earned = await earnedForLivePeriod(); } catch (err) { earned = null; }
+
+      if (earned === null) { flash('No records yet'); return; }
+      if (earned <= 0) { flash('None earned'); return; }
+
+      turnOn({ durationMinutes: earned });
+      gameTimeLabel.textContent = 'Stop Game Time';
+    });
+
+    gameTimeBtn.addEventListener('dblclick', (e) => e.stopPropagation());
+    updateLabel();
+    setInterval(updateLabel, 30000);
   }
 
   // lets other scripts on the page (e.g. vex.js's "auto Game Mode during

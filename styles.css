@@ -3463,6 +3463,13 @@ body.overview-page {
 /* Rolling 5-school-day totals, above the range buttons. It keeps its
    own window on purpose, so it sits outside .tx-controls rather than
    looking like something the buttons filter. */
+/* Game Time button — lights up when the live class has time banked,
+   so the hover-bar shows at a glance whether there's a reward to give. */
+.gametime-toggle-btn.is-armed {
+  border-color: var(--c-goal);
+  color: var(--c-goal);
+}
+
 .tx-rolling {
   margin-bottom: 18px;
 }

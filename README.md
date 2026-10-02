@@ -139,34 +139,42 @@ be read at a glance. Filter to the last 2 weeks / 30 days / all time, download t
 whole range as CSV, or hover a cell and click **×** to delete a bad record. The table
 is live: a period that ends while the page is open appears on its own.
 
-### Friday game time
+### Earned game time
 
-Game Mode's automatic start is **Fridays only**, and how long it runs is earned
-rather than fixed: **30 minutes minus every second that grade spent in transitions
-that week**, Monday through Friday. A class that settles quickly all week keeps most
-of the half hour; one that dawdles spends it. Monday through Thursday nothing starts
-on its own — the Game Mode button still works by hand any day, in any period.
+The **Game Time** button in the hover-bar starts Game Mode for however long the live
+class has earned: **30 minutes minus every second that grade spent in transitions this
+week**, Monday through today. A class that settles quickly keeps most of the half
+hour; one that dawdles spends it.
+
+The button carries the number before you press it (`Game Time · 19m`) and lights up
+when there's time banked, so the class can see what they earned. Pressing it starts a
+countdown of exactly that length, which **stops itself when the time runs out** rather
+than running to the bell. Pressing it again ends it early.
 
 Each grade is exactly one period (4th = 8th grade, 6th = 7th, 7th = 6th), so each
-class earns its own number and they're counted separately. The totals come from the
-same records the Transition Timer writes, so this only works once Firebase is set up
-(below).
+class earns its own number. The totals come from the same records the Transition Timer
+writes, so this needs Firebase set up (below).
 
-Three things deliberately do **not** cost a class its Friday:
+Two things deliberately don't cost a class its reward:
 
 - **Periods where the timer was never stopped** are skipped, exactly as they're left
-  out of the averages on `transitions.html` — that reading is how long a tab sat
-  open, not a transition.
-- **A grade that has already spent its 30 minutes** gets no auto-start rather than a
-  negative countdown.
-- **If the records can't be read** (no network, Firebase not set up yet), Game Mode
-  doesn't auto-start at all. An unknown week is never treated as a clean one.
+  out of the averages on `transitions.html` — that reading is how long a tab sat open,
+  not a transition.
+- **If the records can't be read**, the button says `No records yet` and refuses to
+  start, instead of silently handing out a full 30 minutes. An unknown week is never
+  treated as a clean one.
 
-The **Auto Game Mode at ___ min left** box in the hover-bar overrides the
-calculation: type a number and that becomes the minutes-left trigger for as long as
-it's there, still Fridays only. Leave it blank and it shows what the current class
-earned, as a hint, so the number is checkable before it fires. Clearing the box
-returns to the earned time.
+A grade that has already spent its 30 minutes shows `None earned` when pressed.
+
+> **Why a button and not a timer.** This used to fire itself when the live countdown
+> reached the earned number. That depended on a Firestore read resolving at exactly
+> the right second on a board that had been open all day — and when any part of that
+> didn't hold, the reward simply never appeared, with nothing on screen to explain
+> why. A button answers when pressed, and says why when it can't.
+
+The separate **Auto Game Mode at ___ min left** box is unchanged and unrelated: type a
+number and Game Mode starts itself at that many minutes left, Fridays only. Leave it
+empty and nothing auto-starts.
 
 ### Firebase setup (one time)
 

@@ -180,10 +180,16 @@ window.transitionsEarnedGameMinutes = async function (periodName, todayIso) {
     // which the automatic single-field index covers — no composite
     // index to create in the console before this works.
     const week = currentWeekDates();
+    // source: 'server' on purpose. A plain get() falls back to the local
+    // cache when the backend is unreachable and resolves with an EMPTY
+    // snapshot — which reads as "this grade wasted no time at all" and
+    // hands out a full 30 minutes. Forcing the server makes an
+    // unreachable backend throw, so it lands in the catch below and
+    // becomes null ("unknown") instead of a clean week.
     const snap = await db.collection(TRANSITIONS_COLLECTION)
       .where('date', '>=', week[0])
       .where('date', '<=', week[4])
-      .get();
+      .get({ source: 'server' });
 
     let wastedSeconds = 0;
     snap.forEach((doc) => {
