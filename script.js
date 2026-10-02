@@ -2196,16 +2196,22 @@ function initCleanupMode() {
     isComplete: () => sequenceComplete
   };
 
-  /* ---- Auto-trigger — always on, 7th Period only, fires once the
-     live countdown hits CLEANUP_AUTO_MINUTES. Unlike Game Mode's
-     auto-trigger this isn't a text input Ms. Herrick sets per device;
-     it's a fixed default so it just works every day without setup. ---- */
+  /* ---- Auto-trigger — 7th Period only, Monday through Thursday,
+     fires once the live countdown hits CLEANUP_AUTO_MINUTES. Unlike
+     Game Mode's auto-trigger this isn't a text input Ms. Herrick sets
+     per device; it's a fixed default so it just works without setup.
+
+     Not on Fridays: 7th Period ends the week on earned game time
+     (see the Game Time button), and a claw machine calling numbers
+     over the top of it would cut that short. The Clean-Up button
+     still works by hand any day, Fridays included. ---- */
 
   let firedForPeriodKey = null;
 
   async function autoCheck() {
     if (active) return;
     const pt = getPacificNow();
+    if (pt.weekdayName === 'Friday') return;
     const scheduleKey = await resolveTodaysSchedule(pt);
     const bells = await loadBells();
     const scheduleData = bells[scheduleKey];

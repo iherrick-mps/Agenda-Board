@@ -166,6 +166,11 @@ Two things deliberately don't cost a class its reward:
 
 A grade that has already spent its 30 minutes shows `None earned` when pressed.
 
+**Fridays are game time, start to finish.** Clean-Up Mode's automatic start is
+Monday through Thursday only — on Fridays 7th Period ends on earned game time, and a
+claw machine calling numbers over the top of it would cut that short. The Clean-Up
+button still works by hand any day, Fridays included.
+
 > **Why a button and not a timer.** This used to fire itself when the live countdown
 > reached the earned number. That depended on a Firestore read resolving at exactly
 > the right second on a board that had been open all day — and when any part of that
