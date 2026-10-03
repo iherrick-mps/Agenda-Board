@@ -1949,7 +1949,7 @@ function initGameMode() {
    ============================================================ */
 
 const CLEANUP_PERIOD_NAME = '7th Period';
-const CLEANUP_AUTO_MINUTES = 10;       // fixed — always starts w/ 10 min left
+const CLEANUP_AUTO_MINUTES = 7;        // fixed — always starts w/ 7 min left
 const CLEANUP_NUMBER_COUNT = 36;
 const CLEANUP_TOTAL_MS = 5 * 60 * 1000; // get through all 36 numbers in 5 min
 const CLEANUP_DROP_MS = 900;

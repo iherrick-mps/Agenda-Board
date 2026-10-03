@@ -138,6 +138,10 @@ const VEX_NOWPLAYING_VOLUME = 10; // 0-100
 /* ---- Clean-Up overlay ---- */
 const VEX_PACKUP_SONG_URL = 'https://www.youtube.com/watch?v=Ds6IwEKRLUU';
 const VEX_PACKUP_VOLUME = 100; // max — it has to carry over a room that's packing up
+// Clean-Up takes over this many minutes before the end of the day's last
+// build block. Longer than the 7th Period class's 7 minutes: VEX has a
+// field and six robots' worth of parts to put away, not Chromebooks.
+const VEX_PACKUP_AUTO_MINUTES = 10;
 
 /* ---------- helpers ---------- */
 
@@ -1157,6 +1161,48 @@ function initVexPackUp() {
     };
     window.__gameMode.__packupWrapped = true;
   }
+
+  /* ---- Auto-trigger — VEX_PACKUP_AUTO_MINUTES before the end of the
+     day's last build block, on club days only.
+
+     The end comes from vex-sessions.json rather than a time written in
+     here, so it follows whatever the session actually is: 16:00 on a
+     Monday, 10:45 on a Saturday (the end of the second work period,
+     before snack and dismissal). That is also the file the competition
+     countdown reads, so the two can never disagree about when building
+     stops.
+
+     Fires once per date, so dismissing it by hand doesn't bring it
+     straight back. A day with no session in the file — a holiday, a
+     no-school Monday — never fires at all. ---- */
+
+  let packupFiredForDate = null;
+
+  async function autoCheck() {
+    if (active) return;
+    const data = await loadVexSessions();
+    if (!data || !Array.isArray(data.sessions)) return;
+
+    const pt = getPacificNow();
+    if (packupFiredForDate === pt.isoDate) return;
+
+    const session = data.sessions.find(s => s.date === pt.isoDate);
+    if (!session) return;                       // not a club day
+    const blocks = (data.blocks && data.blocks[session.kind]) || [];
+    if (!blocks.length) return;
+
+    const endsAt = vexPacificInstant(session.date, blocks[blocks.length - 1].end);
+    const minutesLeft = (endsAt - Date.now()) / 60000;
+    // the upper bound only; past the end there is nothing left to pack
+    // up for, and a board opened that evening shouldn't fire on load
+    if (minutesLeft > 0 && minutesLeft <= VEX_PACKUP_AUTO_MINUTES) {
+      packupFiredForDate = pt.isoDate;
+      turnOn();
+    }
+  }
+
+  autoCheck();
+  setInterval(autoCheck, 1000);
 
   window.__vexPackUp = { turnOn, turnOff, isActive: () => active };
 }

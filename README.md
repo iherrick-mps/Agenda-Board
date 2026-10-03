@@ -84,6 +84,23 @@ On every page, the moment the green in-session countdown reaches `00:00` — the
 - Browsers won't let a page make noise until it's been interacted with at least once, so the first click or keypress on the board (anything at all — switching tabs, toggling fullscreen) is what arms the audio for the rest of the day. If the board has been freshly loaded and never touched, the first bell may be silent.
 - The chimes are synthesized in the browser with Web Audio, so there are no sound files to host and nothing extra to fetch.
 
+## VEX clean-up
+
+The Clean-Up overlay on `vex.html` takes over the board **10 minutes before the end of
+the day's last build block**, on club days only. That end comes from
+`vex-sessions.json`, so it follows the real session rather than a time written into
+the code: 4:00 PM on a Monday, 10:45 AM on a Saturday (the end of the second work
+period, before snack and dismissal). It's the same file the competition countdown
+reads, so the two can't disagree about when building stops. On a day with no session
+— a holiday, a no-school Monday — it never fires.
+
+It fires once per day, so dismissing it by hand doesn't bring it straight back, and
+the Clean-Up button still works whenever you want it. The song plays at full volume:
+it's a cue for a room that's already packing up and talking over it.
+
+Ten minutes here rather than the 7 the 7th Period class gets — VEX has a field and six
+robots' worth of parts to put away, not Chromebooks.
+
 ## VEX competition countdown
 
 The Next Competition bento counts **build time**, not calendar time: `DD:HH:MM` of
