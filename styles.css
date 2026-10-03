@@ -2497,6 +2497,26 @@ body.board-page {
 }
 .vex-visuals-toggle:hover { color: #fff; border-color: #fff; }
 
+/* Playlist switcher — mirrors the visuals toggle on the opposite
+   corner. Pinned to the box rather than living in .vex-title-controls
+   so it stays reachable while the video is showing, which is when that
+   whole panel is hidden. */
+.vex-playlist-toggle {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 3;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #cdd8e6;
+  background: rgba(0,0,0,0.55);
+  border: 1px solid #3a4753;
+  border-radius: 5px;
+  padding: 4px 9px;
+  cursor: pointer;
+}
+.vex-playlist-toggle:hover { color: #fff; border-color: #fff; }
+
 /* ============================================================
    FAQ bento — one question at a time, cross-fading on a timer
    (see VEX_FAQ_ROTATE_MS in vex.js). Sized for reading from

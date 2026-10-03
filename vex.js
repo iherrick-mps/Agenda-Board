@@ -116,8 +116,23 @@ const VEX_FAQ_COLORS = [
   'var(--c-standard)',
 ];
 
-/* ---- Now Playing defaults ---- */
-const VEX_NOWPLAYING_URL = 'https://music.youtube.com/playlist?list=PLKwpsUctVAO8&si=Aio1rMg-SqWJhbM6';
+/* ---- Now Playing ----
+   Two playlists, switched by the button in the top-left of the Now
+   Playing box. The first is the default on a device that has never
+   picked one; the choice is then remembered per device. Adding a
+   third is just another entry here — the button cycles the list. */
+const VEX_PLAYLISTS = [
+  {
+    key: 'class',
+    label: 'Class Playlist',
+    url: 'https://music.youtube.com/playlist?list=PLKwpsUctVAO8&si=Aio1rMg-SqWJhbM6'
+  },
+  {
+    key: 'gotg',
+    label: 'Guardians Mix',
+    url: 'https://music.youtube.com/playlist?list=PLmCU3z9bnQ1DpIRRN4a067ZTl9gFoLvzp'
+  }
+];
 const VEX_NOWPLAYING_VOLUME = 10; // 0-100
 
 /* ---- Clean-Up overlay ---- */
@@ -522,11 +537,22 @@ function initVexNowPlaying() {
   const nextBtn = document.getElementById('vex-next-btn');
   const shuffleBtn = document.getElementById('vex-shuffle-btn');
   const repeatBtn = document.getElementById('vex-repeat-btn');
+  const playlistBtn = document.getElementById('vex-playlist-btn');
   if (!box || !embedContainer) return;
 
   const HIDDEN_KEY = 'agendaBoard.vexVisualsHidden';
   const SHUFFLE_KEY = 'agendaBoard.vexShuffle';
   const REPEAT_ONE_KEY = 'agendaBoard.vexRepeatOne';
+  const PLAYLIST_KEY = 'agendaBoard.vexPlaylist';
+
+  // which of VEX_PLAYLISTS is playing; remembered per device, and falls
+  // back to the first entry if the stored key no longer exists
+  let playlistIndex = 0;
+  try {
+    const savedKey = localStorage.getItem(PLAYLIST_KEY);
+    const found = VEX_PLAYLISTS.findIndex(pl => pl.key === savedKey);
+    if (found >= 0) playlistIndex = found;
+  } catch (e) { /* storage disabled */ }
   let player = null;
   let isPlaying = false;
   let shuffleBag = [];      // indices left to play in this shuffle cycle
@@ -685,7 +711,14 @@ function initVexNowPlaying() {
   let loopSet = false;
   let jumpedToRandomStart = false;
   let lastSeenLength = 0;
-  function waitForPlaylist(tries = 0) {
+  /* Bumped on every playlist switch. waitForPlaylist reschedules itself
+     for up to 20 seconds, so without this a switch would leave the old
+     loop running against the new playlist — two pollers fighting over
+     the same player, one of them still holding the previous list's
+     lengths and random-start flag. */
+  let playlistGeneration = 0;
+  function waitForPlaylist(tries = 0, gen = playlistGeneration) {
+    if (gen !== playlistGeneration) return;   // a switch happened — this chain is stale
     if (!player || !player.getPlaylist) return;
     const length = playlistLength();
 
@@ -705,7 +738,61 @@ function initVexNowPlaying() {
     }
     lastSeenLength = length;
 
-    if (tries < 80) setTimeout(() => waitForPlaylist(tries + 1), 250);
+    if (tries < 80) setTimeout(() => waitForPlaylist(tries + 1, gen), 250);
+  }
+
+  /* ---- Playlist switching ----
+     Everything shuffle tracks is indices into one specific playlist —
+     the bag, the played set, the Prev history — so all of it is
+     meaningless the moment the list changes and has to be thrown away,
+     not carried over. loadPlaylist() swaps the list inside the existing
+     iframe, which keeps the player (and its volume) rather than
+     rebuilding the embed and re-triggering autoplay policy. */
+  function resetPlaylistState() {
+    playlistGeneration += 1;
+    shuffleBag = [];
+    playedSet = new Set();
+    bagSize = 0;
+    playHistory = [];
+    advancing = false;
+    loopSet = false;
+    jumpedToRandomStart = false;
+    lastSeenLength = 0;
+  }
+
+  function currentPlaylist() {
+    return VEX_PLAYLISTS[playlistIndex] || VEX_PLAYLISTS[0];
+  }
+
+  function updatePlaylistButton() {
+    if (!playlistBtn) return;
+    const next = VEX_PLAYLISTS[(playlistIndex + 1) % VEX_PLAYLISTS.length];
+    playlistBtn.textContent = currentPlaylist().label;
+    playlistBtn.title = `Playing the ${currentPlaylist().label} \u2014 click to switch to the ${next.label}`;
+  }
+
+  function switchPlaylist(index) {
+    playlistIndex = ((index % VEX_PLAYLISTS.length) + VEX_PLAYLISTS.length) % VEX_PLAYLISTS.length;
+    try { localStorage.setItem(PLAYLIST_KEY, currentPlaylist().key); } catch (e) { /* storage disabled */ }
+    updatePlaylistButton();
+
+    const { listId } = parseYouTubeUrl(currentPlaylist().url);
+    if (!player || !listId || !player.loadPlaylist) return;
+
+    resetPlaylistState();
+    player.loadPlaylist({ listType: 'playlist', list: listId, index: 0 });
+    if (player.setLoop) player.setLoop(true);
+    if (titleText) titleText.textContent = 'Loading\u2026';
+    waitForPlaylist(0, playlistGeneration);
+  }
+
+  if (playlistBtn) {
+    updatePlaylistButton();
+    playlistBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      switchPlaylist(playlistIndex + 1);
+    });
+    playlistBtn.addEventListener('dblclick', (e) => e.stopPropagation());
   }
 
   function setRepeatOne(on) {
@@ -720,7 +807,7 @@ function initVexNowPlaying() {
   if (repeatBtn) repeatBtn.classList.toggle('is-active', repeatOneOn);
 
   async function init() {
-    const { videoId, listId } = parseYouTubeUrl(VEX_NOWPLAYING_URL);
+    const { videoId, listId } = parseYouTubeUrl(currentPlaylist().url);
 
     embedContainer.innerHTML = '<div id="vex-nowplaying-player"></div>';
     box.classList.add('has-video');

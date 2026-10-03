@@ -84,6 +84,22 @@ On every page, the moment the green in-session countdown reaches `00:00` — the
 - Browsers won't let a page make noise until it's been interacted with at least once, so the first click or keypress on the board (anything at all — switching tabs, toggling fullscreen) is what arms the audio for the rest of the day. If the board has been freshly loaded and never touched, the first bell may be silent.
 - The chimes are synthesized in the browser with Web Audio, so there are no sound files to host and nothing extra to fetch.
 
+## VEX music
+
+The Now Playing box on `vex.html` has a playlist switcher in its top-left corner,
+opposite the Show/Hide Video button. It names the playlist that's currently going —
+**Class Playlist** or **Guardians Mix** — and clicking it swaps to the other one. The
+choice is remembered per device, so the laptop and the projector can each sit on a
+different list.
+
+Switching swaps the playlist inside the existing player rather than rebuilding the
+embed, which keeps the volume and avoids re-tripping the browser's autoplay rules. It
+also starts the new list on a random track, the same way a fresh page load does.
+
+To add or change a playlist, edit `VEX_PLAYLISTS` near the top of `vex.js` — the
+button cycles however many entries are in that list, so a third is just another entry.
+The first entry is what a device gets before anyone picks.
+
 ## Deploying to GitHub Pages
 1. Push this folder to a GitHub repo (e.g. `iherrick-mps/agenda-board`).
 2. In the repo: **Settings → Pages → Source → Deploy from branch**, pick `main` (or your default branch) and `/ (root)`.
