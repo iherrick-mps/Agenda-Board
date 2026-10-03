@@ -106,7 +106,9 @@ build time). Editing a date or an hour there is all it takes; nothing is hard-co
 `vex.js`.
 
 A block already under way counts only the part still ahead, so during club the clock
-ticks down live rather than dropping in one lump at the bell. Session times are
+ticks down live, second by second, rather than dropping in one lump at the bell.
+Outside club hours it holds still — no build time is being spent, so a stopped clock
+is the honest reading. Session times are
 anchored to Pacific explicitly, like the rest of the board, so a laptop set to another
 timezone still shows the right number. If the file is missing or unreadable the bento
 shows `--:--:--` rather than zero — "no time left" is the opposite of the truth and

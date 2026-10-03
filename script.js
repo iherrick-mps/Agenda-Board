@@ -1936,18 +1936,20 @@ function initGameMode() {
 }
 
 /* ============================================================
-    Clean-Up Mode — 7th Period only. Always auto-starts the moment
-  7 minutes remain in 7th Period (no input to configure — this
-   one's fixed, unlike Game Mode's auto-trigger). Draws numbers
-   1-36 with no repeats over 5 minutes via a little claw-machine
-   animation: whoever's number comes up puts their Chromebook away.
+   Clean-Up Mode — 7th Period only, Monday through Thursday. Always
+   auto-starts the moment CLEANUP_AUTO_MINUTES remain in 7th Period
+   (no input to configure — this one's fixed, unlike Game Mode's
+   auto-trigger). Draws numbers 1-36 with no repeats over 5 minutes
+   via a little claw-machine animation: whoever's number comes up
+   puts their Chromebook away. The draw is shorter than the window,
+   so there is slack at the end rather than a scramble at the bell.
    Same full-board-takeover shape as Game Mode, but sparkles
    instead of confetti — and turning one mode on turns the other
    off, so they never show at the same time.
    ============================================================ */
 
 const CLEANUP_PERIOD_NAME = '7th Period';
-const CLEANUP_AUTO_MINUTES = 7;        // fixed — always starts w/ 7 min left
+const CLEANUP_AUTO_MINUTES = 10;       // fixed — always starts w/ 10 min left
 const CLEANUP_NUMBER_COUNT = 36;
 const CLEANUP_TOTAL_MS = 5 * 60 * 1000; // get through all 36 numbers in 5 min
 const CLEANUP_DROP_MS = 900;

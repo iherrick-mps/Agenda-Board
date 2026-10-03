@@ -137,7 +137,7 @@ const VEX_NOWPLAYING_VOLUME = 10; // 0-100
 
 /* ---- Clean-Up overlay ---- */
 const VEX_PACKUP_SONG_URL = 'https://www.youtube.com/watch?v=Ds6IwEKRLUU';
-const VEX_PACKUP_VOLUME = 30; // louder than the work playlist — it's a cue
+const VEX_PACKUP_VOLUME = 100; // max — it has to carry over a room that's packing up
 
 /* ---------- helpers ---------- */
 
@@ -225,14 +225,18 @@ function vexBuildMinutesLeft(data, now, deadline) {
   return minutes;
 }
 
-// DD:HH:MM, where a "day" is 24 hours of build time, not a calendar day
+// DD:HH:MM:SS, where a "day" is 24 hours of build time, not a calendar
+// day. The seconds only move while a session is actually running —
+// outside club hours there is no build time being spent, so a still
+// clock is the honest reading rather than a broken one.
 function vexFormatBuildClock(totalMinutes) {
-  const m = Math.max(0, Math.floor(totalMinutes));
-  const dd = Math.floor(m / 1440);
-  const hh = Math.floor((m % 1440) / 60);
-  const mm = m % 60;
+  const total = Math.max(0, Math.floor(totalMinutes * 60));
+  const dd = Math.floor(total / 86400);
+  const hh = Math.floor((total % 86400) / 3600);
+  const mm = Math.floor((total % 3600) / 60);
+  const ss = total % 60;
   const pad = (n) => String(n).padStart(2, '0');
-  return `${pad(dd)}:${pad(hh)}:${pad(mm)}`;
+  return `${pad(dd)}:${pad(hh)}:${pad(mm)}:${pad(ss)}`;
 }
 
 function vexFmt12(hhmm) {
@@ -267,7 +271,7 @@ function initVexCountdown() {
     // No session file (or an unreadable one) must not read as "no time
     // left" — that would tell the room the opposite of the truth.
     if (minutes === null) {
-      numEl.textContent = '--:--:--';
+      numEl.textContent = '--:--:--:--';
       if (subEl) subEl.textContent = `of build time until ${VEX_NEXT_COMPETITION_LABEL}`;
       return;
     }
@@ -276,13 +280,14 @@ function initVexCountdown() {
     if (subEl) {
       subEl.textContent = minutes <= 0
         ? `no build time left before ${VEX_NEXT_COMPETITION_LABEL}`
-        : `DD:HH:MM of build time until ${VEX_NEXT_COMPETITION_LABEL}`;
+        : `DD:HH:MM:SS of build time until ${VEX_NEXT_COMPETITION_LABEL}`;
     }
   }
 
   paint();
-  // every 15s so the minutes tick over promptly during a live session
-  setInterval(paint, 15 * 1000);
+  // once a second now that seconds are on the face. The session file is
+  // fetched once and cached, so a tick is only arithmetic.
+  setInterval(paint, 1000);
 }
 
 /* ---------- Clock box: count down to the end of club ----------
