@@ -84,6 +84,37 @@ On every page, the moment the green in-session countdown reaches `00:00` — the
 - Browsers won't let a page make noise until it's been interacted with at least once, so the first click or keypress on the board (anything at all — switching tabs, toggling fullscreen) is what arms the audio for the rest of the day. If the board has been freshly loaded and never touched, the first bell may be silent.
 - The chimes are synthesized in the browser with Web Audio, so there are no sound files to host and nothing extra to fetch.
 
+## VEX competition countdown
+
+The Next Competition bento counts **build time**, not calendar time: `DD:HH:MM` of
+actual hands-on-the-robot time left before `VEX_NEXT_COMPETITION` in `vex.js`. Sitting
+through Thanksgiving break doesn't build anything, so only real sessions count. A
+"day" here is 24 hours of build time, not a calendar day.
+
+Which days those are lives in **`vex-sessions.json`**:
+
+- **Saturdays** — only days marked *Saturday School* on the Saturday-school calendar.
+  No-school Saturdays, breaks, and event Saturdays (STEAM Expo, SD Festival of Science
+  & Engineering) are out.
+- **Mondays** — from the MSA-SD academic calendar. A Monday counts unless it's No
+  School, a Minimum Day, or on the shortened (Wednesday) schedule. Campus-event
+  Mondays still count: school is in session, so club runs.
+
+Session hours are in the same file under `blocks` — Mondays are 3:00–4:00 PM, and
+Saturdays are the two work periods, 8:00–9:30 and 10:00–10:45 (break and snack aren't
+build time). Editing a date or an hour there is all it takes; nothing is hard-coded in
+`vex.js`.
+
+A block already under way counts only the part still ahead, so during club the clock
+ticks down live rather than dropping in one lump at the bell. Session times are
+anchored to Pacific explicitly, like the rest of the board, so a laptop set to another
+timezone still shows the right number. If the file is missing or unreadable the bento
+shows `--:--:--` rather than zero — "no time left" is the opposite of the truth and
+not something to guess at.
+
+**Keeping it current.** The list runs to the end of the 2026-27 year. When the
+calendar changes, edit `vex-sessions.json` directly.
+
 ## VEX music
 
 The Now Playing box on `vex.html` has a playlist switcher in its top-left corner,

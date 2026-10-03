@@ -1,0 +1,249 @@
+{
+  "_note": [
+    "VEX build sessions \u2014 the days the teams actually have hands on the robot.",
+    "Used by the Next Competition countdown on vex.html, which sums the build time",
+    "left in these sessions between now and VEX_NEXT_COMPETITION in vex.js.",
+    "",
+    "Saturdays: only days marked 'Saturday School' on the Saturday-school calendar.",
+    "No-school Saturdays, breaks, and event Saturdays (STEAM Expo, SD Festival of",
+    "Science & Engineering) are left out \u2014 they are not build time.",
+    "",
+    "Mondays: taken from the MSA-SD academic calendar. A Monday is in unless it is",
+    "No School, a Minimum Day, or on the shortened (Wednesday) schedule.",
+    "",
+    "To change a session, edit the list below. To change how long a session runs,",
+    "edit 'blocks'. Dates are Pacific, YYYY-MM-DD."
+  ],
+  "blocks": {
+    "monday": [
+      {
+        "start": "15:00",
+        "end": "16:00"
+      }
+    ],
+    "saturday": [
+      {
+        "start": "08:00",
+        "end": "09:30"
+      },
+      {
+        "start": "10:00",
+        "end": "10:45"
+      }
+    ]
+  },
+  "sessions": [
+    {
+      "date": "2026-08-10",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-08-17",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-08-24",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-08-31",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-09-12",
+      "kind": "saturday"
+    },
+    {
+      "date": "2026-09-14",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-09-19",
+      "kind": "saturday"
+    },
+    {
+      "date": "2026-09-26",
+      "kind": "saturday"
+    },
+    {
+      "date": "2026-09-28",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-10-03",
+      "kind": "saturday"
+    },
+    {
+      "date": "2026-10-05",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-10-17",
+      "kind": "saturday"
+    },
+    {
+      "date": "2026-10-19",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-10-24",
+      "kind": "saturday"
+    },
+    {
+      "date": "2026-10-26",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-11-07",
+      "kind": "saturday"
+    },
+    {
+      "date": "2026-11-09",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-11-14",
+      "kind": "saturday"
+    },
+    {
+      "date": "2026-11-16",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-11-30",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-12-05",
+      "kind": "saturday"
+    },
+    {
+      "date": "2026-12-07",
+      "kind": "monday"
+    },
+    {
+      "date": "2026-12-12",
+      "kind": "saturday"
+    },
+    {
+      "date": "2026-12-14",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-01-09",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-01-11",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-01-23",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-01-25",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-01-30",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-02-01",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-02-06",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-02-08",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-02-20",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-02-22",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-02-27",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-03-01",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-03-13",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-03-15",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-03-20",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-03-22",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-04-05",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-04-10",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-04-12",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-04-17",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-04-19",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-04-24",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-04-26",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-05-03",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-05-08",
+      "kind": "saturday"
+    },
+    {
+      "date": "2027-05-10",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-05-17",
+      "kind": "monday"
+    },
+    {
+      "date": "2027-05-24",
+      "kind": "monday"
+    }
+  ]
+}

@@ -146,16 +146,93 @@ function vexParseIsoDateLocal(iso) {
   return new Date(y, m - 1, d); // local midnight — no UTC offset surprises
 }
 
-// counts how many Mondays + Saturdays fall in [fromDate, toDateExclusive)
-function vexCountMondaysAndSaturdays(fromDate, toDateExclusive) {
-  let count = 0;
-  const cur = new Date(fromDate.getFullYear(), fromDate.getMonth(), fromDate.getDate());
-  while (cur < toDateExclusive) {
-    const day = cur.getDay(); // 0=Sun ... 6=Sat
-    if (day === 1 || day === 6) count++;
-    cur.setDate(cur.getDate() + 1);
+/* ---- Build time left ----
+   The countdown is not wall-clock time until the competition — it's how
+   much time the teams actually have their hands on the robot before
+   then. Sitting through Thanksgiving break doesn't build anything, so
+   only real sessions count.
+
+   Which days those are lives in vex-sessions.json: Saturdays marked
+   "Saturday School" on the Saturday-school calendar, and Mondays the
+   academic calendar shows as ordinary school days (no-school, minimum
+   and shortened-schedule Mondays have no club). The hours of each come
+   from the same file. */
+let vexSessionsPromise = null;
+function loadVexSessions() {
+  if (!vexSessionsPromise) {
+    vexSessionsPromise = fetch('vex-sessions.json')
+      .then(r => (r.ok ? r.json() : null))
+      .catch(() => null);
   }
-  return count;
+  return vexSessionsPromise;
+}
+
+/* How far Los Angeles is from UTC at a given instant, in ms (negative —
+   LA is behind). Reads it from Intl rather than hard-coding -7/-8 so
+   the DST changeover in November needs no maintenance. */
+function vexPacificOffsetMs(ts) {
+  const dtf = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Los_Angeles', hourCycle: 'h23',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit'
+  });
+  const p = {};
+  for (const part of dtf.formatToParts(new Date(ts))) p[part.type] = part.value;
+  return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour, +p.minute, +p.second) - ts;
+}
+
+/* The instant at which the Pacific wall clock reads `isoDate hhmm`.
+   Session times are school times — 8:00 means 8:00 in the classroom —
+   so they're anchored to Pacific the same way getPacificNow() is,
+   rather than to whatever zone the viewing machine happens to be set
+   to. Applying the offset twice settles the DST-weekend case, where
+   the first guess can land on the wrong side of the change. */
+function vexPacificInstant(isoDate, hhmm) {
+  const [y, mo, d] = isoDate.split('-').map(Number);
+  const [h, mi] = hhmm.split(':').map(Number);
+  const wall = Date.UTC(y, mo - 1, d, h, mi);
+  let ts = wall - vexPacificOffsetMs(wall);
+  ts = wall - vexPacificOffsetMs(ts);
+  return new Date(ts);
+}
+
+// A session block as real instants, so a block already under way counts
+// only the part still ahead.
+function vexBlockBounds(isoDate, block) {
+  return {
+    start: vexPacificInstant(isoDate, block.start),
+    end: vexPacificInstant(isoDate, block.end)
+  };
+}
+
+/* Minutes of build time between `now` and `deadline`. A block already
+   under way counts only the part still ahead, so the number ticks down
+   live during club instead of dropping in one lump at the bell. */
+function vexBuildMinutesLeft(data, now, deadline) {
+  if (!data || !Array.isArray(data.sessions)) return null;
+  let minutes = 0;
+  for (const session of data.sessions) {
+    const blocks = (data.blocks && data.blocks[session.kind]) || [];
+    for (const block of blocks) {
+      const { start, end } = vexBlockBounds(session.date, block);
+      if (end <= now) continue;          // already spent
+      if (start >= deadline) continue;   // after the competition
+      const from = start < now ? now : start;
+      const to = end > deadline ? deadline : end;
+      if (to > from) minutes += (to - from) / 60000;
+    }
+  }
+  return minutes;
+}
+
+// DD:HH:MM, where a "day" is 24 hours of build time, not a calendar day
+function vexFormatBuildClock(totalMinutes) {
+  const m = Math.max(0, Math.floor(totalMinutes));
+  const dd = Math.floor(m / 1440);
+  const hh = Math.floor((m % 1440) / 60);
+  const mm = m % 60;
+  const pad = (n) => String(n).padStart(2, '0');
+  return `${pad(dd)}:${pad(hh)}:${pad(mm)}`;
 }
 
 function vexFmt12(hhmm) {
@@ -172,7 +249,7 @@ function initVexCountdown() {
   const subEl = document.getElementById('vex-countdown-sub');
   if (!numEl) return;
 
-  function paint() {
+  async function paint() {
     const pt = getPacificNow();
     const today = vexParseIsoDateLocal(pt.isoDate);
     const target = vexParseIsoDateLocal(VEX_NEXT_COMPETITION);
@@ -183,15 +260,29 @@ function initVexCountdown() {
       return;
     }
 
-    const n = vexCountMondaysAndSaturdays(today, target);
-    numEl.textContent = String(n);
+    const data = await loadVexSessions();
+    const minutes = vexBuildMinutesLeft(
+      data, new Date(), vexPacificInstant(VEX_NEXT_COMPETITION, '00:00'));
+
+    // No session file (or an unreadable one) must not read as "no time
+    // left" — that would tell the room the opposite of the truth.
+    if (minutes === null) {
+      numEl.textContent = '--:--:--';
+      if (subEl) subEl.textContent = `of build time until ${VEX_NEXT_COMPETITION_LABEL}`;
+      return;
+    }
+
+    numEl.textContent = vexFormatBuildClock(minutes);
     if (subEl) {
-      subEl.textContent = `Monday${n === 1 ? '' : 's'}/Saturday${n === 1 ? '' : 's'} until ${VEX_NEXT_COMPETITION_LABEL}`;
+      subEl.textContent = minutes <= 0
+        ? `no build time left before ${VEX_NEXT_COMPETITION_LABEL}`
+        : `DD:HH:MM of build time until ${VEX_NEXT_COMPETITION_LABEL}`;
     }
   }
 
   paint();
-  setInterval(paint, 60 * 1000);
+  // every 15s so the minutes tick over promptly during a live session
+  setInterval(paint, 15 * 1000);
 }
 
 /* ---------- Clock box: count down to the end of club ----------

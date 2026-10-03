@@ -2037,7 +2037,14 @@ body.board-page {
   font-family: var(--font-mono);
   font-weight: 700;
   line-height: 1;
-  font-size: clamp(1.6rem, min(38cqh, 15cqw), 6rem);
+  /* DD:HH:MM is eight characters where this used to hold one or two
+     digits, so the width cap does the work now — 15cqw would run it off
+     the side of the bento. tabular-nums stops the whole clock shifting
+     every time a digit changes. */
+  font-size: clamp(1.1rem, min(26cqh, 5.6cqw), 3.4rem);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
   color: #6ee7b7;
 }
 .vex-countdown-sub {
