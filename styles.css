@@ -2037,11 +2037,13 @@ body.board-page {
   font-family: var(--font-mono);
   font-weight: 700;
   line-height: 1;
-  /* DD:HH:MM is eight characters where this used to hold one or two
-     digits, so the width cap does the work now — 15cqw would run it off
-     the side of the bento. tabular-nums stops the whole clock shifting
-     every time a digit changes. */
-  font-size: clamp(0.95rem, min(22cqh, 4.3cqw), 2.7rem);
+  /* Sized to fill the bento's width. HH:MM:SS is eight mono glyphs, and
+     cq units resolve against the container's CONTENT box, so 20.6cqw is
+     where the glyphs touch the padding — 20cqw sits just inside. The height cap and the rem ceiling are
+     deliberately loose so WIDTH is what binds: at 22cqh/2.7rem the clock
+     rendered at 18px in a box with room for 85px. tabular-nums keeps it
+     from jittering every tick. */
+  font-size: clamp(1rem, min(40cqh, 20cqw), 12rem);
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.01em;
   white-space: nowrap;
@@ -2073,6 +2075,43 @@ body.board-page {
   font-size: clamp(1rem, min(30cqh, 4.2cqw), 2.6rem);
   line-height: 1.15;
   text-shadow: 0 1px 6px rgba(0,0,0,0.18);
+}
+
+/* ---- White Sox score — takes over the "work on your robot" banner
+   when the Sox played in the last 24 hours. Same card, same accent
+   background; only the contents change. ---- */
+.vex-sox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 0.25em;
+  text-align: left;   /* the banner centres its text; the scoreboard reads as a column */
+}
+.vex-sox-head {
+  font-family: var(--font-mono);
+  font-size: clamp(0.55rem, min(9cqh, 1.9cqw), 1rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.vex-sox-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8em;
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, min(22cqh, 3.1cqw), 2rem);
+  line-height: 1.2;
+  opacity: 0.78;
+}
+.vex-sox-row.is-sox { opacity: 1; font-weight: 800; }
+.vex-sox-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 1.25em;
 }
 
 /* ---- Saturday schedule — standard tinted-white list box ---- */
@@ -2571,6 +2610,9 @@ body.board-page {
   gap: 0.28em;
   margin-top: 0.55em;
 }
+/* Buttons now, so a dot can be tapped to jump to that question. The
+   hit area is padded out well past the painted dot — the dots are tiny
+   by design, and a 5px target on a projector is not a target. */
 .vex-faq-dot {
   width: 0.2em;
   height: 0.2em;
@@ -2578,8 +2620,20 @@ body.board-page {
   min-height: 5px;
   border-radius: 50%;
   background: #c8cfd6;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.15s ease;
+  border: none;
+  padding: 0;
+  box-sizing: content-box;
+  cursor: pointer;
+  position: relative;
 }
+.vex-faq-dot::after {
+  content: '';
+  position: absolute;
+  inset: -9px;              /* invisible, generous click target */
+}
+.vex-faq-dot:hover { transform: scale(1.5); }
+.vex-faq-dot:focus-visible { outline: 2px solid var(--box-color, var(--c-connect)); outline-offset: 3px; }
 .vex-faq-dot.is-active { background: var(--box-color, var(--c-connect)); }
 
 /* ============================================================

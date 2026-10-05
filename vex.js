@@ -135,6 +135,16 @@ const VEX_PLAYLISTS = [
 ];
 const VEX_NOWPLAYING_VOLUME = 10; // 0-100
 
+/* ---- White Sox score ----
+   When the Sox have played in the last 24 hours, the "work on your
+   robot" banner shows that score instead. No game in the window, or
+   anything at all goes wrong fetching it, and the banner says what it
+   always said — the reminder is the default, the score is the treat. */
+const SOX_TEAM_ID = 145;                 // Chicago White Sox, MLB StatsAPI
+const SOX_WINDOW_HOURS = 24;
+const SOX_REFRESH_MS = 10 * 60 * 1000;   // re-check every 10 minutes
+const SOX_API = 'https://statsapi.mlb.com/api/v1/schedule';
+
 /* ---- Clean-Up overlay ---- */
 const VEX_PACKUP_SONG_URL = 'https://www.youtube.com/watch?v=Ds6IwEKRLUU';
 const VEX_PACKUP_VOLUME = 100; // max — it has to carry over a room that's packing up
@@ -229,18 +239,20 @@ function vexBuildMinutesLeft(data, now, deadline) {
   return minutes;
 }
 
-// DD:HH:MM:SS, where a "day" is 24 hours of build time, not a calendar
-// day. The seconds only move while a session is actually running —
-// outside club hours there is no build time being spent, so a still
-// clock is the honest reading rather than a broken one.
+/* HH:MM:SS of build time. Hours run on rather than rolling into days —
+   a whole season is about 80 hours, and "03:08:45:00" reads like a
+   date, where "80:45:00" reads like a clock running out.
+
+   The seconds only move while a session is actually running. Outside
+   club hours no build time is being spent, so a still clock is the
+   honest reading rather than a broken one. */
 function vexFormatBuildClock(totalMinutes) {
   const total = Math.max(0, Math.floor(totalMinutes * 60));
-  const dd = Math.floor(total / 86400);
-  const hh = Math.floor((total % 86400) / 3600);
+  const hh = Math.floor(total / 3600);
   const mm = Math.floor((total % 3600) / 60);
   const ss = total % 60;
   const pad = (n) => String(n).padStart(2, '0');
-  return `${pad(dd)}:${pad(hh)}:${pad(mm)}:${pad(ss)}`;
+  return `${pad(hh)}:${pad(mm)}:${pad(ss)}`;
 }
 
 function vexFmt12(hhmm) {
@@ -275,7 +287,7 @@ function initVexCountdown() {
     // No session file (or an unreadable one) must not read as "no time
     // left" — that would tell the room the opposite of the truth.
     if (minutes === null) {
-      numEl.textContent = '--:--:--:--';
+      numEl.textContent = '--:--:--';
       if (subEl) subEl.textContent = `of build time until ${VEX_NEXT_COMPETITION_LABEL}`;
       return;
     }
@@ -284,7 +296,7 @@ function initVexCountdown() {
     if (subEl) {
       subEl.textContent = minutes <= 0
         ? `no build time left before ${VEX_NEXT_COMPETITION_LABEL}`
-        : `DD:HH:MM:SS of build time until ${VEX_NEXT_COMPETITION_LABEL}`;
+        : `HH:MM:SS of build time until ${VEX_NEXT_COMPETITION_LABEL}`;
     }
   }
 
@@ -1032,11 +1044,13 @@ function initVexFaq() {
 
   if (dotsEl) {
     dotsEl.innerHTML = VEX_FAQS
-      .map(() => '<span class="vex-faq-dot"></span>')
+      .map((faq, i) => `<button type="button" class="vex-faq-dot" data-faq="${i}" ` +
+                       `aria-label="Question ${i + 1}"></button>`)
       .join('');
   }
 
   let idx = 0;
+  let rotateTimer = null;
 
   function paint(i) {
     const faq = VEX_FAQS[i];
@@ -1052,10 +1066,7 @@ function initVexFaq() {
     requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
   }
 
-  paint(0);
-  if (VEX_FAQS.length === 1) return;
-
-  setInterval(() => {
+  function advance() {
     wrapEl.classList.add('is-fading');
     // wait out the CSS fade (0.3s) before swapping the text, so the
     // question never visibly changes mid-transition
@@ -1064,7 +1075,140 @@ function initVexFaq() {
       paint(idx);
       wrapEl.classList.remove('is-fading');
     }, 300);
-  }, VEX_FAQ_ROTATE_MS);
+  }
+
+  function startRotation() {
+    if (VEX_FAQS.length === 1) return;
+    clearInterval(rotateTimer);
+    rotateTimer = setInterval(advance, VEX_FAQ_ROTATE_MS);
+  }
+
+  /* Tapping a dot jumps straight to that question, with no fade — the
+     point of asking for it is to see it now. The rotation timer restarts
+     from zero so the question you just picked gets a full turn instead
+     of whatever was left of the previous one. */
+  if (dotsEl) {
+    dotsEl.addEventListener('click', (e) => {
+      const dot = e.target.closest('.vex-faq-dot');
+      if (!dot) return;
+      e.stopPropagation();   // the bento itself handles click-to-focus
+      const i = Number(dot.dataset.faq);
+      if (!Number.isInteger(i) || i < 0 || i >= VEX_FAQS.length) return;
+      wrapEl.classList.remove('is-fading');
+      idx = i;
+      paint(idx);
+      startRotation();
+    });
+    dotsEl.addEventListener('dblclick', (e) => e.stopPropagation());
+  }
+
+  paint(0);
+  startRotation();
+}
+
+/* ---------- White Sox score ---------- */
+
+// team names come from an external API — never interpolate them raw
+function vexEscapeHtml(text) {
+  return String(text ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
+}
+
+
+// YYYY-MM-DD in Pacific, offset by whole days
+function soxPacificDate(dayOffset) {
+  const d = new Date(Date.now() + dayOffset * 86400000);
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Los_Angeles',
+    year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(d);
+}
+
+/* The most recent game that has actually started and began within the
+   window. Queried over a few days rather than one because a 24-hour
+   window straddles calendar dates, and a west-coast night game lands on
+   the following UTC day. */
+function soxPickGame(payload, nowMs) {
+  const dates = (payload && payload.dates) || [];
+  const cutoff = nowMs - SOX_WINDOW_HOURS * 3600000;
+  let best = null;
+  for (const day of dates) {
+    for (const game of (day.games || [])) {
+      const started = new Date(game.gameDate).getTime();
+      if (!Number.isFinite(started) || started > nowMs || started < cutoff) continue;
+      // Preview means first pitch hasn't happened; postponed games never do
+      const abstract = game.status && game.status.abstractGameState;
+      if (abstract !== 'Final' && abstract !== 'Live') continue;
+      if (!best || started > best.started) best = { game, started };
+    }
+  }
+  return best && best.game;
+}
+
+function soxStatusText(game) {
+  const st = game.status || {};
+  if (st.abstractGameState === 'Live') return st.detailedState || 'In Progress';
+  return st.detailedState || 'Final';
+}
+
+function initVexSoxScore() {
+  const box = document.getElementById('vex-work-box');
+  const workText = document.getElementById('vex-work-text');
+  const soxEl = document.getElementById('vex-sox');
+  const statusEl = document.getElementById('vex-sox-status');
+  const rowsEl = document.getElementById('vex-sox-rows');
+  if (!box || !workText || !soxEl || !rowsEl) return;
+
+  function showWorkBanner() {
+    soxEl.hidden = true;
+    workText.hidden = false;
+    box.classList.remove('has-sox');
+  }
+
+  function showScore(game) {
+    const sides = ['away', 'home']
+      .map(side => (game.teams && game.teams[side]) || null)
+      .filter(Boolean);
+    if (sides.length !== 2) { showWorkBanner(); return; }
+
+    rowsEl.innerHTML = sides.map(side => {
+      const team = side.team || {};
+      const isSox = team.id === SOX_TEAM_ID;
+      const score = Number.isFinite(side.score) ? side.score : '\u2013';
+      return `
+        <div class="vex-sox-row${isSox ? ' is-sox' : ''}">
+          <span class="vex-sox-team">${vexEscapeHtml(team.name || 'TBD')}</span>
+          <span class="vex-sox-num">${vexEscapeHtml(String(score))}</span>
+        </div>`;
+    }).join('');
+
+    if (statusEl) statusEl.textContent = soxStatusText(game);
+    workText.hidden = true;
+    soxEl.hidden = false;
+    box.classList.add('has-sox');
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  async function refresh() {
+    try {
+      // a few days wide so the 24-hour window can't fall off the end
+      const url = `${SOX_API}?sportId=1&teamId=${SOX_TEAM_ID}` +
+                  `&startDate=${soxPacificDate(-2)}&endDate=${soxPacificDate(1)}`;
+      const res = await fetch(url);
+      if (!res.ok) { showWorkBanner(); return; }
+      const game = soxPickGame(await res.json(), Date.now());
+      if (game) showScore(game); else showWorkBanner();
+    } catch (e) {
+      // offline, blocked, API down — the banner is the safe default
+      showWorkBanner();
+    }
+  }
+
+  refresh();
+  setInterval(refresh, SOX_REFRESH_MS);
 }
 
 /* ---------- Clean-Up overlay ----------
@@ -1216,6 +1360,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVexSaturdaySchedule();
   initVexFaq();
   initVexNowPlaying();
+  initVexSoxScore();
   initVexPackUp();
   initVexBreakAutoGameMode();
 });
