@@ -164,9 +164,13 @@ const VEX_SCORE_FEEDS = [
   { key: 'sdfc',     source: 'espn', path: 'soccer/usa.1/teams/21812' },
   { key: 'wave',     source: 'espn', path: 'soccer/usa.nwsl/teams/20907' }
 ];
-const VEX_SCORE_WINDOW_HOURS = 24;
+// How far back a game is still worth putting on the board. Two weeks
+// covers a bye week or a long gap between fixtures, while a team whose
+// season ended months ago simply drops out rather than showing a stale
+// score as though it were news.
+const VEX_SCORE_WINDOW_DAYS = 14;
 const VEX_SCORE_REFRESH_MS = 10 * 60 * 1000;  // re-check every 10 minutes
-const VEX_SCORE_ROTATE_MS = 12 * 1000;        // swap between games on the board
+const VEX_SCORE_ROTATE_MS = 12 * 1000;        // swap between slides on the board
 const MLB_API = 'https://statsapi.mlb.com/api/v1/schedule';
 const ESPN_API = 'https://site.api.espn.com/apis/site/v2/sports';
 
@@ -1155,7 +1159,15 @@ function vexScoreDate(dayOffset) {
 function vexGameInWindow(startedMs, nowMs) {
   return Number.isFinite(startedMs) &&
          startedMs <= nowMs &&
-         startedMs >= nowMs - VEX_SCORE_WINDOW_HOURS * 3600000;
+         startedMs >= nowMs - VEX_SCORE_WINDOW_DAYS * 86400000;
+}
+
+/* Games can now be up to a fortnight old, so the card says when. A
+   score with no date on it reads as "just now" whether it was or not. */
+function vexGameDateLabel(startedMs) {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Los_Angeles', month: 'short', day: 'numeric'
+  }).format(new Date(startedMs));
 }
 
 /* ---- MLB (statsapi.mlb.com) ---- */
@@ -1177,6 +1189,7 @@ function vexParseMlb(payload, feed, nowMs) {
       };
       const game = {
         startedMs: started,
+        dateLabel: vexGameDateLabel(started),
         status: (g.status && g.status.detailedState) || state,
         rows: [side('away'), side('home')]
       };
@@ -1214,6 +1227,7 @@ function vexParseEspn(payload, feed, nowMs) {
         (a, b) => (a.homeAway === 'away' ? -1 : 1) - (b.homeAway === 'away' ? -1 : 1));
       const game = {
         startedMs: started,
+        dateLabel: vexGameDateLabel(started),
         status: type.shortDetail || type.description || 'Final',
         rows: ordered.map(c => ({
           name: (c.team && (c.team.displayName || c.team.shortDisplayName)) || 'TBD',
@@ -1232,7 +1246,8 @@ async function vexFetchFeed(feed, nowMs) {
     let url;
     if (feed.source === 'mlb') {
       url = `${MLB_API}?sportId=1&teamId=${feed.teamId}` +
-            `&startDate=${vexScoreDate(-2)}&endDate=${vexScoreDate(1)}`;
+            `&startDate=${vexScoreDate(-VEX_SCORE_WINDOW_DAYS - 1)}` +
+            `&endDate=${vexScoreDate(1)}`;
     } else {
       url = `${ESPN_API}/${feed.path}/schedule`;
     }
@@ -1257,43 +1272,50 @@ function initVexScores() {
   const rowsEl = document.getElementById('vex-sox-rows');
   if (!box || !workText || !scoreEl || !rowsEl) return;
 
-  let games = [];
+  /* The banner is a little carousel: one slide per team with a recent
+     game, plus the "get to work" reminder as its own slide. The reminder
+     stays in the rotation rather than being displaced, so the nudge to
+     start building still comes round every cycle instead of the board
+     showing nothing but sports all afternoon. */
+  let slides = [{ type: 'reminder' }];
   let idx = 0;
   let rotateTimer = null;
 
-  function showWorkBanner() {
-    clearInterval(rotateTimer);
-    rotateTimer = null;
+  function renderReminder() {
     scoreEl.hidden = true;
     workText.hidden = false;
     box.classList.remove('has-score');
   }
 
-  function render(game) {
+  function renderGame(game) {
     rowsEl.innerHTML = game.rows.map(r => `
       <div class="vex-sox-row${r.isUs ? ' is-sox' : ''}">
         <span class="vex-sox-team">${vexEscapeHtml(r.name)}</span>
         <span class="vex-sox-num">${vexEscapeHtml(r.score === null ? '\u2013' : r.score)}</span>
       </div>`).join('');
-    if (statusEl) statusEl.textContent = game.status;
+    if (statusEl) statusEl.textContent = `${game.status} \u00b7 ${game.dateLabel}`;
     workText.hidden = true;
     scoreEl.hidden = false;
     box.classList.add('has-score');
+  }
+
+  function render(slide) {
+    if (slide.type === 'reminder') renderReminder(); else renderGame(slide.game);
+    // the two layouts are different heights — re-fit after every swap
     requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
   }
 
-  function show(list) {
+  function show(games) {
     clearInterval(rotateTimer);
     rotateTimer = null;
-    games = list;
-    if (!games.length) { showWorkBanner(); return; }
-    idx = idx % games.length;
-    render(games[idx]);
-    // more than one team played — swap between them on the board
-    if (games.length > 1) {
+    slides = [...games.map(game => ({ type: 'score', game })), { type: 'reminder' }];
+    idx = idx % slides.length;
+    render(slides[idx]);
+    // a lone reminder is not a carousel — leave it be
+    if (slides.length > 1) {
       rotateTimer = setInterval(() => {
-        idx = (idx + 1) % games.length;
-        render(games[idx]);
+        idx = (idx + 1) % slides.length;
+        render(slides[idx]);
       }, VEX_SCORE_ROTATE_MS);
     }
   }
@@ -1306,6 +1328,7 @@ function initVexScores() {
     show(found);
   }
 
+  render(slides[0]);          // reminder up front while the feeds load
   refresh();
   setInterval(refresh, VEX_SCORE_REFRESH_MS);
 }

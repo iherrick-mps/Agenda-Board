@@ -86,11 +86,20 @@ On every page, the moment the green in-session countdown reaches `00:00` — the
 
 ## Scores on the VEX banner
 
-If a team the kids follow has played in the **last 24 hours**, the Monday "You should
-be working on your robot!" banner shows that score instead — both teams, their scores,
-the followed team picked out, and the game's status above (`Final`, `In Progress`,
-`Q3 4:21`). If more than one team played, the banner **rotates between them** every 12
-seconds, most recent first.
+The Monday "You should be working on your robot!" banner is a small carousel. Every
+team that has played in the **last 14 days** gets a slide — both sides, their scores,
+the followed team picked out, and the status and date above (`Final · Oct 3`,
+`Q3 4:21 · Oct 5`) — and the reminder itself is the last slide in the cycle. It swaps
+every 12 seconds, most recent game first.
+
+The reminder stays *in* the rotation rather than being displaced, so the nudge to get
+building still comes round every cycle instead of the board showing nothing but sports
+all afternoon. With no recent games it's the only slide and simply sits there.
+
+Fourteen days is wide enough to cover a bye week or a gap between fixtures, while a
+team whose season ended months ago drops out rather than showing a stale score as
+though it were news. The date on every card is there for the same reason. Change
+`VEX_SCORE_WINDOW_DAYS` in `vex.js` to widen or narrow it.
 
 Teams live in `VEX_SCORE_FEEDS` near the top of `vex.js`. Two sources, because no one
 free feed covers all of them:
