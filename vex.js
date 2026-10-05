@@ -135,15 +135,40 @@ const VEX_PLAYLISTS = [
 ];
 const VEX_NOWPLAYING_VOLUME = 10; // 0-100
 
-/* ---- White Sox score ----
-   When the Sox have played in the last 24 hours, the "work on your
-   robot" banner shows that score instead. No game in the window, or
-   anything at all goes wrong fetching it, and the banner says what it
-   always said — the reminder is the default, the score is the treat. */
-const SOX_TEAM_ID = 145;                 // Chicago White Sox, MLB StatsAPI
-const SOX_WINDOW_HOURS = 24;
-const SOX_REFRESH_MS = 10 * 60 * 1000;   // re-check every 10 minutes
-const SOX_API = 'https://statsapi.mlb.com/api/v1/schedule';
+/* ---- Scores ----
+   When a team the kids follow has played in the last 24 hours, the
+   "work on your robot" banner shows that score instead. More than one
+   in the window and the banner rotates between them.
+
+   Two sources, because no single free feed covers all of these:
+
+     source: 'mlb'   statsapi.mlb.com, the official MLB API. teamId is
+                     the MLB club id (145 White Sox, 135 Padres).
+     source: 'espn'  site.api.espn.com. `path` is everything between
+                     /sports/ and /schedule in the team's URL.
+
+   Each feed is fetched and parsed on its own. A feed that 404s, changes
+   shape, or is simply wrong gets skipped with a console warning and the
+   others carry on — one bad entry here can never take the banner down.
+
+   NOTE: the ESPN paths below are best-effort. The MLB ids are certain;
+   the ESPN ones, especially the two soccer clubs, may need correcting
+   once you can see which ones come back empty. Delete any line you
+   don't want and the rest keep working. */
+const VEX_SCORE_FEEDS = [
+  { key: 'whitesox', source: 'mlb',  teamId: 145 },
+  { key: 'padres',   source: 'mlb',  teamId: 135 },
+  { key: 'sdsu-fb',  source: 'espn', path: 'football/college-football/teams/sdsu' },
+  { key: 'sdsu-bb',  source: 'espn', path: 'basketball/mens-college-basketball/teams/sdsu' },
+  { key: 'chargers', source: 'espn', path: 'football/nfl/teams/lac' },
+  { key: 'sdfc',     source: 'espn', path: 'soccer/usa.1/teams/21812' },
+  { key: 'wave',     source: 'espn', path: 'soccer/usa.nwsl/teams/20907' }
+];
+const VEX_SCORE_WINDOW_HOURS = 24;
+const VEX_SCORE_REFRESH_MS = 10 * 60 * 1000;  // re-check every 10 minutes
+const VEX_SCORE_ROTATE_MS = 12 * 1000;        // swap between games on the board
+const MLB_API = 'https://statsapi.mlb.com/api/v1/schedule';
+const ESPN_API = 'https://site.api.espn.com/apis/site/v2/sports';
 
 /* ---- Clean-Up overlay ---- */
 const VEX_PACKUP_SONG_URL = 'https://www.youtube.com/watch?v=Ds6IwEKRLUU';
@@ -1106,9 +1131,9 @@ function initVexFaq() {
   startRotation();
 }
 
-/* ---------- White Sox score ---------- */
+/* ---------- Scores ---------- */
 
-// team names come from an external API — never interpolate them raw
+// team names come from external APIs — never interpolate them raw
 function vexEscapeHtml(text) {
   return String(text ?? '')
     .replaceAll('&', '&amp;')
@@ -1117,98 +1142,172 @@ function vexEscapeHtml(text) {
     .replaceAll('"', '&quot;');
 }
 
-
 // YYYY-MM-DD in Pacific, offset by whole days
-function soxPacificDate(dayOffset) {
-  const d = new Date(Date.now() + dayOffset * 86400000);
+function vexScoreDate(dayOffset) {
   return new Intl.DateTimeFormat('en-CA', {
-    timeZone: 'America/Los_Angeles',
-    year: 'numeric', month: '2-digit', day: '2-digit'
-  }).format(d);
+    timeZone: 'America/Los_Angeles', year: 'numeric', month: '2-digit', day: '2-digit'
+  }).format(new Date(Date.now() + dayOffset * 86400000));
 }
 
-/* The most recent game that has actually started and began within the
-   window. Queried over a few days rather than one because a 24-hour
-   window straddles calendar dates, and a west-coast night game lands on
-   the following UTC day. */
-function soxPickGame(payload, nowMs) {
-  const dates = (payload && payload.dates) || [];
-  const cutoff = nowMs - SOX_WINDOW_HOURS * 3600000;
+/* A game is worth showing if it started within the window and is either
+   finished or under way. Scheduled and postponed games have no score to
+   put on a board. */
+function vexGameInWindow(startedMs, nowMs) {
+  return Number.isFinite(startedMs) &&
+         startedMs <= nowMs &&
+         startedMs >= nowMs - VEX_SCORE_WINDOW_HOURS * 3600000;
+}
+
+/* ---- MLB (statsapi.mlb.com) ---- */
+function vexParseMlb(payload, feed, nowMs) {
   let best = null;
-  for (const day of dates) {
-    for (const game of (day.games || [])) {
-      const started = new Date(game.gameDate).getTime();
-      if (!Number.isFinite(started) || started > nowMs || started < cutoff) continue;
-      // Preview means first pitch hasn't happened; postponed games never do
-      const abstract = game.status && game.status.abstractGameState;
-      if (abstract !== 'Final' && abstract !== 'Live') continue;
-      if (!best || started > best.started) best = { game, started };
+  for (const day of (payload && payload.dates) || []) {
+    for (const g of day.games || []) {
+      const started = new Date(g.gameDate).getTime();
+      if (!vexGameInWindow(started, nowMs)) continue;
+      const state = g.status && g.status.abstractGameState;
+      if (state !== 'Final' && state !== 'Live') continue;
+      const side = (which) => {
+        const t = (g.teams && g.teams[which]) || {};
+        return {
+          name: (t.team && t.team.name) || 'TBD',
+          score: Number.isFinite(t.score) ? t.score : null,
+          isUs: t.team && t.team.id === feed.teamId
+        };
+      };
+      const game = {
+        startedMs: started,
+        status: (g.status && g.status.detailedState) || state,
+        rows: [side('away'), side('home')]
+      };
+      if (!best || game.startedMs > best.startedMs) best = game;
     }
   }
-  return best && best.game;
+  return best;
 }
 
-function soxStatusText(game) {
-  const st = game.status || {};
-  if (st.abstractGameState === 'Live') return st.detailedState || 'In Progress';
-  return st.detailedState || 'Final';
+/* ---- ESPN (site.api.espn.com) ----
+   Score comes back as a number, a string, or {value, displayValue}
+   depending on the sport and endpoint, so take whichever shape turns
+   up rather than assuming one. */
+function vexEspnScore(competitor) {
+  const raw = competitor && competitor.score;
+  if (raw === null || raw === undefined) return null;
+  if (typeof raw === 'number' || typeof raw === 'string') return raw;
+  if (typeof raw === 'object') return raw.displayValue ?? raw.value ?? null;
+  return null;
 }
 
-function initVexSoxScore() {
+function vexParseEspn(payload, feed, nowMs) {
+  const ourId = payload && payload.team && String(payload.team.id);
+  let best = null;
+  for (const event of (payload && payload.events) || []) {
+    for (const comp of event.competitions || [event]) {
+      const started = new Date(comp.date || event.date).getTime();
+      if (!vexGameInWindow(started, nowMs)) continue;
+      const type = (comp.status && comp.status.type) || {};
+      if (type.state !== 'post' && type.state !== 'in') continue;
+      const competitors = comp.competitors || [];
+      if (competitors.length !== 2) continue;
+      // ESPN lists home first; put the away side first to read like MLB
+      const ordered = competitors.slice().sort(
+        (a, b) => (a.homeAway === 'away' ? -1 : 1) - (b.homeAway === 'away' ? -1 : 1));
+      const game = {
+        startedMs: started,
+        status: type.shortDetail || type.description || 'Final',
+        rows: ordered.map(c => ({
+          name: (c.team && (c.team.displayName || c.team.shortDisplayName)) || 'TBD',
+          score: vexEspnScore(c),
+          isUs: c.team && String(c.team.id) === ourId
+        }))
+      };
+      if (!best || game.startedMs > best.startedMs) best = game;
+    }
+  }
+  return best;
+}
+
+async function vexFetchFeed(feed, nowMs) {
+  try {
+    let url;
+    if (feed.source === 'mlb') {
+      url = `${MLB_API}?sportId=1&teamId=${feed.teamId}` +
+            `&startDate=${vexScoreDate(-2)}&endDate=${vexScoreDate(1)}`;
+    } else {
+      url = `${ESPN_API}/${feed.path}/schedule`;
+    }
+    const res = await fetch(url);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const payload = await res.json();
+    return feed.source === 'mlb'
+      ? vexParseMlb(payload, feed, nowMs)
+      : vexParseEspn(payload, feed, nowMs);
+  } catch (e) {
+    // one bad feed must never take the banner down with it
+    console.warn(`Score feed "${feed.key}" unavailable:`, e && e.message);
+    return null;
+  }
+}
+
+function initVexScores() {
   const box = document.getElementById('vex-work-box');
   const workText = document.getElementById('vex-work-text');
-  const soxEl = document.getElementById('vex-sox');
+  const scoreEl = document.getElementById('vex-sox');
   const statusEl = document.getElementById('vex-sox-status');
   const rowsEl = document.getElementById('vex-sox-rows');
-  if (!box || !workText || !soxEl || !rowsEl) return;
+  if (!box || !workText || !scoreEl || !rowsEl) return;
+
+  let games = [];
+  let idx = 0;
+  let rotateTimer = null;
 
   function showWorkBanner() {
-    soxEl.hidden = true;
+    clearInterval(rotateTimer);
+    rotateTimer = null;
+    scoreEl.hidden = true;
     workText.hidden = false;
-    box.classList.remove('has-sox');
+    box.classList.remove('has-score');
   }
 
-  function showScore(game) {
-    const sides = ['away', 'home']
-      .map(side => (game.teams && game.teams[side]) || null)
-      .filter(Boolean);
-    if (sides.length !== 2) { showWorkBanner(); return; }
-
-    rowsEl.innerHTML = sides.map(side => {
-      const team = side.team || {};
-      const isSox = team.id === SOX_TEAM_ID;
-      const score = Number.isFinite(side.score) ? side.score : '\u2013';
-      return `
-        <div class="vex-sox-row${isSox ? ' is-sox' : ''}">
-          <span class="vex-sox-team">${vexEscapeHtml(team.name || 'TBD')}</span>
-          <span class="vex-sox-num">${vexEscapeHtml(String(score))}</span>
-        </div>`;
-    }).join('');
-
-    if (statusEl) statusEl.textContent = soxStatusText(game);
+  function render(game) {
+    rowsEl.innerHTML = game.rows.map(r => `
+      <div class="vex-sox-row${r.isUs ? ' is-sox' : ''}">
+        <span class="vex-sox-team">${vexEscapeHtml(r.name)}</span>
+        <span class="vex-sox-num">${vexEscapeHtml(r.score === null ? '\u2013' : r.score)}</span>
+      </div>`).join('');
+    if (statusEl) statusEl.textContent = game.status;
     workText.hidden = true;
-    soxEl.hidden = false;
-    box.classList.add('has-sox');
+    scoreEl.hidden = false;
+    box.classList.add('has-score');
     requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
   }
 
-  async function refresh() {
-    try {
-      // a few days wide so the 24-hour window can't fall off the end
-      const url = `${SOX_API}?sportId=1&teamId=${SOX_TEAM_ID}` +
-                  `&startDate=${soxPacificDate(-2)}&endDate=${soxPacificDate(1)}`;
-      const res = await fetch(url);
-      if (!res.ok) { showWorkBanner(); return; }
-      const game = soxPickGame(await res.json(), Date.now());
-      if (game) showScore(game); else showWorkBanner();
-    } catch (e) {
-      // offline, blocked, API down — the banner is the safe default
-      showWorkBanner();
+  function show(list) {
+    clearInterval(rotateTimer);
+    rotateTimer = null;
+    games = list;
+    if (!games.length) { showWorkBanner(); return; }
+    idx = idx % games.length;
+    render(games[idx]);
+    // more than one team played — swap between them on the board
+    if (games.length > 1) {
+      rotateTimer = setInterval(() => {
+        idx = (idx + 1) % games.length;
+        render(games[idx]);
+      }, VEX_SCORE_ROTATE_MS);
     }
   }
 
+  async function refresh() {
+    const now = Date.now();
+    const found = (await Promise.all(VEX_SCORE_FEEDS.map(f => vexFetchFeed(f, now))))
+      .filter(Boolean)
+      .sort((a, b) => b.startedMs - a.startedMs);   // most recent first
+    show(found);
+  }
+
   refresh();
-  setInterval(refresh, SOX_REFRESH_MS);
+  setInterval(refresh, VEX_SCORE_REFRESH_MS);
 }
 
 /* ---------- Clean-Up overlay ----------
@@ -1360,7 +1459,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initVexSaturdaySchedule();
   initVexFaq();
   initVexNowPlaying();
-  initVexSoxScore();
+  initVexScores();
   initVexPackUp();
   initVexBreakAutoGameMode();
 });

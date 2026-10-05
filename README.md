@@ -84,23 +84,35 @@ On every page, the moment the green in-session countdown reaches `00:00` — the
 - Browsers won't let a page make noise until it's been interacted with at least once, so the first click or keypress on the board (anything at all — switching tabs, toggling fullscreen) is what arms the audio for the rest of the day. If the board has been freshly loaded and never touched, the first bell may be silent.
 - The chimes are synthesized in the browser with Web Audio, so there are no sound files to host and nothing extra to fetch.
 
-## White Sox score
+## Scores on the VEX banner
 
-If the White Sox have played in the **last 24 hours**, the Monday "You should be
-working on your robot!" banner shows that game's score instead — team names and runs,
-with the Sox row picked out, and the game's status above it (`Final`, `In Progress`).
-A game that's still going shows the live score.
+If a team the kids follow has played in the **last 24 hours**, the Monday "You should
+be working on your robot!" banner shows that score instead — both teams, their scores,
+the followed team picked out, and the game's status above (`Final`, `In Progress`,
+`Q3 4:21`). If more than one team played, the banner **rotates between them** every 12
+seconds, most recent first.
 
-Scores come from the public MLB StatsAPI (`statsapi.mlb.com`), fetched by the browser
-on load and re-checked every 10 minutes. No key, no account.
+Teams live in `VEX_SCORE_FEEDS` near the top of `vex.js`. Two sources, because no one
+free feed covers all of them:
 
-The banner is the default and the score is the treat: no game in the window, a game
-that hasn't started, a postponed game, no network, or anything at all going wrong with
-the API, and the board shows the reminder exactly as it always did. Nothing about the
-page depends on the fetch succeeding.
+| source | where | how to name a team |
+|---|---|---|
+| `mlb` | `statsapi.mlb.com`, the official MLB API | `teamId` — the MLB club id (145 White Sox, 135 Padres) |
+| `espn` | `site.api.espn.com` | `path` — everything between `/sports/` and `/schedule` in the team's ESPN URL |
 
-To follow a different team, change `SOX_TEAM_ID` in `vex.js` — it's the MLB team id
-(145 is the White Sox). `SOX_WINDOW_HOURS` controls how far back a game still counts.
+Shipped with: White Sox, Padres, SDSU football, SDSU men's basketball, Chargers, San
+Diego FC, San Diego Wave. Delete a line to drop a team; add one to follow another.
+
+**Nothing here can break the board.** Each feed is fetched and parsed on its own, and
+one that 404s, times out, or comes back in an unexpected shape is skipped with a
+console warning while the rest carry on. If every feed fails — or no team played, or
+the games haven't started, or they were postponed — the banner shows the reminder
+exactly as it always did. The banner is the default; the score is the treat.
+
+> **The ESPN paths are best-effort.** The two MLB ids are certain. The ESPN ones,
+> especially the two soccer clubs, are from memory and may need correcting — a wrong
+> path simply 404s and that team never appears, so the symptom is silence rather than
+> breakage. Open the console on `vex.html` to see which feeds warned.
 
 ## VEX clean-up
 
