@@ -4,47 +4,48 @@
     "4th Period": {
       "grade": "8th Grade",
       "weeklyDeliverable": "Due Sunday night: your Block Breaker game, published, where bricks disappear when the ball hits them, plus your game link and one sentence about your rule on your portfolio site.",
-      "workingNow": "Playing your game, finding 1 problem with your disappearing bricks, and fixing it with Copilot.",
-      "smartGoal": "By the end of class, I can find 1 problem with my disappearing bricks and fix it with Copilot, so my game works the way I planned.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "workingNow": "Learning the Event Handler pattern and asking Copilot to find one more pattern like it in your Block Breaker code.",
+      "smartGoal": "By the end of class, I can name the software pattern my brick code used and get Copilot to show me one more pattern like it in my code.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs.",
       "eldStandard": "ELD.PI.6-8.2 \u2014 Interacting with others in written English in various communicative forms.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Play your game for 3 minutes (3 min)",
-        "Fix 1 problem with Copilot (19 min)",
-        "Exit Ticket: what you fixed (3 min)"
+        "Mini-lesson: what is a software pattern (5 min)",
+        "Ask Copilot question 1: which pattern is my brick code (5 min)",
+        "Ask Copilot question 2: find one more pattern (10 min)",
+        "Exit Ticket: the other pattern Copilot found (5 min)"
       ],
-      "connections": "Yesterday you got a brick to disappear. Today you play like a tester, find one thing that is not right, and ask Copilot to help you fix it. Tomorrow you finish, push your game, and add your rule to your portfolio."
+      "connections": "Yesterday you made a brick disappear with a trigger and a change. Today you learn that this recipe has a name, the Event Handler pattern, and you find another one in your code. Tomorrow you play your game, find one problem, and fix it."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
-      "workingNow": "Building your own lever from cardboard and string.",
-      "smartGoal": "By the end of class, I can build my lever so it lifts the load, so I can test it tomorrow.",
+      "weeklyDeliverable": "Due Sunday night: all of your exit tickets for this week answered in Google Classroom.",
+      "workingNow": "Exploring the Balancing Act simulation to see how a seesaw balances, then writing two sentences about levers.",
+      "smartGoal": "By the end of class, I can use the Balancing Act simulation to show how a seesaw balances, and write two sentences about levers.",
       "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Get your cardboard and string (3 min)",
-        "Build your lever (19 min)",
-        "Exit Ticket: hardest part to build (3 min)"
+        "Computer rules and what a lever is (3 min)",
+        "Explore Balancing Act: Intro, Balance Lab, Game (17 min)",
+        "Exit Ticket: two sentences about levers (5 min)"
       ],
-      "connections": "Yesterday we built a lever together and named its parts. Today you build your own with cardboard and string. Tomorrow you test it, fix one thing, and take a photo."
+      "connections": "Yesterday your table built a machine from cardboard and scissors. Today you explore a lever on the computer and find the big idea: where you put something matters. Tomorrow you keep building your lever knowledge."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
-      "workingNow": "Building your own lever from cardboard and string.",
-      "smartGoal": "By the end of class, I can build my lever so it lifts the load, so I can test it tomorrow.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "weeklyDeliverable": "Due Sunday night: one photo of your machine that combines two simple machines, with both machines labeled.",
+      "workingNow": "Drawing a design that combines two simple machines so you can build it tomorrow.",
+      "smartGoal": "By the end of class, I can draw a design that combines two simple machines and say what job it does, so I can build it tomorrow.",
+      "contentStandard": "NGSS MS-ETS1-1 \u2014 Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution.",
       "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Get your cardboard and string (3 min)",
-        "Build your lever (19 min)",
-        "Exit Ticket: hardest part to build (3 min)"
+        "Review the four machines and see combo examples (5 min)",
+        "Draw your design with two machines (15 min)",
+        "Exit Ticket: your two machines and the job (5 min)"
       ],
-      "connections": "Yesterday we built a lever together and named its parts. Today you build your own with cardboard and string. Tomorrow you test it, fix one thing, and take a photo."
+      "connections": "Yesterday your table built one machine from cardboard and scissors. Today you design a machine that combines two of them. Tomorrow, the last day of the week, you build your design."
     }
   }
 }
