@@ -34,18 +34,18 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: one photo of your machine that combines two simple machines, with both machines labeled.",
-      "workingNow": "Drawing a design that combines two simple machines so you can build it tomorrow.",
-      "smartGoal": "By the end of class, I can draw a design that combines two simple machines and say what job it does, so I can build it tomorrow.",
-      "contentStandard": "NGSS MS-ETS1-1 \u2014 Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution.",
+      "weeklyDeliverable": "Due Sunday night: one photo of the machine you build in class, with the simple machine it uses labeled.",
+      "workingNow": "Picking one simple machine, exploring its simulation, and changing one thing at a time.",
+      "smartGoal": "By the end of class, I can use a simple machine simulation to test what happens when I change one thing, and tell one thing I learned.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Review the four machines and see combo examples (5 min)",
-        "Draw your design with two machines (15 min)",
-        "Exit Ticket: your two machines and the job (5 min)"
+        "Computer rules and pick one machine (3 min)",
+        "Explore your machine simulation: change one thing at a time (17 min)",
+        "Exit Ticket: which machine and what you learned (5 min)"
       ],
-      "connections": "Yesterday your table built one machine from cardboard and scissors. Today you design a machine that combines two of them. Tomorrow, the last day of the week, you build your design."
+      "connections": "Yesterday your table built one machine from cardboard and scissors. Today you explore a simple machine on the computer and look for ideas about how it works. Tomorrow, the last day of the week, you build."
     }
   }
 }
