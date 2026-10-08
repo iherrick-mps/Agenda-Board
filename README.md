@@ -9,7 +9,7 @@ A daily agenda board for Robotics & Coding, deployable to GitHub Pages.
 - `script.js` — clock/countdown logic, date list rendering, box rendering, and the auto-fit-text routine.
 - `bells.json` — the three bell schedules (Regular, Shortened/Wednesday, Minimum Day), built from the 2025-26 bell schedule PDF.
 - `data/index.json` — archive index of agenda dates. Files added during the current week are discovered automatically, so they do not need to be registered separately.
-- `overview.html` / `overview.js` — the **Day Overview**: today's plans for both tracks side by side (8th grade left, 6th/7th right). `current-day.html` shows this automatically from the 1st period bell through the end of 3rd period.
+- `overview.html` / `overview.js` — the **Day Overview**: today's plans for all three grades side by side, one column each (8th, 7th, 6th). `current-day.html` shows this automatically from the 1st period bell through the end of 3rd period.
 - `transitions.html` / `transitions.js` — the **Transition Times** table: every class, every day, how long it took to settle.
 - `transitions-record.js` — writes the Transition Timer's reading to Firestore. Loaded only by `agenda.html`.
 - `firebase-config.js` — Firebase keys for the board's own Firebase project. Nothing else in the repo uses these; the help queue is a separate project reached through an iframe and is not affected by them.
@@ -324,10 +324,15 @@ a few hundred tiny documents.
 
 ## Day Overview
 
-`overview.html` shows one day's plans as two columns: **8th grade (4th Period)** on
-the left, **6th & 7th grade** on the right. Since 6th and 7th normally run the same
-plan, they share one column; on a day where their JSON actually differs, that column
-splits into two labeled cards instead of quietly showing one and hiding the other.
+`overview.html` shows one day's plans as three columns, one per grade, left to right
+in the order she teaches them: **8th grade (4th Period)**, **7th grade (6th Period)**,
+**6th grade (7th Period)**.
+
+6th and 7th used to share a column, collapsing into one card whenever their two period
+entries matched. Their curriculums have diverged, so each grade now gets its own column
+unconditionally — no comparing, no collapsing. Two grades doing the same thing on some
+given day is a fact about that day, not a reason to merge the views and make her hunt
+for the difference.
 
 Each column carries the SMART goal, what they're working on, the agenda steps, the
 Sunday deliverable, both standards, and the connections — the same fields the bento

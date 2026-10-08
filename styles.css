@@ -3348,7 +3348,8 @@ body.overview-page {
   flex: 1 1 auto;
   min-height: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* one column per grade — 8th, 7th, 6th, left to right in teaching order */
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   padding: 0 12px 12px;
 }
@@ -3374,7 +3375,8 @@ body.overview-page {
 }
 
 .ov-col-8th  { --col-color: var(--c-goal); }
-.ov-col-67   { --col-color: var(--c-eld); }
+.ov-col-7th  { --col-color: var(--c-eld); }
+.ov-col-6th  { --col-color: var(--c-connect); }
 
 .ov-col-head {
   flex: 0 0 auto;

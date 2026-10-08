@@ -1,11 +1,15 @@
 /* ============================================================
-   Day Overview — the two-column planning view.
+   Day Overview — one column per grade.
 
-   Left column: 8th grade (4th Period).
-   Right column: 6th/7th grade (6th + 7th Period, which normally run
-   the same plan). When those two periods really do carry different
-   plans for a day, the right column splits into two stacked cards
-   rather than silently showing one and hiding the other.
+   8th grade (4th Period), 7th grade (6th Period), 6th grade (7th
+   Period), left to right in the order she teaches them.
+
+   6th and 7th used to share a column because they ran the same plan,
+   collapsing into one card when the two period entries matched. Their
+   curriculums have diverged, so each grade now gets its own column
+   unconditionally — no comparing, no collapsing. Two grades doing the
+   same thing on some given day is a fact about that day, not a reason
+   to merge the views and make her hunt for the difference.
 
    current-day.html routes here on its own from the 1st period bell
    through the end of 3rd period — the stretch of the day before she
@@ -19,10 +23,14 @@
 
 const OV_REFRESH_MS = 5 * 60 * 1000;
 
-// the fields that decide whether 6th and 7th period are "the same plan"
-const OV_COMPARE_FIELDS = [
-  'workingNow', 'smartGoal', 'agenda', 'weeklyDeliverable',
-  'contentStandard', 'eldStandard', 'connections'
+/* One column per grade, in the order the periods run. `grade` is the
+   fallback label — the day file's own `grade` field wins when it has
+   one, so a day where a period is covering a different grade still
+   reads right. */
+const OV_COLUMNS = [
+  { period: '4th Period', grade: '8th Grade', modifier: 'ov-col-8th' },
+  { period: '6th Period', grade: '7th Grade', modifier: 'ov-col-7th' },
+  { period: '7th Period', grade: '6th Grade', modifier: 'ov-col-6th' }
 ];
 
 // section order down each column, with the accent each one borrows from
@@ -42,11 +50,6 @@ function ovEscape(text) {
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;');
-}
-
-function ovSamePlan(a, b) {
-  if (!a || !b) return false;
-  return OV_COMPARE_FIELDS.every(f => JSON.stringify(a[f] ?? null) === JSON.stringify(b[f] ?? null));
 }
 
 function ovRenderValue(value) {
@@ -106,48 +109,20 @@ function ovEmptyColumn(modifier, grade, periodLabel, note) {
 function ovRender(dayData) {
   const columnsEl = document.getElementById('ov-columns');
   const periods = (dayData && dayData.periods) || {};
-  const p4 = periods['4th Period'];
-  const p6 = periods['6th Period'];
-  const p7 = periods['7th Period'];
 
-  /* ---- left: 8th grade ---- */
-  const left = p4
-    ? ovRenderColumn({
-        modifier: 'ov-col-8th',
-        grade: p4.grade || '8th Grade',
-        periodLabel: '4th Period',
-        cards: ovRenderCard(p4, null)
-      })
-    : ovEmptyColumn('ov-col-8th', '8th Grade', '4th Period', 'No 8th grade plan in this day\u2019s file.');
-
-  /* ---- right: 6th/7th grade ---- */
-  let right;
-  if (p6 && p7 && ovSamePlan(p6, p7)) {
-    // the normal case: one shared plan, run twice
-    right = ovRenderColumn({
-      modifier: 'ov-col-67',
-      grade: '6th & 7th Grade',
-      periodLabel: '6th + 7th Period',
-      cards: ovRenderCard(p6, null)
+  columnsEl.innerHTML = OV_COLUMNS.map(col => {
+    const periodData = periods[col.period];
+    if (!periodData) {
+      return ovEmptyColumn(col.modifier, col.grade, col.period,
+        `No ${col.grade.toLowerCase()} plan in this day\u2019s file.`);
+    }
+    return ovRenderColumn({
+      modifier: col.modifier,
+      grade: periodData.grade || col.grade,
+      periodLabel: col.period,
+      cards: ovRenderCard(periodData, null)
     });
-  } else if (p6 || p7) {
-    // they diverge today — show both, labeled, rather than picking one
-    const cards = [
-      p6 ? ovRenderCard(p6, `6th Period \u00b7 ${p6.grade || '7th Grade'}`) : '',
-      p7 ? ovRenderCard(p7, `7th Period \u00b7 ${p7.grade || '6th Grade'}`) : ''
-    ].join('');
-    right = ovRenderColumn({
-      modifier: 'ov-col-67 is-split',
-      grade: '6th & 7th Grade',
-      periodLabel: p6 && p7 ? 'Different plans today' : (p6 ? '6th Period only' : '7th Period only'),
-      cards
-    });
-  } else {
-    right = ovEmptyColumn('ov-col-67', '6th & 7th Grade', '6th + 7th Period',
-      'No 6th/7th grade plan in this day\u2019s file.');
-  }
-
-  columnsEl.innerHTML = left + right;
+  }).join('');
 }
 
 async function initOverviewPage() {
