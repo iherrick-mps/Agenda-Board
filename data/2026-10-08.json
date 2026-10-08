@@ -3,51 +3,53 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your Block Breaker game, published, where bricks disappear when the ball hits them, plus your game link and one sentence about your rule on your portfolio site.",
-      "workingNow": "Open the Google Classroom assignment called Finish and Publish Your Game. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can push my Breaker game with bricks that disappear when hit and add one sentence about my rule to my portfolio, so anyone can play it and see how it works.",
-      "contentStandard": "CA CS Standards 6-8.AP.19 \u2014 Document programs in order to make them easier to follow, test, and debug.",
+      "weeklyDeliverable": "Graded this week: your Block Breaker published with a working link turned in on Google Classroom, plus one new software pattern added to it (the Component pattern).",
+      "workingNow": "Open the Google Classroom assignment called Component Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, I can add the Component pattern to my Block Breaker with Copilot, and publish my game so my link works.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs.",
       "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Finish your game and push it (15 min)",
-        "Check live link, add rule sentence to portfolio (7 min)",
-        "Future Engineer or catch-up time (18 min)",
-        "Exit Ticket: paste link, say your rule (5 min)"
+        "Mini-lesson: the Component pattern (7 min)",
+        "I do and we do: paste the Copilot prompt and read the changes (10 min)",
+        "You do: add the component and test your game (18 min)",
+        "Commit, Sync Changes, hard refresh, and check your live game (7 min)",
+        "Turn in your game link on Google Classroom (3 min)"
       ],
-      "connections": "Yesterday you found a problem and fixed it. Today you finish, push, and write one sentence that explains your rule so anyone who plays can understand it. Next time we build on this same game."
+      "connections": "Wednesday you learned that trigger and change is the Event Handler pattern. Today you add a second pattern, Component, by plugging a Breakable piece into your bricks. Class meets next on Tuesday."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
-      "workingNow": "Open the Google Classroom assignment called Test and Fix Your Machine. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can test my lever, take a photo, and label the fulcrum, load, and effort, so I can show how my machine works.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "weeklyDeliverable": "Due Sunday night: your Lift the Load document with your arm lengths, a screenshot of the load rising, and your short description.",
+      "workingNow": "Open the Google Classroom assignment called Lift the Load. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, I can set up a lever in the simulator that lifts a 500 N load using only a 150 N effort, and show it with a screenshot.",
+      "contentStandard": "NGSS MS-ETS1-1 \u2014 Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution.",
       "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Test your lever and fix one thing (15 min)",
-        "Take a photo and label 3 parts (10 min)",
-        "Future Engineer or catch-up time (15 min)",
-        "Exit Ticket: what you fixed (5 min)"
+        "Computer rules and read the problem (5 min)",
+        "Mini-lesson: the lever rule and an example (5 min)",
+        "Solve it in the simulator (22 min)",
+        "Screenshot and fill in your document (8 min)",
+        "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "Yesterday you built your own lever. Today you test it, fix one thing, and take a photo with the fulcrum, load, and effort labeled. That photo is your project for the week. Next time we explore another machine."
+      "connections": "Wednesday you explored levers by balancing a seesaw. Today you use the lever rule with real numbers to lift a 500 N load. Class meets next on Tuesday."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: one photo of the lever you built, with the fulcrum, load, and effort labeled.",
-      "workingNow": "Open the Google Classroom assignment called Test and Fix Your Machine. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can test my lever, take a photo, and label the fulcrum, load, and effort, so I can show how my machine works.",
+      "weeklyDeliverable": "Due Sunday night: your Build a Pulley document with a photo of your pulley (however far you got) and two sentences about what you did to help.",
+      "workingNow": "Open the Google Classroom assignment called Build a Pulley. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my group can build a cardboard pulley on a pencil axle and try to lift a water bottle, and I can say what I did to help.",
       "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Test your lever and fix one thing (15 min)",
-        "Take a photo and label 3 parts (10 min)",
-        "Future Engineer or catch-up time (15 min)",
-        "Exit Ticket: what you fixed (5 min)"
+        "Table jobs, safety rules, and demo (7 min)",
+        "Build your pulley wheel and axle (24 min)",
+        "Try to lift the water bottle and fix one thing (7 min)",
+        "Clean up, take your photo, and write 2 sentences (7 min)"
       ],
-      "connections": "Yesterday you built your own lever. Today you test it, fix one thing, and take a photo with the fulcrum, load, and effort labeled. That photo is your project for the week. Next time we explore another machine."
+      "connections": "Wednesday you explored simple machines on the computer, including the pulley. Today your table builds one from cardboard, a pencil, and string. Class meets next on Tuesday."
     }
   }
 }
