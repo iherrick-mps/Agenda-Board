@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Graded this week: your Block Breaker published with a working link turned in on Google Classroom, plus one new software pattern added to it (the Component pattern).",
-      "workingNow": "Open the Google Classroom assignment called Component Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, I can add the Component pattern to my Block Breaker with Copilot, and publish my game so my link works.",
+      "weeklyDeliverable": "Graded this week: your Block Breaker published with a working link turned in on Google Classroom, one new software pattern added (the Component pattern), and a short explanation of which component you picked, why, and how it improves your game.",
+      "workingNow": "Open the Google Classroom assignment called Component Pattern. Read the instructions, follow them, and turn in your game link and your short explanation when you are done.",
+      "smartGoal": "By the end of class, I can plan one component, add it to my Block Breaker with Copilot, publish my game, and explain why I picked it.",
       "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems and subproblems into parts to facilitate the design, implementation, and review of programs.",
       "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Mini-lesson: the Component pattern (7 min)",
-        "I do and we do: paste the Copilot prompt and read the changes (10 min)",
-        "You do: add the component and test your game (18 min)",
+        "Mini-lesson: the Component pattern and 3 example components (7 min)",
+        "Plan first: pick one and plan it with Copilot (8 min)",
+        "You do: build your component and test your game (15 min)",
         "Commit, Sync Changes, hard refresh, and check your live game (7 min)",
-        "Turn in your game link on Google Classroom (3 min)"
+        "Explain your pick and turn in your link on Google Classroom (8 min)"
       ],
-      "connections": "Wednesday you learned that trigger and change is the Event Handler pattern. Today you add a second pattern, Component, by plugging a Breakable piece into your bricks. Class meets next on Tuesday."
+      "connections": "Wednesday you learned that trigger and change is the Event Handler pattern. Today you plan and add a second pattern, Component, by plugging a small piece into your game. Class meets next on Tuesday."
     },
     "6th Period": {
       "grade": "7th Grade",
