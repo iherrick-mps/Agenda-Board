@@ -1631,10 +1631,8 @@ function initCountUpTimer() {
 /* ============================================================
    Game Mode — a toggle button in the top hover-bar that swaps
    Agenda/Content Standard/Connections/SMART Goal for one big
-   celebratory countdown to the end of the *current live* class
-   period, plus screen-wide falling confetti. Toggled off again
-   the same way (or it never turns on if there's no live period
-   to count down to, since a countdown needs an end time).
+   celebratory countdown to the next bell, plus screen-wide falling
+   confetti. Toggled off again the same way.
    ============================================================ */
 
 const CONFETTI_COLORS = ['#ff5e5e', '#ffb347', '#ffe066', '#6ee7b7', '#38bdf8', '#a78bfa', '#f472b6'];
@@ -1702,15 +1700,14 @@ function initGameMode() {
   let refreshGameTimeLabel = () => {};
 
   async function tick() {
-    /* A run started from the Game Time button lasts exactly as long as
-       the class earned, so it counts against its own clock and ends
-       itself rather than running to the bell. */
-    if (endsAtMs !== null) {
-      const msLeft = endsAtMs - Date.now();
-      if (msLeft <= 0) { turnOff(); return; }
-      countdownEl.textContent = fmtCountdown(msLeft / 60000);
-      return;
-    }
+    /* The number on screen is always the time left until the next bell,
+       however the run started — that's the one countdown the class can
+       check against the clock on the wall without doing arithmetic.
+
+       A run started from the Game Time button still lasts exactly as
+       long as that class earned: endsAtMs is its own clock and it stops
+       the run at zero, it just isn't what gets displayed. */
+    if (endsAtMs !== null && endsAtMs - Date.now() <= 0) { turnOff(); return; }
 
     const pt = getPacificNow();
     const scheduleKey = await resolveTodaysSchedule(pt);
@@ -1719,11 +1716,14 @@ function initGameMode() {
     if (!scheduleData) { countdownEl.textContent = '00:00'; return; }
 
     const nowMin = minutesSinceMidnight(pt);
-    const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
+    const { current, next } = findCurrentAndNext(scheduleData.periods, nowMin);
 
+    // in a period the next bell ends it; between periods (or before the
+    // first one) the next bell is the one that starts the next period
     if (current) {
-      const remaining = hhmmToMinutes(current.end) - nowMin;
-      countdownEl.textContent = fmtCountdown(remaining);
+      countdownEl.textContent = fmtCountdown(hhmmToMinutes(current.end) - nowMin);
+    } else if (next) {
+      countdownEl.textContent = fmtCountdown(hhmmToMinutes(next.start) - nowMin);
     } else {
       countdownEl.textContent = '00:00';
     }
