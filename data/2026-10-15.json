@@ -1,0 +1,54 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Graded this week: your Block Breaker published with a working link turned in on Google Classroom, one new software pattern added (the Singleton pattern: one GameState object that holds score and lives), and a 3-sentence explanation of what it is, why we used it, and how it improves your game.",
+      "workingNow": "Open the Google Classroom assignment called Singleton Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my Block Breaker with GameState is published and I have written 3 sentences: what a Singleton is, why we used one, and how it helps my game.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 \u2014 Document programs in order to make them easier to use, read, test, and debug.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Model: 3 sentences about a different example (5 min)",
+        "Finish GameState and play-test (15 min)",
+        "Commit, Sync Changes, hard refresh, check live game (10 min)",
+        "Write your 3 sentences (10 min)",
+        "Turn in your link on Google Classroom (5 min)"
+      ],
+      "connections": "Wednesday you made score and lives change through GameState. Today you publish your game and explain the Singleton pattern in your own words. Friday is the all-school presentation, so class meets next on Monday."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD name keychain and its share link, turned in on Google Classroom.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Name Keychain. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my keychain has a keyring hole, is grouped into one object, and I have turned in a screenshot and a share link.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "I do: make a hole and group (8 min)",
+        "Catch up, then add your hole and group (22 min)",
+        "Screenshot and copy your share link (10 min)",
+        "Turn in on Google Classroom (5 min)"
+      ],
+      "connections": "Wednesday you put your name on your base. Today you finish your keychain and share it. Friday is the all-school presentation, so class meets next on Monday."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo or short video of your tendon-string gripper picking up an object, turned in on Google Classroom.",
+      "workingNow": "Open the Google Classroom assignment called Tendon Finger Gripper. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, our gripper has tried to pick up 3 objects and we have a photo or video of it picking one up.",
+      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
+      "eldStandard": "ELD.PI.6-8.9 \u2014 Expressing information and ideas in formal oral presentations on academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Model a fair test: 3 tries per object (5 min)",
+        "Catch up, then test and fix your gripper (25 min)",
+        "Photo or video: hands and gripper only (10 min)",
+        "Clean up and turn in (5 min)"
+      ],
+      "connections": "Wednesday you turned two fingers into a gripper. Today you test it like an engineer and fix what slips. Friday is the all-school presentation, so class meets next on Monday."
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Graded this week: your Block Breaker published with a working link turned in on Google Classroom, one new software pattern added (the Singleton pattern: one GameState object that holds score and lives), and a 3-sentence explanation of what it is, why we used it, and how it improves your game.",
+      "workingNow": "Open the Google Classroom assignment called Singleton Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my score goes up when the ball hits a brick and my lives go down when the ball falls, both using GameState.",
+      "contentStandard": "CA CS Standards 6-8.AP.11 \u2014 Create clearly named variables that represent different data types and perform operations on their values.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "I do: where do score and lives change? (5 min)",
+        "You do: wire up score and lives with Copilot (12 min)",
+        "Commit, Sync Changes, hard refresh, play-test (3 min)",
+        "Exit Ticket: what changed and how you tested (5 min)"
+      ],
+      "connections": "Yesterday you made a GameState object that holds score and lives. Today you make them change while you play. Thursday you publish your game and explain why one shared object is better."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD name keychain and its share link, turned in on Google Classroom.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Name Keychain. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my first name is sitting on top of my flat rectangle, sized to fit inside its edges.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "I do: add the Text shape and lift it (5 min)",
+        "You do: put your first name on your base (15 min)",
+        "Exit Ticket: how you checked your name (5 min)"
+      ],
+      "connections": "Yesterday you joined TinkerCAD and made a flat rectangle. Today your first name goes on top of it. Thursday you add a keyring hole and share your finished keychain."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo or short video of your tendon-string gripper picking up an object, turned in on Google Classroom.",
+      "workingNow": "Open the Google Classroom assignment called Tendon Finger Gripper. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, our pair has 2 fingers taped to a palm, facing each other, that close together when we pull the strings.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "I do: where the fingers go on the palm (3 min)",
+        "You do: swap jobs, build finger 2 and attach (17 min)",
+        "Exit Ticket: one change that helped (5 min)"
+      ],
+      "connections": "Yesterday you built one finger that bends when you pull its tendon string. Today you add a second finger and a palm to make a gripper. Thursday you test it on real objects."
+    }
+  }
+}

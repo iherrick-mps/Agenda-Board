@@ -1,0 +1,55 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Graded this week: your Block Breaker published with a working link turned in on Google Classroom, one new software pattern added (the Singleton pattern: one GameState object that holds score and lives), and a 3-sentence explanation of what it is, why we used it, and how it improves your game.",
+      "workingNow": "Open the Google Classroom assignment called Singleton Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can explain in one sentence what a Singleton is and add a GameState object holding score and lives that shows on my game screen.",
+      "contentStandard": "CA CS Standards 6-8.AP.11 \u2014 Create clearly named variables that represent different data types and perform operations on their values.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Mini-lesson: one backpack, not papers everywhere (8 min)",
+        "We do: plan GameState together (7 min)",
+        "You do: add GameState with Copilot, show it on screen (20 min)",
+        "Commit, Sync Changes, hard refresh, check (5 min)",
+        "Exit Ticket: what is a Singleton? (5 min)"
+      ],
+      "connections": "Last week you added the Component pattern by plugging a small piece into your game. Today you start the Singleton pattern: one GameState object that holds score and lives. Wednesday you make the score and lives actually change."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD name keychain and its share link, turned in on Google Classroom.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Name Keychain. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can sign in to our TinkerCAD class and make one flat rectangle, and upload a screenshot of it.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "What is 3D modeling? (5 min)",
+        "We do: join our TinkerCAD class together (15 min)",
+        "I do, you do: drag in a box, make it flat (15 min)",
+        "Exit Ticket: upload your screenshot (10 min)"
+      ],
+      "connections": "Last week you used levers and simple machines in simulators. Today you get into TinkerCAD, a real 3D design tool, and make your first shape. Tomorrow that flat rectangle becomes the base of your name keychain."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo or short video of your tendon-string gripper picking up an object, turned in on Google Classroom.",
+      "workingNow": "Open the Google Classroom assignment called Tendon Finger Gripper. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can measure and cut my own cardboard pieces and build one finger that bends at 2 joints when I pull its string.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Feel your tendons, scissors safety, demo (7 min)",
+        "Measure and cut: 2 strips and 1 palm (13 min)",
+        "You do: build finger 1, Builder and Tester (15 min)",
+        "Exit Ticket: what does the string act like? (5 min)",
+        "Clean up and bag your pieces (5 min)"
+      ],
+      "connections": "Last week you built a cardboard pulley and saw how string can move a load. Today string becomes a tendon that bends a finger. Tomorrow you build a second finger and make a gripper."
+    }
+  }
+}
