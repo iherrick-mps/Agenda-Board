@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Graded this week: your Block Breaker published with a working link turned in on Google Classroom, one new software pattern added (the Singleton pattern: one GameState object that holds score and lives), and a 3-sentence explanation of what it is, why we used it, and how it improves your game.",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your GameState plan, and 3 sentences about Singletons (85 points even if your game breaks), plus your live game showing GameState score and lives (15 points).",
       "workingNow": "Open the Google Classroom assignment called Singleton Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can explain in one sentence what a Singleton is and add a GameState object holding score and lives that shows on my game screen.",
-      "contentStandard": "CA CS Standards 6-8.AP.11 \u2014 Create clearly named variables that represent different data types and perform operations on their values.",
+      "smartGoal": "By the end of class, I can explain in my own words what a Singleton is and name one thing in MY game that could go in a GameState.",
+      "contentStandard": "CA CS Standards 6-8.AP.19 \u2014 Document programs in order to make them easier to use, read, test, and debug.",
       "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Mini-lesson: one backpack, not papers everywhere (8 min)",
-        "We do: plan GameState together (7 min)",
-        "You do: add GameState with Copilot, show it on screen (20 min)",
-        "Commit, Sync Changes, hard refresh, check (5 min)",
-        "Exit Ticket: what is a Singleton? (5 min)"
+        "Wayground: classroom expectations (5 min)",
+        "This week and the points (3 min)",
+        "Video: the Singleton pattern (5 min)",
+        "I do: ask Copilot one question (5 min)",
+        "You do: ask Copilot about YOUR game (17 min)",
+        "Exit Ticket, then share out (15 min)"
       ],
-      "connections": "Last week you added the Component pattern by plugging a small piece into your game. Today you start the Singleton pattern: one GameState object that holds score and lives. Wednesday you make the score and lives actually change."
+      "connections": "Last week you plugged a Component into your game. This whole week is about one idea, the Singleton. Today you just learn what it is by asking Copilot about your own game. Tomorrow you plan your GameState."
     },
     "6th Period": {
       "grade": "7th Grade",

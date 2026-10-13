@@ -3,19 +3,18 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Graded this week: your Block Breaker published with a working link turned in on Google Classroom, one new software pattern added (the Singleton pattern: one GameState object that holds score and lives), and a 3-sentence explanation of what it is, why we used it, and how it improves your game.",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your GameState plan, and 3 sentences about Singletons (85 points even if your game breaks), plus your live game showing GameState score and lives (15 points).",
       "workingNow": "Open the Google Classroom assignment called Singleton Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my score goes up when the ball hits a brick and my lives go down when the ball falls, both using GameState.",
+      "smartGoal": "By the end of class, I have my live game link and my GameState plan written down, and I have watched GameState get built from start to finish.",
       "contentStandard": "CA CS Standards 6-8.AP.11 \u2014 Create clearly named variables that represent different data types and perform operations on their values.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "I do: where do score and lives change? (5 min)",
-        "You do: wire up score and lives with Copilot (12 min)",
-        "Commit, Sync Changes, hard refresh, play-test (3 min)",
-        "Exit Ticket: what changed and how you tested (5 min)"
+        "Write first: paste your link, write your plan (8 min)",
+        "We do: watch GameState get built once (10 min)",
+        "Exit Ticket: your GameState plan (7 min)"
       ],
-      "connections": "Yesterday you made a GameState object that holds score and lives. Today you make them change while you play. Thursday you publish your game and explain why one shared object is better."
+      "connections": "Yesterday you learned what a Singleton is and found shared info in your own game. Today you plan your GameState and watch it built once, start to finish. Thursday you build it yourself."
     },
     "6th Period": {
       "grade": "7th Grade",

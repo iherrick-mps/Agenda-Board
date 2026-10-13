@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Graded this week: your Block Breaker published with a working link turned in on Google Classroom, one new software pattern added (the Singleton pattern: one GameState object that holds score and lives), and a 3-sentence explanation of what it is, why we used it, and how it improves your game.",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your GameState plan, and 3 sentences about Singletons (85 points even if your game breaks), plus your live game showing GameState score and lives (15 points).",
       "workingNow": "Open the Google Classroom assignment called Singleton Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my Block Breaker with GameState is published and I have written 3 sentences: what a Singleton is, why we used one, and how it helps my game.",
-      "contentStandard": "CA CS Standards 6-8.AP.19 \u2014 Document programs in order to make them easier to use, read, test, and debug.",
+      "smartGoal": "By the end of class, my live game shows GameState score and lives, the score goes up when I hit a brick, and my 3 sentences are written.",
+      "contentStandard": "CA CS Standards 6-8.AP.11 \u2014 Create clearly named variables that represent different data types and perform operations on their values.",
       "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Model: 3 sentences about a different example (5 min)",
-        "Finish GameState and play-test (15 min)",
-        "Commit, Sync Changes, hard refresh, check live game (10 min)",
-        "Write your 3 sentences (10 min)",
-        "Turn in your link on Google Classroom (5 min)"
+        "Points reminder: 85 for every box (2 min)",
+        "Write first: your 3 sentences (10 min)",
+        "Build GameState with Copilot (20 min)",
+        "Commit, Sync Changes, hard refresh, check (8 min)",
+        "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "Wednesday you made score and lives change through GameState. Today you publish your game and explain the Singleton pattern in your own words. Friday is the all-school presentation, so class meets next on Monday."
+      "connections": "Yesterday you wrote your plan and watched GameState get built. Today you build it in your own game and explain it. Friday is the all-school presentation, so class meets next on Monday."
     },
     "6th Period": {
       "grade": "7th Grade",
