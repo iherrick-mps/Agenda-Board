@@ -20,35 +20,37 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD name keychain and its share link, turned in on Google Classroom.",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD name keychain and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
       "workingNow": "Open the Google Classroom assignment called TinkerCAD Name Keychain. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
       "smartGoal": "By the end of class, my keychain has a keyring hole, is grouped into one object, and I have turned in a screenshot and a share link.",
       "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "I do: make a hole and group (8 min)",
-        "Catch up, then add your hole and group (22 min)",
-        "Screenshot and copy your share link (10 min)",
-        "Turn in on Google Classroom (5 min)"
+        "Turn in what you have now (7 min)",
+        "We do: make a hole and group (8 min)",
+        "You do: finish and catch up (20 min)",
+        "Update your screenshot and share link (7 min)",
+        "Due Sunday reminder (3 min)"
       ],
-      "connections": "Wednesday you put your name on your base. Today you finish your keychain and share it. Friday is the all-school presentation, so class meets next on Monday."
+      "connections": "Wednesday you put your name on your rectangle and saved a screenshot. Today you turn in what you have first, then finish your keychain. Friday is the all-school presentation, so class meets next on Monday."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a photo or short video of your tendon-string gripper picking up an object, turned in on Google Classroom.",
+      "weeklyDeliverable": "Due Sunday night: a photo or short video of your gripper holding an object. A photo of whatever you built is 70 points, so turn it in early and update it.",
       "workingNow": "Open the Google Classroom assignment called Tendon Finger Gripper. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
       "smartGoal": "By the end of class, our gripper has tried to pick up 3 objects and we have a photo or video of it picking one up.",
       "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
       "eldStandard": "ELD.PI.6-8.9 \u2014 Expressing information and ideas in formal oral presentations on academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
+        "Photo of what you have now (5 min)",
         "Model a fair test: 3 tries per object (5 min)",
-        "Catch up, then test and fix your gripper (25 min)",
-        "Photo or video: hands and gripper only (10 min)",
-        "Clean up and turn in (5 min)"
+        "Test and fix your gripper (22 min)",
+        "New photo or video, then resubmit (8 min)",
+        "Clean up (5 min)"
       ],
-      "connections": "Wednesday you turned two fingers into a gripper. Today you test it like an engineer and fix what slips. Friday is the all-school presentation, so class meets next on Monday."
+      "connections": "Wednesday you turned two fingers into a gripper and saved a photo. Today you lock in a photo first, then test it like an engineer. Friday is the all-school presentation, so class meets next on Monday."
     }
   }
 }
