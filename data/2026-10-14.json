@@ -3,18 +3,18 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your GameState plan, and 3 sentences about Singletons (85 points even if your game breaks), plus your live game showing GameState score and lives (15 points).",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for the two things your GameState tracks, and 3 sentences about Singletons (85 points even if your game breaks), plus your live game with your two GameState things working (15 points).",
       "workingNow": "Open the Google Classroom assignment called Singleton Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I have my live game link and my GameState plan written down, and I have watched GameState get built from start to finish.",
+      "smartGoal": "By the end of class, I can pick two things my GameState will track and explain why each one is GLOBAL and CHANGES.",
       "contentStandard": "CA CS Standards 6-8.AP.11 \u2014 Create clearly named variables that represent different data types and perform operations on their values.",
       "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Write first: paste your link, write your plan (8 min)",
-        "We do: watch GameState get built once (10 min)",
-        "Exit Ticket: your GameState plan (7 min)"
+        "Mini-lesson: GameState holds things that are GLOBAL and CHANGE (7 min)",
+        "You do: pick your two from the list (10 min)",
+        "Exit Ticket: your two and why (8 min)"
       ],
-      "connections": "Yesterday you learned what a Singleton is and found shared info in your own game. Today you plan your GameState and watch it built once, start to finish. Thursday you build it yourself."
+      "connections": "Yesterday you learned what a Singleton is by asking Copilot about your game. Today you pick the two things your GameState will track, using the rule: global and changes. Thursday you add them with Copilot."
     },
     "6th Period": {
       "grade": "7th Grade",
@@ -27,7 +27,7 @@
         "Wayground quiz (5 min)",
         "We do: add your name, click by click (15 min)",
         "Catch up or Future Engineer (5 min)",
-        "Exit Ticket: screenshot and 1 sentence (5 min)"
+        "Turn in your screenshot, then Exit Ticket (5 min)"
       ],
       "connections": "Yesterday you joined TinkerCAD and made a flat rectangle. Today your first name goes on top, and you turn in a screenshot so your progress is saved. Thursday you add a keyring hole and finish."
     },

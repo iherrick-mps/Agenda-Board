@@ -3,20 +3,21 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your GameState plan, and 3 sentences about Singletons (85 points even if your game breaks), plus your live game showing GameState score and lives (15 points).",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for the two things your GameState tracks, and 3 sentences about Singletons (85 points even if your game breaks), plus your live game with your two GameState things working (15 points).",
       "workingNow": "Open the Google Classroom assignment called Singleton Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my live game shows GameState score and lives, the score goes up when I hit a brick, and my 3 sentences are written.",
+      "smartGoal": "By the end of class, my live game has a GameState with my two things in it, at least one of them changes while I play, and my 3 sentences are written.",
       "contentStandard": "CA CS Standards 6-8.AP.11 \u2014 Create clearly named variables that represent different data types and perform operations on their values.",
       "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
         "Points reminder: 85 for every box (2 min)",
-        "Write first: your 3 sentences (10 min)",
-        "Build GameState with Copilot (20 min)",
-        "Commit, Sync Changes, hard refresh, check (8 min)",
-        "Turn in on Google Classroom (5 min)"
+        "Write first: your 3 sentences (8 min)",
+        "We do: watch one build, start to finish (10 min)",
+        "You do: build your two with Copilot (15 min)",
+        "Commit, Sync Changes, hard refresh, check (7 min)",
+        "Turn in on Google Classroom (3 min)"
       ],
-      "connections": "Yesterday you wrote your plan and watched GameState get built. Today you build it in your own game and explain it. Friday is the all-school presentation, so class meets next on Monday."
+      "connections": "Yesterday you picked two things that are global and change. Today you watch one build start to finish, then add your two to GameState with Copilot. Friday is the all-school presentation, so class meets next on Monday."
     },
     "6th Period": {
       "grade": "7th Grade",
