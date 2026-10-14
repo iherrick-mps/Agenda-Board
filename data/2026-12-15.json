@@ -3,52 +3,48 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Thursday, Dec 17 (grades close for the semester): your finished Block Breaker link and a reflection page on your portfolio site that links each of your pattern explanations (85 points even if your game breaks), plus one fix from your partner's code review in your live game (15 points).",
-      "workingNow": "Open the Google Classroom assignment called Code Review and Reflection. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I have made one fix from my partner's review, and my live game still works.",
-      "contentStandard": "CA CS Standards 6-8.AP.15 \u2014 Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (Snake, ROLLER, Block Breaker patterns, your portfolio site) and make it bigger, better, or brand new. Missing work is due Thursday, Dec 17, before grades close.",
+      "workingNow": "Open the Google Classroom post called Choose Your Own Adventure. If you have missing work, do that first. Then pick one adventure from the menu and build it. Nothing this week is graded.",
+      "smartGoal": "By the end of class, my adventure works a little better than it did yesterday, and I can show one thing I changed.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
       "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Read your review, pick one fix (5 min)",
-        "You do: make your fix with Copilot (20 min)",
-        "Commit, Sync Changes, hard refresh, check (8 min)",
-        "Partner check: is it fixed? (5 min)",
-        "Exit Ticket: what you fixed (7 min)"
+        "Missing work first (10 min)",
+        "You do: build your adventure (28 min)",
+        "Show a neighbor one change (7 min)"
       ],
-      "connections": "Yesterday a partner reviewed your game. Today you make one fix from their review. Tomorrow you start your semester reflection."
+      "connections": "Yesterday you picked your adventure and started. Today you keep building and show a neighbor what changed. Tomorrow is a short day to keep going."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Thursday, Dec 17 (last class of the semester): a screenshot or link of your RGB LED code changing colors when you press the button. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called RGB LED Code. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my RGB LED cycles through at least 3 colors.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures and use compound conditions.",
-      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (your Game Lab game, TinkerCAD designs, TinkerCAD circuits, your Google Site) and make it bigger, better, or brand new. Missing work is due Thursday, Dec 17, our last class.",
+      "workingNow": "Open the Google Classroom post called Choose Your Own Adventure. If you have missing work, do that first. Then pick one adventure from the menu and build it. Nothing this week is graded.",
+      "smartGoal": "By the end of class, my adventure works a little better than it did yesterday, and I can show one thing I changed.",
+      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "I do: one color, wait, next color (7 min)",
-        "We do: add a second color (10 min)",
-        "You do: add a third color (18 min)",
-        "Exit Ticket: upload your screenshot (10 min)"
+        "Missing work first (10 min)",
+        "You do: build your adventure (28 min)",
+        "Show a neighbor one change (7 min)"
       ],
-      "connections": "Yesterday you changed one color in code. Today you make the light cycle through colors. Tomorrow you add a button."
+      "connections": "Yesterday you picked your adventure and started. Today you keep building and show a neighbor what changed. Tomorrow is a short day to keep going."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Thursday, Dec 17 (last class of the semester): a screenshot or link of your RGB LED code changing colors when you press the button. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called RGB LED Code. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my RGB LED cycles through at least 3 colors.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures and use compound conditions.",
-      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (your Game Lab game, a cardboard build, TinkerCAD circuits, your Google Site) and make it bigger, better, or brand new. Missing work is due Thursday, Dec 17, our last class.",
+      "workingNow": "Open the Google Classroom post called Choose Your Own Adventure. If you have missing work, do that first. Then pick one adventure from the menu and build it. Nothing this week is graded.",
+      "smartGoal": "By the end of class, my adventure works a little better than it did yesterday, and I can show one thing I changed.",
+      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "I do: one color, wait, next color (7 min)",
-        "We do: add a second color (10 min)",
-        "You do: add a third color (18 min)",
-        "Exit Ticket: upload your screenshot (10 min)"
+        "Missing work first (10 min)",
+        "You do: build your adventure (28 min)",
+        "Show a neighbor one change (7 min)"
       ],
-      "connections": "Yesterday you changed one color in code. Today you make the light cycle through colors. Tomorrow you add a button."
+      "connections": "Yesterday you picked your adventure and started. Today you keep building and show a neighbor what changed. Tomorrow is a short day to keep going."
     }
   }
 }

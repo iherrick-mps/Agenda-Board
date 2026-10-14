@@ -3,54 +3,51 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Thursday, Dec 17 (grades close for the semester): your finished Block Breaker link and a reflection page on your portfolio site that links each of your pattern explanations (85 points even if your game breaks), plus one fix from your partner's code review in your live game (15 points).",
-      "workingNow": "Open the Google Classroom assignment called Code Review and Reflection. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my finished Block Breaker and my reflection page are published and turned in.",
-      "contentStandard": "CA CS Standards 6-8.AP.19 \u2014 Document programs in order to make them easier to use, read, test, and debug.",
+      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (Snake, ROLLER, Block Breaker patterns, your portfolio site) and make it bigger, better, or brand new. Missing work is due Thursday, Dec 17, before grades close.",
+      "workingNow": "Open the Google Classroom post called Choose Your Own Adventure. If you have missing work, do that first. Then pick one adventure from the menu and build it. Nothing this week is graded.",
+      "smartGoal": "By the end of class, I can show my adventure to classmates and explain which skill from this semester I used.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 \u2014 Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
       "eldStandard": "ELD.PI.6-8.9 \u2014 Expressing information and ideas in formal oral presentations on academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Missing work check (5 min)",
-        "You do: finish your reflection page (15 min)",
-        "Commit, Sync Changes, hard refresh, check (8 min)",
-        "Turn in on Google Classroom (7 min)",
-        "Share out: your favorite pattern (10 min)"
+        "Last call: missing work (5 min)",
+        "You do: finish your adventure (20 min)",
+        "Showcase: gallery walk (15 min)",
+        "Celebrate the semester (5 min)"
       ],
-      "connections": "This semester you built Block Breaker one pattern at a time. Today you publish your reflection and turn in before grades close. Friday is a minimum day, then winter break, so class meets next on Tuesday, Jan 5."
+      "connections": "This week you chose your own adventure from everything you learned this semester. Today you finish it and show it off. Friday is a minimum day, then winter break, so class meets next on Tuesday, Jan 5."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Thursday, Dec 17 (last class of the semester): a screenshot or link of your RGB LED code changing colors when you press the button. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called RGB LED Code. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my RGB LED code with a button is turned in, and any missing work is turned in too.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures and use compound conditions.",
+      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (your Game Lab game, TinkerCAD designs, TinkerCAD circuits, your Google Site) and make it bigger, better, or brand new. Missing work is due Thursday, Dec 17, our last class.",
+      "workingNow": "Open the Google Classroom post called Choose Your Own Adventure. If you have missing work, do that first. Then pick one adventure from the menu and build it. Nothing this week is graded.",
+      "smartGoal": "By the end of class, I can show my adventure to classmates and explain which skill from this semester I used.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.9 \u2014 Expressing information and ideas in formal oral presentations on academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Turn in what you have now (5 min)",
-        "You do: finish your button code (15 min)",
-        "Missing work: turn it in now (10 min)",
-        "Update your screenshot (5 min)",
-        "Share out: favorite build this semester (10 min)"
+        "Last call: missing work (5 min)",
+        "You do: finish your adventure (20 min)",
+        "Showcase: gallery walk (15 min)",
+        "Celebrate the semester (5 min)"
       ],
-      "connections": "This week you coded a light that changes colors with a button. Today you finish and turn in everything. This is our last class of the semester. Thank you for everything you built this semester!"
+      "connections": "This week you chose your own adventure from everything you learned this semester. Today you finish it and show it off. This is our last class of the semester. Thank you for everything you built!"
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Thursday, Dec 17 (last class of the semester): a screenshot or link of your RGB LED code changing colors when you press the button. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called RGB LED Code. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my RGB LED code with a button is turned in, and any missing work is turned in too.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures and use compound conditions.",
+      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (your Game Lab game, a cardboard build, TinkerCAD circuits, your Google Site) and make it bigger, better, or brand new. Missing work is due Thursday, Dec 17, our last class.",
+      "workingNow": "Open the Google Classroom post called Choose Your Own Adventure. If you have missing work, do that first. Then pick one adventure from the menu and build it. Nothing this week is graded.",
+      "smartGoal": "By the end of class, I can show my adventure to classmates and explain which skill from this semester I used.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.9 \u2014 Expressing information and ideas in formal oral presentations on academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Turn in what you have now (5 min)",
-        "You do: finish your button code (15 min)",
-        "Missing work: turn it in now (10 min)",
-        "Update your screenshot (5 min)",
-        "Share out: favorite build this semester (10 min)"
+        "Last call: missing work (5 min)",
+        "You do: finish your adventure (20 min)",
+        "Showcase: gallery walk (15 min)",
+        "Celebrate the semester (5 min)"
       ],
-      "connections": "This week you coded a light that changes colors with a button. Today you finish and turn in everything. This is our last class of the semester. Thank you for everything you built this semester!"
+      "connections": "This week you chose your own adventure from everything you learned this semester. Today you finish it and show it off. This is our last class of the semester. Thank you for everything you built!"
     }
   }
 }
