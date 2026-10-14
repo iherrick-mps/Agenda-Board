@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for a wide-paddle power-up, and 3 sentences about the Decorator pattern (85 points even if your game breaks), plus your live game with a working wide-paddle power-up (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, touching my power-up makes my paddle wider, and my 3 sentences about the Decorator pattern are turned in.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Points reminder: 85 for every box (2 min)",
+        "Write first: your 3 sentences (8 min)",
+        "You do: make it widen the paddle with Copilot (20 min)",
+        "Commit, Sync Changes, hard refresh, check (8 min)",
+        "Turn in on Google Classroom (7 min)"
+      ],
+      "connections": "Wednesday we put a power-up on screen together. Today you make it widen the paddle with Copilot and turn in. Tomorrow is catch-up and Future Engineer day."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your working LED circuit in TinkerCAD Circuits. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Circuits LED. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my working LED circuit is turned in with a screenshot.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Turn in what you have now (5 min)",
+        "Partner check: does it light? (10 min)",
+        "You do: finish and catch up (17 min)",
+        "Update your screenshot (8 min)",
+        "Due Sunday reminder (5 min)"
+      ],
+      "connections": "Wednesday you fixed your circuit until it lit. Today a partner checks it and you turn it in. Tomorrow is catch-up and Future Engineer day."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a short video of your group's 5-step chain reaction running. A video of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Chain Reaction. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, all 5 steps of our chain reaction run in a row, and a video is turned in.",
+      "contentStandard": "NGSS MS-PS3-5 \u2014 Construct, use, and present arguments to support the claim that when the kinetic energy of an object changes, energy is transferred to or from the object.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Video of what you have now (5 min)",
+        "You do: build steps 4 and 5 (20 min)",
+        "Run all 5: test and fix (10 min)",
+        "Record your video, then turn in (5 min)",
+        "Clean up and bag your pieces (5 min)"
+      ],
+      "connections": "Wednesday you added step 3. Today you finish all 5 steps and film the whole chain. Tomorrow you fix the weakest step and film again."
+    }
+  }
+}

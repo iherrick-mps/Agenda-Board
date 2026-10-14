@@ -1,0 +1,53 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for a wide-paddle power-up, and 3 sentences about the Decorator pattern (85 points even if your game breaks), plus your live game with a working wide-paddle power-up (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my turned-in game link works, and I have finished my power-up or tried one Future Engineer option.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Check your turned-in link works (5 min)",
+        "Catch up or Future Engineer (25 min)",
+        "Gallery play: try 2 classmates' games (10 min)",
+        "Exit Ticket: what does your decorator add? (5 min)"
+      ],
+      "connections": "This week a power-up gave your paddle a new ability without rewriting it. Today you catch up or go further, like a power-up that wears off. Monday starts the Prototype pattern: cloning your ball to make multiball."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your working LED circuit in TinkerCAD Circuits. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Circuits LED. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my LED circuit is turned in, and I have caught up or tried one Future Engineer option.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Check your screenshot is turned in (5 min)",
+        "Catch up or Future Engineer (25 min)",
+        "Gallery walk: see 2 classmates' circuits (10 min)",
+        "Exit Ticket: what does the resistor do? (5 min)"
+      ],
+      "connections": "This week you built your first working circuit. Today you catch up or go further. Monday you add a switch so you control when the light turns on."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a short video of your group's 5-step chain reaction running. A video of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Chain Reaction. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, our group has fixed the weakest step and recorded a new video.",
+      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Check your video is turned in (5 min)",
+        "Fix the weakest step and re-record (25 min)",
+        "Show another group your chain (10 min)",
+        "Exit Ticket: which step failed most? (5 min)"
+      ],
+      "connections": "This week your group built a 5-step chain reaction. Today you make it more reliable. Monday you move to the computer to build circuits in TinkerCAD."
+    }
+  }
+}

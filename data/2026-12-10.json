@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for multiball, and 3 sentences about the Prototype pattern (85 points even if your game breaks), plus your live game with a working multiball, where one ball is cloned into at least two (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Prototype Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my live game has a working multiball, and my 3 sentences about the Prototype pattern are turned in.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Points reminder: 85 for every box (2 min)",
+        "Write first: your 3 sentences (8 min)",
+        "You do: finish multiball with Copilot (20 min)",
+        "Commit, Sync Changes, hard refresh, check (8 min)",
+        "Turn in on Google Classroom (7 min)"
+      ],
+      "connections": "Wednesday we cloned the ball together. Today you finish your multiball with Copilot and turn in. Friday is a minimum day, so class meets next on Monday. Next week you review a classmate's game and write your semester reflection."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the battery, resistor, LED, and switch labeled. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD LED and Switch. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my labeled LED and switch circuit is turned in with a screenshot.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Turn in what you have now (5 min)",
+        "Partner check: on, off, and labels (10 min)",
+        "You do: finish and catch up (17 min)",
+        "Update your screenshot (8 min)",
+        "Due Sunday reminder (5 min)"
+      ],
+      "connections": "Wednesday you labeled your circuit. Today a partner checks it and you turn it in. Friday is a minimum day, so class meets next on Monday. Next week you code a light that changes colors."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the parts labeled. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD LED and Switch. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my LED and switch circuit has its parts labeled, and a screenshot is turned in.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Turn in what you have now (5 min)",
+        "We do: label one part (8 min)",
+        "You do: label the rest and catch up (19 min)",
+        "Update your screenshot (8 min)",
+        "Due Sunday reminder (5 min)"
+      ],
+      "connections": "Wednesday you added a switch. Today you label every part and turn in. Friday is a minimum day, so class meets next on Monday. Next week you code a light that changes colors."
+    }
+  }
+}

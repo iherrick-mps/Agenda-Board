@@ -1,0 +1,50 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for a wide-paddle power-up, and 3 sentences about the Decorator pattern (85 points even if your game breaks), plus your live game with a working wide-paddle power-up (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my game has a power-up that shows up on screen, and my game still works.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "We do: put a power-up on screen (12 min)",
+        "You do: test it, Commit, Sync Changes (6 min)",
+        "Exit Ticket: what happens when you touch it? (7 min)"
+      ],
+      "connections": "Yesterday you planned your power-up. Today we put it on screen together. Thursday you make it widen the paddle with Copilot and turn in."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your working LED circuit in TinkerCAD Circuits. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Circuits LED. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my LED lights up in the simulation, and a progress screenshot is turned in.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Top 3 reasons an LED won't light (6 min)",
+        "You do: fix and test your circuit (12 min)",
+        "Exit Ticket: turn in your screenshot (7 min)"
+      ],
+      "connections": "Yesterday you wired your first circuit. Today you fix it until the LED lights and save your progress. Thursday you finish and turn in."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a short video of your group's 5-step chain reaction running. A video of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Chain Reaction. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, step 3 of our chain reaction is built and moves when step 2 hits it.",
+      "contentStandard": "NGSS MS-PS3-5 \u2014 Construct, use, and present arguments to support the claim that when the kinetic energy of an object changes, energy is transferred to or from the object.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "You do: build and test step 3 (15 min)",
+        "Progress photo: turn in what you have (3 min)",
+        "Exit Ticket: how step 2 moves step 3 (7 min)"
+      ],
+      "connections": "Yesterday you built steps 1 and 2. Today you add step 3. Thursday you add steps 4 and 5 and film the whole thing."
+    }
+  }
+}

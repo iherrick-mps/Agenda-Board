@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Thursday, Dec 17 (grades close for the semester): your finished Block Breaker link and a reflection page on your portfolio site that links each of your pattern explanations (85 points even if your game breaks), plus one fix from your partner's code review in your live game (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Code Review and Reflection. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I have played a partner's game and given them one kind, specific, helpful suggestion.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 \u2014 Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS vote: top 3 games (10 min)",
+        "This week, the points, and missing work (3 min)",
+        "Mini-lesson: kind, specific, helpful reviews (7 min)",
+        "You do: review a partner's game (15 min)",
+        "Exit Ticket: the suggestion you gave (10 min)"
+      ],
+      "connections": "This semester you added a new pattern to Block Breaker almost every week. This week you review a partner's game, make one fix from their review, and write a reflection. Tomorrow you make your fix."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Thursday, Dec 17 (last class of the semester): a screenshot or link of your RGB LED code changing colors when you press the button. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called RGB LED Code. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can make an RGB LED change color by changing one number in my code.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures and use compound conditions.",
+      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS vote: best project this semester (10 min)",
+        "This week, the points, and missing work (3 min)",
+        "Meet the RGB LED: red, green, blue (7 min)",
+        "We do: change one color in code (15 min)",
+        "Exit Ticket: upload your screenshot (10 min)"
+      ],
+      "connections": "Last week you controlled a light with a switch. This week you control it with code: a light that changes colors. Today you change one color. Tomorrow you make it cycle through colors."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Thursday, Dec 17 (last class of the semester): a screenshot or link of your RGB LED code changing colors when you press the button. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called RGB LED Code. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can make an RGB LED change color by changing one number in my code.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures and use compound conditions.",
+      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS vote: best project this semester (10 min)",
+        "This week, the points, and missing work (3 min)",
+        "Meet the RGB LED: red, green, blue (7 min)",
+        "We do: change one color in code (15 min)",
+        "Exit Ticket: upload your screenshot (10 min)"
+      ],
+      "connections": "Last week you controlled a light with a switch. This week you control it with code: a light that changes colors. Today you change one color. Tomorrow you make it cycle through colors."
+    }
+  }
+}

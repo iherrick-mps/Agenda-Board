@@ -1,0 +1,55 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for multiball, and 3 sentences about the Prototype pattern (85 points even if your game breaks), plus your live game with a working multiball, where one ball is cloned into at least two (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Prototype Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can explain the Prototype pattern and point to the code that makes my ball.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "This week and the points (3 min)",
+        "Mini-lesson: copy it instead of rebuilding it (7 min)",
+        "I do: find where the ball is made (5 min)",
+        "You do: ask Copilot how to clone your ball (17 min)",
+        "Exit Ticket, then share out (13 min)"
+      ],
+      "connections": "Last week a power-up decorated your paddle. This week is the Prototype pattern: copy your ball to make multiball. Today you find where your ball is made. Tomorrow you plan your multiball."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the battery, resistor, LED, and switch labeled. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD LED and Switch. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can add a switch to my circuit and say what a switch does.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "This week and the points (3 min)",
+        "What a switch does: open and closed (7 min)",
+        "We do: add a switch to the circuit (15 min)",
+        "You do: test it on and off (12 min)",
+        "Exit Ticket: open vs. closed switch (8 min)"
+      ],
+      "connections": "Last week you made an LED light up. This week you add a switch so you control the light. Today you add it. Tomorrow you make sure it works both ways."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the parts labeled. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD LED and Switch. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can sign in to our TinkerCAD class and open a new Circuits design.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "This week and the points (3 min)",
+        "We do: join our TinkerCAD class (17 min)",
+        "We do: open a new Circuits design (15 min)",
+        "Exit Ticket: upload your screenshot (10 min)"
+      ],
+      "connections": "Last week your group built a chain reaction where energy moved from step to step. This week energy moves through wires: you build a circuit in TinkerCAD. Today you just get signed in. Tomorrow you make an LED light up."
+    }
+  }
+}

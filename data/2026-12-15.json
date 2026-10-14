@@ -1,0 +1,54 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Thursday, Dec 17 (grades close for the semester): your finished Block Breaker link and a reflection page on your portfolio site that links each of your pattern explanations (85 points even if your game breaks), plus one fix from your partner's code review in your live game (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Code Review and Reflection. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I have made one fix from my partner's review, and my live game still works.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 \u2014 Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Read your review, pick one fix (5 min)",
+        "You do: make your fix with Copilot (20 min)",
+        "Commit, Sync Changes, hard refresh, check (8 min)",
+        "Partner check: is it fixed? (5 min)",
+        "Exit Ticket: what you fixed (7 min)"
+      ],
+      "connections": "Yesterday a partner reviewed your game. Today you make one fix from their review. Tomorrow you start your semester reflection."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Thursday, Dec 17 (last class of the semester): a screenshot or link of your RGB LED code changing colors when you press the button. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called RGB LED Code. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my RGB LED cycles through at least 3 colors.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures and use compound conditions.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "I do: one color, wait, next color (7 min)",
+        "We do: add a second color (10 min)",
+        "You do: add a third color (18 min)",
+        "Exit Ticket: upload your screenshot (10 min)"
+      ],
+      "connections": "Yesterday you changed one color in code. Today you make the light cycle through colors. Tomorrow you add a button."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Thursday, Dec 17 (last class of the semester): a screenshot or link of your RGB LED code changing colors when you press the button. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called RGB LED Code. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my RGB LED cycles through at least 3 colors.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures and use compound conditions.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "I do: one color, wait, next color (7 min)",
+        "We do: add a second color (10 min)",
+        "You do: add a third color (18 min)",
+        "Exit Ticket: upload your screenshot (10 min)"
+      ],
+      "connections": "Yesterday you changed one color in code. Today you make the light cycle through colors. Tomorrow you add a button."
+    }
+  }
+}
