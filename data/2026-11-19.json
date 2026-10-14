@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your list of loops you cleaned up, and 3 sentences about the Iterator pattern (85 points even if your game breaks), plus your live game with every brick updated and drawn by one loop (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Iterator Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, every brick in my live game is updated and drawn by one loop, and my 3 sentences about the Iterator pattern are turned in.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures and use compound conditions.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Points reminder: 85 for every box (2 min)",
+        "Write first: your 3 sentences (8 min)",
+        "You do: clean up the rest with Copilot (20 min)",
+        "Commit, Sync Changes, hard refresh, check (8 min)",
+        "Turn in on Google Classroom (7 min)"
+      ],
+      "connections": "Wednesday we cleaned up one loop together. Today you clean up the rest with Copilot and turn in. Friday is a minimum day and next week is Thanksgiving break, so class meets next on Monday, Nov 30."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD cam and follower, plus 2 sentences on how turning the cam moves the follower. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Cam and Follower. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my cam and follower model and my 2 sentences on how it moves are turned in.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Turn in what you have now (5 min)",
+        "Sentence starters: when the cam turns (7 min)",
+        "You do: finish and write 2 sentences (20 min)",
+        "Update your screenshot and sentences (8 min)",
+        "Due Sunday reminder (5 min)"
+      ],
+      "connections": "Wednesday you added the axle to your cam. Today you explain how turning the cam moves the follower and turn in. Friday is a minimum day and next week is Thanksgiving break, so class meets next on Monday, Nov 30."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo of your tensegrity standing on its own, plus how many pushes it survived. A photo of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Tensegrity. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, we have tested how many pushes our tensegrity survives, and a photo with our results is turned in.",
+      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Model a fair stability test (5 min)",
+        "Test: push it 3 times (15 min)",
+        "Fix it and test again (10 min)",
+        "Photo and results, then turn in (10 min)",
+        "Clean up and bag your pieces (5 min)"
+      ],
+      "connections": "Wednesday your tensegrity stood on its own. Today you test how stable it is and turn in your results. Friday is a minimum day and next week is Thanksgiving break, so class meets next on Monday, Nov 30."
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schedule": "shortened",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your list of loops you cleaned up, and 3 sentences about the Iterator pattern (85 points even if your game breaks), plus your live game with every brick updated and drawn by one loop (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Iterator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, one loop in my game is cleaned up, and my game still works.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 \u2014 Design and iteratively develop programs that combine control structures and use compound conditions.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "We do: clean up one loop together (12 min)",
+        "You do: test it, Commit, Sync Changes (6 min)",
+        "Exit Ticket: what changed in your loop? (7 min)"
+      ],
+      "connections": "Yesterday you planned which loops to clean up. Today we clean up the first one together. Thursday you clean up the rest with Copilot and turn in."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD cam and follower, plus 2 sentences on how turning the cam moves the follower. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Cam and Follower. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my cam has an axle through its off-center hole, and a progress screenshot is turned in.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "We do: push an axle through the cam (10 min)",
+        "Turn in a progress screenshot (6 min)",
+        "Exit Ticket: where is your axle? (9 min)"
+      ],
+      "connections": "Yesterday you added the follower and guide. Today you add the axle that turns the cam. Thursday you write how it moves and turn in."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo of your tensegrity standing on its own, plus how many pushes it survived. A photo of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Tensegrity. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, our tensegrity stands on its own.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "We do: tighten strings until it stands (15 min)",
+        "Progress photo: turn in what you have (3 min)",
+        "Exit Ticket: does it stand on its own? (7 min)"
+      ],
+      "connections": "Yesterday you tied your sticks together. Today you tighten the strings until it stands on its own. Thursday you test how stable it is."
+    }
+  }
+}

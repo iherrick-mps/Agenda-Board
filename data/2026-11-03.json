@@ -1,0 +1,55 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your moving brick, and 3 sentences about the Strategy pattern (85 points even if your game breaks), plus your live game with at least one brick using a moving behavior (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can write a plan for one moving brick: which way it moves, how fast, and what it does at the wall.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Mini-lesson: still vs. moving, one swap (8 min)",
+        "We do: plan one brick together (10 min)",
+        "You do: write your moving-brick plan (17 min)",
+        "Exit Ticket: your brick and how it moves (10 min)"
+      ],
+      "connections": "Yesterday you learned a brick can swap in a behavior. Today you plan your moving brick. Tomorrow we build the first behavior together."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your finished truss bridge with its parts labeled, plus your 2 sentences about it. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Bridge Finish. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can name one way my bridge is different from my partner's bridge.",
+      "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Partner jobs: Presenter and Spotter (5 min)",
+        "Partner 1 shows their bridge (10 min)",
+        "Switch: Partner 2 shows theirs (10 min)",
+        "Fix one thing on your bridge (12 min)",
+        "Exit Ticket: one difference you saw (8 min)"
+      ],
+      "connections": "Yesterday you labeled your bridge's parts. Today you compare bridges with a partner the way engineers review designs. Tomorrow you write 2 sentences about your bridge."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo of your group's tested bridge, its max load, and 2 sentences about how it did. A photo of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Bridge Build and Test. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, our bottom chord and diagonals are taped into triangles, and a progress photo is turned in.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "I do: tape one strong triangle (7 min)",
+        "You do: build bottom chord and triangles (25 min)",
+        "Progress photo: turn in what you have (5 min)",
+        "Exit Ticket: one tip for strong joints (5 min)",
+        "Clean up and bag your pieces (3 min)"
+      ],
+      "connections": "Yesterday your group cut every strip from your plan. Today you tape them into triangles and save a progress photo. Tomorrow you add the top and get it standing."
+    }
+  }
+}

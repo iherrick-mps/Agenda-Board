@@ -1,0 +1,54 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your list of loops you cleaned up, and 3 sentences about the Iterator pattern (85 points even if your game breaks), plus your live game with every brick updated and drawn by one loop (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Iterator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can list the loops in my game I will clean up and say what each one does.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Mini-lesson: for loop vs. forEach (8 min)",
+        "We do: plan one cleanup together (10 min)",
+        "You do: list your loops to clean up (17 min)",
+        "Exit Ticket: one loop and what it does (10 min)"
+      ],
+      "connections": "Yesterday you found every loop over bricks in your game. Today you plan which ones to clean up. Tomorrow we clean up the first one together."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD cam and follower, plus 2 sentences on how turning the cam moves the follower. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Cam and Follower. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my follower rod sits in a guide right above my cam, and a screenshot is turned in.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "We do: make the follower rod (10 min)",
+        "We do: make a guide with a hole (10 min)",
+        "You do: line them up with Align (17 min)",
+        "Exit Ticket: upload your screenshot (8 min)"
+      ],
+      "connections": "Yesterday you made a cam with an off-center hole. Today you add the follower and a guide that keeps it straight. Tomorrow you add the axle."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo of your tensegrity standing on its own, plus how many pushes it survived. A photo of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Tensegrity. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, our 3 sticks are tied and taped with strings, and a progress photo is turned in.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "I do: tie and tape one stick (7 min)",
+        "You do: build it, Builder and Holder (25 min)",
+        "Progress photo: turn in what you have (5 min)",
+        "Exit Ticket: what was hardest? (5 min)",
+        "Clean up and bag your pieces (3 min)"
+      ],
+      "connections": "Yesterday you measured and cut your strings. Today you and your partner tie your sticks together. Tomorrow you tighten it until it stands on its own."
+    }
+  }
+}

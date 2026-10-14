@@ -1,0 +1,57 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for a wide-paddle power-up, and 3 sentences about the Decorator pattern (85 points even if your game breaks), plus your live game with a working wide-paddle power-up (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can explain the Decorator pattern and say how a wide-paddle power-up would change my paddle without rewriting it.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS vote: top 3 games (10 min)",
+        "This week and the points (3 min)",
+        "Mini-lesson: a decorator adds a power (7 min)",
+        "You do: ask Copilot how a wide paddle works (15 min)",
+        "Exit Ticket: what your power-up adds (10 min)"
+      ],
+      "connections": "Before the break you cleaned up your loops with the Iterator pattern. This week is the Decorator pattern: a power-up that gives the paddle a new ability without rewriting it. Today you learn how it works. Tomorrow you plan your power-up."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your working LED circuit in TinkerCAD Circuits. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Circuits LED. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can open TinkerCAD Circuits and say what a battery, a resistor, and an LED each do.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS vote: top 3 cam models (10 min)",
+        "This week and the points (3 min)",
+        "Meet the parts: battery, resistor, LED (7 min)",
+        "We do: open Circuits, add a battery (15 min)",
+        "Exit Ticket: what does a resistor do? (10 min)"
+      ],
+      "connections": "Before the break you modeled a cam and follower in 3D. This week you switch to TinkerCAD Circuits and make a light turn on. Today you meet the parts. Tomorrow you wire them together."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a short video of your group's 5-step chain reaction running. A video of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Chain Reaction. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group has a sketch of our 5 steps, and I can say how energy passes from one step to the next.",
+      "contentStandard": "NGSS MS-PS3-5 \u2014 Construct, use, and present arguments to support the claim that when the kinetic energy of an object changes, energy is transferred to or from the object.",
+      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "DONUTS vote: top 3 tensegrities (10 min)",
+        "This week and the points (3 min)",
+        "Watch: a chain reaction, count the steps (7 min)",
+        "Group roles, then sketch 5 steps (15 min)",
+        "Exit Ticket: what starts your chain? (7 min)",
+        "Clean up (3 min)"
+      ],
+      "connections": "Before the break you built a tensegrity. This week your group builds a 5-step chain reaction, where each step makes the next one move. Today you plan your steps. Tomorrow you start building."
+    }
+  }
+}

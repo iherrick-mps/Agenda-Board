@@ -1,0 +1,53 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your level drawn as a grid, and 3 sentences about the Composite pattern (85 points even if your game breaks), plus your live game with its level built from your grid (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Composite Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my turned-in game link works, and I have finished my grid level or tried one Future Engineer option.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Check your turned-in link works (5 min)",
+        "Catch up or Future Engineer (25 min)",
+        "Gallery play: try 2 classmates' games (10 min)",
+        "Exit Ticket: what is in your grid? (5 min)"
+      ],
+      "connections": "This week your level became a grid of Brick objects. Today you catch up or go further, like a second level from a second grid. Monday starts the Iterator pattern: one clean loop for every brick."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD pencil holder with the ruler showing its measurements, and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Pencil Holder. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my pencil holder is turned in, and I have caught up or tried one Future Engineer option.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Check your screenshot is turned in (5 min)",
+        "Catch up or Future Engineer (25 min)",
+        "Gallery walk: see 2 classmates' holders (10 min)",
+        "Exit Ticket: one measurement and why (5 min)"
+      ],
+      "connections": "This week you made a pencil holder to exact measurements. Today you catch up or go further. Monday you model a cam and follower, a machine that turns spinning into up-and-down motion."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo or short video of your cam toy moving its follower up and down when you turn the pencil. A photo of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Cam Toy. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I have fixed one thing so my cam toy runs smoother, and my photo or video is updated.",
+      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Check your photo is turned in (5 min)",
+        "Fix one thing and test again (25 min)",
+        "Show a partner your cam toy (10 min)",
+        "Exit Ticket: what did you fix? (5 min)"
+      ],
+      "connections": "This week you built a cam toy that turns spinning into up-and-down motion. Today you make it run smoother. Monday you start a tensegrity, a structure that looks like it floats."
+    }
+  }
+}

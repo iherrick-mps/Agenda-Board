@@ -1,0 +1,57 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your moving brick, and 3 sentences about the Strategy pattern (85 points even if your game breaks), plus your live game with at least one brick using a moving behavior (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can explain the Strategy pattern and say how one brick in MY game could act differently.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "This week and the points (3 min)",
+        "Mini-lesson: a strategy is a swappable behavior (7 min)",
+        "I do: find your brick code (5 min)",
+        "You do: ask Copilot which bricks could move (17 min)",
+        "Exit Ticket, then share out (13 min)"
+      ],
+      "connections": "Last week your BrickFactory built your bricks for you. This week is the Strategy pattern: a brick can swap in a behavior, like standing still or sliding. Today you learn what that means. Tomorrow you plan your moving brick."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your finished truss bridge with its parts labeled, plus your 2 sentences about it. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Bridge Finish. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my bridge has the top chord, bottom chord, diagonals, and deck labeled with text.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "This week and the points (3 min)",
+        "Review: the parts of a truss (7 min)",
+        "We do: label one part with text (12 min)",
+        "You do: label the other parts (15 min)",
+        "Exit Ticket: name your bridge's parts (8 min)"
+      ],
+      "connections": "Last week you built a Warren truss bridge in TinkerCAD. Today you label its parts with the right words. Tomorrow you compare your bridge with a partner's."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo of your group's tested bridge, its max load, and 2 sentences about how it did. A photo of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Bridge Build and Test. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, our group has measured and cut every strip on our build plan.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "This week and the points (3 min)",
+        "Check your plan and group roles (5 min)",
+        "I do: measure and cut one strip (5 min)",
+        "You do: measure and cut your strips (20 min)",
+        "Exit Ticket: how many strips did you cut? (5 min)",
+        "Clean up and bag your pieces (7 min)"
+      ],
+      "connections": "Last week your group drew and measured a Warren truss plan. This week you build it and test how much it holds. Today you cut your pieces from your plan. Tomorrow you tape the triangles together."
+    }
+  }
+}
