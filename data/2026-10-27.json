@@ -1,0 +1,53 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your new brick type, and 3 sentences about the Factory pattern (85 points even if your game breaks), plus your live game with a BrickFactory building at least one row of your new bricks (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Factory Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can write a plan for one new brick type: how it looks and how many hits it takes.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Mini-lesson: what makes a brick type different (7 min)",
+        "You do: plan your new brick type (15 min)",
+        "We do: watch a BrickFactory get built (13 min)",
+        "Exit Ticket: your brick type and why (10 min)"
+      ],
+      "connections": "Yesterday you found where your game makes bricks. Today you plan one new brick type and watch a BrickFactory get built. Thursday you build yours with Copilot and turn in."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD Warren truss bridge and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Truss Bridge. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my 5 triangles sit in a straight line on a flat bridge deck, and a progress screenshot is turned in.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "We do: make the bridge deck (12 min)",
+        "You do: line triangles up with Align (20 min)",
+        "Turn in a progress screenshot (5 min)",
+        "Exit Ticket: name 2 bridge parts (8 min)"
+      ],
+      "connections": "Yesterday you made a row of triangles with Duplicate. Today you set them on a deck and line them up. Thursday you add the top and finish your bridge."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo of your group's Warren truss build plan with every part labeled and measured. A photo of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Warren Truss Build Plan. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group has drawn the outline of our Warren truss with the top chord, bottom chord, and diagonals.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "I do: parts of a Warren truss (8 min)",
+        "Group roles: Drafter, Measurer, Checker (5 min)",
+        "You do: draw your group's truss (25 min)",
+        "Exit Ticket: name the 3 truss parts (7 min)"
+      ],
+      "connections": "Yesterday you proved triangles hold their shape better than squares. Today your group starts drawing a Warren truss bridge plan. Thursday you add measurements and labels and turn it in."
+    }
+  }
+}

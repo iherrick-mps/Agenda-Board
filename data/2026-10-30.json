@@ -1,0 +1,53 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your new brick type, and 3 sentences about the Factory pattern (85 points even if your game breaks), plus your live game with a BrickFactory building at least one row of your new bricks (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Factory Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my turned-in game link works, and I have finished my BrickFactory or tried one Future Engineer option.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Check your turned-in link works (5 min)",
+        "Catch up or Future Engineer (25 min)",
+        "Gallery play: try 2 classmates' games (10 min)",
+        "Exit Ticket: what does your factory build? (5 min)"
+      ],
+      "connections": "This week your BrickFactory started building your bricks for you. Today you catch up or go further, like a second brick type or a level made from factory rows. Next week we check the curriculum map for the next pattern."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD Warren truss bridge and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Truss Bridge. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my bridge is turned in, and I have caught up or tried one Future Engineer option.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Check your screenshot is turned in (5 min)",
+        "Catch up or Future Engineer (25 min)",
+        "Gallery walk: see 2 classmates' bridges (10 min)",
+        "Exit Ticket: why does your truss use triangles? (5 min)"
+      ],
+      "connections": "This week you built a Warren truss bridge from repeated triangles. Today you catch up or go further. Next week you finish the bridge, label its parts, and compare designs."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo of your group's Warren truss build plan with every part labeled and measured. A photo of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Warren Truss Build Plan. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, our build plan is turned in, and I have caught up or tried one Future Engineer option.",
+      "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
+      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Check your photo is turned in (5 min)",
+        "Catch up or Future Engineer (25 min)",
+        "Predict: how much will our bridge hold? (10 min)",
+        "Exit Ticket: your prediction and why (5 min)"
+      ],
+      "connections": "This week your group planned a Warren truss bridge. Today you catch up and predict how much it will hold. Next week you build it from cardboard and test your prediction."
+    }
+  }
+}

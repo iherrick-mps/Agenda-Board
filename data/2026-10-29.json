@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your new brick type, and 3 sentences about the Factory pattern (85 points even if your game breaks), plus your live game with a BrickFactory building at least one row of your new bricks (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Factory Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my live game has a BrickFactory that builds a row of my new bricks, and my 3 sentences are turned in.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Points reminder: 85 for every box (2 min)",
+        "Write first: your 3 sentences (8 min)",
+        "You do: build your BrickFactory with Copilot (20 min)",
+        "Commit, Sync Changes, hard refresh, check (8 min)",
+        "Turn in on Google Classroom (7 min)"
+      ],
+      "connections": "Tuesday you planned a new brick type and watched a BrickFactory get built. Today you build yours with Copilot and turn in. Tomorrow is catch-up and Future Engineer day."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD Warren truss bridge and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Truss Bridge. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my bridge has a top piece, is grouped into one object, and I have turned in a screenshot and a share link.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Turn in what you have now (5 min)",
+        "We do: add the top chord and group (10 min)",
+        "You do: finish and catch up (17 min)",
+        "Update your screenshot and share link (8 min)",
+        "Due Sunday reminder (5 min)"
+      ],
+      "connections": "Tuesday you lined your triangles up on a deck. Today you add the top, group it, and turn in your bridge. Tomorrow is catch-up and Future Engineer day."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: a photo of your group's Warren truss build plan with every part labeled and measured. A photo of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Warren Truss Build Plan. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, our plan has every part labeled and measured in centimeters, and a photo of it is turned in.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Photo of what you have now (5 min)",
+        "We do: label and measure one part (6 min)",
+        "You do: finish labels and measurements (22 min)",
+        "Gallery: compare plans with one group (7 min)",
+        "New photo, then resubmit (5 min)"
+      ],
+      "connections": "Tuesday your group drew the outline of a Warren truss. Today you add labels and measurements and turn in a photo. Next week you build it from cardboard and test how much it holds."
+    }
+  }
+}

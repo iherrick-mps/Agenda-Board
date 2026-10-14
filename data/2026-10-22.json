@@ -1,0 +1,56 @@
+{
+  "schedule": "regular",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for which key calls which command, and 3 sentences about the Command pattern (85 points even if your game breaks), plus your live game with your three commands working (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Command Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my live game uses all three commands, and my 3 sentences about the Command pattern are written and turned in.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Points reminder: 85 for every box (2 min)",
+        "Write first: your 3 sentences (8 min)",
+        "You do: build the other two with Copilot (20 min)",
+        "Commit, Sync Changes, hard refresh, check (8 min)",
+        "Turn in on Google Classroom (7 min)"
+      ],
+      "connections": "Wednesday you built movePaddleLeft() together. Today you write your 3 sentences first, then build movePaddleRight() and launchBall() with Copilot and turn in. Tomorrow is catch-up and Future Engineer day."
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD lever with the fulcrum, load, and effort labeled, and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Lever. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my lever has the words FULCRUM, LOAD, and EFFORT on the right parts, and I have turned in a screenshot and a share link.",
+      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Turn in what you have now (5 min)",
+        "We do: add text labels to your lever (12 min)",
+        "You do: finish and catch up (15 min)",
+        "Update your screenshot and share link (8 min)",
+        "Due Sunday reminder (5 min)"
+      ],
+      "connections": "Wednesday you added the load and the effort. Today you label all three parts and turn in your lever. Tomorrow is catch-up and Future Engineer day."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Due Sunday night: your Bridge Collapse slides (what happened, a diagram, and why it fell). Whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Bridge Collapse Slides. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my slide 4 says why the bridge fell and one thing engineers changed after, and my slides are turned in.",
+      "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "agenda": [
+        "Wayground quiz (5 min)",
+        "Turn in what you have now (5 min)",
+        "We do: why it fell, with sentence frames (10 min)",
+        "You do: finish slide 4 and check the list (17 min)",
+        "Turn in your updated slides (8 min)",
+        "Due Sunday reminder (5 min)"
+      ],
+      "connections": "Wednesday you drew what the wind did to the bridge. Today you explain why it fell and what engineers learned, then turn in. Tomorrow is catch-up and Future Engineer day."
+    }
+  }
+}
