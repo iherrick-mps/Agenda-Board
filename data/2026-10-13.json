@@ -3,7 +3,7 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for the two things your GameState tracks, and 3 sentences about Singletons (85 points even if your game breaks), plus your live game with your two GameState things working (15 points).",
+      "weeklyDeliverable": "Due Sunday night: your Singleton Pattern doc with your live game link, your two GameState things, your 3 sentences, and a screenshot. Fill in every box and you can get 95 even if your game breaks.",
       "workingNow": "Open the Google Classroom assignment called Singleton Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
       "smartGoal": "By the end of class, I can explain in my own words what a Singleton is and name one thing in MY game that could go in a GameState.",
       "contentStandard": "CA CS Standards 6-8.AP.19 \u2014 Document programs in order to make them easier to use, read, test, and debug.",
