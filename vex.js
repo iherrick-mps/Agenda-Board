@@ -1095,22 +1095,51 @@ function initVexFaq() {
     requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
   }
 
+  // clicking a bento blows it up to fill the screen (initFocusMode in
+  // script.js) — if this one is up, someone is reading it
+  function isFocused() {
+    return box.classList.contains('is-focused');
+  }
+
   function advance() {
+    if (isFocused()) return;
     wrapEl.classList.add('is-fading');
     // wait out the CSS fade (0.3s) before swapping the text, so the
     // question never visibly changes mid-transition
     setTimeout(() => {
+      // focused during the fade — drop the swap rather than pull the
+      // question out from under someone who just leaned in
+      if (isFocused()) { wrapEl.classList.remove('is-fading'); return; }
       idx = (idx + 1) % VEX_FAQS.length;
       paint(idx);
       wrapEl.classList.remove('is-fading');
     }, 300);
   }
 
+  /* The single place that decides whether the rotation is running.
+     While the bento is focused it stays stopped; the observer below
+     calls back in once focus is released. */
   function startRotation() {
-    if (VEX_FAQS.length === 1) return;
     clearInterval(rotateTimer);
+    rotateTimer = null;
+    if (VEX_FAQS.length === 1 || isFocused()) return;
     rotateTimer = setInterval(advance, VEX_FAQ_ROTATE_MS);
   }
+
+  /* Hold the rotation while this bento is focused. A question swapping
+     out mid-sentence is the one moment it must not happen, and focus is
+     exactly the signal that someone is reading rather than glancing.
+     Releasing focus starts a fresh interval rather than resuming a
+     part-spent one, so the question on screen gets a full turn before
+     it moves on. */
+  new MutationObserver(() => {
+    if (isFocused()) {
+      clearInterval(rotateTimer);
+      rotateTimer = null;
+    } else if (!rotateTimer) {
+      startRotation();
+    }
+  }).observe(box, { attributes: true, attributeFilter: ['class'] });
 
   /* Tapping a dot jumps straight to that question, with no fade — the
      point of asking for it is to see it now. The rotation timer restarts

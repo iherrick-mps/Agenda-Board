@@ -32,7 +32,7 @@ Each text box's font automatically grows or shrinks to fill exactly the space it
 
 **Prev/Next day buttons:** step to the next-highest or next-lowest date in the agenda data — not the literal next calendar day. If there's a gap in your dates (e.g. a weekend, or a day you haven't built yet), it skips straight to whatever's actually listed.
 
-**Click-to-focus:** click any box to fade everything else down to a faint wash and bring that box forward; click it again, click anywhere outside all boxes, or press Escape to return to normal.
+**Click-to-focus:** click any box to fade everything else down to a faint wash and bring that box forward; click it again, click anywhere outside all boxes, or press Escape to return to normal. Focusing the VEX FAQ bento also holds its rotation where it is, so a question can be read without swapping out mid-sentence; releasing focus gives that question a full turn before the rotation moves on.
 
 **Double-click anywhere** to toggle fullscreen.
 
