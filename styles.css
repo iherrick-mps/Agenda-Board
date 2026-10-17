@@ -2077,43 +2077,6 @@ body.board-page {
   text-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
 
-/* ---- White Sox score — takes over the "work on your robot" banner
-   when the Sox played in the last 24 hours. Same card, same accent
-   background; only the contents change. ---- */
-.vex-sox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  gap: 0.25em;
-  text-align: left;   /* the banner centres its text; the scoreboard reads as a column */
-}
-.vex-sox-head {
-  font-family: var(--font-mono);
-  font-size: clamp(0.55rem, min(9cqh, 1.9cqw), 1rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
-.vex-sox-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0.8em;
-  font-family: var(--font-display);
-  font-size: clamp(0.85rem, min(22cqh, 3.1cqw), 2rem);
-  line-height: 1.2;
-  opacity: 0.78;
-}
-.vex-sox-row.is-sox { opacity: 1; font-weight: 800; }
-.vex-sox-num {
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
-  font-size: 1.25em;
-}
-
 /* ---- Saturday schedule — standard tinted-white list box ---- */
 .vex-sched-list li {
   display: flex;

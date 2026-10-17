@@ -84,45 +84,6 @@ On every page, the moment the green in-session countdown reaches `00:00` — the
 - Browsers won't let a page make noise until it's been interacted with at least once, so the first click or keypress on the board (anything at all — switching tabs, toggling fullscreen) is what arms the audio for the rest of the day. If the board has been freshly loaded and never touched, the first bell may be silent.
 - The chimes are synthesized in the browser with Web Audio, so there are no sound files to host and nothing extra to fetch.
 
-## Scores on the VEX banner
-
-The Monday "You should be working on your robot!" banner is a small carousel. Every
-team that has played in the **last 14 days** gets a slide — both sides, their scores,
-the followed team picked out, and the status and date above (`Final · Oct 3`,
-`Q3 4:21 · Oct 5`) — and the reminder itself is the last slide in the cycle. It swaps
-every 12 seconds, most recent game first.
-
-The reminder stays *in* the rotation rather than being displaced, so the nudge to get
-building still comes round every cycle instead of the board showing nothing but sports
-all afternoon. With no recent games it's the only slide and simply sits there.
-
-Fourteen days is wide enough to cover a bye week or a gap between fixtures, while a
-team whose season ended months ago drops out rather than showing a stale score as
-though it were news. The date on every card is there for the same reason. Change
-`VEX_SCORE_WINDOW_DAYS` in `vex.js` to widen or narrow it.
-
-Teams live in `VEX_SCORE_FEEDS` near the top of `vex.js`. Two sources, because no one
-free feed covers all of them:
-
-| source | where | how to name a team |
-|---|---|---|
-| `mlb` | `statsapi.mlb.com`, the official MLB API | `teamId` — the MLB club id (145 White Sox, 135 Padres) |
-| `espn` | `site.api.espn.com` | `path` — everything between `/sports/` and `/schedule` in the team's ESPN URL |
-
-Shipped with: White Sox, Padres, SDSU football, SDSU men's basketball, Chargers, San
-Diego FC, San Diego Wave. Delete a line to drop a team; add one to follow another.
-
-**Nothing here can break the board.** Each feed is fetched and parsed on its own, and
-one that 404s, times out, or comes back in an unexpected shape is skipped with a
-console warning while the rest carry on. If every feed fails — or no team played, or
-the games haven't started, or they were postponed — the banner shows the reminder
-exactly as it always did. The banner is the default; the score is the treat.
-
-> **The ESPN paths are best-effort.** The two MLB ids are certain. The ESPN ones,
-> especially the two soccer clubs, are from memory and may need correcting — a wrong
-> path simply 404s and that team never appears, so the symptom is silence rather than
-> breakage. Open the console on `vex.html` to see which feeds warned.
-
 ## VEX clean-up
 
 The Clean-Up overlay on `vex.html` takes over the board **10 minutes before the end of
