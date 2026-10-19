@@ -208,9 +208,10 @@ is live: a period that ends while the page is open appears on its own.
 ### Earned game time
 
 The **Game Time** button in the hover-bar starts Game Mode for however long the live
-class has earned: **30 minutes minus every second that grade spent in transitions this
-week**, Monday through today. A class that settles quickly keeps most of the half
-hour; one that dawdles spends it.
+class has earned: **20 minutes minus that grade's average transition this week**,
+Monday through today. A class that settles quickly keeps almost all of it; one that
+dawdles spends it. The average is the same number `transitions.html` shows on that
+class's card, so the class can work out their own reward from the board.
 
 The button carries the number before you press it (`Game Time · 19m`) and lights up
 when there's time banked, so the class can see what they earned. Pressing it starts a
@@ -218,8 +219,8 @@ countdown of exactly that length, which **stops itself when the time runs out** 
 than running to the bell. Pressing it again ends it early.
 
 Each grade is exactly one period (4th = 8th grade, 6th = 7th, 7th = 6th), so each
-class earns its own number. The totals come from the same records the Transition Timer
-writes, so this needs Firebase set up (below).
+class earns its own number. The averages come from the same records the Transition
+Timer writes, so this needs Firebase set up (below).
 
 Two things deliberately don't cost a class its reward:
 
@@ -227,10 +228,10 @@ Two things deliberately don't cost a class its reward:
   out of the averages on `transitions.html` — that reading is how long a tab sat open,
   not a transition.
 - **If the records can't be read**, the button says `No records yet` and refuses to
-  start, instead of silently handing out a full 30 minutes. An unknown week is never
+  start, instead of silently handing out a full 20 minutes. An unknown week is never
   treated as a clean one.
 
-A grade that has already spent its 30 minutes shows `None earned` when pressed.
+A grade that has already spent its 20 minutes shows `None earned` when pressed.
 
 **Fridays are game time, start to finish.** Clean-Up Mode's automatic start is
 Monday through Thursday only — on Fridays 7th Period ends on earned game time, and a

@@ -1771,12 +1771,12 @@ function initGameMode() {
   /* ---- Auto Game Mode — Fridays only.
 
      On a Friday, Game Mode switches itself on for however long the
-     class earned that week: 30 minutes minus every second that grade
-     spent in transitions Monday through Friday. The sum comes from
-     the same Firestore records the Transition Timer writes (see
+     class earned that week: 20 minutes minus that grade's average
+     transition Monday through Friday. The average comes from the
+     same Firestore records the Transition Timer writes (see
      window.transitionsEarnedGameMinutes in transitions-record.js), so
-     a class that settles fast all week gets most of the half hour and
-     one that dawdles spends it. Monday through Thursday nothing
+     a class that settles fast all week keeps almost all of it and one
+     that dawdles spends it. Monday through Thursday nothing
      auto-starts at all — the Game Mode button still works by hand any
      day, in any period.
 
@@ -1867,8 +1867,8 @@ function initGameMode() {
      and it says why when it can't.
 
      Pressing it starts Game Mode for exactly the minutes that class
-     earned — 30 minus the time that grade spent in transitions this
-     week — counting down against its own clock and switching itself
+     earned — 20 minus that grade's average transition this week —
+     counting down against its own clock and switching itself
      off at zero, rather than running to the bell. Pressing it again
      stops it early. The label carries the number so the class can see
      what they earned before it starts. ---- */

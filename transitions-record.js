@@ -129,9 +129,12 @@ window.recordTransition = async function recordTransition(entry) {
    Friday game time — the read side of the same collection.
 
    Game Mode's Friday auto-start asks this how long a class earned:
-   30 minutes, minus every second that class spent in transitions
-   Monday through Friday of the current week. Settle quickly all week
-   and you keep most of the half hour; dawdle and you spend it.
+   20 minutes, minus that class's average transition this week —
+   Monday through Friday. Settle quickly and you keep almost all of
+   it; dawdle and you spend it. The average is the same number
+   transitions.html puts on that class's card, so the board and the
+   reward always agree and the class can do the subtraction in their
+   heads.
 
    Each grade is exactly one period (4th = 8th grade, 6th = 7th, 7th =
    6th), so summing by periodSlug and summing by grade are the same
@@ -149,7 +152,7 @@ window.recordTransition = async function recordTransition(entry) {
    nothing." It never rejects.
    ============================================================ */
 
-const GAME_MODE_BASE_MINUTES = 30;
+const GAME_MODE_BASE_MINUTES = 20;
 const TRANSITIONS_EARNED_RETRY_MS = 60000;
 
 /* Game Mode's autoCheck calls this every second, so the answer is
@@ -183,7 +186,7 @@ window.transitionsEarnedGameMinutes = async function (periodName, todayIso) {
     // source: 'server' on purpose. A plain get() falls back to the local
     // cache when the backend is unreachable and resolves with an EMPTY
     // snapshot — which reads as "this grade wasted no time at all" and
-    // hands out a full 30 minutes. Forcing the server makes an
+    // hands out a full 20 minutes. Forcing the server makes an
     // unreachable backend throw, so it lands in the catch below and
     // becomes null ("unknown") instead of a clean week.
     const snap = await db.collection(TRANSITIONS_COLLECTION)
@@ -192,14 +195,20 @@ window.transitionsEarnedGameMinutes = async function (periodName, todayIso) {
       .get({ source: 'server' });
 
     let wastedSeconds = 0;
+    let counted = 0;
     snap.forEach((doc) => {
       const d = doc.data() || {};
       if (d.periodSlug !== meta.slug) return;
       if (d.stopped === false) return;           // never stopped — not a transition
       wastedSeconds += Number(d.seconds) || 0;
+      counted += 1;
     });
 
-    return Math.max(0, GAME_MODE_BASE_MINUTES - wastedSeconds / 60);
+    // No readings yet this week — a Monday morning, say — averages to
+    // nothing, which is the same full base the old total-based sum
+    // handed out for an empty week.
+    const averageSeconds = counted ? wastedSeconds / counted : 0;
+    return Math.max(0, GAME_MODE_BASE_MINUTES - averageSeconds / 60);
   })();
 
   transitionsEarnedPending.set(key, promise);
