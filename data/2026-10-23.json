@@ -35,19 +35,20 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: your Bridge Collapse slides (what happened, a diagram, and why it fell). Whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called Bridge Collapse Slides. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my slides are turned in, and I have caught up or tried one Future Engineer option.",
+      "weeklyDeliverable": "Due Sunday night: your Bridge Collapse slides with the Engineer Challenge (slides 1 to 3 plus A to D: force diagram, wind test data, claim-evidence-reasoning, and your redesign). Whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Bridge Collapse Slides. Read the instructions, follow them, and turn in your slides when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, I can defend why the bridge fell using our test data, and my slides with my own redesign are turned in.",
       "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "eldStandard": "ELD.PI.6-8.9 \u2014 Expressing information and ideas in formal oral presentations on academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Check your slides are turned in (5 min)",
-        "Catch up or Future Engineer (25 min)",
-        "Partner share: show your diagram (10 min)",
-        "Exit Ticket: one lesson from the collapse (5 min)"
+        "Finish slide C: reasoning (8 min)",
+        "Engineer's briefing: 1 minute per group (12 min)",
+        "Critique: was it a fair test? (5 min)",
+        "Slide D: your redesign (13 min)",
+        "Final check and turn in (7 min)"
       ],
-      "connections": "This week you learned why the Tacoma Narrows Bridge fell. Today you catch up or go further. Monday your group starts planning a bridge that won't fall, using triangles."
+      "connections": "Yesterday you tested two decks and collected real data. Today you defend your claim to the class and design a better deck. Monday your group starts planning a bridge that won't fall, using triangles: the Warren truss."
     }
   }
 }

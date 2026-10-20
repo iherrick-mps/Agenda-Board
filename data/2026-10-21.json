@@ -33,18 +33,19 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: your Bridge Collapse slides (what happened, a diagram, and why it fell). Whatever you have is 70 points, so turn it in early and update it.",
+      "weeklyDeliverable": "Due Sunday night: your Bridge Collapse slides with the Engineer Challenge (slides 1 to 3 plus A to D: force diagram, wind test data, claim-evidence-reasoning, and your redesign). Whatever you have is 70 points, so turn it in early and update it.",
       "workingNow": "Open the Google Classroom assignment called Bridge Collapse Slides. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my slide 3 has a picture of the bridge with arrows showing the wind and the twist.",
-      "contentStandard": "NGSS MS-ETS1-1 \u2014 Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution.",
+      "smartGoal": "By the end of class, I can use a labeled diagram to explain why the old deck twisted and how the new deck fixed it.",
+      "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
       "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "I do: draw wind and twist arrows (8 min)",
-        "You do: add your diagram to slide 3 (10 min)",
-        "Exit Ticket: what do your arrows show? (7 min)"
+        "I do: 4 forces and the flutter loop (6 min)",
+        "You do: slide 3, then paste in Challenge A to D (5 min)",
+        "You do: Challenge A, inside the wind (7 min)",
+        "Exit Ticket: why did solid walls make it worse? (7 min)"
       ],
-      "connections": "Yesterday you wrote what happened to the bridge. Today you draw a diagram showing what the wind did. Thursday you explain why it fell and turn in."
+      "connections": "Yesterday you wrote what happened to the bridge. You asked for a challenge, so today you level up: a force diagram comparing the old deck and the new one. Thursday you build two paper decks and test them in the wind."
     }
   }
 }

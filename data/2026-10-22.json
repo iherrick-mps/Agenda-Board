@@ -37,20 +37,21 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: your Bridge Collapse slides (what happened, a diagram, and why it fell). Whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called Bridge Collapse Slides. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my slide 4 says why the bridge fell and one thing engineers changed after, and my slides are turned in.",
-      "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "weeklyDeliverable": "Due Sunday night: your Bridge Collapse slides with the Engineer Challenge (slides 1 to 3 plus A to D: force diagram, wind test data, claim-evidence-reasoning, and your redesign). Whatever you have is 70 points, so turn it in early and update it.",
+      "workingNow": "Open the Google Classroom assignment called Bridge Collapse Slides. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group has tested 2 paper decks 3 times each, and slide B has our data and averages.",
+      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
+      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Turn in what you have now (5 min)",
-        "We do: why it fell, with sentence frames (10 min)",
-        "You do: finish slide 4 and check the list (17 min)",
-        "Turn in your updated slides (8 min)",
-        "Due Sunday reminder (5 min)"
+        "Roles and a demo trial together (7 min)",
+        "Build two paper decks (12 min)",
+        "Test: 3 trials for each deck (10 min)",
+        "Slide B: data and averages (6 min)",
+        "Start slide C: claim and evidence (5 min)",
+        "Exit Ticket: which deck twisted more? (5 min)"
       ],
-      "connections": "Wednesday you drew what the wind did to the bridge. Today you explain why it fell and what engineers learned, then turn in. Tomorrow is catch-up and Future Engineer day."
+      "connections": "Yesterday you showed why solid walls catch the wind. Today you test it yourself: a solid-wall deck against an open-wall deck, 3 trials each. Friday you use your data to argue why the bridge fell, then redesign it."
     }
   }
 }
