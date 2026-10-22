@@ -3,35 +3,37 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for which key calls which command, and 3 sentences about the Command pattern (85 points even if your game breaks), plus your live game with your three commands working (15 points).",
-      "workingNow": "Open the Google Classroom assignment called Command Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my turned-in game link works, and I have finished my commands or tried one Future Engineer option.",
+      "weeklyDeliverable": "Due Sunday night: the Command Pattern turn-in doc you get Friday, with your live game link, your plan for which key calls which command, and 3 sentences about the Command pattern (85 points even if your game breaks), plus your live game with your three commands working (15 points).",
+      "workingNow": "Open the Google Classroom assignment called Command Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, every box on my Answers tab is filled in, my live game uses all three commands, and the doc is turned in.",
       "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Check your turned-in link works (5 min)",
-        "Catch up or Future Engineer (25 min)",
-        "Gallery play: try 2 classmates' games (10 min)",
-        "Exit Ticket: one command and what it does (5 min)"
+        "Write first: Boxes 1, 2, and 3 (12 min)",
+        "Finish or fix your commands (13 min)",
+        "Commit, Sync Changes, hard refresh, check (5 min)",
+        "Gallery play: 2 classmates' games (10 min)",
+        "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "This week you gave every player action its own command. Today you catch up or go further, like adding on-screen buttons that call the same commands. Monday starts the Factory pattern: a BrickFactory that builds new kinds of bricks."
+      "connections": "This week every player action got its own named command. Today you write it up, check your live game, and play two classmates' games. Monday is the DONUTS vote, then the Factory pattern."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD lever with the fulcrum, load, and effort labeled, and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD Lever. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my labeled lever is turned in, and I have caught up or tried one Future Engineer option.",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD lever with the fulcrum, load, and effort labeled. A screenshot of whatever you have is 70 points.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Lever. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my lever has FULCRUM, LOAD, and EFFORT on the right parts, and my screenshot is turned in.",
       "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Check your screenshot is turned in (5 min)",
-        "Catch up or Future Engineer (25 min)",
-        "Gallery walk: see 2 classmates' levers (10 min)",
-        "Exit Ticket: where is your fulcrum? (5 min)"
+        "We do: label FULCRUM (8 min)",
+        "You do: label LOAD and EFFORT, finish (15 min)",
+        "Final screenshot, turn in (8 min)",
+        "Gallery walk: 2 classmates' levers (10 min)",
+        "Due Sunday reminder (4 min)"
       ],
-      "connections": "This week you used Align to build and label a lever in 3D. Today you catch up or go further. Monday you use the same tools to start a Warren truss bridge."
+      "connections": "Yesterday you tested a load and an effort in Sim Lab. Today you label all three parts and turn in your lever. Monday is the DONUTS vote, then a Warren truss bridge in TinkerCAD."
     },
     "7th Period": {
       "grade": "6th Grade",
