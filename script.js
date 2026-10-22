@@ -725,26 +725,42 @@ function createRotator(spec) {
     }));
   }
 
+  /* Commits the slide index only when the new text actually lands, so a
+     swap dropped mid-fade (below) leaves the box exactly as it was. */
   function show(i, animate) {
     clearTimeout(swapHandle);
     if (!animate) {
       box.classList.remove('is-swapping');
+      index = i;
       apply(i);
       return;
     }
     box.classList.add('is-swapping');
-    swapHandle = setTimeout(() => apply(i), ROTATE_SWAP_MS);
+    swapHandle = setTimeout(() => {
+      // focused during the fade — fade back in on the slide that's
+      // already there rather than pulling the text out from under
+      // someone who just leaned in
+      if (isBoxFocused(box)) { box.classList.remove('is-swapping'); return; }
+      index = i;
+      apply(i);
+    }, ROTATE_SWAP_MS);
   }
 
   function paintTimer() {
     if (timerEl) timerEl.textContent = secondsLeft;
   }
 
+  /* Clicking a bento blows it up to fill the screen (initFocusMode), and
+     a slide swapping out mid-sentence is the one moment that must not
+     happen. So a focused box holds: the countdown stops where it is and
+     picks up from that number once focus is released, rather than
+     running down behind the enlarged box and swapping the instant the
+     class looks away. */
   function tick() {
+    if (isBoxFocused(box)) return;
     secondsLeft -= 1;
     if (secondsLeft <= 0) {
-      index = (index + 1) % slides.length;
-      show(index, true);
+      show((index + 1) % slides.length, true);
       secondsLeft = rotateSeconds;
     }
     paintTimer();
@@ -1039,6 +1055,18 @@ function initFullscreenToggle() {
    Click-to-focus — clicking a box dims everything else; clicking
    the focused box again, or clicking outside all boxes, undims.
    ============================================================ */
+
+/* The one place that answers "is someone reading this box right now?"
+
+   Focus is the board's only signal that a bento has an audience rather
+   than a glance, so anything on a timer that would change what a box
+   says checks this first and holds instead: the rotating bentos here,
+   the trivia bento on Indoor Lunch, the FAQ bento on VEX. Those page
+   scripts load after this one, so they share the predicate rather than
+   each spelling out the class name. */
+function isBoxFocused(box) {
+  return !!box && box.classList.contains('is-focused');
+}
 
 function initFocusMode() {
   const boardGrid = document.getElementById('board-grid');
