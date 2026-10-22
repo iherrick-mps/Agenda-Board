@@ -175,14 +175,31 @@ async function initIndoorLunchTrivia() {
     if (phaseLabelEl) phaseLabelEl.textContent = 'Answer';
   }
 
+  function phaseSeconds(p) {
+    return p === 'question' ? TRIVIA_QUESTION_SECONDS : TRIVIA_ANSWER_SECONDS;
+  }
+
   // same fade-out-swap-fade-in shape as the main board's rotating
   // bentos (see createRotator() in script.js) — ROTATE_SWAP_MS must
-  // match the .box-rot transition duration in styles.css
-  function swapTo(renderFn) {
+  // match the .box-rot transition duration in styles.css. The phase
+  // changes only when the new text lands, so a swap dropped mid-fade
+  // leaves the bento consistent with what's on screen.
+  function swapTo(nextPhase) {
     clearTimeout(swapHandle);
     box.classList.add('is-swapping');
+    secondsLeft = phaseSeconds(nextPhase);
     swapHandle = setTimeout(() => {
-      renderFn();
+      // focused during the fade — fade back in on what's already there
+      // and give it a full turn rather than swapping the question out
+      // from under someone who just leaned in
+      if (isBoxFocused(box)) {
+        box.classList.remove('is-swapping');
+        secondsLeft = phaseSeconds(phase);
+        paintTimer();
+        return;
+      }
+      phase = nextPhase;
+      if (phase === 'answer') renderAnswerPhase(); else renderQuestionPhase();
       requestAnimationFrame(() => requestAnimationFrame(() => {
         box.classList.remove('is-swapping');
       }));
@@ -193,18 +210,15 @@ async function initIndoorLunchTrivia() {
     if (timerEl) timerEl.textContent = secondsLeft;
   }
 
+  /* Clicking a bento blows it up to fill the screen (initFocusMode in
+     script.js). While this one is up someone is reading the question,
+     so the countdown holds where it is and the answer waits — a
+     question that vanishes mid-read is worse than one that lingers. */
   function tick() {
+    if (isBoxFocused(box)) return;
     secondsLeft -= 1;
     if (secondsLeft <= 0) {
-      if (phase === 'question') {
-        phase = 'answer';
-        secondsLeft = TRIVIA_ANSWER_SECONDS;
-        swapTo(renderAnswerPhase);
-      } else {
-        phase = 'question';
-        secondsLeft = TRIVIA_QUESTION_SECONDS;
-        swapTo(renderQuestionPhase);
-      }
+      swapTo(phase === 'question' ? 'answer' : 'question');
     }
     paintTimer();
   }

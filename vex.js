@@ -1058,9 +1058,7 @@ function initVexFaq() {
 
   // clicking a bento blows it up to fill the screen (initFocusMode in
   // script.js) — if this one is up, someone is reading it
-  function isFocused() {
-    return box.classList.contains('is-focused');
-  }
+  const isFocused = () => isBoxFocused(box);
 
   function advance() {
     if (isFocused()) return;
