@@ -22,18 +22,19 @@
       "grade": "7th Grade",
       "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD lever with the fulcrum, load, and effort labeled, and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
       "workingNow": "Open the Google Classroom assignment called TinkerCAD Lever. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my lever has the words FULCRUM, LOAD, and EFFORT on the right parts, and I have turned in a screenshot and a share link.",
+      "smartGoal": "By the end of class, my lever has the words FULCRUM, LOAD, and EFFORT on the right parts, and I have turned in a screenshot.",
       "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Turn in what you have now (5 min)",
-        "We do: add text labels to your lever (12 min)",
-        "You do: finish and catch up (15 min)",
-        "Update your screenshot and share link (8 min)",
-        "Due Sunday reminder (5 min)"
+        "Turn in what you have now (4 min)",
+        "We do: add a load box and press Play (9 min)",
+        "We do: label FULCRUM, LOAD, EFFORT (9 min)",
+        "You do: finish or Future Engineer (12 min)",
+        "Final screenshot, turn in (7 min)",
+        "Turn and talk: where is the effort? (4 min)"
       ],
-      "connections": "Wednesday you added the load and the effort. Today you label all three parts and turn in your lever. Tomorrow is catch-up and Future Engineer day."
+      "connections": "Wednesday you added a joint and watched your lever move in Sim Lab. Today you add a load, label the fulcrum, load, and effort, and turn in. Tomorrow is catch-up and Future Engineer day."
     },
     "7th Period": {
       "grade": "6th Grade",
