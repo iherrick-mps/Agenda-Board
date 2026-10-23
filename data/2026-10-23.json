@@ -20,21 +20,21 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: your Balance Your Lever doc, with a screenshot of your lever balanced in Sim Lab after at least 3 seconds of Play, plus 2 short answers. Turning it in is 70 points. You turn it in once, at the end of class.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD: Balance Your Lever. Read the instructions, follow them, and turn it in once at the end of class. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my lever stays balanced in Sim Lab for at least 3 seconds, and my screenshot and answers are turned in.",
+      "weeklyDeliverable": "Due Sunday night: your Build It in Sim Lab doc, with a screenshot of your machine in Sim Lab (a static base, a joint, a deck on the joint, and at least 2 objects) and 2 short answers. Turning it in is 70 points. You turn it in once, at the end of class.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD: Build It in Sim Lab. Read the instructions, follow them, and turn it in once at the end of class. There is no exit ticket today.",
+      "smartGoal": "By the end of class, I have built a machine in Sim Lab with a static base, a joint, a deck, and at least 2 objects, and I have turned in my screenshot and answers.",
       "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "We do: what makes a lever balance? (6 min)",
-        "You do: balance your lever in Sim Lab (14 min)",
-        "Screenshot after 3 seconds, Boxes 2 and 3 (12 min)",
-        "Gallery walk: 2 classmates' balanced levers (5 min)",
+        "We do: the 4 parts every build needs (6 min)",
+        "You do: build it in Sim Lab (16 min)",
+        "Screenshot while playing, Boxes 2 and 3 (10 min)",
+        "Gallery walk: 2 classmates' machines (5 min)",
         "Turn in on Google Classroom (3 min)"
       ],
-      "connections": "Yesterday you saw a bigger effort lift the load. Today you make both sides equal so the lever balances, and prove it with a screenshot. Monday is the DONUTS vote, then a Warren truss bridge in TinkerCAD."
+      "connections": "This week you built a lever with a fulcrum, a joint, a beam, and boxes. Today you show you can build any machine with those 4 parts in Sim Lab. Monday is the DONUTS vote, then a Warren truss bridge in TinkerCAD."
     },
     "7th Period": {
       "grade": "6th Grade",
