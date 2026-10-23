@@ -3,57 +3,56 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: the Command Pattern turn-in doc you get Friday, with your live game link, your plan for which key calls which command, and 3 sentences about the Command pattern (85 points even if your game breaks), plus your live game with your three commands working (15 points).",
-      "workingNow": "Open the Google Classroom assignment called Command Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, every box on my Answers tab is filled in, my live game uses all three commands, and the doc is turned in.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
+      "weeklyDeliverable": "Due Sunday night: your Command Pattern: 3 New Buttons doc. Fill in every box (3 new buttons, each with its key, command, invoker, and receiver) for 85 points even if your game breaks, plus 5 points for each new command working in your live game. You turn it in once, at the end of class.",
+      "workingNow": "Open the Google Classroom assignment called Command Pattern: 3 New Buttons. Read the instructions, follow them, and turn it in once at the end of class. There is no exit ticket today.",
+      "smartGoal": "By the end of class, I have planned 3 new button presses with their invoker and receiver, built them with Copilot, and turned in my doc.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create procedures with parameters to organize code and make it easier to reuse.",
       "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Write first: Boxes 1, 2, and 3 (10 min)",
-        "Finish or fix your commands (11 min)",
-        "Commit, Sync Changes, hard refresh, check (5 min)",
-        "Gallery play: 2 classmates' games (9 min)",
+        "Plan 3 new buttons: write Boxes 1 to 4 (12 min)",
+        "Build them with Copilot (15 min)",
+        "Commit, Sync, test live, write Box 5 (8 min)",
         "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "This week every player action got its own named command. Today you write it up, check your live game, and play two classmates' games. Monday is the DONUTS vote, then the Factory pattern."
+      "connections": "This week you turned Left, Right, and Space into named commands. Today you invent 3 more buttons, name each one's invoker and receiver, and build them. Monday is the DONUTS vote, then the Factory pattern."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD lever with the fulcrum, load, and effort labeled. A screenshot of whatever you have is 70 points. You turn it in once, at the end of Friday's class.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD Lever. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my lever has FULCRUM, LOAD, and EFFORT on the right parts, and my screenshot is turned in.",
+      "weeklyDeliverable": "Due Sunday night: your Balance Your Lever doc, with a screenshot of your lever balanced in Sim Lab after at least 3 seconds of Play, plus 2 short answers. Turning it in is 70 points. You turn it in once, at the end of class.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD: Balance Your Lever. Read the instructions, follow them, and turn it in once at the end of class. There is no exit ticket today.",
+      "smartGoal": "By the end of class, my lever stays balanced in Sim Lab for at least 3 seconds, and my screenshot and answers are turned in.",
       "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "We do: label FULCRUM (7 min)",
-        "You do: label LOAD and EFFORT, finish (13 min)",
-        "Final screenshot, turn in (7 min)",
-        "Gallery walk: 2 classmates' levers (9 min)",
-        "Due Sunday reminder (4 min)"
+        "We do: what makes a lever balance? (6 min)",
+        "You do: balance your lever in Sim Lab (14 min)",
+        "Screenshot after 3 seconds, Boxes 2 and 3 (12 min)",
+        "Gallery walk: 2 classmates' balanced levers (5 min)",
+        "Turn in on Google Classroom (3 min)"
       ],
-      "connections": "Yesterday you tested a load and an effort in Sim Lab. Today you label all three parts and turn in your lever. Monday is the DONUTS vote, then a Warren truss bridge in TinkerCAD."
+      "connections": "Yesterday you saw a bigger effort lift the load. Today you make both sides equal so the lever balances, and prove it with a screenshot. Monday is the DONUTS vote, then a Warren truss bridge in TinkerCAD."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: your Bridge Collapse slides with the Engineer Challenge (slides 1 to 3 plus A to D: force diagram, wind test data, claim-evidence-reasoning, and your redesign). Whatever you have is 70 points. You turn it in once, at the end of Friday's class.",
-      "workingNow": "Open the Google Classroom assignment called Bridge Collapse Slides. Read the instructions, follow them, and turn in your slides when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, I can defend why the bridge fell using our test data, and my slides with my own redesign are turned in.",
+      "weeklyDeliverable": "Due Sunday night: your My Bridge Collapse slides about a NEW bridge (the bridge, what happened, a diagram, why it fell, and what engineers changed). Turning it in is 70 points. You turn it in once, at the end of class.",
+      "workingNow": "Open the Google Classroom assignment called My Bridge Collapse. Read the instructions, follow them, and turn it in once at the end of class. There is no exit ticket today.",
+      "smartGoal": "By the end of class, I can explain why a new bridge collapse happened, using a diagram and claim, evidence, and reasoning, and my slides are turned in.",
       "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
-      "eldStandard": "ELD.PI.6-8.9 \u2014 Expressing information and ideas in formal oral presentations on academic topics.",
+      "eldStandard": "ELD.PI.6-8.6 \u2014 Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
         "Wayground quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Finish slide C: reasoning (7 min)",
-        "Engineer's briefing: 1 minute per group (11 min)",
-        "Critique: was it a fair test? (4 min)",
-        "Slide D: your redesign (12 min)",
-        "Final check and turn in (6 min)"
+        "Pick your bridge, make your copy (5 min)",
+        "Research: slides 1 and 2 (12 min)",
+        "Slide 3: your diagram (8 min)",
+        "Slides 4 and 5: why it fell, what changed (10 min)",
+        "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "Yesterday you tested two decks and collected real data. Today you defend your claim to the class and design a better deck. Monday your group starts planning a bridge that won't fall, using triangles: the Warren truss."
+      "connections": "This week you learned why the Tacoma Narrows Bridge fell and tested it yourself. Today you use the same steps on a NEW bridge collapse. Monday your group starts planning a bridge that won't fall, using triangles: the Warren truss."
     }
   }
 }
