@@ -10,58 +10,94 @@
       "exitTicket": "What does a factory do, and which function in your game makes your bricks?",
       "prep": [
         "Wayground: classroom expectations quiz ready to launch",
-        "Last week's top Block Breaker games pulled up for the vote (3–6 candidates)",
+        "Weekly Grade Check-In form link posted on the board and Google Classroom",
         "bricks.js and game.js from the base game open on the projector",
         "Factory Pattern assignment + exit ticket posted on Google Classroom"
       ],
       "segments": [
         {
-          "min": 5, "title": "Wayground: classroom expectations",
+          "min": 5,
+          "title": "Wayground: classroom expectations",
           "do": "Launch the expectations Wayground as students walk in. Circulate and check logins.",
           "why": "Maslow: a predictable start lowers anxiety and resets norms for the week.",
-          "tips": ["Start it before the bell so early arrivals begin right away.", "Quietly help anyone stuck logging in instead of calling them out."]
+          "tips": [
+            "Start it before the bell so early arrivals begin right away.",
+            "Quietly help anyone stuck logging in instead of calling them out."
+          ]
         },
         {
-          "min": 5, "title": "Review answers + today's goal",
+          "min": 5,
+          "title": "Review answers + today's goal",
           "do": "Go over the most-missed expectations, then read the SMART goal aloud and point to it on the board.",
           "why": "Front-loading expectations and the goal is a universal support; students know exactly what 'done' looks like.",
-          "tips": ["Have a student rephrase the goal in their own words (ELL support).", "Give think time before calling on anyone."]
+          "tips": [
+            "Have a student rephrase the goal in their own words (ELL support).",
+            "Give think time before calling on anyone."
+          ]
         },
         {
-          "min": 6, "title": "DONUTS vote: top 3 Block Breakers",
-          "do": "Show the candidate games quickly, then run the vote. Winners air on DONUTS Tuesday.",
-          "why": "PBL needs a real audience. Peer recognition is this class's strongest motivator.",
-          "tips": ["Name one specific strength of each game as you show it (Complex Instruction: assign competence).", "Keep it moving: about 30 seconds per game."]
+          "min": 6,
+          "title": "Grade check: Infinite Campus + form",
+          "do": "Students open Infinite Campus, find their OVERALL grade in this class, and fill out the Weekly Grade Check-In form: https://docs.google.com/forms/d/e/1FAIpQLSc7aOcYeQCYbcaK7_ulLeXIof-YKjW72hPA15cpJvm6ED1nIw/viewform?usp=header",
+          "why": "Self-monitoring and ownership. Emails home about failing grades go out in a week, so every student gets a fair warning and a plan first (Maslow: safety, no surprises).",
+          "tips": [
+            "Post the form link on the board and Google Classroom before class.",
+            "Grades are private: no reading grades aloud, and turn screens away from neighbors.",
+            "Below 70%: they write a plan in the form. Point them to the regrade form and Tuesday tutoring (3:15–4:00).",
+            "Exit tickets can't be redone. Missing work can still be turned in late for full credit."
+          ]
         },
         {
-          "min": 3, "title": "This week and the points",
+          "min": 3,
+          "title": "This week and the points",
           "do": "Walk the week: Mon find, Tue plan, Wed no class, Thu build, Fri turn in once. 85 points for every box even if the game breaks.",
           "why": "Maslow safety: seeing the grading floor first makes it safe to try hard things.",
-          "tips": ["Say out loud: today the ONLY thing turned in is the exit ticket.", "Point to the week on the handout so students can track it."]
+          "tips": [
+            "Say out loud: today the ONLY thing turned in is the exit ticket.",
+            "Point to the week on the handout so students can track it."
+          ]
         },
         {
-          "min": 6, "title": "Mini-lesson: a factory builds from an order",
+          "min": 6,
+          "title": "Mini-lesson: a factory builds from an order",
           "do": "Teach ORDER → FACTORY → PRODUCT with the pizza-shop table. Key rule: to make a new kind of brick, change the factory, not every place that uses bricks.",
           "why": "Bloom Remember/Understand: one concept, one analogy, one picture before any code.",
-          "tips": ["Ask: 'What's the order? What's the kitchen? What's the pizza?' and have pairs answer.", "Keep the diagram visible for the rest of the period."]
+          "tips": [
+            "Ask: 'What's the order? What's the kitchen? What's the pizza?' and have pairs answer.",
+            "Keep the diagram visible for the rest of the period."
+          ]
         },
         {
-          "min": 5, "title": "I do: find where bricks are made",
+          "min": 5,
+          "title": "I do: find where bricks are made",
           "do": "On the projector, find makeBricks() in bricks.js, the list.push({ x, y, width, height }) line, and bricks = makeBricks(); in game.js.",
           "why": "Fully worked first round: everyone sees success before trying it in their own code.",
-          "tips": ["Use Ctrl + F live so they see the search move.", "Remind them their game may look a little different, and that's fine."]
+          "tips": [
+            "Use Ctrl + F live so they see the search move.",
+            "Remind them their game may look a little different, and that's fine."
+          ]
         },
         {
-          "min": 13, "title": "You do: ask Copilot, then check it",
+          "min": 13,
+          "title": "You do: ask Copilot, then check it",
           "do": "Students paste the question into Copilot Chat, then open the file themselves to confirm. Circulate.",
           "why": "Bloom Understand: AI explains, but students verify with their own eyes. Real engineering habit.",
-          "tips": ["If Copilot offers to edit code, students say no. Today is find-and-explain only.", "Check in first with students who struggled last week.", "Early finishers: point to Future Engineer (makeBrick(x, y) is the best one)."]
+          "tips": [
+            "If Copilot offers to edit code, students say no. Today is find-and-explain only.",
+            "Check in first with students who struggled last week.",
+            "Early finishers: point to Future Engineer (makeBrick(x, y) is the best one)."
+          ]
         },
         {
-          "min": 7, "title": "Exit ticket",
+          "min": 7,
+          "title": "Exit ticket",
           "do": "Students answer on Google Classroom using a sentence frame.",
           "why": "Quick check for understanding of today's goal, and it feeds Tuesday's Wayground.",
-          "tips": ["Read the question and both frames aloud.", "Allow dictation or speech-to-text for students who need it.", "Remind: Future Engineer turns in alongside the exit ticket for 1 KB point."]
+          "tips": [
+            "Read the question and both frames aloud.",
+            "Allow dictation or speech-to-text for students who need it.",
+            "Remind: Future Engineer turns in alongside the exit ticket for 1 KB point."
+          ]
         }
       ],
       "watchFor": [
@@ -78,59 +114,93 @@
       "exitTicket": "Why do engineers use triangles to build bridges?",
       "prep": [
         "Wayground: classroom expectations quiz ready to launch",
-        "Last week's top Sim Lab machine screenshots pulled up for the vote",
+        "Weekly Grade Check-In form link posted on the board and Google Classroom",
         "TinkerCAD open on the projector with an empty design",
         "TinkerCAD class code on hand for sign-in problems",
         "TinkerCAD Truss Bridge assignment + exit ticket posted"
       ],
       "segments": [
         {
-          "min": 5, "title": "Wayground: classroom expectations",
+          "min": 5,
+          "title": "Wayground: classroom expectations",
           "do": "Launch the expectations Wayground as students walk in.",
           "why": "Maslow: same routine every Monday. With 35 students, the routine is the management plan.",
-          "tips": ["Stand at the door and greet as they enter.", "Redirect quietly and privately."]
+          "tips": [
+            "Stand at the door and greet as they enter.",
+            "Redirect quietly and privately."
+          ]
         },
         {
-          "min": 5, "title": "Review answers + today's goal",
+          "min": 5,
+          "title": "Review answers + today's goal",
           "do": "Review the most-missed expectations, then read the SMART goal aloud.",
           "why": "Front-load expectations before any tech is on the screen.",
-          "tips": ["Ask one student to repeat the goal back.", "Give think time before calling on anyone."]
+          "tips": [
+            "Ask one student to repeat the goal back.",
+            "Give think time before calling on anyone."
+          ]
         },
         {
-          "min": 6, "title": "DONUTS vote: top 3 Sim Lab machines",
-          "do": "Show the candidate machines, then vote. Winners air on DONUTS Tuesday.",
-          "why": "PBL audience plus peer recognition. Celebrating real work builds belonging.",
-          "tips": ["Name one strength per machine (assign competence).", "Keep it fast so the build gets its full time."]
+          "min": 6,
+          "title": "Grade check: Infinite Campus + form",
+          "do": "Students open Infinite Campus, find their OVERALL grade in this class, and fill out the Weekly Grade Check-In form: https://docs.google.com/forms/d/e/1FAIpQLSc7aOcYeQCYbcaK7_ulLeXIof-YKjW72hPA15cpJvm6ED1nIw/viewform?usp=header",
+          "why": "Self-monitoring and ownership. Emails home about failing grades go out in a week, so every student gets a fair warning and a plan first (Maslow: safety, no surprises).",
+          "tips": [
+            "Post the form link on the board and Google Classroom before class.",
+            "Grades are private: no reading grades aloud, and turn screens away from neighbors.",
+            "Below 70%: they write a plan in the form. Point them to the regrade form and Tuesday tutoring (3:15–4:00).",
+            "Exit tickets can't be redone. Missing work can still be turned in late for full credit."
+          ]
         },
         {
-          "min": 3, "title": "This week and the points",
+          "min": 3,
+          "title": "This week and the points",
           "do": "Mon triangles, Tue deck, Wed no class, Thu top of the bridge, Fri finish and turn in once. Whatever they have is 70 points.",
           "why": "Maslow safety: knowing the floor lowers fear of starting.",
-          "tips": ["Say: nothing gets turned in today except the exit ticket."]
+          "tips": [
+            "Say: nothing gets turned in today except the exit ticket."
+          ]
         },
         {
-          "min": 5, "title": "Why triangles? What a truss is",
+          "min": 5,
+          "title": "Why triangles? What a truss is",
           "do": "Show the square vs. triangle table and the Warren truss diagram. Count the upward triangles together.",
           "why": "Bloom Understand: the idea comes before the tool, so the clicking has a reason.",
-          "tips": ["Use your hands: push a square into a slant, show a triangle can't.", "Say 'rigid' and have the class repeat it (ELL vocabulary)."]
+          "tips": [
+            "Use your hands: push a square into a slant, show a triangle can't.",
+            "Say 'rigid' and have the class repeat it (ELL vocabulary)."
+          ]
         },
         {
-          "min": 12, "title": "We do: Duplicate and Repeat",
+          "min": 12,
+          "title": "We do: Duplicate and Repeat",
           "do": "Click along step by step: Roof shape → turn to see the triangle → Ctrl + D → drag until corners touch → Ctrl + D three more times.",
           "why": "Fully worked first round, everyone builds the same thing at the same pace.",
-          "tips": ["Pause after each step and check thumbs up before moving on.", "Most common problem: they dragged before pressing Ctrl + D. Undo to 2 triangles and redo the move.", "Stand where you can see the most screens."]
+          "tips": [
+            "Pause after each step and check thumbs up before moving on.",
+            "Most common problem: they dragged before pressing Ctrl + D. Undo to 2 triangles and redo the move.",
+            "Stand where you can see the most screens."
+          ]
         },
         {
-          "min": 8, "title": "You do: finish a row of 5",
+          "min": 8,
+          "title": "You do: finish a row of 5",
           "do": "Students finish their own row of 5 and check it against the 3 boxes on the handout.",
           "why": "Bloom Apply: they repeat the skill on their own.",
-          "tips": ["Check in first with students who had sign-in trouble.", "Early finishers: hollow triangles or fill the gaps (Future Engineer)."]
+          "tips": [
+            "Check in first with students who had sign-in trouble.",
+            "Early finishers: hollow triangles or fill the gaps (Future Engineer)."
+          ]
         },
         {
-          "min": 6, "title": "Exit ticket",
+          "min": 6,
+          "title": "Exit ticket",
           "do": "Students answer on Google Classroom using a sentence frame.",
           "why": "Checks the concept (why triangles), not just the clicks.",
-          "tips": ["Read the question and frames aloud.", "Allow dictation for students who need it."]
+          "tips": [
+            "Read the question and frames aloud.",
+            "Allow dictation for students who need it."
+          ]
         }
       ],
       "watchFor": [
@@ -147,7 +217,7 @@
       "exitTicket": "Which shape kept its shape when you pushed it, and what happened when you braced the square?",
       "prep": [
         "Wayground: classroom expectations quiz ready to launch",
-        "Last week's top bridge-collapse slide decks pulled up for the vote",
+        "Weekly Grade Check-In form link posted on the board and Google Classroom",
         "Supplies out per pair: cardboard, ruler, scissors, glue, pencil",
         "One bag per group + marker for first names",
         "Pairs decided ahead of time (intentional grouping)",
@@ -155,52 +225,85 @@
       ],
       "segments": [
         {
-          "min": 5, "title": "Wayground: classroom expectations",
+          "min": 5,
+          "title": "Wayground: classroom expectations",
           "do": "Launch the expectations Wayground as students walk in. Supplies stay untouched for now.",
           "why": "Maslow: routine first, materials second.",
-          "tips": ["Say: 'Hands off the supplies until I say go.'"]
+          "tips": [
+            "Say: 'Hands off the supplies until I say go.'"
+          ]
         },
         {
-          "min": 4, "title": "Review answers + today's goal",
+          "min": 4,
+          "title": "Review answers + today's goal",
           "do": "Review the most-missed expectations, especially material and scissor rules, then read the goal aloud.",
           "why": "Front-load safety and expectations before a hands-on day.",
-          "tips": ["Model how scissors stay on the desk when not cutting."]
+          "tips": [
+            "Model how scissors stay on the desk when not cutting."
+          ]
         },
         {
-          "min": 6, "title": "DONUTS vote: top 3 bridge-collapse slides",
-          "do": "Show the candidate slide decks, then vote. Winners air on DONUTS Tuesday.",
-          "why": "PBL audience and peer recognition.",
-          "tips": ["Name one strong claim or diagram in each deck (assign competence)."]
+          "min": 6,
+          "title": "Grade check: Infinite Campus + form",
+          "do": "Students open Infinite Campus, find their OVERALL grade in this class, and fill out the Weekly Grade Check-In form: https://docs.google.com/forms/d/e/1FAIpQLSc7aOcYeQCYbcaK7_ulLeXIof-YKjW72hPA15cpJvm6ED1nIw/viewform?usp=header",
+          "why": "Self-monitoring and ownership. Emails home about failing grades go out in a week, so every student gets a fair warning and a plan first (Maslow: safety, no surprises).",
+          "tips": [
+            "Post the form link on the board and Google Classroom before class.",
+            "Grades are private: no reading grades aloud, and turn screens away from neighbors.",
+            "Below 70%: they write a plan in the form. Point them to the regrade form and Tuesday tutoring (3:15–4:00).",
+            "Exit tickets can't be redone. Missing work can still be turned in late for full credit."
+          ]
         },
         {
-          "min": 5, "title": "I do: one strip, one joint",
+          "min": 5,
+          "title": "I do: one strip, one joint",
           "do": "Model it: mark 2 cm × 15 cm with a ruler, cut along the wavy layer, overlap two ends, glue, press and hold 30 seconds.",
           "why": "Fully worked first round. Measuring and cutting is a skill they'll use all year.",
-          "tips": ["Show cutting across the flutes crushing the strip, then along them working.", "Assign roles: Square Engineer and Triangle Engineer. Both measure and cut."]
+          "tips": [
+            "Show cutting across the flutes crushing the strip, then along them working.",
+            "Assign roles: Square Engineer and Triangle Engineer. Both measure and cut."
+          ]
         },
         {
-          "min": 13, "title": "You do: build both shapes",
+          "min": 13,
+          "title": "You do: build both shapes",
           "do": "Square Engineer cuts 4 strips and builds the square. Triangle Engineer cuts 3 and builds the triangle. While glue sets, pairs predict out loud.",
           "why": "Complex Instruction: two roles, both necessary. Bloom Apply.",
-          "tips": ["Check rulers first. Most errors are measuring from the wrong end.", "Listen in on predictions and ask 'why?' to push reasoning.", "Visual timer on the board."]
+          "tips": [
+            "Check rulers first. Most errors are measuring from the wrong end.",
+            "Listen in on predictions and ask 'why?' to push reasoning.",
+            "Visual timer on the board."
+          ]
         },
         {
-          "min": 7, "title": "Push test, brace, test again",
+          "min": 7,
+          "title": "Push test, brace, test again",
           "do": "Pairs push the square, then the triangle. Square Engineer measures corner to corner, cuts a brace, glues it, and they test again.",
           "why": "Bloom Analyze: change one variable and compare. This is the added rigor this class asked for.",
-          "tips": ["Don't tell them the answer. Ask: 'What did the brace turn your square into?'", "Remind: push gently, we're testing shape, not breaking it."]
+          "tips": [
+            "Don't tell them the answer. Ask: 'What did the brace turn your square into?'",
+            "Remind: push gently, we're testing shape, not breaking it."
+          ]
         },
         {
-          "min": 5, "title": "Exit ticket",
+          "min": 5,
+          "title": "Exit ticket",
           "do": "Students answer on Google Classroom using a sentence frame.",
           "why": "They explain the result in words, which is the heart of today's goal.",
-          "tips": ["Read the question and frames aloud.", "Allow dictation for students who need it."]
+          "tips": [
+            "Read the question and frames aloud.",
+            "Allow dictation for students who need it."
+          ]
         },
         {
-          "min": 5, "title": "Clean up + bag pieces",
+          "min": 5,
+          "title": "Clean up + bag pieces",
           "do": "Scraps in the bin, supplies back. Shapes go in the group bag with first names.",
           "why": "Routines keep materials days possible. Their shapes come back Tuesday.",
-          "tips": ["Count scissors back in before the bell.", "Thank specific students for good material handling."]
+          "tips": [
+            "Count scissors back in before the bell.",
+            "Thank specific students for good material handling."
+          ]
         }
       ],
       "watchFor": [
@@ -211,17 +314,47 @@
     }
   },
   "accommodations": [
-    ["All students", "Agenda on the board, goal reviewed after the quiz, chunked numbered steps, I do before you do, check-yourself checklist, sentence frames, frequent check-ins, positive reinforcement. Get attention before directions; give them spoken, written, and shown."],
-    ["English learners", "Key words with a picture (ORDER/FACTORY/PRODUCT, truss diagram, strip and joint diagram). Two sentence frames per exit ticket. Partner talk before writing."],
-    ["Dyslexic learners", "Lexend Deca handouts, large type. Read steps aloud during I do / We do. Text-to-speech and speech-to-text OK. Spelling not graded."],
-    ["ADHD learners", "Short timed chunks with a visual timer. Movement built into 6th grade. Seat near the demo. If/then for non-preferred steps. Discreet redirection, fidgets, break pass."],
-    ["IEP / 504", "Extended time and dictation on the exit ticket. Shortened floor: 8th finds the function only; 7th makes 3 triangles; 6th builds and tests one shape. Supportive partner. Calm-down space and trusted adult."],
-    ["Advanced learners", "Future Engineer (OPTIONAL), pick one for 1 KB point."]
+    [
+      "All students",
+      "Agenda on the board, goal reviewed after the quiz, chunked numbered steps, I do before you do, check-yourself checklist, sentence frames, frequent check-ins, positive reinforcement. Get attention before directions; give them spoken, written, and shown."
+    ],
+    [
+      "English learners",
+      "Key words with a picture (ORDER/FACTORY/PRODUCT, truss diagram, strip and joint diagram). Two sentence frames per exit ticket. Partner talk before writing."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca handouts, large type. Read steps aloud during I do / We do. Text-to-speech and speech-to-text OK. Spelling not graded."
+    ],
+    [
+      "ADHD learners",
+      "Short timed chunks with a visual timer. Movement built into 6th grade. Seat near the demo. If/then for non-preferred steps. Discreet redirection, fidgets, break pass."
+    ],
+    [
+      "IEP / 504",
+      "Extended time and dictation on the exit ticket. Shortened floor: 8th finds the function only; 7th makes 3 triangles; 6th builds and tests one shape. Supportive partner. Calm-down space and trusted adult."
+    ],
+    [
+      "Advanced learners",
+      "Future Engineer (OPTIONAL), pick one for 1 KB point."
+    ]
   ],
   "frameworks": [
-    ["Project-Based Learning", "Each grade starts the week's public product. The DONUTS vote gives last week's work a real audience."],
-    ["Complex Instruction", "Assigned roles, 'no one is good at all of this, everyone is good at some of it,' and publicly naming competence."],
-    ["Maslow's Hierarchy", "Predictable routine, points shown up front, one exit ticket only, belonging through roles and the vote, esteem through DONUTS."],
-    ["Bloom's Taxonomy", "8th Remember/Understand. 7th Understand/Apply. 6th Apply/Analyze."]
+    [
+      "Project-Based Learning",
+      "Each grade starts the week's product. No DONUTS vote this week: votes are only for work with real creative freedom."
+    ],
+    [
+      "Complex Instruction",
+      "Assigned roles, 'no one is good at all of this, everyone is good at some of it,' and publicly naming competence."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "Predictable routine, points shown up front, one exit ticket only, the weekly grade check so no grade is a surprise, belonging through roles."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "8th Remember/Understand. 7th Understand/Apply. 6th Apply/Analyze."
+    ]
   ]
 }
