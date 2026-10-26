@@ -3,55 +3,60 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your new brick type, and 3 sentences about the Factory pattern (85 points even if your game breaks), plus your live game with a BrickFactory building at least one row of your new bricks (15 points).",
+      "weeklyDeliverable": "Due Sunday night: the Factory Pattern turn-in doc you get Friday, with your live game link, your plan for your new brick type, and 3 sentences about the Factory pattern (85 points even if your game breaks), plus your live game with a BrickFactory building at least one row of your new bricks (15 points). You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Factory Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can explain what a factory does and point to the code where MY game makes its bricks.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems into parts to facilitate the design, implementation, and review of programs.",
-      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "smartGoal": "By the end of class, I can explain what a factory does and name the function and file where MY game makes its bricks.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Wayground quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "DONUTS vote: top 3 Block Breakers (6 min)",
         "This week and the points (3 min)",
-        "Mini-lesson: a factory builds from an order (7 min)",
+        "Mini-lesson: a factory builds from an order (6 min)",
         "I do: find where bricks are made (5 min)",
-        "You do: ask Copilot how your bricks get made (17 min)",
-        "Exit Ticket, then share out (13 min)"
+        "You do: ask Copilot, then check it yourself (13 min)",
+        "Exit Ticket: what does a factory do? (7 min)"
       ],
-      "connections": "Last week every player action became a command. This week is the Factory pattern: one BrickFactory builds all your bricks. Today you find where your game makes bricks now. Tomorrow you design a new brick type. No class Wednesday."
+      "connections": "Last week every player action became a named command. This week is the Factory pattern: one BrickFactory builds your bricks for you. Today you find where your game makes bricks now. Tuesday you plan a new brick type. No class Wednesday. Thursday you build it, and Friday you turn in."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD Warren truss bridge and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD Warren truss bridge and its share link. A screenshot of whatever you have is 70 points. You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called TinkerCAD Truss Bridge. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can use Duplicate to make a row of 5 matching triangles in TinkerCAD.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "smartGoal": "By the end of class, I can use Duplicate and Repeat to make a row of 5 matching triangles in TinkerCAD, and explain why bridges use triangles.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Wayground quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "DONUTS vote: top 3 Sim Lab machines (6 min)",
         "This week and the points (3 min)",
-        "Why triangles? What a truss is (7 min)",
-        "We do: the Duplicate trick (15 min)",
-        "You do: a row of 5 triangles (12 min)",
-        "Exit Ticket: why use triangles? (8 min)"
+        "Why triangles? What a truss is (5 min)",
+        "We do: Duplicate and Repeat (12 min)",
+        "You do: a row of 5 triangles (8 min)",
+        "Exit Ticket: why use triangles? (6 min)"
       ],
-      "connections": "Last week you built and labeled a lever. This week you design a Warren truss bridge, which is built from repeated triangles. Today you learn Duplicate. Tomorrow you line your triangles up on a bridge deck. No class Wednesday."
+      "connections": "Last week you built machines in Sim Lab with a base, a joint, and a deck. This week you design a Warren truss bridge, built from repeated triangles. Today you learn Duplicate and Repeat. Tuesday you line your triangles up on a bridge deck. No class Wednesday."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a photo of your group's Warren truss build plan with every part labeled and measured. A photo of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called Warren Truss Build Plan. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, our pair has built one cardboard square and one triangle and tested which one holds its shape when we push.",
-      "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Due Sunday night: the Warren Truss turn-in doc you get Friday, with a photo of your group's cardboard Warren truss, your build plan, and your load test result. Turning it in is 70 points. You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Warren Truss Bridge. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my partner and I have measured, cut, and glued a cardboard square and triangle, push-tested both, then braced the square and tested it again.",
+      "contentStandard": "NGSS MS-ETS1-2 — Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "This week and the points (3 min)",
-        "I do: measure and cut one strip (7 min)",
-        "You do: build a square and a triangle (15 min)",
-        "Push test and share what happened (5 min)",
-        "Exit Ticket: which shape was stronger? (8 min)",
-        "Clean up and bag your pieces (7 min)"
+        "Review quiz answers + today's goal (4 min)",
+        "DONUTS vote: top 3 bridge-collapse slides (6 min)",
+        "I do: measure, cut, and glue one joint (5 min)",
+        "You do: build a square and a triangle (13 min)",
+        "Push test, brace the square, test again (7 min)",
+        "Exit Ticket: which shape held, and why? (5 min)",
+        "Clean up and bag your pieces (5 min)"
       ],
-      "connections": "Last week you learned why the Tacoma Narrows Bridge fell. This week your group plans a stronger bridge, a Warren truss. Today you test why engineers use triangles. Tomorrow you start your group's build plan. No class Wednesday."
+      "connections": "Last week you explained why real bridges fell. This week your group builds a stronger bridge from cardboard: a Warren truss. Today you test why engineers use triangles. Tuesday your group draws the plan. No class Wednesday. Thursday you build it, and Friday you test how much it holds."
     }
   }
 }
