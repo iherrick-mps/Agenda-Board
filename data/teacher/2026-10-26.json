@@ -4,13 +4,14 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "topic": "Factory Pattern: where do bricks come from?",
-      "goal": "By the end of class, I can explain what a factory does and name the function and file where MY game makes its bricks.",
+      "topic": "Factory Method: the closed box",
+      "goal": "By the end of class, I can explain what a factory method hides inside its closed box, and name the function and file where MY game makes its bricks.",
       "bloom": "Remember / Understand",
-      "exitTicket": "What does a factory do, and which function in your game makes your bricks?",
+      "exitTicket": "What does a factory method hide inside its closed box, and which function in your game makes your bricks?",
       "prep": [
         "Wayground: classroom expectations quiz ready to launch",
         "Weekly Grade Check-In form link posted on the board and Google Classroom",
+        "Video queued: The Factory Method Pattern (Train To Code, ~4 min), also linked in Google Classroom",
         "bricks.js and game.js from the base game open on the projector",
         "Factory Pattern assignment + exit ticket posted on Google Classroom"
       ],
@@ -59,22 +60,24 @@
         },
         {
           "min": 6,
-          "title": "Mini-lesson: a factory builds from an order",
-          "do": "Teach ORDER → FACTORY → PRODUCT with the pizza-shop table. Key rule: to make a new kind of brick, change the factory, not every place that uses bricks.",
-          "why": "Bloom Remember/Understand: one concept, one analogy, one picture before any code.",
+          "title": "Video + mini-lesson: the closed box",
+          "do": "Play the Train To Code factory method video (~4 min). Then teach the words: FACTORY METHOD, CLOSED BOX, ATTRIBUTES, INSTANCE, SELECTION LOGIC, using the video's animal example (barks → Dog; eats mice + longer than 3 ft → Snake; otherwise Cat).",
+          "why": "Bloom Remember/Understand: one model (the Boeing factory as a closed box) and one worked example before any code. The handout uses the video's exact words.",
           "tips": [
-            "Ask: 'What's the order? What's the kitchen? What's the pizza?' and have pairs answer.",
-            "Keep the diagram visible for the rest of the period."
+            "Pause on the Boeing factory: 'What do you see from outside? What's hidden inside?'",
+            "Ask pairs: 'In the animal example, what are the attributes? What's the instance?'",
+            "Key rule: simple on the outside, selection logic hidden inside."
           ]
         },
         {
           "min": 5,
           "title": "I do: find where bricks are made",
-          "do": "On the projector, find makeBricks() in bricks.js, the list.push({ x, y, width, height }) line, and bricks = makeBricks(); in game.js.",
+          "do": "On the projector, find makeBricks() in bricks.js (the inner workings), list.push({ x, y, width, height }) (each brick instance and its 4 attributes), and bricks = makeBricks(); in game.js (the outside of the closed box).",
           "why": "Fully worked first round: everyone sees success before trying it in their own code.",
           "tips": [
             "Use Ctrl + F live so they see the search move.",
-            "Remind them their game may look a little different, and that's fine."
+            "Remind them their game may look a little different, and that's fine.",
+            "Point out: makeBricks() hides how bricks are made, but has no selection logic yet. That's Thursday."
           ]
         },
         {
@@ -85,14 +88,14 @@
           "tips": [
             "If Copilot offers to edit code, students say no. Today is find-and-explain only.",
             "Check in first with students who struggled last week.",
-            "Early finishers: point to Future Engineer (makeBrick(x, y) is the best one)."
+            "Early finishers: point to Future Engineer (the tiny makeBrick(x, y) factory method is the best one)."
           ]
         },
         {
           "min": 7,
           "title": "Exit ticket",
           "do": "Students answer on Google Classroom using a sentence frame.",
-          "why": "Quick check for understanding of today's goal, and it feeds Tuesday's Wayground.",
+          "why": "Checks the closed-box idea and the real code location, which Tuesday's Wayground reviews.",
           "tips": [
             "Read the question and both frames aloud.",
             "Allow dictation or speech-to-text for students who need it.",
@@ -354,7 +357,7 @@
     ],
     [
       "Bloom's Taxonomy",
-      "8th Remember/Understand. 7th Understand/Apply. 6th Apply/Analyze."
+      "8th Remember/Understand (closed box, factory method, find it in code). 7th Understand/Apply. 6th Apply/Analyze."
     ]
   ]
 }

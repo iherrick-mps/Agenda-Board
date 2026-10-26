@@ -3,9 +3,9 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: the Factory Pattern turn-in doc you get Friday, with your live game link, your plan for your new brick type, and 3 sentences about the Factory pattern (85 points even if your game breaks), plus your live game with a BrickFactory building at least one row of your new bricks (15 points). You turn it in once, at the end of Friday's class.",
+      "weeklyDeliverable": "Due Sunday night: the Factory Pattern turn-in doc you get Friday, with your live game link, your plan for your new brick type, and 3 sentences about the Factory pattern (85 points even if your game breaks), plus your live game with a brick factory method building at least one row of your new bricks (15 points). You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Factory Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can explain what a factory does and name the function and file where MY game makes its bricks.",
+      "smartGoal": "By the end of class, I can explain what a factory method hides inside its closed box, and name the function and file where MY game makes its bricks.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems into parts to facilitate the design, implementation, and review of programs.",
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
@@ -13,12 +13,12 @@
         "Review quiz answers + today's goal (5 min)",
         "Grade check: Infinite Campus + form (6 min)",
         "This week and the points (3 min)",
-        "Mini-lesson: a factory builds from an order (6 min)",
+        "Video + mini-lesson: the closed box (6 min)",
         "I do: find where bricks are made (5 min)",
         "You do: ask Copilot, then check it yourself (13 min)",
-        "Exit Ticket: what does a factory do? (7 min)"
+        "Exit Ticket: what does a factory method hide? (7 min)"
       ],
-      "connections": "Last week every player action became a named command. This week is the Factory pattern: one BrickFactory builds your bricks for you. Today you find where your game makes bricks now. Tuesday you plan a new brick type. No class Wednesday. Thursday you build it, and Friday you turn in."
+      "connections": "Last week every player action became a named command. This week is the Factory Method pattern: a closed box that hides how your bricks get made. Today you find where your game makes bricks now. Tuesday you plan a new brick type. No class Wednesday. Thursday you build it, and Friday you turn in."
     },
     "6th Period": {
       "grade": "7th Grade",
