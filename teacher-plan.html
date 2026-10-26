@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Plan — Robotics &amp; Coding</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body.tp-page { background: var(--bg); color: var(--ink); margin: 0; font-family: var(--font-body); }
+  .tp-top { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 14px 24px;
+    background: var(--surface); border-bottom: 1px solid var(--grid-line); position: sticky; top: 0; z-index: 5; }
+  .tp-top a { color: var(--ink-soft); text-decoration: none; font-weight: 600; }
+  .tp-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; }
+  .tp-date { color: var(--ink-soft); font-weight: 600; }
+  .tp-clock { margin-left: auto; font-family: var(--font-mono); font-size: 26px; font-weight: 700; }
+  .tp-tabs { display: flex; gap: 8px; padding: 14px 24px 0; flex-wrap: wrap; }
+  .tp-tab { border: 2px solid var(--grid-line); background: var(--surface); border-radius: var(--radius);
+    padding: 8px 14px; font: 600 15px var(--font-body); cursor: pointer; color: var(--ink); }
+  .tp-tab small { display: block; color: var(--ink-soft); font-weight: 500; }
+  .tp-tab.active { border-color: var(--c-goal); box-shadow: inset 0 -3px 0 var(--c-goal); }
+  .tp-tab.live::after { content: "LIVE"; margin-left: 8px; font-size: 11px; background: var(--c-working);
+    color: #fff; padding: 2px 6px; border-radius: 4px; vertical-align: middle; }
+  .tp-wrap { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 18px; padding: 16px 24px 24px; }
+  @media (max-width: 900px) { .tp-wrap { grid-template-columns: 1fr; padding: 12px 16px; } .tp-top, .tp-tabs { padding-left: 16px; padding-right: 16px; } }
+  .card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--grid-line);
+    border-top: 6px solid var(--accent, var(--c-goal)); padding: 16px 20px; margin-bottom: 18px; }
+  .card h2 { font-family: var(--font-display); font-size: 14px; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--accent, var(--c-goal)); margin: 0 0 8px; }
+  .now { --accent: var(--c-working); }
+  .now-status { font-weight: 700; color: var(--ink-soft); font-size: 14px; text-transform: uppercase; letter-spacing: .05em; }
+  .now-title { font-family: var(--font-display); font-size: 32px; font-weight: 700; margin: 4px 0 6px; line-height: 1.15; }
+  .now-time { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  .now-left { font-family: var(--font-mono); font-size: 44px; font-weight: 700; color: var(--c-working); }
+  .now-range { color: var(--ink-soft); font-weight: 600; }
+  .bar { height: 10px; background: var(--grid-line-soft); border-radius: 6px; overflow: hidden; margin: 10px 0 14px; }
+  .bar > div { height: 100%; background: var(--c-working); width: 0; transition: width .5s linear; }
+  .label { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; margin: 12px 0 4px; }
+  .lbl-do { color: var(--c-eld); } .lbl-why { color: var(--c-goal); } .lbl-tips { color: var(--c-agenda); }
+  .now p { margin: 0; font-size: 18px; line-height: 1.5; }
+  .now ul, .card ul { margin: 0; padding-left: 20px; font-size: 16px; line-height: 1.5; }
+  .next-up { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--grid-line); color: var(--ink-soft); font-weight: 600; }
+  .goal { --accent: var(--c-goal); } .goal p { font-size: 17px; margin: 0 0 8px; line-height: 1.45; }
+  .meta { color: var(--ink-soft); font-size: 14px; }
+  .tl { --accent: var(--c-agenda); }
+  .tl ol { list-style: none; margin: 0; padding: 0; }
+  .tl li { display: grid; grid-template-columns: 112px 1fr 44px; gap: 8px; padding: 9px 8px; border-radius: 6px; cursor: pointer; align-items: center; }
+  .tl li:hover { background: var(--bg); }
+  .tl li .t { font-family: var(--font-mono); font-size: 14px; color: var(--ink-soft); }
+  .tl li .m { text-align: right; color: var(--ink-soft); font-size: 14px; }
+  .tl li.done { opacity: .45; }
+  .tl li.cur { background: #fdece8; font-weight: 700; outline: 2px solid var(--c-working); }
+  .tl li.sel:not(.cur) { outline: 2px dashed var(--c-goal); }
+  .prep { --accent: var(--c-deliverable); } .watch { --accent: var(--c-working); }
+  .prep label { display: flex; gap: 8px; align-items: flex-start; font-size: 16px; line-height: 1.4; margin-bottom: 6px; cursor: pointer; }
+  .prep input { margin-top: 4px; width: 18px; height: 18px; }
+  details.card summary { cursor: pointer; font-family: var(--font-display); font-weight: 700; color: var(--accent); font-size: 15px; }
+  .acc { --accent: var(--c-standard); } .fw { --accent: var(--c-connect); }
+  .acc table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 15px; }
+  .acc td { border-top: 1px solid var(--grid-line-soft); padding: 8px 6px; vertical-align: top; line-height: 1.45; }
+  .acc td:first-child { font-weight: 700; width: 30%; }
+  .note { padding: 0 24px; color: var(--ink-soft); font-weight: 600; margin-top: 10px; }
+  .empty { padding: 40px 24px; font-size: 18px; }
+  .peek { font-size: 13px; color: var(--c-goal); font-weight: 600; cursor: pointer; margin-left: 8px; }
+</style>
+</head>
+<body class="tp-page">
+
+<div class="tp-top">
+  <a href="index.html">&larr; Home</a>
+  <span class="tp-title" id="tp-title">Teacher Plan</span>
+  <span class="tp-date" id="tp-date"></span>
+  <span class="tp-clock" id="tp-clock">--:--:--</span>
+</div>
+<div class="note" id="tp-note"></div>
+<div class="tp-tabs" id="tp-tabs"></div>
+<div id="tp-main"></div>
+
+<script src="teacher-plan.js"></script>
+</body>
+</html>
