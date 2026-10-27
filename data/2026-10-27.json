@@ -3,51 +3,57 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your new brick type, and 3 sentences about the Factory pattern (85 points even if your game breaks), plus your live game with a BrickFactory building at least one row of your new bricks (15 points).",
+      "weeklyDeliverable": "Due Sunday night: the Factory Pattern turn-in doc you get Friday, with your live game link, your plan for your new brick type, and 3 sentences about the Factory pattern (85 points even if your game breaks), plus your live game with a brick factory method building at least one row of your new bricks (15 points). You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Factory Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can write a plan for one new brick type: how it looks and how many hits it takes.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems into parts to facilitate the design, implementation, and review of programs.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "smartGoal": "By the end of class, I can plan one new brick type: the attribute that picks it, and 2 ways its instance is different from a normal brick.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "Mini-lesson: what makes a brick type different (7 min)",
-        "You do: plan your new brick type (15 min)",
-        "We do: watch a BrickFactory get built (13 min)",
-        "Exit Ticket: your brick type and why (10 min)"
+        "Review quiz answers + today's goal (5 min)",
+        "Mini-lesson: attributes pick the instance (6 min)",
+        "We do: read a factory method with selection logic (10 min)",
+        "You do: plan your brick type (14 min)",
+        "Exit Ticket: your brick plan (10 min)"
       ],
-      "connections": "Yesterday you found where your game makes bricks. Today you plan one new brick type and watch a BrickFactory get built. Thursday you build yours with Copilot and turn in."
+      "connections": "Yesterday you found your closed box, makeBricks(), and saw it has no selection logic yet. Today you read a factory method that picks a strong brick, then plan your own brick type. No class Wednesday. Thursday you build it inside the closed box."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD Warren truss bridge and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD Warren truss bridge and its share link. A screenshot of whatever you have is 70 points. You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called TinkerCAD Truss Bridge. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my 5 triangles sit in a straight line on a flat bridge deck, and a progress screenshot is turned in.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "smartGoal": "By the end of class, my 5 triangles sit on top of a flat bridge deck, lined up in a straight row using the Align tool.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.12 — Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "We do: make the bridge deck (12 min)",
-        "You do: line triangles up with Align (20 min)",
-        "Turn in a progress screenshot (5 min)",
-        "Exit Ticket: name 2 bridge parts (8 min)"
+        "Review quiz answers + today's goal (5 min)",
+        "What a deck is (3 min)",
+        "We do: build the deck (12 min)",
+        "We do: line them up with Align (10 min)",
+        "You do: check and fix your bridge (7 min)",
+        "Exit Ticket: deck and triangles (8 min)"
       ],
-      "connections": "Yesterday you made a row of triangles with Duplicate. Today you set them on a deck and line them up. Thursday you add the top and finish your bridge."
+      "connections": "Yesterday you made a row of 5 triangles with Duplicate and Repeat. Today you stand them on a bridge deck and line them up with Align. No class Wednesday. Thursday you add the top of the bridge."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a photo of your group's Warren truss build plan with every part labeled and measured. A photo of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called Warren Truss Build Plan. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my group has drawn the outline of our Warren truss with the top chord, bottom chord, and diagonals.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "weeklyDeliverable": "Due Sunday night: the Warren Truss turn-in doc you get Friday, with a photo of your group's cardboard Warren truss, your build plan, and your load test result. Turning it in is 70 points. You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Warren Truss Bridge. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group has a full-size drawing of one side truss with every piece measured, and a cut list with the cut length and count for every piece of the whole bridge.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground quiz (5 min)",
-        "I do: parts of a Warren truss (8 min)",
-        "Group roles: Drafter, Measurer, Checker (5 min)",
-        "You do: draw your group's truss (25 min)",
-        "Exit Ticket: name the 3 truss parts (7 min)"
+        "Review quiz answers + today's goal (4 min)",
+        "I do: the specs and the cut length rule (7 min)",
+        "Groups of 4 and roles (3 min)",
+        "You do: draw one side truss, full size (14 min)",
+        "You do: make the cut list (7 min)",
+        "Exit Ticket: how many diagonals? (7 min)",
+        "Clean up and bag your plan (3 min)"
       ],
-      "connections": "Yesterday you proved triangles hold their shape better than squares. Today your group starts drawing a Warren truss bridge plan. Thursday you add measurements and labels and turn it in."
+      "connections": "Yesterday a brace turned your square into two triangles and it stopped squishing. Today your group draws a Warren truss that spans 30 cm and writes the cut list. No class Wednesday. Thursday you build it from your plan, and Friday you test how much it holds."
     }
   }
 }
