@@ -221,11 +221,12 @@
         {
           "min": 3,
           "title": "Groups of 4 and roles",
-          "do": "Join two Monday pairs. Assign Drafter, Measurer, Materials Manager, Checker.",
+          "do": "Join two Monday pairs. Students line up by birthday, youngest to oldest: Drafter (youngest), Measurer (second youngest), Materials Manager (second oldest), Checker (oldest). Group of 3: oldest is also Materials Manager. Group of 5: two Drafters.",
           "why": "Complex Instruction: every role is needed; no one can finish alone.",
           "tips": [
             "Say: 'No one is good at all of this. Everyone is good at some of it.'",
-            "Give a quieter student the Checker role: it has real authority."
+            "Birthday order is random, so no one picks the 'easy' role, and status doesn't decide who leads.",
+            "The Checker has real authority: nothing is done until they say so."
           ]
         },
         {
