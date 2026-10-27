@@ -16,40 +16,67 @@
       ],
       "segments": [
         {
-          "min": 5, "title": "Wayground quiz",
+          "min": 5,
+          "title": "Wayground quiz",
           "do": "Launch the Tuesday review Wayground: closed box, factory method, attributes, instance, selection logic, makeBricks().",
           "why": "Spiral review of Monday's vocabulary before using it to design.",
-          "tips": ["Start it before the bell.", "Note the most-missed question for the review."]
+          "tips": [
+            "Start it before the bell.",
+            "Note the most-missed question for the review."
+          ]
         },
         {
-          "min": 5, "title": "Review answers + today's goal",
+          "min": 5,
+          "title": "Review answers + today's goal",
           "do": "Go over the most-missed questions, then read the SMART goal aloud.",
           "why": "Fix misconceptions before students design with these words.",
-          "tips": ["If 'attribute' vs 'instance' was missed, use the arrow: attributes IN, instance OUT.", "Have one student say the goal back in their own words."]
+          "tips": [
+            "If 'attribute' vs 'instance' was missed, use the arrow: attributes IN, instance OUT.",
+            "Have one student say the goal back in their own words."
+          ]
         },
         {
-          "min": 6, "title": "Mini-lesson: attributes pick the instance",
+          "min": 6,
+          "title": "Mini-lesson: attributes pick the instance",
           "do": "Put the animal factory next to the brick factory. Walk the 3 rows: attributes in, selection logic, instance out. Then the brick attribute table: color, hits, width/height, points.",
           "why": "Bloom Understand: map the video's example directly onto their own game.",
-          "tips": ["Ask pairs: 'In the brick factory, what's the attribute? What's the instance?'", "Keep the closed-box diagram up."]
+          "tips": [
+            "Ask pairs: 'In the brick factory, what's the attribute? What's the instance?'",
+            "Keep the closed-box diagram up."
+          ]
         },
         {
-          "min": 10, "title": "We do: read the worked example",
+          "min": 10,
+          "title": "We do: read the worked example",
           "do": "Read makeBrick(x, y, type) together line by line. Students find each video word in the code: attributes, selection logic, instance, outside of the box.",
           "why": "Fully worked round 1 (the strong brick). Their own brick is the real experiment.",
-          "tips": ["Read only. Nobody opens Copilot today.", "Cold-call with think time: 'Point to the selection logic.'", "Stress: their brick must be different from 'strong'."]
+          "tips": [
+            "Read only. Nobody opens Copilot today.",
+            "Cold-call with think time: 'Point to the selection logic.'",
+            "Stress: their brick must be different from 'strong'."
+          ]
         },
         {
-          "min": 14, "title": "You do: plan your brick type",
+          "min": 14,
+          "title": "You do: plan your brick type",
           "do": "Students pick a one-word type, 2 attributes that change with new values, and the row it goes in. Shoulder partners talk it through first, then check the list.",
           "why": "Bloom Apply/Create: designing the mechanic is what's assessed, not the code.",
-          "tips": ["Orally rehearse before writing (ELD and IEP support).", "No ideas? 'Think of a game you like: what makes some blocks harder or worth more?'", "If their bricks never disappear, steer them to color + size instead of hits."]
+          "tips": [
+            "Orally rehearse before writing (ELD and IEP support).",
+            "No ideas? 'Think of a game you like: what makes some blocks harder or worth more?'",
+            "If their bricks never disappear, steer them to color + size instead of hits."
+          ]
         },
         {
-          "min": 10, "title": "Exit ticket: the brick plan",
+          "min": 10,
+          "title": "Exit ticket: the brick plan",
           "do": "Students write their plan as the exit ticket on Google Classroom using a sentence frame.",
           "why": "The exit ticket IS the plan, so Thursday's build starts from it.",
-          "tips": ["Read both frames aloud.", "Check a few: type name + 2 values + a row.", "Allow dictation or speech-to-text."]
+          "tips": [
+            "Read both frames aloud.",
+            "Check a few: type name + 2 values + a row.",
+            "Allow dictation or speech-to-text."
+          ]
         }
       ],
       "watchFor": [
@@ -72,46 +99,73 @@
       ],
       "segments": [
         {
-          "min": 5, "title": "Wayground quiz",
+          "min": 5,
+          "title": "Wayground quiz",
           "do": "Launch the Tuesday review Wayground: rigid, truss, chords, diagonals, Duplicate and Repeat.",
           "why": "Spiral review of Monday's concept and tool.",
-          "tips": ["Greet at the door.", "Note the most-missed question."]
+          "tips": [
+            "Greet at the door.",
+            "Note the most-missed question."
+          ]
         },
         {
-          "min": 5, "title": "Review answers + today's goal",
+          "min": 5,
+          "title": "Review answers + today's goal",
           "do": "Review the most-missed questions, then read the goal aloud.",
           "why": "Front-load the goal before tech is on screens.",
-          "tips": ["Have a student repeat the goal back."]
+          "tips": [
+            "Have a student repeat the goal back."
+          ]
         },
         {
-          "min": 3, "title": "What a deck is",
+          "min": 3,
+          "title": "What a deck is",
           "do": "Show the deck diagram: the flat part people travel on; the triangles stand on it and keep it from bending.",
           "why": "Concept first, so the clicks have a reason.",
-          "tips": ["Say 'deck' and have the class repeat it (ELL vocabulary)."]
+          "tips": [
+            "Say 'deck' and have the class repeat it (ELL vocabulary)."
+          ]
         },
         {
-          "min": 12, "title": "We do: build the deck",
+          "min": 12,
+          "title": "We do: build the deck",
           "do": "Click along: Box → set 100 × 20 × 2 → select the 5 triangles → lift with the black cone, type 2 → drag them over the deck.",
           "why": "Fully worked round, everyone at the same pace.",
-          "tips": ["Pause after each step for thumbs up.", "Show where the white corner squares are and how to click the number to type.", "If a student lost Monday's work: 1 Roof + Ctrl + D 4 times."]
+          "tips": [
+            "Pause after each step for thumbs up.",
+            "Show where the white corner squares are and how to click the number to type.",
+            "If a student lost Monday's work: 1 Roof + Ctrl + D 4 times."
+          ]
         },
         {
-          "min": 10, "title": "We do: line them up with Align",
+          "min": 10,
+          "title": "We do: line them up with Align",
           "do": "Select everything → L → middle dot on the long side → middle dot on the short side → spin the view to check.",
           "why": "Align is the key precision tool for Thursday's top chord.",
-          "tips": ["If the deck moves instead, Ctrl + Z and click again.", "Have students check from the front AND side views."]
+          "tips": [
+            "If the deck moves instead, Ctrl + Z and click again.",
+            "Have students check from the front AND side views."
+          ]
         },
         {
-          "min": 7, "title": "You do: check and fix",
+          "min": 7,
+          "title": "You do: check and fix",
           "do": "Students check their bridge against the 3 boxes and fix anything floating, sinking, or off the deck.",
           "why": "Self-check builds independence; you circulate to the students who need you most.",
-          "tips": ["Check in first with anyone who had sign-in trouble Monday.", "Early finishers: second side or a road (Future Engineer)."]
+          "tips": [
+            "Check in first with anyone who had sign-in trouble Monday.",
+            "Early finishers: second side or a road (Future Engineer)."
+          ]
         },
         {
-          "min": 8, "title": "Exit ticket",
+          "min": 8,
+          "title": "Exit ticket",
           "do": "Students answer on Google Classroom using a sentence frame.",
           "why": "Checks the concept (deck vs. truss), not just the clicks.",
-          "tips": ["Read the question and frames aloud.", "Allow dictation."]
+          "tips": [
+            "Read the question and frames aloud.",
+            "Allow dictation."
+          ]
         }
       ],
       "watchFor": [
@@ -123,12 +177,12 @@
     "7th Period": {
       "grade": "6th Grade",
       "topic": "Warren Truss: draw the build plan",
-      "goal": "By the end of class, my group has a full-size drawing of one side truss with every piece measured, and a cut list with the cut length and count for every piece of the whole bridge.",
+      "goal": "By the end of class, my group has a full-size drawing of one side truss measured with our paper measuring stick, and a cut list with the cut length and count for every piece of the whole bridge.",
       "bloom": "Apply / Analyze",
       "exitTicket": "How many diagonal pieces does your whole bridge need, and how did you figure it out?",
       "prep": [
         "Tuesday 6th grade Wayground loaded",
-        "Paper (2 sheets per group) and tape out; rulers and pencils",
+        "Paper: 2 sheets per student for measuring sticks + 2 per group for the drawing; tape and pencils",
         "Groups of 4 decided (two Monday pairs together)",
         "Group bags from Monday ready to hand back",
         "Answer key is in the tips for the drawing, cut list, and exit ticket steps",
@@ -136,73 +190,135 @@
       ],
       "segments": [
         {
-          "min": 5, "title": "Wayground quiz",
+          "min": 5,
+          "title": "Wayground quiz",
           "do": "Launch the Tuesday review Wayground: rigid, push test, brace, fair test, cutting along the flutes.",
           "why": "Spiral review of Monday's evidence before they design with it.",
-          "tips": ["Hand back the group bags after the quiz, not before."]
+          "tips": [
+            "Hand back the group bags after the quiz, not before."
+          ]
         },
         {
-          "min": 4, "title": "Review answers + today's goal",
+          "min": 4,
+          "title": "Review answers + today's goal",
           "do": "Review the most-missed questions, then read the goal aloud.",
           "why": "Today has a lot of math. A clear target lowers anxiety.",
-          "tips": ["Hold up Monday's braced square: 'This is the whole idea of a truss.'"]
+          "tips": [
+            "Hold up Monday's braced square: 'This is the whole idea of a truss.'"
+          ]
         },
         {
-          "min": 7, "title": "I do: specs and the cut length rule",
-          "do": "Walk the specs: 30 cm gap, 40 cm bottom chord, equilateral 10 cm triangles, 2 side trusses 8 cm apart. Then the worked example: drawn 10 cm + 1 + 1 = cut 12 cm.",
-          "why": "Fully worked round 1 (one diagonal). The rest of the cut list is theirs to figure out.",
-          "tips": ["Don't give the full cut list. That's the rigor this class asked for.", "Ask: 'Why 1 cm at EACH end?' (Monday's glued overlap)."]
+          "min": 7,
+          "title": "I do: measuring stick, specs, cut length",
+          "do": "Fold a measuring stick live (sheet folded the long way 3 times; end to end for ½, then ¼ and ¾). Walk the specs: gap 1 stick, bottom chord 1½ sticks, equilateral triangles with ½-stick sides, 2 side trusses ¼ stick apart. Worked example: one diagonal = ½ stick + 1 glue square at each end.",
+          "why": "A shared unit replaces the ruler: same paper means every stick matches. Fully worked round 1 is one diagonal; the rest of the cut list is theirs.",
+          "tips": [
+            "Ask: 'Why does everyone use the SAME paper?' (so measurements match)",
+            "Don't give the full cut list. That's the rigor this class asked for.",
+            "Ask: 'Why a glue square at EACH end?' (Monday's overlap)."
+          ]
         },
         {
-          "min": 3, "title": "Groups of 4 and roles",
+          "min": 3,
+          "title": "Groups of 4 and roles",
           "do": "Join two Monday pairs. Assign Drafter, Measurer, Materials Manager, Checker.",
           "why": "Complex Instruction: every role is needed; no one can finish alone.",
-          "tips": ["Say: 'No one is good at all of this. Everyone is good at some of it.'", "Give a quieter student the Checker role: it has real authority."]
+          "tips": [
+            "Say: 'No one is good at all of this. Everyone is good at some of it.'",
+            "Give a quieter student the Checker role: it has real authority."
+          ]
         },
         {
-          "min": 14, "title": "You do: draw one side truss",
-          "do": "Groups tape 2 sheets, draw the 40 cm bottom chord with a dot every 10 cm, build each triangle up, connect the top chord, label every piece.",
-          "why": "Bloom Apply: precise measuring and drawing to spec.",
-          "tips": ["Trick for the top point: measure 10 cm from both bottom corners; where they meet is the top.", "Publicly name precise measuring when you see it (assign competence).", "Answer key, one side: bottom chord 40, top chord 30, 8 diagonals of 10."]
+          "min": 14,
+          "title": "You do: draw one side truss",
+          "do": "Groups tape 2 sheets, trace the 1½-stick bottom chord with a dot every ½ stick, find each top point with two sticks folded in half, connect the top chord, label every piece in sticks.",
+          "why": "Bloom Apply: precise measuring and drawing to spec with a non-standard unit.",
+          "tips": [
+            "Top point trick: two students each hold a ½-folded stick at a bottom dot and swing them together; where the ends meet is the top.",
+            "Publicly name careful folding and measuring when you see it (assign competence).",
+            "Answer key, one side: bottom chord 1½, top chord 1, 6 diagonals of ½."
+          ]
         },
         {
-          "min": 7, "title": "You do: make the cut list",
-          "do": "Materials Manager lists every piece for the WHOLE bridge with drawn length, cut length, and count, then totals the cm. Checker runs the checklist.",
-          "why": "Bloom Analyze: double for 2 sides, add cross pieces, apply +2 cm.",
-          "tips": ["Answer key, whole bridge: bottom chords 2 × 42, top chords 2 × 32, diagonals 16 × 12, cross pieces 5 × 10 (8 + 2).", "Total: 84 + 64 + 192 + 50 = 390 cm of 2 cm strip.", "42 cm may be longer than their cardboard: they can join two strips with an overlap."]
+          "min": 7,
+          "title": "You do: make the cut list",
+          "do": "Materials Manager lists every piece for the WHOLE bridge with drawn length in sticks and count, adds a glue square at each end, then totals the sticks. Checker runs the checklist.",
+          "why": "Bloom Analyze: double for 2 sides, add cross pieces, work with fractions of a stick.",
+          "tips": [
+            "Answer key, whole bridge: bottom chords 2 × 1½, top chords 2 × 1, diagonals 12 × ½, cross pieces 4 × ¼ (one at each bottom joint).",
+            "Total drawn length: 3 + 2 + 6 + 1 = 12 sticks, plus 20 pieces × 2 = 40 glue squares.",
+            "1½ sticks (about 42 cm) may be longer than their cardboard: they can join two strips with a glue square."
+          ]
         },
         {
-          "min": 7, "title": "Exit ticket",
+          "min": 7,
+          "title": "Exit ticket",
           "do": "Students answer on Google Classroom using a sentence frame.",
           "why": "Checks the doubling idea (one side vs. the whole bridge).",
-          "tips": ["Correct answer: 16 (8 per side × 2 sides).", "Read the question and frames aloud; allow dictation."]
+          "tips": [
+            "Correct answer: 12 (6 per side × 2 sides).",
+            "Read the question and frames aloud; allow dictation."
+          ]
         },
         {
-          "min": 3, "title": "Clean up + bag the plan",
-          "do": "Rulers and pencils back. Plan goes in the group bag with Monday's shapes and first names.",
+          "min": 3,
+          "title": "Clean up + bag the plan",
+          "do": "Pencils back. Plan AND measuring sticks go in the group bag with Monday's shapes and first names.",
           "why": "Thursday's build starts from this plan, so it can't get lost.",
-          "tips": ["Collect the bags yourself if Thursday is a while away."]
+          "tips": [
+            "Thursday they measure and cut with these same sticks, so they can't get lost."
+          ]
         }
       ],
       "watchFor": [
-        "Lines drawn without a ruler. Every line gets measured.",
+        "Sloppy folds. Edges must line up before creasing, or every piece is off.",
         "Cut list for one side only. It must cover both sides plus cross pieces.",
         "One student doing everything. Point back to the roles."
       ]
     }
   },
   "accommodations": [
-    ["All students", "Agenda on the board, goal reviewed after the quiz, chunked numbered steps, worked example before you do, checklist, sentence frames, frequent check-ins. Get attention before directions; give them spoken, written, and shown."],
-    ["English learners", "Video words (attribute, instance, selection logic) and bridge words (deck, chord, diagonal) tied to a picture. Partner talk before writing. Two sentence frames per exit ticket."],
-    ["Dyslexic learners", "Lexend Deca handouts, large type. Read steps and code aloud. Text-to-speech and speech-to-text OK. Spelling not graded."],
-    ["ADHD learners", "Short timed chunks with a visual timer. 6th has movement and hands-on roles. Seat near the demo. If/then for non-preferred steps. Discreet redirection, fidgets, break pass."],
-    ["IEP / 504", "Extended time and dictation on the exit ticket. Shortened floor: 8th plans 1 changed attribute; 7th gets the deck under the triangles (Align optional); 6th draws one triangle and its cut length. Supportive group placement. Calculator OK for the cut list."],
-    ["Advanced learners", "Future Engineer (OPTIONAL), pick one for 1 KB point."]
+    [
+      "All students",
+      "Agenda on the board, goal reviewed after the quiz, chunked numbered steps, worked example before you do, checklist, sentence frames, frequent check-ins. Get attention before directions; give them spoken, written, and shown."
+    ],
+    [
+      "English learners",
+      "Video words (attribute, instance, selection logic) and bridge words (deck, chord, diagonal) tied to a picture. Partner talk before writing. Two sentence frames per exit ticket."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca handouts, large type. Read steps and code aloud. Text-to-speech and speech-to-text OK. Spelling not graded."
+    ],
+    [
+      "ADHD learners",
+      "Short timed chunks with a visual timer. 6th has movement and hands-on roles. Seat near the demo. If/then for non-preferred steps. Discreet redirection, fidgets, break pass."
+    ],
+    [
+      "IEP / 504",
+      "Extended time and dictation on the exit ticket. Shortened floor: 8th plans 1 changed attribute; 7th gets the deck under the triangles (Align optional); 6th draws one triangle and its cut length. Supportive group placement. Fraction strip (the folded stick itself) OK for adding."
+    ],
+    [
+      "Advanced learners",
+      "Future Engineer (OPTIONAL), pick one for 1 KB point."
+    ]
   ],
   "frameworks": [
-    ["Project-Based Learning", "Every grade plans or builds toward Friday's product: a new brick type in their game, a TinkerCAD Warren truss, a cardboard Warren truss that gets load-tested."],
-    ["Complex Instruction", "6th: 4 roles with real authority (Checker). 7th and 8th: shoulder partners. Publicly naming competence."],
-    ["Maslow's Hierarchy", "Same routine as Monday, one exit ticket only, nothing else turned in, worked example first so success is guaranteed."],
-    ["Bloom's Taxonomy", "8th Understand/Apply (design a mechanic). 7th Apply (precision tools). 6th Apply/Analyze (measure, scale up to the whole bridge, compute)."]
+    [
+      "Project-Based Learning",
+      "Every grade plans or builds toward Friday's product: a new brick type in their game, a TinkerCAD Warren truss, a cardboard Warren truss that gets load-tested."
+    ],
+    [
+      "Complex Instruction",
+      "6th: 4 roles with real authority (Checker). 7th and 8th: shoulder partners. Publicly naming competence."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "Same routine as Monday, one exit ticket only, nothing else turned in, worked example first so success is guaranteed."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "8th Understand/Apply (design a mechanic). 7th Apply (precision tools). 6th Apply/Analyze (measure with a shared unit, scale up to the whole bridge, add fractions)."
+    ]
   ]
 }

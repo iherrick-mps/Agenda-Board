@@ -221,7 +221,7 @@
       "prep": [
         "Wayground: classroom expectations quiz ready to launch",
         "Weekly Grade Check-In form link posted on the board and Google Classroom",
-        "Supplies out per pair: cardboard, ruler, scissors, glue, pencil",
+        "Supplies out per pair: cardboard, scissors, glue, pencil, 1 sheet of paper each (measuring stick)",
         "One bag per group + marker for first names",
         "Pairs decided ahead of time (intentional grouping)",
         "Warren Truss Bridge assignment + exit ticket posted"
@@ -259,12 +259,13 @@
         },
         {
           "min": 5,
-          "title": "I do: one strip, one joint",
-          "do": "Model it: mark 2 cm × 15 cm with a ruler, cut along the wavy layer, overlap two ends, glue, press and hold 30 seconds.",
+          "title": "I do: measuring stick, strip, joint",
+          "do": "Model it: fold a sheet the long way 3 times into a measuring stick and mark the ½ crease. Trace both long edges on the cardboard for one strip, ½ stick long. Cut along the wavy layer, overlap two ends in a glue square, press and hold 30 seconds.",
           "why": "Fully worked first round. Measuring and cutting is a skill they'll use all year.",
           "tips": [
             "Show cutting across the flutes crushing the strip, then along them working.",
-            "Assign roles: Square Engineer and Triangle Engineer. Both measure and cut."
+            "Assign roles: Square Engineer and Triangle Engineer. Both measure and cut.",
+            "Everyone uses the same paper, so every stick matches."
           ]
         },
         {
@@ -273,7 +274,7 @@
           "do": "Square Engineer cuts 4 strips and builds the square. Triangle Engineer cuts 3 and builds the triangle. While glue sets, pairs predict out loud.",
           "why": "Complex Instruction: two roles, both necessary. Bloom Apply.",
           "tips": [
-            "Check rulers first. Most errors are measuring from the wrong end.",
+            "Check sticks first. Most errors come from sloppy folds; edges must line up before creasing.",
             "Listen in on predictions and ask 'why?' to push reasoning.",
             "Visual timer on the board."
           ]
@@ -281,7 +282,7 @@
         {
           "min": 7,
           "title": "Push test, brace, test again",
-          "do": "Pairs push the square, then the triangle. Square Engineer measures corner to corner, cuts a brace, glues it, and they test again.",
+          "do": "Pairs push the square, then the triangle. Square Engineer lays a strip corner to corner, marks it, cuts a brace, glues it, and they test again.",
           "why": "Bloom Analyze: change one variable and compare. This is the added rigor this class asked for.",
           "tips": [
             "Don't tell them the answer. Ask: 'What did the brace turn your square into?'",
