@@ -1,0 +1,100 @@
+{
+  "title": "Thursday Teacher Plan",
+  "note": "Thursday = build day for every grade. Friday = finish, test, and the one turn-in. Openers are now Blooket.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Factory Method: build your brick factory",
+      "goal": "By the end of class, my live game has a BrickFactory that builds a row of my new bricks, and my exit ticket is turned in on Google Classroom.",
+      "bloom": "Apply / Create",
+      "exitTicket": "What you built today: your brick type and how you verified it in your live game.",
+      "prep": [
+        "Blooket quiz loaded (or skip if not ready)",
+        "Thursday V2 doc posted with the Factory Pattern assignment",
+        "Exit ticket posted on Google Classroom"
+      ],
+      "segments": [
+        {"min": 5, "title": "Blooket quiz", "do": "Launch the review quiz on Tuesday's plan: attributes, selection logic, instance.", "why": "Spiral review of the vocabulary they build with today.", "tips": ["Start it before the bell."]},
+        {"min": 2, "title": "Points reminder", "do": "Due Sunday: live game link, the brick plan (Tuesday's exit ticket), and a row of new bricks in the live game. Today only the exit ticket is turned in.", "why": "Maslow: safety first, so students know what counts before they start.", "tips": ["Say: if the game breaks, the plan and link still count."]},
+        {"min": 8, "title": "AI prompting and code setup", "do": "Model the Copilot prompt from the doc: add selection logic to makeBrick(x, y, type) for their own type.", "why": "Students design, AI writes code: the assessed skill is the mechanic, not the syntax.", "tips": ["Have them paste their Tuesday plan into the prompt so the AI builds THEIR brick.", "Their type must not be the worked example's 'strong'."]},
+        {"min": 20, "title": "You do: build the BrickFactory", "do": "Students add the if-statement for their type, set 2 attributes, and make one row use it.", "why": "Bloom Apply/Create: their own design inside the closed box.", "tips": ["Most common bug: makeBricks() never passes the type, so every brick is default.", "If drawBricks() ignores brick.color, the color won't show: have them ask the AI to draw with brick.color.", "Early finishers: 3rd brick type (Future Engineer)."]},
+        {"min": 8, "title": "Commit, Sync, hard refresh, check", "do": "Commit, Sync Changes, open the live link, hard refresh, look for the new row.", "why": "Only the live game proves it works.", "tips": ["Pages can take a minute to update. Refresh again before panicking."]},
+        {"min": 7, "title": "Exit ticket", "do": "Students submit the 1–2 sentence exit ticket on Google Classroom using the frames in the doc.", "why": "The only turn-in today; Friday is the link turn-in.", "tips": ["Read both frames aloud. Allow dictation."]}
+      ],
+      "watchFor": [
+        "AI rewriting files outside bricks.js: re-prompt to only change makeBrick.",
+        "Syntax errors from a missing comma in the returned brick object: F12 console.",
+        "Students waiting on you: point to the Stuck table first."
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "TinkerCAD Truss Bridge: span the gap",
+      "goal": "By the end of class, my bridge has a top chord, is grouped into one object, and is lifted 20 mm so it spans a 60 mm gap between two cubes.",
+      "bloom": "Apply",
+      "exitTicket": "What number did you type to lift your bridge, and why that number?",
+      "prep": [
+        "Blooket quiz loaded",
+        "TinkerCAD open on the projector with Tuesday's deck + triangles",
+        "TinkerCAD class code on hand",
+        "Exit ticket posted on Google Classroom"
+      ],
+      "segments": [
+        {"min": 5, "title": "Blooket quiz", "do": "Launch the 7th grade review: deck, Align, lifting with the black cone.", "why": "Spiral review of Tuesday's tools before using them again.", "tips": ["Note the most-missed question."]},
+        {"min": 5, "title": "Review answers + today's goal", "do": "Review misses, then read the goal: top chord, group, lift 20, span the gap.", "why": "Front-load the goal before screens.", "tips": ["Show the bridge-on-cubes picture from the handout."]},
+        {"min": 10, "title": "We do: add the top chord", "do": "Box 80 × 20 × 2 → lift 22 → select all → L → middle dots.", "why": "Fully worked round with numbers they type.", "tips": ["22 = 2 (deck) + 20 (triangle height). Say the math out loud."]},
+        {"min": 5, "title": "We do: group it and lift it", "do": "Ctrl + A → Ctrl + G → black cone → type 20.", "why": "Group first, then lift, or only one piece moves.", "tips": ["Watch for students who lift before grouping: Ctrl + Z."]},
+        {"min": 12, "title": "You do: build the two cubes", "do": "Box under the left end (20 × 20 × 20), Align left dot with the bridge; Box under the right end, Align right dot.", "why": "Bloom Apply: they repeat Align on their own to make the span.", "tips": ["Gap = 100 − 20 − 20 = 60 mm.", "Early finishers: longer span or second side (Future Engineer)."]},
+        {"min": 5, "title": "Check from the front and side", "do": "Students spin the view: deck on top of both cubes, gap underneath, nothing floating.", "why": "Self-check before the exit ticket.", "tips": ["Circulate to anyone who had sign-in trouble earlier in the week."]},
+        {"min": 8, "title": "Exit ticket", "do": "What number did you type to lift your bridge, and why?", "why": "Answered directly by what they did: 20, because the cubes are 20 tall.", "tips": ["Read the frames aloud. Allow dictation."]}
+      ],
+      "watchFor": [
+        "Bridge lifted before grouping: only the deck moves.",
+        "Cubes not aligned to the ends: deck hangs off one side.",
+        "Students who never finished Tuesday's deck: get them there first, then lift."
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Warren Truss: build day",
+      "goal": "By the end of class, my group has built both side trusses from our plan, every piece measured with our stick, and joined them with cross pieces if we have time.",
+      "bloom": "Apply / Create",
+      "exitTicket": "Why did your group lay every strip on top of your drawing before gluing it?",
+      "prep": [
+        "Blooket quiz loaded",
+        "Group bags (plans + measuring sticks) ready to hand back",
+        "Cardboard, scissors, glue out per group",
+        "Shelf space cleared for bridges to dry flat",
+        "Exit ticket posted on Google Classroom"
+      ],
+      "segments": [
+        {"min": 5, "title": "Blooket quiz", "do": "Launch the 6th grade review: the stick unit, equilateral, cut length, 12 diagonals.", "why": "Spiral review of the plan they build from today.", "tips": ["Hand back group bags after the quiz."]},
+        {"min": 4, "title": "Review answers + today's goal", "do": "Review misses, then read the goal.", "why": "Front-load a long hands-on period.", "tips": ["Hold up a good plan from Tuesday (assign competence)."]},
+        {"min": 3, "title": "Roles by birthday", "do": "Youngest: Side Truss 1 Builder. Second youngest: Side Truss 2 Builder. Second oldest: Materials Manager. Oldest: Checker. Group of 3: oldest also Materials Manager. Group of 5: two youngest share Side Truss 1.", "why": "Complex Instruction: every role is needed; no one decides who does what.", "tips": ["Checker has real authority: nothing is glued until they check it."]},
+        {"min": 5, "title": "I do: one piece, start to finish", "do": "Trace with the stick along the flutes, mark drawn length + a glue square at each end, cut, Checker checks, lay it on its line on the drawing.", "why": "Fully worked round 1: one diagonal.", "tips": ["Show the drawing as a jig: if the strip sits on the line, the triangle is right."]},
+        {"min": 25, "title": "You do: build on top of the drawing", "do": "Builders: bottom chord → 6 diagonals → top chord for their side. Materials Manager: 4 cross pieces. Checker + MM: stand both sides ¼ stick apart and glue cross pieces at the bottom joints.", "why": "Bloom Apply/Create: turning a plan into a structure.", "tips": ["Bottom chord too long for the cardboard? 2 strips joined with a glue square.", "Press each glue square 30 seconds.", "If time runs out before joining, that's fine: joining is Friday's first step."]},
+        {"min": 5, "title": "Exit ticket", "do": "Why did you lay every strip on top of the drawing before gluing?", "why": "Checks the idea of a jig: accurate, matching sides.", "tips": ["Good answer: so the triangles come out equal and both sides match the plan."]},
+        {"min": 3, "title": "Clean up + set to dry", "do": "Scraps in bin, tools back, bridge flat on the shelf with the bag.", "why": "Glue sets overnight for Friday's load test.", "tips": ["Count scissors back in."]}
+      ],
+      "watchFor": [
+        "Glue sticks may be too weak for cardboard: test one joint early; if it fails, switch to whatever stronger glue you have.",
+        "Builders skipping the Checker.",
+        "Strips cut across the flutes (they crush)."
+      ]
+    }
+  },
+  "accommodations": [
+    ["All students", "Agenda on the board, goal reviewed after the quiz, chunked numbered steps, worked example before you do, checklists, sentence frames, frequent check-ins."],
+    ["English learners", "Words tied to pictures (top chord, deck, gap; glue square, cut list). Partner talk before writing. Two sentence frames per exit ticket."],
+    ["Dyslexic learners", "Lexend Deca handouts. Read steps aloud. Text-to-speech and speech-to-text OK. Spelling not graded."],
+    ["ADHD learners", "Short timed chunks with a visual timer. 6th is hands-on all period with clear roles. If/then for non-preferred steps. Fidgets, break pass."],
+    ["IEP / 504", "Dictation on the exit ticket. Shortened floor: 8th one changed attribute; 7th lifts the bridge onto cubes without the top chord; 6th builds one triangle on the drawing. Supportive group placement."],
+    ["Advanced learners", "Future Engineer (OPTIONAL), pick one for 1 KB point."]
+  ],
+  "frameworks": [
+    ["Project-Based Learning", "Build day: every grade turns its plan into the week's product."],
+    ["Complex Instruction", "6th: birthday-order roles with real authority (Checker). 7th and 8th: shoulder partners for help."],
+    ["Maslow's Hierarchy", "Same routine, one exit ticket only, points known up front, worked example first."],
+    ["Bloom's Taxonomy", "All grades at Apply/Create: building their own designs."]
+  ]
+}

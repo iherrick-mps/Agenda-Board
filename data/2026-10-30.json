@@ -3,51 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your new brick type, and 3 sentences about the Factory pattern (85 points even if your game breaks), plus your live game with a BrickFactory building at least one row of your new bricks (15 points).",
-      "workingNow": "Open the Google Classroom assignment called Factory Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my turned-in game link works, and I have finished my BrickFactory or tried one Future Engineer option.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your new brick type, and your live game with a BrickFactory building at least one row of your new bricks (100 points total). You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Factory Pattern. Read the instructions, follow them, and turn in your live game link at the end of class.",
+      "smartGoal": "By the end of class, my live game builds a row of my new bricks, and I have turned in my live game link once.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Check your turned-in link works (5 min)",
-        "Catch up or Future Engineer (25 min)",
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Catch up or Future Engineer (22 min)",
         "Gallery play: try 2 classmates' games (10 min)",
-        "Exit Ticket: what does your factory build? (5 min)"
+        "Turn in your live game link (8 min)"
       ],
-      "connections": "This week your BrickFactory started building your bricks for you. Today you catch up or go further, like a second brick type or a level made from factory rows. Next week we check the curriculum map for the next pattern."
+      "connections": "Yesterday your factory method started building your new bricks. Today you finish or go further, play classmates' games, and turn in once. Next week: the next software pattern."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD Warren truss bridge and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD Truss Bridge. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my bridge is turned in, and I have caught up or tried one Future Engineer option.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD Warren truss bridge spanning the gap between two cubes, taken in Sim Lab while it's playing, and its share link. Turning it in is 70 points. You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Truss Bridge. Read the instructions, follow them, and turn in your screenshot and share link at the end of class.",
+      "smartGoal": "By the end of class, my bridge stays up in Sim Lab with a load on its deck, and I have turned in a screenshot taken while it plays and my share link.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Check your screenshot is turned in (5 min)",
-        "Catch up or Future Engineer (25 min)",
-        "Gallery walk: see 2 classmates' bridges (10 min)",
-        "Exit Ticket: why does your truss use triangles? (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "We do: Sim Lab setup, make the cubes static (10 min)",
+        "You do: load test, a box on the deck (12 min)",
+        "Screenshot while playing + share link (8 min)",
+        "Gallery walk: 2 classmates' bridges (5 min)",
+        "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "This week you built a Warren truss bridge from repeated triangles. Today you catch up or go further. Next week you finish the bridge, label its parts, and compare designs."
+      "connections": "Yesterday your bridge started spanning a gap between two cubes. Today you test it in Sim Lab with a load on the deck and turn in once."
     },
     "7th Period": {
       "grade": "6th Grade",
       "weeklyDeliverable": "Due Sunday night: a photo of your group's Warren truss build plan with every part labeled and measured. A photo of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called Warren Truss Build Plan. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, our build plan is turned in, and I have caught up or tried one Future Engineer option.",
-      "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
-      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "workingNow": "Open the Google Classroom assignment called Warren Truss Bridge. Read the instructions, follow them, and turn in your doc at the end of class.",
+      "smartGoal": "By the end of class, our bridge spans a 1-stick gap between two desks, we have tested how many water bottles it holds, and our turn-in doc is turned in.",
+      "contentStandard": "NGSS MS-ETS1-2 — Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Check your photo is turned in (5 min)",
-        "Catch up or Future Engineer (25 min)",
-        "Predict: how much will our bridge hold? (10 min)",
-        "Exit Ticket: your prediction and why (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (4 min)",
+        "Finish and join the cross pieces (12 min)",
+        "Load test: add water bottles one at a time (15 min)",
+        "Fill in the turn-in doc (9 min)",
+        "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "This week your group planned a Warren truss bridge. Today you catch up and predict how much it will hold. Next week you build it from cardboard and test your prediction."
+      "connections": "This week your group tested shapes, drew a plan, and built a Warren truss. Today you test how much it holds and turn in once."
     }
   }
 }
