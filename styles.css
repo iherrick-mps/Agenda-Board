@@ -27,6 +27,11 @@
   --c-lunchrules: #0d9367; /* Indoor Lunch — Rules */
   --c-trivia: #e8590c;     /* Indoor Lunch — Scooby-Doo Trivia */
 
+  /* the light dotted box every schedule draws around the slot the
+     clock is currently inside — see "You are here" at the end of
+     this file */
+  --sched-now-line: #8d9bab;
+
   --box-width: 340px;
   --radius: 8px;
 
@@ -2078,6 +2083,10 @@ body.board-page {
 }
 
 /* ---- Saturday schedule — standard tinted-white list box ---- */
+/* the inset leaves room for the dotted "you are here" box (see the end
+   of this file) to sit around the live row without being clipped by the
+   bento's edge — including when the live row is the first or last one */
+.box-content ul.vex-sched-list { padding: 0.35em 0.5em; }
 .vex-sched-list li {
   display: flex;
   justify-content: space-between;
@@ -3746,3 +3755,35 @@ body.overview-page {
   margin-top: 10px;
   line-height: 1.5;
 }
+
+/* ============================================================
+   "You are here" on a schedule — one marker, every page.
+
+   Anything that lays the day out in order marks the slot the
+   clock is actually inside with the same light dotted box: the
+   period tabs on the board's hover bar, the Saturday bell
+   schedule on the VEX board, and both the period tabs and the
+   run-of-show on the Teacher Plan. One rule rather than one per
+   page, so a schedule added later only has to say which row is
+   current.
+
+   Drawn as an outline, not a border, so the box never nudges
+   anything around it — a list looks identical whether or not
+   something in it is live. Only the offset differs, because the
+   rows sit differently in each: VEX's are spread down a bento
+   with room to spare, the Teacher Plan's touch each other.
+   ============================================================ */
+.vex-sched-list li.is-now,
+.tl li.cur,
+.tp-tab.live,
+.period-tab.is-now {
+  outline: 2px dotted var(--sched-now-line);
+  border-radius: 5px;
+}
+.vex-sched-list li.is-now { outline-offset: 0.22em; }
+.tl li.cur { outline-offset: -2px; }
+/* a live period's tab keeps its own rounding, and the box sits just
+   outside it — the tab you're reading and the period actually running
+   aren't always the same one */
+.tp-tab.live { outline-offset: 2px; border-radius: var(--radius); }
+.period-tab.is-now { outline-offset: 2px; border-radius: 5px; }
