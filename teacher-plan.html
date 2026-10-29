@@ -48,7 +48,9 @@
   .tl li .t { font-family: var(--font-mono); font-size: 14px; color: var(--ink-soft); }
   .tl li .m { text-align: right; color: var(--ink-soft); font-size: 14px; }
   .tl li.done { opacity: .45; }
-  .tl li.cur { background: #fdece8; font-weight: 700; outline: 2px solid var(--c-working); }
+  /* the dotted "you are here" box comes from styles.css, so this row
+     looks the same as the current slot on every other page's schedule */
+  .tl li.cur { background: #fdece8; font-weight: 700; }
   .tl li.sel:not(.cur) { outline: 2px dashed var(--c-goal); }
   .prep { --accent: var(--c-deliverable); } .watch { --accent: var(--c-working); }
   .prep label { display: flex; gap: 8px; align-items: flex-start; font-size: 16px; line-height: 1.4; margin-bottom: 6px; cursor: pointer; }

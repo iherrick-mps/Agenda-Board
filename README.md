@@ -73,6 +73,7 @@ Each period needs:
 - When class is in session: counts down to the end of the current period.
 - Between periods (passing period, lunch, before/after school): shows "Not in session" and counts down to the next period.
 - If viewing *today's* board, the tab for whichever period is live right now is auto-selected and marked LIVE.
+- Wherever the app lays the day out in order, the slot we're actually in is drawn with the same light dotted box: the live period tab here, the live period tab and the current step of the run-of-show on the Teacher Plan, and the current period of the Saturday bell schedule on the VEX board. It's an outline, so it never shifts the rows around it.
 - The clock is one of the eight boxes in the grid (top-left), not a separate floating widget — it stays in place while the other seven boxes' content changes as you switch period tabs.
 
 ## Chimes
