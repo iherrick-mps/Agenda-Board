@@ -1,0 +1,279 @@
+{
+  "title": "Friday Teacher Plan",
+  "note": "One turn-in per grade, at the end of class. Due Sunday 11:59 PM.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Factory Method: turn-in day",
+      "goal": "By the end of class, my live game builds a row of my new bricks, I can explain my factory method with the video's words, and my doc is turned in once.",
+      "bloom": "Apply / Evaluate",
+      "exitTicket": "No exit ticket: the turn-in doc (Answers tab) is today's one turn-in.",
+      "prep": [
+        "Blooket quiz loaded",
+        "Friday turn-in doc posted (Answers tab as its own tab)",
+        "Live game links from Thursday handy to spot-check"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Review Thursday: if-statement, passing the type, Commit/Sync/hard refresh.",
+          "why": "Spiral review right before they finish the build.",
+          "tips": [
+            "Start before the bell."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review answers + today's goal",
+          "do": "Review misses, then the grading: 85 for every box even if the game breaks, 15 for a live new row.",
+          "why": "Maslow: safety before the big grade.",
+          "tips": [
+            "Say: turn in once, at the end."
+          ]
+        },
+        {
+          "min": 22,
+          "title": "Finish, Answers tab, or Future Engineer",
+          "do": "Students confirm the new row is live, fill in Parts 1–2 of the Answers tab, then Future Engineer.",
+          "why": "Bloom Apply/Evaluate: explain their own code with the video's words.",
+          "tips": [
+            "Most common bug: makeBricks never passes the type.",
+            "Color not showing: drawBricks ignores brick.color.",
+            "Watch for pasted AI answers in Part 2: ask them to say it out loud."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Gallery play",
+          "do": "Each student plays 2 classmates' live games and names one thing their brick does well.",
+          "why": "Authentic audience.",
+          "tips": [
+            "Only live links: no Codespaces."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Final check + turn in",
+          "do": "Check the link opens the game, every box is filled, then turn in once.",
+          "why": "One turn-in per period.",
+          "tips": [
+            "Not finished? Due Sunday 11:59 PM."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Links to the repo or Codespace instead of github.io.",
+        "Students turning in twice.",
+        "Answers copied from Copilot."
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "TinkerCAD Truss Bridge: stability test + turn-in",
+      "goal": "By the end of class, my bridge stays on its two cubes in Sim Lab when a box drops onto its deck, and I have turned in a screenshot taken while it plays and my share link.",
+      "bloom": "Apply / Evaluate",
+      "exitTicket": "No exit ticket: the Answers tab (screenshot, share link, what happened) is today's one turn-in.",
+      "prep": [
+        "Blooket quiz loaded",
+        "Friday turn-in doc posted",
+        "Your own bridge open in Sim Lab to demo Static"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Review Thursday: top chord, group then lift, lift 20, 60 mm gap.",
+          "why": "Spiral review.",
+          "tips": [
+            "Note the most-missed question."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review answers + today's goal",
+          "do": "Review misses. Name the limit: Sim Lab shows stability, not weight or breaking.",
+          "why": "Honest about the tool, and sets up next week's popsicle-stick challenge.",
+          "tips": [
+            "Ask: what CAN'T TinkerCAD tell us?"
+          ]
+        },
+        {
+          "min": 10,
+          "title": "We do: Sim Lab setup",
+          "do": "Open Sim Lab, set both cubes to Static, leave the bridge free, press Play, then Stop.",
+          "why": "Fully worked round before their own test.",
+          "tips": [
+            "If the bridge falls through the cubes, it's sitting inside them: lift to exactly 20."
+          ]
+        },
+        {
+          "min": 12,
+          "title": "You do: drop test",
+          "do": "Box 20×20×20 above the middle of the deck, lifted 60. Play and watch it land.",
+          "why": "Bloom Evaluate: does the design stay up?",
+          "tips": [
+            "Bridge falls off: both ends must rest on the cubes.",
+            "Early finishers: off-center drop or wider gap."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Screenshot + share link",
+          "do": "Screenshot while playing (Ctrl + Shift + Show windows), copy the share link, paste both in the Answers tab, answer #3.",
+          "why": "Evidence of the test.",
+          "tips": [
+            "Paused/stopped screenshots don't show the test."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Gallery walk",
+          "do": "See 2 classmates' bridges in Sim Lab.",
+          "why": "Compare designs.",
+          "tips": [
+            "Preview: next week, a real popsicle-stick bridge, 30 cm, 5 lbs."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Turn in",
+          "do": "Turn in once on Google Classroom.",
+          "why": "One turn-in per period.",
+          "tips": [
+            "Due Sunday if not done."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Bridge set to Static (the test proves nothing).",
+        "Screenshots taken while stopped.",
+        "Sim Lab button not found: it's top right."
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Warren Truss: build day 2 (side 2)",
+      "goal": "By the end of class, my group has built our second side truss on top of our drawing, joined both sides with cross pieces if we have time, and turned in a photo of our bridge.",
+      "bloom": "Apply / Create",
+      "exitTicket": "No exit ticket: the group's Answers page with a bridge photo is today's one turn-in.",
+      "prep": [
+        "Blooket quiz loaded",
+        "Group bags, drawings, sticks, and side 1 handed back",
+        "Cardboard, scissors, glue out",
+        "Friday Answers page posted (one per group)"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Review Thursday: build on the drawing, Checker, glue squares, cut along the flutes.",
+          "why": "Spiral review before building again.",
+          "tips": [
+            "Hand bags back after the quiz."
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Review answers + today's goal",
+          "do": "Read the goal: side 2 matches side 1, join if time.",
+          "why": "Clear target for a long build.",
+          "tips": []
+        },
+        {
+          "min": 2,
+          "title": "Roles by birthday",
+          "do": "Youngest Builder, second youngest Cutter, second oldest Materials Manager, oldest Checker. Group of 3: oldest also MM. Group of 5: two Builders.",
+          "why": "Complex Instruction: no one decides roles.",
+          "tips": [
+            "New roles from yesterday: everyone works on side 2."
+          ]
+        },
+        {
+          "min": 25,
+          "title": "You do: build side 2 on the drawing",
+          "do": "Bottom chord, 6 diagonals, top chord, each checked before glue. MM cuts 4 cross pieces.",
+          "why": "Bloom Apply/Create.",
+          "tips": [
+            "Press every glue square 30 seconds.",
+            "Groups that finish side 2: join both sides with cross pieces."
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Check: stack side 2 on side 1",
+          "do": "Checker stacks the sides and fixes anything that doesn't match.",
+          "why": "Matching sides = a straight bridge.",
+          "tips": []
+        },
+        {
+          "min": 7,
+          "title": "Photo + Answers page, turn in",
+          "do": "Checker takes the photo; group fills in the Answers page and turns in once.",
+          "why": "One turn-in per period.",
+          "tips": [
+            "First names only."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Clean up + set to dry",
+          "do": "Scraps in bin, tools back, bridge flat on the shelf.",
+          "why": "Ready for next week's load test.",
+          "tips": [
+            "Count scissors."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Side 2 not matching side 1.",
+        "Pieces glued before the Checker checks.",
+        "Glue sticks too weak for cardboard."
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Goal reviewed after the quiz, numbered steps, worked example first, checklists, sentence frames on the Answers tab."
+    ],
+    [
+      "English learners",
+      "Video and bridge words with pictures; frames on every written answer."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca; read aloud; speech-to-text OK; spelling not graded."
+    ],
+    [
+      "ADHD learners",
+      "Timed chunks, visual timer, hands-on roles in 6th."
+    ],
+    [
+      "IEP / 504",
+      "Dictation on written answers; extended time to Sunday; shortened floor: 8th Part 1 only, 7th screenshot only, 6th photo of side 1."
+    ],
+    [
+      "Advanced learners",
+      "Future Engineer (OPTIONAL), 1 KB point."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "Every grade turns in the week's product."
+    ],
+    [
+      "Complex Instruction",
+      "6th birthday-order roles; 8th/7th gallery feedback."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "Points known up front, one turn-in, Sunday deadline."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "Evaluate: test it, explain it, compare it."
+    ]
+  ]
+}
