@@ -3,48 +3,51 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your moving brick, and 3 sentences about the Strategy pattern (85 points even if your game breaks), plus your live game with at least one brick using a moving behavior (15 points).",
+      "weeklyDeliverable": "Due Sunday night: your Strategy turn-in doc with your live game link, your plan for your moving brick, and 3 short answers about the Strategy pattern (85 points even if your game breaks), plus the Strategy pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, one brick in my game uses a behavior we built together, and my game still works.",
-      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create procedures with parameters to organize code and make it easier to reuse.",
-      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "smartGoal": "By the end of class, I can trace how a brick uses its strategy each frame.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "We do: give one brick a behavior (12 min)",
-        "You do: test it, Commit, Sync Changes (6 min)",
-        "Exit Ticket: what does your behavior do? (7 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (3 min)",
+        "We do: trace brick.move() one frame at a time (12 min)",
+        "Partner check: point to the swap (5 min)",
+        "Exit Ticket: what changes when you swap? (5 min)"
       ],
-      "connections": "Yesterday you planned your moving brick. Today we give one brick a behavior together. Thursday you build your moving brick with Copilot and turn in."
+      "connections": "Yesterday you planned your moving brick. Today you trace how a strategy runs every frame. Tomorrow you build yours with Copilot."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your finished truss bridge with its parts labeled, plus your 2 sentences about it. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD Bridge Finish. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I have written 2 sentences about my bridge using the sentence starters.",
-      "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "weeklyDeliverable": "Due Sunday night: your table group's approved bridge plan: a screenshot of your truss in Truzme holding the 5 lb load, your stick count, and where you doubled sticks. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Popsicle Bridge Plan. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group has drawn our own bridge design in Truzme that spans 30 cm.",
+      "contentStandard": "NGSS MS-ETS1-2 — Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Write your 2 sentences with starters (12 min)",
-        "Turn in a progress screenshot (6 min)",
-        "Exit Ticket: paste your 2 sentences (7 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (3 min)",
+        "You do: design your bridge in Truzme (14 min)",
+        "Checker: does it span 30 cm? (3 min)",
+        "Exit Ticket: how is yours different? (5 min)"
       ],
-      "connections": "Yesterday you compared your bridge with a partner's. Today you write 2 sentences about your bridge and save your progress. Thursday you fix, finish, and turn in."
+      "connections": "Yesterday you tested a Warren truss. Today your group designs its own. Tomorrow you test it with 5 lbs and fix the weak spots."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a photo of your group's tested bridge, its max load, and 2 sentences about how it did. A photo of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called Bridge Build and Test. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, our bridge has its top chord and stands on its own.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "weeklyDeliverable": "Due Sunday night: your group's Answers page with a photo of your reinforced bridge, how many water bottles it held in Test 1 and Test 2, where you added tactical popsicle sticks, and 2 sentences on why. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Bridge Deck and Load Test. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group has a plan for exactly where to add tactical popsicle sticks, and why.",
+      "contentStandard": "NGSS MS-ETS1-2 — Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "You do: add the top chord (15 min)",
-        "Progress photo: turn in what you have (3 min)",
-        "Exit Ticket: does it stand on its own? (7 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (3 min)",
+        "Look at your X marks (4 min)",
+        "Plan: where do sticks go? Max 6 sticks (13 min)",
+        "Exit Ticket: where and why? (5 min)"
       ],
-      "connections": "Yesterday you taped your triangles together. Today you add the top so your bridge is complete. Thursday you test how much it holds."
+      "connections": "Yesterday you found where your bridge failed. Today you plan where to strengthen it. Tomorrow you add the sticks."
     }
   }
 }

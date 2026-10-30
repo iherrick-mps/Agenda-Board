@@ -3,55 +3,60 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your level drawn as a grid, and 3 sentences about the Composite pattern (85 points even if your game breaks), plus your live game with its level built from your grid (15 points).",
+      "weeklyDeliverable": "Due Sunday night: your Composite turn-in doc with your live game link, your level drawn as a grid, and 3 short answers about the Composite pattern (85 points even if your game breaks), plus the Composite pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Composite Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can explain the Composite pattern and draw my level as a grid of bricks.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems into parts to facilitate the design, implementation, and review of programs.",
-      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "smartGoal": "By the end of class, I can explain the Composite pattern and draw my level as a grid of brick types.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "DONUTS vote: top 3 games (10 min)",
-        "This week and the points (3 min)",
-        "Mini-lesson: a level is a grid of bricks (7 min)",
-        "You do: draw your level as a grid (15 min)",
-        "Exit Ticket: your grid, row by row (10 min)"
+        "Wayground: classroom expectations (5 min)",
+        "Review answers + today's goal (5 min)",
+        "Grade check: Infinite Campus + form (6 min)",
+        "This week (3 days) and the points (3 min)",
+        "Mini-lesson: a level is a group of bricks (7 min)",
+        "We do: read a level grid (6 min)",
+        "You do: draw your level grid (11 min)",
+        "Exit Ticket: describe your grid (7 min)"
       ],
-      "connections": "Last week your bricks got swappable behaviors. This week is the Composite pattern: a whole level built from a grid of Brick objects. Today you draw your level as a grid. No class Tuesday or Wednesday, so Thursday you build it with Copilot."
+      "connections": "Last week bricks got strategies. This short week, a whole level becomes one object made of bricks. Today you draw your level as a grid. No class Tuesday or Wednesday. Thursday you build it."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD pencil holder with the ruler showing its measurements, and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD Pencil Holder. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can use the ruler tool to make a cylinder exactly 80 mm wide and 100 mm tall.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "weeklyDeliverable": "Due Sunday night: a photo of your group's popsicle-stick bridge spanning 30 cm, how much weight it held, and 2 sentences on how it did. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Popsicle Bridge Build. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group has built both side trusses from our approved plan.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "DONUTS vote: top 3 bridges (10 min)",
-        "This week and the points (3 min)",
-        "We do: the ruler tool (10 min)",
-        "You do: an 80 by 100 mm cylinder (15 min)",
-        "Exit Ticket: upload your screenshot (7 min)"
+        "Wayground: classroom expectations (5 min)",
+        "Review answers + today's goal (5 min)",
+        "Grade check: Infinite Campus + form (6 min)",
+        "This week (3 days) and the points (3 min)",
+        "Roles by birthday (2 min)",
+        "I do: one glued joint, start to finish (5 min)",
+        "You do: build both side trusses (17 min)",
+        "Exit Ticket: what's hardest so far? (7 min)"
       ],
-      "connections": "Last week you finished and compared your truss bridges. This week you design a pencil holder to exact measurements, the way real parts are made. Today you learn the ruler tool. No class Tuesday or Wednesday, so Thursday you cut the hole and finish."
+      "connections": "Last week your group planned a bridge in Truzme and got it approved. This short week you build it. Today: both side trusses. No class Tuesday or Wednesday. Thursday you join them."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a photo or short video of your cam toy moving its follower up and down when you turn the pencil. A photo of whatever you have is 70 points, so turn it in early and update it.",
+      "weeklyDeliverable": "Due Sunday night: a photo or short video of your cam toy moving its follower up and down when you turn the pencil, and 1 sentence on how the cam works. Turning it in is 70 points. You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Cam Toy. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can measure and cut my own cam and follower and say how a cam makes something go up and down.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "smartGoal": "By the end of class, I can explain how a cam turns spinning into up-and-down, and my pair has built the box frame.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "DONUTS vote: top 3 bridges (10 min)",
-        "This week and the points (3 min)",
-        "I do: how a cam moves a follower (7 min)",
-        "You do: measure and cut your cam and follower (15 min)",
-        "Exit Ticket: what does a cam do? (7 min)",
-        "Clean up and bag your pieces (3 min)"
+        "Wayground: classroom expectations (5 min)",
+        "Review answers + today's goal (5 min)",
+        "Grade check: Infinite Campus + form (6 min)",
+        "This week (3 days) and the points (3 min)",
+        "Mini-lesson: cams and followers (6 min)",
+        "Roles by birthday (2 min)",
+        "You do: measure and build the box frame (19 min)",
+        "Exit Ticket: what does a cam do? (4 min)"
       ],
-      "connections": "Last week you built and tested a truss bridge. This week you build a cam toy, a machine that turns spinning into up-and-down motion. Today you cut your parts. No class Tuesday or Wednesday, so Thursday you build it."
+      "connections": "Last week you strengthened your bridge where it broke. This short week you build a cam toy that moves. Today: how cams work, and the frame. No class Tuesday or Wednesday."
     }
   }
 }

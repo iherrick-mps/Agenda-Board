@@ -3,48 +3,48 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (Snake, ROLLER, Block Breaker patterns, your portfolio site) and make it bigger, better, or brand new. Missing work is due Thursday, Dec 17, before grades close.",
-      "workingNow": "Open the Google Classroom post called Choose Your Own Adventure. If you have missing work, do that first. Then pick one adventure from the menu and build it. Nothing this week is graded.",
-      "smartGoal": "By the end of class, I have one more piece of my adventure working.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (Snake, ROLLER, Block Breaker patterns, your portfolio site) and make it better.",
+      "workingNow": "Open the Google Classroom assignment called Choose Your Own Adventure. Work on the project you picked. There is nothing to turn in this week.",
+      "smartGoal": "By the end of class, I can show one change I made and say why.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Missing work first (5 min)",
-        "You do: build your adventure (15 min)",
-        "Quick share: what's working now? (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (3 min)",
+        "You do: keep going (17 min)",
+        "Spoken share-out: partner (5 min)"
       ],
-      "connections": "Yesterday you made your adventure better. Today you add one more piece. Tomorrow you finish it and show it off."
+      "connections": "Yesterday you made an improvement. Today you keep going. Tomorrow is the last class of the semester: share what you made."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (your Game Lab game, TinkerCAD designs, TinkerCAD circuits, your Google Site) and make it bigger, better, or brand new. Missing work is due Thursday, Dec 17, our last class.",
-      "workingNow": "Open the Google Classroom post called Choose Your Own Adventure. If you have missing work, do that first. Then pick one adventure from the menu and build it. Nothing this week is graded.",
-      "smartGoal": "By the end of class, I have one more piece of my adventure working.",
-      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
-      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (TinkerCAD designs, your bridge, your cam, your circuits) and make it better.",
+      "workingNow": "Open the Google Classroom assignment called Choose Your Own Adventure. Work on the project you picked. There is nothing to turn in this week.",
+      "smartGoal": "By the end of class, I can show one change I made and say why.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Missing work first (5 min)",
-        "You do: build your adventure (15 min)",
-        "Quick share: what's working now? (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (3 min)",
+        "You do: keep going (17 min)",
+        "Spoken share-out: partner (5 min)"
       ],
-      "connections": "Yesterday you made your adventure better. Today you add one more piece. Tomorrow is our last class: you finish it and show it off."
+      "connections": "Yesterday you made an improvement. Today you keep going. Tomorrow is the last class of the semester: share what you made."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (your Game Lab game, a cardboard build, TinkerCAD circuits, your Google Site) and make it bigger, better, or brand new. Missing work is due Thursday, Dec 17, our last class.",
-      "workingNow": "Open the Google Classroom post called Choose Your Own Adventure. If you have missing work, do that first. Then pick one adventure from the menu and build it. Nothing this week is graded.",
-      "smartGoal": "By the end of class, I have one more piece of my adventure working.",
-      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
-      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "weeklyDeliverable": "Nothing graded this week! Choose your own adventure: pick anything you learned this semester (your bridge, cam toy, tensegrity, chain reaction, circuits) and make it better.",
+      "workingNow": "Open the Google Classroom assignment called Choose Your Own Adventure. Work on the project you picked. There is nothing to turn in this week.",
+      "smartGoal": "By the end of class, I can show one change I made and say why.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Missing work first (5 min)",
-        "You do: build your adventure (15 min)",
-        "Quick share: what's working now? (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (3 min)",
+        "You do: keep going (17 min)",
+        "Spoken share-out: partner (5 min)"
       ],
-      "connections": "Yesterday you made your adventure better. Today you add one more piece. Tomorrow is our last class: you finish it and show it off."
+      "connections": "Yesterday you made an improvement. Today you keep going. Tomorrow is the last class of the semester: share what you made."
     }
   }
 }

@@ -3,51 +3,53 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your moving brick, and 3 sentences about the Strategy pattern (85 points even if your game breaks), plus your live game with at least one brick using a moving behavior (15 points).",
-      "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my turned-in game link works, and I have finished my moving brick or tried one Future Engineer option.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "weeklyDeliverable": "Due Sunday night: your Strategy turn-in doc with your live game link, your plan for your moving brick, and 3 short answers about the Strategy pattern (85 points even if your game breaks), plus the Strategy pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
+      "smartGoal": "By the end of class, my moving brick is live, I can explain it with the pattern words, and my doc is turned in once.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Check your turned-in link works (5 min)",
-        "Catch up or Future Engineer (25 min)",
-        "Gallery play: scout for Monday's DONUTS vote (10 min)",
-        "Exit Ticket: what does your strategy change? (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Finish, fill in the Answers tab, or Future Engineer (22 min)",
+        "Gallery play: try 2 classmates' games (10 min)",
+        "Final check + turn in (8 min)"
       ],
-      "connections": "This week your bricks got swappable behaviors. Today you catch up or go further, like a third behavior. Monday the class votes on its top 3 games for DONUTS, then starts the Composite pattern."
+      "connections": "This week your bricks got swappable strategies. Today you finish and turn in once. Next week each level becomes a grid you design: the Composite pattern."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your finished truss bridge with its parts labeled, plus your 2 sentences about it. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD Bridge Finish. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my bridge is turned in, and I have caught up or tried one Future Engineer option.",
-      "contentStandard": "NGSS MS-ETS1-2 \u2014 Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
-      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "weeklyDeliverable": "Due Sunday night: your table group's approved bridge plan: a screenshot of your truss in Truzme holding the 5 lb load, your stick count, and where you doubled sticks. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Popsicle Bridge Plan. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
+      "smartGoal": "By the end of class, Ms. Herrick has approved our plan and our group has turned it in once.",
+      "contentStandard": "NGSS MS-ETS1-2 — Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Check your screenshot is turned in (5 min)",
-        "Catch up or Future Engineer (25 min)",
-        "Gallery walk: scout for Monday's DONUTS vote (10 min)",
-        "Exit Ticket: one thing you'd change (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Final check against the 2 rules (8 min)",
+        "Show Ms. Herrick your plan (15 min)",
+        "Fill in the Answers tab (12 min)",
+        "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "This week you finished, labeled, and compared your truss bridge. Today you catch up or go further. Monday the class votes on its top 3 bridges for DONUTS, then you design a part to exact measurements."
+      "connections": "This week your group planned a popsicle-stick bridge in Truzme. Today Ms. Herrick approves it. Next week you build it and test it with real weight."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a photo of your group's tested bridge, its max load, and 2 sentences about how it did. A photo of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called Bridge Build and Test. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, our group has fixed one weak spot and tested our bridge again.",
-      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
-      "eldStandard": "ELD.PI.6-8.3 \u2014 Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "weeklyDeliverable": "Due Sunday night: your group's Answers page with a photo of your reinforced bridge, how many water bottles it held in Test 1 and Test 2, where you added tactical popsicle sticks, and 2 sentences on why. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Bridge Deck and Load Test. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
+      "smartGoal": "By the end of class, we've run Test 2, compared it to Test 1, and turned in our Answers page once.",
+      "contentStandard": "NGSS MS-ETS1-3 — Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Check your photo is turned in (5 min)",
-        "Fix one weak spot and retest (25 min)",
-        "Gallery: scout for Monday's DONUTS vote (10 min)",
-        "Exit Ticket: what broke first? (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Test 2: same rules as Test 1 (18 min)",
+        "Compare Test 1 vs. Test 2 (5 min)",
+        "Fill in the Answers page (12 min)",
+        "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "This week your group built and tested a Warren truss bridge. Today you fix one weak spot and test again. Monday the class votes on its top 3 bridges for DONUTS, then you start a cam toy."
+      "connections": "This week you tested your bridge, found its weak spot, and strengthened it. Today you test again and turn in. Next week: a cam toy that moves."
     }
   }
 }

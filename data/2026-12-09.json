@@ -3,48 +3,51 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for multiball, and 3 sentences about the Prototype pattern (85 points even if your game breaks), plus your live game with a working multiball, where one ball is cloned into at least two (15 points).",
+      "weeklyDeliverable": "Due Sunday night: your Prototype turn-in doc with your live game link, your plan for multiball, and 3 short answers about the Prototype pattern (85 points even if your game breaks), plus the Prototype pattern working in your live game (15 points). You turn it in once, at the end of Thursday's class.",
       "workingNow": "Open the Google Classroom assignment called Prototype Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my game has 2 balls at once, and my game still works.",
-      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create procedures with parameters to organize code and make it easier to reuse.",
-      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "smartGoal": "By the end of class, my game makes a second ball by cloning the first.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "We do: clone the ball together (12 min)",
-        "You do: test it, Commit, Sync Changes (6 min)",
-        "Exit Ticket: what did your clone copy? (7 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (3 min)",
+        "You do: build the clone with Copilot (12 min)",
+        "Hard refresh and test (5 min)",
+        "Exit Ticket: what got copied? (5 min)"
       ],
-      "connections": "Yesterday you planned your multiball. Today we clone the ball together. Thursday you finish your multiball with Copilot and turn in."
+      "connections": "Yesterday you planned multiball. Today you build the clone. Tomorrow you finish and turn in."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the battery, resistor, LED, and switch labeled. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD LED and Switch. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, every part of my circuit has a label, and a progress screenshot is turned in.",
-      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
-      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the battery, resistor, LED, and switch labeled, plus 1 sentence on what the switch does. Turning it in is 70 points. You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called LED and Switch Circuit. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, every part of my switch circuit is labeled.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.12 — Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "We do: label one part (8 min)",
-        "You do: label the other 3 parts (10 min)",
-        "Exit Ticket: turn in your screenshot (7 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (3 min)",
+        "You do: label all 4 parts (14 min)",
+        "Check: on and off still work (3 min)",
+        "Exit Ticket: name the 4 parts (5 min)"
       ],
-      "connections": "Yesterday your switch turned the light on and off. Today you label every part. Thursday you finish and turn in."
+      "connections": "Yesterday your switch worked. Today you label everything. Tomorrow you turn in."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the parts labeled. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD LED and Switch. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my circuit has a switch that turns the LED on and off.",
-      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
-      "eldStandard": "ELD.PI.6-8.5 \u2014 Listening actively to spoken English in a range of social and academic contexts.",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the parts labeled. Turning it in is 70 points. You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called LED and Switch Circuit. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my switch turns my LED on and off.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.12 — Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "We do: add a switch (12 min)",
-        "You do: test it on and off (6 min)",
-        "Exit Ticket: turn in your screenshot (7 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (3 min)",
+        "We do: add a slide switch (14 min)",
+        "Test on and off (3 min)",
+        "Exit Ticket: what does the switch do? (5 min)"
       ],
-      "connections": "Yesterday your LED lit up. Today you add a switch to control it. Thursday you label the parts and turn in."
+      "connections": "Yesterday your LED lit up. Today a switch controls it. Tomorrow you label it and turn in."
     }
   }
 }

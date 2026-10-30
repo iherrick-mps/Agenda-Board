@@ -3,54 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your level drawn as a grid, and 3 sentences about the Composite pattern (85 points even if your game breaks), plus your live game with its level built from your grid (15 points).",
-      "workingNow": "Open the Google Classroom assignment called Composite Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my live game builds its level from my grid, and my 3 sentences about the Composite pattern are turned in.",
-      "contentStandard": "CA CS Standards 6-8.AP.11 \u2014 Create clearly named variables that represent different data types and perform operations on their values.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "weeklyDeliverable": "Due Sunday night: your Composite turn-in doc with your live game link, your level drawn as a grid, and 3 short answers about the Composite pattern (85 points even if your game breaks), plus the Composite pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Composite Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my makeBricks() builds my level from my grid.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Review: your grid from Monday (3 min)",
-        "Write first: your 3 sentences (8 min)",
-        "We do: watch one grid level get built (8 min)",
-        "You do: build yours with Copilot (14 min)",
-        "Commit, Sync Changes, hard refresh, check (7 min)",
-        "Turn in on Google Classroom (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Paste your grid into Copilot (5 min)",
+        "You do: build the level from the grid (20 min)",
+        "Commit, Sync Changes, hard refresh, check (8 min)",
+        "Exit Ticket: what changed in makeBricks? (7 min)"
       ],
-      "connections": "Monday you drew your level as a grid. Today you watch one grid level get built, then build yours with Copilot and turn in. Tomorrow is catch-up and Future Engineer day."
+      "connections": "Monday you drew your level as a grid. Today makeBricks() reads your grid instead of hardcoded rows. Tomorrow you finish and turn in."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD pencil holder with the ruler showing its measurements, and its share link. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD Pencil Holder. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my pencil holder has a 70 mm hole, the ruler shows its measurements, and I have turned in a screenshot and a share link.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "weeklyDeliverable": "Due Sunday night: a photo of your group's popsicle-stick bridge spanning 30 cm, how much weight it held, and 2 sentences on how it did. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Popsicle Bridge Build. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group's bridge has both sides joined and a deck, and it's drying for tomorrow's test.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Turn in what you have now (5 min)",
-        "We do: cut a 70 mm hole (12 min)",
-        "You do: finish and measure (15 min)",
-        "Update your screenshot and share link (8 min)",
-        "Due Sunday reminder (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Check sides against the plan (5 min)",
+        "You do: join the sides + add a deck (25 min)",
+        "Exit Ticket: predict how much it will hold (5 min)",
+        "Clean up + set to dry (5 min)"
       ],
-      "connections": "Monday you made a cylinder to exact measurements. Today you cut the hole that makes it a pencil holder and turn it in. Tomorrow is catch-up and Future Engineer day."
+      "connections": "Monday you built both side trusses. Today you join them and add a deck. Tomorrow you test it with real weight."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a photo or short video of your cam toy moving its follower up and down when you turn the pencil. A photo of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called Cam Toy. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, turning my pencil axle makes my follower go up and down, and a photo or video is turned in.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Due Sunday night: a photo or short video of your cam toy moving its follower up and down when you turn the pencil, and 1 sentence on how the cam works. Turning it in is 70 points. You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Cam Toy. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my pair's cam is on a pencil axle and the follower rides on top of it.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "I do: push the pencil axle through (7 min)",
-        "You do: build and test your cam toy (25 min)",
-        "Photo or video, then turn in (8 min)",
-        "Clean up and bag your pieces (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "I do: an off-center cam (5 min)",
+        "You do: cam, axle, follower (27 min)",
+        "Exit Ticket: why off-center? (5 min)",
+        "Clean up + set to dry (3 min)"
       ],
-      "connections": "Monday you cut your cam and follower. Today you put them together on a pencil axle and turn in a photo or video. Tomorrow you make it run smoother."
+      "connections": "Monday you built the frame. Today you add the cam and follower. Tomorrow you test it and turn in."
     }
   }
 }

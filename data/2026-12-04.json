@@ -3,51 +3,53 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for a wide-paddle power-up, and 3 sentences about the Decorator pattern (85 points even if your game breaks), plus your live game with a working wide-paddle power-up (15 points).",
-      "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my turned-in game link works, and I have finished my power-up or tried one Future Engineer option.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 \u2014 Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Due Sunday night: your Decorator turn-in doc with your live game link, your plan for a wide-paddle power-up, and 3 short answers about the Decorator pattern (85 points even if your game breaks), plus the Decorator pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
+      "smartGoal": "By the end of class, my power-up is live, I can explain the Decorator pattern, and my doc is turned in once.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Check your turned-in link works (5 min)",
-        "Catch up or Future Engineer (25 min)",
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Finish, fill in the Answers tab, or Future Engineer (22 min)",
         "Gallery play: try 2 classmates' games (10 min)",
-        "Exit Ticket: what does your decorator add? (5 min)"
+        "Final check + turn in (8 min)"
       ],
-      "connections": "This week a power-up gave your paddle a new ability without rewriting it. Today you catch up or go further, like a power-up that wears off. Monday starts the Prototype pattern: cloning your ball to make multiball."
+      "connections": "This week a decorator gave your paddle a new ability. Today you turn in once. Next week: multiball with the Prototype pattern."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your working LED circuit in TinkerCAD Circuits. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD Circuits LED. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my LED circuit is turned in, and I have caught up or tried one Future Engineer option.",
-      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED circuit lit up in the TinkerCAD Circuits simulation, with the battery, resistor, and LED labeled. Turning it in is 70 points. You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called TinkerCAD Circuits: LED. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
+      "smartGoal": "By the end of class, my labeled circuit is lit up in a screenshot and turned in once.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Check your screenshot is turned in (5 min)",
-        "Catch up or Future Engineer (25 min)",
-        "Gallery walk: see 2 classmates' circuits (10 min)",
-        "Exit Ticket: what does the resistor do? (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Screenshot while the simulation runs (13 min)",
+        "Fill in the Answers tab (12 min)",
+        "Gallery walk: 2 classmates (10 min)",
+        "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "This week you built your first working circuit. Today you catch up or go further. Monday you add a switch so you control when the light turns on."
+      "connections": "This week you built and labeled your first circuit. Today you turn in once. Next week you add a switch."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a short video of your group's 5-step chain reaction running. A video of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called Chain Reaction. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, our group has fixed the weakest step and recorded a new video.",
-      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Due Sunday night: a short video of your group's 5-step chain reaction running start to finish, with each energy transfer named. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Chain Reaction. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
+      "smartGoal": "By the end of class, my group's chain reaction video is recorded and turned in once.",
+      "contentStandard": "NGSS MS-PS3-5 — Construct, use, and present arguments to support the claim that when the kinetic energy of an object changes, energy is transferred to or from the object.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Check your video is turned in (5 min)",
-        "Fix the weakest step and re-record (25 min)",
-        "Show another group your chain (10 min)",
-        "Exit Ticket: which step failed most? (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Final runs + record the best one (18 min)",
+        "Fill in the Answers page (12 min)",
+        "Gallery: watch 2 groups (5 min)",
+        "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "This week your group built a 5-step chain reaction. Today you make it more reliable. Monday you move to the computer to build circuits in TinkerCAD."
+      "connections": "This week your group designed and built a chain reaction. Today you turn in once. Monday the class votes on the best ones for DONUTS, and we start circuits."
     }
   }
 }

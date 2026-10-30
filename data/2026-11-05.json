@@ -3,54 +3,54 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for your moving brick, and 3 sentences about the Strategy pattern (85 points even if your game breaks), plus your live game with at least one brick using a moving behavior (15 points).",
-      "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my live game has at least one moving brick, and my 3 sentences about the Strategy pattern are turned in.",
-      "contentStandard": "CA CS Standards 6-8.AP.14 \u2014 Create procedures with parameters to organize code and make it easier to reuse.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "weeklyDeliverable": "Due Sunday night: your Strategy turn-in doc with your live game link, your plan for your moving brick, and 3 short answers about the Strategy pattern (85 points even if your game breaks), plus the Strategy pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my live game has at least one row of bricks using my moving strategy.",
+      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Points reminder: 85 for every box (2 min)",
-        "Write first: your 3 sentences (8 min)",
-        "You do: build your moving brick with Copilot (20 min)",
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Paste your plan into Copilot (5 min)",
+        "You do: build your strategy (20 min)",
         "Commit, Sync Changes, hard refresh, check (8 min)",
-        "Turn in on Google Classroom (7 min)"
+        "Exit Ticket: what did you build? (7 min)"
       ],
-      "connections": "Wednesday we gave one brick a behavior together. Today you write your 3 sentences first, then build your moving brick with Copilot and turn in. Tomorrow is catch-up and Future Engineer day."
+      "connections": "Wednesday you traced a strategy one frame at a time. Today you build your moving brick. Tomorrow you finish, play classmates' games, and turn in."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your finished truss bridge with its parts labeled, plus your 2 sentences about it. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD Bridge Finish. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, my labeled bridge and my 2 sentences are turned in with a share link.",
-      "contentStandard": "NGSS MS-ETS1-4 \u2014 Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Due Sunday night: your table group's approved bridge plan: a screenshot of your truss in Truzme holding the 5 lb load, your stick count, and where you doubled sticks. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Popsicle Bridge Plan. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, our design holds the 5 lb load in Truzme, and we have doubled every overloaded stick.",
+      "contentStandard": "NGSS MS-ETS1-3 — Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Turn in what you have now (5 min)",
-        "Fix anything from your partner check (15 min)",
-        "You do: finish and catch up (12 min)",
-        "Update screenshot, sentences, and share link (8 min)",
-        "Due Sunday reminder (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "You do: add the 5 lb load to your design (8 min)",
+        "You do: double the overloaded sticks, retest (17 min)",
+        "Count your sticks (5 min)",
+        "Exit Ticket: which stick did you double, and why? (10 min)"
       ],
-      "connections": "Wednesday you wrote 2 sentences about your bridge. Today you fix, finish, and turn in. Tomorrow is catch-up and Future Engineer day."
+      "connections": "Yesterday your group designed a bridge. Today you test it in Truzme and fix it. Tomorrow you show Ms. Herrick your plan and turn it in."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a photo of your group's tested bridge, its max load, and 2 sentences about how it did. A photo of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called Bridge Build and Test. Read the instructions, follow them, and turn in your work when you are done. There is no exit ticket today.",
-      "smartGoal": "By the end of class, we have tested our bridge, recorded its max load, and turned in a photo and 2 sentences.",
-      "contentStandard": "NGSS MS-ETS1-3 \u2014 Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "weeklyDeliverable": "Due Sunday night: your group's Answers page with a photo of your reinforced bridge, how many water bottles it held in Test 1 and Test 2, where you added tactical popsicle sticks, and 2 sentences on why. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Bridge Deck and Load Test. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group has repaired our bridge and added tactical popsicle sticks exactly where it failed.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Model a fair test: one bottle at a time (5 min)",
-        "Test: find your max load (20 min)",
-        "Photo and record your max load (8 min)",
-        "Write 2 sentences with frames (7 min)",
-        "Turn in, then clean up (5 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Roles by birthday (2 min)",
+        "You do: repair + add tactical sticks (28 min)",
+        "Exit Ticket: predict Test 2 (5 min)",
+        "Clean up + set to dry (5 min)"
       ],
-      "connections": "Wednesday your bridge got its top and stood on its own. Today you test it like engineers and record its max load. Tomorrow you fix one weak spot and test again."
+      "connections": "Yesterday you planned where to strengthen your bridge. Today you add the sticks. Tomorrow you test it again and see if it worked."
     }
   }
 }

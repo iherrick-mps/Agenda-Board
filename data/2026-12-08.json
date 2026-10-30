@@ -3,51 +3,51 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your live game link, your plan for multiball, and 3 sentences about the Prototype pattern (85 points even if your game breaks), plus your live game with a working multiball, where one ball is cloned into at least two (15 points).",
+      "weeklyDeliverable": "Due Sunday night: your Prototype turn-in doc with your live game link, your plan for multiball, and 3 short answers about the Prototype pattern (85 points even if your game breaks), plus the Prototype pattern working in your live game (15 points). You turn it in once, at the end of Thursday's class.",
       "workingNow": "Open the Google Classroom assignment called Prototype Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can write a plan for multiball: what makes it happen and how many balls there are.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 \u2014 Decompose problems into parts to facilitate the design, implementation, and review of programs.",
-      "eldStandard": "ELD.PI.6-8.10 \u2014 Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "smartGoal": "By the end of class, I can plan multiball: when the ball clones and how many balls appear.",
+      "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Mini-lesson: what the clone keeps and changes (8 min)",
-        "We do: plan one clone together (10 min)",
-        "You do: write your multiball plan (17 min)",
-        "Exit Ticket: what starts your multiball? (10 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "We do: read a worked example clone (12 min)",
+        "You do: plan your multiball (15 min)",
+        "Exit Ticket: your multiball plan (13 min)"
       ],
-      "connections": "Yesterday you found where your ball is made. Today you plan your multiball. Tomorrow we clone the ball together."
+      "connections": "Yesterday you found where the ball is made. Today you plan when it clones. Wednesday you build it, and Thursday you turn in."
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the battery, resistor, LED, and switch labeled. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD LED and Switch. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my LED turns on when the switch is closed and off when it is open, and a screenshot is turned in.",
-      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
-      "eldStandard": "ELD.PI.6-8.1 \u2014 Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the battery, resistor, LED, and switch labeled, plus 1 sentence on what the switch does. Turning it in is 70 points. You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called LED and Switch Circuit. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my switch turns my LED on and off in the simulation.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.12 — Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "I do: test the switch both ways (5 min)",
-        "You do: fix until it works both ways (20 min)",
-        "Partner check: on and off (12 min)",
-        "Exit Ticket: upload your screenshot (8 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "We do: add a slide switch into the loop (20 min)",
+        "You do: test on and off (12 min)",
+        "Exit Ticket: where did the switch go? (8 min)"
       ],
-      "connections": "Yesterday you added a switch. Today you make it turn the light on and off. Tomorrow you label every part."
+      "connections": "Yesterday you learned how a switch works. Today you add one. Wednesday you label it, and Thursday you turn in."
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the parts labeled. A screenshot of whatever you have is 70 points, so turn it in early and update it.",
-      "workingNow": "Open the Google Classroom assignment called TinkerCAD LED and Switch. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my battery, resistor, and LED are wired in a loop, and the LED lights up in the simulation.",
-      "contentStandard": "CA CS Standards 6-8.CS.2 \u2014 Design projects that combine hardware and software components to collect and exchange data.",
-      "eldStandard": "ELD.PI.6-8.12 \u2014 Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
+      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the parts labeled. Turning it in is 70 points. You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called LED and Switch Circuit. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my battery, resistor, and LED circuit lights up in the simulation.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.12 — Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
-        "Wayground quiz (5 min)",
-        "Meet the parts: battery, resistor, LED (7 min)",
-        "We do: wire them click by click (15 min)",
-        "You do: start the simulation and fix it (15 min)",
-        "Exit Ticket: upload your screenshot (8 min)"
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "We do: battery, resistor, LED (23 min)",
+        "Start Simulation and check (7 min)",
+        "Exit Ticket: why the resistor? (10 min)"
       ],
-      "connections": "Yesterday you signed in and opened TinkerCAD Circuits. Today you wire your first circuit and make the LED light up. Tomorrow you add a switch."
+      "connections": "Yesterday you opened TinkerCAD Circuits. Today you light an LED. Wednesday you add a switch."
     }
   }
 }
