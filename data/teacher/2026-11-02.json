@@ -1,0 +1,335 @@
+{
+  "title": "Monday Teacher Plan",
+  "note": "Expectations Wayground + grade check. No Blooket today. One turn-in per class: the exit ticket.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Strategy pattern, Day 1: find where things move",
+      "goal": "By the end of class, I can explain what a strategy is in one sentence and point to the 2 places in my game where a brick's strategy will go: my brick factory and update().",
+      "bloom": "Remember / Understand",
+      "exitTicket": "What is a strategy, and in which function will your brick's strategy run every frame?",
+      "prep": [
+        "Expectations Wayground ready",
+        "Strategy Pattern assignment posted in Google Classroom with the Day 1 handout",
+        "Exit ticket question posted with both sentence frames",
+        "Your own Block Breaker Codespace open on the projector (game.js and bricks.js)"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Wayground: classroom expectations",
+          "do": "Students take the expectations Wayground.",
+          "why": "Monday routine: safety and predictability first (Maslow).",
+          "tips": [
+            "Take attendance while they work."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review answers + today's goal",
+          "do": "Go over the missed questions, then read the goal aloud: By the end of class, I can explain what a strategy is in one sentence and point to the 2 places in my game where a brick's strategy will go: my brick factory and update().",
+          "why": "Students know the target before work starts.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Grade check: Infinite Campus + form",
+          "do": "Students open Infinite Campus, find their overall grade, fill out the Weekly Grade Check-In form.",
+          "why": "Weekly ownership of grades.",
+          "tips": [
+            "Keep grades private: no reading screens aloud.",
+            "Below 70%: point to the regrade form and Tuesday tutoring (3:15-4:00).",
+            "Exit tickets can't be redone; missing work is accepted late for full credit."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "This week and the points",
+          "do": "Walk the THIS WEEK box: Mon find, Tue plan, Wed trace, Thu build, Fri turn in once. 85 points for every box filled even if the game breaks, +15 if it works live.",
+          "why": "Points up front lowers the stakes (Maslow).",
+          "tips": [
+            "Say it: only one turn-in, Friday."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Mini-lesson: a strategy is a swappable behavior",
+          "do": "Map-app analogy: same Get directions button, swap car/walk/bike. Then the diagram: update() tells the BRICK to move; the brick holds stayStill or slide; SWAP.",
+          "why": "Concrete analogy before code (ELD: pre-teach STRATEGY, BRICK, SWAP).",
+          "tips": [
+            "Turn-and-talk 1 minute: name another app where you swap a mode.",
+            "IS/NOT table: color is an attribute, moving is a behavior."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "I do: update() has no bricks",
+          "do": "Project game.js, Ctrl+F 'function update'. Read each line aloud: paddle moves, ball moves, bricks don't.",
+          "why": "Worked example from the real game (gradual release).",
+          "tips": [
+            "Ask: which line moves the paddle? Cold call after think time.",
+            "Key idea: the empty spot is where the strategy will run."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "We do + You do: find update() and your brick factory",
+          "do": "Students open their own Codespace, find function update in game.js, then the line in their brick factory that builds each brick object. No code changes, no commit.",
+          "why": "Apply in their own code; small, guaranteed win.",
+          "tips": [
+            "Ctrl+Shift+F searches all files.",
+            "If Copilot edits code: Ctrl+Z, don't accept.",
+            "Answer key: update() in game.js; makeBrick/makeBricks in bricks.js where list.push({ x, y, ... }) or return { ... } is."
+          ]
+        },
+        {
+          "min": 7,
+          "title": "Exit ticket",
+          "do": "Students answer on Google Classroom with a frame.",
+          "why": "One turn-in; recap the goal.",
+          "tips": [
+            "Full answer: a strategy is a behavior you can swap; it will run in update() in game.js.",
+            "Accept 'a function you can swap' for the first part."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students editing code today: nothing should change.",
+        "Students who never found their brick factory last week: pair them with a neighbor.",
+        "Answers pasted from Copilot: remind 'your own words'."
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "Popsicle Bridge Plan, Day 1: the challenge + Truzme",
+      "goal": "By the end of class, I can name our 2 bridge rules and my group job, and I have drawn, supported and loaded one triangle in Truzme and saved it to my Google Drive.",
+      "bloom": "Remember / Understand",
+      "exitTicket": "What are the 2 rules our popsicle-stick bridge must meet, and what is your job in your group?",
+      "prep": [
+        "New table groups decided and posted",
+        "Expectations Wayground ready",
+        "Popsicle Bridge Plan assignment posted with the Day 1 handout; exit ticket posted",
+        "truzme.com tested on a student Chromebook: draw, Support, Nodal load, and Save to file to Google Drive",
+        "A popsicle stick and a water bottle to hold up"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Wayground: classroom expectations",
+          "do": "Students take the expectations Wayground.",
+          "why": "Monday routine: safety and predictability first (Maslow).",
+          "tips": [
+            "Take attendance while they work."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review answers + today's goal",
+          "do": "Go over the missed questions, then read the goal aloud: By the end of class, I can name our 2 bridge rules and my group job, and I have drawn, supported and loaded one triangle in Truzme and saved it to my Google Drive.",
+          "why": "Students know the target before work starts.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Grade check: Infinite Campus + form",
+          "do": "Students open Infinite Campus, find their overall grade, fill out the Weekly Grade Check-In form.",
+          "why": "Weekly ownership of grades.",
+          "tips": [
+            "Keep grades private: no reading screens aloud.",
+            "Below 70%: point to the regrade form and Tuesday tutoring (3:15-4:00).",
+            "Exit tickets can't be redone; missing work is accepted late for full credit."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "The challenge: 30 cm, 5 lbs",
+          "do": "Show the challenge picture. Rule 1: spans at least 30 cm. Rule 2: holds 5 lbs (about 4-5 full bottles). This week plan in Truzme, next week build.",
+          "why": "PBL: a real product with a real test.",
+          "tips": [
+            "Hold up a stick and a bottle.",
+            "Students repeat the 2 rules chorally (ELD)."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "New table groups + roles by birthday",
+          "do": "Move to new groups. Line up by birthday: youngest Designer, 2nd youngest Analyst, 2nd oldest Materials Manager, oldest Checker. Group of 3: Checker also MM. Group of 5: two Analysts.",
+          "why": "Complex Instruction: roles with real authority; no one picks.",
+          "tips": [
+            "Frontload the move: say where each group sits before anyone stands.",
+            "Checker has veto power over what goes to you on Friday."
+          ]
+        },
+        {
+          "min": 17,
+          "title": "We do: one triangle in Truzme + save",
+          "do": "Everyone on their own Chromebook, step by step with you: Draw member (3 sides), Support (Pinned left, Roller right), Nodal load Fy -5 on top, hover the colors, then Save to file to Google Drive and turn on Autosave.",
+          "why": "Round 1 fully worked: guaranteed success with a confusing tool.",
+          "tips": [
+            "Wait for all hands-up 'done' before each next step.",
+            "Stability warning = a support is missing.",
+            "Colors in Truzme: blue = compression (squeezed), red = tension (pulled). Opposite of the Johns Hopkins sim. Save the meaning for Tuesday.",
+            "Chromebooks may wipe browser storage at sign-out: the Drive save is the important step."
+          ]
+        },
+        {
+          "min": 7,
+          "title": "Exit ticket",
+          "do": "Students answer on Google Classroom with a frame.",
+          "why": "One turn-in; recap the goal.",
+          "tips": [
+            "Full answer: spans at least 30 cm and holds 5 lbs, plus their role."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students stuck on Drive not appearing in the save window (guest login or Drive blocked): note who, use Share > Download .truzme file instead.",
+        "Groups arguing about roles: point back to the birthday rule.",
+        "Students racing ahead before the load step."
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Bridge Deck and Load Test, Day 1: join + deck",
+      "goal": "By the end of class, my group's two side trusses are joined 1/4 stick apart, and our bridge has a popsicle-stick deck with a stick on every bottom joint.",
+      "bloom": "Apply",
+      "exitTicket": "Where did your group put the first 4 deck sticks, and why there?",
+      "prep": [
+        "Before class: glue one popsicle stick to cardboard with a glue stick and tug-test it yourself",
+        "Expectations Wayground ready",
+        "Bridge Deck and Load Test assignment posted with the Day 1 handout; exit ticket posted",
+        "Group bags, both side trusses, cut cross pieces, measuring sticks handed back",
+        "Popsicle sticks, glue sticks, scissors, scrap cardboard out",
+        "A flat drying spot cleared"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Wayground: classroom expectations",
+          "do": "Students take the expectations Wayground.",
+          "why": "Monday routine: safety and predictability first (Maslow).",
+          "tips": [
+            "Take attendance while they work."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review answers + today's goal",
+          "do": "Go over the missed questions, then read the goal aloud: By the end of class, my group's two side trusses are joined 1/4 stick apart, and our bridge has a popsicle-stick deck with a stick on every bottom joint.",
+          "why": "Students know the target before work starts.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Grade check: Infinite Campus + form",
+          "do": "Students open Infinite Campus, find their overall grade, fill out the Weekly Grade Check-In form.",
+          "why": "Weekly ownership of grades.",
+          "tips": [
+            "Keep grades private: no reading screens aloud.",
+            "Below 70%: point to the regrade form and Tuesday tutoring (3:15-4:00).",
+            "Exit tickets can't be redone; missing work is accepted late for full credit."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "This week and the points",
+          "do": "THIS WEEK box: Mon join + deck, Tue Test 1, Wed plan up to 6 tactical sticks, Thu add them, Fri Test 2 + turn in once.",
+          "why": "Predictable week (Maslow).",
+          "tips": []
+        },
+        {
+          "min": 2,
+          "title": "Roles by birthday",
+          "do": "Youngest Joiner, 2nd youngest Deck Builder, 2nd oldest Materials Manager, oldest Checker. Group of 3: Checker also MM. Group of 5: two Deck Builders.",
+          "why": "Complex Instruction.",
+          "tips": []
+        },
+        {
+          "min": 4,
+          "title": "I do: glue test + where the bottom joints are",
+          "do": "Show the side view: 4 bottom joints. Show the top view: first 4 deck sticks on the joints, then fill in. Key rule: weight goes on the joints.",
+          "why": "Structural reason before the build (Bloom: Understand to Apply).",
+          "tips": [
+            "Ask: why on the joints? Think time, then a partner answer."
+          ]
+        },
+        {
+          "min": 20,
+          "title": "You do: join sides + deck on the joints",
+          "do": "Glue test first, then stand sides 1/4 stick apart, glue 4 cross pieces, first 4 deck sticks on the joints, fill in (no gap wider than a glue square), count sticks, set to dry.",
+          "why": "Hands-on Apply with Checker approval on every piece.",
+          "tips": [
+            "Publicly praise precise Checkers and Joiners (assign competence).",
+            "Deck sticks run ACROSS both bottom chords.",
+            "If glue sticks fail the tug test: switch to tape wraps or white glue if you have it."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Exit ticket + set to dry",
+          "do": "Students answer on Google Classroom; bridges go flat to dry.",
+          "why": "One turn-in; recap the goal.",
+          "tips": [
+            "Full answer: on the bottom joints, because that's where the diagonals/triangles meet and share the load."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Sides glued too close or too far apart.",
+        "Deck sticks glued between joints first.",
+        "Glue sticks too weak for wood on cardboard.",
+        "Groups with only one side finished Friday: they finish side 2 first, deck tomorrow."
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Goal reviewed after the Wayground and again at the exit ticket; numbered steps; worked example first; checklists; two sentence frames on the exit ticket."
+    ],
+    [
+      "English learners",
+      "Key words with pictures (strategy/brick/swap; joint, deck, chord); choral repeat of the 2 bridge rules; partner talk before writing."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca; steps read aloud; speech-to-text OK; spelling not graded."
+    ],
+    [
+      "ADHD learners",
+      "Short timed chunks with a visual timer; hands-on roles (Joiner, Checker); step-by-step pacing in Truzme; break pass."
+    ],
+    [
+      "IEP / 504",
+      "Dictated exit tickets; extended time; floor: 8th finds update() only, 7th draws the triangle (save optional with help), 6th glues the 4 joint sticks only."
+    ],
+    [
+      "Advanced learners",
+      "Future Engineer (OPTIONAL), 1 KB point."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "Each grade starts the week's product: a moving brick, a bridge plan, a tested bridge."
+    ],
+    [
+      "Complex Instruction",
+      "Birthday-order roles with real authority in 6th and 7th; assign competence publicly."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "Expectations, grade check, points up front, one turn-in, 'you are not behind'."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "Remember/Understand in 8th and 7th; Apply in 6th."
+    ]
+  ]
+}

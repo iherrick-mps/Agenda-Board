@@ -5,7 +5,7 @@
       "grade": "8th Grade",
       "weeklyDeliverable": "Due Sunday night: your Strategy turn-in doc with your live game link, your plan for your moving brick, and 3 short answers about the Strategy pattern (85 points even if your game breaks), plus the Strategy pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can explain what a strategy is and find the code that decides how my bricks behave.",
+      "smartGoal": "By the end of class, I can explain what a strategy is in one sentence and point to the 2 places in my game where a brick's strategy will go: my brick factory and update().",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems into parts to facilitate the design, implementation, and review of programs.",
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
@@ -14,17 +14,17 @@
         "Grade check: Infinite Campus + form (6 min)",
         "This week and the points (3 min)",
         "Mini-lesson: a strategy is a swappable behavior (8 min)",
-        "I do: where bricks get updated (6 min)",
-        "You do: find it in your game with Copilot (10 min)",
-        "Exit Ticket: what is a strategy? (7 min)"
+        "I do: update() moves the paddle and ball, not bricks (6 min)",
+        "We do + You do: find update() and your brick factory (10 min)",
+        "Exit Ticket: what is a strategy, and where will it run? (7 min)"
       ],
-      "connections": "Last week a factory method built your bricks. This week each brick gets a strategy: a behavior you can swap, like staying still or sliding. Today you find where bricks get updated. Tomorrow you plan a moving brick."
+      "connections": "Last week a factory method built your bricks with attributes. This week each brick gets a strategy: a behavior you can swap, like staying still or sliding. Today you find the 2 places it will go: your brick factory and update(). Tomorrow you plan your moving brick."
     },
     "6th Period": {
       "grade": "7th Grade",
       "weeklyDeliverable": "Due Sunday night: your table group's approved bridge plan: a screenshot of your truss in Truzme holding the 5 lb load, your stick count, and where you doubled sticks. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Popsicle Bridge Plan. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my table group knows the bridge challenge, our roles, and has drawn one triangle in Truzme.",
+      "smartGoal": "By the end of class, I can name our 2 bridge rules and my group job, and I have drawn, supported and loaded one triangle in Truzme and saved it to my Google Drive.",
       "contentStandard": "NGSS MS-ETS1-1 — Define the criteria and constraints of a design problem to ensure a successful solution.",
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
@@ -33,8 +33,8 @@
         "Grade check: Infinite Campus + form (6 min)",
         "The challenge: 30 cm, 5 lbs, popsicle sticks (5 min)",
         "New table groups + roles by birthday (5 min)",
-        "We do: open Truzme, draw one triangle (17 min)",
-        "Exit Ticket: what are the 2 rules? (7 min)"
+        "We do: one triangle in Truzme + save to Drive (17 min)",
+        "Exit Ticket: the 2 rules + your job (7 min)"
       ],
       "connections": "Last week you built a Warren truss in TinkerCAD, but TinkerCAD can't tell us how much weight a bridge holds. This week your table group plans a real popsicle-stick bridge in Truzme. Today you meet the challenge and the tool."
     },
@@ -42,7 +42,7 @@
       "grade": "6th Grade",
       "weeklyDeliverable": "Due Sunday night: your group's Answers page with a photo of your reinforced bridge, how many water bottles it held in Test 1 and Test 2, where you added tactical popsicle sticks, and 2 sentences on why. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Bridge Deck and Load Test. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my group's two side trusses are joined and our bridge has a popsicle-stick deck.",
+      "smartGoal": "By the end of class, my group's two side trusses are joined 1/4 stick apart, and our bridge has a popsicle-stick deck with a stick on every bottom joint.",
       "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
@@ -51,11 +51,11 @@
         "Grade check: Infinite Campus + form (6 min)",
         "This week and the points (3 min)",
         "Roles by birthday (2 min)",
-        "I do: one deck stick, glued (4 min)",
-        "You do: join sides + build the deck (20 min)",
-        "Exit Ticket: why does a bridge need a deck? (5 min)"
+        "I do: glue test + where the bottom joints are (4 min)",
+        "You do: join sides + deck on the joints (20 min)",
+        "Exit Ticket: where did the first deck sticks go? (5 min)"
       ],
-      "connections": "Last week your group built both sides of a Warren truss. This week you add a deck, test it with water bottles, then strengthen it where it broke. Today: join the sides and build the deck."
+      "connections": "Last week your group built both sides of a Warren truss. This week you add a deck, test it with water bottles, then strengthen it where it broke. Today: join the sides and put a deck stick on every bottom joint, where the triangles share the load."
     }
   }
 }
