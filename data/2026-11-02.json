@@ -22,21 +22,21 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: your table group's approved bridge plan: a screenshot of your truss in Truzme holding the 5 lb load, your stick count, and where you doubled sticks. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
-      "workingNow": "Open the Google Classroom assignment called Popsicle Bridge Plan. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can name our 2 bridge rules and my group job, and I have drawn, supported and loaded one triangle in Truzme and saved it to my Google Drive.",
-      "contentStandard": "NGSS MS-ETS1-1 — Define the criteria and constraints of a design problem to ensure a successful solution.",
-      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
+      "weeklyDeliverable": "Due Sunday night: your group's Answers page with a photo of your joined bridge with its cardboard deck, how many water bottles it held in Test 1, and where it failed first. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class. One strike: if anyone in your group breaks a materials rule, your group finishes the week on Chromebooks.",
+      "workingNow": "Open today's question on Google Classroom and the doc attached to it. Follow the steps, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group has drawn our side truss full size with our measuring stick and built side truss 1 on top of it, every piece checked before gluing.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Wayground: classroom expectations (5 min)",
         "Review answers + today's goal (5 min)",
         "Grade check: Infinite Campus + form (6 min)",
-        "The challenge: 30 cm, 5 lbs, popsicle sticks (5 min)",
+        "The one-strike materials rules (5 min)",
         "New table groups + roles by birthday (5 min)",
-        "We do: one triangle in Truzme + save to Drive (17 min)",
-        "Exit Ticket: the 2 rules + your job (7 min)"
+        "You do: fold the stick, draw, build side truss 1 (17 min)",
+        "Exit Ticket: what did you build, how did you check? (7 min)"
       ],
-      "connections": "Last week you built a Warren truss in TinkerCAD, but TinkerCAD can't tell us how much weight a bridge holds. This week your table group plans a real popsicle-stick bridge in Truzme. Today you meet the challenge and the tool."
+      "connections": "Last week you built a Warren truss in TinkerCAD. This week you build a real one from cardboard, the same build 6th grade did, and you keep the materials by keeping the 5 rules. Today: side truss 1. Tomorrow: side truss 2."
     },
     "7th Period": {
       "grade": "6th Grade",

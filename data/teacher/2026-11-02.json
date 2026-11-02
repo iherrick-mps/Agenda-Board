@@ -103,16 +103,16 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "topic": "Popsicle Bridge Plan, Day 1: the challenge + Truzme",
-      "goal": "By the end of class, I can name our 2 bridge rules and my group job, and I have drawn, supported and loaded one triangle in Truzme and saved it to my Google Drive.",
-      "bloom": "Remember / Understand",
-      "exitTicket": "What are the 2 rules our popsicle-stick bridge must meet, and what is your job in your group?",
+      "topic": "Warren Truss Build, Day 1: side truss 1 (one strike)",
+      "goal": "By the end of class, my group has drawn our side truss full size with our measuring stick and built side truss 1 on top of it, every piece checked before gluing.",
+      "bloom": "Apply",
+      "exitTicket": "What did your group build today, and how did you check a piece before gluing it?",
       "prep": [
-        "New table groups decided and posted",
-        "Expectations Wayground ready",
-        "Popsicle Bridge Plan assignment posted with the Day 1 handout; exit ticket posted",
-        "truzme.com tested on a student Chromebook: draw, Support, Nodal load, and Save to file to Google Drive",
-        "A popsicle stick and a water bottle to hold up"
+        "New table groups decided and posted (Seating-7th-2026-11)",
+        "Day 1 doc (7th_Mon_Side_Truss_1_Nov2) attached to the exit ticket (done)",
+        "Per table: 3 sheets of paper (measuring stick + drawing), tape, cardboard, glue, scissors",
+        "The 5 one-strike rules on the board",
+        "Truzme ready as the computer assignment for any group that loses materials"
       ],
       "segments": [
         {
@@ -146,34 +146,34 @@
         },
         {
           "min": 5,
-          "title": "The challenge: 30 cm, 5 lbs",
-          "do": "Show the challenge picture. Rule 1: spans at least 30 cm. Rule 2: holds 5 lbs (about 4-5 full bottles). This week plan in Truzme, next week build.",
-          "why": "PBL: a real product with a real test.",
+          "title": "The one-strike materials rules",
+          "do": "Read the 5 rules from the doc's red box: nothing thrown, stay at your table, Chromebooks stay on the table, no touching others with materials, scissors stay on the table. One break by anyone = the whole group is on Chromebooks (Truzme) for the rest of the week. No warnings.",
+          "why": "Clear limits before materials come out, so the build stays a privilege they keep.",
           "tips": [
-            "Hold up a stick and a bottle.",
-            "Students repeat the 2 rules chorally (ELD)."
+            "Say it plainly: this is the build 6th did, and they're earning the materials back.",
+            "Students repeat the 5 rules chorally (ELD)."
           ]
         },
         {
           "min": 5,
           "title": "New table groups + roles by birthday",
-          "do": "Move to new groups. Line up by birthday: youngest Designer, 2nd youngest Analyst, 2nd oldest Materials Manager, oldest Checker. Group of 3: Checker also MM. Group of 5: two Analysts.",
+          "do": "Move to new groups. Line up by birthday: youngest Builder, 2nd youngest Cutter, 2nd oldest Materials Manager, oldest Checker. Group of 3: Checker also MM. Group of 5: two Builders.",
           "why": "Complex Instruction: roles with real authority; no one picks.",
           "tips": [
             "Frontload the move: say where each group sits before anyone stands.",
-            "Checker has veto power over what goes to you on Friday."
+            "Checker also watches the 5 rules for the group."
           ]
         },
         {
           "min": 17,
-          "title": "We do: one triangle in Truzme + save",
-          "do": "Everyone on their own Chromebook, step by step with you: Draw member (3 sides), Support (Pinned left, Roller right), Nodal load Fy -5 on top, hover the colors, then Save to file to Google Drive and turn on Autosave.",
-          "why": "Round 1 fully worked: guaranteed success with a confusing tool.",
+          "title": "You do: fold the stick, draw, build side truss 1",
+          "do": "Fold a sheet the long way 3 times into a measuring stick (1 stick = 11 in; fold end to end for the ½ crease). Checker draws the plan full size on 2 taped sheets: bottom line 1½ sticks with a dot every ½ stick, 3 triangles, top line 1 stick. Then bottom chord, 6 diagonals, top chord: each traced along the stick, cut, checked and glued on the drawing. Press glue squares 30 s; shelf to dry.",
+          "why": "The same build 6th did; the drawing makes every piece checkable.",
           "tips": [
-            "Wait for all hands-up 'done' before each next step.",
-            "Stability warning = a support is missing.",
-            "Colors in Truzme: blue = compression (squeezed), red = tension (pulled). Opposite of the Johns Hopkins sim. Save the meaning for Tuesday.",
-            "Chromebooks may wipe browser storage at sign-out: the Drive save is the important step."
+            "Materials come out only after the rules are read and roles are set.",
+            "Walk the room the whole time. Call a strike at once, calmly, and move that group to Chromebooks.",
+            "A group on Chromebooks does the old Day 1 Truzme triangle (7th_Mon_Popsicle_Bridge_Plan_Day1_Nov2).",
+            "Sloppy folds: edges must line up before creasing, or every piece is off."
           ]
         },
         {
@@ -182,14 +182,14 @@
           "do": "Students answer on Google Classroom with a frame.",
           "why": "One turn-in; recap the goal.",
           "tips": [
-            "Full answer: spans at least 30 cm and holds 5 lbs, plus their role."
+            "Full answer: what they built plus how they checked it (with the stick, against the drawing)."
           ]
         }
       ],
       "watchFor": [
-        "Students stuck on Drive not appearing in the save window (guest login or Drive blocked): note who, use Share > Download .truzme file instead.",
+        "A group out of cardboard: bring it to their table; no one walks to the supply shelf.",
         "Groups arguing about roles: point back to the birthday rule.",
-        "Students racing ahead before the load step."
+        "Side truss 1 must dry flat on the shelf for tomorrow."
       ]
     },
     "7th Period": {

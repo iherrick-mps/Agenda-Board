@@ -19,19 +19,19 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: your table group's approved bridge plan: a screenshot of your truss in Truzme holding the 5 lb load, your stick count, and where you doubled sticks. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
-      "workingNow": "Open the Google Classroom assignment called Popsicle Bridge Plan. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my group has drawn our own bridge design in Truzme that spans 30 cm.",
-      "contentStandard": "NGSS MS-ETS1-2 — Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints of the problem.",
+      "weeklyDeliverable": "Due Sunday night: your group's Answers page with a photo of your joined bridge with its cardboard deck, how many water bottles it held in Test 1, and where it failed first. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class. One strike: if anyone in your group breaks a materials rule, your group finishes the week on Chromebooks.",
+      "workingNow": "Open today's question on Google Classroom and the doc attached to it. Follow the steps, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group's two side trusses are joined ¼ stick apart, and our bridge has a cardboard deck glued on at every bottom joint.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (3 min)",
-        "You do: design your bridge in Truzme (14 min)",
-        "Checker: does it span 30 cm? (3 min)",
-        "Exit Ticket: how is yours different? (5 min)"
+        "You do: join the sides + glue the deck on the joints (15 min)",
+        "Exit Ticket: where did you glue the deck? (4 min)",
+        "Clean up and set the bridge to dry (3 min)"
       ],
-      "connections": "Yesterday you tested a Warren truss. Today your group designs its own. Tomorrow you test it with 5 lbs and fix the weak spots."
+      "connections": "Yesterday you finished side truss 2. Today you join the sides and add a cardboard deck. Tomorrow you test how much it holds."
     },
     "7th Period": {
       "grade": "6th Grade",
