@@ -1446,6 +1446,64 @@ function initCountUpTimer() {
   let activeBell = null; // the *timed* period this run belongs to (set by checkAutoStart)
   let lastBellKey = null;  // last bell we've already reacted to, timed or not
   let autoStarted = false; // did the bell start this run, or did a person?
+  let restoredRun = false; // this run came back from localStorage, not from a Start
+
+  /* ---- Surviving a refresh.
+
+     The board gets reloaded mid-class more often than anyone plans —
+     a projector cable, a stuck video, a data file edited during the
+     period — and the reading on the clock is a measurement someone is
+     about to record, not decoration. So the whole run is written to
+     localStorage and picked back up on load: a timer that was going is
+     still going, and the seconds the page spent reloading are counted,
+     because they passed in the room too.
+
+     The reading is stored as (banked ms, the wall-clock instant the
+     current segment started) rather than as a number of seconds, so
+     the restored clock is right no matter how long the reload took.
+
+     It's stamped with the Pacific date, so the first board of the
+     morning never opens on yesterday's class, and with the bell that
+     owned the run, which checkAutoStart uses below to tell "same
+     period, just reloaded" from "a different period entirely". ---- */
+  const TIMER_STATE_KEY = 'agendaBoard.timer';
+
+  function saveState() {
+    try {
+      localStorage.setItem(TIMER_STATE_KEY, JSON.stringify({
+        v: 1,
+        date: getPacificNow().isoDate,
+        elapsedMs,
+        startedAt,
+        stoppedMs,
+        bellKey: lastBellKey,
+        activeBell,
+        autoStarted
+      }));
+    } catch (e) { /* storage disabled — the timer just won't survive a reload */ }
+  }
+
+  function restoreState() {
+    let saved = null;
+    try { saved = JSON.parse(localStorage.getItem(TIMER_STATE_KEY) || 'null'); }
+    catch (e) { return; }
+    if (!saved || saved.v !== 1) return;
+    if (saved.date !== getPacificNow().isoDate) return;   // a new day starts clean
+
+    elapsedMs = Number(saved.elapsedMs) || 0;
+    startedAt = typeof saved.startedAt === 'number' ? saved.startedAt : null;
+    stoppedMs = typeof saved.stoppedMs === 'number' ? saved.stoppedMs : null;
+    activeBell = saved.activeBell || null;
+    autoStarted = !!saved.autoStarted;
+    lastBellKey = saved.bellKey || null;
+    restoredRun = true;
+
+    // a run that was going when the page went away is still going; the
+    // tick sound stays quiet until someone touches the page, the same
+    // way it does for a run the bell started
+    if (startedAt !== null) runTicker();
+    paint();
+  }
 
   /* Hands the current reading to the transition recorder, if one is loaded
      on this page (transitions-record.js defines window.recordTransition;
@@ -1531,14 +1589,23 @@ function initCountUpTimer() {
     checkTick();
   }
 
+  // starts (or picks back up) the 250ms repaint loop. Separate from
+  // start() because a run restored after a reload is already under way:
+  // it needs the loop running again, but not a new startedAt.
+  function runTicker() {
+    clearInterval(ticker);
+    // don't replay a tick for the second we're resuming within
+    lastTickSecond = Math.floor(totalMs() / 1000);
+    ticker = setInterval(paint, 250);
+  }
+
   function start() {
     if (startedAt !== null) return;
     getAudioCtx(); // create/resume from this click — a real user gesture
     startedAt = Date.now();
-    // don't replay a tick for the second we're resuming within
-    lastTickSecond = Math.floor(totalMs() / 1000);
-    ticker = setInterval(paint, 250);
+    runTicker();
     paint();
+    saveState();
   }
 
   function stop(opts = {}) {
@@ -1556,6 +1623,7 @@ function initCountUpTimer() {
     // frame the clock stops.
     if (!opts.silent) stoppedMs = elapsedMs;
     paint();
+    saveState();
     if (!opts.silent) report('stop');
   }
 
@@ -1565,6 +1633,7 @@ function initCountUpTimer() {
     stoppedMs = null;
     lastTickSecond = -1;
     paint();
+    saveState();
   }
 
   startBtn.addEventListener('click', start);
@@ -1577,7 +1646,11 @@ function initCountUpTimer() {
   // whatever is on the clock from here on is theirs, so the next bell
   // won't stop it out from under them.
   [startBtn, stopBtn, clearBtn].forEach(btn => {
-    btn.addEventListener('click', (e) => { autoStarted = false; e.stopPropagation(); });
+    btn.addEventListener('click', (e) => {
+      autoStarted = false;
+      saveState();   // this run is hers now, and a reload has to know that
+      e.stopPropagation();
+    });
     btn.addEventListener('dblclick', (e) => e.stopPropagation());
   });
 
@@ -1614,6 +1687,25 @@ function initCountUpTimer() {
 
       const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
       const key = current ? `${pt.isoDate}|${current.start}` : null;
+
+      /* First pass after a reload (see restoreState above) — the first
+         moment anything here knows which bell is actually ringing. If
+         it's still the bell that owned the restored run, this is the
+         same class mid-period: the key comparison below matches, the
+         run carries on, and nothing clears it. If the bell has moved
+         on, that reading can't be trusted — a timer left running also
+         counts however long the board sat closed — so it's dropped
+         rather than filed, and this period starts the way it always
+         does. A hand-started run owns no bell and is left alone either
+         way. */
+      if (restoredRun) {
+        restoredRun = false;
+        if (activeBell && key !== lastBellKey) {
+          activeBell = null;
+          clear();
+        }
+      }
+
       // tracked separately from activeBell: outside her three periods there
       // is no active bell, and comparing against a null activeBell would
       // re-run this whole block every second all afternoon
@@ -1647,9 +1739,12 @@ function initCountUpTimer() {
         stop({ silent: true });
         autoStarted = false;
       }
+      // the bell this run belongs to is part of what a reload restores
+      saveState();
     } catch (e) { /* bell data unavailable — leave timer manual-only */ }
   }
 
+  restoreState();
   checkAutoStart();
   setInterval(checkAutoStart, 1000);
 

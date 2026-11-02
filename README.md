@@ -177,6 +177,16 @@ the timer was never stopped still gets a row, flagged `not stopped` and struck
 through, and it's left out of every average — the reading there is "how long the tab
 sat open," not a transition.
 
+**A reload doesn't cost you the reading.** The run is saved as it goes, so
+refreshing the board mid-class — a stuck video, a projector cable, a data file
+edited during the period — brings the clock back exactly where it was, still
+running, with the seconds the page spent reloading counted (they passed in the room
+too). A stopped reading comes back stopped and still marked `recorded`; a cleared
+timer comes back cleared. Two things are deliberately *not* restored: a run from an
+earlier day, and a run that belonged to a bell that has since rung — a timer left
+going also counts however long the board sat closed, so rather than file that
+number the board drops it and starts the new period clean.
+
 Only 4th, 6th, and 7th period are recorded — and those are now the only bells that
 start the timer at all. It used to start itself at every bell and simply throw the
 other readings away, which left it ticking through Advisory, lunch, and the whole
