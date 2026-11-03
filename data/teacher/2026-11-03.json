@@ -1,0 +1,303 @@
+{
+  "title": "Tuesday Teacher Plan",
+  "note": "Blooket opener. One turn-in per class: the exit ticket. 6th and 7th: no tape; hand out the Joints That Hold card.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Strategy pattern, Day 2: plan your moving brick",
+      "goal": "By the end of class, I can plan my moving brick: which row gets the slide strategy, how fast it moves, and what changes every frame.",
+      "bloom": "Apply",
+      "exitTicket": "Your plan: which row slides, at what speed, and what changes every frame?",
+      "prep": [
+        "Blooket_8th_Tue_Nov3 loaded",
+        "Day 2 handout attached to the Strategy Pattern assignment",
+        "Exit ticket posted with both sentence frames",
+        "Frame-trace table drawn on the board (startX 100, speed 2)"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Monday: what a strategy is, update(), the brick factory.",
+          "why": "Spiral review of yesterday's goal.",
+          "tips": [
+            "Load the grade's Blooket_*_Tue_Nov3 set before the bell."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Go over the most-missed questions, then read the goal aloud: By the end of class, I can plan my moving brick: which row gets the slide strategy, how fast it moves, and what changes every frame.",
+          "why": "Students know the target before work starts.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "I do: stayStill vs. slide",
+          "do": "Read both strategies from the handout. Key rule: each brick measures from its OWN startX, so the whole row turns together and nothing overlaps.",
+          "why": "Worked example before the plan (gradual release).",
+          "tips": [
+            "Ask: what would go wrong if bricks bounced off the walls instead? (The end brick turns first; the rest slide into it.)"
+          ]
+        },
+        {
+          "min": 10,
+          "title": "We do: trace one brick",
+          "do": "On the board, students call out x after each frame. Frame 16: x reaches 132, distance 32 is over 30, speed flips to -2.",
+          "why": "Tracing builds the mental model before Wednesday's trace and Thursday's build.",
+          "tips": [
+            "Cold call after think time; have partners agree first.",
+            "Faster speed = turns around more often."
+          ]
+        },
+        {
+          "min": 14,
+          "title": "You do: plan the moving brick",
+          "do": "Students play their game 1 minute, pick a row (0-3) and a speed (1-3), say the plan to a partner, partner checks row + speed + what changes.",
+          "why": "Write first, build second.",
+          "tips": [
+            "Undecided: row 0, speed 1.",
+            "No code changes today."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Exit ticket",
+          "do": "The plan is the exit ticket, on Google Classroom with a frame.",
+          "why": "One turn-in; recap the goal.",
+          "tips": [
+            "Full answer: a row number, a speed, x changes by the speed every frame, turns around 30 px from startX."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students starting to code: plan only today.",
+        "Plans with no row or no speed.",
+        "Copilot-pasted plans: your own words."
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "Warren Truss Build, Day 2: side truss 2 (one strike)",
+      "goal": "By the end of class, my group has built side truss 2 to match side truss 1 exactly, and joined both sides with cross pieces if we had time.",
+      "bloom": "Apply",
+      "exitTicket": "When you stacked side 2 on side 1, did they match? Why do both sides of a bridge need to match?",
+      "prep": [
+        "Blooket_7th_Tue_Nov3 loaded",
+        "Day 2 handout attached to today's exit ticket",
+        "One Joints That Hold card per table",
+        "Side truss 1 and drawings handed back",
+        "Cardboard, paper, glue sticks, scissors per table. No tape.",
+        "The 5 one-strike rules on the board"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Monday: measuring stick, the drawing, check before gluing, glue squares, cut length, the one-strike rules.",
+          "why": "Spiral review of yesterday's goal.",
+          "tips": [
+            "Load the grade's Blooket_*_Tue_Nov3 set before the bell."
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Review quiz answers + today's goal",
+          "do": "Go over the most-missed questions, then read the goal aloud: By the end of class, my group has built side truss 2 to match side truss 1 exactly, and joined both sides with cross pieces if we had time.",
+          "why": "Students know the target before work starts.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 2,
+          "title": "Roles by birthday + the 5 rules",
+          "do": "Same roles as Monday: youngest Builder, 2nd youngest Cutter, 2nd oldest MM, oldest Checker. Repeat the 5 rules chorally.",
+          "why": "Complex Instruction + clear limits before materials come out.",
+          "tips": []
+        },
+        {
+          "min": 24,
+          "title": "You do: build side truss 2 on the drawing",
+          "do": "Bottom chord, 6 diagonals, top chord, each cut, checked on the drawing, glued with the 4 glue steps. If time: 4 cross pieces with fold-over tabs.",
+          "why": "Bloom Apply; the drawing makes every piece checkable.",
+          "tips": [
+            "Walk the room the whole time. Call a strike at once, calmly.",
+            "Flat truss = face-on-face glue squares, which hold. Cross pieces are the 90-degree problem: tabs or slots.",
+            "Praise precise Checkers publicly (assign competence)."
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Check: stack side 2 on side 1",
+          "do": "Checker stacks the sides; fix anything off before it dries.",
+          "why": "Matching sides = a straight bridge.",
+          "tips": []
+        },
+        {
+          "min": 6,
+          "title": "Exit ticket",
+          "do": "Students answer on Google Classroom with a frame.",
+          "why": "One turn-in; recap the goal.",
+          "tips": [
+            "Full answer: whether they matched (or where they didn't), plus that matching sides keep the bridge straight and share the load evenly."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Clean up + set to dry",
+          "do": "Scraps in the bin, scissors counted, both sides flat on the shelf.",
+          "why": "Ready for tomorrow's deck.",
+          "tips": [
+            "Count scissors."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Cross pieces glued edge-on: steer to fold-over tabs.",
+        "Groups breaking a rule: Chromebooks (Truzme) for the week.",
+        "Side 2 not matching side 1."
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Bridge Deck and Load Test, Day 2: fix joints, finish deck, roof",
+      "goal": "By the end of class, every joint on our bridge passes the Checker's tug test, our deck is finished, and we have started the roof: cross pieces on the top joints and an X-brace in each box.",
+      "bloom": "Apply / Analyze",
+      "exitTicket": "Which joint technique did your group use today, and why does it hold better than gluing an edge?",
+      "prep": [
+        "Blooket_6th_Tue_Nov3 loaded",
+        "Day 2 handout attached to Bridge Deck and Load Test",
+        "One Joints That Hold card per table",
+        "Bridges handed back",
+        "Scrap paper for wraps, cardboard, glue sticks, scissors. No tape.",
+        "Before class: make one fold-over tab and one paper wrap yourself to show"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Monday: bottom joints, deck on the joints, 1/4 stick apart, glue test, cross pieces.",
+          "why": "Spiral review of yesterday's goal.",
+          "tips": [
+            "Load the grade's Blooket_*_Tue_Nov3 set before the bell."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Go over the most-missed questions, then read the goal aloud: By the end of class, every joint on our bridge passes the Checker's tug test, our deck is finished, and we have started the roof: cross pieces on the top joints and an X-brace in each box.",
+          "why": "Students know the target before work starts.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Why the glue let go: turn edges into faces",
+          "do": "Show a glue stick on a cardboard edge vs. a fold-over tab and a paper wrap. Key rule: glue sticks hold faces, not edges. Point to the 6 techniques on the card.",
+          "why": "Turn yesterday's failure into the lesson (Maslow: failure is safe, and expected).",
+          "tips": [
+            "Ask: why did the glue fail? Let students explain it first."
+          ]
+        },
+        {
+          "min": 2,
+          "title": "Roles by birthday",
+          "do": "Youngest Deck Finisher, 2nd youngest Roof Builder, 2nd oldest Materials Manager, oldest Checker. Group of 3: Checker also MM. Group of 5: two Roof Builders.",
+          "why": "Complex Instruction.",
+          "tips": []
+        },
+        {
+          "min": 15,
+          "title": "You do: tug test, fix joints, finish deck",
+          "do": "Checker tug-tests every joint; loose ones get paper wraps or L-brackets. Every deck stick gets a paper wrap under it and up both faces of the bottom chord.",
+          "why": "A solid deck matters most for Wednesday's Test 1.",
+          "tips": [
+            "Score folds with a closed scissor blade.",
+            "Rub paper wraps flat for 30 seconds."
+          ]
+        },
+        {
+          "min": 12,
+          "title": "You do: twist test, roof, twist test again",
+          "do": "Gentle twist before (a lot / a little / not at all). Cross pieces on the 3 top joints with tabs folded down outside the top chords. X-brace in each roof box, measured on the bridge. Twist again.",
+          "why": "Rigor for this class: a before/after test of one change.",
+          "tips": [
+            "Many groups won't reach the roof: that's expected; tomorrow's test still works.",
+            "X-brace stops racking: the box can't turn into a parallelogram."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Exit ticket",
+          "do": "Students answer on Google Classroom with a frame.",
+          "why": "One turn-in; recap the goal.",
+          "tips": [
+            "Full answer: names a technique (tab, paper wrap, L-bracket, gusset, slot, shaped end) plus that it gives the glue a flat face to hold instead of a thin edge."
+          ]
+        },
+        {
+          "min": 2,
+          "title": "Clean up + set to dry",
+          "do": "Bridge flat on the shelf, scraps in the bin.",
+          "why": "Ready for Test 1.",
+          "tips": [
+            "Count scissors."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Anyone reaching for tape: no tape.",
+        "Paper wraps that only touch one piece.",
+        "Roof tabs folded inward (they go on the outside)."
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Goal reviewed after the Blooket and at the exit ticket; numbered steps; worked examples (slide strategy, Joints That Hold card); checklists; two sentence frames."
+    ],
+    [
+      "English learners",
+      "Pictures for every key word (strategy, startX; tab, wrap, gusset, face vs. edge); partner talk before writing; choral rules in 7th."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca; steps read aloud; speech-to-text OK; spelling not graded."
+    ],
+    [
+      "ADHD learners",
+      "Short timed chunks with a visual timer; hands-on roles (Builder, Checker, Roof Builder); tug and twist tests are movement; break pass."
+    ],
+    [
+      "IEP / 504",
+      "Dictated exit tickets; extended time. Floors: 8th names a row and a speed; 7th glues the bottom chord and 2 diagonals; 6th fixes 2 joints with paper wraps."
+    ],
+    [
+      "Advanced learners",
+      "Future Engineer (OPTIONAL), 1 KB point: 8th a 3rd strategy; 7th gussets or slot joints; 6th portal brace or gussets."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "Every grade moves its product forward: a planned moving brick, a second side truss, a braced bridge."
+    ],
+    [
+      "Complex Instruction",
+      "Birthday-order roles with real authority (Checker approval and tug test); praise precise work publicly."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "Yesterday's glue failure is named and fixed, not blamed; one turn-in; 'you are not behind'."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "8th Apply (plan); 7th Apply (build to match); 6th Apply/Analyze (fix, then test a change)."
+    ]
+  ]
+}
