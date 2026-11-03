@@ -716,6 +716,13 @@ function createRotator(spec) {
     labelEl.textContent = slide.label;
     contentEl.style.fontSize = '';
     contentEl.innerHTML = renderBoxValue(data[slide.field]);
+    // which of the day's fields is on screen right now — the step
+    // highlight below needs to know, since the same box also shows
+    // Connections, which has no timeline
+    contentEl.dataset.field = slide.field;
+    // the list it marks up was just replaced, so put the mark back on
+    // in the same breath rather than waiting for the next tick
+    paintAgendaStepNow();
     // measure on the frame after the new text is in the DOM, then fade
     // back in — fitting happens while the box is still transparent, so
     // students never see a flash of mis-sized text
@@ -815,6 +822,83 @@ function renderBoxValue(value) {
     return `<ul>${value.map(item => `<li>${highlightDurations(item)}</li>`).join('')}</ul>`;
   }
   return value ?? '';
+}
+
+/* ============================================================
+   "You are here" in the Agenda / Steps bento.
+
+   Every step carries its own length — "Blooket quiz (5 min)" — and
+   the bell says when step one begins, so the plan is already a
+   timeline: lay the steps end to end from the period's start and
+   whichever one the clock is inside is the one the room should be
+   on. That step gets the same light dotted box every other schedule
+   in the app uses for "now" (see styles.css), so a student looking
+   up mid-class can find their place without being told.
+
+   It only appears on today's board while that period is actually
+   ringing: a plan for Thursday, or for the class after this one,
+   has no "now" to point at. A step written without a "(N min)"
+   can't be placed on the timeline, so it keeps its spot in the
+   list and simply never takes a turn in the box.
+   ============================================================ */
+
+// matches the same "(N min)" / "(N-M min)" shape highlightDurations styles
+const AGENDA_STEP_MINUTES = /\((\d+)(?:\s*-\s*(\d+))?\s*min(?:ute)?s?\)/i;
+
+/* How long a step is planned to take, or null when it doesn't say. A
+   range ("10-12 min") is read as its longer end, so the highlight never
+   steps off something that may still be going. */
+function agendaStepMinutes(step) {
+  const m = AGENDA_STEP_MINUTES.exec(String(step));
+  if (!m) return null;
+  return Number(m[2] || m[1]);
+}
+
+/* The live period's plan: { dateStr, steps, startMin, endMin }, or null
+   when the viewed period has no step list. Whether it's *today* and
+   whether the bell is actually ringing are decided at paint time, not
+   here, so a board left open overnight stops marking a step on its own. */
+let agendaStepPlan = null;
+
+function setAgendaStepPlan(plan) {
+  agendaStepPlan = plan;
+  paintAgendaStepNow();
+}
+
+function currentAgendaStepIndex(plan, nowMin) {
+  let at = plan.startMin;
+  let lastTimed = -1;
+  for (let i = 0; i < plan.steps.length; i++) {
+    const mins = agendaStepMinutes(plan.steps[i]);
+    if (mins === null) continue;        // no stated length — can't be placed
+    if (nowMin < at + mins) return i;
+    at += mins;
+    lastTimed = i;
+  }
+  // the written plan ran shorter than the period: the last timed step
+  // holds the box until the bell rather than leaving nothing marked
+  return lastTimed;
+}
+
+function paintAgendaStepNow() {
+  const contentEl = document.getElementById('content-agenda');
+  if (!contentEl) return;
+
+  let index = -1;
+  // the box rotates between Agenda / Steps and Connections — only the
+  // steps have a timeline to be somewhere in
+  if (agendaStepPlan && contentEl.dataset.field === 'agenda') {
+    const pt = getPacificNow();
+    const nowMin = minutesSinceMidnight(pt);
+    const live = pt.isoDate === agendaStepPlan.dateStr &&
+                 nowMin >= agendaStepPlan.startMin &&
+                 nowMin < agendaStepPlan.endMin;
+    if (live) index = currentAgendaStepIndex(agendaStepPlan, nowMin);
+  }
+
+  contentEl.querySelectorAll('li').forEach((li, i) => {
+    li.classList.toggle('is-now', i === index);
+  });
 }
 
 function renderPeriodContent(periodData) {
@@ -999,6 +1083,20 @@ async function initAgendaPage() {
     });
     renderPeriodContent(dayData.periods[period]);
 
+    /* Hand this period's steps and its bell window to the step highlight
+       (see setAgendaStepPlan). It marks a step only while the bell is
+       ringing on the day being viewed, so passing the plan for any
+       period, on any date, is safe — an old board simply never lights
+       one up. */
+    const bell = (bells[dayData.schedule]?.periods || []).find(b => b.name === period);
+    const steps = dayData.periods[period].agenda;
+    setAgendaStepPlan(bell && Array.isArray(steps) ? {
+      dateStr,
+      steps,
+      startMin: hhmmToMinutes(bell.start),
+      endMin: hhmmToMinutes(bell.end)
+    } : null);
+
     // keep the address bar honest, so the page can be bookmarked, projected,
     // or handed to a student as a link to exactly this period's board
     const next = new URLSearchParams(window.location.search);
@@ -1025,6 +1123,10 @@ async function initAgendaPage() {
     : (livePeriodName && periodsPresent.includes(livePeriodName)) ? livePeriodName
     : periodsPresent[0];
   if (defaultPeriod) selectPeriod(defaultPeriod);
+
+  // the plan doesn't change, but the time does — the box walks down the
+  // list on its own as the period runs, and switches itself off at the bell
+  setInterval(paintAgendaStepNow, 1000);
 }
 
 /* ============================================================

@@ -730,6 +730,12 @@ body.board-page {
   flex-direction: column;
   justify-content: space-evenly;
 }
+/* the step list is inset from the sides so the dotted "you are here"
+   box (see the end of this file) isn't drawn flush against the bento's
+   edge. There's no matching room at the top and bottom to be had — the
+   steps are sized to fill the box exactly — so that box is drawn just
+   inside the live row rather than around it */
+.box-content[data-field="agenda"] ul { padding: 0 0.4em; }
 
 .box-content ul li {
   position: relative;
@@ -3761,6 +3767,7 @@ body.overview-page {
 
    Anything that lays the day out in order marks the slot the
    clock is actually inside with the same light dotted box: the
+   step the class should be on in the Agenda / Steps bento, the
    period tabs on the board's hover bar, the Saturday bell
    schedule on the VEX board, and both the period tabs and the
    run-of-show on the Teacher Plan. One rule rather than one per
@@ -3773,6 +3780,7 @@ body.overview-page {
    rows sit differently in each: VEX's are spread down a bento
    with room to spare, the Teacher Plan's touch each other.
    ============================================================ */
+.box-content[data-field="agenda"] li.is-now,
 .vex-sched-list li.is-now,
 .tl li.cur,
 .tp-tab.live,
@@ -3780,6 +3788,7 @@ body.overview-page {
   outline: 2px dotted var(--sched-now-line);
   border-radius: 5px;
 }
+.box-content[data-field="agenda"] li.is-now { outline-offset: -2px; }
 .vex-sched-list li.is-now { outline-offset: 0.22em; }
 .tl li.cur { outline-offset: -2px; }
 /* a live period's tab keeps its own rounding, and the box sits just
