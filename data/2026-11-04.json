@@ -5,13 +5,13 @@
       "grade": "8th Grade",
       "weeklyDeliverable": "Due Sunday night: your Strategy turn-in doc with your live game link, your plan for your moving brick, and 3 short answers about the Strategy pattern (85 points even if your game breaks), plus the Strategy pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can trace how a brick uses its strategy each frame.",
+      "smartGoal": "By the end of class, I can trace how a brick uses its strategy each frame, and say what changes when I swap slide for stayStill.",
       "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
       "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (3 min)",
-        "We do: trace brick.move() one frame at a time (12 min)",
+        "We do: trace 2 bricks, slide vs. stayStill (12 min)",
         "Partner check: point to the swap (5 min)",
         "Exit Ticket: what changes when you swap? (5 min)"
       ],
@@ -44,8 +44,8 @@
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (3 min)",
         "Roles: Loader, Spotter, Recorder, Checker (2 min)",
-        "Predict how many bottles (3 min)",
-        "Test 1: one bottle at a time, STOP at the first crack (13 min)",
+        "Set up + predict (4 min)",
+        "Test 1: one bottle at a time, STOP at the first crack (12 min)",
         "Exit Ticket: where did it fail first? (4 min)"
       ],
       "connections": "Yesterday you fixed every loose joint, finished the deck, and built the roof. Today you predict, then test your bridge with water bottles and mark exactly where it fails first. Tomorrow you plan and add tactical sticks right where it failed."

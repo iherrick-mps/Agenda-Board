@@ -1,0 +1,245 @@
+{
+  "title": "Wednesday Teacher Plan",
+  "note": "30-minute day. Blooket opener. One turn-in per class: the exit ticket.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Strategy pattern, Day 3: trace the swap",
+      "goal": "By the end of class, I can trace how a brick uses its strategy each frame, and say what changes when I swap slide for stayStill.",
+      "bloom": "Understand / Analyze",
+      "exitTicket": "What changes when you swap a brick from slide to stayStill, and what stays the same?",
+      "prep": [
+        "Blooket_8th_Wed_Nov4 loaded",
+        "Day 3 handout attached to Strategy Pattern; exit ticket posted",
+        "Trace table drawn on the board: Frame | Brick A (slide) | Brick B (stayStill)"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Tuesday: slide changes x, startX, turning around, speed.",
+          "why": "Spiral review.",
+          "tips": [
+            "Load the Blooket_*_Wed_Nov4 set before the bell."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Review quiz answers + today's goal",
+          "do": "Quick review of the most-missed questions, then read the goal: By the end of class, I can trace how a brick uses its strategy each frame, and say what changes when I swap slide for stayStill.",
+          "why": "Students know the target.",
+          "tips": []
+        },
+        {
+          "min": 12,
+          "title": "We do: trace 2 bricks",
+          "do": "Fill in the table with the class: A (slide, speed 2) goes 102, 104, 106; B (stayStill) stays 100. Then swap A to stayStill and trace 3 more frames: A stays at 106.",
+          "why": "Tracing before Thursday's build (gradual release).",
+          "tips": [
+            "Answer key: A 102/104/106, B 100/100/100. After the swap, A's x stops changing; the loop is unchanged.",
+            "Ask: which ONE word changed?"
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Partner check: point to the swap",
+          "do": "Partners point to the one word in the brick factory (slide or stayStill) and to brick.move(brick) in the loop.",
+          "why": "Checks for understanding before the exit ticket.",
+          "tips": []
+        },
+        {
+          "min": 5,
+          "title": "Exit ticket",
+          "do": "On Google Classroom with a frame.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: the brick stops moving (x stays the same); the loop in update() stays the same; only move: changes in the brick factory."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students thinking update() must change to swap.",
+        "Confusing speed with x."
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "Warren Truss Build, Day 3: join + deck (one strike)",
+      "goal": "By the end of class, my group's two side trusses are joined ¼ stick apart, and our bridge has a cardboard deck glued on at every bottom joint.",
+      "bloom": "Apply",
+      "exitTicket": "Where did your group glue the deck, and why there?",
+      "prep": [
+        "Blooket_7th_Wed_Nov4 loaded",
+        "Day 3 handout attached to the exit ticket",
+        "Both side trusses and Joints That Hold cards out",
+        "Cardboard, paper, glue sticks, scissors. No tape.",
+        "Make one folded deck yourself to show"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Tuesday: matching sides, stack check, glue on faces, fold-over tabs, paper wraps, the 4 glue steps.",
+          "why": "Spiral review.",
+          "tips": [
+            "Load the Blooket_*_Wed_Nov4 set before the bell."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Review quiz answers + today's goal",
+          "do": "Quick review of the most-missed questions, then read the goal: By the end of class, my group's two side trusses are joined ¼ stick apart, and our bridge has a cardboard deck glued on at every bottom joint.",
+          "why": "Students know the target.",
+          "tips": []
+        },
+        {
+          "min": 15,
+          "title": "You do: join + deck",
+          "do": "Roles by birthday (Joiner, Deck Builder, Materials Manager, Checker). Join with tabbed cross pieces if not done. Deck = one rectangle, 1 1/2 sticks long, 1/4 stick + 2 glue squares wide, both long edges scored and folded down, tabs glued on the outside at every bottom joint.",
+          "why": "Apply; the folded tabs turn the 90-degree joint into a face joint.",
+          "tips": [
+            "Show your folded deck first.",
+            "Call a strike at once, calmly.",
+            "Groups still on side 2: finish it; deck tomorrow."
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Exit ticket",
+          "do": "On Google Classroom with a frame.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: at the bottom joints / on the outside faces of the bottom chords, because that's where the triangles meet, and tabs give the glue a face to hold."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Clean up + set to dry",
+          "do": "Bridge flat on the shelf, scissors counted.",
+          "why": "",
+          "tips": []
+        }
+      ],
+      "watchFor": [
+        "Deck tabs folded inward.",
+        "Deck laid edge-on with no tabs."
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Bridge Load Test, Day 3: Test 1",
+      "goal": "By the end of class, my group predicted, then tested our bridge with water bottles and marked exactly where it failed first.",
+      "bloom": "Analyze",
+      "exitTicket": "Where did your bridge fail first, and why do you think it failed there?",
+      "prep": [
+        "Blooket_6th_Wed_Nov4 loaded",
+        "Day 3 handout attached to Bridge Deck and Load Test",
+        "About 5 full 16.9 oz water bottles per group",
+        "Bridges handed back; one test station per group (2 desks a 1-stick gap apart)",
+        "Backpacks or jackets for under the gap"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Tuesday: why 90-degree glue failed, faces vs. edges, paper wraps, roof, X-brace.",
+          "why": "Spiral review.",
+          "tips": [
+            "Load the Blooket_*_Wed_Nov4 set before the bell."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Review quiz answers + today's goal",
+          "do": "Quick review of the most-missed questions, then read the goal: By the end of class, my group predicted, then tested our bridge with water bottles and marked exactly where it failed first.",
+          "why": "Students know the target.",
+          "tips": []
+        },
+        {
+          "min": 2,
+          "title": "Roles",
+          "do": "Youngest Loader, 2nd youngest Spotter, 2nd oldest Recorder, oldest Checker. Group of 3: Checker also Spotter. Group of 5: two Spotters.",
+          "why": "Complex Instruction: the Checker owns STOP.",
+          "tips": []
+        },
+        {
+          "min": 4,
+          "title": "Set up + predict",
+          "do": "Bridge across the 1-stick gap, resting 1/4 stick on each desk; soft surface under; cardboard platform (1/2 x 1/2 stick) on the middle top joint. Recorder writes the prediction (bottles + where it will fail) on the name label.",
+          "why": "Predict before testing (rigor for this class).",
+          "tips": [
+            "Loading on top because the roof blocks the deck. A deck-only group can lay bottles on the deck instead; note that in the turn-in."
+          ]
+        },
+        {
+          "min": 12,
+          "title": "Test 1",
+          "do": "One bottle on its side at a time, wait 5 s, Checker says go. STOP at the first crack, lean, sag or popped joint; bottles off right away. Recorder writes Test 1: N bottles (held before failure) and marks an X at the failure.",
+          "why": "Analyze: find the weak spot to fix tomorrow.",
+          "tips": [
+            "Spotter's hands hover, never touching.",
+            "Praise good STOP calls publicly."
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Exit ticket",
+          "do": "On Google Classroom with a frame.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: names a spot (a joint, the deck, a diagonal, the roof) plus a reason (glue let go, edge joint, strip bent in the middle, no bracing)."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Bottles dropped instead of placed.",
+        "Groups not stopping at the first crack.",
+        "The Test 1 number must be on the label for Friday."
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Goal reviewed after the Blooket; numbered steps; worked examples (trace table, folded deck, test diagram); two sentence frames."
+    ],
+    [
+      "English learners",
+      "Pictures for key words (swap, trace; deck, tab; platform, fail); partner talk before writing."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca; steps read aloud; speech-to-text OK."
+    ],
+    [
+      "ADHD learners",
+      "Short 30-minute chunks with a visual timer; hands-on roles (Loader, Spotter, Joiner)."
+    ],
+    [
+      "IEP / 504",
+      "Dictated exit tickets; floors: 8th traces brick A only; 7th glues the deck at 2 joints; 6th says where it failed."
+    ],
+    [
+      "Advanced learners",
+      "Future Engineer (OPTIONAL), 1 KB point."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "Products advance: a traced strategy, a decked bridge, a tested bridge."
+    ],
+    [
+      "Complex Instruction",
+      "Roles with authority: the Checker calls STOP and approves every piece."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "Short day, small goals; failure in Test 1 is planned and safe."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "8th Understand/Analyze; 7th Apply; 6th Analyze."
+    ]
+  ]
+}
