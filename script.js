@@ -302,11 +302,14 @@ async function initClock() {
         labelEl.textContent = `${overrideLabel} ends in`;
         valueEl.textContent = fmtCountdown(remaining);
         watchBell(nowMin, hhmmToMinutes(overrideEnd), `${pt.isoDate}|${overrideEnd}`);
+        const oStart = clockBox?.dataset.clockOverrideStart;
+        paintAnalogClock(pt, { name: overrideLabel, startMin: oStart ? hhmmToMinutes(oStart) : null, endMin: hhmmToMinutes(overrideEnd) });
       } else {
         statusEl.className = 'clock-status not-in-session';
         labelEl.textContent = `${overrideLabel} is over`;
         valueEl.textContent = '\u2014';
         watchBell(nowMin, null, null);
+        paintAnalogClock(pt, null, `${overrideLabel} is over`);
       }
       return;
     }
@@ -323,22 +326,148 @@ async function initClock() {
       labelEl.textContent = `${current.name} ends in`;
       valueEl.textContent = fmtCountdown(remaining);
       watchBell(nowMin, hhmmToMinutes(current.end), `${pt.isoDate}|${current.end}`);
+      paintAnalogClock(pt, { name: current.name, startMin: hhmmToMinutes(current.start), endMin: hhmmToMinutes(current.end) });
     } else if (next) {
       const until = hhmmToMinutes(next.start) - nowMin;
       statusEl.className = 'clock-status not-in-session';
       labelEl.textContent = `Not in session — ${next.name} starts in`;
       valueEl.textContent = fmtCountdown(until);
       watchBell(nowMin, null, null);
+      paintAnalogClock(pt, null, `${next.name} next`);
     } else {
       statusEl.className = 'clock-status not-in-session';
       labelEl.textContent = 'School day is over';
       valueEl.textContent = '—';
       watchBell(nowMin, null, null);
+      paintAnalogClock(pt, null, 'School day is over');
     }
   }
 
   tick();
   setInterval(tick, 1000);
+}
+
+/* ---------- Analog clock: the clock box's other form ----------
+   Same box, same footprint, chosen on the index page (Settings → Clock).
+   Instead of counting down, it shows time passing: a DS-style face
+   (pixel numerals, square dots, grid paper) with the CURRENT period as a
+   pie chunk on the minute ring — bright for what's left, faint for what's
+   gone — so the class can see the minute hand closing in on the end.
+   Only the current period gets a chunk, so there's one thing to read.
+   A period longer than an hour shows its last 60 minutes. The setting
+   lives in localStorage, per device, like the period choice. ---------- */
+
+const CLOCK_TYPE_KEY = 'agenda-board-clock-type';   // 'digital' (default) | 'analog'
+
+function clockType() {
+  try { return localStorage.getItem(CLOCK_TYPE_KEY) === 'analog' ? 'analog' : 'digital'; }
+  catch (e) { return 'digital'; }
+}
+
+const ANALOG_NS = 'http://www.w3.org/2000/svg';
+
+function analogSector(cx, cy, r, a1, a2) {
+  // degrees clockwise from 12 o'clock; a2 > a1
+  const span = a2 - a1;
+  if (span <= 0) return '';
+  if (span >= 359.9) return `M ${cx} ${cy - r} A ${r} ${r} 0 1 1 ${cx - 0.01} ${cy - r} Z`;
+  const pt = (a) => {
+    const t = (a - 90) * Math.PI / 180;
+    return [cx + r * Math.cos(t), cy + r * Math.sin(t)];
+  };
+  const [x1, y1] = pt(a1), [x2, y2] = pt(a2);
+  return `M ${cx} ${cy} L ${x1.toFixed(2)} ${y1.toFixed(2)} A ${r} ${r} 0 ${span > 180 ? 1 : 0} 1 ${x2.toFixed(2)} ${y2.toFixed(2)} Z`;
+}
+
+function buildAnalogClock(box) {
+  let wrap = box.querySelector('.analog-clock');
+  if (wrap) return wrap;
+  if (!document.getElementById('ds-pixel-font')) {
+    const l = document.createElement('link');
+    l.id = 'ds-pixel-font';
+    l.rel = 'stylesheet';
+    l.href = 'https://fonts.googleapis.com/css2?family=DotGothic16&display=swap';
+    document.head.appendChild(l);
+  }
+  wrap = document.createElement('div');
+  wrap.className = 'analog-clock';
+  let grid = '';
+  for (let g = 18.5; g < 194; g += 12.5) {
+    grid += `<line x1="${g}" y1="6" x2="${g}" y2="194"/><line x1="6" y1="${g}" x2="194" y2="${g}"/>`;
+  }
+  let dots = '';
+  [1, 2, 4, 5, 7, 8, 10, 11].forEach((h) => {
+    const t = (h * 30 - 90) * Math.PI / 180;
+    dots += `<rect x="${(100 + 74 * Math.cos(t) - 3).toFixed(1)}" y="${(100 + 74 * Math.sin(t) - 3).toFixed(1)}" width="6" height="6"/>`;
+  });
+  wrap.innerHTML =
+    `<svg viewBox="0 0 200 200" role="img" aria-label="Analog clock showing the current period">` +
+    `<rect class="ac-face" x="6" y="6" width="188" height="188" rx="6"/>` +
+    `<g class="ac-grid">${grid}</g>` +
+    `<path class="ac-gone"/><path class="ac-left"/>` +
+    `<g class="ac-dots">${dots}</g>` +
+    `<g class="ac-nums"><text x="100" y="31">12</text><text x="173" y="104">3</text>` +
+    `<text x="100" y="178">6</text><text x="27" y="104">9</text></g>` +
+    `<line class="ac-hour" x1="100" y1="100" x2="100" y2="58"/>` +
+    `<line class="ac-min" x1="100" y1="100" x2="100" y2="36"/>` +
+    `<g class="ac-sec"><line class="ac-sec-tail" x1="100" y1="114" x2="100" y2="100"/><line x1="100" y1="100" x2="100" y2="28"/></g>` +
+    `<rect class="ac-pin" x="96" y="96" width="8" height="8"/>` +
+    `</svg><div class="ac-cap"><span class="ac-name"></span><span class="ac-end"></span></div>`;
+  box.appendChild(wrap);
+  return wrap;
+}
+
+// period: { name, startMin, endMin } while something is in session, else null
+function paintAnalogClock(pt, period, waiting) {
+  const box = document.querySelector('.box-clock');
+  if (!box) return;
+  const on = clockType() === 'analog';
+  box.classList.toggle('analog', on);
+  if (!on) return;
+  const wrap = buildAnalogClock(box);
+  const nowMin = minutesSinceMidnight(pt);
+  const deg = (m) => ((m % 60) + 60) % 60 * 6;   // a minute's place on the minute ring
+  const hourDeg = ((pt.hours % 12) + pt.minutes / 60) * 30;
+  wrap.querySelector('.ac-hour').setAttribute('transform', `rotate(${hourDeg} 100 100)`);
+  wrap.querySelector('.ac-min').setAttribute('transform', `rotate(${(pt.minutes + pt.seconds / 60) * 6} 100 100)`);
+  wrap.querySelector('.ac-sec').setAttribute('transform', `rotate(${pt.seconds * 6} 100 100)`);
+  const gone = wrap.querySelector('.ac-gone'), left = wrap.querySelector('.ac-left');
+  const name = wrap.querySelector('.ac-name'), end = wrap.querySelector('.ac-end');
+  if (period && period.endMin > nowMin) {
+    const from = Math.max(period.startMin ?? nowMin, period.endMin - 60, nowMin - 60);
+    const leftMin = Math.min(period.endMin - nowMin, 60);
+    const a0 = deg(from), aNow = deg(nowMin);
+    const goneSpan = Math.max(0, nowMin - from) * 6;
+    gone.setAttribute('d', goneSpan > 0 ? analogSector(100, 100, 84, a0, a0 + goneSpan) : '');
+    left.setAttribute('d', analogSector(100, 100, 84, aNow, aNow + leftMin * 6));
+    const e = Math.round(period.endMin), h = Math.floor(e / 60) % 24, m = e % 60;
+    name.textContent = period.name.toUpperCase();
+    end.textContent = `ENDS ${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`;
+    wrap.classList.remove('waiting');
+  } else {
+    gone.setAttribute('d', '');
+    left.setAttribute('d', '');
+    name.textContent = waiting ? waiting.toUpperCase() : 'NOT IN SESSION';
+    end.textContent = '';
+    wrap.classList.add('waiting');
+  }
+}
+
+/* ---------- Settings on the index page ---------- */
+function initBoardSettings() {
+  const seg = document.getElementById('set-clock');
+  if (!seg) return;
+  const paint = () => seg.querySelectorAll('button').forEach((b) => {
+    b.classList.toggle('on', b.dataset.v === clockType());
+    b.setAttribute('aria-pressed', String(b.dataset.v === clockType()));
+  });
+  seg.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-v]');
+    if (!b) return;
+    try { localStorage.setItem(CLOCK_TYPE_KEY, b.dataset.v); } catch (err) { /* storage disabled */ }
+    paint();
+  });
+  paint();
 }
 
 /* ============================================================
@@ -2803,6 +2932,8 @@ function initClassQueue() {
 document.addEventListener('DOMContentLoaded', () => {
   initAudioUnlock();
   initClock();
+  initBoardSettings();
+  window.addEventListener('storage', (e) => { if (e.key === CLOCK_TYPE_KEY) document.querySelector('.box-clock')?.classList.toggle('analog', clockType() === 'analog'); });
   initIndexPage();
   initAgendaPage();
   initFullscreenToggle();

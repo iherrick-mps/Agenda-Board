@@ -313,8 +313,10 @@ function initVexClockOverride() {
     const isSaturday = getPacificNow().weekdayName === 'Saturday';
     if (isSaturday) {
       delete clockBox.dataset.clockOverrideEnd;
+      delete clockBox.dataset.clockOverrideStart;
       delete clockBox.dataset.clockOverrideLabel;
     } else {
+      clockBox.dataset.clockOverrideStart = '15:15';   // After School Activities start (the analog clock's chunk)
       clockBox.dataset.clockOverrideEnd = VEX_SESSION_END;
       clockBox.dataset.clockOverrideLabel = VEX_SESSION_LABEL;
     }

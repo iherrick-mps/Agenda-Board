@@ -3796,3 +3796,46 @@ body.overview-page {
    aren't always the same one */
 .tp-tab.live { outline-offset: 2px; border-radius: var(--radius); }
 .period-tab.is-now { outline-offset: 2px; border-radius: 5px; }
+
+
+/* ---------- Analog clock (the clock box's other form, Settings → Clock) ----------
+   Fills the same box: the face as big as the box allows, the caption beside
+   it in a wide box, under it in a tall one. DS look: grid paper, pixel numerals. */
+.box-clock.analog > :not(.analog-clock) { display: none !important; }
+.analog-clock { display: none; }
+.box-clock.analog { align-items: center; justify-content: center; }
+.box-clock.analog .analog-clock {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2cqh; width: 100%; height: 100%;
+}
+.analog-clock svg { height: 78cqh; max-width: 100%; aspect-ratio: 1; display: block; }
+@container (min-aspect-ratio: 7/5) {
+  .box-clock.analog .analog-clock { flex-direction: row; gap: 4cqw; }
+  .analog-clock svg { height: 92cqh; }
+  .analog-clock .ac-cap { align-items: flex-start; }
+}
+.ac-face { fill: #1d2936; stroke: #35424f; stroke-width: 2; }   /* the bento's own ink, a shade lighter (2026-11-05: white looked bad) */
+.ac-grid line { stroke: #26333f; stroke-width: 1; }
+.ac-left { fill: #6ee7b7; opacity: 0.5; }
+.ac-gone { fill: #6ee7b7; opacity: 0.1; }
+.ac-dots rect { fill: #4a5a68; }
+.ac-nums text { font-family: 'DotGothic16', 'JetBrains Mono', monospace; font-size: 30px; fill: #5d6e80; text-anchor: middle; dominant-baseline: central; }
+.ac-hour { stroke: #eaf1ff; stroke-width: 6; stroke-linecap: square; }
+.ac-min { stroke: #b9c6d6; stroke-width: 4; stroke-linecap: square; }
+.ac-sec line { stroke: #38bdf8; stroke-width: 2; }
+.ac-sec .ac-sec-tail { stroke: #f472b6; stroke-width: 3; }
+.ac-pin { fill: #eaf1ff; }
+.analog-clock .ac-cap { display: flex; flex-direction: column; align-items: center; gap: 0.3em;
+  font-family: 'DotGothic16', 'JetBrains Mono', monospace; color: #eaf1ff; text-align: center; line-height: 1.1; }
+.analog-clock .ac-name { font-size: clamp(12px, 7cqh, 34px); color: #6ee7b7; }
+.analog-clock .ac-end { font-size: clamp(10px, 5.5cqh, 26px); color: #b9c6d6; }
+.analog-clock.waiting .ac-name { color: #f5b169; }
+
+/* Settings on the index page */
+.board-settings { background: var(--surface); border: 1px solid var(--grid-line); border-radius: var(--radius); padding: 12px 16px; margin-bottom: 24px; }
+.setting-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.setting-name { font-family: var(--font-display); font-weight: 600; min-width: 60px; }
+.setting-seg { display: inline-flex; border: 1px solid var(--grid-line); border-radius: 999px; overflow: hidden; }
+.setting-seg button { font: inherit; font-size: 0.9rem; border: 0; background: transparent; padding: 6px 14px; cursor: pointer; color: var(--ink-soft); }
+.setting-seg button.on { background: var(--ink); color: #eaf1ff; }
+.setting-hint { margin-top: 6px; font-size: 0.8rem; color: var(--ink-soft); }
