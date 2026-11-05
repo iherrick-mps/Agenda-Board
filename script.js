@@ -440,9 +440,9 @@ function paintAnalogClock(pt, period, waiting) {
     const goneSpan = Math.max(0, nowMin - from) * 6;
     gone.setAttribute('d', goneSpan > 0 ? analogSector(100, 100, 84, a0, a0 + goneSpan) : '');
     left.setAttribute('d', analogSector(100, 100, 84, aNow, aNow + leftMin * 6));
-    const e = Math.round(period.endMin), h = Math.floor(e / 60) % 24, m = e % 60;
     name.textContent = period.name.toUpperCase();
-    end.textContent = `ENDS ${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${h >= 12 ? 'PM' : 'AM'}`;
+    // the countdown stays (2026-11-05): "ENDS IN 12:34", the same figure the digital clock shows
+    end.textContent = `ENDS IN ${fmtCountdown(period.endMin - nowMin)}`;
     wrap.classList.remove('waiting');
   } else {
     gone.setAttribute('d', '');
