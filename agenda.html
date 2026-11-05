@@ -36,7 +36,8 @@
       </div>
       <button class="nav-day-btn gamemode-toggle-btn" id="gamemode-toggle-btn" title="Toggle Game Mode">&#127918; Game Mode</button>
       <button class="nav-day-btn gametime-toggle-btn" id="gametime-toggle-btn" title="Start Game Mode for the time this class earned — 20 minutes minus that grade&rsquo;s average transition this week. Runs for exactly that long, then stops itself.">&#127942; <span id="gametime-label">Game Time</span></button>
-      <button class="nav-day-btn cleanup-toggle-btn" id="cleanup-toggle-btn" title="Toggle Clean-Up Mode (auto-starts 7th Period, 7 min left — not on Fridays)">&#129529; Clean-Up</button>
+      <button class="nav-day-btn cleanup-toggle-btn" id="cleanup-toggle-btn" title="Toggle Clean Up (manual only — plays the clean-up song and shows what a clean room looks like)">&#129529; Clean Up</button>
+      <button class="nav-day-btn stow-toggle-btn" id="stow-toggle-btn" title="Toggle Stow Chromebooks (auto-starts 7th Period, 7 min left — not on Fridays)">&#128187; Stow Chromebooks</button>
       <button class="nav-day-btn theater-toggle-btn" id="theater-toggle-btn" title="Toggle Theater Mode (manual only — never starts on its own)">&#127916; Theater</button>
     </div>
   </div>
@@ -136,37 +137,60 @@
     </div>
   </div>
 
-  <div class="agenda-box box-cleanup box-cleanup-main" id="box-cleanup-main">
-    <span class="box-label">Clean-Up Crew</span>
-    <div class="cleanup-body">
-      <div class="cleanup-claw-stage">
+  <div class="agenda-box box-stow box-stow-main" id="box-stow-main">
+    <span class="box-label">Stow Chromebooks</span>
+    <div class="stow-body">
+      <div class="stow-claw-stage">
         <div class="claw-glass">
           <div class="claw-rail">
             <div class="claw-mount"></div>
-            <div class="claw-arm" id="cleanup-claw-arm">
+            <div class="claw-arm" id="stow-claw-arm">
               <div class="claw-string"></div>
               <div class="claw-head">
                 <span class="claw-prong claw-prong-l"></span>
                 <span class="claw-prong claw-prong-r"></span>
-                <span class="claw-ball" id="cleanup-claw-ball"></span>
+                <span class="claw-ball" id="stow-claw-ball"></span>
               </div>
             </div>
           </div>
-          <div class="claw-pit" id="cleanup-ball-pit"></div>
+          <div class="claw-pit" id="stow-ball-pit"></div>
         </div>
-        <div class="cleanup-number-window">
-          <div class="cleanup-jar" id="cleanup-jar" aria-hidden="true"></div>
-          <div class="cleanup-number-glow" aria-hidden="true"></div>
-          <div class="cleanup-number" id="cleanup-number">?</div>
-          <div class="cleanup-jar-glass" aria-hidden="true"></div>
+        <div class="stow-number-window">
+          <div class="stow-jar" id="stow-jar" aria-hidden="true"></div>
+          <div class="stow-number-glow" aria-hidden="true"></div>
+          <div class="stow-number" id="stow-number">?</div>
+          <div class="stow-jar-glass" aria-hidden="true"></div>
         </div>
       </div>
-      <div class="cleanup-message" id="cleanup-message">Watch for your number&hellip;</div>
-      <div class="cleanup-countdown" id="cleanup-countdown">05:00</div>
-      <div class="cleanup-called">
-        <span class="cleanup-called-label">Called:</span>
-        <span class="cleanup-called-list" id="cleanup-called-list"></span>
+      <div class="stow-message" id="stow-message">Watch for your number&hellip;</div>
+      <div class="stow-countdown" id="stow-countdown">05:00</div>
+      <div class="stow-called">
+        <span class="stow-called-label">Called:</span>
+        <span class="stow-called-list" id="stow-called-list"></span>
       </div>
+    </div>
+  </div>
+
+  <div class="agenda-box box-nowplaying box-cleanup box-cleanup-music" id="cleanup-music-box">
+    <span class="box-label">Clean-Up Song</span>
+    <div class="nowplaying-body">
+      <div class="nowplaying-embed" id="cleanup-embed"></div>
+    </div>
+  </div>
+
+  <div class="agenda-box box-cleanup box-cleanup-main" id="box-cleanup-main">
+    <span class="box-label">Clean Up</span>
+    <div class="cleanup-body">
+      <div class="cleanup-title">CLEAN UP</div>
+      <div class="cleanup-lede">Nobody leaves until&hellip;</div>
+      <ol class="cleanup-list">
+        <li>Every chair is pushed in.</li>
+        <li>Nothing is on the floor &mdash; no paper, no trash, no cardboard scraps.</li>
+        <li>Tables are clear: markers, scissors, and tape back in the caddy.</li>
+        <li>All robot parts and project bins are back on their own shelf.</li>
+        <li>Trash in the trash, recycling in the recycling.</li>
+      </ol>
+      <div class="cleanup-note">Leave your Chromebook out on the table &mdash; we stow those by number next.</div>
     </div>
   </div>
 

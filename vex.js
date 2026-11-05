@@ -1131,8 +1131,9 @@ function initVexFaq() {
    Playing bento on the left. The work playlist pauses while it's up
    and resumes when it's dismissed.
 
-   Called "packup" in the code because script.js already uses
-   `cleanup-mode-active` for the 7th Period Chromebook claw machine.
+   Called "packup" in the code because script.js already owns both
+   `cleanup-mode-active` (the agenda board's own Clean Up mode) and
+   `stow-mode-active` (the 7th Period Chromebook claw machine).
    ------------------------------------------------------------------ */
 
 function initVexPackUp() {

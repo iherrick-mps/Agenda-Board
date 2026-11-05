@@ -109,7 +109,7 @@ function findCurrentAndNext(periods, nowMin) {
        reaches 00:00 — the period genuinely ended. Deliberately slow
        and long-ringing: it has to carry over a talking class.
      - "mode" is a quicker, brighter flourish announcing that Game
-       Mode or Clean-Up Mode has taken the board over. Clearly not
+       Mode, Clean Up or Stow Chromebooks has taken the board over. Clearly not
        the bell, so nobody starts packing up at the wrong moment.
 
    Both quiet the room first — whatever music or video is playing is
@@ -1734,6 +1734,32 @@ function initNowPlaying() {
   input.addEventListener('dblclick', (e) => e.stopPropagation());
 
   wireRandomButton(randomBtn, playRandomTrack);
+
+  /* Lets a full-board takeover that brings its own audio — Clean Up's
+     clean-up song — hush the class playlist for the duration and hand
+     it back afterwards, rather than having two things playing over each
+     other. Same shape as vex.js's __vexNowPlaying.
+
+     resume() only un-pauses something that was actually playing when
+     pause() was called, so dismissing the mode never starts music in a
+     silent room. */
+  let pausedByMode = false;
+  window.__nowPlaying = {
+    pause() {
+      if (!player || !player.pauseVideo) return;
+      try {
+        pausedByMode = player.getPlayerState
+          ? player.getPlayerState() === 1   // 1 === YT.PlayerState.PLAYING
+          : false;
+        if (pausedByMode) player.pauseVideo();
+      } catch (e) { /* player not ready — nothing to hush */ }
+    },
+    resume() {
+      if (!player || !player.playVideo || !pausedByMode) return;
+      pausedByMode = false;
+      try { player.playVideo(); } catch (e) { /* ignore */ }
+    }
+  };
 }
 
 /* ============================================================
@@ -2174,8 +2200,9 @@ function initGameMode() {
     endsAtMs = typeof opts.durationMinutes === 'number'
       ? Date.now() + opts.durationMinutes * 60000
       : null;
-    // Clean-Up Mode and Theater Mode are their own full-board takeovers —
-    // never show more than one at once.
+    // Stow Chromebooks, Clean Up and Theater Mode are their own
+    // full-board takeovers — never show more than one at once.
+    if (window.__stowMode && window.__stowMode.isActive()) window.__stowMode.turnOff();
     if (window.__cleanupMode && window.__cleanupMode.isActive()) window.__cleanupMode.turnOff();
     if (window.__theaterMode && window.__theaterMode.isActive()) window.__theaterMode.turnOff();
     // announce the takeover and hush whatever was playing — the same
@@ -2377,8 +2404,8 @@ function initGameMode() {
 }
 
 /* ============================================================
-   Clean-Up Mode — 7th Period only, Monday through Thursday. Always
-   auto-starts the moment CLEANUP_AUTO_MINUTES remain in 7th Period
+   Stow Chromebooks Mode — 7th Period only, Monday through Thursday. Always
+   auto-starts the moment STOW_AUTO_MINUTES remain in 7th Period
    (no input to configure — this one's fixed, unlike Game Mode's
    auto-trigger). Draws numbers 1-36 with no repeats over 5 minutes
    via a little claw-machine animation: whoever's number comes up
@@ -2389,19 +2416,19 @@ function initGameMode() {
    off, so they never show at the same time.
    ============================================================ */
 
-const CLEANUP_PERIOD_NAME = '7th Period';
-const CLEANUP_AUTO_MINUTES = 7;        // fixed — always starts w/ 7 min left
-const CLEANUP_NUMBER_COUNT = 36;
-const CLEANUP_TOTAL_MS = 5 * 60 * 1000; // get through all 36 numbers in 5 min
-const CLEANUP_DROP_MS = 900;
-const CLEANUP_GRAB_MS = 280;
-const CLEANUP_LIFT_MS = 900;
-const CLEANUP_PIT_BALL_COUNT = 10;
+const STOW_PERIOD_NAME = '7th Period';
+const STOW_AUTO_MINUTES = 7;        // fixed — always starts w/ 7 min left
+const STOW_NUMBER_COUNT = 36;
+const STOW_TOTAL_MS = 5 * 60 * 1000; // get through all 36 numbers in 5 min
+const STOW_DROP_MS = 900;
+const STOW_GRAB_MS = 280;
+const STOW_LIFT_MS = 900;
+const STOW_PIT_BALL_COUNT = 10;
 
 // flat colors cycled for the "already pulled" jar chips — deliberately flat
 // (no gradient) per the ball-pit/claw balls, which are rendered as glassy
 // gradients so the jar chips read as a visually distinct, simpler token
-const CLEANUP_JAR_COLORS = ['#fbbf24', '#38bdf8', '#a78bfa', '#4ade80', '#fb7185', '#f97316'];
+const STOW_JAR_COLORS = ['#fbbf24', '#38bdf8', '#a78bfa', '#4ade80', '#fb7185', '#f97316'];
 
 const SPARKLE_COUNT = 70;
 const SPARKLE_MIN_SIZE = 5;
@@ -2455,7 +2482,7 @@ function shuffledNumbers(count) {
 // Reads each number aloud via the browser's built-in speech synthesis
 // (no external service, no setup) — silently does nothing if the
 // browser doesn't support it or a voice isn't available yet.
-function speakCleanupNumber(n) {
+function speakStowNumber(n) {
   try {
     if (!('speechSynthesis' in window)) return;
     window.speechSynthesis.cancel(); // don't let calls stack up/overlap
@@ -2465,24 +2492,24 @@ function speakCleanupNumber(n) {
   } catch (e) { /* speech synthesis unavailable — silently skip */ }
 }
 
-function initCleanupMode() {
+function initStowMode() {
   const boardGrid = document.getElementById('board-grid');
-  const toggleBtn = document.getElementById('cleanup-toggle-btn');
+  const toggleBtn = document.getElementById('stow-toggle-btn');
   const sparkleLayer = document.getElementById('sparkle-layer');
-  const clawArm = document.getElementById('cleanup-claw-arm');
-  const numberEl = document.getElementById('cleanup-number');
-  const countdownEl = document.getElementById('cleanup-countdown');
-  const messageEl = document.getElementById('cleanup-message');
-  const calledListEl = document.getElementById('cleanup-called-list');
-  const pitEl = document.getElementById('cleanup-ball-pit');
-  const jarEl = document.getElementById('cleanup-jar');
+  const clawArm = document.getElementById('stow-claw-arm');
+  const numberEl = document.getElementById('stow-number');
+  const countdownEl = document.getElementById('stow-countdown');
+  const messageEl = document.getElementById('stow-message');
+  const calledListEl = document.getElementById('stow-called-list');
+  const pitEl = document.getElementById('stow-ball-pit');
+  const jarEl = document.getElementById('stow-jar');
   if (!boardGrid || !toggleBtn || !sparkleLayer || !clawArm || !numberEl || !countdownEl) return;
 
   // decorative resting balls in the claw-machine pit — placed once,
   // never move or mean anything, just set the scene
   if (pitEl && !pitEl.dataset.seeded) {
     pitEl.dataset.seeded = 'true';
-    for (let i = 0; i < CLEANUP_PIT_BALL_COUNT; i++) {
+    for (let i = 0; i < STOW_PIT_BALL_COUNT; i++) {
       const ball = document.createElement('span');
       ball.className = 'pit-ball';
       ball.style.left = `${8 + Math.random() * 78}%`;
@@ -2511,16 +2538,16 @@ function initCleanupMode() {
 
   function finishSequence() {
     sequenceComplete = true;
-    if (messageEl) messageEl.textContent = 'Clean-up crew complete — thank you!';
+    if (messageEl) messageEl.textContent = 'Chromebooks all stowed — thank you!';
   }
 
   function scheduleNext() {
     if (!active) return;
-    if (queueIndex >= CLEANUP_NUMBER_COUNT) { finishSequence(); return; }
+    if (queueIndex >= STOW_NUMBER_COUNT) { finishSequence(); return; }
     // pace remaining draws evenly across whatever time is actually left,
     // rather than a fixed gap, so the sequence still lands on time even
     // if a tab was backgrounded and timers got throttled/delayed
-    const remainingNumbers = CLEANUP_NUMBER_COUNT - queueIndex;
+    const remainingNumbers = STOW_NUMBER_COUNT - queueIndex;
     const remainingMs = Math.max(0, sequenceEndsAt - Date.now());
     const gap = remainingMs / remainingNumbers;
     sequenceTimeout = setTimeout(pullNextBall, gap);
@@ -2546,11 +2573,11 @@ function initCleanupMode() {
         numberEl.classList.remove('is-revealing');
         void numberEl.offsetWidth; // restart the reveal animation
         numberEl.classList.add('is-revealing');
-        speakCleanupNumber(number);
+        speakStowNumber(number);
 
         if (calledListEl) {
           const chip = document.createElement('span');
-          chip.className = 'cleanup-called-chip';
+          chip.className = 'stow-called-chip';
           chip.textContent = number;
           calledListEl.appendChild(chip);
         }
@@ -2559,11 +2586,11 @@ function initCleanupMode() {
           // number — the accumulating pile of everyone who's already
           // been called
           const jarBall = document.createElement('span');
-          jarBall.className = 'cleanup-jar-ball';
+          jarBall.className = 'stow-jar-ball';
           jarBall.textContent = number;
           jarBall.style.setProperty(
             '--jar-ball-color',
-            CLEANUP_JAR_COLORS[(number - 1) % CLEANUP_JAR_COLORS.length]
+            STOW_JAR_COLORS[(number - 1) % STOW_JAR_COLORS.length]
           );
           jarEl.appendChild(jarBall);
         }
@@ -2574,16 +2601,17 @@ function initCleanupMode() {
         sequenceTimeout = setTimeout(() => {
           resetClaw();
           scheduleNext();
-        }, CLEANUP_LIFT_MS);
-      }, CLEANUP_GRAB_MS);
-    }, CLEANUP_DROP_MS);
+        }, STOW_LIFT_MS);
+      }, STOW_GRAB_MS);
+    }, STOW_DROP_MS);
   }
 
   function turnOn() {
     if (active) return;
-    // Game Mode and Theater Mode are their own full-board takeovers —
-    // never show more than one at once.
+    // Game Mode, Clean Up and Theater Mode are their own full-board
+    // takeovers — never show more than one at once.
     if (window.__gameMode && window.__gameMode.isActive()) window.__gameMode.turnOff();
+    if (window.__cleanupMode && window.__cleanupMode.isActive()) window.__cleanupMode.turnOff();
     if (window.__theaterMode && window.__theaterMode.isActive()) window.__theaterMode.turnOff();
 
     // same announcement as Game Mode, and doubly worth the quiet here:
@@ -2591,14 +2619,14 @@ function initCleanupMode() {
     soundBoardChime('mode');
 
     active = true;
-    boardGrid.classList.add('cleanup-mode-active');
+    boardGrid.classList.add('stow-mode-active');
     toggleBtn.classList.add('is-active');
     spawnSparkles(sparkleLayer);
 
-    queue = shuffledNumbers(CLEANUP_NUMBER_COUNT);
+    queue = shuffledNumbers(STOW_NUMBER_COUNT);
     queueIndex = 0;
     sequenceComplete = false;
-    sequenceEndsAt = Date.now() + CLEANUP_TOTAL_MS;
+    sequenceEndsAt = Date.now() + STOW_TOTAL_MS;
     numberEl.textContent = '?';
     numberEl.classList.remove('is-revealing');
     if (calledListEl) calledListEl.innerHTML = '';
@@ -2615,7 +2643,7 @@ function initCleanupMode() {
   function turnOff() {
     if (!active) return;
     active = false;
-    boardGrid.classList.remove('cleanup-mode-active');
+    boardGrid.classList.remove('stow-mode-active');
     toggleBtn.classList.remove('is-active');
     sparkleLayer.innerHTML = '';
     resetClaw();
@@ -2632,7 +2660,7 @@ function initCleanupMode() {
 
   // lets Game Mode's turnOn() switch this back off, same pattern as
   // window.__gameMode above
-  window.__cleanupMode = {
+  window.__stowMode = {
     turnOn,
     turnOff,
     isActive: () => active,
@@ -2640,13 +2668,13 @@ function initCleanupMode() {
   };
 
   /* ---- Auto-trigger — 7th Period only, Monday through Thursday,
-     fires once the live countdown hits CLEANUP_AUTO_MINUTES. Unlike
+     fires once the live countdown hits STOW_AUTO_MINUTES. Unlike
      Game Mode's auto-trigger this isn't a text input Ms. Herrick sets
      per device; it's a fixed default so it just works without setup.
 
      Not on Fridays: 7th Period ends the week on earned game time
      (see the Game Time button), and a claw machine calling numbers
-     over the top of it would cut that short. The Clean-Up button
+     over the top of it would cut that short. The Stow Chromebooks button
      still works by hand any day, Fridays included. ---- */
 
   let firedForPeriodKey = null;
@@ -2662,11 +2690,11 @@ function initCleanupMode() {
 
     const nowMin = minutesSinceMidnight(pt);
     const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
-    if (!current || current.name !== CLEANUP_PERIOD_NAME) return;
+    if (!current || current.name !== STOW_PERIOD_NAME) return;
 
     const remaining = hhmmToMinutes(current.end) - nowMin;
     const periodKey = `${pt.isoDate}|${current.name}`;
-    if (remaining <= CLEANUP_AUTO_MINUTES && firedForPeriodKey !== periodKey) {
+    if (remaining <= STOW_AUTO_MINUTES && firedForPeriodKey !== periodKey) {
       firedForPeriodKey = periodKey;
       turnOn();
     }
@@ -2677,11 +2705,148 @@ function initCleanupMode() {
 }
 
 /* ============================================================
+   Clean Up Mode — hand-only, any period. This is the room itself:
+   chairs, floor, tables, bins. It plays the clean-up song on a loop
+   and puts "what a clean room looks like" on the board next to it,
+   so the class has both a soundtrack and a checklist to work from.
+
+   Deliberately separate from Stow Chromebooks above. Stowing is its
+   own job with its own claw machine and its own auto-trigger, and
+   putting Chromebooks away is explicitly NOT on this checklist —
+   the note at the bottom of the bento says so, because the two used
+   to be one mode and the habit of stacking Chromebooks the moment
+   music starts is the thing worth unlearning. Either mode can run
+   without the other, and (like every other takeover here) turning
+   one on turns the others off.
+
+   No auto-trigger: it starts when the Clean Up button is pressed and
+   at no other time. Stow Chromebooks still fires on its own at
+   STOW_AUTO_MINUTES, and a second mode auto-firing in the same
+   stretch of 7th Period would just fight it for the board. If this
+   ever needs to auto-start, model it on Stow Chromebooks' autoCheck.
+   ============================================================ */
+
+// Shared with the VEX board's clean-up overlay (VEX_PACKUP_SONG_URL in
+// vex.js) — same song, same job, two different boards.
+const CLEANUP_SONG_URL = 'https://www.youtube.com/watch?v=Ds6IwEKRLUU';
+const CLEANUP_VOLUME = 100; // max — it has to carry over a room that's cleaning
+
+// The chime's pauseAllMedia() sweep reaches players by postMessage, which
+// lands a tick or two later. Starting the song straight away would race
+// that sweep and get paused by it, so let the chime have the quiet it
+// asked for and come in just behind it.
+const CLEANUP_SONG_START_DELAY_MS = 600;
+
+function initCleanupMode() {
+  const boardGrid = document.getElementById('board-grid');
+  const toggleBtn = document.getElementById('cleanup-toggle-btn');
+  const embedEl = document.getElementById('cleanup-embed');
+  if (!boardGrid || !toggleBtn || !embedEl) return;
+
+  let active = false;
+  let player = null;
+  let building = false;
+  let startTimeout = null;
+
+  async function ensurePlayer() {
+    if (player || building) return;
+    building = true;
+
+    const { videoId } = parseYouTubeUrl(CLEANUP_SONG_URL);
+    if (!videoId) { building = false; return; }
+
+    embedEl.innerHTML = '<div id="cleanup-player"></div>';
+    const YT = await loadYouTubeIframeApi();
+
+    player = new YT.Player('cleanup-player', {
+      width: '100%',
+      height: '100%',
+      videoId,
+      // loop on a single video only works if that video is also named as
+      // a one-item playlist — otherwise YouTube ignores loop entirely
+      playerVars: { autoplay: 1, rel: 0, mute: 1, loop: 1, playlist: videoId },
+      events: {
+        onReady: (e) => {
+          e.target.setVolume(CLEANUP_VOLUME);
+          e.target.unMute();
+          // dismissed again before the API finished loading — don't
+          // start singing into a board that has moved on
+          if (active) e.target.playVideo();
+        }
+      }
+    });
+    building = false;
+  }
+
+  function startSong() {
+    if (!player) { ensurePlayer(); return; }
+    try {
+      player.seekTo(0);
+      player.playVideo();
+    } catch (e) { /* player not ready — onReady will start it */ }
+  }
+
+  function turnOn() {
+    if (active) return;
+    // Game Mode, Stow Chromebooks and Theater Mode are their own
+    // full-board takeovers — never show more than one at once.
+    if (window.__gameMode && window.__gameMode.isActive()) window.__gameMode.turnOff();
+    if (window.__stowMode && window.__stowMode.isActive()) window.__stowMode.turnOff();
+    if (window.__theaterMode && window.__theaterMode.isActive()) window.__theaterMode.turnOff();
+
+    // hush the class playlist before the chime, so it's still reading as
+    // "playing" and resume() can hand it back on dismissal
+    if (window.__nowPlaying) window.__nowPlaying.pause();
+
+    // same announcement as the other takeovers
+    soundBoardChime('mode');
+
+    active = true;
+    boardGrid.classList.add('cleanup-mode-active');
+    toggleBtn.classList.add('is-active');
+
+    if (startTimeout) clearTimeout(startTimeout);
+    startTimeout = setTimeout(() => {
+      startTimeout = null;
+      if (active) startSong();
+    }, CLEANUP_SONG_START_DELAY_MS);
+
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  function turnOff() {
+    if (!active) return;
+    active = false;
+    boardGrid.classList.remove('cleanup-mode-active');
+    toggleBtn.classList.remove('is-active');
+
+    if (startTimeout) { clearTimeout(startTimeout); startTimeout = null; }
+    // kept alive rather than destroyed: the song is always the same one,
+    // so a second clean-up just seeks back to the top of a warm player
+    if (player && player.pauseVideo) {
+      try { player.pauseVideo(); } catch (e) { /* ignore */ }
+    }
+    if (window.__nowPlaying) window.__nowPlaying.resume();
+
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (active) turnOff(); else turnOn();
+  });
+
+  // lets the other modes' turnOn() switch this back off, same pattern as
+  // window.__gameMode / window.__stowMode above
+  window.__cleanupMode = { turnOn, turnOff, isActive: () => active };
+}
+
+/* ============================================================
    Theater Mode — manual only. It turns on when the Theater button
    in the hover-bar is pressed, in any period, and never starts on
-   its own: unlike Game Mode and Clean-Up Mode there is no bell-driven
+   its own: unlike Game Mode and Stow Chromebooks there is no bell-driven
    auto-trigger here at all. Same full-board-takeover shape as
-   Game Mode and Clean-Up Mode, but instead of a countdown/animation
+   Game Mode and Stow Chromebooks, but instead of a countdown/animation
    panel, the entire right-hand panel is one huge YouTube player
    showing a random pick from theater.txt (a separate list from
    music.txt's background-music links). Turning this mode on turns
@@ -2813,9 +2978,10 @@ function initTheaterMode() {
 
   function turnOn() {
     if (active) return;
-    // Game Mode and Clean-Up Mode are their own full-board takeovers —
-    // never show more than one at once.
+    // Game Mode, Stow Chromebooks and Clean Up are their own full-board
+    // takeovers — never show more than one at once.
     if (window.__gameMode && window.__gameMode.isActive()) window.__gameMode.turnOff();
+    if (window.__stowMode && window.__stowMode.isActive()) window.__stowMode.turnOff();
     if (window.__cleanupMode && window.__cleanupMode.isActive()) window.__cleanupMode.turnOff();
 
     active = true;
@@ -2845,17 +3011,17 @@ function initTheaterMode() {
     if (active) turnOff(); else turnOn();
   });
 
-  // lets Game Mode's and Clean-Up Mode's turnOn() switch this back off,
-  // same pattern as window.__gameMode / window.__cleanupMode above
+  // lets the other modes' turnOn() switch this back off,
+  // same pattern as window.__gameMode / window.__stowMode above
   window.__theaterMode = { turnOn, turnOff, isActive: () => active };
 
   /* ---- No auto-trigger. Theater Mode is deliberately hand-only: it
      starts when the Theater button is pressed and at no other time.
-     Unlike Game Mode and Clean-Up Mode, nothing here watches the bell
+     Unlike Game Mode and Stow Chromebooks, nothing here watches the bell
      schedule, so there is no path by which a period ending, a date
      rolling over, or a board left running overnight can turn it on by
      itself. If Theater ever needs to auto-start again, model it on
-     Clean-Up Mode's autoCheck rather than reviving this comment. ---- */
+     Stow Chromebooks' autoCheck rather than reviving this comment. ---- */
 }
 
 /* ============================================================
@@ -3034,6 +3200,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNowPlaying();
   initCountUpTimer();
   initGameMode();
+  initStowMode();
   initCleanupMode();
   initTheaterMode();
   initMiniCalendar();

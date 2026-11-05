@@ -1161,7 +1161,7 @@ body.board-page {
   font-weight: 700;
 }
 
-.cleanup-toggle-btn.is-active {
+.stow-toggle-btn.is-active {
   border-color: #38bdf8;
   background: #38bdf8;
   color: #16202b;
@@ -1228,56 +1228,56 @@ body.board-page {
 }
 
 /* ============================================================
-   Clean-Up Mode — 7th Period only, always auto-starts with 10
-   minutes left in the period. Reuses Game Mode's full-board
+   Stow Chromebooks Mode — 7th Period only, always auto-starts
+   with 7 minutes left in the period. Reuses Game Mode's full-board
    takeover layout, but swaps confetti for falling sparkles and
    the countdown for a claw-machine draw of numbers 1-36 (no
    repeats) so each student knows when their Chromebook is due
    back in the cart.
    ============================================================ */
 
-.board-grid:not(.cleanup-mode-active) .box-cleanup { display: none; }
+.board-grid:not(.stow-mode-active) .box-stow { display: none; }
 
-.board-grid.cleanup-mode-active .box-clock,
-.board-grid.cleanup-mode-active .box-calendar,
-.board-grid.cleanup-mode-active .box-timer,
-.board-grid.cleanup-mode-active .box-standards,
-.board-grid.cleanup-mode-active .box-agenda,
-.board-grid.cleanup-mode-active .box-queue { display: none; }
+.board-grid.stow-mode-active .box-clock,
+.board-grid.stow-mode-active .box-calendar,
+.board-grid.stow-mode-active .box-timer,
+.board-grid.stow-mode-active .box-standards,
+.board-grid.stow-mode-active .box-agenda,
+.board-grid.stow-mode-active .box-queue { display: none; }
 
-.board-grid.cleanup-mode-active .box-name {
+.board-grid.stow-mode-active .box-name {
   grid-column: 1 / 5;
 }
-.board-grid.cleanup-mode-active .box-nowplaying {
+.board-grid.stow-mode-active .box-nowplaying {
   grid-column: 1 / 5;
   grid-row: 10 / 13;
 }
 
-.box-cleanup-main { grid-column: 5 / 13; grid-row: 1 / 13; }
+.box-stow-main { grid-column: 5 / 13; grid-row: 1 / 13; }
 
 /* 24-column equivalents for the main agenda board */
-.agenda-grid.cleanup-mode-active .box-focus {
+.agenda-grid.stow-mode-active .box-focus {
   grid-column: 1 / 9;
   grid-row: 1 / 5;
 }
-.agenda-grid.cleanup-mode-active .box-name {
+.agenda-grid.stow-mode-active .box-name {
   grid-column: 1 / 9;
   grid-row: 5 / 6;
 }
-.agenda-grid.cleanup-mode-active .box-deliver {
+.agenda-grid.stow-mode-active .box-deliver {
   grid-column: 1 / 9;
   grid-row: 6 / 10;
 }
-.agenda-grid.cleanup-mode-active .box-nowplaying {
+.agenda-grid.stow-mode-active .box-nowplaying {
   grid-column: 1 / 9;
   grid-row: 10 / 13;
 }
-.agenda-grid.cleanup-mode-active .box-cleanup-main {
+.agenda-grid.stow-mode-active .box-stow-main {
   grid-column: 9 / 25;
   grid-row: 1 / 13;
 }
 
-.box-cleanup {
+.box-stow {
   cursor: default;
   border: none;
   color: #fff;
@@ -1288,12 +1288,12 @@ body.board-page {
   box-shadow: 0 10px 28px rgba(22, 32, 43, 0.22);
 }
 
-.box-cleanup-main .box-label {
+.box-stow-main .box-label {
   color: #fff;
   text-shadow: 0 1px 4px rgba(0,0,0,0.25);
 }
 
-.cleanup-body {
+.stow-body {
   flex: 1 1 auto;
   min-height: 0;
   display: flex;
@@ -1307,7 +1307,7 @@ body.board-page {
 
 /* ---- claw machine ---- */
 
-.cleanup-claw-stage {
+.stow-claw-stage {
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -1372,7 +1372,7 @@ body.board-page {
 .claw-arm.is-dropping .claw-string,
 .claw-arm.is-grabbing .claw-string {
   /* long enough to carry the head down into the ball pit at the bottom
-     of the glass, scaled to the box via the cleanup-body container query */
+     of the glass, scaled to the box via the stow-body container query */
   height: clamp(220px, 64cqh, 640px);
 }
 
@@ -1440,7 +1440,7 @@ body.board-page {
   background: radial-gradient(circle at 35% 30%, #fff, #a78bfa 60%, #6b21a8);
 }
 
-.cleanup-number-window {
+.stow-number-window {
   position: relative;
   flex: 1 1 auto;
   min-width: 0;
@@ -1456,7 +1456,7 @@ body.board-page {
 /* ---- jar of pulled balls — every number that's been called collects here,
    flat circle chips stacking up from the bottom like they've been dropped
    into a separate jar, sitting behind the big current number. ---- */
-.cleanup-jar {
+.stow-jar {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -1469,7 +1469,7 @@ body.board-page {
   padding: clamp(8px, 4cqh, 18px) clamp(10px, 4cqw, 20px);
 }
 
-.cleanup-jar-ball {
+.stow-jar-ball {
   flex: 0 0 auto;
   width: clamp(34px, 15cqw, 62px);
   aspect-ratio: 1 / 1;
@@ -1484,10 +1484,10 @@ body.board-page {
   font-size: clamp(1rem, 5.5cqw, 1.7rem);
   line-height: 1;
   box-shadow: inset 0 -3px 0 rgba(0,0,0,0.15), inset 0 2px 0 rgba(255,255,255,0.35);
-  animation: cleanup-jar-ball-drop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: stow-jar-ball-drop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@keyframes cleanup-jar-ball-drop {
+@keyframes stow-jar-ball-drop {
   0%   { transform: translateY(-320%) scale(0.7); opacity: 0; }
   65%  { transform: translateY(8%) scale(1.06); opacity: 1; }
   100% { transform: translateY(0) scale(1); opacity: 1; }
@@ -1496,7 +1496,7 @@ body.board-page {
 /* glass overlay on top of the jar contents — a diagonal highlight streak
    plus a bright rim, so the pile of balls reads as sitting behind glass
    rather than just floating on the background */
-.cleanup-jar-glass {
+.stow-jar-glass {
   position: absolute;
   inset: 0;
   z-index: 3;
@@ -1513,7 +1513,7 @@ body.board-page {
 
 /* dark halo sitting behind the number, on top of the jar balls, so the
    number stays readable even once the jar fills up with big chips */
-.cleanup-number-glow {
+.stow-number-glow {
   position: absolute;
   z-index: 1;
   inset: 0;
@@ -1523,7 +1523,7 @@ body.board-page {
   pointer-events: none;
 }
 
-.cleanup-number-glow::before {
+.stow-number-glow::before {
   content: '';
   width: 78%;
   height: 62%;
@@ -1531,7 +1531,7 @@ body.board-page {
   background: radial-gradient(circle, rgba(10,20,30,0.55) 0%, rgba(10,20,30,0.32) 45%, rgba(10,20,30,0) 75%);
 }
 
-.cleanup-number {
+.stow-number {
   position: relative;
   z-index: 2;
   font-family: var(--font-mono);
@@ -1542,17 +1542,17 @@ body.board-page {
   text-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-.cleanup-number.is-revealing {
-  animation: cleanup-number-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+.stow-number.is-revealing {
+  animation: stow-number-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@keyframes cleanup-number-pop {
+@keyframes stow-number-pop {
   0%   { transform: scale(0.4); opacity: 0; }
   60%  { transform: scale(1.15); opacity: 1; }
   100% { transform: scale(1); opacity: 1; }
 }
 
-.cleanup-message {
+.stow-message {
   font-family: var(--font-body);
   font-weight: 800;
   color: #fff;
@@ -1562,7 +1562,7 @@ body.board-page {
   text-shadow: 0 1px 6px rgba(0,0,0,0.22);
 }
 
-.cleanup-countdown {
+.stow-countdown {
   font-family: var(--font-mono);
   font-weight: 700;
   color: #fff;
@@ -1570,7 +1570,7 @@ body.board-page {
   text-shadow: 0 2px 10px rgba(0,0,0,0.28);
 }
 
-.cleanup-called {
+.stow-called {
   font-family: var(--font-mono);
   font-size: clamp(0.65rem, min(3cqh, 1.8cqw), 1rem);
   color: rgba(255,255,255,0.92);
@@ -1578,7 +1578,7 @@ body.board-page {
   line-height: 1.6;
 }
 
-.cleanup-called-label {
+.stow-called-label {
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1586,7 +1586,7 @@ body.board-page {
   margin-right: 0.4em;
 }
 
-.cleanup-called-chip {
+.stow-called-chip {
   display: inline-block;
   background: rgba(255,255,255,0.22);
   border-radius: 999px;
@@ -1631,8 +1631,149 @@ body.board-page {
 }
 
 /* ============================================================
+   Clean Up Mode — any period, hand-only. Same full-board-takeover
+   shape as the modes above, but it also swaps the music: the Now
+   Playing bento pauses and a plain single-video clean-up song
+   bento takes the left column, with the "what a clean room looks
+   like" checklist filling the right.
+
+   This is the room itself — chairs, floor, tables, bins. Stowing
+   Chromebooks is deliberately NOT on the list; that is Stow
+   Chromebooks' job (the claw machine above), and the two run as
+   separate modes so either can be used without the other.
+
+   Modelled on the VEX clean-up overlay further down this file.
+   The clean-up song bento keeps .box-nowplaying for the black
+   card, so every selector that hides the real Now Playing box
+   here has to exclude it — hence :not(.box-cleanup).
+   ============================================================ */
+
+.board-grid:not(.cleanup-mode-active) .box-cleanup { display: none; }
+
+.board-grid.cleanup-mode-active .box-clock,
+.board-grid.cleanup-mode-active .box-calendar,
+.board-grid.cleanup-mode-active .box-timer,
+.board-grid.cleanup-mode-active .box-standards,
+.board-grid.cleanup-mode-active .box-agenda,
+.board-grid.cleanup-mode-active .box-queue,
+.board-grid.cleanup-mode-active .box-nowplaying:not(.box-cleanup) { display: none; }
+
+.board-grid.cleanup-mode-active .box-name {
+  grid-column: 1 / 5;
+}
+
+.box-cleanup-music { grid-column: 1 / 5; grid-row: 10 / 13; }
+.box-cleanup-main  { grid-column: 5 / 13; grid-row: 1 / 13; }
+
+/* 24-column equivalents for the main agenda board */
+.agenda-grid.cleanup-mode-active .box-focus {
+  grid-column: 1 / 9;
+  grid-row: 1 / 6;
+}
+.agenda-grid.cleanup-mode-active .box-name {
+  grid-column: 1 / 9;
+  grid-row: 6 / 7;
+}
+.agenda-grid.cleanup-mode-active .box-deliver {
+  grid-column: 1 / 9;
+  grid-row: 7 / 10;
+}
+.agenda-grid.cleanup-mode-active .box-cleanup-music {
+  grid-column: 1 / 9;
+  grid-row: 10 / 13;
+}
+.agenda-grid.cleanup-mode-active .box-cleanup-main {
+  grid-column: 9 / 25;
+  grid-row: 1 / 13;
+}
+
+.box-cleanup-main {
+  cursor: default;
+  border: none;
+  color: #fff;
+  background: linear-gradient(120deg,
+    #0ea5e9, #22d3ee, #6ee7b7, #a3e635, #22d3ee, #0ea5e9);
+  background-size: 400% 400%;
+  animation: cleanup-wash 16s ease-in-out infinite;
+  box-shadow: 0 10px 28px rgba(22, 32, 43, 0.22);
+}
+
+@keyframes cleanup-wash {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.box-cleanup-main .box-label {
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+.cleanup-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5em;
+  container-type: size;
+}
+
+.cleanup-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, min(14cqh, 8cqw), 5.5rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.cleanup-lede {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: clamp(0.8rem, min(5cqh, 2.6cqw), 1.5rem);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+}
+
+.cleanup-list {
+  margin: 0;
+  padding: 0 0 0 1.4em;
+  max-width: 88%;
+  text-align: left;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: clamp(0.85rem, min(6.5cqh, 2.7cqw), 1.9rem);
+  line-height: 1.3;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.28);
+}
+.cleanup-list li { margin: 0.4em 0; }
+
+/* the one thing that is NOT on the checklist, said out loud so
+   nobody starts stacking Chromebooks during the song */
+.cleanup-note {
+  max-width: 88%;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(0.7rem, min(4.5cqh, 2.2cqw), 1.2rem);
+  line-height: 1.25;
+  padding: 0.5em 0.9em;
+  border-radius: 999px;
+  background: rgba(8, 47, 73, 0.28);
+  text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+/* a plain video embed — no title panel, no transport controls,
+   nothing to fiddle with mid-clean-up */
+.box-cleanup-music { background: #000; border-left-color: #6ee7b7; }
+.box-cleanup-music .nowplaying-embed { width: 100%; height: 100%; }
+
+/* ============================================================
    Theater Mode — any period, always auto-starts with 5 minutes
-   left. Reuses Game Mode's/Clean-Up Mode's full-board-takeover
+   left. Reuses the other modes' full-board-takeover
    layout for the left-hand info column, but the right-hand panel
    is nothing but one huge YouTube player (a random pick from
    theater.txt) instead of a countdown or animation.
@@ -1648,7 +1789,7 @@ body.board-page {
 .board-grid.theater-mode-active .box-queue { display: none; }
 
 /* the survivors move/widen into the left column — same slots as
-   Game Mode and Clean-Up Mode above */
+   Game Mode and Stow Chromebooks above */
 .board-grid.theater-mode-active .box-name {
   grid-column: 1 / 5;
 }
@@ -2319,8 +2460,9 @@ body.board-page {
    a plain single-video Now Playing bento takes the left column.
 
    Named "packup" internally on purpose — script.js already owns
-   `cleanup-mode-active` for the 7th Period Chromebook claw machine
-   on the agenda board, and the two must not collide.
+   `cleanup-mode-active` (the agenda board's own Clean Up mode) and
+   `stow-mode-active` (its Chromebook claw machine), and the three
+   must not collide.
    ============================================================ */
 
 .board-grid:not(.packup-mode-active) .box-packup { display: none; }
@@ -3166,37 +3308,63 @@ body.board-page {
   .packup-lede { font-size: 1.1rem; }
   .packup-list { font-size: 1.15rem; }
 
-  /* Clean-Up Mode: same reasoning as Game Mode above — drop the
+  /* Stow Chromebooks: same reasoning as Game Mode above — drop the
      12-column repositioning and let things stack normally. */
-  .board-grid.cleanup-mode-active .box-focus,
-  .board-grid.cleanup-mode-active .box-name,
-  .board-grid.cleanup-mode-active .box-deliver,
-  .board-grid.cleanup-mode-active .box-nowplaying,
-  .agenda-grid.cleanup-mode-active .box-focus,
-  .agenda-grid.cleanup-mode-active .box-name,
-  .agenda-grid.cleanup-mode-active .box-deliver,
-  .agenda-grid.cleanup-mode-active .box-nowplaying {
+  .board-grid.stow-mode-active .box-focus,
+  .board-grid.stow-mode-active .box-name,
+  .board-grid.stow-mode-active .box-deliver,
+  .board-grid.stow-mode-active .box-nowplaying,
+  .agenda-grid.stow-mode-active .box-focus,
+  .agenda-grid.stow-mode-active .box-name,
+  .agenda-grid.stow-mode-active .box-deliver,
+  .agenda-grid.stow-mode-active .box-nowplaying {
     grid-column: 1 / 2;
     grid-row: auto;
   }
-  .box-cleanup-main,
-  .agenda-grid.cleanup-mode-active .box-cleanup-main {
+  .box-stow-main,
+  .agenda-grid.stow-mode-active .box-stow-main {
     grid-column: 1 / 2;
     grid-row: auto;
     min-height: 360px;
   }
-  .cleanup-body { container-type: normal; }
-  .cleanup-claw-stage { min-height: 160px; }
+  .stow-body { container-type: normal; }
+  .stow-claw-stage { min-height: 160px; }
   /* cqh falls back to viewport units once container-type is "normal"
      above, which would badly oversize the drop against this much
      shorter mobile glass — pin it to a fixed depth instead */
   .claw-arm.is-dropping .claw-string,
   .claw-arm.is-grabbing .claw-string { height: 150px; }
-  .cleanup-number { font-size: 3.2rem; }
-  .cleanup-message { font-size: 1.3rem; }
-  .cleanup-countdown { font-size: 1.6rem; }
+  .stow-number { font-size: 3.2rem; }
+  .stow-message { font-size: 1.3rem; }
+  .stow-countdown { font-size: 1.6rem; }
 
-  /* Theater Mode: same reasoning as Game Mode/Clean-Up Mode above —
+  /* Clean Up: same reasoning as Game Mode above — drop the
+     12-column repositioning and let things stack normally. */
+  .board-grid.cleanup-mode-active .box-focus,
+  .board-grid.cleanup-mode-active .box-name,
+  .board-grid.cleanup-mode-active .box-deliver,
+  .agenda-grid.cleanup-mode-active .box-focus,
+  .agenda-grid.cleanup-mode-active .box-name,
+  .agenda-grid.cleanup-mode-active .box-deliver {
+    grid-column: 1 / 2;
+    grid-row: auto;
+  }
+  .box-cleanup-music,
+  .box-cleanup-main,
+  .agenda-grid.cleanup-mode-active .box-cleanup-music,
+  .agenda-grid.cleanup-mode-active .box-cleanup-main {
+    grid-column: 1 / 2;
+    grid-row: auto;
+  }
+  .box-cleanup-music,
+  .agenda-grid.cleanup-mode-active .box-cleanup-music { min-height: 200px; }
+  .cleanup-body { container-type: normal; }
+  .cleanup-title { font-size: 2.6rem; }
+  .cleanup-lede { font-size: 1.1rem; }
+  .cleanup-list { font-size: 1.15rem; }
+  .cleanup-note { font-size: 0.95rem; }
+
+  /* Theater Mode: same reasoning as the other modes above —
      drop the 12-column repositioning and let things stack normally. */
   .board-grid.theater-mode-active .box-focus,
   .board-grid.theater-mode-active .box-name,
