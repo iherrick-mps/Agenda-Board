@@ -3,7 +3,7 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your Decorator turn-in doc with your live game link, your plan for a wide-paddle power-up, and 3 short answers about the Decorator pattern (85 points even if your game breaks), plus the Decorator pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: your Decorator doc (game link, wide-paddle plan, 3 answers) and the Decorator pattern working in your game.",
       "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
       "smartGoal": "By the end of class, I can plan a wide-paddle power-up: what triggers it, what changes, and when it ends.",
       "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems into parts to facilitate the design, implementation, and review of programs.",
@@ -19,7 +19,7 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED circuit lit up in the TinkerCAD Circuits simulation, with the battery, resistor, and LED labeled. Turning it in is 70 points. You turn it in once, at the end of Friday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: a screenshot of your lit LED circuit in TinkerCAD Circuits, with the battery, resistor and LED labeled.",
       "workingNow": "Open the Google Classroom assignment called TinkerCAD Circuits: LED. Read the instructions, follow them, then fill out the exit ticket when you are done.",
       "smartGoal": "By the end of class, my battery, resistor, and LED circuit lights up in the simulation.",
       "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
@@ -35,7 +35,7 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a short video of your group's 5-step chain reaction running start to finish, with each energy transfer named. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: a short video of your group's 5-step chain reaction, with each energy transfer named.",
       "workingNow": "Open the Google Classroom assignment called Chain Reaction. Read the instructions, follow them, then fill out the exit ticket when you are done.",
       "smartGoal": "By the end of class, steps 1 to 3 of my group's chain reaction work in a row.",
       "contentStandard": "NGSS MS-PS3-5 — Construct, use, and present arguments to support the claim that when the kinetic energy of an object changes, energy is transferred to or from the object.",

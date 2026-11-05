@@ -3,7 +3,7 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your Iterator turn-in doc with your live game link, your list of the loops you cleaned up, and 3 short answers about the Iterator pattern (85 points even if your game breaks), plus the Iterator pattern working in your live game (15 points). You turn it in once, at the end of Thursday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: your Iterator doc (game link, loops you cleaned up, 3 answers) and the Iterator pattern working in your game.",
       "workingNow": "Open the Google Classroom assignment called Iterator Pattern. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
       "smartGoal": "By the end of class, my cleaned-up loops are live, I can explain the Iterator pattern, and my doc is turned in once.",
       "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
@@ -20,7 +20,7 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your TinkerCAD cam and follower, its share link, and 2 sentences on how turning the cam moves the follower. Turning it in is 70 points. You turn it in once, at the end of Thursday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: a screenshot and share link of your TinkerCAD cam, and 2 sentences on how it moves the follower.",
       "workingNow": "Open the Google Classroom assignment called Cam and Follower. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
       "smartGoal": "By the end of class, my cam and follower are finished, labeled, and turned in once.",
       "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
@@ -38,7 +38,7 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a photo of your tensegrity standing on its own and how many pushes it survived. Turning it in is 70 points. You turn it in once, at the end of Thursday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: a photo of your tensegrity standing on its own, and how many pushes it survived.",
       "workingNow": "Open the Google Classroom assignment called Tensegrity. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
       "smartGoal": "By the end of class, I've push-tested my tensegrity and turned in my photo once.",
       "contentStandard": "NGSS MS-ETS1-3 — Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",

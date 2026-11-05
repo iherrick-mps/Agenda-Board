@@ -3,7 +3,7 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your Prototype turn-in doc with your live game link, your plan for multiball, and 3 short answers about the Prototype pattern (85 points even if your game breaks), plus the Prototype pattern working in your live game (15 points). You turn it in once, at the end of Thursday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: your Prototype doc (game link, multiball plan, 3 answers) and the Prototype pattern working in your game.",
       "workingNow": "Open the Google Classroom assignment called Prototype Pattern. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
       "smartGoal": "By the end of class, multiball is live, I can explain the Prototype pattern, and my doc is turned in once.",
       "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
@@ -20,7 +20,7 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the battery, resistor, LED, and switch labeled, plus 1 sentence on what the switch does. Turning it in is 70 points. You turn it in once, at the end of Thursday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: a screenshot of your labeled LED and switch circuit, and 1 sentence on what the switch does.",
       "workingNow": "Open the Google Classroom assignment called LED and Switch Circuit. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
       "smartGoal": "By the end of class, my labeled switch circuit is in a screenshot and turned in once.",
       "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
@@ -37,7 +37,7 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: a screenshot of your LED and switch circuit in TinkerCAD Circuits with the parts labeled. Turning it in is 70 points. You turn it in once, at the end of Thursday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: a screenshot of your LED and switch circuit, with the parts labeled.",
       "workingNow": "Open the Google Classroom assignment called LED and Switch Circuit. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
       "smartGoal": "By the end of class, my labeled circuit is in a screenshot and turned in once.",
       "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
