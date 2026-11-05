@@ -408,6 +408,7 @@ function buildAnalogClock(box) {
     `<rect class="ac-face" x="6" y="6" width="188" height="188" rx="6"/>` +
     `<g class="ac-grid">${grid}</g>` +
     `<path class="ac-gone"/><path class="ac-left"/><path class="ac-edge"/>` +
+    `<g class="ac-spiral"></g>` +
     `<g class="ac-dots">${dots}</g>` +
     `<g class="ac-nums"><text x="100" y="31">12</text><text x="173" y="104">3</text>` +
     `<text x="100" y="178">6</text><text x="27" y="104">9</text></g>` +
@@ -415,9 +416,31 @@ function buildAnalogClock(box) {
     `<line class="ac-min" x1="100" y1="100" x2="100" y2="36"/>` +
     `<g class="ac-sec"><line class="ac-sec-tail" x1="100" y1="114" x2="100" y2="100"/><line x1="100" y1="100" x2="100" y2="28"/></g>` +
     `<rect class="ac-pin" x="96" y="96" width="8" height="8"/>` +
-    `</svg><div class="ac-cap"><span class="ac-now"></span><span class="ac-name"></span><span class="ac-end"></span></div>`;
+    `</svg><div class="ac-cap"><span class="ac-now"></span><span class="ac-name"></span>` +
+    `<span class="ac-end"><span class="ac-end-label"></span><span class="ac-end-value"></span></span></div>`;
   box.appendChild(wrap);
   return wrap;
+}
+
+/* The countdown is set as large as it will go without wrapping: "ENDS IN" on
+   one line, the clock figure under it, each grown until it just fits the strip
+   beside the face (2026-11-05). Measured rather than clamped in CSS because the
+   label changes length — "ENDS IN" during a class, "6TH PERIOD IN" between two.
+   Keyed on the text and the width so it only re-measures when one of them
+   moves, and re-run once the pixel font lands, since it measures wider. */
+let acFontEpoch = 0;
+if (typeof document !== 'undefined' && document.fonts) {
+  document.fonts.ready.then(() => { acFontEpoch++; });
+}
+
+function fitCaptionLine(el, availWidth, maxPx) {
+  const key = `${el.textContent}|${Math.round(availWidth)}|${Math.round(maxPx)}|${acFontEpoch}`;
+  if (el.dataset.fitKey === key) return;
+  el.dataset.fitKey = key;
+  if (!el.textContent || availWidth <= 0) return;
+  el.style.fontSize = '100px';
+  const wide = el.scrollWidth || 1;
+  el.style.fontSize = `${Math.max(7, Math.min(maxPx, Math.floor(100 * availWidth / wide)))}px`;
 }
 
 // period: { name, startMin, endMin } while something is in session, else null
@@ -439,7 +462,8 @@ function paintAnalogClock(pt, period, waiting) {
   const { mm } = fmtClock(pt);
   wrap.querySelector('.ac-now').textContent = `${String(pt.hours).padStart(2, '0')}:${mm}`;
   const gone = wrap.querySelector('.ac-gone'), left = wrap.querySelector('.ac-left');
-  const name = wrap.querySelector('.ac-name'), end = wrap.querySelector('.ac-end');
+  const spiral = wrap.querySelector('.ac-spiral'), name = wrap.querySelector('.ac-name');
+  const endLabel = wrap.querySelector('.ac-end-label'), endValue = wrap.querySelector('.ac-end-value');
   if (period && period.endMin > nowMin) {
     /* The chunk sits on the MINUTE ring (2026-11-05): it covers the minutes the
        class actually occupies — 4th period, 11:19 to 12:10, is the dial from the
@@ -448,8 +472,8 @@ function paintAnalogClock(pt, period, waiting) {
        into gone and left as it goes. On the hour scale the same period was a 25°
        sliver stacked on the 12. Only the current period is ever drawn, so there's
        still just one thing to read. The ring only holds an hour, so a longer
-       stretch (Tutoring's 4:00 PM, the ASES block) shades nothing until its
-       last hour — a face filled edge to edge says less than a bare one. */
+       stretch (Tutoring's 4:00 PM, the ASES block) spirals inward instead —
+       see the loop below. */
     const RING = 59.9;                                  // one hour, minus a hair so a full chunk never closes up
     const remaining = period.endMin - nowMin;
     const shown = Math.min(remaining, RING);
@@ -460,21 +484,56 @@ function paintAnalogClock(pt, period, waiting) {
     left.setAttribute('d', chunk ? analogSector(100, 100, 84, aNow, aNow + shown * 6) : '');
     wrap.querySelector('.ac-edge').setAttribute('d',
       chunk ? analogSector(100, 100, 84, aNow - elapsed * 6, aNow + shown * 6) : '');
+    /* More than an hour to go — Tutoring until 4:00, the ASES block — doesn't
+       fit one trip round the ring, so it spirals inward (2026-11-05): one loop
+       per hour still to come, each a step smaller than the last and laid over
+       it, so three hours left is three rings deep and the middle of the face is
+       the greenest. The innermost loop is the part hour, and it's the one that
+       empties first, so the green peels away from the centre outward and the
+       last hour is an ordinary chunk on the ring again. */
+    drawSpiral(spiral, chunk ? 0 : remaining, aNow);
     name.textContent = period.name.toUpperCase();
     // the countdown stays (2026-11-05): "ENDS IN 12:34", the same figure the digital clock shows;
-    // between periods it counts to the next one instead ("4TH PERIOD IN 03:12")
-    end.textContent = period.next ? `${period.next.toUpperCase()} IN ${fmtCountdown(period.endMin - nowMin)}`
-                                  : `ENDS IN ${fmtCountdown(period.endMin - nowMin)}`;
+    // between periods it counts to the next one instead ("6TH PERIOD IN 03:12"). Label and
+    // figure get a line each so both can be set as large as the caption strip allows.
+    endLabel.textContent = period.next ? `${period.next.toUpperCase()} IN` : 'ENDS IN';
+    endValue.textContent = fmtCountdown(period.endMin - nowMin);
     wrap.classList.toggle('passing', !!period.next);
     wrap.classList.remove('waiting');
   } else {
     gone.setAttribute('d', '');
     left.setAttribute('d', '');
     wrap.querySelector('.ac-edge').setAttribute('d', '');
+    drawSpiral(spiral, 0, 0);
     name.textContent = waiting ? waiting.toUpperCase() : 'NOT IN SESSION';
-    end.textContent = '';
+    endLabel.textContent = '';
+    endValue.textContent = '';
     wrap.classList.add('waiting');
   }
+
+  const cap = wrap.querySelector('.ac-cap');
+  const availWidth = cap.clientWidth;
+  const maxPx = Math.max(10, wrap.clientHeight * 0.26);
+  fitCaptionLine(endLabel, availWidth, maxPx);
+  fitCaptionLine(endValue, availWidth, maxPx);
+}
+
+/* One loop per hour still to come, winding in toward the middle of the face.
+   Each loop is drawn over the one outside it, so the overlay stacks up and the
+   centre reads greenest; beyond SPIRAL_MAX hours it stops adding rings rather
+   than shading the pin. minutes <= 0 clears it. */
+const SPIRAL_MAX = 5;
+
+function drawSpiral(g, minutes, aNow) {
+  let html = '';
+  for (let i = 0; i < Math.min(Math.ceil(minutes / 60), SPIRAL_MAX); i++) {
+    const mins = Math.min(minutes - i * 60, 60);
+    const r = 84 - i * 15;
+    const d = mins >= 59.9 ? analogSector(100, 100, r, 0, 360)
+                           : analogSector(100, 100, r, aNow, aNow + mins * 6);
+    html += `<path d="${d}" opacity="${(0.15 + i * 0.07).toFixed(2)}"/>`;
+  }
+  if (g.dataset.spiral !== html) { g.innerHTML = html; g.dataset.spiral = html; }
 }
 
 /* ---------- Settings on the index page ---------- */

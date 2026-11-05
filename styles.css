@@ -3827,12 +3827,17 @@ body.overview-page {
 .ac-sec line { stroke: #38bdf8; stroke-width: 2; }
 .ac-sec .ac-sec-tail { stroke: #f472b6; stroke-width: 3; }
 .ac-pin { fill: #eaf1ff; }
-.analog-clock .ac-cap { display: flex; flex-direction: column; align-items: flex-start; gap: 0.3em; min-width: 0;
-  font-family: 'DotGothic16', 'JetBrains Mono', monospace; color: #eaf1ff; text-align: left; line-height: 1.1; }
+.analog-clock .ac-cap { display: flex; flex-direction: column; align-items: center; gap: 0.3em;
+  flex: 1 1 auto; min-width: 0; overflow: hidden;
+  font-family: 'DotGothic16', 'JetBrains Mono', monospace; color: #eaf1ff; text-align: center; line-height: 1.1; }
 /* Sized off the box's width as well as its height so the caption always fits
-   the strip right of the face: the period name stays on one line. */
+   the strip right of the face, centred in it: the period name stays on one line. */
 .analog-clock .ac-name { font-size: clamp(8px, min(5.2cqw, 10cqh), 34px); color: #6ee7b7; }
-.analog-clock .ac-end { font-size: clamp(7px, min(4.2cqw, 8cqh), 26px); color: #b9c6d6; }
+/* "ENDS IN" and the figure get a line each, each grown by fitCaptionLine() until
+   it just fits the strip beside the face — so neither of them ever wraps. */
+.analog-clock .ac-end { display: flex; flex-direction: column; align-items: center;
+  color: #b9c6d6; line-height: 1.05; font-size: clamp(7px, min(4.2cqw, 8cqh), 26px); }
+.analog-clock .ac-end span { white-space: nowrap; }
 .analog-clock.waiting .ac-name { color: #f5b169; }
 
 /* Settings on the index page */
@@ -3862,6 +3867,12 @@ body.overview-page {
 .analog-clock.passing .ac-gone { fill: #f5b169; opacity: 0.16; }
 .analog-clock.passing .ac-left { fill: #f5b169; opacity: 0.72; }
 .analog-clock.passing .ac-edge { stroke: #f5b169; }
+
+/* The inward spiral: anything with more than an hour left draws one loop per hour,
+   each a step smaller and laid over the one outside it, so the green deepens toward
+   the middle of the face. Opacity per loop is set on the path in paintAnalogClock(). */
+.ac-spiral path { fill: #6ee7b7; stroke: #6ee7b7; stroke-width: 1.5; }
+.analog-clock.passing .ac-spiral path { fill: #f5b169; stroke: #f5b169; }
 
 /* The time above the period name (2026-11-05). */
 .analog-clock .ac-now { font-size: clamp(10px, min(9cqw, 16cqh), 44px); color: #eaf1ff; }
