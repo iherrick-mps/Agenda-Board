@@ -3805,21 +3805,17 @@ body.overview-page {
 
 
 /* ---------- Analog clock (the clock box's other form, Settings → Clock) ----------
-   Fills the same box: the face as big as the box allows, the caption beside
-   it in a wide box, under it in a tall one. DS look: grid paper, pixel numerals. */
+   Fills the same box: the face as big as the box allows with the caption
+   (time, period, countdown) always beside it on the right (2026-11-05), never
+   stacked under it. DS look: pixel numerals, square dots. */
 .box-clock.analog > :not(.analog-clock) { display: none !important; }
 .analog-clock { display: none; }
 .box-clock.analog { align-items: center; justify-content: center; }
 .box-clock.analog .analog-clock {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 2cqh; width: 100%; height: 100%;
+  display: flex; flex-direction: row; align-items: center; justify-content: center;
+  gap: 3cqw; width: 100%; height: 100%;
 }
-.analog-clock svg { height: 78cqh; max-width: 100%; aspect-ratio: 1; display: block; }
-@container (min-aspect-ratio: 7/5) {
-  .box-clock.analog .analog-clock { flex-direction: row; gap: 4cqw; }
-  .analog-clock svg { height: 92cqh; }
-  .analog-clock .ac-cap { align-items: flex-start; }
-}
+.analog-clock svg { height: min(80cqh, 52cqw); flex: 0 0 auto; aspect-ratio: 1; display: block; }
 .ac-face { fill: #1d2936; stroke: #35424f; stroke-width: 2; }   /* the bento's own ink, a shade lighter (2026-11-05: white looked bad) */
 .ac-grid line { stroke: #26333f; stroke-width: 1; }
 .ac-left { fill: #6ee7b7; opacity: 0.5; }
@@ -3831,10 +3827,12 @@ body.overview-page {
 .ac-sec line { stroke: #38bdf8; stroke-width: 2; }
 .ac-sec .ac-sec-tail { stroke: #f472b6; stroke-width: 3; }
 .ac-pin { fill: #eaf1ff; }
-.analog-clock .ac-cap { display: flex; flex-direction: column; align-items: center; gap: 0.3em;
-  font-family: 'DotGothic16', 'JetBrains Mono', monospace; color: #eaf1ff; text-align: center; line-height: 1.1; }
-.analog-clock .ac-name { font-size: clamp(12px, 7cqh, 34px); color: #6ee7b7; }
-.analog-clock .ac-end { font-size: clamp(10px, 5.5cqh, 26px); color: #b9c6d6; }
+.analog-clock .ac-cap { display: flex; flex-direction: column; align-items: flex-start; gap: 0.3em; min-width: 0;
+  font-family: 'DotGothic16', 'JetBrains Mono', monospace; color: #eaf1ff; text-align: left; line-height: 1.1; }
+/* Sized off the box's width as well as its height so the caption always fits
+   the strip right of the face: the period name stays on one line. */
+.analog-clock .ac-name { font-size: clamp(8px, min(5.2cqw, 10cqh), 34px); color: #6ee7b7; }
+.analog-clock .ac-end { font-size: clamp(7px, min(4.2cqw, 8cqh), 26px); color: #b9c6d6; }
 .analog-clock.waiting .ac-name { color: #f5b169; }
 
 /* Settings on the index page */
@@ -3855,14 +3853,15 @@ body.overview-page {
 .analog-clock .ac-grid { display: none; }
 .analog-clock .ac-face { fill: none; stroke: none; }
 
-/* The chunk is the whole current period (2026-11-05: "the green chunk should be the current period"): the part
-   already gone is a clear darker green, not nearly invisible, the part to come brighter, with an outline round both. */
-.ac-gone { fill: #6ee7b7; opacity: 0.3; }
-.ac-left { fill: #6ee7b7; opacity: 0.7; }
+/* The chunk is the whole current period (2026-11-05: "the green chunk should be the current period"), drawn on the
+   minute ring. The outline rings the whole period; inside it the minutes still to come are solid green and the ones
+   already spent are a faint wash, so what carries across the room is the bright part shrinking toward the bell. */
+.ac-gone { fill: #6ee7b7; opacity: 0.16; }
+.ac-left { fill: #6ee7b7; opacity: 0.72; }
 .ac-edge { fill: none; stroke: #6ee7b7; stroke-width: 2; opacity: 0.9; }
-.analog-clock.passing .ac-gone { fill: #f5b169; opacity: 0.3; }
-.analog-clock.passing .ac-left { fill: #f5b169; opacity: 0.7; }
+.analog-clock.passing .ac-gone { fill: #f5b169; opacity: 0.16; }
+.analog-clock.passing .ac-left { fill: #f5b169; opacity: 0.72; }
 .analog-clock.passing .ac-edge { stroke: #f5b169; }
 
 /* The time above the period name (2026-11-05). */
-.analog-clock .ac-now { font-size: clamp(14px, 10cqh, 44px); color: #eaf1ff; }
+.analog-clock .ac-now { font-size: clamp(10px, min(9cqw, 16cqh), 44px); color: #eaf1ff; }

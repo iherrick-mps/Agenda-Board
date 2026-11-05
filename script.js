@@ -353,12 +353,12 @@ async function initClock() {
 /* ---------- Analog clock: the clock box's other form ----------
    Same box, same footprint, chosen on the index page (Settings → Clock).
    Instead of counting down, it shows time passing: a DS-style face
-   (pixel numerals, square dots, grid paper) with the CURRENT period as a
-   pie chunk on the minute ring — bright for what's left, faint for what's
-   gone — so the class can see the minute hand closing in on the end.
-   Only the current period gets a chunk, so there's one thing to read.
-   A period longer than an hour shows its last 60 minutes. The setting
-   lives in localStorage, per device, like the period choice. ---------- */
+   (pixel numerals, square dots) with the CURRENT period as a pie chunk on
+   the minute ring — the minutes the class occupies — bright for what's
+   left, faint for what's gone, so the room can see the minute hand closing
+   in on the end. Only the current period gets a chunk, so there's one thing
+   to read. A period longer than an hour shows its last 60 minutes. The
+   setting lives in localStorage, per device, like the period choice. ----- */
 
 const CLOCK_TYPE_KEY = 'agenda-board-clock-type';   // 'digital' (default) | 'analog'
 
@@ -434,19 +434,32 @@ function paintAnalogClock(pt, period, waiting) {
   wrap.querySelector('.ac-hour').setAttribute('transform', `rotate(${hourDeg} 100 100)`);
   wrap.querySelector('.ac-min').setAttribute('transform', `rotate(${(pt.minutes + pt.seconds / 60) * 6} 100 100)`);
   wrap.querySelector('.ac-sec').setAttribute('transform', `rotate(${pt.seconds * 6} 100 100)`);
-  const { h12, mm, ampm } = fmtClock(pt);
-  wrap.querySelector('.ac-now').textContent = `${h12}:${mm} ${ampm}`;   // the time, above the period (2026-11-05)
+  /* 24-hour, no AM/PM (2026-11-05): the face itself can't say which half of the
+     day it is, so the caption spells it out — 13:15, not an ambiguous 1:15. */
+  const { mm } = fmtClock(pt);
+  wrap.querySelector('.ac-now').textContent = `${String(pt.hours).padStart(2, '0')}:${mm}`;
   const gone = wrap.querySelector('.ac-gone'), left = wrap.querySelector('.ac-left');
   const name = wrap.querySelector('.ac-name'), end = wrap.querySelector('.ac-end');
   if (period && period.endMin > nowMin) {
-    // The chunk sits on the HOUR scale (2026-11-05: "only the current period should be green"): a 51-minute period
-    // is a slim wedge the hour hand moves through, not most of the dial as it was on the minute ring.
-    const hdeg = (m) => ((((m / 60) % 12) + 12) % 12) * 30;
-    const a0 = hdeg(period.startMin ?? nowMin), aNow = hdeg(nowMin), a1 = hdeg(period.endMin);
-    const span = (a, b) => ((b - a) % 360 + 360) % 360;
-    gone.setAttribute('d', span(a0, aNow) > 0 ? analogSector(100, 100, 84, a0, a0 + span(a0, aNow)) : '');
-    left.setAttribute('d', analogSector(100, 100, 84, aNow, aNow + span(aNow, a1)));
-    wrap.querySelector('.ac-edge').setAttribute('d', analogSector(100, 100, 84, a0, a0 + span(a0, a1)));
+    /* The chunk sits on the MINUTE ring (2026-11-05): it covers the minutes the
+       class actually occupies — 4th period, 11:19 to 12:10, is the dial from the
+       19 to the 10, the same arc the minute hand is walking. That's a chunk big
+       enough to read from the back of the room, and the minute hand splits it
+       into gone and left as it goes. On the hour scale the same period was a 25°
+       sliver stacked on the 12. Only the current period is ever drawn, so there's
+       still just one thing to read. The ring only holds an hour, so a longer
+       stretch (Tutoring's 4:00 PM, the ASES block) shades nothing until its
+       last hour — a face filled edge to edge says less than a bare one. */
+    const RING = 59.9;                                  // one hour, minus a hair so a full chunk never closes up
+    const remaining = period.endMin - nowMin;
+    const shown = Math.min(remaining, RING);
+    const elapsed = Math.min(Math.max(nowMin - (period.startMin ?? nowMin), 0), RING - shown);
+    const aNow = deg(nowMin);
+    const chunk = remaining < RING || elapsed > 0;
+    gone.setAttribute('d', chunk && elapsed > 0 ? analogSector(100, 100, 84, aNow - elapsed * 6, aNow) : '');
+    left.setAttribute('d', chunk ? analogSector(100, 100, 84, aNow, aNow + shown * 6) : '');
+    wrap.querySelector('.ac-edge').setAttribute('d',
+      chunk ? analogSector(100, 100, 84, aNow - elapsed * 6, aNow + shown * 6) : '');
     name.textContent = period.name.toUpperCase();
     // the countdown stays (2026-11-05): "ENDS IN 12:34", the same figure the digital clock shows;
     // between periods it counts to the next one instead ("4TH PERIOD IN 03:12")
