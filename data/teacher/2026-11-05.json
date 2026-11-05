@@ -1,0 +1,295 @@
+{
+  "title": "Thursday Teacher Plan",
+  "note": "Blooket opener. One turn-in per class: the exit ticket. Build day for 8th, Test 1 for 7th, tactical fix for 6th.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Strategy pattern, Day 4: build the moving brick",
+      "goal": "By the end of class, my live game has at least one row of bricks using my slide strategy, and every other brick uses stayStill.",
+      "bloom": "Apply / Create",
+      "exitTicket": "What did you build today, and where does your strategy run every frame?",
+      "prep": [
+        "Blooket_8th_Thu_Nov5 loaded",
+        "Day 4 handout attached to Strategy Pattern; exit ticket posted",
+        "Your own Codespace ready to demo the prompt (don't commit your demo to a student repo)"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Wednesday: swap slide for stayStill, the loop never changes, tracing x.",
+          "why": "Spiral review.",
+          "tips": [
+            "Load the Blooket_*_Thu_Nov5 set before the bell."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Go over the most-missed questions, then read the goal: By the end of class, my live game has at least one row of bricks using my slide strategy, and every other brick uses stayStill.",
+          "why": "Students know the target.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "I do: the 3 pieces",
+          "do": "Walk the table: two strategies in bricks.js; move/speed/startX in the brick factory; brick.move(brick) loop in update(). Show the prompt and its 2 blanks.",
+          "why": "Students know what to look for before Copilot writes anything.",
+          "tips": [
+            "Ask: which piece never changes when you swap?"
+          ]
+        },
+        {
+          "min": 15,
+          "title": "You do: prompt + check",
+          "do": "Fill in row and speed from Tuesday's exit ticket, paste into Copilot Chat, find all 3 pieces in the changes, then Keep.",
+          "why": "Design first; the AI types.",
+          "tips": [
+            "Lost plan: row 0, speed 1.",
+            "Overlapping bricks = Copilot bounced off walls; re-prompt with startX.",
+            "'brick.move is not a function' = some bricks missing move."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Commit, sync, refresh, play",
+          "do": "Source Control, commit message, Commit, Sync Changes, wait 1 min, open the Pages link, Ctrl+Shift+R, play.",
+          "why": "The long chain is where students drop off; do it together.",
+          "tips": [
+            "Count down each step on the board.",
+            "Blank screen: F12 console, paste the error into Copilot."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Exit ticket",
+          "do": "On Google Classroom with a frame.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: names the row given slide and says it runs inside update() (brick.move(brick)) every frame."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students who never commit/sync: their live game won't change.",
+        "Copilot rewriting unrelated code: Undo and re-paste.",
+        "Students stuck >3 min on the chain: pair with a neighbor who finished."
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "Warren Truss Build, Day 4: Test 1 (one strike)",
+      "goal": "By the end of class, my group predicted, then tested our bridge with water bottles and marked exactly where it failed first.",
+      "bloom": "Analyze",
+      "exitTicket": "Where did your bridge fail first, and why do you think it failed there?",
+      "prep": [
+        "Blooket_7th_Thu_Nov5 loaded",
+        "Day 4 handout attached to the exit ticket",
+        "About 5 full 16.9 oz water bottles per group",
+        "Test stations: 2 desks a 1-stick gap apart; backpacks/jackets under",
+        "Bridges handed back"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Wednesday: deck tabs on the outside, faces not edges, deck at the bottom joints, cross pieces.",
+          "why": "Spiral review.",
+          "tips": [
+            "Load the Blooket_*_Thu_Nov5 set before the bell."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Go over the most-missed questions, then read the goal: By the end of class, my group predicted, then tested our bridge with water bottles and marked exactly where it failed first.",
+          "why": "Students know the target.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Roles + the 5 rules",
+          "do": "Youngest Loader, 2nd youngest Spotter, 2nd oldest Recorder, oldest Checker. Bottles count as materials under the one-strike rules.",
+          "why": "Clear limits before bottles come out.",
+          "tips": []
+        },
+        {
+          "min": 6,
+          "title": "Set up + predict",
+          "do": "Bridge across the 1-stick gap, 1/4 stick on each desk; platform (1/2 x 1/2 stick) on the deck over the 2 middle bottom joints. Recorder writes the prediction on the label.",
+          "why": "Predict before testing.",
+          "tips": []
+        },
+        {
+          "min": 21,
+          "title": "Test 1",
+          "do": "One bottle on its side at a time, wait 5 s, Checker says go; STOP at the first crack, lean, sag or popped joint. Recorder writes Test 1: N bottles and marks an X.",
+          "why": "Analyze: find the weak spot for Friday's plan.",
+          "tips": [
+            "Spotter hovers, never touches.",
+            "Groups done early: look closely at every joint near the X and name the failure type (popped, bent, torn, leaned, sagged)."
+          ]
+        },
+        {
+          "min": 7,
+          "title": "Exit ticket",
+          "do": "On Google Classroom with a frame.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: a spot plus a reason (glue let go, edge joint, deck bent between joints, piece bent)."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Clean up",
+          "do": "Bottles back, bridges on the shelf with the label.",
+          "why": "",
+          "tips": [
+            "The Test 1 number must be on the label for Friday's Answers page."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Bottles dropped instead of placed.",
+        "Rule breaks: call it at once, calmly."
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Bridge Load Test, Day 4: fix the weak spot",
+      "goal": "By the end of class, my group has a plan for up to 6 tactical popsicle sticks and has added them exactly where our bridge failed in Test 1.",
+      "bloom": "Evaluate / Create",
+      "exitTicket": "Predict Test 2: how many bottles will your bridge hold now, and why?",
+      "prep": [
+        "Blooket_6th_Thu_Nov5 loaded",
+        "Day 4 handout attached to Bridge Deck and Load Test",
+        "6 popsicle sticks per group (Materials Managers count them out)",
+        "Joints That Hold cards, scrap paper for wraps, glue sticks, scissors. No tape.",
+        "Bridges with X marks and Test 1 numbers handed back"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Wednesday: STOP at the first crack, the X, predicting, the test setup.",
+          "why": "Spiral review.",
+          "tips": [
+            "Load the Blooket_*_Thu_Nov5 set before the bell."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Go over the most-missed questions, then read the goal: By the end of class, my group has a plan for up to 6 tactical popsicle sticks and has added them exactly where our bridge failed in Test 1.",
+          "why": "Students know the target.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 2,
+          "title": "Roles by birthday",
+          "do": "Youngest Planner, 2nd youngest Builder, 2nd oldest Materials Manager, oldest Checker. Group of 3: Checker also MM. Group of 5: two Builders.",
+          "why": "Complex Instruction.",
+          "tips": []
+        },
+        {
+          "min": 5,
+          "title": "What kind of failure?",
+          "do": "Walk the failure table: popped joint, bent (squeezed), torn (pulled), leaned, sagged, and the matching fix. Each group names theirs.",
+          "why": "Diagnosis before treatment: rigor for this class.",
+          "tips": [
+            "Bent = compression/buckling; torn = tension. Use the words squeezed and pulled."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Repair + plan",
+          "do": "Re-glue what broke. Planner dots where each stick goes (max 6, each touching the X or the failed piece); Checker approves.",
+          "why": "Evaluate: justify every stick.",
+          "tips": [
+            "Push back on sticks far from the X: why there?"
+          ]
+        },
+        {
+          "min": 15,
+          "title": "You do: glue tactical sticks",
+          "do": "Each stick glued flat against a cardboard face, never on an edge; paper-wrap both ends; press 30 s. MM writes Sticks added: N on the label.",
+          "why": "Apply the joints that hold.",
+          "tips": [
+            "Praise groups that use fewer sticks precisely."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Exit ticket",
+          "do": "On Google Classroom with a frame.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: a number of bottles plus the fix location as the reason."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Clean up + dry overnight",
+          "do": "Bridges flat on the shelf; no testing today.",
+          "why": "Glue needs to set before Test 2.",
+          "tips": []
+        }
+      ],
+      "watchFor": [
+        "Sticks glued edge-on.",
+        "More than 6 sticks.",
+        "Groups skipping the repair."
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Goal reviewed after the Blooket and at the exit ticket; numbered steps; worked examples (Copilot prompt, test diagram, failure table); two sentence frames."
+    ],
+    [
+      "English learners",
+      "Pictures for key words (strategy, commit; platform, fail; squeezed, pulled, tactical); partner talk before writing."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca; steps read aloud; speech-to-text OK."
+    ],
+    [
+      "ADHD learners",
+      "Timed chunks with a visual timer; hands-on roles (Loader, Spotter, Builder); the 8th commit chain counted down step by step."
+    ],
+    [
+      "IEP / 504",
+      "Dictated exit tickets; floors: 8th gets the prompt pasted and Kept; 7th says where it failed; 6th adds 1 stick at the X."
+    ],
+    [
+      "Advanced learners",
+      "Future Engineer (OPTIONAL), 1 KB point."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "8th makes the feature live; 6th and 7th run real load tests on their own bridges."
+    ],
+    [
+      "Complex Instruction",
+      "Roles with authority: the Checker calls STOP and approves every stick."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "The 85 points don't depend on working code; failure in tests is planned and safe."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "8th Apply/Create; 7th Analyze; 6th Evaluate/Create."
+    ]
+  ]
+}

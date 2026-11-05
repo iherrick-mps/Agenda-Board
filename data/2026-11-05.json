@@ -5,16 +5,16 @@
       "grade": "8th Grade",
       "weeklyDeliverable": "Due Sunday night: your Strategy turn-in doc with your live game link, your plan for your moving brick, and 3 short answers about the Strategy pattern (85 points even if your game breaks), plus the Strategy pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
       "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my live game has at least one row of bricks using my moving strategy.",
+      "smartGoal": "By the end of class, my live game has at least one row of bricks using my slide strategy, and every other brick uses stayStill.",
       "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Paste your plan into Copilot (5 min)",
-        "You do: build your strategy (20 min)",
-        "Commit, Sync Changes, hard refresh, check (8 min)",
-        "Exit Ticket: what did you build? (7 min)"
+        "I do: the 3 pieces Copilot will add (5 min)",
+        "You do: fill in + paste your Copilot prompt, check the 3 pieces (15 min)",
+        "Commit, Sync Changes, hard refresh, play (10 min)",
+        "Exit Ticket: what did you build? (10 min)"
       ],
       "connections": "Wednesday you traced a strategy one frame at a time. Today you build your moving brick. Tomorrow you finish, play classmates' games, and turn in."
     },
@@ -28,10 +28,11 @@
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Roles: Loader, Spotter, Recorder, Checker (3 min)",
-        "Predict how many bottles (4 min)",
-        "Test 1: one bottle at a time, STOP at the first crack (23 min)",
-        "Exit Ticket: where did it fail first? (10 min)"
+        "Roles: Loader, Spotter, Recorder, Checker + the 5 rules (3 min)",
+        "Set up + predict (6 min)",
+        "Test 1: one bottle at a time, STOP at the first crack (21 min)",
+        "Exit Ticket: where did it fail first? (7 min)",
+        "Clean up (3 min)"
       ],
       "connections": "Yesterday your bridge got a deck. Today you test it and find its weakest spot. Tomorrow you plan the fix and turn in."
     },
@@ -46,9 +47,9 @@
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
         "Roles by birthday (2 min)",
-        "Look at your X marks (5 min)",
-        "Plan: where do the sticks go? Max 6 (8 min)",
-        "You do: repair + add tactical sticks with joints that hold (15 min)",
+        "What kind of failure? Read your X (5 min)",
+        "Repair + plan: dots for up to 6 sticks (8 min)",
+        "You do: glue tactical sticks flat, wrap the ends (15 min)",
         "Exit Ticket: predict Test 2 (5 min)",
         "Clean up + set to dry (5 min)"
       ],
