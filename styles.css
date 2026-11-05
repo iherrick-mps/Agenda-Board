@@ -3863,3 +3863,6 @@ body.overview-page {
 .analog-clock.passing .ac-gone { fill: #f5b169; opacity: 0.3; }
 .analog-clock.passing .ac-left { fill: #f5b169; opacity: 0.7; }
 .analog-clock.passing .ac-edge { stroke: #f5b169; }
+
+/* The time above the period name (2026-11-05). */
+.analog-clock .ac-now { font-size: clamp(14px, 10cqh, 44px); color: #eaf1ff; }

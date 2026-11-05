@@ -415,7 +415,7 @@ function buildAnalogClock(box) {
     `<line class="ac-min" x1="100" y1="100" x2="100" y2="36"/>` +
     `<g class="ac-sec"><line class="ac-sec-tail" x1="100" y1="114" x2="100" y2="100"/><line x1="100" y1="100" x2="100" y2="28"/></g>` +
     `<rect class="ac-pin" x="96" y="96" width="8" height="8"/>` +
-    `</svg><div class="ac-cap"><span class="ac-name"></span><span class="ac-end"></span></div>`;
+    `</svg><div class="ac-cap"><span class="ac-now"></span><span class="ac-name"></span><span class="ac-end"></span></div>`;
   box.appendChild(wrap);
   return wrap;
 }
@@ -434,17 +434,19 @@ function paintAnalogClock(pt, period, waiting) {
   wrap.querySelector('.ac-hour').setAttribute('transform', `rotate(${hourDeg} 100 100)`);
   wrap.querySelector('.ac-min').setAttribute('transform', `rotate(${(pt.minutes + pt.seconds / 60) * 6} 100 100)`);
   wrap.querySelector('.ac-sec').setAttribute('transform', `rotate(${pt.seconds * 6} 100 100)`);
+  const { h12, mm, ampm } = fmtClock(pt);
+  wrap.querySelector('.ac-now').textContent = `${h12}:${mm} ${ampm}`;   // the time, above the period (2026-11-05)
   const gone = wrap.querySelector('.ac-gone'), left = wrap.querySelector('.ac-left');
   const name = wrap.querySelector('.ac-name'), end = wrap.querySelector('.ac-end');
   if (period && period.endMin > nowMin) {
-    const from = Math.max(period.startMin ?? nowMin, period.endMin - 60, nowMin - 60);
-    const leftMin = Math.min(period.endMin - nowMin, 60);
-    const a0 = deg(from), aNow = deg(nowMin);
-    const goneSpan = Math.max(0, nowMin - from) * 6;
-    gone.setAttribute('d', goneSpan > 0 ? analogSector(100, 100, 84, a0, a0 + goneSpan) : '');
-    left.setAttribute('d', analogSector(100, 100, 84, aNow, aNow + leftMin * 6));
-    // the whole period's outline, so the chunk reads as the period itself (2026-11-05)
-    wrap.querySelector('.ac-edge').setAttribute('d', analogSector(100, 100, 84, a0, aNow + leftMin * 6));
+    // The chunk sits on the HOUR scale (2026-11-05: "only the current period should be green"): a 51-minute period
+    // is a slim wedge the hour hand moves through, not most of the dial as it was on the minute ring.
+    const hdeg = (m) => ((((m / 60) % 12) + 12) % 12) * 30;
+    const a0 = hdeg(period.startMin ?? nowMin), aNow = hdeg(nowMin), a1 = hdeg(period.endMin);
+    const span = (a, b) => ((b - a) % 360 + 360) % 360;
+    gone.setAttribute('d', span(a0, aNow) > 0 ? analogSector(100, 100, 84, a0, a0 + span(a0, aNow)) : '');
+    left.setAttribute('d', analogSector(100, 100, 84, aNow, aNow + span(aNow, a1)));
+    wrap.querySelector('.ac-edge').setAttribute('d', analogSector(100, 100, 84, a0, a0 + span(a0, a1)));
     name.textContent = period.name.toUpperCase();
     // the countdown stays (2026-11-05): "ENDS IN 12:34", the same figure the digital clock shows;
     // between periods it counts to the next one instead ("4TH PERIOD IN 03:12")
