@@ -870,6 +870,12 @@ body.board-page {
 .cal-mini-blank { visibility: hidden; }
 .cal-mini-day.is-weekend { color: #6d7d90; }
 
+/* class days (a plan file exists): a soft shade of today's green (2026-11-05) */
+.cal-mini-day.has-class {
+  background: rgba(110, 231, 183, 0.16);
+  color: #dff9ee;
+}
+
 /* today — the whole point of the box */
 .cal-mini-day.is-today {
   background: #6ee7b7;
@@ -3818,8 +3824,8 @@ body.overview-page {
 .ac-grid line { stroke: #26333f; stroke-width: 1; }
 .ac-left { fill: #6ee7b7; opacity: 0.5; }
 .ac-gone { fill: #6ee7b7; opacity: 0.1; }
-.ac-dots rect { fill: #4a5a68; }
-.ac-nums text { font-family: 'DotGothic16', 'JetBrains Mono', monospace; font-size: 30px; fill: #5d6e80; text-anchor: middle; dominant-baseline: central; }
+.ac-dots rect { fill: #b9c6d6; }
+.ac-nums text { font-family: 'DotGothic16', 'JetBrains Mono', monospace; font-size: 30px; fill: #f4f8ff;   /* bright white so the room can read them (2026-11-05) */ text-anchor: middle; dominant-baseline: central; }
 .ac-hour { stroke: #eaf1ff; stroke-width: 6; stroke-linecap: square; }
 .ac-min { stroke: #b9c6d6; stroke-width: 4; stroke-linecap: square; }
 .ac-sec line { stroke: #38bdf8; stroke-width: 2; }
@@ -3839,3 +3845,8 @@ body.overview-page {
 .setting-seg button { font: inherit; font-size: 0.9rem; border: 0; background: transparent; padding: 6px 14px; cursor: pointer; color: var(--ink-soft); }
 .setting-seg button.on { background: var(--ink); color: #eaf1ff; }
 .setting-hint { margin-top: 6px; font-size: 0.8rem; color: var(--ink-soft); }
+
+/* Passing periods on the analog face: amber, the board's not-in-session colour */
+.analog-clock.passing .ac-left { fill: #f5b169; opacity: 0.55; }
+.analog-clock.passing .ac-gone { fill: #f5b169; opacity: 0.12; }
+.analog-clock.passing .ac-name { color: #f5b169; }

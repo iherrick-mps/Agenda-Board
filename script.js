@@ -333,7 +333,10 @@ async function initClock() {
       labelEl.textContent = `Not in session — ${next.name} starts in`;
       valueEl.textContent = fmtCountdown(until);
       watchBell(nowMin, null, null);
-      paintAnalogClock(pt, null, `${next.name} next`);
+      // the gap since the last bell, as its own (amber) chunk with a countdown
+      const ended = scheduleData.periods.map(p => hhmmToMinutes(p.end)).filter(e => e <= nowMin);
+      paintAnalogClock(pt, { name: 'Passing', startMin: ended.length ? Math.max(...ended) : null,
+                             endMin: hhmmToMinutes(next.start), next: next.name });
     } else {
       statusEl.className = 'clock-status not-in-session';
       labelEl.textContent = 'School day is over';
@@ -441,8 +444,11 @@ function paintAnalogClock(pt, period, waiting) {
     gone.setAttribute('d', goneSpan > 0 ? analogSector(100, 100, 84, a0, a0 + goneSpan) : '');
     left.setAttribute('d', analogSector(100, 100, 84, aNow, aNow + leftMin * 6));
     name.textContent = period.name.toUpperCase();
-    // the countdown stays (2026-11-05): "ENDS IN 12:34", the same figure the digital clock shows
-    end.textContent = `ENDS IN ${fmtCountdown(period.endMin - nowMin)}`;
+    // the countdown stays (2026-11-05): "ENDS IN 12:34", the same figure the digital clock shows;
+    // between periods it counts to the next one instead ("4TH PERIOD IN 03:12")
+    end.textContent = period.next ? `${period.next.toUpperCase()} IN ${fmtCountdown(period.endMin - nowMin)}`
+                                  : `ENDS IN ${fmtCountdown(period.endMin - nowMin)}`;
+    wrap.classList.toggle('passing', !!period.next);
     wrap.classList.remove('waiting');
   } else {
     gone.setAttribute('d', '');
@@ -2786,6 +2792,10 @@ function initMiniCalendar() {
   if (!gridEl || !titleEl) return;
 
   let lastRendered = null;
+  // Days with a plan (data/<date>.json, via the same list the index's calendar
+  // uses) get a shade, so the month shows which days there's class (2026-11-05).
+  let classDays = new Set();
+  loadDates().then((dates) => { classDays = new Set(dates); lastRendered = null; render(); }).catch(() => {});
 
   function render() {
     const pt = getPacificNow();
@@ -2811,7 +2821,9 @@ function initMiniCalendar() {
       const classes = ['cal-mini-day'];
       if (weekday === 0 || weekday === 6) classes.push('is-weekend');
       if (d === day) classes.push('is-today');
-      cells.push(`<span class="${classes.join(' ')}">${d}</span>`);
+      const iso = `${year}-${String(month).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+      if (classDays.has(iso)) classes.push('has-class');
+      cells.push(`<span class="${classes.join(' ')}"${classDays.has(iso) ? ' title="Class day"' : ''}>${d}</span>`);
     }
 
     gridEl.innerHTML = cells.join('');
