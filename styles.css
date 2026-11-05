@@ -3854,3 +3854,12 @@ body.overview-page {
 /* No grid or backing square on the analog face (2026-11-05): the clock sits straight on the dark bento. */
 .analog-clock .ac-grid { display: none; }
 .analog-clock .ac-face { fill: none; stroke: none; }
+
+/* The chunk is the whole current period (2026-11-05: "the green chunk should be the current period"): the part
+   already gone is a clear darker green, not nearly invisible, the part to come brighter, with an outline round both. */
+.ac-gone { fill: #6ee7b7; opacity: 0.3; }
+.ac-left { fill: #6ee7b7; opacity: 0.7; }
+.ac-edge { fill: none; stroke: #6ee7b7; stroke-width: 2; opacity: 0.9; }
+.analog-clock.passing .ac-gone { fill: #f5b169; opacity: 0.3; }
+.analog-clock.passing .ac-left { fill: #f5b169; opacity: 0.7; }
+.analog-clock.passing .ac-edge { stroke: #f5b169; }

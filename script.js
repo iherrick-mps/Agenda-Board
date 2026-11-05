@@ -407,7 +407,7 @@ function buildAnalogClock(box) {
     `<svg viewBox="0 0 200 200" role="img" aria-label="Analog clock showing the current period">` +
     `<rect class="ac-face" x="6" y="6" width="188" height="188" rx="6"/>` +
     `<g class="ac-grid">${grid}</g>` +
-    `<path class="ac-gone"/><path class="ac-left"/>` +
+    `<path class="ac-gone"/><path class="ac-left"/><path class="ac-edge"/>` +
     `<g class="ac-dots">${dots}</g>` +
     `<g class="ac-nums"><text x="100" y="31">12</text><text x="173" y="104">3</text>` +
     `<text x="100" y="178">6</text><text x="27" y="104">9</text></g>` +
@@ -443,6 +443,8 @@ function paintAnalogClock(pt, period, waiting) {
     const goneSpan = Math.max(0, nowMin - from) * 6;
     gone.setAttribute('d', goneSpan > 0 ? analogSector(100, 100, 84, a0, a0 + goneSpan) : '');
     left.setAttribute('d', analogSector(100, 100, 84, aNow, aNow + leftMin * 6));
+    // the whole period's outline, so the chunk reads as the period itself (2026-11-05)
+    wrap.querySelector('.ac-edge').setAttribute('d', analogSector(100, 100, 84, a0, aNow + leftMin * 6));
     name.textContent = period.name.toUpperCase();
     // the countdown stays (2026-11-05): "ENDS IN 12:34", the same figure the digital clock shows;
     // between periods it counts to the next one instead ("4TH PERIOD IN 03:12")
@@ -453,6 +455,7 @@ function paintAnalogClock(pt, period, waiting) {
   } else {
     gone.setAttribute('d', '');
     left.setAttribute('d', '');
+    wrap.querySelector('.ac-edge').setAttribute('d', '');
     name.textContent = waiting ? waiting.toUpperCase() : 'NOT IN SESSION';
     end.textContent = '';
     wrap.classList.add('waiting');
