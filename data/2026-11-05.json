@@ -3,7 +3,7 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your Strategy turn-in doc with your live game link, your plan for your moving brick, and 3 short answers about the Strategy pattern (85 points even if your game breaks), plus the Strategy pattern working in your live game (15 points). You turn it in once, at the end of Friday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: your Strategy doc (game link, brick plan, 3 answers) and the Strategy pattern working in your game. 100 points.",
       "workingNow": "Open the Google Classroom assignment called Strategy Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
       "smartGoal": "By the end of class, my live game has at least one row of bricks using my slide strategy, and every other brick uses stayStill.",
       "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
@@ -20,7 +20,7 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Due Sunday night: your group's Answers page with a photo of your joined bridge with its cardboard deck, how many water bottles it held in Test 1, and where it failed first. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class. One strike: if anyone in your group breaks a materials rule, your group finishes the week on Chromebooks.",
+      "weeklyDeliverable": "Turned in Sunday night: your group's Answers page with a bridge photo, the bottles it held in Test 1, and where it failed first. 70 points.",
       "workingNow": "Open today's question on Google Classroom and the doc attached to it. Follow the steps, then fill out the exit ticket when you are done.",
       "smartGoal": "By the end of class, my group predicted, then tested our bridge with water bottles and marked exactly where it failed first.",
       "contentStandard": "NGSS MS-ETS1-3 — Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each that can be combined into a new solution.",
@@ -38,7 +38,7 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Due Sunday night: your group's Answers page with a photo of your reinforced bridge, how many water bottles it held in Test 1 and Test 2, where you added tactical popsicle sticks, and 2 sentences on why. Turning it in is 70 points. Your group turns it in once, at the end of Friday's class.",
+      "weeklyDeliverable": "Turned in Sunday night: your group's Answers page with a bridge photo, the bottles in Tests 1 and 2, and where you added sticks and why. 70 points.",
       "workingNow": "Open the Google Classroom assignment called Bridge Deck and Load Test. Read the instructions, follow them, then fill out the exit ticket when you are done.",
       "smartGoal": "By the end of class, my group has a plan for up to 6 tactical popsicle sticks and has added them exactly where our bridge failed in Test 1.",
       "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
