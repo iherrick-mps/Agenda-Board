@@ -3850,3 +3850,7 @@ body.overview-page {
 .analog-clock.passing .ac-left { fill: #f5b169; opacity: 0.55; }
 .analog-clock.passing .ac-gone { fill: #f5b169; opacity: 0.12; }
 .analog-clock.passing .ac-name { color: #f5b169; }
+
+/* No grid or backing square on the analog face (2026-11-05): the clock sits straight on the dark bento. */
+.analog-clock .ac-grid { display: none; }
+.analog-clock .ac-face { fill: none; stroke: none; }
