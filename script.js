@@ -411,23 +411,28 @@ function buildAnalogClock(box) {
     `<g class="ac-spiral"></g>` +
     `<g class="ac-dots">${dots}</g>` +
     `<g class="ac-nums"><text x="100" y="31">12</text><text x="173" y="104">3</text>` +
-    `<text x="100" y="178">6</text><text x="27" y="104">9</text></g>` +
+    `<text x="100" y="169">6</text><text x="27" y="104">9</text></g>` +
     `<line class="ac-hour" x1="100" y1="100" x2="100" y2="58"/>` +
     `<line class="ac-min" x1="100" y1="100" x2="100" y2="36"/>` +
     `<g class="ac-sec"><line class="ac-sec-tail" x1="100" y1="114" x2="100" y2="100"/><line x1="100" y1="100" x2="100" y2="28"/></g>` +
     `<rect class="ac-pin" x="96" y="96" width="8" height="8"/>` +
     `</svg><div class="ac-cap"><span class="ac-now"></span><span class="ac-name"></span>` +
-    `<span class="ac-end"><span class="ac-end-label"></span><span class="ac-end-value"></span></span></div>`;
+    `<div class="ac-end"><div class="ac-end-label"></div><div class="ac-end-value"></div></div></div>`;
   box.appendChild(wrap);
   return wrap;
 }
 
-/* The countdown is set as large as it will go without wrapping: "ENDS IN" on
-   one line, the clock figure under it, each grown until it just fits the strip
-   beside the face (2026-11-05). Measured rather than clamped in CSS because the
-   label changes length — "ENDS IN" during a class, "6TH PERIOD IN" between two.
-   Keyed on the text and the width so it only re-measures when one of them
-   moves, and re-run once the pixel font lands, since it measures wider. */
+/* The countdown is set as large as it will go: each of its two lines is grown
+   until it just fits the strip beside the face, which the face's 70% leaves at
+   whatever width it leaves. Measured rather than clamped in CSS because the
+   label changes length — "ENDS IN" during a class, "6TH PERIOD IN" between two
+   — so a single clamp would have to be small enough for the longest one. The
+   ceiling is a share of the face's own height, so a very wide box (Study Hall,
+   Tutoring) doesn't turn the countdown into a banner. Keyed on the text, the
+   width and the ceiling so it only re-measures when one of them moves, and
+   re-run once the pixel font lands, since it measures wider than the fallback. */
+const CAPTION_LINE_MAX = 0.3;   // of the face's height
+
 let acFontEpoch = 0;
 if (typeof document !== 'undefined' && document.fonts) {
   document.fonts.ready.then(() => { acFontEpoch++; });
@@ -440,7 +445,7 @@ function fitCaptionLine(el, availWidth, maxPx) {
   if (!el.textContent || availWidth <= 0) return;
   el.style.fontSize = '100px';
   const wide = el.scrollWidth || 1;
-  el.style.fontSize = `${Math.max(7, Math.min(maxPx, Math.floor(100 * availWidth / wide)))}px`;
+  el.style.fontSize = `${Math.max(6, Math.min(maxPx, Math.floor(100 * availWidth / wide)))}px`;
 }
 
 // period: { name, startMin, endMin } while something is in session, else null
@@ -495,7 +500,7 @@ function paintAnalogClock(pt, period, waiting) {
     name.textContent = period.name.toUpperCase();
     // the countdown stays (2026-11-05): "ENDS IN 12:34", the same figure the digital clock shows;
     // between periods it counts to the next one instead ("6TH PERIOD IN 03:12"). Label and
-    // figure get a line each so both can be set as large as the caption strip allows.
+    // figure get a line each so neither has to wrap in the narrow strip beside the face.
     endLabel.textContent = period.next ? `${period.next.toUpperCase()} IN` : 'ENDS IN';
     endValue.textContent = fmtCountdown(period.endMin - nowMin);
     wrap.classList.toggle('passing', !!period.next);
@@ -512,10 +517,9 @@ function paintAnalogClock(pt, period, waiting) {
   }
 
   const cap = wrap.querySelector('.ac-cap');
-  const availWidth = cap.clientWidth;
-  const maxPx = Math.max(10, wrap.clientHeight * 0.26);
-  fitCaptionLine(endLabel, availWidth, maxPx);
-  fitCaptionLine(endValue, availWidth, maxPx);
+  const maxPx = Math.max(8, wrap.querySelector('svg').getBoundingClientRect().height * CAPTION_LINE_MAX);
+  fitCaptionLine(endLabel, cap.clientWidth, maxPx);
+  fitCaptionLine(endValue, cap.clientWidth, maxPx);
 }
 
 /* One loop per hour still to come, winding in toward the middle of the face.
