@@ -447,8 +447,8 @@ body.board-page {
 
 /* One cluster of related controls: where you are / which period /
    which mode. A group keeps its own pieces together and breaks as a
-   unit, so "Auto Game Mode at [5] min left" never splits across rows
-   while there's a whole row free below. */
+   unit, so "Game Time [5] min" never splits across rows while there's
+   a whole row free below. */
 .hb-group {
   display: flex;
   flex-wrap: wrap;
@@ -527,7 +527,7 @@ body.board-page {
 .period-tab.active { color: #fff; border-color: #fff; font-weight: 700; }
 .period-tab.is-now::after { content: '\25CF LIVE'; font-size: 0.6rem; margin-left: 7px; color: #6ee7b7; }
 
-.gamemode-auto {
+.gametime-set {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -537,7 +537,7 @@ body.board-page {
   white-space: nowrap;
 }
 
-.gamemode-auto-input {
+.gametime-minutes-input {
   width: 48px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -549,24 +549,24 @@ body.board-page {
   text-align: center;
 }
 
-.gamemode-auto-input:focus {
+.gametime-minutes-input:focus {
   outline: none;
   border-color: #ffb347;
 }
 
-.gamemode-auto-input.is-armed {
+.gametime-minutes-input.is-armed {
   border-color: #ffb347;
   color: #ffb347;
 }
 
 /* hide the number input's spinner arrows so it matches the other
    compact hover-bar controls */
-.gamemode-auto-input::-webkit-outer-spin-button,
-.gamemode-auto-input::-webkit-inner-spin-button {
+.gametime-minutes-input::-webkit-outer-spin-button,
+.gametime-minutes-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.gamemode-auto-input[type="number"] { -moz-appearance: textfield; }
+.gametime-minutes-input[type="number"] { -moz-appearance: textfield; }
 
 /* the board itself: a 12-row grid filling the whole viewport. The column
    count is 12 by default (Study Hall / VEX / Tutoring all lay out on
@@ -4036,6 +4036,44 @@ body.overview-page {
 .analog-clock.passing .ac-gone { fill: #f5b169; opacity: 0.16; }
 .analog-clock.passing .ac-left { fill: #f5b169; opacity: 0.72; }
 .analog-clock.passing .ac-edge { stroke: #f5b169; }
+
+/* Game-time wedge: the last N minutes of the period, where N is the number in
+   the hover bar. Sits on the same minute ring as the period chunk and on top of
+   it, so the tail of the green reads as rainbow instead.
+
+   The rainbow moves because each gradient stop cycles the hue wheel on its own
+   staggered delay — animating the stops rather than the path means the wedge can
+   be re-pathed every second (it shrinks as the bell approaches) without ever
+   restarting the animation. */
+@keyframes ac-gt-hue {
+  0%   { stop-color: #ff5f6d; }
+  17%  { stop-color: #ffa94d; }
+  33%  { stop-color: #ffe14d; }
+  50%  { stop-color: #4ade80; }
+  67%  { stop-color: #38bdf8; }
+  83%  { stop-color: #a78bfa; }
+  100% { stop-color: #ff5f6d; }
+}
+
+.ac-gt-stop { stop-color: #ff5f6d; stop-opacity: 1; animation: ac-gt-hue 6s linear infinite; }
+.ac-gt-stop-1 { animation-delay: -1.2s; }
+.ac-gt-stop-2 { animation-delay: -2.4s; }
+.ac-gt-stop-3 { animation-delay: -3.6s; }
+.ac-gt-stop-4 { animation-delay: -4.8s; }
+
+/* a white hairline so the wedge still reads as its own chunk where it meets
+   the green, rather than blurring into it */
+.ac-gametime-edge { fill: none; stroke: #f4f8ff; stroke-width: 1.5; opacity: 0.85; }
+
+/* a projector left on all day shouldn't strobe at anyone who asked it not to */
+@media (prefers-reduced-motion: reduce) {
+  .ac-gt-stop { animation: none; }
+  .ac-gt-stop-0 { stop-color: #ff5f6d; }
+  .ac-gt-stop-1 { stop-color: #ffa94d; }
+  .ac-gt-stop-2 { stop-color: #ffe14d; }
+  .ac-gt-stop-3 { stop-color: #4ade80; }
+  .ac-gt-stop-4 { stop-color: #a78bfa; }
+}
 
 /* The inward spiral: anything with more than an hour left draws one loop per hour,
    each a step smaller and laid over the one outside it, so the green deepens toward

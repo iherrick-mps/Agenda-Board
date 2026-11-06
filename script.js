@@ -350,6 +350,56 @@ async function initClock() {
   setInterval(tick, 1000);
 }
 
+/* ---------- Game Time store ----------
+   How many minutes of game time this class has, as a plain number Ms.
+   Herrick types into the hover bar. Nothing computes it and nothing
+   changes it on a timer: it is whatever was last typed, and it is only
+   ever read from here.
+
+   Stamped with the Pacific date it was set on, which is what makes "the
+   end of each day" free: a stale stamp reads as 0, so a board opened the
+   next morning — or one left running through midnight — starts at zero
+   without anything having to fire at a particular moment. The stale
+   entry is dropped on the first read that notices it.
+
+   Lives on the device, like the clock-type and Now Playing settings.
+   Boards with no Game Time control (VEX, Study Hall) never write one,
+   and read 0 on any day they weren't given a number. ---------- */
+
+const GAME_TIME_KEY = 'agendaBoard.gameTimeMinutes';
+const GAME_TIME_MAX_MINUTES = 90;
+
+function currentGameTimeMinutes(todayIso) {
+  const today = todayIso || getPacificNow().isoDate;
+  try {
+    const raw = localStorage.getItem(GAME_TIME_KEY);
+    if (!raw) return 0;
+    const saved = JSON.parse(raw);
+    if (!saved || saved.date !== today) {
+      // yesterday's number — the day is over, so it is gone
+      localStorage.removeItem(GAME_TIME_KEY);
+      return 0;
+    }
+    const n = Number(saved.minutes);
+    if (!Number.isFinite(n) || n <= 0) return 0;
+    return Math.min(Math.round(n), GAME_TIME_MAX_MINUTES);
+  } catch (e) {
+    return 0;   // storage disabled, or something else wrote nonsense there
+  }
+}
+
+function setGameTimeMinutes(minutes) {
+  const n = Math.min(Math.max(Math.round(Number(minutes) || 0), 0), GAME_TIME_MAX_MINUTES);
+  try {
+    if (n <= 0) localStorage.removeItem(GAME_TIME_KEY);
+    else localStorage.setItem(GAME_TIME_KEY, JSON.stringify({
+      date: getPacificNow().isoDate,
+      minutes: n
+    }));
+  } catch (e) { /* storage disabled — the number just won't survive a reload */ }
+  return n;
+}
+
 /* ---------- Analog clock: the clock box's other form ----------
    Same box, same footprint, chosen on the index page (Settings → Clock).
    Instead of counting down, it shows time passing: a DS-style face
@@ -403,11 +453,21 @@ function buildAnalogClock(box) {
     const t = (h * 30 - 90) * Math.PI / 180;
     dots += `<rect x="${(100 + 74 * Math.cos(t) - 3).toFixed(1)}" y="${(100 + 74 * Math.sin(t) - 3).toFixed(1)}" width="6" height="6"/>`;
   });
+  /* The game-time wedge is filled from a gradient rather than a flat colour,
+     and the gradient's own stops cycle through the hue wheel in CSS, so the
+     rainbow moves. Stops are staggered by a negative delay, which starts them
+     mid-cycle and makes the band travel across the wedge instead of the whole
+     thing flashing one colour at a time. */
+  const rainbowStops = [0, 1, 2, 3, 4]
+    .map((i) => `<stop offset="${i * 25}%" class="ac-gt-stop ac-gt-stop-${i}"/>`)
+    .join('');
   wrap.innerHTML =
     `<svg viewBox="0 0 200 200" role="img" aria-label="Analog clock showing the current period">` +
+    `<defs><linearGradient id="ac-gt-rainbow" x1="0" y1="0" x2="1" y2="1">${rainbowStops}</linearGradient></defs>` +
     `<rect class="ac-face" x="6" y="6" width="188" height="188" rx="6"/>` +
     `<g class="ac-grid">${grid}</g>` +
     `<path class="ac-gone"/><path class="ac-left"/><path class="ac-edge"/>` +
+    `<path class="ac-gametime" fill="url(#ac-gt-rainbow)"/><path class="ac-gametime-edge"/>` +
     `<g class="ac-spiral"></g>` +
     `<g class="ac-dots">${dots}</g>` +
     `<g class="ac-nums"><text x="100" y="31">12</text><text x="173" y="104">3</text>` +
@@ -468,6 +528,8 @@ function paintAnalogClock(pt, period, waiting) {
   wrap.querySelector('.ac-now').textContent = `${String(pt.hours).padStart(2, '0')}:${mm}`;
   const gone = wrap.querySelector('.ac-gone'), left = wrap.querySelector('.ac-left');
   const spiral = wrap.querySelector('.ac-spiral'), name = wrap.querySelector('.ac-name');
+  const gameTime = wrap.querySelector('.ac-gametime');
+  const gameTimeEdge = wrap.querySelector('.ac-gametime-edge');
   const endLabel = wrap.querySelector('.ac-end-label'), endValue = wrap.querySelector('.ac-end-value');
   if (period && period.endMin > nowMin) {
     /* The chunk sits on the MINUTE ring (2026-11-05): it covers the minutes the
@@ -497,6 +559,21 @@ function paintAnalogClock(pt, period, waiting) {
        empties first, so the green peels away from the centre outward and the
        last hour is an ordinary chunk on the ring again. */
     drawSpiral(spiral, chunk ? 0 : remaining, aNow);
+
+    /* Game time is the TAIL of the period: the last however-many minutes before
+       the bell, so the rainbow sits at the far end of the green and the class
+       can see the chunk of the dial that's theirs. Clamped at both ends — it
+       never reaches back past now (time already spent can't be game time) and
+       never past the ring, so a period with more than an hour left draws no
+       wedge yet, the same way its own chunk spirals instead. */
+    const gt = currentGameTimeMinutes(pt.isoDate);
+    const gtStart = Math.max(period.endMin - gt, nowMin);
+    const gtSpan = Math.min(period.endMin, nowMin + RING) - gtStart;
+    const showGt = gt > 0 && gtSpan > 0 && chunk;
+    const gtPath = showGt ? analogSector(100, 100, 84, deg(gtStart), deg(gtStart) + gtSpan * 6) : '';
+    gameTime.setAttribute('d', gtPath);
+    gameTimeEdge.setAttribute('d', gtPath);
+
     name.textContent = period.name.toUpperCase();
     // the countdown stays (2026-11-05): "ENDS IN 12:34", the same figure the digital clock shows;
     // between periods it counts to the next one instead ("6TH PERIOD IN 03:12"). Label and
@@ -509,6 +586,8 @@ function paintAnalogClock(pt, period, waiting) {
     gone.setAttribute('d', '');
     left.setAttribute('d', '');
     wrap.querySelector('.ac-edge').setAttribute('d', '');
+    gameTime.setAttribute('d', '');
+    gameTimeEdge.setAttribute('d', '');
     drawSpiral(spiral, 0, 0);
     name.textContent = waiting ? waiting.toUpperCase() : 'NOT IN SESSION';
     endLabel.textContent = '';
@@ -2152,7 +2231,7 @@ function initGameMode() {
   const toggleBtn = document.getElementById('gamemode-toggle-btn');
   const countdownEl = document.getElementById('gamemode-countdown');
   const confettiLayer = document.getElementById('confetti-layer');
-  const autoInput = document.getElementById('gamemode-auto-input');
+  const minutesInput = document.getElementById('gametime-minutes-input');
   const gameTimeBtn = document.getElementById('gametime-toggle-btn');
   const gameTimeLabel = document.getElementById('gametime-label');
   if (!boardGrid || !toggleBtn || !countdownEl || !confettiLayer) return;
@@ -2162,9 +2241,11 @@ function initGameMode() {
   // set when a run has a fixed length (the Game Time button); null means
   // the old behaviour, counting down to the end of the period
   let endsAtMs = null;
-  // assigned by the Game Time block below, so turnOff() can put the
-  // button's label back however the mode was switched off
+  // assigned by the Game Time blocks below, so turnOff() can put the
+  // button's label back however the mode was switched off, and the
+  // midnight rollover can clear the box
   let refreshGameTimeLabel = () => {};
+  let refreshGameTimeInput = () => {};
 
   async function tick() {
     /* The number on screen is always the time left until the next bell,
@@ -2236,136 +2317,68 @@ function initGameMode() {
     if (active) turnOff(); else turnOn();
   });
 
-  /* ---- Auto Game Mode — Fridays only.
+  /* ---- Game Time — a number Ms. Herrick types, and nothing else.
 
-     On a Friday, Game Mode switches itself on for however long the
-     class earned that week: 20 minutes minus that grade's average
-     transition Monday through Friday. The average comes from the
-     same Firestore records the Transition Timer writes (see
-     window.transitionsEarnedGameMinutes in transitions-record.js), so
-     a class that settles fast all week keeps almost all of it and one
-     that dawdles spends it. Monday through Thursday nothing
-     auto-starts at all — the Game Mode button still works by hand any
-     day, in any period.
+     There used to be two automatic paths into this and both are gone.
+     One was a Friday auto-start that watched the countdown and switched
+     Game Mode on by itself once the minutes left hit a threshold. The
+     other was the earned calculation behind the button: 20 minutes minus
+     that grade's average transition for the week, read from Firestore
+     (window.transitionsEarnedGameMinutes, since deleted along with its
+     half of transitions-record.js).
 
-     Typing a number into the hover-bar box overrides the calculation
-     for as long as it's there: that number becomes the minutes-left
-     threshold instead, still Friday-only. Clear the box to go back to
-     the earned time. Persisted per device.
+     Both are removed on purpose. Game time is now exactly the number in
+     the hover-bar box: nothing derives it, nothing adjusts it, and
+     nothing starts Game Mode without the button being pressed. The
+     transition records themselves are untouched — the Transition Timer
+     still writes them and transitions.html still reports on them. They
+     just no longer decide anybody's game time.
 
-     Fires once per period (identified by date + period name) so
-     turning Game Mode back off by hand doesn't immediately
-     re-trigger it. ---- */
+     The number is stamped with today's date, so it is 0 again the next
+     day (see the Game Time store above). ---- */
 
-  const GAMEMODE_AUTO_KEY = 'agendaBoard.gamemodeAutoMinutes';
-
-  if (autoInput) {
-    let autoMinutes = null;
-    let firedForPeriodKey = null;
-
-    try {
-      const stored = localStorage.getItem(GAMEMODE_AUTO_KEY);
-      if (stored !== null && stored !== '') {
-        autoMinutes = Number(stored);
-        autoInput.value = stored;
-        autoInput.classList.add('is-armed');
-      }
-    } catch (e) { /* storage disabled */ }
-
-    autoInput.addEventListener('click', (e) => e.stopPropagation());
-    autoInput.addEventListener('change', () => {
-      const raw = autoInput.value.trim();
-      if (raw === '') {
-        autoMinutes = null;
-        firedForPeriodKey = null;
-        autoInput.classList.remove('is-armed');
-        try { localStorage.removeItem(GAMEMODE_AUTO_KEY); } catch (e) { /* storage disabled */ }
-        return;
-      }
-      const num = Number(raw);
-      if (!Number.isFinite(num) || num < 0) return;
-      autoMinutes = num;
-      firedForPeriodKey = null; // a new threshold gets a fresh chance to fire
-      autoInput.classList.add('is-armed');
-      try { localStorage.setItem(GAMEMODE_AUTO_KEY, String(num)); } catch (e) { /* storage disabled */ }
-    });
-
-    async function autoCheck() {
-      if (active) return;
-      const pt = getPacificNow();
-      if (pt.weekdayName !== 'Friday') return;
-
-      const scheduleKey = await resolveTodaysSchedule(pt);
-      const bells = await loadBells();
-      const scheduleData = bells[scheduleKey];
-      if (!scheduleData) return;
-
-      const nowMin = minutesSinceMidnight(pt);
-      const { current } = findCurrentAndNext(scheduleData.periods, nowMin);
-      if (!current) return;
-
-      /* Only the number typed in the box fires on a timer. Earned
-         Friday game time is the Game Time button's job now — see
-         below — because a reward that depends on a network read
-         landing at the right second is a reward that quietly doesn't
-         happen. An empty box means nothing auto-starts. */
-      if (autoMinutes === null) return;
-      const threshold = autoMinutes;
-
-      const remaining = hhmmToMinutes(current.end) - nowMin;
-      const periodKey = `${pt.isoDate}|${current.name}`;
-      if (remaining <= threshold && firedForPeriodKey !== periodKey) {
-        firedForPeriodKey = periodKey;
-        turnOn();
-      }
+  if (minutesInput) {
+    function paintInput() {
+      const mins = currentGameTimeMinutes();
+      // blank rather than "0", so the placeholder shows and the box reads
+      // as empty-until-set instead of as a number somebody chose
+      minutesInput.value = mins > 0 ? String(mins) : '';
+      minutesInput.classList.toggle('is-armed', mins > 0);
     }
 
+    minutesInput.addEventListener('click', (e) => e.stopPropagation());
+    minutesInput.addEventListener('dblclick', (e) => e.stopPropagation());
+    minutesInput.addEventListener('change', () => {
+      const raw = minutesInput.value.trim();
+      const num = raw === '' ? 0 : Number(raw);
+      // reject junk by putting the stored number back, rather than
+      // silently banking a NaN
+      if (!Number.isFinite(num) || num < 0) { paintInput(); return; }
+      setGameTimeMinutes(num);
+      paintInput();
+      refreshGameTimeLabel();
+    });
 
-    autoCheck();
-    setInterval(autoCheck, 1000);
+    paintInput();
+    refreshGameTimeInput = paintInput;
   }
 
-  /* ---- Game Time button — the earned Friday reward, on demand.
+  /* ---- Game Time button — starts Game Mode for the minutes in the box.
 
-     This used to fire itself when the live countdown reached the
-     earned number. It depended on a Firestore read resolving at the
-     right second on a board that had been open all day, and when any
-     of that didn't hold the reward simply never appeared, with nothing
-     on screen to say so. A button is honest: it answers when pressed,
-     and it says why when it can't.
-
-     Pressing it starts Game Mode for exactly the minutes that class
-     earned — 20 minus that grade's average transition this week —
-     counting down against its own clock and switching itself
-     off at zero, rather than running to the bell. Pressing it again
-     stops it early. The label carries the number so the class can see
-     what they earned before it starts. ---- */
+     Runs against its own clock and stops itself at zero rather than
+     running to the bell; pressing it again stops it early. The label
+     carries the number so the class can see what they have before it
+     starts. No network and no waiting: the answer is already on the
+     device. ---- */
 
   if (gameTimeBtn && gameTimeLabel) {
     let flashTimer = null;
 
-    async function earnedForLivePeriod() {
-      if (typeof window.transitionsEarnedGameMinutes !== 'function') return null;
-      const pt = getPacificNow();
-      const scheduleKey = await resolveTodaysSchedule(pt);
-      const bells = await loadBells();
-      const scheduleData = bells[scheduleKey];
-      if (!scheduleData) return null;
-      const { current } = findCurrentAndNext(scheduleData.periods, minutesSinceMidnight(pt));
-      if (!current) return null;
-      return window.transitionsEarnedGameMinutes(current.name, pt.isoDate);
-    }
-
-    /* Answers are cached per class per day by the reader, so this polls
-       the label without hammering the network. */
-    async function updateLabel() {
+    function updateLabel() {
       if (active && endsAtMs !== null) { gameTimeLabel.textContent = 'Stop Game Time'; return; }
-      let earned = null;
-      try { earned = await earnedForLivePeriod(); } catch (e) { /* unknown */ }
-      gameTimeLabel.textContent = earned === null || earned <= 0
-        ? 'Game Time'
-        : `Game Time · ${Math.round(earned)}m`;
-      gameTimeBtn.classList.toggle('is-armed', earned !== null && earned > 0);
+      const mins = currentGameTimeMinutes();
+      gameTimeLabel.textContent = mins > 0 ? `Game Time \u00b7 ${mins}m` : 'Game Time';
+      gameTimeBtn.classList.toggle('is-armed', mins > 0);
     }
     refreshGameTimeLabel = updateLabel;
 
@@ -2376,26 +2389,27 @@ function initGameMode() {
       flashTimer = setTimeout(updateLabel, 4000);
     }
 
-    gameTimeBtn.addEventListener('click', async (e) => {
+    gameTimeBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       clearTimeout(flashTimer);
 
       if (active && endsAtMs !== null) { turnOff(); return; }   // turnOff relabels
 
-      gameTimeLabel.textContent = 'Checking\u2026';
-      let earned = null;
-      try { earned = await earnedForLivePeriod(); } catch (err) { earned = null; }
+      const mins = currentGameTimeMinutes();
+      if (mins <= 0) { flash('None set'); return; }
 
-      if (earned === null) { flash('No records yet'); return; }
-      if (earned <= 0) { flash('None earned'); return; }
-
-      turnOn({ durationMinutes: earned });
+      turnOn({ durationMinutes: mins });
       gameTimeLabel.textContent = 'Stop Game Time';
     });
 
     gameTimeBtn.addEventListener('dblclick', (e) => e.stopPropagation());
     updateLabel();
-    setInterval(updateLabel, 30000);
+
+    /* The only thing on a timer here is the midnight rollover. A board left
+       running overnight still has yesterday's number in the box; this is what
+       notices the date has moved and puts the box and the label back to zero.
+       It never sets game time — it can only clear it. */
+    setInterval(() => { refreshGameTimeInput(); updateLabel(); }, 30000);
   }
 
   // lets other scripts on the page (e.g. vex.js's "auto Game Mode during
@@ -2668,14 +2682,16 @@ function initStowMode() {
   };
 
   /* ---- Auto-trigger — 7th Period only, Monday through Thursday,
-     fires once the live countdown hits STOW_AUTO_MINUTES. Unlike
-     Game Mode's auto-trigger this isn't a text input Ms. Herrick sets
-     per device; it's a fixed default so it just works without setup.
+     fires once the live countdown hits STOW_AUTO_MINUTES. This is the
+     only mode left that starts itself: Game Mode's auto-trigger is
+     gone, and STOW_AUTO_MINUTES is a fixed default rather than
+     something Ms. Herrick sets per device, so it just works without
+     setup.
 
-     Not on Fridays: 7th Period ends the week on earned game time
-     (see the Game Time button), and a claw machine calling numbers
-     over the top of it would cut that short. The Stow Chromebooks button
-     still works by hand any day, Fridays included. ---- */
+     Not on Fridays: 7th Period ends the week on game time (see the
+     Game Time box), and a claw machine calling numbers over the top of
+     it would cut that short. The Stow Chromebooks button still works
+     by hand any day, Fridays included. ---- */
 
   let firedForPeriodKey = null;
 
