@@ -1121,6 +1121,19 @@ function initVexFaq() {
     dotsEl.addEventListener('dblclick', (e) => e.stopPropagation());
   }
 
+  /* Arrow keys while this bento is maximized (see initFocusMode in
+     script.js). Same move the dots make — jump straight there, no fade,
+     and restart the rotation so the question just chosen gets a full turn
+     — only relative, and wrapping at both ends. */
+  registerSlideStepper(box, (delta) => {
+    if (VEX_FAQS.length < 2) return false;
+    wrapEl.classList.remove('is-fading');
+    idx = ((idx + delta) % VEX_FAQS.length + VEX_FAQS.length) % VEX_FAQS.length;
+    paint(idx);
+    startRotation();
+    return true;
+  });
+
   paint(0);
   startRotation();
 }

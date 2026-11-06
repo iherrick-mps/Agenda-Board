@@ -1008,7 +1008,12 @@ function createRotator(spec) {
 
   let data = {};
   let slides = spec.slides;
-  let index = 0;
+  let index = 0;        // the slide on screen right now
+  // the slide we're heading to. Only differs from `index` during a fade,
+  // which is exactly when a second arrow-key press can land — stepping from
+  // this rather than from `index` is what lets two quick presses move two
+  // slides instead of cancelling each other and moving one.
+  let targetIndex = 0;
   let secondsLeft = rotateSeconds;
   let tickHandle = null;
   let swapHandle = null;
@@ -1038,8 +1043,9 @@ function createRotator(spec) {
 
   /* Commits the slide index only when the new text actually lands, so a
      swap dropped mid-fade (below) leaves the box exactly as it was. */
-  function show(i, animate) {
+  function show(i, animate, force) {
     clearTimeout(swapHandle);
+    targetIndex = i;
     if (!animate) {
       box.classList.remove('is-swapping');
       index = i;
@@ -1048,13 +1054,34 @@ function createRotator(spec) {
     }
     box.classList.add('is-swapping');
     swapHandle = setTimeout(() => {
-      // focused during the fade — fade back in on the slide that's
-      // already there rather than pulling the text out from under
-      // someone who just leaned in
-      if (isBoxFocused(box)) { box.classList.remove('is-swapping'); return; }
+      /* Focused during the fade — fade back in on the slide that's already
+         there rather than pulling the text out from under someone who just
+         leaned in. `force` is the exception: an arrow-key press is someone
+         asking for the next slide, so it isn't the timer to protect them
+         from, and holding it would mean the keys did nothing. */
+      if (!force && isBoxFocused(box)) {
+        targetIndex = index;
+        box.classList.remove('is-swapping');
+        return;
+      }
       index = i;
       apply(i);
     }, ROTATE_SWAP_MS);
+  }
+
+  /* Arrow keys while the box is maximized — see initFocusMode. Loops in
+     either direction, keeps the box's own cross-fade, and puts a full
+     interval back on the clock so letting go of focus doesn't immediately
+     flip past the slide that was just chosen by hand. Returns false when
+     there is nothing to step through, so the key stays unhandled and the
+     page can do whatever it would otherwise do with it. */
+  function step(delta) {
+    if (slides.length < 2) return false;
+    const next = ((targetIndex + delta) % slides.length + slides.length) % slides.length;
+    show(next, true, true);
+    secondsLeft = rotateSeconds;
+    paintTimer();
+    return true;
   }
 
   function paintTimer() {
@@ -1071,7 +1098,7 @@ function createRotator(spec) {
     if (isBoxFocused(box)) return;
     secondsLeft -= 1;
     if (secondsLeft <= 0) {
-      show((index + 1) % slides.length, true);
+      show((targetIndex + 1) % slides.length, true);
       secondsLeft = rotateSeconds;
     }
     paintTimer();
@@ -1088,6 +1115,7 @@ function createRotator(spec) {
     const filled = spec.slides.filter(s => hasSlideContent(data[s.field]));
     slides = filled.length > 0 ? filled : [spec.slides[0]];
     index = 0;
+    targetIndex = 0;
     secondsLeft = rotateSeconds;
     show(0, false);
 
@@ -1100,7 +1128,9 @@ function createRotator(spec) {
     }
   }
 
-  return { setData, stop };
+  registerSlideStepper(box, step);
+
+  return { box, setData, stop, step, slideCount: () => slides.length };
 }
 
 let boardRotators = null;
@@ -1110,6 +1140,27 @@ function getBoardRotators() {
     boardRotators = ROTATOR_SPECS.map(createRotator).filter(Boolean);
   }
   return boardRotators;
+}
+
+/* Bentos whose slides the arrow keys can walk while the box is maximized.
+
+   A registry rather than a lookup into the board's own rotators, because
+   "rotating bento" isn't one implementation: the board has createRotator
+   below, and VEX's FAQ keeps its own index and dots. Each registers the one
+   thing focus mode needs — a step(delta) that moves by that many slides,
+   wrapping, and answers false when there is nothing to walk.
+
+   Page scripts load after this one, so they can register on their own init
+   (see initVexFaq in vex.js). A box that never registers simply leaves the
+   arrow keys alone. */
+const slideSteppers = new Map();   // box element -> step(delta) => boolean
+
+function registerSlideStepper(box, step) {
+  if (box && typeof step === 'function') slideSteppers.set(box, step);
+}
+
+function slideStepperForBox(boxEl) {
+  return (boxEl && slideSteppers.get(boxEl)) || null;
 }
 
 // wraps trailing "(N min)"-style durations in a span so they can be
@@ -1525,9 +1576,40 @@ function initFocusMode() {
     if (boardGrid.classList.contains('has-focus')) clearFocus();
   });
 
-  // Escape also clears focus
+  /* Escape clears focus; the arrow keys walk the maximized box's slides.
+
+     The arrows only do anything while a ROTATING bento is maximized, and
+     only when it has more than one slide to walk — a maximized clock, or an
+     Agenda / Steps box that no longer rotates, leaves them alone. Stepping
+     by hand overrides the hold that focus normally puts on a box (see
+     `force` in createRotator): the whole point of pressing the key is to
+     change what's on screen.
+
+     Left/Up go back, Right/Down go forward, and both ends wrap. Nothing is
+     swallowed unless it was acted on, so a key that does nothing here still
+     behaves normally everywhere else — including the arrow keys' usual job
+     of stepping a number input, which is why a keystroke aimed at a field
+     is left alone entirely. */
+  const EDITABLE = /^(INPUT|TEXTAREA|SELECT)$/;
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && boardGrid.classList.contains('has-focus')) clearFocus();
+    if (!boardGrid.classList.contains('has-focus')) return;
+
+    if (e.key === 'Escape') { clearFocus(); return; }
+
+    const t = e.target;
+    if (t && (EDITABLE.test(t.tagName) || t.isContentEditable)) return;
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+
+    let delta = 0;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') delta = 1;
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') delta = -1;
+    if (!delta) return;
+
+    const step = slideStepperForBox(boardGrid.querySelector('.agenda-box.is-focused'));
+    // step() answers false for a box with nothing to walk, and then the
+    // keypress is none of our business
+    if (step && step(delta)) e.preventDefault();
   });
 
   // keep the focused box centered if the window is resized/rotated
