@@ -96,16 +96,19 @@
     <span class="rot-timer" id="rot-timer-focus" aria-hidden="true">30</span>
   </div>
 
-  <div class="agenda-box box-deliver">
-    <span class="box-label">Due on Sunday</span>
+  <!-- rotating bento: Due on Sunday <-> Connections -->
+  <div class="agenda-box box-rot box-deliver" id="box-deliver">
+    <span class="box-label" id="label-deliver">Due on Sunday</span>
     <div class="box-content" id="content-deliver"></div>
+    <span class="rot-timer" id="rot-timer-deliver" aria-hidden="true">45</span>
   </div>
 
-  <!-- rotating bento: Agenda / Steps <-> Connections -->
+  <!-- Agenda / Steps — one slide, so it never swaps: the steps stay up
+       for the whole period and the countdown pip stays hidden -->
   <div class="agenda-box box-rot box-agenda" id="box-agenda">
     <span class="box-label" id="label-agenda">Agenda / Steps</span>
     <div class="box-content" id="content-agenda"></div>
-    <span class="rot-timer" id="rot-timer-agenda" aria-hidden="true">40</span>
+    <span class="rot-timer" id="rot-timer-agenda" aria-hidden="true" hidden>40</span>
   </div>
 
   <!-- rotating bento: Content Standard <-> ELD Standard -->

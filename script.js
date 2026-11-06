@@ -917,26 +917,22 @@ async function initIndexPage() {
    Agenda page — persistent bento board + period tabs
    ============================================================ */
 
-// maps a JSON field name -> the box's content element id, for the boxes
-// that show exactly one field and never change
-const FIELD_TO_EL = {
-  weeklyDeliverable: 'content-deliver'
-};
-
 /* ============================================================
    Rotating bentos.
 
-   Three boxes each carry two of the old board's boxes and swap
-   between them on their own timer (see `seconds` in ROTATOR_SPECS
+   Each box carries one or more of the old board's boxes and swaps
+   between them on its own timer (see `seconds` in ROTATOR_SPECS
    below — a box without one falls back to ROTATE_SECONDS). A slide
    owns three things: the
    label above the text, the text itself, and the box's accent
    color — so the color is always a reliable signal for which of
    the two you're reading, on the board and from across the room.
 
-   A box with only one slide's worth of content in the day's JSON
-   (e.g. a day with no Connections written) just sits still on the
-   slide it does have, and hides its countdown.
+   A box left with one slide just sits still on it and hides its
+   countdown — whether that's because the spec only gives it one
+   (Agenda / Steps, which must stay put for the whole period) or
+   because the day's JSON only filled one of two (a day with no
+   Connections written).
    ============================================================ */
 
 // fallback rotation interval, in seconds, for any box that doesn't set
@@ -948,6 +944,17 @@ const ROTATE_SECONDS = 30;
 const ROTATE_SWAP_MS = 240;
 
 const ROTATOR_SPECS = [
+  {
+    boxId: 'box-deliver',
+    seconds: 45,
+    labelId: 'label-deliver',
+    contentId: 'content-deliver',
+    timerId: 'rot-timer-deliver',
+    slides: [
+      { field: 'weeklyDeliverable', label: 'Due on Sunday', color: 'var(--c-deliverable)' },
+      { field: 'connections',       label: 'Connections',   color: 'var(--c-connect)' }
+    ]
+  },
   {
     boxId: 'box-focus',
     seconds: 30,
@@ -965,9 +972,11 @@ const ROTATOR_SPECS = [
     labelId: 'label-agenda',
     contentId: 'content-agenda',
     timerId: 'rot-timer-agenda',
+    // one slide on purpose: the steps are the thing the class checks
+    // against all period, so this box never swaps out from under them.
+    // Connections moved to the Due on Sunday box below.
     slides: [
-      { field: 'agenda',      label: 'Agenda / Steps', color: 'var(--c-agenda)' },
-      { field: 'connections', label: 'Connections',    color: 'var(--c-connect)' }
+      { field: 'agenda', label: 'Agenda / Steps', color: 'var(--c-agenda)' }
     ]
   },
   {
@@ -1012,8 +1021,8 @@ function createRotator(spec) {
     contentEl.style.fontSize = '';
     contentEl.innerHTML = renderBoxValue(data[slide.field]);
     // which of the day's fields is on screen right now — the step
-    // highlight below needs to know, since the same box also shows
-    // Connections, which has no timeline
+    // highlight below needs to know, since a box may also show a slide
+    // with no timeline (Connections)
     contentEl.dataset.field = slide.field;
     // the list it marks up was just replaced, so put the mark back on
     // in the same breath rather than waiting for the next tick
@@ -1180,8 +1189,9 @@ function paintAgendaStepNow() {
   if (!contentEl) return;
 
   let index = -1;
-  // the box rotates between Agenda / Steps and Connections — only the
-  // steps have a timeline to be somewhere in
+  // the box no longer rotates, so this is always the steps — the field
+  // check stays as a guard in case a second slide is ever added back,
+  // since only the steps have a timeline to be somewhere in
   if (agendaStepPlan && contentEl.dataset.field === 'agenda') {
     const pt = getPacificNow();
     const nowMin = minutesSinceMidnight(pt);
@@ -1197,16 +1207,10 @@ function paintAgendaStepNow() {
 }
 
 function renderPeriodContent(periodData) {
-  Object.entries(FIELD_TO_EL).forEach(([field, elId]) => {
-    const el = document.getElementById(elId);
-    if (!el) return;
-    el.style.fontSize = '';
-    el.innerHTML = renderBoxValue(periodData[field]);
-  });
-
-  // hand the same period data to every rotating box — each one resets to
-  // its first slide and restarts its 30-second clock, so switching period
-  // tabs doesn't leave one box mid-cycle showing the old class's text
+  // every content box on the board is a rotator now, even the ones with a
+  // single slide — hand the same period data to each. Each resets to its
+  // first slide and restarts its clock, so switching period tabs doesn't
+  // leave one box mid-cycle showing the old class's text.
   getBoardRotators().forEach(r => r.setData(periodData));
 
   // wait for web fonts to finish loading (not just a layout frame) before
