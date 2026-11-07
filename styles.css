@@ -2294,11 +2294,15 @@ body.board-page {
   display: grid;
   /* first column carries the team number plus its roster underneath, so
      it needs more room than a bare team number did */
-  grid-template-columns: minmax(118px, 1.4fr) repeat(5, 1fr);
+  /* --scrum-stages is set from VEX_SCRUM_STAGES.length in vex.js, so adding
+     a stage column doesn't need a matching edit here. The fallbacks keep the
+     table sane if the script hasn't run yet. */
+  grid-template-columns: minmax(118px, 1.4fr) repeat(var(--scrum-stages, 5), 1fr);
   grid-auto-rows: 1fr;
   gap: 0; /* rows sit flush against each other; fills need no seams between them */
   height: 100%;
-  min-width: 700px; /* two checkboxes per stage cell need the extra room */
+  /* two checkboxes per stage cell need the extra room */
+  min-width: calc(118px + var(--scrum-stages, 5) * 116px);
 }
 
 .vex-scrum-cell {
@@ -2363,6 +2367,11 @@ body.board-page {
   line-height: 1.2;
   color: #3a444d;
 }
+
+/* a stage that has to be earned rather than just done — the note is on
+   the header's title, so mark it as worth hovering */
+.vex-scrum-head.has-note { cursor: help; }
+.vex-scrum-head.has-note .vex-scrum-head-name { text-decoration: underline dotted 1px; text-underline-offset: 2px; }
 
 .vex-scrum-head-sub {
   font-family: var(--font-mono);

@@ -27,14 +27,33 @@ const VEX_NEXT_COMPETITION_LABEL = 'January 15';
 const VEX_SESSION_END = '16:00';   // 4:00 PM
 const VEX_SESSION_LABEL = 'VEX';   // renders as "VEX ends in ..."
 
-/* ---- SCRUM board stages (columns) — rows are VEX_TEAMS above ---- */
+/* ---- SCRUM board stages (columns) — rows are VEX_TEAMS above.
+
+   A stage is either a plain label or { name, note }, where the note says
+   what has to be true to tick it off. Only stages whose bar is something
+   other than "we did this" need one; the note shows on hover over that
+   column's header, so a stage that has to be *earned* can say so without
+   taking a second line away from every other column. ---- */
 const VEX_SCRUM_STAGES = [
   'Build Drivetrain',
   'Build Scoring Mechanism',
   'Iterating on Scoring Mechanism',
   'Full Team Practicing',
   'Developing Autonomous',
+  {
+    name: 'Score 100 pts',
+    note: 'Ticked off when the team can score 100 points in a 60-second driver run.'
+  },
 ];
+
+// a stage may be a bare string or { name, note } — these are the only two
+// places that care which
+function vexStageName(stage) {
+  return typeof stage === 'string' ? stage : (stage && stage.name) || '';
+}
+function vexStageNote(stage) {
+  return typeof stage === 'string' ? '' : (stage && stage.note) || '';
+}
 const VEX_SCRUM_KEY = 'agendaBoard.vexScrum';
 const VEX_SCRUM_MAX_SPARKLES = 14; // sparkle count at 100% complete
 // each team gets its own progress-bar/checkbox color, cycling through
@@ -399,6 +418,9 @@ function initVexScrumBoard() {
   const state = vexLoadScrumState();
   const rowRefs = {}; // team name -> { fillEl, sparkleEl }
   tableEl.innerHTML = '';
+  // the stage count lives here rather than in a hard-coded repeat() in the
+  // stylesheet, so adding a column above is a one-line change
+  tableEl.style.setProperty('--scrum-stages', String(VEX_SCRUM_STAGES.length));
 
   const corner = document.createElement('div');
   corner.className = 'vex-scrum-cell vex-scrum-corner';
@@ -412,9 +434,15 @@ function initVexScrumBoard() {
     head.style.gridRow = '1';
     head.style.gridColumn = String(colIdx + 2);
 
+    const note = vexStageNote(stage);
+    if (note) {
+      head.title = note;
+      head.classList.add('has-note');
+    }
+
     const headName = document.createElement('span');
     headName.className = 'vex-scrum-head-name';
-    headName.textContent = stage;
+    headName.textContent = vexStageName(stage);
     head.appendChild(headName);
 
     // tells the room which of the two boxes below is which
@@ -498,7 +526,7 @@ function initVexScrumBoard() {
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.checked = kind === 'wip' ? value >= 1 : value === 2;
-        checkbox.setAttribute('aria-label', `${team.name} \u2014 ${stage} \u2014 ${what}`);
+        checkbox.setAttribute('aria-label', `${team.name} \u2014 ${vexStageName(stage)} \u2014 ${what}`);
         checkbox.dataset.team = team.name;
         checkbox.dataset.stage = String(colIdx);
         checkbox.dataset.kind = kind;
