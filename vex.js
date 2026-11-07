@@ -71,11 +71,11 @@ const VEX_SCRUM_STAGES = [
     note: 'Ticks itself once the team\u2019s High Score reaches 30. Not ticked by hand.'
   },
   {
-    id: 'score100',
-    name: 'Score 100 pts',
+    id: 'score80',
+    name: 'Score 80 pts',
     type: 'binary',
-    derivedFrom: 100,
-    note: 'Ticks itself once the team\u2019s High Score reaches 100. Not ticked by hand.'
+    derivedFrom: 80,
+    note: 'Ticks itself once the team\u2019s High Score reaches 80. Not ticked by hand.'
   },
   {
     id: 'highScore',
@@ -97,7 +97,7 @@ const VEX_SCRUM_LEGACY_IDS = [
   null,           // 2: Iterating on Scoring Mechanism — dropped
   'driver30',     // 3: Full Team Practicing
   'auto30',       // 4: Developing Autonomous
-  'score100',     // 5: Score 100 pts
+  'score80',      // 5: Score 100 pts, now Score 80 pts
 ];
 
 // a column may be written bare or as an object — these are the only places
@@ -157,6 +157,16 @@ const VEX_SCRUM_TEAM_COLORS = [
    version 2.0. Re-check them after each manual update; VEX ships
    scheduled revisions through the season. ---- */
 const VEX_FAQ_ROTATE_MS = 15000; // 15 seconds per question
+
+/* ---- The match timer that shares the FAQ bento, behind the second
+   binder tab. Full volume, because it has to be heard over a room mid
+   match, and no loop: a timer that starts itself again the moment it
+   ends is worse than one that just stops. It doesn't autoplay either —
+   switching to the tab gets the timer ready at zero, and the play
+   button starts it, so a 100%-volume countdown can never go off just
+   because somebody looked at the tab. ---- */
+const VEX_TIMER_URL = 'https://www.youtube.com/watch?v=D9VdmY24T-A';
+const VEX_TIMER_VOLUME = 100;
 // Keep answers short — the text scales to fill the bento, so every extra
 // clause shrinks the font for the whole rotation.
 const VEX_FAQS = [
@@ -1339,6 +1349,90 @@ function initVexFaq() {
   let idx = 0;
   let rotateTimer = null;
 
+  /* ---- Binder tabs: the questions, or the timer ---- */
+  const tabsEl = document.getElementById('vex-faq-tabs');
+  const labelEl = document.getElementById('vex-faq-label');
+  const faqPane = document.getElementById('vex-faq-pane');
+  const timerPane = document.getElementById('vex-timer-pane');
+  const timerEmbed = document.getElementById('vex-timer-embed');
+
+  let pane = 'faq';
+  let timerPlayer = null;
+  let buildingTimer = false;
+
+  async function ensureTimerPlayer() {
+    if (timerPlayer || buildingTimer || !timerEmbed) return;
+    buildingTimer = true;
+
+    const { videoId } = parseYouTubeUrl(VEX_TIMER_URL);
+    if (!videoId) { buildingTimer = false; return; }
+
+    timerEmbed.innerHTML = '<div id="vex-timer-player"></div>';
+    const YT = await loadYouTubeIframeApi();
+
+    timerPlayer = new YT.Player('vex-timer-player', {
+      width: '100%',
+      height: '100%',
+      videoId,
+      // no autoplay and no `playlist` companion — `playlist` is what makes
+      // YouTube loop a single video, and this one must stop when it stops
+      playerVars: { autoplay: 0, rel: 0, loop: 0, controls: 1, playsinline: 1 },
+      events: {
+        onReady: (e) => {
+          e.target.setVolume(VEX_TIMER_VOLUME);
+          e.target.unMute();
+        }
+      }
+    });
+    buildingTimer = false;
+  }
+
+  function showPane(next) {
+    if (next === pane) return;
+    pane = next;
+    const onTimer = pane === 'timer';
+
+    if (faqPane) faqPane.hidden = onTimer;
+    if (timerPane) timerPane.hidden = !onTimer;
+    if (box) box.classList.toggle('showing-timer', onTimer);
+    if (labelEl) labelEl.textContent = onTimer ? 'Timer' : 'FAQ';
+
+    if (tabsEl) {
+      tabsEl.querySelectorAll('.vex-tab').forEach(t => {
+        const on = t.dataset.pane === pane;
+        t.classList.toggle('is-active', on);
+        t.setAttribute('aria-selected', String(on));
+      });
+    }
+
+    if (onTimer) {
+      // every visit to this tab hands back a timer sitting at zero
+      if (!timerPlayer) ensureTimerPlayer();
+      else {
+        try { timerPlayer.pauseVideo(); timerPlayer.seekTo(0); } catch (e) { /* not ready yet */ }
+      }
+    } else if (timerPlayer && timerPlayer.pauseVideo) {
+      // never leave a countdown running behind the questions
+      try { timerPlayer.pauseVideo(); } catch (e) { /* ignore */ }
+    }
+
+    // the questions hold while the timer is in front, and pick up again
+    // with a full turn when they come back
+    startRotation();
+    requestAnimationFrame(() => requestAnimationFrame(fitAllBoxes));
+  }
+
+  if (tabsEl) {
+    tabsEl.addEventListener('click', (e) => {
+      const tab = e.target.closest('.vex-tab');
+      if (!tab) return;
+      // the bento itself takes a click as "blow me up to full screen"
+      e.stopPropagation();
+      showPane(tab.dataset.pane === 'timer' ? 'timer' : 'faq');
+    });
+    tabsEl.addEventListener('dblclick', (e) => e.stopPropagation());
+  }
+
   function paint(i) {
     const faq = VEX_FAQS[i];
     qEl.textContent = faq.q;
@@ -1358,7 +1452,7 @@ function initVexFaq() {
   const isFocused = () => isBoxFocused(box);
 
   function advance() {
-    if (isFocused()) return;
+    if (isFocused() || pane !== 'faq') return;
     wrapEl.classList.add('is-fading');
     // wait out the CSS fade (0.3s) before swapping the text, so the
     // question never visibly changes mid-transition
@@ -1378,7 +1472,7 @@ function initVexFaq() {
   function startRotation() {
     clearInterval(rotateTimer);
     rotateTimer = null;
-    if (VEX_FAQS.length === 1 || isFocused()) return;
+    if (VEX_FAQS.length === 1 || isFocused() || pane !== 'faq') return;
     rotateTimer = setInterval(advance, VEX_FAQ_ROTATE_MS);
   }
 
@@ -1421,7 +1515,7 @@ function initVexFaq() {
      and restart the rotation so the question just chosen gets a full turn
      — only relative, and wrapping at both ends. */
   registerSlideStepper(box, (delta) => {
-    if (VEX_FAQS.length < 2) return false;
+    if (pane !== 'faq' || VEX_FAQS.length < 2) return false;
     wrapEl.classList.remove('is-fading');
     idx = ((idx + delta) % VEX_FAQS.length + VEX_FAQS.length) % VEX_FAQS.length;
     paint(idx);

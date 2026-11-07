@@ -2821,6 +2821,88 @@ body.board-page {
 .vex-playlist-toggle:hover { color: #fff; border-color: #fff; }
 
 /* ============================================================
+   Binder tabs on the FAQ bento — swap the questions for the match
+   timer. Drawn as tabs hanging off the top edge of the box, rounded
+   at the bottom, so the pair reads as two sheets in a binder with the
+   front one pulled forward rather than as two buttons.
+
+   The box-label on the left says which sheet is showing, so the bento
+   still announces itself the way every other bento does.
+   ============================================================ */
+
+.vex-tabs {
+  position: absolute;
+  top: 0;
+  right: 0.9vw;
+  z-index: 4;
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.vex-tab {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: clamp(0.52rem, 1.3vh, 0.8rem);
+  line-height: 1;
+  padding: 0.45vh 0.75vw 0.5vh;
+  cursor: pointer;
+  border: 1px solid var(--grid-line);
+  border-top: none;
+  /* hanging from the top edge, so the rounding is on the bottom */
+  border-radius: 0 0 8px 8px;
+  background: color-mix(in srgb, var(--box-color, var(--ink)) 20%, white);
+  color: color-mix(in srgb, var(--box-color, var(--ink)) 65%, var(--ink));
+  transition: background-color 0.18s ease, color 0.18s ease, padding-bottom 0.18s ease;
+}
+
+.vex-tab:hover {
+  background: color-mix(in srgb, var(--box-color, var(--ink)) 34%, white);
+}
+
+/* the sheet that's showing: the box's own colour, and pulled a little
+   further down than the one behind it */
+.vex-tab.is-active {
+  background: var(--box-color, var(--ink));
+  color: #fff;
+  padding-bottom: 0.95vh;
+  border-color: var(--box-color, var(--ink));
+}
+
+.vex-tab:focus-visible {
+  outline: 2px solid var(--box-color, var(--ink));
+  outline-offset: 2px;
+}
+
+/* The timer sheet. Sits beside .box-content rather than inside it, so
+   fitBoxText() in script.js — which measures .box-content to size the
+   question text — never sees a video to measure. */
+.vex-timer-pane {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #000;
+}
+.vex-timer-pane[hidden] { display: none; }
+
+/* .box-content sets display:flex, which beats the browser's own
+   [hidden] { display: none } — so the hidden pane has to say it here, at a
+   specificity that wins. Without this the questions stay on screen behind
+   the timer sheet. */
+.box-content[hidden] { display: none; }
+
+.vex-timer-embed { flex: 1 1 auto; min-width: 0; min-height: 0; }
+.vex-timer-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* the dots are the questions' own business — no sense offering them
+   while the timer sheet is in front */
+.box-faq.showing-timer .vex-faq-dots { display: none; }
+
+/* ============================================================
    FAQ bento — one question at a time, cross-fading on a timer
    (see VEX_FAQ_ROTATE_MS in vex.js). Sized for reading from
    across the room, not for reading up close.

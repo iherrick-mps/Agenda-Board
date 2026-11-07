@@ -55,14 +55,28 @@
     </div>
   </div>
 
+  <!-- Two panes behind one set of binder tabs: the rotating questions, and
+       the match timer video. Only one is ever in the box at a time. -->
   <div class="agenda-box box-faq" id="box-faq">
-    <span class="box-label">FAQ</span>
-    <div class="box-content">
+    <span class="box-label" id="vex-faq-label">FAQ</span>
+
+    <div class="vex-tabs" id="vex-faq-tabs" role="tablist" aria-label="FAQ or timer">
+      <button type="button" class="vex-tab is-active" data-pane="faq"
+              role="tab" aria-selected="true" aria-controls="vex-faq-pane">FAQ</button>
+      <button type="button" class="vex-tab" data-pane="timer"
+              role="tab" aria-selected="false" aria-controls="vex-timer-pane">Timer</button>
+    </div>
+
+    <div class="box-content" id="vex-faq-pane" role="tabpanel">
       <div class="vex-faq" id="vex-faq">
         <div class="vex-faq-q" id="vex-faq-q">&hellip;</div>
         <div class="vex-faq-a" id="vex-faq-a"></div>
         <div class="vex-faq-dots" id="vex-faq-dots"></div>
       </div>
+    </div>
+
+    <div class="vex-timer-pane" id="vex-timer-pane" role="tabpanel" hidden>
+      <div class="vex-timer-embed" id="vex-timer-embed"></div>
     </div>
   </div>
 
