@@ -27,33 +27,82 @@ const VEX_NEXT_COMPETITION_LABEL = 'January 15';
 const VEX_SESSION_END = '16:00';   // 4:00 PM
 const VEX_SESSION_LABEL = 'VEX';   // renders as "VEX ends in ..."
 
-/* ---- SCRUM board stages (columns) — rows are VEX_TEAMS above.
+/* ---- SCRUM board columns — rows are VEX_TEAMS above.
 
-   A stage is either a plain label or { name, note }, where the note says
-   what has to be true to tick it off. Only stages whose bar is something
-   other than "we did this" need one; the note shows on hover over that
-   column's header, so a stage that has to be *earned* can say so without
-   taking a second line away from every other column. ---- */
+   Every column carries a stable `id`, and progress is stored under that id
+   rather than under the column's position. That is the whole point of the
+   id: columns get renamed, reordered and dropped as the season changes, and
+   an index-keyed store would silently hand one column's ticks to whichever
+   column later took its slot.
+
+   A column is one of two kinds:
+     type 'check' (the default) — the started/done pair of boxes.
+     type 'score'               — a number typed straight in. It counts for
+                                  no progress; it just records the team's
+                                  best and crowns whoever is highest.
+
+   `note` is what has to be true to tick the column off, shown on hover over
+   its header. Only columns whose bar is something other than "we did this"
+   need one. ---- */
 const VEX_SCRUM_STAGES = [
-  'Build Drivetrain',
-  'Build Scoring Mechanism',
-  'Iterating on Scoring Mechanism',
-  'Full Team Practicing',
-  'Developing Autonomous',
+  { id: 'drivetrain', name: 'Drivetrain' },
+  { id: 'scoring',    name: 'Scoring Mechanism' },
   {
+    id: 'auto30',
+    name: 'Score 30 Autonomous Pts',
+    note: 'Ticked off when the team can score 30 points in the autonomous period.'
+  },
+  {
+    id: 'driver30',
+    name: 'Score 30 Driver Pts',
+    note: 'Ticked off when the team can score 30 points in a 60-second driver run.'
+  },
+  {
+    id: 'score100',
     name: 'Score 100 pts',
     note: 'Ticked off when the team can score 100 points in a 60-second driver run.'
   },
+  {
+    id: 'highScore',
+    name: 'High Score',
+    type: 'score',
+    note: "The team's best score so far. The highest score on the board wears the crown."
+  },
 ];
 
-// a stage may be a bare string or { name, note } — these are the only two
-// places that care which
+/* The shape this board stored before columns had ids: one array slot per
+   column, in the order the columns stood in then. Read once, to move an
+   existing board onto the id-keyed shape — index 2 was "Iterating on Scoring
+   Mechanism", which no longer exists, and indexes 3 and 4 were "Full Team
+   Practicing" and "Developing Autonomous", which are now the two 30-point
+   columns and have swapped places. */
+const VEX_SCRUM_LEGACY_IDS = [
+  'drivetrain',   // 0: Build Drivetrain
+  'scoring',      // 1: Build Scoring Mechanism
+  null,           // 2: Iterating on Scoring Mechanism — dropped
+  'driver30',     // 3: Full Team Practicing
+  'auto30',       // 4: Developing Autonomous
+  'score100',     // 5: Score 100 pts
+];
+
+// a column may be written bare or as an object — these are the only places
+// that care which
+function vexStageId(stage) {
+  return typeof stage === 'string' ? stage : (stage && stage.id) || '';
+}
 function vexStageName(stage) {
   return typeof stage === 'string' ? stage : (stage && stage.name) || '';
 }
 function vexStageNote(stage) {
   return typeof stage === 'string' ? '' : (stage && stage.note) || '';
 }
+function vexStageType(stage) {
+  return (typeof stage === 'object' && stage && stage.type) || 'check';
+}
+function vexCheckStageIds() {
+  return VEX_SCRUM_STAGES.filter(st => vexStageType(st) === 'check').map(vexStageId);
+}
+
 const VEX_SCRUM_KEY = 'agendaBoard.vexScrum';
 const VEX_SCRUM_MAX_SPARKLES = 14; // sparkle count at 100% complete
 // each team gets its own progress-bar/checkbox color, cycling through
@@ -349,11 +398,21 @@ function initVexClockOverride() {
    localStorage, with a per-row progress-bar fill + intensity-scaled
    sparkles as more of that team's stages get checked off ---------- */
 
-// Each stage now holds one of three values rather than a boolean:
-//   0 = not started, 1 = in progress, 2 = finished
-// reads saved state and reshapes it to exactly match the current
-// VEX_TEAMS/VEX_SCRUM_STAGES lists (new teams start empty; removed
-// teams' old data is just ignored, not deleted from storage)
+/* A checkbox column holds one of three values: 0 = not started,
+   1 = in progress, 2 = finished. The board's very first shape stored a
+   bare boolean, which reads as finished. */
+function vexStageValue(v) {
+  if (v === true) return 2;
+  return (v === 1 || v === 2) ? v : 0;
+}
+
+/* Reads saved state and reshapes it to exactly match the current team and
+   column lists. New teams and new columns start empty; data belonging to a
+   team or column that no longer exists is ignored rather than deleted, so
+   putting a dropped column back brings its ticks back with it.
+
+   A row is { stages: { <columnId>: 0|1|2 }, highScore: number|null }. An
+   array is the pre-id shape and gets mapped through VEX_SCRUM_LEGACY_IDS. */
 function vexLoadScrumState() {
   let saved = {};
   try {
@@ -363,27 +422,68 @@ function vexLoadScrumState() {
 
   const state = {};
   VEX_TEAMS.forEach(t => {
-    const existing = Array.isArray(saved[t.name]) ? saved[t.name] : [];
-    state[t.name] = VEX_SCRUM_STAGES.map((_, i) => {
-      const v = existing[i];
-      if (v === true) return 2;          // migrate old boolean "checked" to finished
-      if (v === 1 || v === 2) return v;
-      return 0;
-    });
+    const prev = saved[t.name];
+    const stages = {};
+    let highScore = null;
+
+    if (Array.isArray(prev)) {
+      VEX_SCRUM_LEGACY_IDS.forEach((id, i) => {
+        if (id) stages[id] = vexStageValue(prev[i]);
+      });
+    } else if (prev && typeof prev === 'object') {
+      const src = prev.stages && typeof prev.stages === 'object' ? prev.stages : {};
+      Object.keys(src).forEach(id => { stages[id] = vexStageValue(src[id]); });
+      highScore = vexScoreValue(prev.highScore);
+    }
+
+    // only the columns on the board today end up in the row
+    const row = { stages: {}, highScore };
+    vexCheckStageIds().forEach(id => { row.stages[id] = stages[id] || 0; });
+    state[t.name] = row;
   });
   return state;
+}
+
+// a high score is a whole number of points, or null for "not set yet"
+function vexScoreValue(raw) {
+  const n = Number(raw);
+  if (raw === null || raw === undefined || raw === '' || !Number.isFinite(n) || n < 0) return null;
+  return Math.round(n);
 }
 
 function vexSaveScrumState(state) {
   try { localStorage.setItem(VEX_SCRUM_KEY, JSON.stringify(state)); } catch (e) { /* storage disabled */ }
 }
 
-// in-progress stages earn half credit, so a row's fill creeps forward
-// as work starts rather than only jumping when a stage is finished
-function vexScrumPercent(rowState) {
-  if (!rowState || !rowState.length) return 0;
-  const earned = rowState.reduce((sum, v) => sum + (v === 2 ? 1 : v === 1 ? 0.5 : 0), 0);
-  return Math.round((earned / rowState.length) * 100);
+/* In-progress columns earn half credit, so a row's fill creeps forward as
+   work starts rather than only jumping when a column is finished. Only the
+   checkbox columns count — High Score is a record, not a rung on the ladder,
+   and a team with a big number shouldn't read as further along for it. */
+function vexScrumPercent(row) {
+  const ids = vexCheckStageIds();
+  if (!row || !row.stages || !ids.length) return 0;
+  const earned = ids.reduce((sum, id) => {
+    const v = row.stages[id];
+    return sum + (v === 2 ? 1 : v === 1 ? 0.5 : 0);
+  }, 0);
+  return Math.round((earned / ids.length) * 100);
+}
+
+/* Whoever is top of the High Score column, as a Set so a tie crowns every
+   team that reached it. A board with no scores yet crowns nobody — zero is
+   not a lead. */
+function vexHighScoreLeaders(state) {
+  let best = 0;
+  VEX_TEAMS.forEach(t => {
+    const v = state[t.name] && state[t.name].highScore;
+    if (typeof v === 'number' && v > best) best = v;
+  });
+  const leaders = new Set();
+  if (best <= 0) return leaders;
+  VEX_TEAMS.forEach(t => {
+    if (state[t.name] && state[t.name].highScore === best) leaders.add(t.name);
+  });
+  return leaders;
 }
 
 // (re)fills a row's sparkle layer — more sparkles, bigger and brighter,
@@ -445,10 +545,11 @@ function initVexScrumBoard() {
     headName.textContent = vexStageName(stage);
     head.appendChild(headName);
 
-    // tells the room which of the two boxes below is which
+    // tells the room which of the two boxes below is which; a score column
+    // has no boxes, so it says what the number in them means instead
     const headSub = document.createElement('span');
     headSub.className = 'vex-scrum-head-sub';
-    headSub.textContent = 'started \u00B7 done';
+    headSub.textContent = vexStageType(stage) === 'score' ? 'best so far' : 'started \u00B7 done';
     head.appendChild(headSub);
 
     tableEl.appendChild(head);
@@ -460,6 +561,17 @@ function initVexScrumBoard() {
     const percent = vexScrumPercent(state[teamName]);
     refs.fillEl.style.setProperty('--fill-percent', `${percent}%`);
     vexRenderSparkles(refs.sparkleEl, percent, refs.color);
+  }
+
+  /* The crown is a board-wide answer, not a row-wide one: one team's new
+     score can take it off another team. So every score edit repaints all of
+     them rather than just the row that changed. */
+  function paintCrowns() {
+    const leaders = vexHighScoreLeaders(state);
+    VEX_TEAMS.forEach(t => {
+      const refs = rowRefs[t.name];
+      if (refs && refs.crownEl) refs.crownEl.hidden = !leaders.has(t.name);
+    });
   }
 
   VEX_TEAMS.forEach((team, rowIdx) => {
@@ -482,7 +594,7 @@ function initVexScrumBoard() {
     sparkleLayer.style.gridColumn = '1 / -1';
     tableEl.appendChild(sparkleLayer);
 
-    rowRefs[team.name] = { fillEl: fill, sparkleEl: sparkleLayer, color };
+    rowRefs[team.name] = { fillEl: fill, sparkleEl: sparkleLayer, color, crownEl: null };
 
     // team number on top, that team's roster underneath it — this is
     // where the old VEX Teams bento's names live now
@@ -495,6 +607,16 @@ function initVexScrumBoard() {
     const labelName = document.createElement('span');
     labelName.className = 'vex-scrum-team-name';
     labelName.textContent = team.name;
+
+    // worn by whoever tops the High Score column; hidden until someone does
+    const crown = document.createElement('span');
+    crown.className = 'vex-scrum-crown';
+    crown.textContent = '\u{1F451}';
+    crown.title = 'Highest score on the board';
+    crown.hidden = true;
+    labelName.appendChild(crown);
+    rowRefs[team.name].crownEl = crown;
+
     label.appendChild(labelName);
 
     if (team.note) {
@@ -507,7 +629,36 @@ function initVexScrumBoard() {
     tableEl.appendChild(label);
 
     VEX_SCRUM_STAGES.forEach((stage, colIdx) => {
-      const value = state[team.name][colIdx];
+      const stageId = vexStageId(stage);
+
+      if (vexStageType(stage) === 'score') {
+        const scoreCell = document.createElement('div');
+        scoreCell.className = 'vex-scrum-cell vex-scrum-score';
+        scoreCell.style.gridRow = String(gridRow);
+        scoreCell.style.gridColumn = String(colIdx + 2);
+
+        const scoreInput = document.createElement('input');
+        scoreInput.type = 'number';
+        scoreInput.min = '0';
+        scoreInput.step = '1';
+        scoreInput.className = 'vex-scrum-score-input';
+        scoreInput.placeholder = '\u2014';
+        scoreInput.value = state[team.name].highScore === null ? '' : String(state[team.name].highScore);
+        scoreInput.dataset.team = team.name;
+        scoreInput.dataset.score = stageId;
+        scoreInput.setAttribute('aria-label', `${team.name} \u2014 ${vexStageName(stage)}`);
+        scoreInput.style.setProperty('--team-color', color);
+        // the bento behind this takes a click as "blow me up to full screen",
+        // and a double-click as fullscreen — neither is what typing wants
+        scoreInput.addEventListener('click', (e) => e.stopPropagation());
+        scoreInput.addEventListener('dblclick', (e) => e.stopPropagation());
+
+        scoreCell.appendChild(scoreInput);
+        tableEl.appendChild(scoreCell);
+        return;
+      }
+
+      const value = state[team.name].stages[stageId];
 
       const cell = document.createElement('div');
       cell.className = 'vex-scrum-cell vex-scrum-check';
@@ -528,7 +679,7 @@ function initVexScrumBoard() {
         checkbox.checked = kind === 'wip' ? value >= 1 : value === 2;
         checkbox.setAttribute('aria-label', `${team.name} \u2014 ${vexStageName(stage)} \u2014 ${what}`);
         checkbox.dataset.team = team.name;
-        checkbox.dataset.stage = String(colIdx);
+        checkbox.dataset.stage = stageId;
         checkbox.dataset.kind = kind;
         checkbox.style.accentColor = color;
 
@@ -542,15 +693,31 @@ function initVexScrumBoard() {
     paintRow(team.name);
   });
 
+  paintCrowns();
+
   tableEl.addEventListener('change', (e) => {
     const cb = e.target;
-    if (!(cb instanceof HTMLInputElement) || cb.type !== 'checkbox') return;
-    const team = cb.dataset.team;
-    const stageIdx = Number(cb.dataset.stage);
-    const kind = cb.dataset.kind;
-    if (!team || Number.isNaN(stageIdx) || !state[team]) return;
+    if (!(cb instanceof HTMLInputElement)) return;
 
-    let value = state[team][stageIdx];
+    // a typed high score — store it, echo back what was actually stored
+    // (blank for anything that isn't a score), then re-crown the board
+    if (cb.dataset.score) {
+      const scoreTeam = cb.dataset.team;
+      if (!scoreTeam || !state[scoreTeam]) return;
+      state[scoreTeam].highScore = vexScoreValue(cb.value.trim());
+      cb.value = state[scoreTeam].highScore === null ? '' : String(state[scoreTeam].highScore);
+      vexSaveScrumState(state);
+      paintCrowns();
+      return;
+    }
+
+    if (cb.type !== 'checkbox') return;
+    const team = cb.dataset.team;
+    const stageId = cb.dataset.stage;
+    const kind = cb.dataset.kind;
+    if (!team || !stageId || !state[team]) return;
+
+    let value = state[team].stages[stageId];
     if (kind === 'wip') {
       // unticking "started" abandons the stage entirely, done included
       value = cb.checked ? Math.max(value, 1) : 0;
@@ -558,7 +725,7 @@ function initVexScrumBoard() {
       // unticking "done" drops back to in progress, not to nothing
       value = cb.checked ? 2 : 1;
     }
-    state[team][stageIdx] = value;
+    state[team].stages[stageId] = value;
     vexSaveScrumState(state);
 
     // re-sync both boxes in this cell from the single source of truth,

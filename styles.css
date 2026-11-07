@@ -2382,6 +2382,57 @@ body.board-page {
   color: #7b858e;
 }
 
+/* The crown for whoever tops the High Score column. Sits inline after the
+   team number, so it rides the same white outline the name has and stays
+   legible once the row's progress fill slides underneath. A tie crowns
+   everyone who reached the top score. */
+.vex-scrum-crown {
+  margin-left: 0.35em;
+  font-size: 0.95em;
+  line-height: 1;
+  /* colour emoji shouldn't take the text outline — it muddies the glyph */
+  text-shadow: none;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}
+.vex-scrum-crown[hidden] { display: none; }
+
+/* The High Score column: a number typed straight into the row rather than a
+   pair of boxes. Transparent so the team's progress fill reads through it,
+   with the team's own colour picked up on focus the way its checkboxes do. */
+.vex-scrum-score { justify-content: center; }
+
+.vex-scrum-score-input {
+  width: 78%;
+  max-width: 5.5em;
+  padding: 0.25em 0.3em;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(0.72rem, 1.25vw, 1rem);
+  color: inherit;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(22, 32, 43, 0.22);
+  border-radius: 5px;
+}
+
+.vex-scrum-score-input::placeholder { color: #9aa4ad; font-weight: 600; }
+
+.vex-scrum-score-input:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--team-color, #38bdf8);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--team-color, #38bdf8) 40%, transparent);
+}
+
+/* spinners steal width the number needs, and nobody nudges a match score
+   one point at a time */
+.vex-scrum-score-input::-webkit-outer-spin-button,
+.vex-scrum-score-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.vex-scrum-score-input[type="number"] { -moz-appearance: textfield; }
+
 /* two boxes per stage: left = started (in progress), right = finished */
 .vex-scrum-check { justify-content: center; gap: 0.5em; }
 .vex-scrum-mark { display: flex; align-items: center; cursor: pointer; }
