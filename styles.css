@@ -2332,12 +2332,16 @@ body.board-page {
 }
 
 .vex-scrum-team {
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0.1em;
+  /* number + roster in one column, crown beside them in its own slot */
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25em;
   line-height: 1.1;
   color: #1c242b;
+  /* the crown is sized in cqh against this cell, so it grows with the row
+     and can never be taller than the row it sits in */
+  container-type: size;
   /* the row's progress fill slides in behind this label, and the darker
      team colors swallow dark text. The four 1px offsets draw a hard
      white outline; the two blurred layers add a soft halo so the label
@@ -2349,6 +2353,18 @@ body.board-page {
     -1px  1px 0 #fff,
      0 0 3px #fff,
      0 0 6px rgba(255, 255, 255, 0.85);
+}
+
+/* the stacked half of the cell — everything except the crown */
+.vex-scrum-team-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.1em;
+  /* lets the roster wrap rather than shove the crown out of the cell on
+     the one row that's wearing it */
+  min-width: 0;
 }
 
 .vex-scrum-team-name {
@@ -2386,15 +2402,70 @@ body.board-page {
    team number, so it rides the same white outline the name has and stays
    legible once the row's progress fill slides underneath. A tie crowns
    everyone who reached the top score. */
+/* The crown for whoever tops the High Score column — meant to be seen from
+   the back of the room, so it is as big as the row will take.
+
+   It has its own slot in the cell rather than hanging off the end of the
+   team number. The first column is narrow, and a crown big enough to read
+   from the back of the room, hung off "92120C", covers that team's own
+   roster — so instead the number and roster stack together on the left and
+   the crown stands beside them, centred on the row. Sized in cqh against
+   the cell, which is exactly one row tall, so it can never reach the team
+   above or below however big the board gets. */
 .vex-scrum-crown {
-  margin-left: 0.35em;
-  font-size: 0.95em;
+  flex: 0 0 auto;
+  /* sized off the row (see container-type above), so it is as tall as the
+     row allows and can never reach the team above or below */
+  font-size: min(64cqh, 3.4rem);
   line-height: 1;
-  /* colour emoji shouldn't take the text outline — it muddies the glyph */
+  pointer-events: none;
+  /* colour emoji shouldn't take the label's white text outline — it muddies
+     the glyph and fights the gold */
   text-shadow: none;
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+  animation: vex-crown-breathe 2.6s ease-in-out infinite;
 }
+/* display:none, not visibility — an uncrowned row must not reserve the slot */
 .vex-scrum-crown[hidden] { display: none; }
+
+/* Breathing gold. The transform is repeated in full on both keyframes
+   because a keyframe replaces the whole property — dropping the translate
+   or the tilt on one of them would make the crown jump rather than pulse. */
+@keyframes vex-crown-breathe {
+  0%, 100% {
+    transform: rotate(20deg) scale(1);
+    filter: drop-shadow(0 0 2px rgba(255, 214, 102, 0.7))
+            drop-shadow(0 0 7px rgba(255, 183, 3, 0.45))
+            drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  }
+  50% {
+    transform: rotate(20deg) scale(1.09);
+    filter: drop-shadow(0 0 7px rgba(255, 224, 130, 1))
+            drop-shadow(0 0 18px rgba(255, 183, 3, 0.9))
+            drop-shadow(0 0 30px rgba(255, 150, 0, 0.55))
+            drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  }
+}
+
+/* a board left up all day shouldn't pulse at anyone who asked it not to —
+   the crown stays big, tilted and gold, it just holds still */
+@media (prefers-reduced-motion: reduce) {
+  .vex-scrum-crown {
+    animation: none;
+    transform: rotate(20deg);
+    filter: drop-shadow(0 0 5px rgba(255, 214, 102, 0.9))
+            drop-shadow(0 0 14px rgba(255, 183, 3, 0.6))
+            drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  }
+}
+
+/* a binary column has one box rather than a pair, so it centres on its own */
+.vex-scrum-check.is-binary { gap: 0; }
+
+/* A derived column is read-only — it answers off the team's High Score. Keep
+   the box looking like the others rather than greyed out: it is reporting a
+   fact, not refusing input, and a disabled-looking tick reads as broken. */
+.vex-scrum-check.is-derived .vex-scrum-mark { cursor: default; }
+.vex-scrum-check.is-derived input[type="checkbox"]:disabled { opacity: 1; cursor: default; }
 
 /* The High Score column: a number typed straight into the row rather than a
    pair of boxes. Transparent so the team's progress fill reads through it,
