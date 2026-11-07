@@ -24,7 +24,9 @@
 
 <div class="board-grid vex-grid" id="board-grid">
 
-  <div class="agenda-box box-clock">
+  <!-- Break is the club's own stretch of the morning, so the analog clock
+       draws it as the rainbow wedge (see paintAnalogClock in script.js) -->
+  <div class="agenda-box box-clock" data-clock-rainbow-period="Break">
     <div class="clock-status" id="clock-status">
       <span class="status-label" id="clock-status-label">Loading&hellip;</span>
       <span class="status-value" id="clock-status-value">&mdash;</span>

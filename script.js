@@ -318,6 +318,19 @@ async function initClock() {
     const scheduleData = bells[scheduleKey];
     if (!scheduleData) return;
 
+    /* A page can name one period on the day's schedule as the class's own —
+       VEX's Break — and the analog clock draws it as the rainbow wedge, the
+       same mark the agenda board gives game time. Named on .box-clock as
+       data-clock-rainbow-period; a name that isn't on today's schedule (every
+       weekday, for Break) simply finds nothing and draws nothing. */
+    const rainbowName = clockBox?.dataset.clockRainbowPeriod;
+    const rainbowPeriod = rainbowName
+      ? scheduleData.periods.find(p => p.name === rainbowName)
+      : null;
+    const rainbowRange = rainbowPeriod
+      ? { startMin: hhmmToMinutes(rainbowPeriod.start), endMin: hhmmToMinutes(rainbowPeriod.end) }
+      : null;
+
     const { current, next } = findCurrentAndNext(scheduleData.periods, nowMin);
 
     if (current) {
@@ -326,7 +339,8 @@ async function initClock() {
       labelEl.textContent = `${current.name} ends in`;
       valueEl.textContent = fmtCountdown(remaining);
       watchBell(nowMin, hhmmToMinutes(current.end), `${pt.isoDate}|${current.end}`);
-      paintAnalogClock(pt, { name: current.name, startMin: hhmmToMinutes(current.start), endMin: hhmmToMinutes(current.end) });
+      paintAnalogClock(pt, { name: current.name, startMin: hhmmToMinutes(current.start), endMin: hhmmToMinutes(current.end) },
+                       null, rainbowRange);
     } else if (next) {
       const until = hhmmToMinutes(next.start) - nowMin;
       statusEl.className = 'clock-status not-in-session';
@@ -336,7 +350,8 @@ async function initClock() {
       // the gap since the last bell, as its own (amber) chunk with a countdown
       const ended = scheduleData.periods.map(p => hhmmToMinutes(p.end)).filter(e => e <= nowMin);
       paintAnalogClock(pt, { name: 'Passing', startMin: ended.length ? Math.max(...ended) : null,
-                             endMin: hhmmToMinutes(next.start), next: next.name });
+                             endMin: hhmmToMinutes(next.start), next: next.name },
+                       null, rainbowRange);
     } else {
       statusEl.className = 'clock-status not-in-session';
       labelEl.textContent = 'School day is over';
@@ -508,8 +523,10 @@ function fitCaptionLine(el, availWidth, maxPx) {
   el.style.fontSize = `${Math.max(6, Math.min(maxPx, Math.floor(100 * availWidth / wide)))}px`;
 }
 
-// period: { name, startMin, endMin } while something is in session, else null
-function paintAnalogClock(pt, period, waiting) {
+/* period: { name, startMin, endMin } while something is in session, else null.
+   rainbowRange: { startMin, endMin } for a stretch of the day the class owns —
+   see the wedge below. Omitted on pages that don't name one. */
+function paintAnalogClock(pt, period, waiting, rainbowRange) {
   const box = document.querySelector('.box-clock');
   if (!box) return;
   const on = clockType() === 'analog';
@@ -560,19 +577,40 @@ function paintAnalogClock(pt, period, waiting) {
        last hour is an ordinary chunk on the ring again. */
     drawSpiral(spiral, chunk ? 0 : remaining, aNow);
 
-    /* Game time is the TAIL of the period: the last however-many minutes before
-       the bell, so the rainbow sits at the far end of the green and the class
-       can see the chunk of the dial that's theirs. Clamped at both ends — it
-       never reaches back past now (time already spent can't be game time) and
-       never past the ring, so a period with more than an hour left draws no
-       wedge yet, the same way its own chunk spirals instead. */
+    /* The rainbow wedge: the stretch of the dial that belongs to the class
+       rather than to the lesson. Two things feed it, and they draw the same
+       way because they mean the same thing to the room.
+
+         - Game time (the agenda board): the TAIL of the current period, its
+           last however-many minutes, so the rainbow sits at the far end of
+           the green.
+         - A named period (VEX's Break, via data-clock-rainbow-period): its
+           own place on the dial, which is usually still ahead — the whole of
+           it once it arrives, and the leading edge of it before that.
+
+       A named period wins where both could apply: on VEX the stored game-time
+       number is whatever the agenda board last put in this device's storage,
+       and it has nothing to do with club.
+
+       Clamped at both ends either way. It never reaches back past now — time
+       already spent can't be anybody's — and never past the ring, so a stretch
+       more than an hour out draws nothing yet and comes into view at the dial's
+       edge as it approaches. The `chunk` guard keeps it off the face entirely
+       while the current period is spiralling, where a wedge on the outer ring
+       would be read against the wrong scale. */
     const gt = currentGameTimeMinutes(pt.isoDate);
-    const gtStart = Math.max(period.endMin - gt, nowMin);
-    const gtSpan = Math.min(period.endMin, nowMin + RING) - gtStart;
-    const showGt = gt > 0 && gtSpan > 0 && chunk;
-    const gtPath = showGt ? analogSector(100, 100, 84, deg(gtStart), deg(gtStart) + gtSpan * 6) : '';
-    gameTime.setAttribute('d', gtPath);
-    gameTimeEdge.setAttribute('d', gtPath);
+    const claim = rainbowRange
+      ? { from: rainbowRange.startMin, to: rainbowRange.endMin }
+      : (gt > 0 ? { from: period.endMin - gt, to: period.endMin } : null);
+
+    let rPath = '';
+    if (claim && chunk) {
+      const from = Math.max(claim.from, nowMin);
+      const span = Math.min(claim.to, nowMin + RING) - from;
+      if (span > 0) rPath = analogSector(100, 100, 84, deg(from), deg(from) + span * 6);
+    }
+    gameTime.setAttribute('d', rPath);
+    gameTimeEdge.setAttribute('d', rPath);
 
     name.textContent = period.name.toUpperCase();
     // the countdown stays (2026-11-05): "ENDS IN 12:34", the same figure the digital clock shows;
