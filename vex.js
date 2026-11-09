@@ -58,12 +58,6 @@ const VEX_SCRUM_STAGES = [
   { id: 'drivetrain', name: 'Drivetrain' },
   { id: 'scoring',    name: 'Scoring Mechanism' },
   {
-    id: 'auto30',
-    name: 'Score 30 Autonomous Pts',
-    type: 'binary',
-    note: 'Ticked off when the team can score 30 points in the autonomous period.'
-  },
-  {
     id: 'driver30',
     name: 'Score 30 Driver Pts',
     type: 'binary',
@@ -82,6 +76,12 @@ const VEX_SCRUM_STAGES = [
     name: 'High Score',
     type: 'score',
     note: "The team's best score so far. The highest score on the board wears the crown."
+  },
+  {
+    id: 'auto30',
+    name: 'Score 30 Autonomous Pts',
+    type: 'binary',
+    note: 'Ticked off when the team can score 30 points in the autonomous period.'
   },
 ];
 
