@@ -22,35 +22,38 @@
       "grade": "7th Grade",
       "weeklyDeliverable": "Turned in Sunday night: your group's Answers page with a bridge photo, the bottles in Tests 1 and 2, and where you added cardboard and why.",
       "workingNow": "Open today's question on Google Classroom and the doc attached to it. Fill in the Answers page with your group and turn it in once at the end of class.",
-      "smartGoal": "By the end of class, we've run Test 2, compared it to Test 1, and turned in our Answers page once.",
+      "smartGoal": "By the end of class, we've run Test 2, compared it to Test 1 with the whole class, and turned in our Answers page once.",
       "contentStandard": "NGSS MS-ETS1-3 — Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each that can be combined into a new solution.",
       "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Test 2: same rules as Test 1 (18 min)",
-        "Compare Test 1 vs. Test 2 (5 min)",
-        "Fill in the Answers page (12 min)",
+        "Roles + post your prediction on the board (4 min)",
+        "Test 2: same rules as Test 1 (16 min)",
+        "Class data: which fix worked best? (6 min)",
+        "Fill in the Answers page (9 min)",
         "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "These two weeks you built a cardboard bridge, tested it, and fixed it. Today you test again and turn in. Monday the class votes on the best bridges for DONUTS."
+      "connections": "These two weeks you built a cardboard bridge, tested it, and fixed it right where it broke. Today you test again, compare your fix with every group's, and turn in once. Monday the class votes on the best bridges for DONUTS."
     },
     "7th Period": {
       "grade": "6th Grade",
       "weeklyDeliverable": "Turned in Sunday night: a photo or short video of your cam toy working, and 1 sentence on how the cam works.",
       "workingNow": "Open the Google Classroom assignment called Cam Toy. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
-      "smartGoal": "By the end of class, my cam toy moves when I turn the pencil, and my video is turned in once.",
+      "smartGoal": "By the end of class, I can predict and measure how high my cam lifts the follower, explain it with the cam words, and turn in my video once.",
       "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Test + fix: does the follower move? (20 min)",
-        "Record a short video (5 min)",
-        "Fill in the Answers page (10 min)",
+        "Predict: how high will it lift? (3 min)",
+        "Test + fix: does the follower move? (14 min)",
+        "Measure the lift in quarter sticks (5 min)",
+        "Pair-to-pair demo: explain your cam (6 min)",
+        "Video + Answers page (7 min)",
         "Turn in on Google Classroom (5 min)"
       ],
-      "connections": "This week you built a cam toy. Today you test it and turn in once. Next week: tensegrity, a structure that seems to float."
+      "connections": "This week you built a cam toy that turns spinning into up-and-down. Today you predict the lift, measure it, explain it to another pair, and turn in once. Next week: tensegrity, a structure that seems to float."
     }
   }
 }

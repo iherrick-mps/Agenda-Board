@@ -1,0 +1,330 @@
+{
+  "title": "Monday Teacher Plan",
+  "note": "Short week: Mon, Thu, Fri only (Tue minimum day, Wed Veterans Day). Expectations Wayground + grade check today. One turn-in each: the exit ticket. Friday is your observation.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Juice Week, Day 1: plan your paddle-hit juice",
+      "goal": "By the end of class, I can explain what juice is and plan the juice my game shows when the ball hits my paddle.",
+      "bloom": "Understand / Create (plan)",
+      "exitTicket": "What juice will your game show when the ball hits your paddle, and how will it make the player feel?",
+      "prep": [
+        "Create the Google Classroom assignment 'Juice Week' and attach the Day 1 handout; post the exit ticket",
+        "Optional: a 60-second no-juice vs juicy clip (e.g. Block Breaker vs. any juicy breakout) ready to play",
+        "Your live base game open to demo the 'no juice' paddle hit"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Wayground: classroom expectations",
+          "do": "Students take the expectations Wayground.",
+          "why": "Monday routine: predictable start (Maslow: safety).",
+          "tips": [
+            "No review Blooket on Mondays."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review answers + today's goal",
+          "do": "Go over the most-missed expectations, then read the goal: By the end of class, I can explain what juice is and plan the juice my game shows when the ball hits my paddle.",
+          "why": "Students know the target.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Grade check",
+          "do": "Infinite Campus, find the overall grade, fill out the Weekly Grade Check-In form.",
+          "why": "Weekly self-monitoring.",
+          "tips": [
+            "Keep grades private.",
+            "Below 70%: regrade form + Tuesday tutoring 3:15-4:00.",
+            "Exit tickets can't be redone; missing work is accepted late for full credit."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "This week and the points",
+          "do": "Mon plan, Thu build, Fri play + DONUTS vote + turn in once. Show the points: 55 turned in, 15 boxes, 15 juice words, 15 juice is live.",
+          "why": "Safety first: they see how to get 85 even if the game breaks.",
+          "tips": [
+            "Say it plainly: Friday's vote is for the best GAME, so juice is how you win it."
+          ]
+        },
+        {
+          "min": 7,
+          "title": "Mini-lesson: juice, revisited",
+          "do": "Show the no-juice vs juice picture (or clip). Define juice, feedback, responsive, player action. Key rule: delete the juice and the game still works.",
+          "why": "I do: shared vocabulary before design.",
+          "tips": [
+            "Ask: 'Did the rules change between the two?' (No, only the feel.)",
+            "Mention the Composite tie: one command, every brick blinks."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "We do: rate the paddle hit",
+          "do": "Everyone plays their live game 1 minute, thumbs 1-5 on how much the paddle hit feels like it matters. Partners name what the game shows on a hit.",
+          "why": "Students feel the problem before they solve it.",
+          "tips": [
+            "Answer: nothing new happens; the ball just turns around.",
+            "10-2: turn and talk here."
+          ]
+        },
+        {
+          "min": 11,
+          "title": "You do: plan the juice",
+          "do": "At least 2 kinds of juice on the paddle hit, with color and duration. Say it out loud to a partner; partner checks the rules didn't change.",
+          "why": "Design first; Copilot builds Thursday.",
+          "tips": [
+            "Stuck: flash yellow + squash for a quarter second.",
+            "Redirect anything that changes speed/score: that's a mechanic, not juice.",
+            "Sound = Future Engineer only, headphones first."
+          ]
+        },
+        {
+          "min": 7,
+          "title": "Exit ticket",
+          "do": "Typed on Google Classroom with frames.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: 2 named effects + color/duration + a 'because' about feedback/responsiveness."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Plans that change the rules (faster ball, more points): steer back to the look.",
+        "Students who can't load their live game: hard refresh, then the base game link.",
+        "Copy-paste plans: ask them to say it out loud in their own words."
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "Cardboard Warren Truss: fix day",
+      "goal": "By the end of class, my group has repaired our bridge and added cardboard exactly where it failed, matching our plan.",
+      "bloom": "Analyze / Apply",
+      "exitTicket": "Where did your group add cardboard, and how many bottles do you predict Test 2 will hold?",
+      "prep": [
+        "Handout printed, one per student; exit ticket posted",
+        "Bridges with Test 1 X marks handed back to table groups",
+        "Cardboard scraps, glue sticks, scissors per table",
+        "Labels/masking for drying (no tape on the bridge)"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Wayground: classroom expectations",
+          "do": "Students take the expectations Wayground.",
+          "why": "Monday routine: predictable start (Maslow: safety).",
+          "tips": [
+            "No review Blooket on Mondays."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review answers + today's goal",
+          "do": "Go over the most-missed expectations, then read the goal: By the end of class, my group has repaired our bridge and added cardboard exactly where it failed, matching our plan.",
+          "why": "Students know the target.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Grade check",
+          "do": "Infinite Campus, find the overall grade, fill out the Weekly Grade Check-In form.",
+          "why": "Weekly self-monitoring.",
+          "tips": [
+            "Keep grades private.",
+            "Below 70%: regrade form + Tuesday tutoring 3:15-4:00.",
+            "Exit tickets can't be redone; missing work is accepted late for full credit."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "This week and the points",
+          "do": "Mon fix, Thu finish + check, Fri Test 2 and turn in once.",
+          "why": "Predictable short week.",
+          "tips": []
+        },
+        {
+          "min": 2,
+          "title": "Roles by birthday",
+          "do": "Inspector, Cutter, Gluer, Checker. 3: Checker cuts too. 5: two Cutters.",
+          "why": "Complex Instruction: roles with authority.",
+          "tips": [
+            "Checker approves every piece before glue."
+          ]
+        },
+        {
+          "min": 22,
+          "title": "You do: read the X, plan, fix",
+          "do": "Inspector names the failure (1 joint, 2 bent strip, 3 sagged deck, 4 leaned). Repair, dot up to 6 fix spots, Checker approves, cut, glue face to face, tug test.",
+          "why": "Analyze the failure, then apply a targeted fix (MS-ETS1-4).",
+          "tips": [
+            "Halfway: revisit the goal: 'matching our plan'.",
+            "Publicly praise a precise Cutter or a sharp Inspector (assign competence).",
+            "Edge-glued pieces will fall off: push gussets/tabs."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Exit ticket",
+          "do": "Where they added cardboard + Test 2 prediction, with frames.",
+          "why": "One turn-in; prediction sets up Friday.",
+          "tips": [
+            "Full answer names the spot AND ties it to the Test 1 failure."
+          ]
+        },
+        {
+          "min": 2,
+          "title": "Clean up + set to dry",
+          "do": "Bridges to the drying spot with group names.",
+          "why": "Glue needs to set before Thursday.",
+          "tips": []
+        }
+      ],
+      "watchFor": [
+        "Groups adding 10+ pieces: cap is 6 so Test 2 stays fair.",
+        "Fixes not on the X: ask 'Where did it fail?'",
+        "Off-task Gluer: hand them the next piece to hold."
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Cam Toy, Day 1: how cams work + box frame",
+      "goal": "By the end of class, I can explain how a cam turns spinning into up-and-down, and my pair has built the box frame.",
+      "bloom": "Understand / Apply",
+      "exitTicket": "What does a cam do, and where will the cam sit in your frame?",
+      "prep": [
+        "Handout printed; exit ticket posted",
+        "Cardboard, pencils (one per pair for the axle), popsicle sticks, glue sticks, scissors",
+        "A quick demo cam: any cardboard circle with an off-center pencil hole"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Wayground: classroom expectations",
+          "do": "Students take the expectations Wayground.",
+          "why": "Monday routine: predictable start (Maslow: safety).",
+          "tips": [
+            "No review Blooket on Mondays."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review answers + today's goal",
+          "do": "Go over the most-missed expectations, then read the goal: By the end of class, I can explain how a cam turns spinning into up-and-down, and my pair has built the box frame.",
+          "why": "Students know the target.",
+          "tips": [
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Grade check",
+          "do": "Infinite Campus, find the overall grade, fill out the Weekly Grade Check-In form.",
+          "why": "Weekly self-monitoring.",
+          "tips": [
+            "Keep grades private.",
+            "Below 70%: regrade form + Tuesday tutoring 3:15-4:00.",
+            "Exit tickets can't be redone; missing work is accepted late for full credit."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "This week and the points",
+          "do": "Mon frame, Thu cam + follower, Fri test, measure, video, turn in once.",
+          "why": "Predictable short week.",
+          "tips": []
+        },
+        {
+          "min": 6,
+          "title": "Mini-lesson: cams and followers",
+          "do": "Spin your demo cam with a stick resting on it. Vocabulary: cam, axle, follower, off-center.",
+          "why": "I do: see it before building it.",
+          "tips": [
+            "Ask: what happens if the hole is in the exact center? (Nothing moves up and down.)"
+          ]
+        },
+        {
+          "min": 2,
+          "title": "Roles",
+          "do": "Pairs: younger Measurer, older Builder-Checker. 3: middle is Checker.",
+          "why": "Clear jobs, no arguing.",
+          "tips": []
+        },
+        {
+          "min": 19,
+          "title": "You do: box frame",
+          "do": "Strip 1¼ x ¼ stick, tubes running across, folds every ¼ stick, centers by corner-to-corner lines, pencil holes in walls 2 and 4, slot in wall 3, glue tab flat under wall 1.",
+          "why": "Real measurement + geometry (6th wants challenge).",
+          "tips": [
+            "Most common miss: holes at different heights, so the pencil tilts.",
+            "Folds cracking = tubes run the wrong way.",
+            "No tape; poke holes with the pencil, not scissors."
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Exit ticket",
+          "do": "Cam function + where the cam sits, with frames.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: spinning to up-and-down, off-center hole, sits on the pencil under the slot."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Pairs splitting the work so one sits idle: point to the roles table.",
+        "Scissors used to stab holes.",
+        "Pairs that finish early: Future Engineer 'predict the rise'."
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Agenda on the board, goal reviewed after the Wayground and mid-lesson, numbered steps, worked example first, checklists, sentence frames, positive reinforcement, frequent check-ins."
+    ],
+    [
+      "English learners",
+      "Key words with pictures (juice/feedback, cam/follower, gusset), partner talk before writing, two sentence frames, Immersive Reader."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca, large type, steps read aloud, speech-to-text OK, spelling not graded."
+    ],
+    [
+      "ADHD learners",
+      "Short timed chunks with a visual timer, hands-on roles (Cutter, Gluer, Measurer), seating near the demo, discreet redirection, break pass."
+    ],
+    [
+      "IEP / 504",
+      "Extended time; floor version: 8th one juice effect, 7th one fix piece on the X, 6th frame with holes even if not glued; dictated exit tickets; intentional partners; calm-down space."
+    ],
+    [
+      "Advanced",
+      "Future Engineer: 1 KB point."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "8th builds toward a public DONUTS vote Friday; 6th/7th build physical products they test."
+    ],
+    [
+      "Complex Instruction",
+      "Birthday-order roles with real authority; publicly assign competence to precise measurers and sharp inspectors."
+    ],
+    [
+      "Maslow",
+      "Points and floor up front, one turn-in, predictable short-week routine, 'you are not behind'."
+    ],
+    [
+      "Bloom's",
+      "Mon Understand/Plan, Thu Apply/Create, Fri Evaluate."
+    ]
+  ]
+}
