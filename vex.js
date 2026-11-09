@@ -568,6 +568,125 @@ function vexRenderSparkles(layerEl, percent, color) {
   }
 }
 
+/* ============================================================
+   Row complete — the celebration.
+
+   Fires on the transition into 100%, never on arrival at it: a board
+   reopened on Monday with three rows already finished must not throw
+   three parties at an empty room, and paintRow() also runs on the
+   initial build and on every score edit. So the previous percent is
+   remembered per team and the celebration is gated on crossing the
+   line, with the first paint seeding the baseline silently.
+
+   A row can leave 100% again (unticking a box, or a high score edited
+   back down below 80), and crossing back up then celebrates again. That
+   is deliberate: the bar coming off rainbow is the signal that the row
+   is no longer finished, so earning it back should feel the same as
+   earning it the first time.
+   ============================================================ */
+
+const VEX_BURST_PIECES = 70;
+const VEX_BURST_MIN_SIZE = 7;    // px
+const VEX_BURST_MAX_SIZE = 16;   // px
+const VEX_BURST_MIN_DIST = 140;  // px, how far the weakest piece is thrown
+const VEX_BURST_MAX_DIST = 520;  // px, ...and the strongest
+const VEX_SHAKE_MS = 600;        // must match .vex-celebrating in styles.css
+
+function vexPrefersReducedMotion() {
+  try {
+    return window.matchMedia &&
+           window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  } catch (e) { return false; }
+}
+
+/* Confetti thrown outward from one point. Angles are spread evenly around
+   the circle with a little jitter rather than picked at random for each
+   piece: pure randomness clumps, and a burst with a bald patch on one
+   side reads as a glitch. */
+function vexSpawnBurst(layerEl, originX, originY) {
+  if (!layerEl) return;
+  const frag = document.createDocumentFragment();
+  // held onto as they are built: appendChild(frag) empties the fragment,
+  // so asking it what it contained afterwards gets nothing back
+  const pieces = [];
+
+  for (let i = 0; i < VEX_BURST_PIECES; i++) {
+    const piece = document.createElement('span');
+    piece.className = 'vex-burst-piece';
+    const inner = document.createElement('span');
+    inner.className = 'vex-burst-piece-inner';
+    piece.appendChild(inner);
+
+    const angle = (i / VEX_BURST_PIECES) * Math.PI * 2 + (Math.random() - 0.5) * 0.5;
+    const dist = VEX_BURST_MIN_DIST + Math.random() * (VEX_BURST_MAX_DIST - VEX_BURST_MIN_DIST);
+    // squashed vertically so the burst reads as a spray along the row
+    // rather than a perfect circle fighting the shape it came out of
+    const dx = Math.cos(angle) * dist;
+    const dy = Math.sin(angle) * dist * 0.62;
+    const size = VEX_BURST_MIN_SIZE + Math.random() * (VEX_BURST_MAX_SIZE - VEX_BURST_MIN_SIZE);
+    const dur = 1.1 + Math.random() * 0.9;
+
+    piece.style.width = `${size}px`;
+    piece.style.height = `${size * 1.6}px`;
+    piece.style.setProperty('--burst-x', `${originX}px`);
+    piece.style.setProperty('--burst-y', `${originY}px`);
+    piece.style.setProperty('--burst-dx', `${dx}px`);
+    piece.style.setProperty('--burst-dy', `${dy}px`);
+    // heavier pieces fall further after the throw runs out
+    piece.style.setProperty('--burst-fall', `${90 + Math.random() * 240}px`);
+    piece.style.setProperty('--burst-rot', `${(Math.random() - 0.5) * 900}deg`);
+    piece.style.setProperty('--burst-dur', `${dur}s`);
+    piece.style.setProperty('--burst-spin', `${0.5 + Math.random() * 0.8}s`);
+
+    inner.style.background = CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)];
+    inner.style.borderRadius = Math.random() < 0.5 ? '50%' : '2px';
+
+    pieces.push(piece);
+    frag.appendChild(piece);
+  }
+
+  layerEl.appendChild(frag);
+
+  /* Clean up this burst and only this burst. The layer is never emptied
+     wholesale, because two teams can finish within a second of each other
+     and that would cut the first burst off mid-flight. */
+  window.setTimeout(() => {
+    pieces.forEach(el => { if (el.parentNode === layerEl) layerEl.removeChild(el); });
+  }, 2600);
+}
+
+/* Shake the board, not the body: <body> is the scroll container on a
+   narrow screen, and translating it there fights the scroll position
+   and can show a sliver of background down the side. */
+function vexShakeScreen() {
+  const target = document.getElementById('board-grid') || document.body;
+  if (!target) return;
+  target.classList.remove('vex-celebrating');
+  // reading offsetWidth forces the class removal to take effect before
+  // it goes back on, so a second celebration restarts the animation
+  // instead of being swallowed as "already has that class"
+  void target.offsetWidth;
+  target.classList.add('vex-celebrating');
+  window.setTimeout(() => target.classList.remove('vex-celebrating'), VEX_SHAKE_MS + 60);
+}
+
+function vexCelebrateRow(fillEl) {
+  // playChime, not soundBoardChime: the latter pauses every player on the
+  // page first, and club music going silent because a team ticked a box
+  // is a worse trade than the fanfare sharing the room with it.
+  try { playChime('fanfare'); } catch (e) { /* audio unavailable */ }
+
+  if (vexPrefersReducedMotion()) return;
+
+  vexShakeScreen();
+
+  const layer = document.getElementById('vex-burst-layer');
+  if (!layer || !fillEl) return;
+  const r = fillEl.getBoundingClientRect();
+  // the far end of the bar — where the row was just finished
+  vexSpawnBurst(layer, r.right - Math.min(90, r.width * 0.12), r.top + r.height / 2);
+}
+
 function initVexScrumBoard() {
   const tableEl = document.getElementById('vex-scrum-table');
   if (!tableEl || VEX_TEAMS.length === 0) return;
@@ -615,12 +734,27 @@ function initVexScrumBoard() {
     tableEl.appendChild(head);
   });
 
+  /* Set while the board is being built, so the first paint of each row
+     records where that row stands without celebrating it. Cleared once
+     the whole board is up. */
+  let seedingRows = true;
+
   function paintRow(teamName) {
     const refs = rowRefs[teamName];
     if (!refs) return;
     const percent = vexScrumPercent(state[teamName]);
     refs.fillEl.style.setProperty('--fill-percent', `${percent}%`);
     vexRenderSparkles(refs.sparkleEl, percent, refs.color);
+
+    // the rainbow is derived, not stored: it is on exactly while the row
+    // is finished, so a row that comes apart loses it and gets it back on
+    // the way up without anything extra to keep in sync
+    const complete = percent >= 100;
+    refs.fillEl.classList.toggle('is-complete', complete);
+
+    const was = refs.lastPercent;
+    refs.lastPercent = percent;
+    if (!seedingRows && complete && was < 100) vexCelebrateRow(refs.fillEl);
   }
 
   /* The crown is a board-wide answer, not a row-wide one: one team's new
@@ -671,7 +805,7 @@ function initVexScrumBoard() {
     sparkleLayer.style.gridColumn = '1 / -1';
     tableEl.appendChild(sparkleLayer);
 
-    rowRefs[team.name] = { fillEl: fill, sparkleEl: sparkleLayer, color, crownEl: null };
+    rowRefs[team.name] = { fillEl: fill, sparkleEl: sparkleLayer, color, crownEl: null, lastPercent: 0 };
 
     // team number on top, that team's roster underneath it — this is
     // where the old VEX Teams bento's names live now
@@ -796,6 +930,9 @@ function initVexScrumBoard() {
   });
 
   paintCrowns();
+  // every row has recorded its starting percent — from here on, crossing
+  // into 100% is a team finishing in front of the room
+  seedingRows = false;
 
   tableEl.addEventListener('change', (e) => {
     const cb = e.target;

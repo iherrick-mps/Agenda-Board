@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VEX Robotics Club — Robotics &amp; Coding</title>
-<link rel="stylesheet" href="styles.css?v=202611092340">
+<link rel="stylesheet" href="styles.css?v=202611092355">
 </head>
 <body class="board-page">
 
@@ -138,8 +138,13 @@
 </div>
 
 <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+<!-- Its own layer, separate from the Game Mode confetti above: that one is
+     a steady fall that gets cleared wholesale when the mode is switched
+     off, and a row finishing during Game Mode shouldn't wipe it or be
+     wiped by it. -->
+<div class="vex-burst-layer" id="vex-burst-layer" aria-hidden="true"></div>
 
-<script src="script.js?v=202611092340"></script>
-<script src="vex.js?v=202611092340"></script>
+<script src="script.js?v=202611092355"></script>
+<script src="vex.js?v=202611092355"></script>
 </body>
 </html>

@@ -2548,6 +2548,133 @@ body.board-page {
 .vex-scrum-row-even { background-color: rgba(20, 26, 31, 0.028); }
 .vex-scrum-row-odd  { background-color: rgba(20, 26, 31, 0.058); }
 
+/* ---- Row complete: the lasting half of the reward ----
+   The confetti, the shake and the fanfare all fire once and are gone, so
+   a team that finished while the room was looking elsewhere would have
+   nothing to show for it. This is what stays: the team's own color keeps
+   the bar (it's still how you tell the rows apart from the back of the
+   room) with a slow rainbow sheen drifting across the top of it.
+
+   Deliberately faint — `slightly` rainbow-y. The sheen sits at ~22%
+   against the team color, which on the darker team colors reads as a
+   subtle oil-slick shimmer rather than a second, competing stripe. The
+   fill gradient is layered under it, so the rainbow stops exactly where
+   the bar does instead of running the full width of the row. */
+.vex-scrum-fill.is-complete {
+  background-image:
+    /* Starts and ends on the same red so the tile repeats seamlessly —
+       any other end color puts a hard seam everywhere the pattern wraps. */
+    linear-gradient(
+      to right,
+      color-mix(in srgb, #ff5e5e 20%, transparent) 0%,
+      color-mix(in srgb, #ffb347 20%, transparent) 14%,
+      color-mix(in srgb, #ffe066 20%, transparent) 28%,
+      color-mix(in srgb, #6ee7b7 20%, transparent) 43%,
+      color-mix(in srgb, #38bdf8 20%, transparent) 58%,
+      color-mix(in srgb, #a78bfa 20%, transparent) 72%,
+      color-mix(in srgb, #f472b6 20%, transparent) 86%,
+      color-mix(in srgb, #ff5e5e 20%, transparent) 100%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--team-color, #6ee7b7) 78%, transparent) 0%,
+      color-mix(in srgb, var(--team-color, #6ee7b7) 78%, transparent) var(--fill-percent, 0%),
+      transparent var(--fill-percent, 0%),
+      transparent 100%
+    );
+  /* A fixed tile rather than a percentage of the row: at 300% of the row
+     only one or two hues were on screen at a time, so the bar just looked
+     flat blue, then flat green. ~900px puts most of a spectrum across a
+     projector-width row and keeps several hues visible at once, which is
+     what reads as "rainbow" instead of "wrong color". */
+  background-size: 900px 100%, 100% 100%;
+  background-repeat: repeat-x, no-repeat;
+  animation: vex-rainbow-drift 12s linear infinite;
+}
+
+/* Drifts by exactly one tile, so the loop point is invisible. */
+@keyframes vex-rainbow-drift {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 900px 0, 0 0; }
+}
+
+/* ---- Row complete: the one-shot celebration ----
+   A burst layer per page, fixed to the viewport so pieces can fly clear
+   of the row they came from. Pieces are positioned from JS at the
+   finished row's center and thrown outward along their own angle. */
+.vex-burst-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 60;
+}
+
+.vex-burst-piece {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform, opacity;
+  animation: vex-burst-fly var(--burst-dur, 1.5s) cubic-bezier(0.15, 0.6, 0.3, 1) forwards;
+}
+
+.vex-burst-piece-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  animation: confetti-spin var(--burst-spin, 0.9s) linear infinite;
+}
+
+/* Thrown out along --burst-angle, then handed over to gravity: the
+   vertical term grows while the outward one does not, so the arc tips
+   over at the top the way a real throw does rather than travelling in a
+   straight line until it vanishes. */
+@keyframes vex-burst-fly {
+  0% {
+    transform: translate(var(--burst-x), var(--burst-y)) rotate(0deg) scale(0.4);
+    opacity: 1;
+  }
+  15% { opacity: 1; }
+  100% {
+    transform:
+      translate(
+        calc(var(--burst-x) + var(--burst-dx)),
+        calc(var(--burst-y) + var(--burst-dy) + var(--burst-fall))
+      )
+      rotate(var(--burst-rot)) scale(1);
+    opacity: 0;
+  }
+}
+
+/* The shake. Small and short on purpose: this runs on a projector in a
+   room full of people, and anything bigger reads as the display failing
+   rather than as a celebration. */
+.vex-celebrating {
+  animation: vex-screen-shake 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes vex-screen-shake {
+  0%, 100%      { transform: translate(0, 0) rotate(0deg); }
+  10%           { transform: translate(-6px, 3px) rotate(-0.35deg); }
+  20%           { transform: translate(5px, -4px) rotate(0.3deg); }
+  30%           { transform: translate(-7px, -2px) rotate(-0.25deg); }
+  40%           { transform: translate(6px, 3px) rotate(0.3deg); }
+  55%           { transform: translate(-4px, -3px) rotate(-0.2deg); }
+  70%           { transform: translate(3px, 2px) rotate(0.15deg); }
+  85%           { transform: translate(-2px, -1px) rotate(-0.1deg); }
+}
+
+/* Reduced motion: keep the reward, drop the movement. The rainbow stays
+   (it is the permanent marker of a finished row, and a still gradient
+   says the same thing a drifting one does), the confetti and the shake
+   do not happen at all, and the fanfare is untouched — it is sound, not
+   motion, and it is the part that carries across a noisy room. */
+@media (prefers-reduced-motion: reduce) {
+  .vex-scrum-fill.is-complete { animation: none; }
+  .vex-celebrating { animation: none; }
+  .vex-burst-layer { display: none; }
+}
+
 .vex-scrum-sparkles {
   position: relative;
   z-index: 1;

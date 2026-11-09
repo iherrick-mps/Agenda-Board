@@ -158,6 +158,20 @@ const CHIMES = {
     peak: 0.28,
     type: 'triangle',
     partials: [1, 2]
+  },
+  // A team finishing its row on the VEX board. A straight major arpeggio
+  // climbing two octaves: the notes are spaced closer together than they
+  // ring out, so they pile up into one bright major chord instead of
+  // reading as five separate beeps. The third partial is what gives it
+  // the brassy edge a fanfare wants — on a plain sine this lands closer
+  // to a doorbell than a trumpet.
+  fanfare: {
+    notes: [523.25, 659.25, 783.99, 1046.50, 1318.51], // C5 E5 G5 C6 E6
+    spacing: 0.12,
+    decay: 1.2,
+    peak: 0.32,
+    type: 'triangle',
+    partials: [1, 2, 3]
   }
 };
 
