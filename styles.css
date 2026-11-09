@@ -594,23 +594,27 @@ body.board-page {
 
    Timer, Ms. Herrick, and Now Playing keep their exact old footprints
    (6/24 = the old 3/12, and 8/24 = the old 4/12). Clock is halved to
-   3/24 with the month calendar taking the other half. The Help Queue
-   takes over the block the old Connections + SMART Goal boxes had. */
+   3/24 with the month calendar taking the other half.
+
+   The Help Queue and the Due on Sunday / Connections bento trade
+   blocks: the queue is just a code strip and an embed, so it only
+   needs the small 6-col corner up top, while Connections carries real
+   text and takes the big 8x8 block on the right instead. */
 .board-grid.agenda-grid {
   grid-template-columns: repeat(24, 1fr);
   grid-template-areas:
-    "clock clock clock cal cal cal focus focus focus focus focus focus focus focus focus focus focus focus deliver deliver deliver deliver deliver deliver"
-    "clock clock clock cal cal cal focus focus focus focus focus focus focus focus focus focus focus focus deliver deliver deliver deliver deliver deliver"
-    "timer timer timer timer timer timer focus focus focus focus focus focus focus focus focus focus focus focus deliver deliver deliver deliver deliver deliver"
-    "name name name name name name focus focus focus focus focus focus focus focus focus focus focus focus deliver deliver deliver deliver deliver deliver"
-    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
-    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
-    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
-    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
-    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue"
-    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda agenda agenda agenda agenda queue queue queue queue queue queue queue queue";
+    "clock clock clock cal cal cal focus focus focus focus focus focus focus focus focus focus focus focus queue queue queue queue queue queue"
+    "clock clock clock cal cal cal focus focus focus focus focus focus focus focus focus focus focus focus queue queue queue queue queue queue"
+    "timer timer timer timer timer timer focus focus focus focus focus focus focus focus focus focus focus focus queue queue queue queue queue queue"
+    "name name name name name name focus focus focus focus focus focus focus focus focus focus focus focus queue queue queue queue queue queue"
+    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda deliver deliver deliver deliver deliver deliver deliver deliver"
+    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda deliver deliver deliver deliver deliver deliver deliver deliver"
+    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda deliver deliver deliver deliver deliver deliver deliver deliver"
+    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda deliver deliver deliver deliver deliver deliver deliver deliver"
+    "standards standards standards standards standards standards standards standards agenda agenda agenda agenda agenda agenda agenda agenda deliver deliver deliver deliver deliver deliver deliver deliver"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda agenda agenda agenda agenda deliver deliver deliver deliver deliver deliver deliver deliver"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda agenda agenda agenda agenda deliver deliver deliver deliver deliver deliver deliver deliver"
+    "nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying nowplaying agenda agenda agenda agenda agenda agenda agenda agenda deliver deliver deliver deliver deliver deliver deliver deliver";
 }
 
 .agenda-box {
@@ -3156,8 +3160,8 @@ body.board-page {
 /* ============================================================
    In-class Help Queue bento (main agenda board) — the Tutoring
    page's two boxes (join-link banner + live embed) squeezed into
-   one much smaller bento, sitting where Connections and the SMART
-   Goal used to be.
+   one much smaller bento, up in the top-right corner where Due on
+   Sunday / Connections used to sit.
    ============================================================ */
 
 .box-classqueue {
@@ -3413,17 +3417,17 @@ body.board-page {
       "cal"
       "timer"
       "name"
-      "deliver"
+      "queue"
       "standards"
       "agenda"
-      "queue"
+      "deliver"
       "nowplaying";
   }
   .agenda-box { min-height: 140px; padding: 14px 16px; }
   .box-calendar { min-height: 240px; container-type: normal; }
   .cal-mini-head { font-size: 0.9rem; }
   .cal-mini-grid { font-size: 0.85rem; }
-  .box-classqueue { min-height: 420px; }
+  .box-classqueue { min-height: 320px; }
   .box-rot { padding-bottom: 34px; }
   .box-nowplaying { min-height: 220px; }
   .box-content { font-size: 1rem !important; }
