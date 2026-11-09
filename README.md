@@ -165,6 +165,25 @@ Box content is rendered as HTML so that links work. That means a literal tag nam
 
 No build step, no dependencies — it's plain HTML/CSS/JS, so it works as-is on GitHub Pages.
 
+### After changing styles.css or script.js, bump the version
+Every page links its shared assets with a version query —
+`styles.css?v=202611091950` — and `current-day.html` passes the same `v` down
+to whatever page it loads in its iframe. GitHub Pages serves assets with
+`Cache-Control: max-age=600`, and a school network's caching proxy can hold
+them far longer than that, so without this a style change can stay invisible
+on the projector even through a hard refresh.
+
+Bump every one of them at once from this folder:
+
+```sh
+V=$(date -u +%Y%m%d%H%M)
+sed -i -E "s|(styles\.css\?v=)[0-9]+|\1$V|; s|(script\.js\?v=)[0-9]+|\1$V|" *.html
+```
+
+Any new value works as long as it changes; the timestamp just makes it obvious
+when the assets last moved. Forgetting to bump it isn't dangerous — the board
+simply goes back to caching the way it did before.
+
 ## Testing locally
 From this folder: `python3 -m http.server 8000`, then open `http://localhost:8000`. (Opening `index.html` directly by double-clicking won't work — the browser blocks the `fetch()` calls for local files without a server.)
 

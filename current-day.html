@@ -24,7 +24,7 @@
 <div id="board-loading">Loading today&rsquo;s agenda&hellip;</div>
 <iframe id="board-frame" title="Today's agenda" allow="autoplay; fullscreen" allowfullscreen style="display:none;"></iframe>
 
-<script src="script.js"></script>
+<script src="script.js?v=202611091951"></script>
 <script>
   // This page never navigates itself — the address bar always stays on
   // current-day.html, so it's safe to bookmark and safe to refresh at any
@@ -45,15 +45,32 @@
   const loadingEl = document.getElementById('board-loading');
   let shownUrl = null;
 
+  // Cache-busting version, read off this page's own <script src="script.js?v=...">
+  // rather than written out again here, so there is only ever one version
+  // number in the file to bump. Every page this board loads into the iframe
+  // gets it too: without it the browser (or a school network's caching proxy)
+  // happily serves yesterday's agenda.html — and therefore yesterday's
+  // stylesheet link — for the same date+period URL, and a style change stays
+  // invisible on the projector no matter how hard anyone refreshes.
+  const ASSET_V = (function () {
+    const tag = document.querySelector('script[src^="script.js"]');
+    const m = tag && tag.getAttribute('src').match(/[?&]v=([^&]+)/);
+    return m ? m[1] : '';
+  })();
+  const vq = ASSET_V ? `v=${ASSET_V}` : '';
+
   function frameUrl(page) {
     if (page.type === 'agenda') {
       const slug = page.period ? PERIOD_SLUG[page.period] : null;
-      return `agenda.html?date=${page.dateStr}` + (slug ? `&period=${slug}` : '');
+      return `agenda.html?date=${page.dateStr}` + (slug ? `&period=${slug}` : '') +
+             (vq ? `&${vq}` : '');
     }
-    if (page.type === 'overview') return `overview.html?date=${page.dateStr}`;
-    if (page.type === 'vex') return 'vex.html';
-    if (page.type === 'tutoring') return 'tutoring.html';
-    return 'study-hall.html'; // default / fallback
+    if (page.type === 'overview') {
+      return `overview.html?date=${page.dateStr}` + (vq ? `&${vq}` : '');
+    }
+    if (page.type === 'vex') return 'vex.html' + (vq ? `?${vq}` : '');
+    if (page.type === 'tutoring') return 'tutoring.html' + (vq ? `?${vq}` : '');
+    return 'study-hall.html' + (vq ? `?${vq}` : ''); // default / fallback
   }
 
   async function sync() {
