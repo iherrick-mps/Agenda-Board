@@ -20,37 +20,41 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your group's Answers page with a bridge photo, the bottles in Tests 1 and 2, and where you added cardboard and why.",
-      "workingNow": "Open today's question on Google Classroom and the doc attached to it. Follow the steps, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my group's fix is finished and checked against our plan, and the bridge is drying for tomorrow's test.",
-      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
-      "agenda": [
-        "Blooket quiz (5 min)",
-        "Review quiz answers + today's goal (5 min)",
-        "Check the fix against the plan (5 min)",
-        "You do: finish the fix (25 min)",
-        "Exit Ticket: predict Test 2 (5 min)",
-        "Clean up and set the bridge to dry (5 min)"
-      ],
-      "connections": "Monday you added your fix. Today you finish it. Tomorrow is Test 2."
-    },
-    "7th Period": {
-      "grade": "6th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: a photo or short video of your cam toy working, and 1 sentence on how the cam works.",
-      "workingNow": "Open the Google Classroom assignment called Cam Toy. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my pair's cam is on a pencil axle and the follower rides on top of it.",
+      "weeklyDeliverable": "Turned in Sunday night: your group's Answers page with a photo of where your bridge broke, your prediction, the bottles it held when it broke, and why it broke there.",
+      "workingNow": "Open the Google Classroom assignment called Break Test. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group's cardboard fix is on our Test 1 X, every joint passes the tug test, and our bridge is drying for Friday's break test.",
       "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "I do: an off-center cam (5 min)",
-        "You do: cam, axle, follower (27 min)",
-        "Exit Ticket: why off-center? (5 min)",
+        "Roles by birthday (2 min)",
+        "Read your X: what kind of failure? (5 min)",
+        "You do: up to 6 cardboard fix pieces (20 min)",
+        "Tug test every joint (5 min)",
+        "Exit Ticket: where did you add cardboard? (5 min)",
         "Clean up + set to dry (3 min)"
       ],
-      "connections": "Monday you built the frame. Today you add the cam and follower. Tomorrow you test it and turn in."
+      "connections": "Monday you predicted where your bridge will break. Today you add cardboard right at your Test 1 X so it is as strong as you can make it. Tomorrow: the break test."
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "weeklyDeliverable": "Turned in Sunday night: your group's Answers page with a photo of where your bridge broke, your prediction, the bottles it held when it broke, and why it broke there.",
+      "workingNow": "Open the Google Classroom assignment called Break Test. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my group has added up to 4 more popsicle sticks where we predicted the break, and our bridge is drying for Friday's break test.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "agenda": [
+        "Blooket quiz (5 min)",
+        "Review quiz answers + today's goal (5 min)",
+        "Roles by birthday (2 min)",
+        "Squeezed or stretched? Pick your spots (5 min)",
+        "You do: up to 4 sticks, flat + wrapped (20 min)",
+        "Tug test every joint (5 min)",
+        "Exit Ticket: where did your sticks go, and why? (5 min)",
+        "Clean up + set to dry (3 min)"
+      ],
+      "connections": "Monday you predicted where your bridge will break. Today you make that spot stronger with up to 4 more popsicle sticks. Tomorrow: the break test, until it fails."
     }
   }
 }

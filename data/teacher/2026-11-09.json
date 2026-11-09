@@ -1,6 +1,6 @@
 {
   "title": "Monday Teacher Plan",
-  "note": "Short week: Mon, Thu, Fri only (Tue minimum day, Wed Veterans Day). Expectations Wayground + grade check today. One turn-in each: the exit ticket. Friday is your observation.",
+  "note": "Short week: Mon, Thu, Fri only. Expectations Wayground + grade check today. One turn-in each: the exit ticket. 6th/7th read + predict today; Friday (your observation) they break their bridges.",
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
@@ -101,15 +101,14 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "topic": "Cardboard Warren Truss: fix day",
-      "goal": "By the end of class, my group has repaired our bridge and added cardboard exactly where it failed, matching our plan.",
-      "bloom": "Analyze / Apply",
-      "exitTicket": "Where did your group add cardboard, and how many bottles do you predict Test 2 will hold?",
+      "topic": "Breaking Things on Purpose: reading + break prediction",
+      "goal": "By the end of class, I can explain tension and compression and use them to predict where my group's bridge will break on Friday.",
+      "bloom": "Understand / Analyze",
+      "exitTicket": "Where will your bridge break first on Friday, how many bottles will it hold, and why?",
       "prep": [
-        "Handout printed, one per student; exit ticket posted",
-        "Bridges with Test 1 X marks handed back to table groups",
-        "Cardboard scraps, glue sticks, scissors per table",
-        "Labels/masking for drying (no tape on the bridge)"
+        "Handout printed (4 pages), one per student; Google Classroom assignment 'Break Test' with exit ticket posted",
+        "A paper strip per pair for the squeeze/stretch demo",
+        "Bridges handed back to table groups for the last segment"
       ],
       "segments": [
         {
@@ -124,7 +123,7 @@
         {
           "min": 5,
           "title": "Review answers + today's goal",
-          "do": "Go over the most-missed expectations, then read the goal: By the end of class, my group has repaired our bridge and added cardboard exactly where it failed, matching our plan.",
+          "do": "Go over the most-missed expectations, then read the goal: By the end of class, I can explain tension and compression and use them to predict where my group's bridge will break on Friday.",
           "why": "Students know the target.",
           "tips": [
             "Point to the goal again halfway through and at the exit ticket."
@@ -144,63 +143,68 @@
         {
           "min": 3,
           "title": "This week and the points",
-          "do": "Mon fix, Thu finish + check, Fri Test 2 and turn in once.",
-          "why": "Predictable short week.",
-          "tips": []
-        },
-        {
-          "min": 2,
-          "title": "Roles by birthday",
-          "do": "Inspector, Cutter, Gluer, Checker. 3: Checker cuts too. 5: two Cutters.",
-          "why": "Complex Instruction: roles with authority.",
+          "do": "Mon read + predict, Thu final prep, Fri BREAK TEST until it fails, turn in once.",
+          "why": "Students hear Friday's payoff up front (motivation).",
           "tips": [
-            "Checker approves every piece before glue."
-          ]
-        },
-        {
-          "min": 22,
-          "title": "You do: read the X, plan, fix",
-          "do": "Inspector names the failure (1 joint, 2 bent strip, 3 sagged deck, 4 leaned). Repair, dot up to 6 fix spots, Checker approves, cut, glue face to face, tug test.",
-          "why": "Analyze the failure, then apply a targeted fix (MS-ETS1-4).",
-          "tips": [
-            "Halfway: revisit the goal: 'matching our plan'.",
-            "Publicly praise a precise Cutter or a sharp Inspector (assign competence).",
-            "Edge-glued pieces will fall off: push gussets/tabs."
+            "Say: Friday you finally get to break it."
           ]
         },
         {
           "min": 5,
-          "title": "Exit ticket",
-          "do": "Where they added cardboard + Test 2 prediction, with frames.",
-          "why": "One turn-in; prediction sets up Friday.",
+          "title": "Key words: paper strip",
+          "do": "Every pair pulls a paper strip (holds = tension), then pushes its ends (buckles = compression). Pre-teach compression, tension, buckle, failure load.",
+          "why": "ELD: hear, say, do each word before reading it.",
           "tips": [
-            "Full answer names the spot AND ties it to the Test 1 failure."
+            "Ask: which is stronger, pulled paper or pushed paper? Why do engineers double the squeezed parts?"
           ]
         },
         {
-          "min": 2,
-          "title": "Clean up + set to dry",
-          "do": "Bridges to the drying spot with group names.",
-          "why": "Glue needs to set before Thursday.",
-          "tips": []
+          "min": 12,
+          "title": "Partner reading",
+          "do": "5 chunks. Younger reads aloud, older summarizes ('This part says...'), swap every chunk. 3s: Word Finder.",
+          "why": "Reading closely (ELD.PI.6-8.6); summarizing is the 10-2 processing.",
+          "tips": [
+            "Circulate and listen to summaries; publicly praise a precise one.",
+            "Mid-lesson: point to the goal again.",
+            "Check: after Chunk 2, ask the class which chord is squeezed (top)."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Find T and C on your bridge",
+          "do": "Groups point to their top chord (compression) and bottom chord (tension), find the Test 1 X and the cardboard fix (Thursday), and agree on where it breaks first.",
+          "why": "Transfer the reading to their own design.",
+          "tips": [
+            "Push for a reason, not a guess: 'it is squeezed and thin, so it will buckle'."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Exit ticket: predict the break",
+          "do": "Each student types a prediction: spot, number of bottles, reason, with frames.",
+          "why": "One turn-in; Friday's comparison depends on it.",
+          "tips": [
+            "Full answer: a named spot + a bottle number + tension/compression + buckle/tear/pop.",
+            "Save these: on Friday students compare them to the break."
+          ]
         }
       ],
       "watchFor": [
-        "Groups adding 10+ pieces: cap is 6 so Test 2 stays fair.",
-        "Fixes not on the X: ask 'Where did it fail?'",
-        "Off-task Gluer: hand them the next piece to hold."
+        "Students copying a groupmate's exit ticket word for word: same spot is fine, own words required.",
+        "Readers rushing: Summarizer must say it back before the next chunk.",
+        "Groups that skip the bridge look: the prediction must point to their own bridge."
       ]
     },
     "7th Period": {
       "grade": "6th Grade",
-      "topic": "Cam Toy, Day 1: how cams work + box frame",
-      "goal": "By the end of class, I can explain how a cam turns spinning into up-and-down, and my pair has built the box frame.",
-      "bloom": "Understand / Apply",
-      "exitTicket": "What does a cam do, and where will the cam sit in your frame?",
+      "topic": "Breaking Things on Purpose: reading + break prediction",
+      "goal": "By the end of class, I can explain tension and compression and use them to predict where my group's bridge will break on Friday.",
+      "bloom": "Understand / Analyze",
+      "exitTicket": "Where will your bridge break first on Friday, how many bottles will it hold, and why?",
       "prep": [
-        "Handout printed; exit ticket posted",
-        "Cardboard, pencils (one per pair for the axle), popsicle sticks, glue sticks, scissors",
-        "A quick demo cam: any cardboard circle with an off-center pencil hole"
+        "Handout printed (4 pages), one per student; Google Classroom assignment 'Break Test' with exit ticket posted",
+        "A paper strip per pair for the squeeze/stretch demo",
+        "Bridges handed back to table groups for the last segment"
       ],
       "segments": [
         {
@@ -215,7 +219,7 @@
         {
           "min": 5,
           "title": "Review answers + today's goal",
-          "do": "Go over the most-missed expectations, then read the goal: By the end of class, I can explain how a cam turns spinning into up-and-down, and my pair has built the box frame.",
+          "do": "Go over the most-missed expectations, then read the goal: By the end of class, I can explain tension and compression and use them to predict where my group's bridge will break on Friday.",
           "why": "Students know the target.",
           "tips": [
             "Point to the goal again halfway through and at the exit ticket."
@@ -235,51 +239,56 @@
         {
           "min": 3,
           "title": "This week and the points",
-          "do": "Mon frame, Thu cam + follower, Fri test, measure, video, turn in once.",
-          "why": "Predictable short week.",
-          "tips": []
+          "do": "Mon read + predict, Thu final prep, Fri BREAK TEST until it fails, turn in once.",
+          "why": "Students hear Friday's payoff up front (motivation).",
+          "tips": [
+            "Say: Friday you finally get to break it."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Key words: paper strip",
+          "do": "Every pair pulls a paper strip (holds = tension), then pushes its ends (buckles = compression). Pre-teach compression, tension, buckle, failure load.",
+          "why": "ELD: hear, say, do each word before reading it.",
+          "tips": [
+            "Ask: which is stronger, pulled paper or pushed paper? Why do engineers double the squeezed parts?"
+          ]
+        },
+        {
+          "min": 12,
+          "title": "Partner reading",
+          "do": "5 chunks. Younger reads aloud, older summarizes ('This part says...'), swap every chunk. 3s: Word Finder.",
+          "why": "Reading closely (ELD.PI.6-8.6); summarizing is the 10-2 processing.",
+          "tips": [
+            "Circulate and listen to summaries; publicly praise a precise one.",
+            "Mid-lesson: point to the goal again.",
+            "Check: after Chunk 2, ask the class which chord is squeezed (top)."
+          ]
         },
         {
           "min": 6,
-          "title": "Mini-lesson: cams and followers",
-          "do": "Spin your demo cam with a stick resting on it. Vocabulary: cam, axle, follower, off-center.",
-          "why": "I do: see it before building it.",
+          "title": "Find T and C on your bridge",
+          "do": "Groups point to their top chord (compression) and bottom chord (tension), find the Test 1 X and the popsicle sticks already added, and agree on where it breaks first.",
+          "why": "Transfer the reading to their own design.",
           "tips": [
-            "Ask: what happens if the hole is in the exact center? (Nothing moves up and down.)"
+            "Push for a reason, not a guess: 'it is squeezed and thin, so it will buckle'."
           ]
         },
         {
-          "min": 2,
-          "title": "Roles",
-          "do": "Pairs: younger Measurer, older Builder-Checker. 3: middle is Checker.",
-          "why": "Clear jobs, no arguing.",
-          "tips": []
-        },
-        {
-          "min": 19,
-          "title": "You do: box frame",
-          "do": "Strip 1¼ x ¼ stick, tubes running across, folds every ¼ stick, centers by corner-to-corner lines, pencil holes in walls 2 and 4, slot in wall 3, glue tab flat under wall 1.",
-          "why": "Real measurement + geometry (6th wants challenge).",
+          "min": 8,
+          "title": "Exit ticket: predict the break",
+          "do": "Each student types a prediction: spot, number of bottles, reason, with frames.",
+          "why": "One turn-in; Friday's comparison depends on it.",
           "tips": [
-            "Most common miss: holes at different heights, so the pencil tilts.",
-            "Folds cracking = tubes run the wrong way.",
-            "No tape; poke holes with the pencil, not scissors."
-          ]
-        },
-        {
-          "min": 4,
-          "title": "Exit ticket",
-          "do": "Cam function + where the cam sits, with frames.",
-          "why": "One turn-in.",
-          "tips": [
-            "Full answer: spinning to up-and-down, off-center hole, sits on the pencil under the slot."
+            "Full answer: a named spot + a bottle number + tension/compression + buckle/tear/pop.",
+            "Save these: on Friday students compare them to the break."
           ]
         }
       ],
       "watchFor": [
-        "Pairs splitting the work so one sits idle: point to the roles table.",
-        "Scissors used to stab holes.",
-        "Pairs that finish early: Future Engineer 'predict the rise'."
+        "Students copying a groupmate's exit ticket word for word: same spot is fine, own words required.",
+        "Readers rushing: Summarizer must say it back before the next chunk.",
+        "Groups that skip the bridge look: the prediction must point to their own bridge."
       ]
     }
   },
@@ -312,7 +321,7 @@
   "frameworks": [
     [
       "Project-Based Learning",
-      "8th builds toward a public DONUTS vote Friday; 6th/7th build physical products they test."
+      "8th builds toward a DONUTS vote Friday; 6th/7th predict today and break their bridges Friday."
     ],
     [
       "Complex Instruction",
