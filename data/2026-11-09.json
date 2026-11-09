@@ -3,22 +3,22 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Composite doc (game link, level grid, 3 answers) and the Composite pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Composite Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can explain the Composite pattern and draw my level as a grid of brick types.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems into parts to facilitate the design, implementation, and review of programs.",
+      "weeklyDeliverable": "Turned in Sunday night: your Juice doc (game link, the juice you added, 2 answers) and the juice working in your live game.",
+      "workingNow": "Open the Google Classroom assignment called Juice Week. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can explain what juice is and plan the juice my game shows when the ball hits my paddle.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Wayground: classroom expectations (5 min)",
         "Review answers + today's goal (5 min)",
         "Grade check: Infinite Campus + form (6 min)",
         "This week (3 days) and the points (3 min)",
-        "Mini-lesson: a level is a group of bricks (7 min)",
-        "We do: read a level grid (6 min)",
-        "You do: draw your level grid (11 min)",
-        "Exit Ticket: describe your grid (7 min)"
+        "Mini-lesson: juice, revisited (7 min)",
+        "We do: rate the paddle hit with no juice (6 min)",
+        "You do: plan your paddle-hit juice (11 min)",
+        "Exit Ticket: your juice plan (7 min)"
       ],
-      "connections": "Last week bricks got strategies. This short week, a whole level becomes one object made of bricks. Today you draw your level as a grid. No class Tuesday or Wednesday. Thursday you build it."
+      "connections": "Your game works: bricks have types and behaviors. This short week you make it feel good with juice, starting with the moment the ball hits your paddle. No class Tuesday or Wednesday. Thursday you build it; Friday the class votes for the best game for DONUTS."
     },
     "6th Period": {
       "grade": "7th Grade",

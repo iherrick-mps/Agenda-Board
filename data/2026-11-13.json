@@ -3,19 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Composite doc (game link, level grid, 3 answers) and the Composite pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Composite Pattern. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
-      "smartGoal": "By the end of class, my grid level is live, I can explain the Composite pattern, and my doc is turned in once.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Turned in Sunday night: your Juice doc (game link, the juice you added, 2 answers) and the juice working in your live game.",
+      "workingNow": "Open the Google Classroom assignment called Juice Week. Fill in the Answers tab, play classmates' games, vote, and turn in once at the end of class.",
+      "smartGoal": "By the end of class, I can explain how my juice makes my game feel more responsive, give feedback on 2 classmates' games, and turn in once.",
+      "contentStandard": "CA CS Standards 6-8.AP.15 — Seek and incorporate feedback from team members and users to refine a solution that meets user needs.",
+      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Finish, fill in the Answers tab, or Future Engineer (22 min)",
-        "Gallery play: try 2 classmates' levels (10 min)",
+        "Finish + fill in the Answers tab (12 min)",
+        "Juice judges: play 2 games, give feedback (14 min)",
+        "DONUTS vote: best game, top 3 (6 min)",
         "Final check + turn in (8 min)"
       ],
-      "connections": "This week your level became one object made of bricks. Today you turn in once. Next week you clean up every loop with the Iterator pattern."
+      "connections": "This week you added juice so every paddle hit feels responsive. Today you judge classmates' juice, vote for the best game, and turn in once. The winners play on DONUTS Tuesday. Next week: the Iterator pattern."
     },
     "6th Period": {
       "grade": "7th Grade",

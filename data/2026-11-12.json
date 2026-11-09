@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Composite doc (game link, level grid, 3 answers) and the Composite pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Composite Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my makeBricks() builds my level from my grid.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures.",
+      "weeklyDeliverable": "Turned in Sunday night: your Juice doc (game link, the juice you added, 2 answers) and the juice working in your live game.",
+      "workingNow": "Open the Google Classroom assignment called Juice Week. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my live game shows my juice every time the ball hits my paddle, and the rules still play the same.",
+      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Paste your grid into Copilot (5 min)",
-        "You do: build the level from the grid (20 min)",
-        "Commit, Sync Changes, hard refresh, check (8 min)",
-        "Exit Ticket: what changed in makeBricks? (7 min)"
+        "I do: plan, prompt, check (5 min)",
+        "You do: paste your plan into Copilot (15 min)",
+        "Commit, Sync Changes, hard refresh, play (10 min)",
+        "Exit Ticket: what juice did you add? (10 min)"
       ],
-      "connections": "Monday you drew your level as a grid. Today makeBricks() reads your grid instead of hardcoded rows. Tomorrow you finish and turn in."
+      "connections": "Monday you planned your paddle-hit juice. Today Copilot helps you build it, and you test that it feels better without changing the rules. Tomorrow: play classmates' games, vote for DONUTS, turn in once."
     },
     "6th Period": {
       "grade": "7th Grade",
