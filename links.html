@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Links — Robotics &amp; Coding</title>
+<link rel="stylesheet" href="styles.css?v=202611101420">
+<style>
+  /* Class Links page — the boxes reuse the board's accent colors */
+  .links-body { padding: 8px 40px 60px; max-width: 1200px; }
+  .links-sub { color: var(--ink-soft); margin: 0 0 18px; }
+
+  .early-box {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    background: var(--c-working); color: #fff; text-decoration: none;
+    border-radius: 12px; padding: 22px 26px; margin-bottom: 22px;
+    box-shadow: 0 6px 18px rgba(199, 54, 31, 0.28);
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .early-box:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(199, 54, 31, 0.34); }
+  .early-box .early-q { font-family: var(--font-display); font-size: 2rem; font-weight: 700; line-height: 1.1; }
+  .early-box .early-a { font-size: 1.05rem; opacity: .95; flex: 1 1 260px; }
+  .early-box .early-go {
+    font-family: var(--font-mono); font-weight: 700; background: rgba(255,255,255,.18);
+    border: 1px solid rgba(255,255,255,.45); border-radius: 8px; padding: 10px 16px; white-space: nowrap;
+  }
+
+  .links-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+
+  .link-box {
+    --accent: var(--c-goal);
+    display: flex; flex-direction: column; gap: 8px;
+    background: var(--surface); color: var(--ink); text-decoration: none; text-align: left;
+    border: 1px solid var(--grid-line); border-top: 6px solid var(--accent);
+    border-radius: var(--radius); padding: 16px 18px; font: inherit; cursor: pointer;
+    box-shadow: 0 2px 6px rgba(22, 32, 43, 0.06);
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .link-box:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(22, 32, 43, 0.12); }
+  .link-box .lb-title { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; color: var(--accent); }
+  .link-box .lb-desc { font-size: .92rem; color: var(--ink-soft); line-height: 1.4; }
+  .link-box .lb-url { margin-top: auto; font-family: var(--font-mono); font-size: .75rem; color: var(--ink-soft); word-break: break-all; }
+
+  .email-box .lb-email { font-family: var(--font-mono); font-weight: 700; font-size: 1rem; color: var(--ink); word-break: break-all; }
+  .email-box .lb-url { font-weight: 700; }
+  .email-box.copied .lb-url { color: var(--c-eld); }
+
+  @media (max-width: 600px) {
+    .links-body { padding: 8px 16px 40px; }
+    .topbar { padding: 20px 16px 12px; }
+    .early-box .early-q { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body class="index-page">
+
+<div class="topbar">
+  <div class="brand">
+    Class Links
+    <span class="brand-sub">Robotics &amp; Coding &middot; Ms. Herrick &middot; <a href="index.html">&larr; Agenda Board</a></span>
+  </div>
+</div>
+
+<div class="links-body">
+  <p class="links-sub">Everything you need for 4th, 6th and 7th period, in one place.</p>
+
+  <a class="early-box" href="https://docs.google.com/document/d/15flvgs9Rvjl62_gJfiXB9c2XCFxWKwFBwky6J6CThps/edit" target="_blank" rel="noopener">
+    <span class="early-q">Did you finish early?</span>
+    <span class="early-a">Your work is done and turned in? Pick something from the Early Finisher Options.</span>
+    <span class="early-go">Open the list &rarr;</span>
+  </a>
+
+  <div class="links-grid">
+
+    <button type="button" class="link-box email-box" id="email-box" style="--accent: var(--c-connect)" data-email="iherrick@magnoliapublicschools.org">
+      <span class="lb-title">Ms. Herrick&rsquo;s Email</span>
+      <span class="lb-email">iherrick@magnoliapublicschools.org</span>
+      <span class="lb-desc">Share your docs with this email, or email me a question.</span>
+      <span class="lb-url" id="email-status">Click to copy</span>
+    </button>
+
+    <a class="link-box" style="--accent: var(--c-agenda)" href="current-day.html">
+      <span class="lb-title">Today&rsquo;s Agenda</span>
+      <span class="lb-desc">What we&rsquo;re doing today and what you should be working on right now.</span>
+      <span class="lb-url">Agenda Board</span>
+    </a>
+
+    <a class="link-box" style="--accent: var(--c-queue)" href="https://iherrick-mps.github.io/queue/" target="_blank" rel="noopener">
+      <span class="lb-title">Help Queue</span>
+      <span class="lb-desc">Stuck? Get in line for help here instead of waving your hand.</span>
+      <span class="lb-url">iherrick-mps.github.io/queue</span>
+    </a>
+
+    <a class="link-box" style="--accent: var(--c-goal)" href="https://play.blooket.com/play" target="_blank" rel="noopener">
+      <span class="lb-title">Blooket</span>
+      <span class="lb-desc">Join a Blooket game. Type in the game code from the board.</span>
+      <span class="lb-url">play.blooket.com</span>
+    </a>
+
+    <a class="link-box" style="--accent: var(--c-standard)" href="https://wayground.com/join" target="_blank" rel="noopener">
+      <span class="lb-title">Wayground</span>
+      <span class="lb-desc">Join a Wayground game. Type in the code from the board.</span>
+      <span class="lb-url">wayground.com/join</span>
+    </a>
+
+    <a class="link-box" style="--accent: var(--c-deliverable)" href="https://docs.google.com/forms/d/e/1FAIpQLSf56bFYg-KAJDi37D4caDFEAs4YeGhWPFH7LVtxqqk3g05WFw/viewform" target="_blank" rel="noopener">
+      <span class="lb-title">Regrade Request</span>
+      <span class="lb-desc">Fixed an assignment, or finished a Future Engineer task? Fill this out with the exact Infinite Campus name and a link to your work.</span>
+      <span class="lb-url">Google Form</span>
+    </a>
+
+    <a class="link-box" style="--accent: var(--c-eld)" href="https://iherrick-mps.github.io/Computer-Science-Worksheets/quiz.html" target="_blank" rel="noopener">
+      <span class="lb-title">Do a Worksheet = 1 KB Point</span>
+      <span class="lb-desc">Finish a CS worksheet and send me the certificate for 1 Kickboard point (max 3 per day).</span>
+      <span class="lb-url">Computer Science Worksheets</span>
+    </a>
+
+    <a class="link-box" style="--accent: var(--c-trivia)" href="https://docs.google.com/document/d/1AlRJo2DOusVQ4aNGTIzYURjCbL-TLQfU1hvGgg0iGHw/edit" target="_blank" rel="noopener">
+      <span class="lb-title">Acceptable Friday Games</span>
+      <span class="lb-desc">The educational games you&rsquo;re allowed to play during earned game time.</span>
+      <span class="lb-url">Google Doc</span>
+    </a>
+
+    <a class="link-box" style="--accent: var(--c-joinlink)" href="https://docs.google.com/document/d/1Ur1SpkWLxH3sJszL16UIIvTylhmq3x8UFP5Y2R2vRE0/edit" target="_blank" rel="noopener">
+      <span class="lb-title">Student Games 2026-27</span>
+      <span class="lb-desc">Games made by students in this class. Play them during game time too.</span>
+      <span class="lb-url">Google Doc</span>
+    </a>
+
+    <a class="link-box" style="--accent: var(--c-goguardian)" href="https://mail.google.com/mail/u/0/#search/from%3Aiherrick%40magnoliapublicschools.org" target="_blank" rel="noopener">
+      <span class="lb-title">My Emails to You</span>
+      <span class="lb-desc">Opens your school Gmail showing only emails from Ms. Herrick, like regrade results.</span>
+      <span class="lb-url">Gmail search</span>
+    </a>
+
+    <a class="link-box" style="--accent: var(--ink-soft)" href="https://docs.google.com/document/d/16tLu7tEJBl0OvAiulCm4hFj055X9MuKDeAUC_3EriQA/edit" target="_blank" rel="noopener">
+      <span class="lb-title">3D Printer Repair Guide</span>
+      <span class="lb-desc">Creator Pro 3D printer jammed or acting up? Follow the student repair guide.</span>
+      <span class="lb-url">Google Doc</span>
+    </a>
+
+  </div>
+</div>
+
+<script>
+  // Click the email box to copy the address
+  (function () {
+    var box = document.getElementById('email-box');
+    var status = document.getElementById('email-status');
+    box.addEventListener('click', function () {
+      var email = box.getAttribute('data-email');
+      function done() {
+        box.classList.add('copied');
+        status.textContent = 'Copied!';
+        setTimeout(function () { box.classList.remove('copied'); status.textContent = 'Click to copy'; }, 2000);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done, fallback);
+      } else {
+        fallback();
+      }
+      function fallback() {
+        var t = document.createElement('textarea');
+        t.value = email; document.body.appendChild(t); t.select();
+        try { document.execCommand('copy'); done(); } catch (e) { status.textContent = 'Select and copy it above'; }
+        document.body.removeChild(t);
+      }
+    });
+  })();
+</script>
+</body>
+</html>
