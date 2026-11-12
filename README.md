@@ -190,6 +190,38 @@ simply goes back to caching the way it did before.
 ## Testing locally
 From this folder: `python3 -m http.server 8000`, then open `http://localhost:8000`. (Opening `index.html` directly by double-clicking won't work — the browser blocks the `fetch()` calls for local files without a server.)
 
+## Timer passcode
+The Transition Timer's **Start / Stop / Clear** buttons on the agenda board
+are behind a 4-digit code. Enter it once per browser and that device stays
+unlocked; the padlock beside Clear locks it again.
+
+What this is for: students can open the agenda board on their own
+Chromebooks, and every copy of the board writes to the same Firestore row
+per class period, so a student pressing Stop files their reading over the
+real one. What it is **not**: real security. The page is public, the check
+runs in the browser, and four digits is 10,000 guesses — it stops a student
+poking at the buttons, not one who means it. Anyone who can reach the board
+can still write to the collection directly through `firebase-config.js`,
+which is also public; closing that needs Firebase Auth and tightened
+`firestore.rules`, not a passcode.
+
+Deliberately **not** gated: the bell still auto-starts the timer, and the
+end-of-period record still files itself, on a board nobody has unlocked.
+Those keep the table honest when no one touches anything.
+
+To change the code, run this in any browser console and paste the result
+over `TIMER_PASSCODE_HASH` in `script.js`:
+
+```js
+await (async c => [...new Uint8Array(await crypto.subtle.digest(
+  'SHA-256', new TextEncoder().encode(
+    'agenda-board/transition-timer/v1:' + c)))]
+  .map(b => b.toString(16).padStart(2, '0')).join(''))('1234')
+```
+
+Changing it does not re-lock devices already unlocked — use the padlock on
+the board, or clear that browser's site data.
+
 ## Transition Times
 
 Every class period's transition length is recorded automatically and collected at

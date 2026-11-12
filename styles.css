@@ -1941,6 +1941,67 @@ body.board-page {
 .timer-btn:hover { color: #fff; border-color: #fff; }
 .timer-btn:disabled { opacity: 0.3; cursor: default; }
 .timer-btn:disabled:hover { color: #cdd8e6; border-color: #3a4753; }
+/* ---- Passcode gate on the timer controls ----
+   Lives in the same slot the three buttons occupy, because this strip is
+   only ~310px wide on a 1280px projector and there is no room for a
+   second row. Locked: one Unlock button. Mid-entry: a four-character
+   field in its place. Unlocked: the buttons, plus a narrow padlock to
+   put it back. */
+.timer-lock {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  flex: 0 0 auto;
+}
+
+/* display:flex on these two beats the browser's own [hidden] rule, so
+   without this the locked board renders the lock AND the buttons side by
+   side and overflows the strip. Same trap as .box-content further down. */
+.timer-controls[hidden],
+.timer-lock[hidden] { display: none; }
+
+.timer-lock-input {
+  width: 4.2em;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(0.55rem, min(30cqh, 3.2cqw), 0.95rem);
+  letter-spacing: 0.3em;
+  text-align: center;
+  padding: 0.45em 0.3em;
+  color: #fff;
+  background: #10161d;
+  border: 1px solid #3a4753;
+  border-radius: 5px;
+}
+.timer-lock-input:focus { outline: 2px solid var(--c-timer); outline-offset: 1px; }
+.timer-lock-input::placeholder { color: #4a5663; letter-spacing: 0.2em; }
+
+/* wrong code — a short shake, then the field clears itself */
+.timer-lock-input.is-wrong {
+  border-color: #ff7a7a;
+  animation: timer-lock-wrong 0.4s ease;
+}
+
+@keyframes timer-lock-wrong {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-4px); }
+  50%      { transform: translateX(4px); }
+  75%      { transform: translateX(-2px); }
+}
+
+/* the padlock that re-locks: glyph only, so it costs the row almost
+   nothing next to Start / Stop / Clear */
+.timer-relock {
+  padding: 0.45em 0.4em;
+  opacity: 0.45;
+  filter: grayscale(1);
+}
+.timer-relock:hover { opacity: 1; filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .timer-lock-input.is-wrong { animation: none; }
+}
+
 #timer-start { color: #6ee7b7; border-color: #2d6b56; }
 #timer-start:hover:not(:disabled) { color: #a7f3d0; border-color: #6ee7b7; }
 

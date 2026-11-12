@@ -1989,6 +1989,88 @@ function initNowPlaying() {
    Ms. Herrick teaches, which are also the only ones a transition record
    is kept for (see TRANSITION_PERIODS in transitions-record.js). Names
    match bells.json exactly. */
+/* ============================================================
+   Transition Timer — passcode gate.
+
+   WHAT THIS IS FOR
+   Students can reach the agenda board on their own Chromebooks, and
+   every copy of the board shares one Firestore row per class period
+   (`YYYY-MM-DD_<period>`). A student pressing Stop on their own tab
+   therefore files a *stopped* reading over the real one. The
+   recorder already refuses to let a never-stopped tab clobber a
+   stopped record, but it has no way to tell her Stop from theirs.
+   Locking the buttons is what tells them apart.
+
+   WHAT IT IS NOT
+   This is a public static site, so this is a lock on a door, not a
+   wall. The hash below is checkable by anyone who opens the page
+   source, and four digits is only 10,000 guesses — someone who wants
+   in can script it in a minute. It stops a student who pokes at the
+   buttons, which is the actual problem. Anyone who can reach the
+   board can still write to the collection directly through the
+   Firebase config, which is also public; closing *that* needs
+   Firebase Auth and tightened rules, not a passcode.
+
+   WHAT IS DELIBERATELY NOT GATED
+   The bell still auto-starts the timer, and the end-of-period record
+   still files itself, on a board nobody has unlocked. Those are what
+   keep the table honest when no one touches anything, and gating
+   them would mean a locked projector silently recording nothing.
+   Only the three click handlers are behind the code.
+
+   CHANGING THE CODE
+   The stored value is SHA-256 of TIMER_PASSCODE_SALT + the digits.
+   To set a new one, run this in any browser console and paste the
+   result over TIMER_PASSCODE_HASH:
+
+     await (async c => [...new Uint8Array(await crypto.subtle.digest(
+       'SHA-256', new TextEncoder().encode(
+         'agenda-board/transition-timer/v1:' + c)))]
+       .map(b => b.toString(16).padStart(2, '0')).join(''))('1234')
+
+   Changing it does not re-lock devices that are already unlocked —
+   use the padlock button on the board for that, or clear the site's
+   data in that browser.
+   ============================================================ */
+
+// bumping the salt invalidates nothing on its own; it just means an old
+// hash no longer matches, so change both together
+const TIMER_PASSCODE_SALT = 'agenda-board/transition-timer/v1:';
+const TIMER_PASSCODE_HASH = 'a3334ec8129d3892bcf6a7c5ec5747c1d0f49d0b202abbf087b86296856c1446';
+const TIMER_UNLOCK_KEY = 'agendaBoard.timerUnlocked';
+
+/* Needs crypto.subtle, which browsers only expose in a secure context
+   (https, or localhost). The board is served over https and local
+   testing runs on localhost, so this resolves everywhere it actually
+   runs; anywhere else it fails closed — a gate that opens when the
+   check is unavailable is not a gate. */
+async function timerPasscodeMatches(code) {
+  try {
+    if (!window.crypto || !crypto.subtle) return false;
+    const bytes = new TextEncoder().encode(TIMER_PASSCODE_SALT + String(code));
+    const digest = await crypto.subtle.digest('SHA-256', bytes);
+    const hex = Array.from(new Uint8Array(digest))
+      .map(b => b.toString(16).padStart(2, '0')).join('');
+    return hex === TIMER_PASSCODE_HASH;
+  } catch (e) {
+    return false;
+  }
+}
+
+// Unlocking is remembered per browser, so the code is typed once on the
+// classroom machine and never again. A student's own Chromebook has its
+// own storage and stays locked.
+function timerIsUnlocked() {
+  try { return localStorage.getItem(TIMER_UNLOCK_KEY) === '1'; }
+  catch (e) { return false; }   // storage disabled — locked, and stays locked
+}
+function timerSetUnlocked(on) {
+  try {
+    if (on) localStorage.setItem(TIMER_UNLOCK_KEY, '1');
+    else localStorage.removeItem(TIMER_UNLOCK_KEY);
+  } catch (e) { /* storage disabled — this session only */ }
+}
+
 const TIMED_PERIODS = new Set(['4th Period', '6th Period', '7th Period']);
 
 function initCountUpTimer() {
@@ -2197,9 +2279,87 @@ function initCountUpTimer() {
     saveState();
   }
 
-  startBtn.addEventListener('click', start);
-  stopBtn.addEventListener('click', stop);
-  clearBtn.addEventListener('click', clear);
+  /* ---- The passcode gate (see TIMER_PASSCODE_HASH above).
+
+     Gating the three listeners, not start()/stop()/clear() themselves:
+     the bell calls those functions directly, and a locked board must
+     still auto-start and still file its end-of-period record. ---- */
+  const controlsEl = document.getElementById('timer-controls');
+  const lockEl = document.getElementById('timer-lock');
+  const lockOpenBtn = document.getElementById('timer-lock-open');
+  const lockInput = document.getElementById('timer-lock-input');
+  const relockBtn = document.getElementById('timer-relock');
+  // older copies of agenda.html have the buttons but none of the gate
+  // markup — those boards keep working unlocked rather than breaking
+  const hasGate = !!(controlsEl && lockEl && lockOpenBtn && lockInput && relockBtn);
+
+  function paintLock() {
+    if (!hasGate) return;
+    const open = timerIsUnlocked();
+    controlsEl.hidden = !open;
+    lockEl.hidden = open;
+    if (open) {
+      lockInput.hidden = true;
+      lockOpenBtn.hidden = false;
+      lockInput.value = '';
+    }
+  }
+
+  // only the first four digits typed matter, and the check runs as soon
+  // as the fourth lands — nobody at a projector wants to find the Enter
+  // key to start a stopwatch
+  async function tryCode() {
+    const code = lockInput.value.replace(/\D/g, '').slice(0, 4);
+    if (code.length < 4) return;
+    if (await timerPasscodeMatches(code)) {
+      timerSetUnlocked(true);
+      paintLock();
+      return;
+    }
+    lockInput.classList.add('is-wrong');
+    window.setTimeout(() => {
+      lockInput.classList.remove('is-wrong');
+      lockInput.value = '';
+      lockInput.focus();
+    }, 420);
+  }
+
+  if (hasGate) {
+    lockOpenBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      lockOpenBtn.hidden = true;
+      lockInput.hidden = false;
+      lockInput.value = '';
+      lockInput.focus();
+    });
+    lockInput.addEventListener('input', () => { tryCode(); });
+    lockInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { e.preventDefault(); tryCode(); }
+      if (e.key === 'Escape') { paintLock(); }
+    });
+    // the bento underneath is click-to-focus / double-click-to-fullscreen
+    [lockEl, lockInput].forEach(el => {
+      el.addEventListener('click', (e) => e.stopPropagation());
+      el.addEventListener('dblclick', (e) => e.stopPropagation());
+    });
+    relockBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      timerSetUnlocked(false);
+      paintLock();
+    });
+    paintLock();
+  }
+
+  // a locked board ignores the click entirely — the gate is drawn over
+  // the buttons, so this is belt-and-braces against a stray dispatch
+  const gated = (fn) => (e) => {
+    if (hasGate && !timerIsUnlocked()) { if (e) e.stopPropagation(); return; }
+    fn();
+  };
+
+  startBtn.addEventListener('click', gated(start));
+  stopBtn.addEventListener('click', gated(stop));
+  clearBtn.addEventListener('click', gated(clear));
 
   // the buttons sit inside a bento box that also handles click-to-focus and
   // double-click-to-fullscreen — keep those from firing on timer clicks.
@@ -2208,9 +2368,12 @@ function initCountUpTimer() {
   // won't stop it out from under them.
   [startBtn, stopBtn, clearBtn].forEach(btn => {
     btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      // a click that the gate refused changed nothing, so it must not
+      // hand the run over either — the bell still owns it
+      if (hasGate && !timerIsUnlocked()) return;
       autoStarted = false;
       saveState();   // this run is hers now, and a reload has to know that
-      e.stopPropagation();
     });
     btn.addEventListener('dblclick', (e) => e.stopPropagation());
   });

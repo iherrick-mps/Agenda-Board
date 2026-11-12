@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Agenda — Robotics &amp; Coding</title>
-<link rel="stylesheet" href="styles.css?v=202611092355">
+<link rel="stylesheet" href="styles.css?v=202611122203">
 </head>
 <body class="board-page">
 
@@ -67,10 +67,23 @@
       <span class="timer-saved" id="timer-saved" aria-hidden="true">recorded</span>
     </span>
     <div class="timer-display" id="timer-display">00:00</div>
-    <div class="timer-controls">
+    <div class="timer-controls" id="timer-controls">
       <button type="button" class="timer-btn" id="timer-start">Start</button>
       <button type="button" class="timer-btn" id="timer-stop">Stop</button>
       <button type="button" class="timer-btn" id="timer-clear">Clear</button>
+      <button type="button" class="timer-btn timer-relock" id="timer-relock"
+              title="Lock these controls again on this device">&#128274;</button>
+    </div>
+    <!-- Passcode gate. Only the three buttons above are behind it: the bell
+         still auto-starts the timer and the end-of-period record still files
+         itself on a locked board, because those are what make the table
+         right when nobody touches anything. -->
+    <div class="timer-lock" id="timer-lock" hidden>
+      <button type="button" class="timer-btn timer-lock-open" id="timer-lock-open"
+              title="Enter the 4-digit code to use the timer controls">&#128274; Unlock</button>
+      <input type="password" id="timer-lock-input" class="timer-lock-input"
+             inputmode="numeric" autocomplete="off" maxlength="4"
+             aria-label="Four-digit timer passcode" placeholder="&bull;&bull;&bull;&bull;" hidden>
     </div>
   </div>
 
@@ -217,8 +230,8 @@
      first bell check, well after every script has parsed. -->
 <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
-<script src="firebase-config.js?v=202611092355"></script>
-<script src="script.js?v=202611092355"></script>
-<script src="transitions-record.js?v=202611092355"></script>
+<script src="firebase-config.js?v=202611122203"></script>
+<script src="script.js?v=202611122203"></script>
+<script src="transitions-record.js?v=202611122203"></script>
 </body>
 </html>
