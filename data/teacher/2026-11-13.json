@@ -1,0 +1,306 @@
+{
+  "title": "Friday Teacher Plan",
+  "note": "Turn-in day for every grade. 8th: juice judges + DONUTS vote. 6th/7th: dumbbell break test. Your observation is 6th Period (7th grade); the run-of-show deck matches this plan.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Juice Week, Day 3: judge, vote, turn in",
+      "goal": "By the end of class, I can explain how my juice makes my game feel more responsive, give feedback on 2 classmates' games, and turn in once.",
+      "bloom": "Evaluate",
+      "exitTicket": "No exit ticket: the one turn-in is the Juice Week doc (Answers tab).",
+      "prep": [
+        "Blooket imported (8th_Fri_Nov13_Blooket_Build_Juice.csv)",
+        "Turn-in doc attached to Juice Week on Google Classroom",
+        "Judge rotation on the board (e.g. play the game 2 seats left, then 4 seats left)",
+        "DONUTS ballot: paper slips or a quick form, top 3, not your own"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket (8th_Fri_Nov13_Blooket_Build_Juice.csv) reviewing Thursday.",
+          "why": "Spiral review; predictable start.",
+          "tips": [
+            "Watch the live results for the most-missed question."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, then read the goal: By the end of class, I can explain how my juice makes my game feel more responsive, give feedback on 2 classmates' games, and turn in once.",
+          "why": "Goal stated, revisited mid-lesson, recapped at the turn-in.",
+          "tips": [
+            "Likely most-missed: why juice works in the preview but not the live game (no Commit + Sync)"
+          ]
+        },
+        {
+          "min": 12,
+          "title": "Finish + fill in the Answers tab",
+          "do": "First 5 minutes: last fixes, commit, sync. Then every box in the Answers tab.",
+          "why": "Write first so the 85 is safe before playing.",
+          "tips": [
+            "Every box filled = 85 even if the game breaks; say this out loud."
+          ]
+        },
+        {
+          "min": 14,
+          "title": "Juice judges",
+          "do": "Two rounds. Player (younger first) plays 2 min; Creator watches silently, then hears feedback with the frames. Swap, then the next game.",
+          "why": "Peer feedback (6-8.AP.15) and spoken opinions (ELD.PI.6-8.3).",
+          "tips": [
+            "Feedback frames on the board.",
+            "Assign competence: praise a precise judge."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "DONUTS vote",
+          "do": "Top 3 games, not your own, the game that feels best to play.",
+          "why": "PBL: a real audience Tuesday.",
+          "tips": [
+            "Tally after class; record clips of the top 3 for Tuesday."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Final check + turn in",
+          "do": "Checklist, then turn in once.",
+          "why": "One turn-in; recap the goal.",
+          "tips": [
+            "Check that links are live .github.io links, not github.com repo links."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Links pointing to the repo instead of the live game.",
+        "Answers pasted from Copilot (must be in their own words).",
+        "Votes for friends: remind them to vote on feel."
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "BREAK TEST: dumbbells until it fails",
+      "goal": "By the end of class, we've loaded our bridge with dumbbells until it broke (or it held all 36 lb), compared the result to our prediction, and turned in our Answers page once.",
+      "bloom": "Evaluate",
+      "exitTicket": "No exit ticket: the one turn-in is the group Answers page (Break Test).",
+      "prep": [
+        "Two 8 lb and two 10 lb dumbbells per testing station (or rotate stations)",
+        "Class chart on the board: Group | Predicted lb + spot | Held lb | Where it broke | Buckle/tear/pop",
+        "Backpacks under each test gap; a clear drop zone",
+        "Turn-in doc attached to Break Test on Google Classroom",
+        "Phones/Chromebooks ready for video (DONUTS clip if a bridge holds 36 lb + a person)",
+        "OBSERVATION: run-of-show deck open on your laptop"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket (7th_Fri_Nov13_Blooket_Bridge_Fix.csv / 6th_Fri_Nov13_Blooket_Final_Upgrade.csv) reviewing Thursday.",
+          "why": "Spiral review; predictable start.",
+          "tips": [
+            "Watch the live results for the most-missed question."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, then read the goal: By the end of class, we've loaded our bridge with dumbbells until it broke (or it held all 36 lb), compared the result to our prediction, and turned in our Answers page once.",
+          "why": "Goal stated, revisited mid-lesson, recapped at the turn-in.",
+          "tips": [
+            "Likely most-missed: which fix goes on a popped joint (gusset / paper wrap)"
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Roles + post predictions",
+          "do": "Loader, Spotter, Recorder, Checker by birthday (3: Checker records; 5: two Spotters). Recorders post the Monday prediction on the chart. Read the safety rules.",
+          "why": "Complex Instruction roles; public predictions make everyone invested.",
+          "tips": [
+            "Safety: backpack under, feet and hands out of the drop zone, set down, never drop.",
+            "Assign competence: name a group whose prediction has a strong reason."
+          ]
+        },
+        {
+          "min": 16,
+          "title": "BREAK TEST",
+          "do": "One dumbbell at a time: 8, 8, 10, 10 lb (totals 8, 16, 26, 36). Count to 5 after each. When it breaks, don't touch it: the Spotter points, the Checker photographs. Held 36 lb? You pick a student to stand on it and you spot. Film it.",
+          "why": "Evaluate: test the prediction against real data (MS-ETS1-3).",
+          "tips": [
+            "At the halfway mark, point to the goal.",
+            "Ask each group: is that spot squeezed or stretched? Did it buckle, tear, or pop?",
+            "'Held' = the last total that stayed up 5 seconds.",
+            "Never record anyone's body weight: write '36 lb + a person'."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Class data: which fix worked?",
+          "do": "Recorders add 'held' and the break spot next to the prediction. Ask: which held the most, and what did it have that others didn't?",
+          "why": "Analysis + ELD.PI.6-8.3: supporting opinions with evidence.",
+          "tips": [
+            "Frames on the board: I think ___ held the most because ___. Our prediction was ___, and it held ___.",
+            "20 seconds of think time and a partner turn before cold calling; repeat or rephrase answers."
+          ]
+        },
+        {
+          "min": 9,
+          "title": "Answers page",
+          "do": "Groups fill in the Answers page (page 4): photo, prediction, pounds held, where and why, was the prediction right.",
+          "why": "The one gradable product; frames + dictation keep it about the standard, not the English.",
+          "tips": [
+            "Insert → Image → Camera for the photo.",
+            "Check in with groups that need a scribe."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Turn in once + recap",
+          "do": "Turn in the group Answers page once. Read the goal: thumbs up or down. Preview Monday's DONUTS vote on the best bridges.",
+          "why": "One turn-in; the objective recapped at the end.",
+          "tips": [
+            "Clean up broken bridges after the turn-in."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students reaching under a loaded bridge.",
+        "Groups recording the first crack instead of 'held'.",
+        "Groups that want challenge: Future Engineer."
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "BREAK TEST: dumbbells until it fails",
+      "goal": "By the end of class, we've loaded our bridge with dumbbells until it broke (or it held all 36 lb), compared the result to our prediction, and turned in our Answers page once.",
+      "bloom": "Evaluate",
+      "exitTicket": "No exit ticket: the one turn-in is the group Answers page (Break Test).",
+      "prep": [
+        "Two 8 lb and two 10 lb dumbbells per testing station (or rotate stations)",
+        "Class chart on the board: Group | Predicted lb + spot | Held lb | Where it broke | Buckle/tear/pop",
+        "Backpacks under each test gap; a clear drop zone",
+        "Turn-in doc attached to Break Test on Google Classroom",
+        "Phones/Chromebooks ready for video (DONUTS clip if a bridge holds 36 lb + a person)"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket (7th_Fri_Nov13_Blooket_Bridge_Fix.csv / 6th_Fri_Nov13_Blooket_Final_Upgrade.csv) reviewing Thursday.",
+          "why": "Spiral review; predictable start.",
+          "tips": [
+            "Watch the live results for the most-missed question."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, then read the goal: By the end of class, we've loaded our bridge with dumbbells until it broke (or it held all 36 lb), compared the result to our prediction, and turned in our Answers page once.",
+          "why": "Goal stated, revisited mid-lesson, recapped at the turn-in.",
+          "tips": [
+            "Likely most-missed: which fix goes on a popped joint (gusset / paper wrap)"
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Roles + post predictions",
+          "do": "Loader, Spotter, Recorder, Checker by birthday (3: Checker records; 5: two Spotters). Recorders post the Monday prediction on the chart. Read the safety rules.",
+          "why": "Complex Instruction roles; public predictions make everyone invested.",
+          "tips": [
+            "Safety: backpack under, feet and hands out of the drop zone, set down, never drop.",
+            "Assign competence: name a group whose prediction has a strong reason."
+          ]
+        },
+        {
+          "min": 16,
+          "title": "BREAK TEST",
+          "do": "One dumbbell at a time: 8, 8, 10, 10 lb (totals 8, 16, 26, 36). Count to 5 after each. When it breaks, don't touch it: the Spotter points, the Checker photographs. Held 36 lb? You pick a student to stand on it and you spot. Film it.",
+          "why": "Evaluate: test the prediction against real data (MS-ETS1-3).",
+          "tips": [
+            "At the halfway mark, point to the goal.",
+            "Ask each group: is that spot squeezed or stretched? Did it buckle, tear, or pop?",
+            "'Held' = the last total that stayed up 5 seconds.",
+            "Never record anyone's body weight: write '36 lb + a person'."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Class data: which fix worked?",
+          "do": "Recorders add 'held' and the break spot next to the prediction. Ask: which held the most, and what did it have that others didn't?",
+          "why": "Analysis + ELD.PI.6-8.3: supporting opinions with evidence.",
+          "tips": [
+            "Frames on the board: I think ___ held the most because ___. Our prediction was ___, and it held ___.",
+            "20 seconds of think time and a partner turn before cold calling; repeat or rephrase answers."
+          ]
+        },
+        {
+          "min": 9,
+          "title": "Answers page",
+          "do": "Groups fill in the Answers page (page 4): photo, prediction, pounds held, where and why, was the prediction right.",
+          "why": "The one gradable product; frames + dictation keep it about the standard, not the English.",
+          "tips": [
+            "Insert → Image → Camera for the photo.",
+            "Check in with groups that need a scribe."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Turn in once + recap",
+          "do": "Turn in the group Answers page once. Read the goal: thumbs up or down. Preview Monday's DONUTS vote on the best bridges.",
+          "why": "One turn-in; the objective recapped at the end.",
+          "tips": [
+            "Clean up broken bridges after the turn-in."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students reaching under a loaded bridge.",
+        "Groups recording the first crack instead of 'held'.",
+        "Groups that want challenge: Future Engineer."
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Goal three times, roles tables, safety rules read aloud, sentence frames for every spoken and written answer, frequent check-ins."
+    ],
+    [
+      "English learners",
+      "Frames on the board, partner talk before sharing, photo + one-word answers accepted then expanded."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca docs, read-aloud, speech-to-text, spelling not graded."
+    ],
+    [
+      "ADHD learners",
+      "Movement roles (Loader, Spotter), short timed chunks, visual timer."
+    ],
+    [
+      "IEP / 504",
+      "Extended time to Sunday, a scribe or dictated answers, intentional groups, grades not penalized for behavior; floor: photo + pounds held."
+    ],
+    [
+      "Advanced",
+      "Future Engineer: 1 KB point."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "8th: peer judging and a DONUTS vote. 6th/7th: a public prediction, a real destructive test, and a DONUTS clip if it holds 36 lb + a person."
+    ],
+    [
+      "Complex Instruction",
+      "Birthday-order roles with authority (the Checker says GO); assign competence publicly."
+    ],
+    [
+      "Maslow",
+      "Safety rules first, one turn-in, points shown up front."
+    ],
+    [
+      "Bloom's",
+      "Evaluate: the week climbs Understand (Mon) → Apply (Thu) → Evaluate (Fri)."
+    ]
+  ]
+}
