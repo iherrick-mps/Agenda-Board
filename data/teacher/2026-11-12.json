@@ -1,0 +1,304 @@
+{
+  "title": "Thursday Teacher Plan",
+  "note": "Short week: Mon, Thu, Fri only. Blooket reviews Monday. One turn-in each: the exit ticket. Tomorrow: 8th DONUTS vote; 6th/7th dumbbell break test (your observation is 6th Period).",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Juice Week, Day 2: build the juice with Copilot",
+      "goal": "By the end of class, my live game shows my juice every time the ball hits my paddle, and the rules still play the same.",
+      "bloom": "Apply / Create",
+      "exitTicket": "What juice did you add, and does it show every time the ball hits your paddle?",
+      "prep": [
+        "Blooket set imported (8th_Thu_Nov12_Blooket_Juice.csv)",
+        "Day 2 handout attached to Juice Week on Google Classroom; exit ticket posted",
+        "Your own Codespace open to model the prompt"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the 10-question Blooket reviewing Monday.",
+          "why": "Spiral review; predictable start (Maslow).",
+          "tips": [
+            "Watch the live results for the most-missed question."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, then read the goal: By the end of class, my live game shows my juice every time the ball hits my paddle, and the rules still play the same.",
+          "why": "Students know the target.",
+          "tips": [
+            "Likely most-missed: which change is NOT juice (the ball speeding up changes the rules)",
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "I do: plan, prompt, check",
+          "do": "Model it live: read the worked plan, type the prompt frame into Copilot Chat, keep the changes, hit the ball 5 times, check speed is unchanged.",
+          "why": "Gradual release: one full worked round before they try.",
+          "tips": [
+            "Say the rule out loud: only change how it looks.",
+            "Show where Keep/Accept is."
+          ]
+        },
+        {
+          "min": 15,
+          "title": "You do: Copilot builds their juice",
+          "do": "Students paste their Monday plan into the frame, keep, test, and re-prompt with exactly what they see.",
+          "why": "Students design; Copilot writes code. The skill assessed is design and checking.",
+          "tips": [
+            "Most common: juice stays on forever, so prompt 'go away after 15 frames'.",
+            "Ball got faster? 'Undo the speed change.'",
+            "Assign competence: praise a student whose re-prompt was precise."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Commit, Sync Changes, hard refresh, play",
+          "do": "Commit with a message, Sync Changes, wait a minute, Ctrl + Shift + R on the live Pages game.",
+          "why": "The live game is what gets judged tomorrow.",
+          "tips": [
+            "Drop-off point is this chain: walk the room and check that Sync Changes was actually clicked."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Exit ticket",
+          "do": "Typed on Google Classroom with frames.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: two named effects + every time + rules stayed the same."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students who never committed: the preview works but the live game doesn't.",
+        "Copilot rewriting many files: ask what it changed.",
+        "Juice that changes difficulty (bigger paddle)."
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "Cardboard Warren Truss: fix day",
+      "goal": "By the end of class, my group's cardboard fix is on our Test 1 X, every joint passes the tug test, and our bridge is drying for Friday's break test.",
+      "bloom": "Analyze / Apply",
+      "exitTicket": "Where did your group add cardboard, and why there?",
+      "prep": [
+        "Blooket imported (7th_Thu_Nov12_Blooket_Tension_Compression.csv)",
+        "Handout printed; exit ticket posted",
+        "Bridges back to table groups; cardboard scraps, glue sticks, scissors",
+        "A drying spot that won't be disturbed overnight"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the 10-question Blooket reviewing Monday.",
+          "why": "Spiral review; predictable start (Maslow).",
+          "tips": [
+            "Watch the live results for the most-missed question."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, then read the goal: By the end of class, my group's cardboard fix is on our Test 1 X, every joint passes the tug test, and our bridge is drying for Friday's break test.",
+          "why": "Students know the target.",
+          "tips": [
+            "Likely most-missed: which chord is squeezed (top = compression)",
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 2,
+          "title": "Roles by birthday",
+          "do": "Inspector, Cutter, Gluer, Checker. 3: Checker cuts too. 5: two Cutters.",
+          "why": "Complex Instruction: roles with authority.",
+          "tips": [
+            "The Checker approves every piece before glue."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Read your X",
+          "do": "Inspectors name the failure: joint popped, strip bent, deck sagged, or leaned. Tie it to Monday: squeezed parts buckle, stretched parts tear, joints pop.",
+          "why": "Analyze before fixing (MS-ETS1-4).",
+          "tips": [
+            "Cold call an Inspector after think time: what failed, and was it squeezed or stretched?"
+          ]
+        },
+        {
+          "min": 20,
+          "title": "You do: up to 6 fix pieces",
+          "do": "Repair, dot the fix spots, Checker approves, cut (length + glue square each end), glue face to face.",
+          "why": "Targeted fix = iteration based on test data.",
+          "tips": [
+            "Halfway: revisit the goal.",
+            "Edge-glued pieces fall off; push gussets and doubling."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Tug test",
+          "do": "Checker tugs every joint they touched.",
+          "why": "Quality control before the test.",
+          "tips": []
+        },
+        {
+          "min": 5,
+          "title": "Exit ticket",
+          "do": "Where they added cardboard and why there.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: the spot + the Test 1 failure + tension or compression."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Clean up + set to dry",
+          "do": "Bridges to the drying spot, names on a label.",
+          "why": "Glue needs overnight.",
+          "tips": []
+        }
+      ],
+      "watchFor": [
+        "Groups adding more than 6 pieces.",
+        "Fixes nowhere near the X.",
+        "Tomorrow's observation: note which groups are confident so you can call on them in the class data talk."
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Final upgrade: 4 sticks where it will break",
+      "goal": "By the end of class, my group has added up to 4 more popsicle sticks where we predicted the break, and our bridge is drying for Friday's break test.",
+      "bloom": "Analyze / Apply",
+      "exitTicket": "Where did your popsicle sticks go, and why there?",
+      "prep": [
+        "Blooket imported (6th_Thu_Nov12_Blooket_Tension_Compression.csv)",
+        "Handout printed; exit ticket posted",
+        "4 popsicle sticks per group counted out (the Checker collects them), paper, glue sticks, scissors"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the 10-question Blooket reviewing Monday.",
+          "why": "Spiral review; predictable start (Maslow).",
+          "tips": [
+            "Watch the live results for the most-missed question."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, then read the goal: By the end of class, my group has added up to 4 more popsicle sticks where we predicted the break, and our bridge is drying for Friday's break test.",
+          "why": "Students know the target.",
+          "tips": [
+            "Likely most-missed: which chord is squeezed (top = compression)",
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 2,
+          "title": "Roles by birthday",
+          "do": "Predictor, Stick Gluer, Wrapper, Checker. 3: Checker wraps too. 5: two Stick Gluers.",
+          "why": "Complex Instruction.",
+          "tips": []
+        },
+        {
+          "min": 5,
+          "title": "Squeezed or stretched? Pick your spots",
+          "do": "Predictor reads Monday's prediction and points; group decides squeezed, stretched, or joint.",
+          "why": "Apply Monday's reading to their own design.",
+          "tips": [
+            "Ask: why does a stick glued flat stop buckling? (stiffer, can't bend sideways)"
+          ]
+        },
+        {
+          "min": 20,
+          "title": "You do: up to 4 sticks, flat + wrapped",
+          "do": "Flat sticks on squeezed or stretched parts; paper wraps on joints.",
+          "why": "Engineering trade-off: limited material, placed with a reason.",
+          "tips": [
+            "Paper wraps use Monday's fact: paper is strong in tension.",
+            "Stop anyone loading the bridge today."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Tug test",
+          "do": "Checker tugs every upgraded joint.",
+          "why": "Quality control.",
+          "tips": []
+        },
+        {
+          "min": 5,
+          "title": "Exit ticket",
+          "do": "Where the sticks went and why.",
+          "why": "One turn-in.",
+          "tips": [
+            "Full answer: spot + squeezed/stretched + buckle/tear/pop."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Clean up + set to dry",
+          "do": "Bridges to the drying spot with names.",
+          "why": "Overnight glue.",
+          "tips": []
+        }
+      ],
+      "watchFor": [
+        "Sticks glued on edge (won't hold).",
+        "More than 4 sticks.",
+        "Groups that want challenge: Future Engineer strength-per-stick math."
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Agenda on the board, goal reviewed after the Blooket and mid-lesson, numbered steps, worked example or diagram first, checklists, sentence frames, frequent check-ins."
+    ],
+    [
+      "English learners",
+      "Squeezed/stretched shown with the paper strip and diagram, partner talk before writing, two sentence frames."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca handouts, steps read aloud, speech-to-text OK, spelling not graded."
+    ],
+    [
+      "ADHD learners",
+      "Hands-on roles (Cutter, Gluer, Wrapper), short timed chunks with a visual timer, discreet redirection, break pass."
+    ],
+    [
+      "IEP / 504",
+      "Extended time; floor version: 8th one juice effect, 7th one fix piece on the X, 6th one stick on the predicted spot; dictated exit tickets; intentional groups."
+    ],
+    [
+      "Advanced",
+      "Future Engineer: 1 KB point."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "8th polishes toward tomorrow's DONUTS vote; 6th/7th prepare the bridge they'll break publicly tomorrow."
+    ],
+    [
+      "Complex Instruction",
+      "Birthday-order roles; Checkers hold approval authority; assign competence publicly."
+    ],
+    [
+      "Maslow",
+      "Predictable routine, one turn-in, 'you are not behind'."
+    ],
+    [
+      "Bloom's",
+      "Apply/Create today, between Monday's Understand and Friday's Evaluate."
+    ]
+  ]
+}
