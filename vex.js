@@ -170,6 +170,15 @@ const VEX_TIMER_VOLUME = 100;
 // Keep answers short — the text scales to fill the bento, so every extra
 // clause shrinks the font for the whole rotation.
 const VEX_FAQS = [
+  /* First in the rotation because it is the one they need most often and
+     the only one with a wrong answer they can't reason their way to.
+     Unlike everything below it, this is OUR classroom's information, not
+     the game manual's — a manual update can't make it stale, and only
+     Ms. Herrick can say when it changes. */
+  {
+    q: 'What is our code for the VEX VR website?',
+    a: 'Enter 92120A first, then 24PEJ9.'
+  },
   {
     q: 'How big can our robot be?',
     a: '11" x 20" x 15" at the start of a match. After that you can expand to 11" x 24" wide, and as tall as you like.'
