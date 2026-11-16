@@ -22,7 +22,7 @@
     "6th Period": {
       "grade": "7th Grade",
       "weeklyDeliverable": "Turned in Sunday night: a screenshot and share link of your TinkerCAD cam, and 2 sentences on how it moves the follower.",
-      "workingNow": "Open the Google Classroom assignment called Cam and Follower. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "workingNow": "Open the Google Classroom question about cams. Open the cam simulation linked there, then research one real machine with a cam and write your sentences under your exit ticket.",
       "smartGoal": "By the end of class, I can explain how a cam turns spinning motion into up-and-down motion.",
       "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
@@ -30,11 +30,11 @@
         "Wayground: classroom expectations (5 min)",
         "Review answers + today's goal (5 min)",
         "Grade check: Infinite Campus + form (6 min)",
-        "DONUTS vote: top 3 popsicle bridges (6 min)",
         "This week (4 days) and the points (3 min)",
-        "Mini-lesson: cams and followers (10 min)",
-        "We do: sketch a cam and follower (8 min)",
-        "Exit Ticket: what does a cam do? (7 min)"
+        "Mini-lesson: cams and followers (8 min)",
+        "You do: explore the cam simulation (10 min)",
+        "Research a real cam + write your Box sentences (8 min)",
+        "Exit Ticket: what does a cam do? (5 min)"
       ],
       "connections": "Last week your group built and tested a real bridge. This week you model a cam and follower in TinkerCAD. Today: how a cam works. Thursday is turn-in day (no class Friday)."
     },

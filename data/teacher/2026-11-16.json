@@ -1,6 +1,6 @@
 {
   "title": "Monday Teacher Plan",
-  "note": "Short week: Mon–Thu, Thursday is turn-in day (Fri Nov 20 minimum day). Monday = expectations Wayground + grade check. 7th votes on bridges for DONUTS (air Tuesday).",
+  "note": "Short week: Mon–Thu, Thursday is turn-in day (Fri Nov 20 minimum day). Monday = expectations Wayground + grade check.",
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
@@ -93,8 +93,8 @@
       "prep": [
         "7th_Mon_Nov16_Cam_and_Follower_Day1 printed (3 pages)",
         "Exit ticket posted on the Cam and Follower assignment with both frames",
-        "Bridge photos/videos from Friday's break test ready to show for the vote",
-        "Vote method ready (hand vote or quick form): top 3, not your own group"
+        "Vote method ready (hand vote or quick form): top 3, not your own group",
+        "Cam simulation link attached to the Classroom question"
       ],
       "segments": [
         {
@@ -127,16 +127,6 @@
           ]
         },
         {
-          "min": 6,
-          "title": "DONUTS vote: top 3 bridges",
-          "do": "Show each group's bridge and break result, then students vote for their top 3 (not their own group).",
-          "why": "Peer recognition is the motivator (PBL public product); bridges had real design freedom.",
-          "tips": [
-            "Criteria on the handout: how much it held, how clean the build, how cool the break.",
-            "Winners air Tuesday on DONUTS: tell them."
-          ]
-        },
-        {
           "min": 3,
           "title": "This week (4 days) and the points",
           "do": "Walk the week: Mon how a cam works, Tue model the cam in TinkerCAD, Wed add the follower, Thu label, screenshot, turn in once. Points: 70 floor + 10/10/10.",
@@ -147,7 +137,7 @@
           ]
         },
         {
-          "min": 10,
+          "min": 8,
           "title": "Mini-lesson: cams and followers",
           "do": "Use the LOW/HIGH diagram. Key words: CAM (off-center wheel), FOLLOWER (rides on top), AXLE (stays put). Read THE KEY RULE together. Quick examples: engine valves, sewing machine needle, bobbing toy heads.",
           "why": "Concrete visual before vocabulary (ELD: pre-teach words with pictures).",
@@ -157,17 +147,23 @@
           ]
         },
         {
-          "min": 8,
-          "title": "We do: sketch a cam and follower",
-          "do": "Box 1: axle dot near the bottom, follower on top. Box 2: same cam half a turn later (axle near the top), follower drawn, arrow up or down.",
-          "why": "Students produce the model themselves (Bloom: Understand).",
+          "min": 10,
+          "title": "You do: explore the cam simulation",
+          "do": "Students open the cam simulation (linked on the Classroom question), press play, change the cam shape and slide the offset, and watch the follower and the graph.",
+          "why": "Low-energy, all-screen day: the simulation shows the motion without building anything.",
           "tips": [
-            "Answer key: Box 1 follower is HIGH (big side up); Box 2 follower is LOW (big side down), arrow ↓.",
-            "Freehand circles are fine: no rulers needed."
+            "If the site is blocked, they use the mini-lesson picture instead."
           ]
         },
         {
-          "min": 7,
+          "min": 8,
+          "title": "Research a real cam + write your Box sentences",
+          "do": "Students find one real machine that uses a cam, then write 2 sentences for Box 1 (what changed in the simulation) and 2 for Box 2 (the real machine) under their exit ticket answer.",
+          "why": "Research + writing (ELD), no hands-on management today.",
+          "tips": []
+        },
+        {
+          "min": 5,
           "title": "Exit Ticket: what does a cam do?",
           "do": "Students answer on Google Classroom with a frame.",
           "why": "One turn-in; checks today's goal.",
