@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Decorator doc (game link, wide-paddle plan, 3 answers) and the Decorator pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my live game has a power-up that makes the paddle wide for a while.",
-      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "weeklyDeliverable": "Due Sunday night: your TinkerCAD Circuits link for each day this week (LED, button, potentiometer, servos), plus 3 sentences on the difference between an input and an output.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 4: Servo. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my servo moves to the angle I choose with my dial.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Paste your plan into Copilot (5 min)",
-        "You do: build your decorator (20 min)",
-        "Commit, Sync Changes, hard refresh, check (8 min)",
-        "Exit Ticket: what did you build? (7 min)"
+        "I do: the Servo library and write(angle) (8 min)",
+        "You do: sweep the servo with your dial (22 min)",
+        "Test the full 0 to 180 range (5 min)",
+        "Exit Ticket: what angle does your dial set? (5 min)"
       ],
-      "connections": "Wednesday you traced a decorator. Today you build your power-up. Tomorrow you finish, play classmates' games, and turn in."
+      "connections": "You turned a dial into brightness. Today the dial turns into motion. Tomorrow you run two servos at once."
     },
     "6th Period": {
       "grade": "7th Grade",

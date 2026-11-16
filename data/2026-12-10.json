@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Prototype doc (game link, multiball plan, 3 answers) and the Prototype pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Prototype Pattern. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
-      "smartGoal": "By the end of class, multiball is live, I can explain the Prototype pattern, and my doc is turned in once.",
+      "weeklyDeliverable": "Turned in Sunday night: your Virtual Robot Brain doc (TinkerCAD circuit link, your code, 3 answers) and your radar-scan circuit working in the simulator.",
+      "workingNow": "Open the Google Classroom assignment called Virtual Robot Brain. Read the instructions, follow them, then turn in once.",
+      "smartGoal": "By the end of class, my radar circuit works in the simulator and my Virtual Robot Brain doc is turned in once.",
       "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Finish + commit, sync, check (12 min)",
-        "Fill in the Answers tab (12 min)",
-        "Gallery play: 2 classmates' games (8 min)",
+        "Finish + test your circuit (12 min)",
+        "Fill in the doc: circuit link, code, 3 answers (12 min)",
+        "Gallery play: run 2 classmates' radars (8 min)",
         "Final check + turn in (8 min)"
       ],
-      "connections": "This week you cloned the ball to make multiball. Today you turn in once. Next week is choose your own adventure: nothing graded."
+      "connections": "You built a radar one piece at a time. Today you finish and turn it in. In January this becomes a real Arduino."
     },
     "6th Period": {
       "grade": "7th Grade",

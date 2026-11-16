@@ -3,19 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Decorator doc (game link, wide-paddle plan, 3 answers) and the Decorator pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
-      "smartGoal": "By the end of class, my power-up is live, I can explain the Decorator pattern, and my doc is turned in once.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Due Sunday night: your TinkerCAD Circuits link for each day this week (LED, button, potentiometer, servos), plus 3 sentences on the difference between an input and an output.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 5: Two Servos. Read the instructions, follow them, then turn in your circuit links and answers.",
+      "smartGoal": "By the end of class, two servos move from one sketch, and my week's circuit links are turned in.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Finish, fill in the Answers tab, or Future Engineer (22 min)",
-        "Gallery play: try 2 classmates' games (10 min)",
-        "Final check + turn in (8 min)"
+        "I do: two servos, two pins, one sketch (6 min)",
+        "You do: build the two-servo circuit (18 min)",
+        "Collect your four circuit links and answer the 3 sentences (11 min)",
+        "Turn in once (5 min)"
       ],
-      "connections": "This week a decorator gave your paddle a new ability. Today you turn in once. Next week: multiball with the Prototype pattern."
+      "connections": "You controlled one servo. Today you control two, like a radar arm. Monday you add a distance sensor."
     },
     "6th Period": {
       "grade": "7th Grade",

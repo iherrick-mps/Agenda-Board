@@ -3,19 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Prototype doc (game link, multiball plan, 3 answers) and the Prototype pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Prototype Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can plan multiball: when the ball clones and how many balls appear.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems into parts to facilitate the design, implementation, and review of programs.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "weeklyDeliverable": "Turned in Sunday night: your Virtual Robot Brain doc (TinkerCAD circuit link, your code, 3 answers) and your radar-scan circuit working in the simulator.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 7: Radar Sweep. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my servo sweeps the distance sensor and my circuit prints the distance at each angle.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "We do: read a worked example clone (12 min)",
-        "You do: plan your multiball (15 min)",
-        "Exit Ticket: your multiball plan (13 min)"
+        "I do: a for loop that sweeps the servo and reads distance (8 min)",
+        "You do: build the radar sweep (22 min)",
+        "Find the nearest object in your scan (5 min)",
+        "Exit Ticket: which angle was closest? (5 min)"
       ],
-      "connections": "Yesterday you found where the ball is made. Today you plan when it clones. Wednesday you build it, and Thursday you turn in."
+      "connections": "You measured distance and moved servos separately. Today they work together as a radar. Tomorrow it reacts."
     },
     "6th Period": {
       "grade": "7th Grade",

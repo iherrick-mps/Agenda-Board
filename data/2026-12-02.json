@@ -3,19 +3,19 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Decorator doc (game link, wide-paddle plan, 3 answers) and the Decorator pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can trace what happens to the paddle when the power-up starts and ends.",
-      "contentStandard": "CA CS Standards 6-8.AP.14 — Create procedures with parameters to organize code and make it easier to reuse.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
+      "weeklyDeliverable": "Due Sunday night: your TinkerCAD Circuits link for each day this week (LED, button, potentiometer, servos), plus 3 sentences on the difference between an input and an output.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 3: Dial. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my potentiometer changes my LED's brightness, and I can read its value in the serial monitor.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (3 min)",
-        "We do: trace the decorator start to end (12 min)",
-        "Partner check: what goes back to normal? (5 min)",
-        "Exit Ticket: start, change, end (5 min)"
+        "We do: analogRead and the serial monitor (10 min)",
+        "You do: dim the LED with the dial (8 min)",
+        "Exit Ticket: what range of numbers did you see? (4 min)"
       ],
-      "connections": "Yesterday you planned your power-up. Today you trace how a decorator starts and ends. Tomorrow you build yours."
+      "connections": "Yesterday an input was on or off. Today it can be any value. Tomorrow you move a servo."
     },
     "6th Period": {
       "grade": "7th Grade",

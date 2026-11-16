@@ -3,19 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Decorator doc (game link, wide-paddle plan, 3 answers) and the Decorator pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Decorator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can plan a wide-paddle power-up: what triggers it, what changes, and when it ends.",
-      "contentStandard": "CA CS Standards 6-8.AP.13 — Decompose problems into parts to facilitate the design, implementation, and review of programs.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "weeklyDeliverable": "Due Sunday night: your TinkerCAD Circuits link for each day this week (LED, button, potentiometer, servos), plus 3 sentences on the difference between an input and an output.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 2: Button. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my circuit lights an LED only while a button is pressed.",
+      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "We do: read a worked example decorator (12 min)",
-        "You do: plan your power-up (15 min)",
-        "Exit Ticket: your power-up plan (13 min)"
+        "I do: digitalRead and if/else (8 min)",
+        "You do: build the button circuit (22 min)",
+        "Test with 3 presses and fix what breaks (5 min)",
+        "Exit Ticket: what does the Arduino read? (5 min)"
       ],
-      "connections": "Yesterday you found the paddle code. Today you plan a power-up that changes the paddle. Wednesday you trace it, and Thursday you build it."
+      "connections": "Monday you wrote output. Today you add input. Tomorrow you read a dial."
     },
     "6th Period": {
       "grade": "7th Grade",
