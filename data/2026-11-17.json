@@ -3,19 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Iterator doc (game link, loops you cleaned up, 3 answers) and the Iterator pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Iterator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can rewrite one counting loop as a for...of loop that does the same thing.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures.",
-      "eldStandard": "ELD.PI.6-8.6 — Reading closely literary and informational texts and viewing multimedia to determine how meaning is conveyed explicitly and implicitly through language.",
+      "weeklyDeliverable": "Turned in Sunday night: your TinkerCAD Circuits link for each day this week (blink, button, dial, servo), plus 3 sentences on the difference between an input and an output. You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 2: Button. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my circuit lights an LED only while a button is pressed.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "We do: worked example, a counting loop becomes for...of (12 min)",
-        "You do: plan which loops to clean up (15 min)",
-        "Exit Ticket: before and after (13 min)"
+        "I do: a button is an input, the LED is an output (8 min)",
+        "You do: wire the button and code it (22 min)",
+        "Share your circuit link (5 min)",
+        "Exit Ticket: input or output? (5 min)"
       ],
-      "connections": "Yesterday you listed every loop. Today you see one cleaned up and plan yours. Wednesday you check you didn't break anything, and Thursday you turn in."
+      "connections": "Yesterday your LED blinked on its own. Today a button decides when it lights. Tomorrow a dial sets how bright it is."
     },
     "6th Period": {
       "grade": "7th Grade",

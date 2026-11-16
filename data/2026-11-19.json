@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Iterator doc (game link, loops you cleaned up, 3 answers) and the Iterator pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Iterator Pattern. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
-      "smartGoal": "By the end of class, my cleaned-up loops are live, I can explain the Iterator pattern, and my doc is turned in once.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Turned in Sunday night: your TinkerCAD Circuits link for each day this week (blink, button, dial, servo), plus 3 sentences on the difference between an input and an output. You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 4: Servo. Read the instructions, follow them, then turn in once at the end of class.",
+      "smartGoal": "By the end of class, my servo moves to the angle I choose with my dial, and my week's circuit links are turned in once.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Finish cleanup + commit, sync, check (12 min)",
-        "Fill in the Answers tab (12 min)",
-        "Gallery play: 2 classmates' games (8 min)",
-        "Final check + turn in (8 min)"
+        "I do: map 0–1023 to 0–180 degrees (7 min)",
+        "You do: the dial turns the servo (18 min)",
+        "Write: input vs output, 3 sentences (7 min)",
+        "Final check + turn in once (8 min)"
       ],
-      "connections": "This week you cleaned up how your game visits every brick. Today you turn in once. After Thanksgiving: power-ups with the Decorator pattern."
+      "connections": "This week you built an LED, a button and a dial in the simulator. Today the dial moves a servo, the first part of the robot you'll build in Semester 2. Turn in once today."
     },
     "6th Period": {
       "grade": "7th Grade",
