@@ -1,0 +1,330 @@
+{
+  "title": "Monday Teacher Plan",
+  "note": "Short week: Mon–Thu, Thursday is turn-in day (Fri Nov 20 minimum day). Monday = expectations Wayground + grade check. 7th votes on bridges for DONUTS (air Tuesday).",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Electrical engineering, Circuits 1: Blink an LED (TinkerCAD Circuits)",
+      "goal": "By the end of class, my TinkerCAD circuit blinks an LED, and I can say what the resistor is for.",
+      "bloom": "Remember / Apply",
+      "exitTicket": "What does the resistor protect, and what happens without it?",
+      "prep": [
+        "Circuits 1: Blink assignment on Google Classroom (no handout today)",
+        "Exit ticket question posted with sentence frames",
+        "Expectations Wayground ready",
+        "Your own TinkerCAD Circuits blink circuit open to model"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Wayground: classroom expectations",
+          "do": "Students take the classroom expectations Wayground (Monday's standing quiz).",
+          "why": "Predictable Monday start; resets norms after the weekend (Maslow: safety).",
+          "tips": [
+            "Watch live results for the most-missed expectation."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Grade check: Infinite Campus + form",
+          "do": "Students open Infinite Campus, find their overall grade, and fill out the Weekly Grade Check-In (2026-2027) form.",
+          "why": "Weekly self-monitoring; no surprises at progress reports.",
+          "tips": [
+            "Keep grades private: no screens shown to neighbors.",
+            "Below 70%: point to the regrade form and Tuesday tutoring. Exit tickets can't be redone; missing work is accepted late for full credit."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "This week (4 days) and the points",
+          "do": "Electrical engineering starts today. Walk the week: Mon blink, Tue button, Wed dial, Thu servo + turn in once. Read the goal aloud: By the end of class, my TinkerCAD circuit blinks an LED, and I can say what the resistor is for.",
+          "why": "A new unit needs a clear arc; students know Thursday's product before they start.",
+          "tips": [
+            "Say it plainly: we're done with Copilot and games; this is circuits now."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "I do: breadboard, Arduino, LED, resistor",
+          "do": "Build the blink circuit live in TinkerCAD Circuits: how breadboard rows connect, LED legs (long = +), the 220 Ω resistor in series, pin 13, then the blink code.",
+          "why": "Worked example first; every part is named before students touch it.",
+          "tips": [
+            "Ask: what happens without the resistor? (Too much current; the LED burns out.)",
+            "Leave your finished circuit on the projector."
+          ]
+        },
+        {
+          "min": 16,
+          "title": "You do: build and blink your LED",
+          "do": "Students build the same circuit in their own TinkerCAD Circuits, start the simulation, and change the delay so it blinks faster or slower.",
+          "why": "Hands-on build with a visible success signal.",
+          "tips": [
+            "Most common bug: LED backwards or resistor in the wrong row.",
+            "Fast finishers: blink two LEDs in turn."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Share your circuit link",
+          "do": "Students copy their TinkerCAD share link into the Classroom assignment.",
+          "why": "Thursday's turn-in is the week's links; collecting them daily prevents a scramble.",
+          "tips": []
+        },
+        {
+          "min": 5,
+          "title": "Exit Ticket: what does the resistor protect?",
+          "do": "Students answer on Google Classroom with a sentence frame.",
+          "why": "Checks the one idea that matters most today.",
+          "tips": []
+        }
+      ],
+      "watchFor": [
+        "LED in backwards (long leg goes toward the pin)",
+        "Resistor in the same row as nothing (breadboard rows)",
+        "Students who haven't signed in to TinkerCAD with their school account"
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "Cam and Follower, Day 1: how a cam works + DONUTS bridge vote",
+      "goal": "By the end of class, I can explain how a cam turns spinning motion into up-and-down motion.",
+      "bloom": "Remember / Understand",
+      "exitTicket": "What happens to the follower when the cam spins?",
+      "prep": [
+        "7th_Mon_Nov16_Cam_and_Follower_Day1 printed (3 pages)",
+        "Exit ticket posted on the Cam and Follower assignment with both frames",
+        "Bridge photos/videos from Friday's break test ready to show for the vote",
+        "Vote method ready (hand vote or quick form): top 3, not your own group"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Wayground: classroom expectations",
+          "do": "Students take the classroom expectations Wayground (Monday's standing quiz).",
+          "why": "Predictable Monday start; resets norms after the weekend (Maslow: safety).",
+          "tips": [
+            "Watch live results for the most-missed expectation."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review answers + today's goal",
+          "do": "Re-teach the most-missed expectation, then read the goal aloud: By the end of class, I can explain how a cam turns spinning motion into up-and-down motion.",
+          "why": "Students know the target before any directions.",
+          "tips": [
+            "Frame it positively: name the expectation, then what it looks like in our room.",
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Grade check: Infinite Campus + form",
+          "do": "Students open Infinite Campus, find their overall grade, and fill out the Weekly Grade Check-In (2026-2027) form.",
+          "why": "Weekly self-monitoring; no surprises at progress reports.",
+          "tips": [
+            "Keep grades private: no screens shown to neighbors.",
+            "Below 70%: point to the regrade form and Tuesday tutoring. Exit tickets can't be redone; missing work is accepted late for full credit."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "DONUTS vote: top 3 bridges",
+          "do": "Show each group's bridge and break result, then students vote for their top 3 (not their own group).",
+          "why": "Peer recognition is the motivator (PBL public product); bridges had real design freedom.",
+          "tips": [
+            "Criteria on the handout: how much it held, how clean the build, how cool the break.",
+            "Winners air Tuesday on DONUTS: tell them."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "This week (4 days) and the points",
+          "do": "Walk the week: Mon how a cam works, Tue model the cam in TinkerCAD, Wed add the follower, Thu label, screenshot, turn in once. Points: 70 floor + 10/10/10.",
+          "why": "Points and the single turn-in shown up front lower anxiety (Maslow).",
+          "tips": [
+            "Say it plainly: today they write only the exit ticket.",
+            "No class Friday (minimum day). Thursday is turn-in day; due Sunday 11:59 PM."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Mini-lesson: cams and followers",
+          "do": "Use the LOW/HIGH diagram. Key words: CAM (off-center wheel), FOLLOWER (rides on top), AXLE (stays put). Read THE KEY RULE together. Quick examples: engine valves, sewing machine needle, bobbing toy heads.",
+          "why": "Concrete visual before vocabulary (ELD: pre-teach words with pictures).",
+          "tips": [
+            "Act it out: fist = cam on a pencil axle, other hand flat on top = follower.",
+            "10-2: after the lesson, 2-minute turn-and-talk: 'Where is the big side when the follower is high?'"
+          ]
+        },
+        {
+          "min": 8,
+          "title": "We do: sketch a cam and follower",
+          "do": "Box 1: axle dot near the bottom, follower on top. Box 2: same cam half a turn later (axle near the top), follower drawn, arrow up or down.",
+          "why": "Students produce the model themselves (Bloom: Understand).",
+          "tips": [
+            "Answer key: Box 1 follower is HIGH (big side up); Box 2 follower is LOW (big side down), arrow ↓.",
+            "Freehand circles are fine: no rulers needed."
+          ]
+        },
+        {
+          "min": 7,
+          "title": "Exit Ticket: what does a cam do?",
+          "do": "Students answer on Google Classroom with a frame.",
+          "why": "One turn-in; checks today's goal.",
+          "tips": [
+            "Answer key: the follower moves up and down because the axle is off-center; a cam turns spinning (rotary) motion into up-and-down motion.",
+            "Recap the goal before they write."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students who put the axle in the center (nothing moves: use it as a teachable 'why off-center' moment Tuesday)",
+        "Vote turning into a popularity contest: re-read the criteria"
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Tensegrity, Day 1: feel tension with a stick and string",
+      "goal": "By the end of class, I can explain how tension in string holds sticks up in a tensegrity.",
+      "bloom": "Understand / Apply",
+      "exitTicket": "What is tension, and what happened to the stick when the string went loose?",
+      "prep": [
+        "6th_Mon_Nov16_Tensegrity_Day1 printed (4 pages)",
+        "Exit ticket posted on the Tensegrity assignment with both frames",
+        "Per pair: 1 popsicle stick, string, scissors; folded-paper measuring sticks out",
+        "A string + stick of your own to demo"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Wayground: classroom expectations",
+          "do": "Students take the classroom expectations Wayground (Monday's standing quiz).",
+          "why": "Predictable Monday start; resets norms after the weekend (Maslow: safety).",
+          "tips": [
+            "Watch live results for the most-missed expectation."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review answers + today's goal",
+          "do": "Re-teach the most-missed expectation, then read the goal aloud: By the end of class, I can explain how tension in string holds sticks up in a tensegrity.",
+          "why": "Students know the target before any directions.",
+          "tips": [
+            "Frame it positively: name the expectation, then what it looks like in our room.",
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Grade check: Infinite Campus + form",
+          "do": "Students open Infinite Campus, find their overall grade, and fill out the Weekly Grade Check-In (2026-2027) form.",
+          "why": "Weekly self-monitoring; no surprises at progress reports.",
+          "tips": [
+            "Keep grades private: no screens shown to neighbors.",
+            "Below 70%: point to the regrade form and Tuesday tutoring. Exit tickets can't be redone; missing work is accepted late for full credit."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "This week (4 days) and the points",
+          "do": "Walk the week: Mon tension, Tue tie a 3-stick frame in pairs, Wed tighten until it stands, Thu push test, photo, turn in once. Points: 70 floor + 10/10/10.",
+          "why": "Points and the single turn-in shown up front lower anxiety (Maslow).",
+          "tips": [
+            "Pitch the challenge: a tensegrity that stands on its own looks impossible, and it's on them to make it.",
+            "No class Friday (minimum day). Thursday is turn-in day; due Sunday 11:59 PM."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Mini-lesson: push and pull",
+          "do": "Use the push/pull diagram: strings can't push (floppy), pulled strings = TENSION, pushed sticks = COMPRESSION. Show the 3-stick tensegrity picture: no stick touches another.",
+          "why": "Vocabulary tied to a picture and a physical action (ELD; Bloom: Understand).",
+          "tips": [
+            "Demo with your own string: push it (floppy), pull it (tight).",
+            "Real-world hook: bike wheel spokes are all in tension."
+          ]
+        },
+        {
+          "min": 2,
+          "title": "Roles by birthday",
+          "do": "Pairs line up by birthday: younger = Holder, older = Tester. One group of 3 if odd: oldest = Checker.",
+          "why": "Complex Instruction: roles with real jobs; students never choose.",
+          "tips": [
+            "Remind them to swap roles before test 5."
+          ]
+        },
+        {
+          "min": 11,
+          "title": "We do: feel tension with a stick and string",
+          "do": "Pairs run tests 1–6: cut string 2 sticks long, push test, pull test, stick test, predict, hold-up test (tight vs loose).",
+          "why": "Hands-on before explaining (ADHD-friendly movement; Bloom: Apply). Prediction before the test adds rigor for a class that wants challenge.",
+          "tips": [
+            "Answer key: push → floppy; pull → tight, pushes back on a finger (tension); stick pushes back (compression); loose string → the stick drops / hangs, tight → stays up.",
+            "Knots slipping: wrap twice around the stick, then tie.",
+            "Assign competence: praise a pair whose prediction came with a reason.",
+            "Revisit the goal halfway through."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Exit Ticket: what is tension?",
+          "do": "Students answer on Google Classroom with a frame.",
+          "why": "One turn-in, directly answerable from the tests they ran.",
+          "tips": [
+            "Answer key: tension is a pull; when the string went loose, the stick dropped/sagged.",
+            "Extra time: clean up string scraps and sticks, and start Future Engineer."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Pushing too hard on the stick in the stick test (gentle!)",
+        "Scissors handling",
+        "Students cutting string without measuring"
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Goal read after the Wayground and revisited mid-lesson, numbered steps, worked example first, checklists, sentence frames on every exit ticket, frequent check-ins, positive reinforcement."
+    ],
+    [
+      "English learners",
+      "Key words tied to diagrams (COLLECTION/ITEM/ITERATOR; CAM/FOLLOWER/AXLE; TENSION/COMPRESSION), turn-and-talk before writing, two frames per exit ticket, Immersive Reader."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca handouts, steps read aloud, speech-to-text OK, spelling not graded; 8th: Ctrl + F instead of scanning code by eye."
+    ],
+    [
+      "ADHD learners",
+      "Short timed chunks with a visual timer, hands-on roles (Holder/Tester), acting out the cam with hands, preferential seating near the demo, discreet redirection, break pass."
+    ],
+    [
+      "IEP / 504",
+      "Extended time, dictated exit tickets, intentional partners, grades not penalized for behavior. Floors: 8th labels 3 loops; 7th draws Box 1 only and answers with one frame; 6th does pull test + hold-up test only."
+    ],
+    [
+      "Advanced",
+      "Future Engineer (OPTIONAL): 1 KB point. 8th busiest loop / spark iterator / portfolio; 7th snail cam / quarter turns / real cam; 6th one vs two strings / spot tension / best knot."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "Each grade starts a 4-day build toward one Thursday product: cleaned-up loops in a live game, a TinkerCAD cam, a standing tensegrity. 7th's bridge vote puts last week's product on DONUTS."
+    ],
+    [
+      "Complex Instruction",
+      "Birthday-order roles in 6th; 8th checks Copilot rather than trusting it; publicly assign competence (caught a missed loop, a reasoned prediction)."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "Expectations Wayground, grade check, points and one turn-in shown up front, 'you are not behind'."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "Monday is Remember/Understand (6th: Understand/Apply); the week climbs to Apply/Create Tue–Wed and Evaluate Thursday."
+    ]
+  ]
+}
