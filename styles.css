@@ -2343,12 +2343,6 @@ body.board-page {
   background: #f3f4f5;
   border-left-color: #5b6670;
 }
-.box-scrum .box-label {
-  flex: 0 0 auto;
-  padding: 1.1vh 1.3vw 0.5vh;
-  color: #48525b;
-}
-
 .vex-scrum-wrap {
   flex: 1 1 auto;
   min-height: 0;
@@ -2363,6 +2357,10 @@ body.board-page {
      a stage column doesn't need a matching edit here. The fallbacks keep the
      table sane if the script hasn't run yet. */
   grid-template-columns: minmax(118px, 1.4fr) repeat(var(--scrum-stages, 5), 1fr);
+  /* row 1 is the title + due dates and takes only the height it needs;
+     everything after it (column headers, then one row per team) keeps
+     sharing the remaining height equally, as it did before */
+  grid-template-rows: auto;
   grid-auto-rows: 1fr;
   gap: 0; /* rows sit flush against each other; fills need no seams between them */
   height: 100%;
@@ -2380,6 +2378,76 @@ body.board-page {
 }
 
 .vex-scrum-corner { background: transparent; }
+
+/* ---- Row 1: title + a due date over each build stage ----
+   The bento's label, moved into the table so the dates can share its
+   line (and so both scroll together when the table scrolls sideways). */
+.vex-scrum-title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: clamp(0.5rem, 1.5vh, 0.78rem);
+  color: #48525b;
+  padding: 0.75vh 0.6vw 0.5vh;
+  align-items: center;
+}
+
+/* Each date marks the meeting that part should be finished by. The
+   dotted rule on the right edge is the divider between one part's
+   stretch of the season and the next — dotted rather than solid
+   because these are targets, not the hard column rules below. */
+.vex-scrum-due {
+  justify-content: center;
+  align-items: center;
+  padding: 0.75vh 0.3vw 0.5vh;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(0.45rem, 1.45vh, 0.74rem);
+  letter-spacing: 0.04em;
+  color: #7c8690;
+  white-space: nowrap;
+}
+
+.vex-scrum-due.has-rule {
+  border-right: 2px dotted #aab3bb;
+}
+
+/* a deadline that has already gone by */
+.vex-scrum-due.is-past { color: #b4323a; }
+
+/* ---- Behind: a part whose meeting has passed is still unfinished ----
+   This flashes the row's background COLOR, which the progress gradient
+   is painted on top of — so the red shows through exactly the stretch
+   of the row the team has not filled in yet, and shrinks as they catch
+   up. A team at 80% flashes a short red tail; a team at 0% flashes the
+   whole row.
+
+   0.6 Hz, and a tint rather than a saturated fill. This is a motivator
+   on a wall in a room full of children, not an alarm: fast strobing is
+   a photosensitivity risk, and the guidance to stay under 3 Hz is the
+   floor, not the target. */
+.vex-scrum-fill.is-behind {
+  animation: vex-behind-flash 1.6s ease-in-out infinite;
+}
+
+@keyframes vex-behind-flash {
+  0%, 100% { background-color: rgba(214, 48, 58, 0.10); }
+  50%      { background-color: rgba(214, 48, 58, 0.40); }
+}
+
+/* Reduced motion keeps the warning, drops the pulse — a steady red says
+   the same thing a blinking one does. */
+@media (prefers-reduced-motion: reduce) {
+  .vex-scrum-fill.is-behind {
+    animation: none;
+    background-color: rgba(214, 48, 58, 0.28);
+  }
+}
+
+/* an empty date cell (no sessions file, competition passed) keeps the
+   row's height steady instead of collapsing it */
+.vex-scrum-due:empty::before { content: '\00a0'; }
 
 .vex-scrum-head {
   flex-direction: column;

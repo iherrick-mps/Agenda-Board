@@ -352,6 +352,72 @@ function vexBuildMinutesLeft(data, now, deadline) {
   return minutes;
 }
 
+/* ---- A deadline per build stage ----
+   "Assuming every part takes an equal amount of time, which meeting
+   should each part be done by?" Split the build time still ahead into
+   one equal share per stage, then walk the meetings in order and report
+   the one where each share runs out.
+
+   Measured from the season's FIRST meeting, not from today, so the plan
+   is fixed: the same five dates all season, the ones the teams can learn
+   and work against. Measuring from today would quietly re-cut the
+   schedule every morning, and a deadline that moves when you miss it
+   is not a deadline — it is also what makes "behind" mean anything,
+   since early dates have to be allowed to fall into the past.
+
+   Returns one ISO date per stage, earliest first, or null when there is
+   no build time in the file at all. ---- */
+function vexStageDeadlines(data, now, deadline, stageCount) {
+  if (!data || !Array.isArray(data.sessions) || stageCount <= 0) return null;
+
+  // each meeting between now and the competition, with the minutes it
+  // still offers — a meeting already under way counts only what is left
+  const upcoming = [];
+  for (const session of data.sessions) {
+    const blocks = (data.blocks && data.blocks[session.kind]) || [];
+    let minutes = 0;
+    for (const block of blocks) {
+      const { start, end } = vexBlockBounds(session.date, block);
+      if (end <= now) continue;
+      if (start >= deadline) continue;
+      const from = start < now ? now : start;
+      const to = end > deadline ? deadline : end;
+      if (to > from) minutes += (to - from) / 60000;
+    }
+    if (minutes > 0) upcoming.push({ date: session.date, minutes });
+  }
+  if (!upcoming.length) return null;
+  upcoming.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
+
+  const share = upcoming.reduce((sum, u) => sum + u.minutes, 0) / stageCount;
+  if (!(share > 0)) return null;
+
+  const out = [];
+  let acc = 0;
+  for (const u of upcoming) {
+    acc += u.minutes;
+    // one meeting can satisfy several shares at once — near the end,
+    // the last meeting left carries every share still unassigned
+    while (out.length < stageCount && acc + 1e-6 >= share * (out.length + 1)) {
+      out.push(u.date);
+    }
+    if (out.length >= stageCount) break;
+  }
+  // floating-point shortfall on the final share: it belongs to the last
+  // meeting, which is the only one it can belong to
+  while (out.length < stageCount) out.push(upcoming[upcoming.length - 1].date);
+  return out;
+}
+
+// "Nov 23" — the year is never in doubt on a board counting down to one
+// competition, and the column is too narrow to spend characters on it
+function vexFmtShortDate(iso) {
+  try {
+    return vexParseIsoDateLocal(iso)
+      .toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  } catch (e) { return iso; }
+}
+
 /* HH:MM:SS of build time. Hours run on rather than rolling into days —
    a whole season is about 80 hours, and "03:08:45:00" reads like a
    date, where "80:45:00" reads like a clock running out.
@@ -707,16 +773,90 @@ function initVexScrumBoard() {
   // stylesheet, so adding a column above is a one-line change
   tableEl.style.setProperty('--scrum-stages', String(VEX_SCRUM_STAGES.length));
 
-  const corner = document.createElement('div');
-  corner.className = 'vex-scrum-cell vex-scrum-corner';
-  corner.style.gridRow = '1';
-  corner.style.gridColumn = '1';
-  tableEl.appendChild(corner);
+  /* Stages whose due meeting has already gone by. Empty until
+     vex-sessions.json lands, so a board with no file (or no network)
+     simply never calls anyone behind. */
+  let overdueStageIds = [];
+
+  /* ---- Row 1: the title, and a deadline over each build stage.
+
+     "Team Progress" lives in this row rather than in the bento's own
+     label above, so the dates can share the line with it. It has to be
+     inside the table for a second reason: .vex-scrum-wrap scrolls
+     sideways on a narrow screen, and a date strip outside the table
+     would slide out of register with the columns it labels. ---- */
+  const title = document.createElement('div');
+  title.className = 'vex-scrum-cell vex-scrum-title';
+  title.textContent = 'Team Progress';
+  title.style.gridRow = '1';
+  title.style.gridColumn = '1';
+  tableEl.appendChild(title);
+
+  // one cell per stage, filled in once vex-sessions.json lands
+  const dueCells = {};
+  const lastColIdx = VEX_SCRUM_STAGES.length - 1;
+  VEX_SCRUM_STAGES.forEach((stage, colIdx) => {
+    const due = document.createElement('div');
+    due.className = 'vex-scrum-cell vex-scrum-due';
+    due.style.gridRow = '1';
+    due.style.gridColumn = String(colIdx + 2);
+    // the High Score column records a number, it isn't a part to finish,
+    // so it gets no deadline and no divider
+    if (vexStageType(stage) !== 'score') {
+      dueCells[vexStageId(stage)] = due;
+      // the divider separates this part's stretch of the season from the
+      // next one's, so the final column has nothing to be divided from —
+      // a rule there is just a line down the edge of the table
+      if (colIdx !== lastColIdx) due.classList.add('has-rule');
+    }
+    tableEl.appendChild(due);
+  });
+
+  /* Fails quiet: no sessions file, no network, or a competition already
+     past leaves the row blank and the board exactly as it was. */
+  (async () => {
+    try {
+      const data = await loadVexSessions();
+      // the season starts at its earliest meeting, whatever that is —
+      // read from the file rather than written down twice
+      const first = (data && Array.isArray(data.sessions) && data.sessions.length)
+        ? data.sessions.map(x => x.date).sort()[0]
+        : null;
+      if (!first) return;
+      const dates = vexStageDeadlines(
+        data, vexPacificInstant(first, '00:00'),
+        vexPacificInstant(VEX_NEXT_COMPETITION, '00:00'),
+        Object.keys(dueCells).length
+      );
+      if (!dates) return;
+
+      const todayIso = getPacificNow().isoDate;
+      const overdue = [];
+      Object.keys(dueCells).forEach((id, i) => {
+        if (!dates[i]) return;
+        dueCells[id].textContent = vexFmtShortDate(dates[i]);
+        dueCells[id].title =
+          `Finish ${vexStageName(vexStageById(id))} by the meeting on ` +
+          `${vexFmtShortDate(dates[i])} to stay on pace for ` +
+          `${VEX_NEXT_COMPETITION_LABEL}.`;
+        /* Past, not today: the date IS the meeting it is due at, so a
+           team still has that whole meeting to finish it. ISO dates
+           compare correctly as plain strings. */
+        if (dates[i] < todayIso) {
+          dueCells[id].classList.add('is-past');
+          overdue.push(id);
+        }
+      });
+
+      overdueStageIds = overdue;
+      VEX_TEAMS.forEach(t => paintRow(t.name));
+    } catch (e) { /* leave the row blank */ }
+  })();
 
   VEX_SCRUM_STAGES.forEach((stage, colIdx) => {
     const head = document.createElement('div');
     head.className = 'vex-scrum-cell vex-scrum-head';
-    head.style.gridRow = '1';
+    head.style.gridRow = '2';
     head.style.gridColumn = String(colIdx + 2);
 
     const note = vexStageNote(stage);
@@ -761,6 +901,15 @@ function initVexScrumBoard() {
     const complete = percent >= 100;
     refs.fillEl.classList.toggle('is-complete', complete);
 
+    /* Behind = a part whose meeting has passed is still not done.
+       "Started" does not count: the deadline was to finish it. A team
+       that is complete can never be behind, so this needs no guard. */
+    const behind = overdueStageIds.some(id => {
+      const stage = vexStageById(id);
+      return stage && vexStageValueFor(state[teamName], stage) !== 2;
+    });
+    refs.fillEl.classList.toggle('is-behind', behind);
+
     const was = refs.lastPercent;
     refs.lastPercent = percent;
     if (!seedingRows && complete && was < 100) vexCelebrateRow(refs.fillEl);
@@ -795,7 +944,8 @@ function initVexScrumBoard() {
   }
 
   VEX_TEAMS.forEach((team, rowIdx) => {
-    const gridRow = rowIdx + 2;
+    // +3: the due-date row and the column-header row sit above the teams
+    const gridRow = rowIdx + 3;
     const color = VEX_SCRUM_TEAM_COLORS[rowIdx % VEX_SCRUM_TEAM_COLORS.length];
 
     // fill + sparkle layers first (DOM order = paint order, so they
