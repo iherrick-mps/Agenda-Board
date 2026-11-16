@@ -2416,33 +2416,38 @@ body.board-page {
 /* a deadline that has already gone by */
 .vex-scrum-due.is-past { color: #b4323a; }
 
-/* ---- Behind: a part whose meeting has passed is still unfinished ----
-   This flashes the row's background COLOR, which the progress gradient
-   is painted on top of — so the red shows through exactly the stretch
-   of the row the team has not filled in yet, and shrinks as they catch
-   up. A team at 80% flashes a short red tail; a team at 0% flashes the
-   whole row.
+/* ---- Behind: the gap between where a team is and where they should be ----
+   The band starts where their progress bar stops and ends at the share
+   of the board they should have finished by now, so what flashes is the
+   shortfall itself — not everything left to do. A team one part behind
+   flashes one part's width; catching up closes the band from the left
+   until it disappears. The stretch past the deadline mark stays calm:
+   that work is not late yet.
 
-   0.6 Hz, and a tint rather than a saturated fill. This is a motivator
-   on a wall in a room full of children, not an alarm: fast strobing is
-   a photosensitivity risk, and the guidance to stay under 3 Hz is the
-   floor, not the target. */
-.vex-scrum-fill.is-behind {
+   0.6 Hz. This is a motivator on a wall in a room full of children, not
+   an alarm: fast strobing is a photosensitivity risk, and the guidance
+   to stay under 3 Hz is the floor, not the target. */
+.vex-scrum-fill.is-behind::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--fill-percent, 0%);
+  width: calc(var(--behind-percent, 0%) - var(--fill-percent, 0%));
+  background: #d6303a;
+  pointer-events: none;
   animation: vex-behind-flash 1.6s ease-in-out infinite;
 }
 
 @keyframes vex-behind-flash {
-  0%, 100% { background-color: rgba(214, 48, 58, 0.10); }
-  50%      { background-color: rgba(214, 48, 58, 0.40); }
+  0%, 100% { opacity: 0.16; }
+  50%      { opacity: 0.72; }
 }
 
 /* Reduced motion keeps the warning, drops the pulse — a steady red says
    the same thing a blinking one does. */
 @media (prefers-reduced-motion: reduce) {
-  .vex-scrum-fill.is-behind {
-    animation: none;
-    background-color: rgba(214, 48, 58, 0.28);
-  }
+  .vex-scrum-fill.is-behind::after { animation: none; opacity: 0.48; }
 }
 
 /* an empty date cell (no sessions file, competition passed) keeps the
@@ -2663,6 +2668,7 @@ body.board-page {
    No border-radius/inset here: it runs flush to the row's true edges
    (including the box's own left/right edge) for a clean full bleed. */
 .vex-scrum-fill {
+  position: relative;   /* the "behind" band below is positioned against this */
   z-index: 0;
   border-bottom: 1px solid rgba(20, 26, 31, 0.07);
   background-image: linear-gradient(

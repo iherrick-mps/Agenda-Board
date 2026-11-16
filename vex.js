@@ -901,14 +901,24 @@ function initVexScrumBoard() {
     const complete = percent >= 100;
     refs.fillEl.classList.toggle('is-complete', complete);
 
-    /* Behind = a part whose meeting has passed is still not done.
-       "Started" does not count: the deadline was to finish it. A team
-       that is complete can never be behind, so this needs no guard. */
-    const behind = overdueStageIds.some(id => {
-      const stage = vexStageById(id);
-      return stage && vexStageValueFor(state[teamName], stage) !== 2;
-    });
-    refs.fillEl.classList.toggle('is-behind', behind);
+    /* Where they should be by now: the share of the board whose
+       deadlines have already gone by, on the same 0-100 scale the fill
+       uses. Behind is simply standing short of that mark, and the gap
+       between the two is what gets flashed.
+
+       Comparing totals rather than asking "is any overdue part
+       unfinished" on purpose: a team that skipped part one but finished
+       two later ones has done the work, and a board that flashed at
+       them for it would be counting the calendar instead of the
+       robot. */
+    const progressCount =
+      VEX_SCRUM_STAGES.filter(st => vexStageType(st) !== 'score').length;
+    const expected = progressCount
+      ? (overdueStageIds.length / progressCount) * 100
+      : 0;
+    refs.fillEl.style.setProperty('--behind-percent', `${expected}%`);
+    // the 0.01 keeps a team sitting exactly on the mark off the board
+    refs.fillEl.classList.toggle('is-behind', percent < expected - 0.01);
 
     const was = refs.lastPercent;
     refs.lastPercent = percent;
