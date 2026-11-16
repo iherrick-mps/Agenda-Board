@@ -86,7 +86,7 @@
     },
     "6th Period": {
       "grade": "7th Grade",
-      "topic": "Cam and Follower, Day 1: how a cam works + DONUTS bridge vote",
+      "topic": "Cam and Follower, Day 1: how a cam works (simulation + research)",
       "goal": "By the end of class, I can explain how a cam turns spinning motion into up-and-down motion.",
       "bloom": "Remember / Understand",
       "exitTicket": "What happens to the follower when the cam spins?",
@@ -308,7 +308,7 @@
   "frameworks": [
     [
       "Project-Based Learning",
-      "Each grade starts a 4-day build toward one Thursday product: cleaned-up loops in a live game, a TinkerCAD cam, a standing tensegrity. 7th's bridge vote puts last week's product on DONUTS."
+      "Each grade starts a 4-day build toward one Thursday product: cleaned-up loops in a live game, a TinkerCAD cam, a standing tensegrity."
     ],
     [
       "Complex Instruction",
