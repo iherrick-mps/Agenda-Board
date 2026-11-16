@@ -3,21 +3,21 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Iterator doc (game link, loops you cleaned up, 3 answers) and the Iterator pattern working in your game.",
-      "workingNow": "Open the Google Classroom assignment called Iterator Pattern. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, I can explain what an iterator does and list every loop in my game.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures.",
+      "weeklyDeliverable": "Turned in Sunday night: your TinkerCAD Circuits link for each day this week (blink, button, dial, servo), plus 3 sentences on the difference between an input and an output. You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 1: Blink. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my TinkerCAD circuit blinks an LED, and I can say what the resistor is for.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Wayground: classroom expectations (5 min)",
-        "Review answers + today's goal (5 min)",
         "Grade check: Infinite Campus + form (6 min)",
         "This week (4 days) and the points (3 min)",
-        "Mini-lesson: an iterator visits every item (7 min)",
-        "You do: list every loop with Copilot (19 min)",
-        "Exit Ticket: what is an iterator? (5 min)"
+        "I do: breadboard, Arduino, LED, resistor (10 min)",
+        "You do: build and blink your LED (16 min)",
+        "Share your circuit link (5 min)",
+        "Exit Ticket: what does the resistor protect? (5 min)"
       ],
-      "connections": "Last week you added juice to your game. This week you clean up how the game visits every brick and ball. Today you find every loop. Thursday is turn-in day (no class Friday)."
+      "connections": "You spent the fall building games. Now we start electrical engineering: circuits, first in the TinkerCAD simulator. Tomorrow a button controls the LED. Thursday is turn-in day (no class Friday)."
     },
     "6th Period": {
       "grade": "7th Grade",

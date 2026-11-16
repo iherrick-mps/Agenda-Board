@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Virtual Robot Brain doc (TinkerCAD circuit link, your code, 3 answers) and your radar-scan circuit working in the simulator.",
-      "workingNow": "Open the Google Classroom assignment called Virtual Robot Brain. Read the instructions, follow them, then turn in once.",
-      "smartGoal": "By the end of class, my radar circuit works in the simulator and my Virtual Robot Brain doc is turned in once.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
+      "weeklyDeliverable": "Turned in Sunday night: your Electrical Engineering Basics doc (your circuit links for the week, your multimeter readings, 3 answers about voltage, current and resistance). You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called Electrical Engineering Basics. Read the instructions, follow them, then turn in once at the end of class.",
+      "smartGoal": "By the end of class, my RGB LED mixes a color I choose, and my Electrical Engineering Basics doc is turned in once.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Finish + test your circuit (12 min)",
-        "Fill in the doc: circuit link, code, 3 answers (12 min)",
-        "Gallery play: run 2 classmates' radars (8 min)",
+        "I do: an RGB LED is three LEDs in one (5 min)",
+        "You do: mix your color (12 min)",
+        "Fill in the doc: links, readings, 3 answers (15 min)",
         "Final check + turn in (8 min)"
       ],
-      "connections": "You built a radar one piece at a time. Today you finish and turn it in. In January this becomes a real Arduino."
+      "connections": "This week you measured, compared and sensed. Today you mix light and turn in. Next week you pick any circuit and make it better."
     },
     "6th Period": {
       "grade": "7th Grade",

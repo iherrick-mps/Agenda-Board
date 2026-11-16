@@ -10,13 +10,12 @@
       "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Blooket quiz (5 min)",
-        "Review quiz answers + today's goal (5 min)",
-        "I do: a dial gives a number from 0 to 1023 (8 min)",
-        "You do: dial controls brightness; print the value (22 min)",
-        "Share your circuit link (5 min)",
-        "Exit Ticket: what number does the dial send? (5 min)"
+        "Review quiz answers + today's goal (3 min)",
+        "We do: analogRead and the serial monitor (10 min)",
+        "You do: dim the LED with the dial (8 min)",
+        "Exit Ticket: what range of numbers did you see? (4 min)"
       ],
-      "connections": "Yesterday a button turned your LED on and off. Today a dial sends a number, so the LED can be anything in between. Tomorrow that number moves a servo, and you turn in."
+      "connections": "Yesterday an input was on or off. Today the dial sends any number from 0 to 1023. Tomorrow that number moves a servo, and you turn in."
     },
     "6th Period": {
       "grade": "7th Grade",

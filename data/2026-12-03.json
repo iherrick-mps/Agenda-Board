@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your TinkerCAD Circuits link for each day this week (LED, button, potentiometer, servos), plus 3 sentences on the difference between an input and an output.",
-      "workingNow": "Open the Google Classroom assignment called Circuits 4: Servo. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my servo moves to the angle I choose with my dial.",
+      "weeklyDeliverable": "Turned in Sunday night: your Virtual Robot Brain doc (TinkerCAD circuit link, your code, 3 answers) and your radar circuit working in the simulator. You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 8: React. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my radar does one thing when it finds an object, like sound a buzzer or point at it.",
       "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "I do: the Servo library and write(angle) (8 min)",
-        "You do: sweep the servo with your dial (22 min)",
-        "Test the full 0 to 180 range (5 min)",
-        "Exit Ticket: what angle does your dial set? (5 min)"
+        "We do: if the distance is under a limit, then... (8 min)",
+        "You do: add your reaction and test it (22 min)",
+        "Test with a partner's object (5 min)",
+        "Exit Ticket: what is your threshold and why? (5 min)"
       ],
-      "connections": "You turned a dial into brightness. Today the dial turns into motion. Tomorrow you run two servos at once."
+      "connections": "Yesterday your radar scanned. Today it reacts: a buzzer, a light, or the servo pointing at the nearest object. Tomorrow you turn in your Virtual Robot Brain."
     },
     "6th Period": {
       "grade": "7th Grade",

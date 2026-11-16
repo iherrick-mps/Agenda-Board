@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Virtual Robot Brain doc (TinkerCAD circuit link, your code, 3 answers) and your radar-scan circuit working in the simulator.",
-      "workingNow": "Open the Google Classroom assignment called Circuits 7: Radar Sweep. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my servo sweeps the distance sensor and my circuit prints the distance at each angle.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "weeklyDeliverable": "Turned in Sunday night: your Electrical Engineering Basics doc (your circuit links for the week, your multimeter readings, 3 answers about voltage, current and resistance). You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 10: Series and Parallel. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can build series and parallel LED circuits and explain why one is dimmer.",
+      "contentStandard": "CA CS Standards 6-8.CS.3 — Systematically identify and fix problems with computing devices and their components.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "I do: a for loop that sweeps the servo and reads distance (8 min)",
-        "You do: build the radar sweep (22 min)",
-        "Find the nearest object in your scan (5 min)",
-        "Exit Ticket: which angle was closest? (5 min)"
+        "I do: series is one path, parallel is many paths (8 min)",
+        "You do: build both and measure them (22 min)",
+        "Unplug one LED in each: what happens? (5 min)",
+        "Exit Ticket: series or parallel for string lights? (5 min)"
       ],
-      "connections": "You measured distance and moved servos separately. Today they work together as a radar. Tomorrow it reacts."
+      "connections": "Yesterday you measured one circuit. Today you build two kinds and compare them. Tomorrow a sensor reads light."
     },
     "6th Period": {
       "grade": "7th Grade",

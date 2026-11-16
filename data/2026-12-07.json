@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Virtual Robot Brain doc (TinkerCAD circuit link, your code, 3 answers) and your radar-scan circuit working in the simulator.",
-      "workingNow": "Open the Google Classroom assignment called Circuits 6: Distance. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my ultrasonic sensor prints the distance to my hand in the serial monitor.",
-      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Turned in Sunday night: your Electrical Engineering Basics doc (your circuit links for the week, your multimeter readings, 3 answers about voltage, current and resistance). You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 9: Measure It. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can measure voltage and current with the TinkerCAD multimeter and explain what the resistor does to them.",
+      "contentStandard": "CA CS Standards 6-8.CS.3 — Systematically identify and fix problems with computing devices and their components.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "I do: trig, echo and pulseIn (10 min)",
-        "You do: build and print distance (20 min)",
-        "Test at 3 distances and check the numbers (5 min)",
-        "Exit Ticket: what does the sensor measure? (5 min)"
+        "I do: voltage, current, resistance, and how to hold a multimeter (10 min)",
+        "You do: measure your LED circuit with 3 resistors (20 min)",
+        "Compare readings with your table (5 min)",
+        "Exit Ticket: bigger resistor, more or less current? (5 min)"
       ],
-      "connections": "Last week you moved servos and read dials. Today you add a sensor that reads the world. Tomorrow the servo sweeps it."
+      "connections": "Last week you built a radar brain. This week you look inside the circuit: voltage, current and resistance. Tomorrow you wire LEDs two different ways."
     },
     "6th Period": {
       "grade": "7th Grade",

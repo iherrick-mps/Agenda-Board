@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your TinkerCAD Circuits link for each day this week (LED, button, potentiometer, servos), plus 3 sentences on the difference between an input and an output.",
-      "workingNow": "Open the Google Classroom assignment called Circuits 1: Blink. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my TinkerCAD circuit blinks an LED, and I can say what the resistor is for.",
+      "weeklyDeliverable": "Turned in Sunday night: your Virtual Robot Brain doc (TinkerCAD circuit link, your code, 3 answers) and your radar circuit working in the simulator. You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 5: Two Servos. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, two servos move from one sketch, like a radar arm.",
       "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
       "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "I do: breadboard, Arduino, LED, resistor (10 min)",
-        "You do: build and blink your LED (20 min)",
+        "I do: two servos, two pins, one sketch (8 min)",
+        "You do: build the two-servo circuit (22 min)",
         "Share your circuit link (5 min)",
-        "Exit Ticket: what does the resistor protect? (5 min)"
+        "Exit Ticket: how does each servo know where to go? (5 min)"
       ],
-      "connections": "You spent the fall building games with patterns. This week the code moves to real hardware, first in the simulator. Tomorrow a button controls the LED."
+      "connections": "Before break you moved one servo with a dial. Today you control two from one sketch. Tomorrow you add a sensor that reads the world. Friday you turn in your Virtual Robot Brain."
     },
     "6th Period": {
       "grade": "7th Grade",

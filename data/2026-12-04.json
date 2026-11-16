@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Due Sunday night: your TinkerCAD Circuits link for each day this week (LED, button, potentiometer, servos), plus 3 sentences on the difference between an input and an output.",
-      "workingNow": "Open the Google Classroom assignment called Circuits 5: Two Servos. Read the instructions, follow them, then turn in your circuit links and answers.",
-      "smartGoal": "By the end of class, two servos move from one sketch, and my week's circuit links are turned in.",
-      "contentStandard": "CA CS Standards 6-8.AP.12 — Design and iteratively develop programs that combine control structures, including nested loops and compound conditionals.",
+      "weeklyDeliverable": "Turned in Sunday night: your Virtual Robot Brain doc (TinkerCAD circuit link, your code, 3 answers) and your radar circuit working in the simulator. You turn it in once, at the end of Friday's class.",
+      "workingNow": "Open the Google Classroom assignment called Virtual Robot Brain. Read the instructions, follow them, then turn in once at the end of class.",
+      "smartGoal": "By the end of class, my radar circuit works in the simulator and my Virtual Robot Brain doc is turned in once.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
       "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "I do: two servos, two pins, one sketch (6 min)",
-        "You do: build the two-servo circuit (18 min)",
-        "Collect your four circuit links and answer the 3 sentences (11 min)",
-        "Turn in once (5 min)"
+        "Finish + test your circuit (12 min)",
+        "Fill in the doc: circuit link, code, 3 answers (12 min)",
+        "Gallery play: run 2 classmates' radars (8 min)",
+        "Final check + turn in (8 min)"
       ],
-      "connections": "You controlled one servo. Today you control two, like a radar arm. Monday you add a distance sensor."
+      "connections": "You built a radar one piece at a time. Today you finish and turn it in. Next week: what's really happening inside a circuit. In January this becomes a real Arduino."
     },
     "6th Period": {
       "grade": "7th Grade",

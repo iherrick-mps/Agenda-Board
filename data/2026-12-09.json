@@ -3,19 +3,19 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your Virtual Robot Brain doc (TinkerCAD circuit link, your code, 3 answers) and your radar-scan circuit working in the simulator.",
-      "workingNow": "Open the Google Classroom assignment called Circuits 8: React. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my radar does one thing when it finds an object, like sound a buzzer or point at it, and I have tested it.",
-      "contentStandard": "CA CS Standards 6-8.AP.17 — Systematically test and refine programs using a range of test cases.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "weeklyDeliverable": "Turned in Sunday night: your Electrical Engineering Basics doc (your circuit links for the week, your multimeter readings, 3 answers about voltage, current and resistance). You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called Circuits 11: Light Sensor. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, my night-light turns its LED on when the photoresistor reads dark.",
+      "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (3 min)",
-        "We do: if the distance is under a limit, then... (6 min)",
-        "You do: add your reaction and test it (12 min)",
-        "Exit Ticket: what is your threshold and why? (4 min)"
+        "We do: a photoresistor is a resistor that changes with light (8 min)",
+        "You do: build the night-light (10 min)",
+        "Exit Ticket: what number means dark? (4 min)"
       ],
-      "connections": "Yesterday your radar scanned. Today it reacts, a command plus a strategy, like in Block Breaker. Tomorrow you turn in your Virtual Robot Brain."
+      "connections": "Yesterday you built series and parallel circuits. Today a resistor changes with light and your circuit reacts. Tomorrow you finish and turn in."
     },
     "6th Period": {
       "grade": "7th Grade",
