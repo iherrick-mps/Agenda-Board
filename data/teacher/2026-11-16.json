@@ -180,15 +180,14 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "topic": "Tensegrity, Day 1: feel tension with a stick and string",
+      "topic": "Tensegrity, Day 1: what tension is (simulation + research, no building)",
       "goal": "By the end of class, I can explain how tension in string holds sticks up in a tensegrity.",
       "bloom": "Understand / Apply",
-      "exitTicket": "What is tension, and what happened to the stick when the string went loose?",
+      "exitTicket": "What is tension, and where did you find it in a real tensegrity?",
       "prep": [
-        "6th_Mon_Nov16_Tensegrity_Day1 printed (4 pages)",
-        "Exit ticket posted on the Tensegrity assignment with both frames",
-        "Per pair: 1 popsicle stick, string, scissors; folded-paper measuring sticks out",
-        "A string + stick of your own to demo"
+        "Forces and Motion: Basics (PhET) linked on the Classroom question",
+        "Exit ticket question posted with sentence frames",
+        "No materials today"
       ],
       "segments": [
         {
@@ -241,28 +240,23 @@
           ]
         },
         {
-          "min": 2,
-          "title": "Roles by birthday",
-          "do": "Pairs line up by birthday: younger = Holder, older = Tester. One group of 3 if odd: oldest = Checker.",
-          "why": "Complex Instruction: roles with real jobs; students never choose.",
-          "tips": [
-            "Remind them to swap roles before test 5."
-          ]
-        },
-        {
-          "min": 11,
-          "title": "We do: feel tension with a stick and string",
-          "do": "Pairs run tests 1–6: cut string 2 sticks long, push test, pull test, stick test, predict, hold-up test (tight vs loose).",
-          "why": "Hands-on before explaining (ADHD-friendly movement; Bloom: Apply). Prediction before the test adds rigor for a class that wants challenge.",
-          "tips": [
-            "Answer key: push → floppy; pull → tight, pushes back on a finger (tension); stick pushes back (compression); loose string → the stick drops / hangs, tight → stays up.",
-            "Knots slipping: wrap twice around the stick, then tie.",
-            "Assign competence: praise a pair whose prediction came with a reason.",
-            "Revisit the goal halfway through."
-          ]
-        },
-        {
           "min": 10,
+          "title": "You do: tug of war simulation",
+          "do": "Each student, on their own computer, opens PhET Forces and Motion: Basics (Net Force, linked on the Classroom question): equal pullers on both sides, then make one side stronger.",
+          "why": "All-screen day: the rope shows tension without string or sticks.",
+          "tips": [
+            "If PhET won't open, they use the push-and-pull pictures in the doc."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Research a real tensegrity + write your sentences",
+          "do": "Students search tensegrity sculpture or Kurilpa Bridge, find one, name what pushes and what pulls, and write 2 sentences on the sim and 2 on the tensegrity under their exit ticket answer.",
+          "why": "Research + writing, no materials today.",
+          "tips": []
+        },
+        {
+          "min": 5,
           "title": "Exit Ticket: what is tension?",
           "do": "Students answer on Google Classroom with a frame.",
           "why": "One turn-in, directly answerable from the tests they ran.",
