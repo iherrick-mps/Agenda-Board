@@ -1,0 +1,274 @@
+{
+  "title": "Tuesday Plan (guest teacher)",
+  "note": "Ms. Herrick is out sick: NO building today. 8th and 7th work on computers from self-guided handouts; 6th draws force diagrams on paper. One turn-in per class: the exit ticket.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Circuits 2: Button (input controls output)",
+      "goal": "By the end of class, my circuit lights an LED only while a button is pressed.",
+      "bloom": "Understand / Apply",
+      "exitTicket": "Is the button an input or an output? Is the LED? How do you know? (today's link pasted at the end)",
+      "prep": [
+        "Blooket: 8th_Tue_Nov17_Blooket_Blink.csv (Ms. Herrick shares a host link; if it won't run, skip it and give the 5 min to the main task)",
+        "8th_Tue_Nov17_Circuits2_Button handout attached to Circuits 2: Button; exit ticket posted with both frames",
+        "Students work from the handout on Google Classroom; no demo needed"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the 10-question Blooket reviewing Monday (8th_Tue_Nov17_Blooket_Blink).",
+          "why": "Spiral review; predictable start (Maslow).",
+          "tips": [
+            "Watch the live results for the most-missed question."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, then read the goal aloud.",
+          "why": "Students know the target.",
+          "tips": [
+            "Likely most-missed: which LED leg goes to power (bent/long leg) or what GND means.",
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Read: a button is an input, the LED is an output",
+          "do": "Students read the diagram page with a neighbor, pointing to each part (5V, button, pin 2; pin 13, resistor, LED, GND).",
+          "why": "Worked round first (gradual release).",
+          "tips": [
+            "Say the rule: read the input, decide the output.",
+            "Use diagonal legs (top-left, bottom-right) so the button always works.",
+            "The 10 kΩ pull-down keeps pin 2 LOW when not pressed; without it the LED flickers."
+          ]
+        },
+        {
+          "min": 22,
+          "title": "You do: wire the button and code it",
+          "do": "Students wire (handout steps 1–7), then type the 15-line if/else and test by holding the button in the simulation.",
+          "why": "Apply level; one simple build for everyone.",
+          "tips": [
+            "Most common: forgot Start Simulation, button not across the gap, purple wire in a different column than the resistor, missing ; or }.",
+            "Code check: `Button` vs `BUTTON` capitalization errors.",
+            "No Duplicate in their menu: rebuild the LED first (5 min).",
+            "Assign competence: praise a student who read the error line number to fix a bug.",
+            "Revisit the goal at about minute 11."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Share your circuit link",
+          "do": "Share, copy, test in a new tab, paste at the end of the exit ticket.",
+          "why": "Builds Thursday's turn-in without extra turn-ins.",
+          "tips": [
+            "Monday's link should still work because they duplicated."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Exit Ticket: input or output?",
+          "do": "Students answer on Google Classroom with a frame, then paste the link.",
+          "why": "One turn-in; directly answerable from the build.",
+          "tips": [
+            "Answer key: the button is an input (sends pressed/not pressed into pin 2); the LED is an output (the Arduino turns it on/off).",
+            "This is the seed for Thursday's 3 input vs output sentences."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students copying code from the board instead of the page",
+        "Button placed on one side of the gap (always on or never on)"
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "Cam and Follower, Day 2: model the cam in TinkerCAD",
+      "goal": "By the end of class, I have modeled a cam: a circle with its axle hole off-center.",
+      "bloom": "Apply",
+      "exitTicket": "Why does the axle hole have to be off-center? What would the follower do if the hole were in the center?",
+      "prep": [
+        "Blooket: 7th_Tue_Nov17_Blooket_Cam.csv (Ms. Herrick shares a host link; if it won't run, skip it and give the 5 min to the main task)",
+        "7th_Tue_Nov17_Cam_Day2 printed (3 pages); exit ticket posted with both frames",
+        "Handout on Google Classroom; class link https://www.tinkercad.com/joinclass/ZS3NSEL8W for sign-in trouble"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the 10-question Blooket reviewing Monday (7th_Tue_Nov17_Blooket_Cam).",
+          "why": "Spiral review; predictable start (Maslow).",
+          "tips": [
+            "Watch the live results for the most-missed question."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, then read the goal aloud.",
+          "why": "Students know the target.",
+          "tips": [
+            "Likely most-missed: what the follower does with a centered axle (stays still).",
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 20,
+          "title": "Step by step: Cylinder + off-center Hole",
+          "do": "Students follow handout steps 1–6; after each step they check their partner's screen before moving on.",
+          "why": "Fully worked round: TinkerCAD start-up is painful, so everyone moves together (Maslow; gradual release).",
+          "tips": [
+            "Wait for every hand up before each next step.",
+            "Arrow keys move 1 mm with the default 1.0 mm snap grid; if it jumps more, check Snap Grid (bottom right).",
+            "Hole must be grouped WITH the cylinder to cut."
+          ]
+        },
+        {
+          "min": 12,
+          "title": "You do: add the axle",
+          "do": "Axle Cylinder 5×5×30, Align with the cam (middle dots), right arrow ×10 into the hole, orbit to check, rename to Cam + first name.",
+          "why": "Same trick, done alone: transfer (Bloom: Apply).",
+          "tips": [
+            "Align centers on the cam's circle center, so 10 mm lands in the hole.",
+            "Axle 5 mm is slightly smaller than the 6 mm hole: that gap is on purpose so it can spin.",
+            "Assign competence: praise a student who explains the trick to a neighbor."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Exit Ticket: why off-center?",
+          "do": "Students answer on Google Classroom with a frame.",
+          "why": "One turn-in; checks the goal's key idea.",
+          "tips": [
+            "Answer key: off-center makes one side of the cam stick out farther, so it pushes the follower up and down as it spins; centered, the edge is always the same distance, so the follower stays still.",
+            "Recap the goal before they write."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students who can't sign in: class link https://www.tinkercad.com/joinclass/ZS3NSEL8W or class code",
+        "Hole left as Solid (no cut)"
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Tensegrity, Day 2: force diagrams (no building)",
+      "goal": "By the end of class, I can draw a force diagram for 3 objects, with a labeled arrow for every push and pull.",
+      "bloom": "Understand / Apply",
+      "exitTicket": "In your lamp diagram, which arrow is tension, which way does it point, and why doesn't the lamp fall?",
+      "prep": [
+        "Blooket: 6th_Tue_Nov17_Blooket_Tension.csv (Ms. Herrick shares a host link; if it won't run, skip it and give the 5 min to the main task)",
+        "6th_Tue_Nov17_Force_Diagrams printed (4 pages); exit ticket posted with both frames",
+        "No building materials out today"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the 10-question Blooket reviewing Monday (6th_Tue_Nov17_Blooket_Tension).",
+          "why": "Spiral review; predictable start (Maslow).",
+          "tips": [
+            "Watch the live results for the most-missed question."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, then read the goal aloud.",
+          "why": "Students know the target.",
+          "tips": [
+            "Likely most-missed: equal pulls in tug of war mean no movement (forces balanced).",
+            "Point to the goal again halfway through and at the exit ticket."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Read: what is a force diagram?",
+          "do": "Read the key words, the 5 steps, and the book-on-a-table example aloud (or have volunteers read).",
+          "why": "Introduces the tool with a fully worked example (gradual release; ELD vocabulary with pictures).",
+          "tips": [
+            "Ask: why doesn't the book fall through the table? (The table pushes up as hard as gravity pulls down.)"
+          ]
+        },
+        {
+          "min": 7,
+          "title": "Partner: diagram A, the lamp",
+          "do": "Partners talk first, then each draws the lamp's force diagram.",
+          "why": "Talk before writing (10-2 model; ELD).",
+          "tips": [
+            "Answer key A: box, tension arrow UP along the string, gravity arrow DOWN, same length (balanced)."
+          ]
+        },
+        {
+          "min": 15,
+          "title": "On your own: diagrams B and C",
+          "do": "Students draw B (tug-of-war cart) and C (one tensegrity stick).",
+          "why": "Apply the rule to new cases; C is the stretch (Bloom: Apply/Analyze).",
+          "tips": [
+            "Answer key B: left arrow (team L) shorter, right arrow (team R) longer, plus gravity down and the ground pushing up (equal); the cart moves RIGHT.",
+            "Answer key C: at each end, string arrows point along the strings away from the stick; together they push the ends toward each other, so the stick is squeezed (compression). Gravity down. Accept any diagram with arrows at both ends pointing along the strings."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Exit Ticket: which arrow is tension?",
+          "do": "Students answer on Google Classroom with a frame.",
+          "why": "One turn-in; checks the goal.",
+          "tips": [
+            "Answer key: the tension arrow points up along the string; the lamp doesn't fall because tension up equals gravity down (balanced)."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Arrows not starting at the box",
+        "Missing labels",
+        "Students drawing the whole picture instead of a simple box"
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Goal read after the Blooket and revisited mid-lesson, numbered steps, worked first round, diagrams, checklists, sentence frames on every exit ticket, frequent check-ins."
+    ],
+    [
+      "English learners",
+      "Key words tied to diagrams (INPUT/OUTPUT; CAM/AXLE; GRAVITY/TENSION/COMPRESSION arrows), partner talk before writing, two frames per exit ticket."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca handouts, steps read aloud, speech-to-text OK, spelling not graded; 8th: type code from the near-point copy on the page."
+    ],
+    [
+      "ADHD learners",
+      "Short timed chunks with a visual timer, partner talk before drawing, whole-class step-by-step in 7th, discreet redirection, break pass."
+    ],
+    [
+      "IEP / 504",
+      "Extended time, dictated exit tickets, intentional partners, grades not penalized for behavior. Floors: 8th wires the button with your starter code shared; 7th finishes the cam with the hole (axle optional); 6th does diagram A + B only."
+    ],
+    [
+      "Advanced",
+      "Future Engineer (OPTIONAL): 1 KB point. 8th flip it / blink while held / portfolio; 7th bigger offset / snail cam / handle; 6th bridge + dumbbell / swing / squeezed or stretched."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "Day 2 of each 4-day build toward Thursday's product: 4 circuit links, a TinkerCAD cam, a standing tensegrity (6th draws its forces today)."
+    ],
+    [
+      "Complex Instruction",
+      "6th partners talk before each drawing; 7th students teach the align trick to neighbors; publicly assign competence."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "Predictable Blooket start, worked first round, one turn-in, 'you are not behind'."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "Tuesday is Apply: students reuse Monday's ideas to build (8th input logic, 7th model, 6th frame)."
+    ]
+  ]
+}

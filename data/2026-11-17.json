@@ -11,7 +11,7 @@
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "I do: a button is an input, the LED is an output (8 min)",
+        "Read: a button is an input, the LED is an output (8 min)",
         "You do: wire the button and code it (22 min)",
         "Share your circuit link (5 min)",
         "Exit Ticket: input or output? (5 min)"
@@ -21,14 +21,14 @@
     "6th Period": {
       "grade": "7th Grade",
       "weeklyDeliverable": "Turned in Sunday night: a screenshot and share link of your TinkerCAD cam, and 2 sentences on how it moves the follower.",
-      "workingNow": "Open the Google Classroom assignment called Cam and Follower. Read the instructions, follow them, then fill out the exit ticket when you are done.",
+      "workingNow": "Open today's Google Classroom question (Why does the axle hole have to be off-center?). Follow the attached Cam Day 2 handout step by step in TinkerCAD, then answer the question.",
       "smartGoal": "By the end of class, I have modeled a cam: a circle with its axle hole off-center.",
       "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
       "eldStandard": "ELD.PI.6-8.12 — Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "We do: Cylinder + off-center Hole (20 min)",
+        "Step by step: Cylinder + off-center Hole (20 min)",
         "You do: add the axle (12 min)",
         "Exit Ticket: why off-center? (8 min)"
       ],
@@ -37,18 +37,19 @@
     "7th Period": {
       "grade": "6th Grade",
       "weeklyDeliverable": "Turned in Sunday night: a photo of your tensegrity standing on its own, and how many pushes it survived.",
-      "workingNow": "Open the Google Classroom assignment called Tensegrity. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my pair has a 3-stick tensegrity frame tied together.",
-      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
+      "workingNow": "Open today's Google Classroom question (In your lamp diagram...). Read the attached Force Diagrams handout, draw diagrams A, B and C on paper, then answer the question.",
+      "smartGoal": "By the end of class, I can draw a force diagram for 3 objects, with a labeled arrow for every push and pull.",
+      "contentStandard": "NGSS MS-PS2-2 — Plan an investigation to provide evidence that the change in an object's motion depends on the sum of the forces on the object and the mass of the object.",
+      "eldStandard": "ELD.PI.6-8.12 — Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "I do: tie the first string (6 min)",
-        "You do: build the frame (25 min)",
-        "Exit Ticket: which strings are tight? (9 min)"
+        "Read: what is a force diagram? (8 min)",
+        "Partner: diagram A, the lamp (7 min)",
+        "On your own: diagrams B and C (15 min)",
+        "Exit Ticket: which arrow is tension? (10 min)"
       ],
-      "connections": "Yesterday you learned about tension. Today you build the frame. Wednesday you make it stand on its own."
+      "connections": "Yesterday you learned tension is a pull and compression is a push. Today you draw those forces as arrows: a force diagram. Engineers draw the forces before they build."
     }
   }
 }
