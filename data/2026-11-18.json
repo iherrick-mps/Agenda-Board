@@ -11,7 +11,7 @@
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (3 min)",
-        "We do: analogRead and the serial monitor (10 min)",
+        "Step by step: wire the dial, see the numbers (10 min)",
         "You do: dim the LED with the dial (8 min)",
         "Exit Ticket: what range of numbers did you see? (4 min)"
       ],
@@ -28,7 +28,7 @@
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (3 min)",
         "You do: add the follower with Align (14 min)",
-        "Check from the side (3 min)",
+        "Check from above (3 min)",
         "Exit Ticket: name the 3 parts (5 min)"
       ],
       "connections": "Yesterday you modeled the cam. Today the follower sits on top of it. Tomorrow you finish and turn in."
@@ -36,18 +36,18 @@
     "7th Period": {
       "grade": "6th Grade",
       "weeklyDeliverable": "Turned in Sunday night: a photo of your tensegrity standing on its own, and how many pushes it survived.",
-      "workingNow": "Open the Google Classroom assignment called Tensegrity. Read the instructions, follow them, then fill out the exit ticket when you are done.",
-      "smartGoal": "By the end of class, my tensegrity stands on its own.",
-      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
-      "eldStandard": "ELD.PI.6-8.3 — Offering and supporting opinions and negotiating with others in communicative exchanges.",
+      "workingNow": "Open the Google Classroom assignment called Tensegrity. Read the Net Force handout, solve puzzles A to D on paper, then fill out the exit ticket when you are done.",
+      "smartGoal": "By the end of class, I can add up the forces in a force diagram to predict if an object moves, and which way.",
+      "contentStandard": "NGSS MS-PS2-2 — Plan an investigation to provide evidence that the change in an object's motion depends on the sum of the forces on the object and the mass of the object.",
+      "eldStandard": "ELD.PI.6-8.12 — Selecting and applying varied and precise vocabulary and other language resources to effectively convey ideas.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (3 min)",
-        "You do: tighten until it stands (14 min)",
-        "Partner check (3 min)",
-        "Exit Ticket: what fixed it? (5 min)"
+        "Read: adding up forces (6 min)",
+        "You do: 4 net force puzzles (11 min)",
+        "Exit Ticket: net force in puzzle B (5 min)"
       ],
-      "connections": "Yesterday you built the frame. Today you make it stand. Tomorrow you push-test it and turn in."
+      "connections": "Yesterday you drew force diagrams. Today you add up the arrows to find the net force and predict which way things move."
     }
   }
 }

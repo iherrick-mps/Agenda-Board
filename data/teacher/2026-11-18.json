@@ -1,0 +1,238 @@
+{
+  "title": "Wednesday Plan (guest teacher)",
+  "note": "Ms. Herrick is out sick. 30-minute shortened day. NO building. 8th and 7th work in TinkerCAD from self-guided handouts; 6th solves net force puzzles on paper. One turn-in per class: the exit ticket on Google Classroom.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "Circuits 3: Dial (potentiometer + serial monitor)",
+      "goal": "By the end of class, my potentiometer changes my LED's brightness, and I can read its value in the serial monitor.",
+      "bloom": "Apply / Analyze",
+      "exitTicket": "What range of numbers did you see in the serial monitor, and what happened to the LED as the number went up? (link pasted at the end)",
+      "prep": [
+        "Blooket: 8th_Wed_Nov18_Blooket_Button (needs a host link from Ms. Herrick)",
+        "Handout 8th_Wed_Nov18_Circuits3_Dial on Google Classroom; exit ticket posted"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Tuesday (8th_Wed_Nov18_Blooket_Button).",
+          "why": "Spiral review; predictable start.",
+          "tips": [
+            "If the Blooket can't be hosted, skip it and give the 5 minutes to the main task."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Review quiz answers + today's goal",
+          "do": "Go over the most-missed question, then read the goal aloud.",
+          "why": "Students know the target.",
+          "tips": [
+            "Likely most-missed: what the 10 kΩ resistor does (keeps pin 2 LOW when not pressed)."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Step by step: wire the dial, see the numbers",
+          "do": "Students duplicate Blink, move the LED to pin 9, wire the potentiometer (5V, GND, middle leg to A0), and type the code from the page.",
+          "why": "Self-guided worked round.",
+          "tips": [
+            "Pin 13 can't dim; that's why the LED moves to pin 9.",
+            "Most common bugs: middle leg not on A0, Serial with a small s, missing ;."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "You do: dim the LED with the dial",
+          "do": "Start Simulation, open Serial Monitor, drag the knob, note min and max, then Share and copy the link.",
+          "why": "Students observe the input's range (Analyze).",
+          "tips": [
+            "Answer key: 0 to 1023; as the number goes up, the LED gets brighter."
+          ]
+        },
+        {
+          "min": 4,
+          "title": "Exit Ticket",
+          "do": "Answer on Google Classroom with a frame, then paste the link.",
+          "why": "One turn-in.",
+          "tips": [
+            "Answer key: about 0 to 1023; bigger number = brighter LED."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students without Monday's design: they can start a new circuit and build it fresh"
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "Cam and Follower, Day 3: add the follower",
+      "goal": "By the end of class, my follower sits on top of my cam.",
+      "bloom": "Apply",
+      "exitTicket": "Name the 3 parts of your machine and what each one does.",
+      "prep": [
+        "Blooket: 7th_Wed_Nov18_Blooket_CamModel (needs a host link)",
+        "Handout 7th_Wed_Nov18_Cam_Day3 on Google Classroom; exit ticket posted",
+        "TinkerCAD class link for sign-in trouble: https://www.tinkercad.com/joinclass/ZS3NSEL8W"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Tuesday (7th_Wed_Nov18_Blooket_CamModel).",
+          "why": "Spiral review; predictable start.",
+          "tips": [
+            "If the Blooket can't be hosted, skip it and give the 5 minutes to the main task."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Review quiz answers + today's goal",
+          "do": "Go over the most-missed question, then read the goal aloud.",
+          "why": "Students know the target.",
+          "tips": [
+            "Likely most-missed: why the axle is thinner than the hole (so the cam can spin)."
+          ]
+        },
+        {
+          "min": 14,
+          "title": "You do: add the follower with Align",
+          "do": "Box 6×40×10, Align with the cam on the two middle dots, then Shift + up arrow ×4 so it touches the cam's edge.",
+          "why": "Reuses Tuesday's Align trick (Apply).",
+          "tips": [
+            "If Align moves the cam away from its axle: Ctrl + Z, press L, click the cam once so it stays still, then the dots.",
+            "Students who missed Tuesday: build the cam first from Tuesday's handout."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Check from above",
+          "do": "TOP on the view cube; follower touches the cam's edge.",
+          "why": "Self-check before the exit ticket.",
+          "tips": []
+        },
+        {
+          "min": 5,
+          "title": "Exit Ticket",
+          "do": "Answer on Google Classroom with a frame.",
+          "why": "One turn-in.",
+          "tips": [
+            "Answer key: the cam spins and pushes; the follower rides on it and moves up and down; the axle is what the cam spins on."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students who never finished Tuesday's cam"
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Tensegrity, Day 3: net force puzzles (no building)",
+      "goal": "By the end of class, I can add up the forces in a force diagram to predict if an object moves, and which way.",
+      "bloom": "Apply / Analyze",
+      "exitTicket": "In puzzle B, what is the net force, and which way does the cart move?",
+      "prep": [
+        "Blooket: 6th_Wed_Nov18_Blooket_ForceDiagrams (needs a host link)",
+        "6th_Wed_Nov18_Net_Force printed (3 pages); exit ticket posted",
+        "No building materials out"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Students play the Blooket reviewing Tuesday (6th_Wed_Nov18_Blooket_ForceDiagrams).",
+          "why": "Spiral review; predictable start.",
+          "tips": [
+            "If the Blooket can't be hosted, skip it and give the 5 minutes to the main task."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Review quiz answers + today's goal",
+          "do": "Go over the most-missed question, then read the goal aloud.",
+          "why": "Students know the target.",
+          "tips": [
+            "Likely most-missed: which way the lamp's tension arrow points (up, along the string)."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Read: adding up forces",
+          "do": "Read the key words and the worked example aloud: 150 N − 100 N = 50 N to the right.",
+          "why": "Worked example first.",
+          "tips": [
+            "Same direction add, opposite directions subtract."
+          ]
+        },
+        {
+          "min": 11,
+          "title": "You do: 4 net force puzzles",
+          "do": "A with a partner; B, C, D alone. Write the math, draw a green net arrow or write balanced, say which way it moves.",
+          "why": "Apply, then the 3-force challenge (Analyze).",
+          "tips": [
+            "Answer key A: 80 − 80 = 0 N, balanced, no movement.",
+            "B: 90 − 60 = 30 N, moves right.",
+            "C: 40 + 30 = 70 right; 70 − 50 = 20 N, moves right.",
+            "D: 20 up − 20 down = 0 N, balanced, the lamp stays still."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Exit Ticket",
+          "do": "Answer on Google Classroom with a frame.",
+          "why": "One turn-in.",
+          "tips": [
+            "Answer key: 30 N, to the right (toward the 90 N side)."
+          ]
+        }
+      ],
+      "watchFor": [
+        "Students adding opposite forces instead of subtracting"
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Goal read after the Blooket, numbered steps, worked example first, sentence frames on every exit ticket."
+    ],
+    [
+      "English learners",
+      "Key words with pictures, partner talk on puzzle A before writing, two frames per exit ticket."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca handouts, steps read aloud on request, speech-to-text OK, spelling not graded."
+    ],
+    [
+      "ADHD learners",
+      "Short chunks, visual timer, partner checks after each step (7th), break pass."
+    ],
+    [
+      "IEP / 504",
+      "Extended time, dictated exit tickets, intentional partners. Floors: 8th wires the dial and sees numbers (dimming optional); 7th adds the follower (check optional); 6th does puzzles A, B, D."
+    ],
+    [
+      "Advanced",
+      "Future Engineer (OPTIONAL): 1 KB point."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "Day 3 toward Thursday's products (8th circuit links, 7th TinkerCAD cam). 6th's product is being reworked while no building is possible."
+    ],
+    [
+      "Complex Instruction",
+      "Partners check each other's screens or puzzle A together; students help neighbors."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "Self-guided handouts with everything on the page, one turn-in, 'you are not behind' on a sub day."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "Apply (build/solve) moving into Analyze (the dial's range, 3-force puzzles)."
+    ]
+  ]
+}
