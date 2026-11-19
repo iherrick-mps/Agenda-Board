@@ -3,20 +3,20 @@
   "periods": {
     "4th Period": {
       "grade": "8th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: your TinkerCAD Circuits link for each day this week (blink, button, dial, servo), plus 3 sentences on the difference between an input and an output. You turn it in once, at the end of Thursday's class.",
-      "workingNow": "Open the Google Classroom assignment called Circuits 4: Servo. Read the instructions, follow them, then turn in once at the end of class.",
-      "smartGoal": "By the end of class, my servo moves to the angle I choose with my dial, and my week's circuit links are turned in once.",
+      "weeklyDeliverable": "Turned in Sunday night: your answers to the How Electricity Works video, plus your TinkerCAD Circuits links (blink, button, dial). You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called How Electricity Works. Watch the video from 0:00 to 8:25, answer in the Answers tab, add your circuit links, then turn in once at the end of class.",
+      "smartGoal": "By the end of class, I can explain what volts, amps, and ohms mean using the video, and my week's circuit links are turned in once.",
       "contentStandard": "CA CS Standards 6-8.CS.2 — Design projects that combine hardware and software components to collect and exchange data.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "eldStandard": "ELD.PI.6-8.5 — Listening actively to spoken English in a range of social and academic contexts.",
       "agenda": [
         "Blooket quiz (5 min)",
-        "Review quiz answers + today's goal (5 min)",
-        "I do: map 0–1023 to 0–180 degrees (7 min)",
-        "You do: the dial turns the servo (18 min)",
-        "Write: input vs output, 3 sentences (7 min)",
-        "Final check + turn in once (8 min)"
+        "Today's goal + how it's graded (3 min)",
+        "Watch: How Electricity Works, 0:00 to 8:25 (12 min)",
+        "Answer: Part 1, the video (12 min)",
+        "Part 2: paste your circuit links (13 min)",
+        "Final check + turn in once (5 min)"
       ],
-      "connections": "This week you built an LED, a button and a dial in the simulator. Today the dial moves a servo, the first moving part of the robot you'll build in Semester 2. Turn in once today."
+      "connections": "This week you built circuits in TinkerCAD: blink, button, and dial. Today you learn what's actually moving inside those wires: electrons, pushed by volts, slowed by ohms. After Thanksgiving: more circuits."
     },
     "6th Period": {
       "grade": "7th Grade",
@@ -38,20 +38,21 @@
     },
     "7th Period": {
       "grade": "6th Grade",
-      "weeklyDeliverable": "Turned in Sunday night: a photo of your tensegrity standing on its own, and how many pushes it survived.",
-      "workingNow": "Open the Google Classroom assignment called Tensegrity. Read the instructions, fill in the Answers tab, and turn in once at the end of class.",
-      "smartGoal": "By the end of class, I've push-tested my tensegrity and turned in my photo once.",
-      "contentStandard": "NGSS MS-ETS1-3 — Analyze data from tests to determine similarities and differences among several design solutions to identify the best characteristics of each.",
-      "eldStandard": "ELD.PI.6-8.10 — Writing literary and informational texts to present, describe, and explain ideas and information, using appropriate technology.",
+      "weeklyDeliverable": "Turned in Sunday night: a photo of your tensegrity, which parts are in tension and which are in compression, and what you changed to make it stand. You turn it in once, at the end of Thursday's class.",
+      "workingNow": "Open the Google Classroom assignment called Tensegrity. Build with your partner, then fill in the Answers tab and turn in once at the end of class.",
+      "smartGoal": "By the end of class, my pair has built a tensegrity, tried to make it stand on its own, and turned in a photo once.",
+      "contentStandard": "NGSS MS-ETS1-4 — Develop a model to generate data for iterative testing and modification of a proposed object, tool, or process.",
+      "eldStandard": "ELD.PI.6-8.1 — Exchanging information and ideas with others through oral collaborative discussions on a range of social and academic topics.",
       "agenda": [
         "Blooket quiz (5 min)",
         "Review quiz answers + today's goal (5 min)",
-        "Predict, then push test (15 min)",
-        "Photo + Answers page (12 min)",
-        "Gallery walk (8 min)",
-        "Turn in on Google Classroom (5 min)"
+        "Roles by birthday + I do: tie the first string (5 min)",
+        "You do: tie the frame (20 min)",
+        "Tighten until it stands (7 min)",
+        "Photo + Answers tab (6 min)",
+        "Turn in once on Google Classroom (2 min)"
       ],
-      "connections": "This week you built a structure held up by string. Today you test it and turn in once. After Thanksgiving: a chain reaction your group designs."
+      "connections": "This week you learned tension and compression, drew force diagrams, and added up forces. Today you build a tensegrity that balances them and turn in once. After Thanksgiving: a chain reaction your group designs."
     }
   }
 }

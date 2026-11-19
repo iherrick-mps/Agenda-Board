@@ -1,0 +1,281 @@
+{
+  "title": "Thursday Teacher Plan",
+  "note": "Turn-in day for all grades (no class Fri Nov 20). 8th has a guest teacher: video + questions + links. 7th and 6th as planned.",
+  "periods": {
+    "4th Period": {
+      "grade": "8th Grade",
+      "topic": "How Electricity Works (video) + turn in the week (guest teacher)",
+      "goal": "By the end of class, I can explain what volts, amps, and ohms mean using the video, and my week's circuit links are turned in once.",
+      "bloom": "Remember / Understand",
+      "exitTicket": "None today: the Answers tab is the one turn-in.",
+      "prep": [
+        "Blooket: 8th_Thu_Nov19_Blooket_Dial (host link needed; skip if it won't run)",
+        "8th_Thu_Nov19_Electricity_Video_TurnIn: move the Answers pages into Tab 2, attach as a copy per student",
+        "Post the video link: https://www.youtube.com/watch?v=3KePcASD0NQ"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Host 8th_Thu_Nov19_Blooket_Dial.",
+          "why": "Spiral review of Wednesday (taught by the sub).",
+          "tips": [
+            "Watch for the most-missed question: Wednesday was a sub day, so expect gaps."
+          ]
+        },
+        {
+          "min": 3,
+          "title": "Today's goal + how it's graded",
+          "do": "Read the goal and the points table; say: watch only to 8:25, turn in once at the end.",
+          "why": "Clear target and one turn-in (Maslow).",
+          "tips": []
+        },
+        {
+          "min": 12,
+          "title": "Watch: 0:00 to 8:25",
+          "do": "Students watch individually with subtitles on, pausing at each timestamp.",
+          "why": "Input before output; subtitles support ELs and dyslexic learners.",
+          "tips": [
+            "Stop at 8:25: the rest (surface charge, EM waves) is beyond 8th grade and is Future Engineer."
+          ]
+        },
+        {
+          "min": 12,
+          "title": "Answer: Part 1, the video",
+          "do": "Students answer 6 questions in Tab 2 with frames.",
+          "why": "Recall and explain (Bloom: Remember/Understand).",
+          "tips": [
+            "Key 1: light, heat, motion, magnetic fields, electric arcs (any 2).",
+            "Key 2: electrons; negative terminal to positive terminal.",
+            "Key 3: the beam was negative particles (electrons) moving negative to positive, so electricity really flows − to +.",
+            "Key 4: volts = push/pressure, amps = flow/current, ohms = resistance.",
+            "Key 5: the 220 Ω resistor, so too much current doesn't burn out the LED.",
+            "Key 6: copper has 1 free electron in its outer (valence) shell that can move to other atoms."
+          ]
+        },
+        {
+          "min": 13,
+          "title": "Part 2: paste your circuit links",
+          "do": "Students paste Blink, Button, Dial links; build any missing one from that day's handout.",
+          "why": "Collects the week's work in one turn-in.",
+          "tips": [
+            "Input answer: Button (input: button, output: LED) or Dial (input: potentiometer, output: LED)."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Final check + turn in once",
+          "do": "Checklist, then Turn in.",
+          "why": "One turn-in.",
+          "tips": []
+        }
+      ],
+      "watchFor": [
+        "Students watching past 8:25 and getting lost",
+        "Answers pasted from the transcript instead of their own words"
+      ]
+    },
+    "6th Period": {
+      "grade": "7th Grade",
+      "topic": "Cam and Follower: label, screenshot, turn in",
+      "goal": "By the end of class, my cam and follower are finished, labeled, and turned in once.",
+      "bloom": "Apply / Evaluate",
+      "exitTicket": "None today: the Answers tab is the one turn-in.",
+      "prep": [
+        "Import 7th_Thu_Nov19_Blooket_Follower.csv",
+        "7th_Thu_Nov19_Cam_TurnIn: move the Answers page into Tab 2, attach as a copy per student"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Host 7th_Thu_Nov19_Blooket_Follower.",
+          "why": "Spiral review of Wednesday (taught by the sub).",
+          "tips": [
+            "Watch for the most-missed question: Wednesday was a sub day, so expect gaps."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, read the goal, and say clearly: turn in once, at the end of today.",
+          "why": "Students know the target and the one turn-in (Maslow).",
+          "tips": [
+            "Likely most-missed: Shift + arrow moves 10 mm."
+          ]
+        },
+        {
+          "min": 10,
+          "title": "Label: cam, follower, axle",
+          "do": "Text shapes CAM / FOLLOWER / AXLE next to each part; color cam orange, follower purple, axle blue.",
+          "why": "Precise vocabulary attached to the model (ELD).",
+          "tips": [
+            "Students missing the follower: Wednesday's steps first (Box 6×40×10, Align, Shift + up ×4)."
+          ]
+        },
+        {
+          "min": 8,
+          "title": "Screenshot + share link",
+          "do": "TOP view, Ctrl + Shift + Show windows screenshot, Share, copy link, test it.",
+          "why": "Evidence for the turn-in.",
+          "tips": [
+            "If Share's options look different, have them copy whichever link the Share window gives."
+          ]
+        },
+        {
+          "min": 12,
+          "title": "Fill in the Answers tab",
+          "do": "Paste screenshot and link, write 2 sentences with the frames.",
+          "why": "Explain the mechanism (Bloom: Understand).",
+          "tips": [
+            "Model answer: when the cam spins, the off-center side pushes the follower up, then lets it drop, so spinning turns into up-and-down motion."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Gallery walk: 2 classmates",
+          "do": "Look at 2 classmates' screens and give one specific compliment each.",
+          "why": "Peer recognition (PBL public product; Complex Instruction status).",
+          "tips": []
+        },
+        {
+          "min": 5,
+          "title": "Turn in once",
+          "do": "Checklist, then Turn in on Google Classroom.",
+          "why": "One turn-in.",
+          "tips": []
+        }
+      ],
+      "watchFor": [
+        "Students who never finished Tuesday's cam"
+      ]
+    },
+    "7th Period": {
+      "grade": "6th Grade",
+      "topic": "Tensegrity: build day + turn in (first build of the week)",
+      "goal": "By the end of class, my pair has built a tensegrity, tried to make it stand on its own, and turned in a photo once.",
+      "bloom": "Apply / Create",
+      "exitTicket": "None today: the Answers tab is the one turn-in.",
+      "prep": [
+        "Import 6th_Thu_Nov19_Blooket_NetForce.csv",
+        "6th_Thu_Nov19_Tensegrity_Build_TurnIn printed (4 pages) + Answers tab as a Google Doc copy per student",
+        "Per pair: 3 popsicle sticks, string, scissors, pencil (students cut their own string)",
+        "Your own sticks + string to model"
+      ],
+      "segments": [
+        {
+          "min": 5,
+          "title": "Blooket quiz",
+          "do": "Host 6th_Thu_Nov19_Blooket_NetForce.",
+          "why": "Spiral review of Wednesday (taught by the sub).",
+          "tips": [
+            "Watch for the most-missed question: Wednesday was a sub day, so expect gaps."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Review quiz answers + today's goal",
+          "do": "Re-teach the most-missed question, read the goal, and say clearly: turn in once, at the end of today.",
+          "why": "Students know the target and the one turn-in (Maslow).",
+          "tips": [
+            "Likely most-missed: the 3-force puzzle (40 + 30 − 50 = 20 N right)."
+          ]
+        },
+        {
+          "min": 5,
+          "title": "Roles by birthday + I do: tie the first string",
+          "do": "Pairs line up by birthday (younger = Holder, older = Tier). Model: label A/B/C, dot the tops, cut 2 sticks long, wrap twice, knot + bow, tie A bottom to B bottom.",
+          "why": "Worked round first; roles with real jobs (Complex Instruction).",
+          "tips": [
+            "The bow lets them retie when tightening."
+          ]
+        },
+        {
+          "min": 20,
+          "title": "You do: tie the frame",
+          "do": "Pairs finish the 9 strings from the tie map, swapping roles after the bottom triangle.",
+          "why": "Hands-on Create; the 9-step map is real rigor for a class that wants challenge.",
+          "tips": [
+            "Check: 3 strings on every stick end; no stick touching another.",
+            "Pairs behind at minute 15: help them finish the cross strings first."
+          ]
+        },
+        {
+          "min": 7,
+          "title": "Tighten until it stands",
+          "do": "Shorten all 3 cross strings by the same amount, a finger-width at a time, until it stands without sticks touching.",
+          "why": "Iterate and test (MS-ETS1-4).",
+          "tips": [
+            "Leaning = that side's cross string is loose. Sticks touching = triangles too tight.",
+            "Standing isn't required for credit; what they changed is."
+          ]
+        },
+        {
+          "min": 6,
+          "title": "Photo + Answers tab",
+          "do": "Photo with the Chromebook camera; answer tension/compression + what they changed.",
+          "why": "Connects the build to the week's force ideas (Bloom: Evaluate).",
+          "tips": [
+            "Answer key: strings are in tension (they pull); sticks are in compression (they're squeezed/push)."
+          ]
+        },
+        {
+          "min": 2,
+          "title": "Turn in once",
+          "do": "Each partner turns in their own copy once.",
+          "why": "One turn-in.",
+          "tips": []
+        }
+      ],
+      "watchFor": [
+        "Scissors handling",
+        "Pairs where one partner does everything: enforce the swap",
+        "Clean-up of string scraps before the bell"
+      ]
+    }
+  },
+  "accommodations": [
+    [
+      "All students",
+      "Goal read after the Blooket, numbered steps, worked first round, checklists, sentence frames in every Answers tab, frequent check-ins."
+    ],
+    [
+      "English learners",
+      "Key words with diagrams, frames for every answer, partner talk before writing."
+    ],
+    [
+      "Dyslexic learners",
+      "Lexend Deca, steps read aloud, speech-to-text OK for Answers tabs, spelling not graded."
+    ],
+    [
+      "ADHD learners",
+      "Short timed chunks, hands-on roles in 6th, visual timer, break pass."
+    ],
+    [
+      "IEP / 504",
+      "Extended time to Sunday, dictated answers, intentional partners. Floors: 8th turns in the links they have + 1 sentence; 7th screenshot + link; 6th photo of the frame (standing optional) + 1 answer."
+    ],
+    [
+      "Advanced",
+      "Future Engineer (OPTIONAL) box in each Answers tab: 1 KB point."
+    ]
+  ],
+  "frameworks": [
+    [
+      "Project-Based Learning",
+      "Every grade ends the week with one product: 4 circuit links, a labeled TinkerCAD cam, a built tensegrity photo."
+    ],
+    [
+      "Complex Instruction",
+      "Birthday roles with a required swap (6th); gallery walk compliments (7th); publicly assign competence."
+    ],
+    [
+      "Maslow's Hierarchy",
+      "Welcome back after two sub days, one turn-in, 'you are not behind', missing pieces still accepted."
+    ],
+    [
+      "Bloom's Taxonomy",
+      "Apply/Create (build) into Evaluate (explain, input vs output, tension vs compression)."
+    ]
+  ]
+}
