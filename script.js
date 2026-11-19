@@ -2072,6 +2072,9 @@ function timerSetUnlocked(on) {
 }
 
 const TIMED_PERIODS = new Set(['4th Period', '6th Period', '7th Period']);
+// Days the Transition Timer is switched off entirely (hidden, no auto-start,
+// no record filed): 2026-11-19, a guest teacher covers 4th period.
+const TIMER_OFF_DATES = new Set(['2026-11-19']);
 
 function initCountUpTimer() {
   const box = document.querySelector('.box-timer');
@@ -2080,6 +2083,7 @@ function initCountUpTimer() {
   const stopBtn = document.getElementById('timer-stop');
   const clearBtn = document.getElementById('timer-clear');
   if (!box || !displayEl || !startBtn || !stopBtn || !clearBtn) return;
+  if (TIMER_OFF_DATES.has(getPacificNow().isoDate)) { box.style.display = 'none'; return; }
 
   let elapsedMs = 0;     // time banked from previous run segments
   let startedAt = null;  // wall-clock ms when the current segment began
